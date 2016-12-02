@@ -1,1 +1,0 @@
-# moodle=theme_fordson
