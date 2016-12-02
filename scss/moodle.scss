@@ -1,0 +1,45 @@
+// Set image location.
+$breadcrumb-divider: "▶" !default;
+$breadcrumb-divider-rtl: "◀" !default;
+
+// Import the bootstrap variables.
+@import "../../boost/scss/bootstrap/bootstrap";
+
+// Specific overrides to make Bootstrap RTL.
+@import "../../boost/scss/moodle/bootstrap-rtl";
+
+// Old Moodle stuff from base theme.
+// Massive, needs broken up.
+@import "../../boost/scss/moodle/core";
+@import "../../boost/scss/moodle/icons";
+@import "../../boost/scss/moodle/admin";
+@import "../../boost/scss/moodle/blocks";
+@import "../../boost/scss/moodle/bootswatch";
+@import "../../boost/scss/moodle/calendar";
+@import "../../boost/scss/moodle/course";
+@import "../../boost/scss/moodle/drawer";
+@import "../../boost/scss/moodle/filemanager";
+@import "../../boost/scss/moodle/message";
+@import "../../boost/scss/moodle/question";
+@import "../../boost/scss/moodle/user";
+@import "../../boost/scss/moodle/search";
+@import "../../boost/scss/moodle/forms";
+@import "../../boost/scss/moodle/login";
+@import "../../boost/scss/moodle/modules";
+@import "../../boost/scss/moodle/chat";
+@import "../../boost/scss/moodle/reports";
+@import "../../boost/scss/moodle/backup-restore";
+@import "../../boost/scss/moodle/tables";
+@import "../../boost/scss/moodle/buttons";
+@import "../../boost/scss/moodle/grade";
+@import "../../boost/scss/moodle/templates";
+@import "../../boost/scss/moodle/undo";
+@import "../../boost/scss/moodle/debug";
+@import "../../boost/scss/moodle/expendable";
+@import "../../boost/scss/moodle/sticky-footer";
+@import "../../boost/scss/moodle/popover-region";
+@import "../../boost/scss/moodle/tool_usertours";
+@import "../../boost/scss/moodle/responsive-tabs";
+@import "../../boost/scss/moodle/bs2-compat";
+
+@import "styles";

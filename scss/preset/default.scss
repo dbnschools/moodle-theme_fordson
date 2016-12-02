@@ -1,0 +1,389 @@
+//
+// The MIT License (MIT)
+//
+// Copyright (c) 2013 Thomas Park
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+//
+$bootstrap-sass-asset-helper: false !default;
+// Flatly 3.3.7
+// Variables
+// --------------------------------------------------
+/* stylelint-disable color-hex-length */
+/**
+ * Default preset file.
+ *
+ * Use this space to customise variables, create mixins and override SCSS.
+ */
+
+// Colors
+$gray-dark:                 #373a3c !default;
+$gray:                      #55595c !default;
+$gray-light:                #818a91 !default;
+$gray-lighter:              #eceeef !default;
+$gray-lightest:             #f7f7f9 !default;
+
+$brand-primary:             #00acdf !default;
+$brand-success:             #77b300 !default;
+$brand-warning:             #ff8800 !default;
+$brand-danger:              #ff4136 !default;
+$brand-inverse:             $gray-dark !default;
+$navbar-height:             50px !default;
+
+// Spacing
+$spacer:   1rem !default;
+$spacer-x: $spacer !default;
+$spacer-y: $spacer !default;
+$border-width: 1px !default;
+
+// Body
+$body-bg:    #f4f4f4 !default;
+$body-color: #3a3a3a !default;
+
+// Typography
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
+$font-size-root: 14px !default;
+
+// Tables
+$table-bg:                      transparent !default;
+$table-bg-accent:               #fafafa !default;
+$table-bg-hover:                lighten($brand-primary, 55%) !default;
+$table-bg-active:               $table-bg-hover !default;
+$table-border-color:            #f4f4f4 !default;
+
+// Dropdowns
+$dropdown-border-color:          #e2e2e2 !default;
+$dropdown-link-color:            rgba(0, 0, 0, .535) !default;
+
+// Navbar
+$navbar-light-color:                rgba(0, 0, 0, .535) !default;
+$navbar-light-hover-color:          $brand-primary !default;
+$navbar-light-active-color:         $brand-primary !default;
+
+// Cards
+$card-border-radius:       1px !default;
+$card-border-color:        rgba(238, 238, 238, 1) !default;
+
+
+// Breadcrumbs
+
+$breadcrumb-bg:               rgba(255, 255, 255, 0.9) !default;
+$breadcrumb-padding:          0px 10px 0px 10px !default;
+$breadcrumb-divider: "/" !default;
+$breadcrumb-divider-rtl: "/" !default;
+
+// CustomSettings
+
+$fpstartwrap-bg: #fff !default;
+$fpicon-hover: #fff !default;
+$fpicon-icon: darken($fpicon-hover, 10%) !default;
+$fpicon-colour: #000 !default;
+$headerimagepadding: 200px !default;
+
+// Import everything.
+@import "moodle";
+
+/**
+ * Navigation bar identity.
+ */
+.navbar-light {
+    background-color: $navbar-light-color;
+    border-bottom: $border-width solid #e5e5e5;
+
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .navbar-brand {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-right: $spacer * 2;
+        color: #fff;
+        background-color: $brand-primary;
+        @include hover-focus {
+            color: #fff;
+        }
+        &.has-logo {
+            color: $brand-primary;
+            background-color: transparent;
+            @include hover-focus {
+                color: $brand-primary;
+            }
+        }
+    }
+
+    .navbar-nav {
+        .nav-item + .nav-item {
+            margin-left: $spacer * 2;
+        }
+        .nav-link {
+            font-size: $font-size-sm;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+/**
+* Drawer Background Color force
+*/
+[data-region="drawer"] {
+    background-color: $drawer-bg !important;
+}
+
+
+/**
+ * Styling the dropdown menus.
+ */
+.dropdown-menu {
+    font-size: 14px;
+    border-radius: 0;
+    .dropdown-item {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        border-bottom: $border-width solid $dropdown-border-color;
+        &:last-child {
+            border-bottom: 0;
+        }
+    }
+    .dropdown-divider {
+        display: none;
+    }
+}
+
+/**
+ * User picture.
+ */
+.userpicture {
+    border-radius: 50%;
+}
+
+/**
+ * For background in content areas.
+ */
+#page.container-fluid {
+    padding: 0 (2 * $spacer);
+}
+
+#block-region-side-pre {
+    padding-left: 0;
+}
+
+/**
+ * Dashboard styling.
+ */
+#page-my-index {
+    #region-main {
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+    }
+}
+
+/**
+ * Blocks.
+ */
+.block-region .card-block {
+    .card-title {
+        padding-bottom: ($spacer/2);
+        font-size: 1.143rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+}
+
+/**
+ * Navigation.
+ */
+.block_navigation,
+.block_settings {
+    .block_tree .tree_item {
+        margin: ($spacer/2) 0;
+    }
+}
+
+/**
+ * Form styles.
+ */
+
+.form-group {
+    margin-top: ($spacer/2);
+}
+
+.form-inline .form-group {
+    margin-top: 0;
+}
+
+
+
+
+/*FORDSON */
+
+
+#page-header h1 {
+font-weight:600;
+color:#fff;
+}
+
+
+#page-header .headerfade {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.8+0,0.65+62,0.15+100 */
+background: -moz-linear-gradient(top,  rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.65) 62%, rgba(0,0,0,0.15) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.65) 62%,rgba(0,0,0,0.15) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.65) 62%,rgba(0,0,0,0.15) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#26000000',GradientType=0 ); /* IE6-9 */
+}
+
+.pagelayout-incourse #page-header .card {
+    height: initial;
+}
+
+#page-header .header-position {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.pagelayout-incourse #page-header .header-position {
+    position: initial;
+    bottom: 0;
+    width: 100%;
+}
+
+#page-header .card {
+    background-position: center;
+    background-size: cover;
+    height:$headerimagepadding;
+}
+
+.pagelayout-incourse #page-header .card {
+    height: initial;
+}
+
+#page-header .card-block {
+    bottom: 0;
+    width: 100%;
+}
+
+.pagelayout-incourse #page-header .card-block {
+    position: initial;
+    bottom: 0;
+    width: 100%;
+}
+
+#page-header .card-block {padding: .5rem .5rem; margin-bottom:0px}
+#page-header .card {margin-bottom:0px}
+
+.path-mod-assign [data-region="grading-navigation"] {
+    background-color: #fff;
+}
+
+.card {
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+  border: 1px solid rgb(255, 255, 255);
+}
+
+h3.sectionname {
+    padding: 10px;
+}
+
+/*.course-content ul li.section.main {
+    border-bottom: none;
+}
+
+.p-a-1 {
+    padding: 0rem 1rem!important;
+}*/
+
+.course-content ul.section {
+    border-left: 3px solid #f2f2f2;
+}
+
+h3.sectionname {
+    padding: 10px;
+    background-color: $gray-lightest;
+}
+
+
+.fpstartwrap {
+    margin:0px;
+    background-color:$fpstartwrap-bg;
+    border-radius: 5px;
+    text-align: center;
+}
+.fpstart {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 15px;
+    text-align: left;
+}
+.fpstart .iconset {
+  float:left;
+  display:block;
+}
+.fpicon {
+    display: inline-block;
+    margin: 0 2px;
+    padding: 5px;
+    width: 100px;
+    text-align: center;
+    vertical-align: top;
+    background-color: $fpicon-icon;
+    border-radius: 5px;
+}
+
+.card-title {
+    border-bottom: 1px solid $gray-dark;
+    border-top: 1px solid $gray-dark;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.fpicon:hover {
+    background-color: $fpicon-hover;
+    padding: 5px;
+    border-radius: 5px;
+}
+.fptextbox {
+    text-align: left;
+    padding: $spacer;
+}
+.fpicon a {color: $fpicon-colour;}
+
+[data-block="course_overview"] {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 0px;
+}
+
+.alertbox {
+    text-align:center;
+}
+.alertmessage {
+    display:inline-block;
+    background-color: $brand-warning;
+    border-radius:5px;
+    padding: 15px;
+    margin: 20px;
+}
+.alertmessage p{
+    margin-top: initial;
+    margin-bottom: initial;
+}

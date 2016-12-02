@@ -1,0 +1,53 @@
+<div class="fpstartwrap">
+{{#hasalert}}
+    <div class="alertbox">
+        <div class="alertmessage">
+        {{{alertbox}}}
+        </div>
+    </div>
+{{/hasalert}}
+<div style="clear:both;"></div>
+<div class="fpstart">
+    <div class="iconset">
+    {{#hasfpiconnav}}
+        {{#fpiconnav}}
+            {{#hasicon}}
+            <div class="fpicon">
+                <a href = {{{link}}} title = "{{{link}}}" alt="{{{link}}}" id="button">
+                    <div class="navicon" align="center">
+                        <i class="fa fa-3x fa-{{{linkicon}}}"></i>
+                    </div>
+                    {{{linktext}}}
+                </a>
+            </div>
+            {{/hasicon}}
+        {{/fpiconnav}}
+        {{/hasfpiconnav}}
+    </div>
+</div>
+</div>
+<div style="clear:both;"></div>
+{{#hasfptextbox}}
+    <div class="fptextbox">
+        {{{fptextbox}}}
+    </div>
+{{/hasfptextbox}}
+<div style="clear:both;"></div>
+
+<div class="markettiles">
+{{#hasmarkettiles}}
+    {{#markettiles}}
+    {{#hastile}}
+    <div class="col-xs-4">
+        <div class="market-tile">
+        <i class="fa fa-3x fa-{{{tileicon}}}"></i>
+        <h3>{{{title}}}</h3>
+        <p>{{{content}}}<p>
+        <a href = {{{buttonurl}}} title = "{{{buttontext}}}" alt="{{{buttontext}}}" id="button" target="{{{buttontarget}}}"> {{{buttontext}}} </a>
+        </div>
+    </div>
+    {{/hastile}}
+    {{/markettiles}}
+{{/hasmarkettiles}}
+</div>
+<div style="clear:both;"></div>
