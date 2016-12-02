@@ -1,25 +1,19 @@
-THEME_fordson
+THEME_Fordson
 ===========
 
-Theme_fordson is a child theme of Moodle's new core theme Boost.
+Fordson is a child theme for Moodle's core theme Boost.
 
 It is built on Boostrap4 and Mustache templates.
 
-In addition to Boost's preset settings, Fordson adds:
+Here are the main enhancements:
+* Presets - Both uploaded and a set of pre-installed presets to quickly adjust colors
+* Colours - A variety of color pickers to help customize and fine tune presets
+* Images - Custom Login, Page Header, Course Header, and Page Background image uploads
+* Social Icons - Quickly add all your social media buttons in the footer
+* Frontpage Wonderbox - Navigation Iconbar, Custom Textbox, Alertbox, Six Marketing Tiles
 
-1. Presets - presets added by ftp/ssh to the theme/scss/presets folder will
-be automatically added to the presets drop down, in addition to those uploaded
-via the user interface.
-2. Colours - additional brad colour pickers to fine tune the seleected presets,
-along with the standard pre/post raw scss custom settings.
-3. Content - Featuring custom content such as Navigation Icons, Six Marketing Spots, 
-a Footnote, and a Custom Textbox for the frontpage.
-4. Heading and images - add a page background image and a default heading background
-image - the heading image can be overridden at a course level by adding an image
-banner to the course summary files. A separate login page background image can also
-be added.
-5. Social networking icons - a panel of social icons can be created, including self-
-defined icons.
+The Fordson Moodle theme is named after the first one million dollar high school ever built in America. Fordson High School is stunningly beautiful with rich history and tradition. Built in a time when hand-crafted woodwork, marble and bronze statues, and attention to detail was the norm.  Now a Michigan Historical Site, Fordson High School is still one of the most beautiful schools in the United States.  
 
-A very special thanks to Richard Oelmann for his work on the Waxed theme 
-from which most of Fordson is based on.
+Like it's namesake school, the Fordson Moodle theme is hand crafted with care and attention to small details that help provide a stunningly simple and easy to use interface for students.  The frontpage wonderbox provides an area to help guide and instruct students.  They reach moodle, they are logged in, now what?  The frontpage wonderbox provides key features to help get the students enrolled in courses or interacting with their current courses quickly.
+
+Fordson is a child theme of Boost.  This means when Moodle updates the core Boost theme those changes will be applied to Fordson as well in most cases.
