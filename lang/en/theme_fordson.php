@@ -143,6 +143,8 @@ $string['footnote'] = 'Footnote.';
 $string['footnotedesc'] = 'Footnote content editor for main footer';
 $string['fptextbox'] = 'Frontpage Textbox';
 $string['fptextbox_desc'] = 'This textbox appears on the frontpage and is ideal for putting a welcome message.';
+$string['fptextboxlogout'] = 'Frontpage Textbox When Logged Out';
+$string['fptextboxlogout_desc'] = 'This textbox appears on the frontpage when logged out and is ideal for putting a welcome message to visitors who have not logged in yet.';
 
 //FP Icon Nav
 $string['navicon1'] = 'Custom Frontpage Icon One';

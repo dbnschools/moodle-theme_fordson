@@ -99,6 +99,11 @@ $headerimagepadding: 200px !default;
 // Import everything.
 @import "moodle";
 
+//Reset ridiculous min-height of regionmain from core
+#region-main > .card {
+    min-height: 3rem;
+}
+
 /**
  * Navigation bar identity.
  */
@@ -324,7 +329,7 @@ h3.sectionname {
 
 .fpstartwrap {
     margin:0px;
-    background-color:$fpstartwrap-bg;
+
     border-radius: 5px;
     text-align: center;
 }
@@ -333,6 +338,7 @@ h3.sectionname {
     border-radius: 5px;
     padding: 15px;
     text-align: left;
+    background-color:$fpstartwrap-bg;
 }
 .fpstart .iconset {
   float:left;

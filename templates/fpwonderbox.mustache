@@ -1,15 +1,7 @@
+{{#hasfpiconnav}}
 <div class="fpstartwrap">
-{{#hasalert}}
-    <div class="alertbox">
-        <div class="alertmessage">
-        {{{alertbox}}}
-        </div>
-    </div>
-{{/hasalert}}
-<div style="clear:both;"></div>
 <div class="fpstart">
     <div class="iconset">
-    {{#hasfpiconnav}}
         {{#fpiconnav}}
             {{#hasicon}}
             <div class="fpicon">
@@ -22,20 +14,37 @@
             </div>
             {{/hasicon}}
         {{/fpiconnav}}
-        {{/hasfpiconnav}}
     </div>
 </div>
 </div>
-<div style="clear:both;"></div>
+    <div style="clear:both;"></div>
+{{/hasfpiconnav}}
+
+{{#hasalert}}
+    <div class="alertbox">
+        <div class="alertmessage">
+        {{{alertbox}}}
+        </div>
+    </div>
+    <div style="clear:both;"></div>
+{{/hasalert}}
+
 {{#hasfptextbox}}
     <div class="fptextbox">
         {{{fptextbox}}}
     </div>
+    <div style="clear:both;"></div>
 {{/hasfptextbox}}
-<div style="clear:both;"></div>
 
-<div class="markettiles">
+{{#hasfptextboxlogout}}
+    <div class="fptextbox">
+        {{{fptextboxlogout}}}
+    </div>
+    <div style="clear:both;"></div>
+{{/hasfptextboxlogout}}
+
 {{#hasmarkettiles}}
+<div class="markettiles">
     {{#markettiles}}
     {{#hastile}}
     <div class="col-xs-4">
@@ -48,6 +57,8 @@
     </div>
     {{/hastile}}
     {{/markettiles}}
-{{/hasmarkettiles}}
 </div>
 <div style="clear:both;"></div>
+{{/hasmarkettiles}}
+
+

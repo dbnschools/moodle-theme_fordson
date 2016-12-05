@@ -812,14 +812,14 @@ class core_renderer extends \core_renderer {
     public function fp_wonderbox() {
         global $PAGE;
 
-        $hasnav1icon    = (empty($PAGE->theme->settings->nav1icon)) ? false : $PAGE->theme->settings->nav1icon;
-        $hasnav2icon     = (empty($PAGE->theme->settings->nav2icon )) ? false : $PAGE->theme->settings->nav2icon;
-        $hasnav3icon  = (empty($PAGE->theme->settings->nav3icon)) ? false : $PAGE->theme->settings->nav3icon;
-        $hasnav4icon    = (empty($PAGE->theme->settings->nav4icon)) ? false : $PAGE->theme->settings->nav4icon;
-        $hasnav5icon     = (empty($PAGE->theme->settings->nav5icon)) ? false : $PAGE->theme->settings->nav5icon;
-        $hasnav6icon      = (empty($PAGE->theme->settings->nav6icon)) ? false : $PAGE->theme->settings->nav6icon;
-        $hasnav7icon        = (empty($PAGE->theme->settings->nav7icon)) ? false : $PAGE->theme->settings->nav7icon;
-        $hasnav8icon   = (empty($PAGE->theme->settings->nav8icon)) ? false : $PAGE->theme->settings->nav8icon;
+        $hasnav1icon    = (empty($PAGE->theme->settings->nav1icon && isloggedin())) ? false : $PAGE->theme->settings->nav1icon;
+        $hasnav2icon     = (empty($PAGE->theme->settings->nav2icon && isloggedin())) ? false : $PAGE->theme->settings->nav2icon;
+        $hasnav3icon  = (empty($PAGE->theme->settings->nav3icon && isloggedin())) ? false : $PAGE->theme->settings->nav3icon;
+        $hasnav4icon    = (empty($PAGE->theme->settings->nav4icon && isloggedin())) ? false : $PAGE->theme->settings->nav4icon;
+        $hasnav5icon     = (empty($PAGE->theme->settings->nav5icon && isloggedin())) ? false : $PAGE->theme->settings->nav5icon;
+        $hasnav6icon      = (empty($PAGE->theme->settings->nav6icon && isloggedin())) ? false : $PAGE->theme->settings->nav6icon;
+        $hasnav7icon        = (empty($PAGE->theme->settings->nav7icon && isloggedin())) ? false : $PAGE->theme->settings->nav7icon;
+        $hasnav8icon   = (empty($PAGE->theme->settings->nav8icon && isloggedin())) ? false : $PAGE->theme->settings->nav8icon;
         $nav1buttonurl   = (empty($PAGE->theme->settings->nav1buttonurl)) ? false : $PAGE->theme->settings->nav1buttonurl;
         $nav2buttonurl   = (empty($PAGE->theme->settings->nav2buttonurl)) ? false : $PAGE->theme->settings->nav2buttonurl;
         $nav3buttonurl   = (empty($PAGE->theme->settings->nav3buttonurl)) ? false : $PAGE->theme->settings->nav3buttonurl;
@@ -836,7 +836,8 @@ class core_renderer extends \core_renderer {
         $nav6buttontext   = (empty($PAGE->theme->settings->nav6buttontext)) ? false : $PAGE->theme->settings->nav6buttontext;
         $nav7buttontext   = (empty($PAGE->theme->settings->nav7buttontext)) ? false : $PAGE->theme->settings->nav7buttontext;
         $nav8buttontext   = (empty($PAGE->theme->settings->nav8buttontext)) ? false : $PAGE->theme->settings->nav8buttontext;
-        $fptextbox  = (empty($PAGE->theme->settings->fptextbox)) ? false : $PAGE->theme->settings->fptextbox;
+        $fptextbox  = (empty($PAGE->theme->settings->fptextbox && isloggedin())) ? false : $PAGE->theme->settings->fptextbox;
+        $fptextboxlogout  = (empty($PAGE->theme->settings->fptextboxlogout && !isloggedin())) ? false : $PAGE->theme->settings->fptextboxlogout;
         $alertbox  = (empty($PAGE->theme->settings->alertbox)) ? false : $PAGE->theme->settings->alertbox;
 
         $hasmarketing1  = (empty($PAGE->theme->settings->marketing1)) ? false : $PAGE->theme->settings->marketing1;
@@ -883,10 +884,13 @@ class core_renderer extends \core_renderer {
 
         $fp_wonderboxcontext = [
 
-            'hasfptextbox' => (!empty($PAGE->theme->settings->fptextbox)),
+            'hasfptextbox' => (!empty($PAGE->theme->settings->fptextbox && isloggedin())),
             'fptextbox' => $fptextbox,
 
-            'hasalert' => (!empty($PAGE->theme->settings->alertbox)),
+            'hasfptextboxlogout' => (!empty($PAGE->theme->settings->fptextboxlogout)),
+            'fptextboxlogout' => $fptextboxlogout,
+
+            'hasalert' => (!empty($PAGE->theme->settings->alertbox && isloggedin())),
             'alertbox' => $alertbox,
 
             'hasmarkettiles' => ($hasmarketing1 || $hasmarketing2 || $hasmarketing3 || $hasmarketing4 || $hasmarketing5 || $hasmarketing6) ? true : false,

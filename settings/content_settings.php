@@ -36,6 +36,15 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    // Frontpage Textbox Logged Out.
+    $name = 'theme_fordson/fptextboxlogout';
+    $title = get_string('fptextboxlogout', 'theme_fordson');
+    $description = get_string('fptextboxlogout_desc', 'theme_fordson');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
     // Slert setting.
     $name = 'theme_fordson/alertbox';
     $title = get_string('alert', 'theme_fordson');
