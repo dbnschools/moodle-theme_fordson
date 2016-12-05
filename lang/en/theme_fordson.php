@@ -26,9 +26,9 @@
 defined('MOODLE_INTERNAL') || die();
 
 // Theme strings.
-$string['choosereadme'] = 'fordson is a modern highly-customisable theme. It is built on to the new Moodle Boost theme, using Bootstrap4 and Mustache templates.';
-$string['configtitle'] = 'fordson';
-$string['pluginname'] = 'fordson';
+$string['choosereadme'] = 'Fordson is designed with K-12 teachers and students in mind. Built, tested, and used in Dearborn Public Schools.  Fordson utilizes the new Moodle Boost theme, using Bootstrap4 and Mustache templates.';
+$string['configtitle'] = 'Fordson';
+$string['pluginname'] = 'Fordson';
 $string['region-side-pre'] = 'Right';
 $string['generalsettings'] = 'General settings';
 $string['advancedsettings'] = 'Advanced settings';
@@ -204,6 +204,10 @@ $string['marketingurltargetdesc'] = 'Choose how the link should be opened';
 $string['marketingurltargetself'] = 'Current Page';
 $string['marketingurltargetnew'] = 'New Page';
 $string['marketingurltargetparent'] = 'Parent Frame';
+$string['togglemarketing'] = 'Marketing Tile Position';
+$string['togglemarketing_desc'] = 'Determine where the marketing tiles will be located on the homepage.';
+$string['displaytop'] = 'Display at Top of Page';
+$string['displaybottom'] = 'Display at Bottom of Page';
 
 //Alerts
 $string['alert'] = 'Frontpage Alert';

@@ -5,6 +5,17 @@ defined('MOODLE_INTERNAL') || die();
 /* Marketing Spot Settings temp*/
 $page = new admin_settingpage('theme_fordson_marketing', get_string('marketingheading', 'theme_fordson'));
 
+    // Toggle FP Textbox Spots.
+    $name = 'theme_fordson/togglemarketing';
+    $title = get_string('togglemarketing' , 'theme_fordson');
+    $description = get_string('togglemarketing_desc', 'theme_fordson');
+    $displaytop = get_string('displaytop', 'theme_fordson');
+    $displaybottom = get_string('displaybottom', 'theme_fordson');
+    $default = '2';
+    $choices = array('1'=>$displaytop, '2'=>$displaybottom);
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
 
     // This is the descriptor for Marketing Spot One
     $name = 'theme_fordson/marketing1info';

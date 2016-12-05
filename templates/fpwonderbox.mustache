@@ -47,12 +47,14 @@
 <div class="markettiles">
     {{#markettiles}}
     {{#hastile}}
-    <div class="col-xs-4">
-        <div class="market-tile">
+    <div class="col-md-4">
+        <div class="market-tile {{{tileimage}}}">
+        <div class="marketcontent">
         <i class="fa fa-3x fa-{{{tileicon}}}"></i>
         <h3>{{{title}}}</h3>
         <p>{{{content}}}<p>
         <a href = {{{buttonurl}}} title = "{{{buttontext}}}" alt="{{{buttontext}}}" id="button" target="{{{buttontarget}}}"> {{{buttontext}}} </a>
+        </div>
         </div>
     </div>
     {{/hastile}}
@@ -60,5 +62,3 @@
 </div>
 <div style="clear:both;"></div>
 {{/hasmarkettiles}}
-
-

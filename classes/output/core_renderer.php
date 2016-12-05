@@ -840,54 +840,60 @@ class core_renderer extends \core_renderer {
         $fptextboxlogout  = (empty($PAGE->theme->settings->fptextboxlogout && !isloggedin())) ? false : $PAGE->theme->settings->fptextboxlogout;
         $alertbox  = (empty($PAGE->theme->settings->alertbox)) ? false : $PAGE->theme->settings->alertbox;
 
-        $hasmarketing1  = (empty($PAGE->theme->settings->marketing1)) ? false : $PAGE->theme->settings->marketing1;
+        $hasmarketing1  = (empty($PAGE->theme->settings->marketing1 && $PAGE->theme->settings->togglemarketing == 1)) ? false : $PAGE->theme->settings->marketing1;
         $marketing1content  = (empty($PAGE->theme->settings->marketing1content)) ? false : $PAGE->theme->settings->marketing1content;
         $marketing1buttontext  = (empty($PAGE->theme->settings->marketing1buttontext)) ? false : $PAGE->theme->settings->marketing1buttontext;
         $marketing1buttonurl  = (empty($PAGE->theme->settings->marketing1buttonurl)) ? false : $PAGE->theme->settings->marketing1buttonurl;
         $marketing1target  = (empty($PAGE->theme->settings->marketing1target)) ? false : $PAGE->theme->settings->marketing1target;
         $marketing1icon  = (empty($PAGE->theme->settings->marketing1icon)) ? false : $PAGE->theme->settings->marketing1icon;
+        $marketing1image = (empty($PAGE->theme->settings->marketing1image)) ? false : 'marketing1image';
 
-        $hasmarketing2  = (empty($PAGE->theme->settings->marketing2)) ? false : $PAGE->theme->settings->marketing2;
+        $hasmarketing2  = (empty($PAGE->theme->settings->marketing2 && $PAGE->theme->settings->togglemarketing == 1)) ? false : $PAGE->theme->settings->marketing2;
         $marketing2content  = (empty($PAGE->theme->settings->marketing2content)) ? false : $PAGE->theme->settings->marketing2content;
         $marketing2buttontext  = (empty($PAGE->theme->settings->marketing2buttontext)) ? false : $PAGE->theme->settings->marketing2buttontext;
         $marketing2buttonurl  = (empty($PAGE->theme->settings->marketing2buttonurl)) ? false : $PAGE->theme->settings->marketing2buttonurl;
         $marketing2target  = (empty($PAGE->theme->settings->marketing2target)) ? false : $PAGE->theme->settings->marketing2target;
         $marketing2icon  = (empty($PAGE->theme->settings->marketing2icon)) ? false : $PAGE->theme->settings->marketing2icon;
+        $marketing2image = (empty($PAGE->theme->settings->marketing2image)) ? false : 'marketing2image';
 
-        $hasmarketing3  = (empty($PAGE->theme->settings->marketing3)) ? false : $PAGE->theme->settings->marketing3;
+        $hasmarketing3  = (empty($PAGE->theme->settings->marketing3 && $PAGE->theme->settings->togglemarketing == 1)) ? false : $PAGE->theme->settings->marketing3;
         $marketing3content  = (empty($PAGE->theme->settings->marketing3content)) ? false : $PAGE->theme->settings->marketing3content;
         $marketing3buttontext  = (empty($PAGE->theme->settings->marketing3buttontext)) ? false : $PAGE->theme->settings->marketing3buttontext;
         $marketing3buttonurl  = (empty($PAGE->theme->settings->marketing3buttonurl)) ? false : $PAGE->theme->settings->marketing3buttonurl;
         $marketing3target  = (empty($PAGE->theme->settings->marketing3target)) ? false : $PAGE->theme->settings->marketing3target;
         $marketing3icon  = (empty($PAGE->theme->settings->marketing3icon)) ? false : $PAGE->theme->settings->marketing3icon;
+        $marketing3image = (empty($PAGE->theme->settings->marketing3image)) ? false : 'marketing3image';
 
-        $hasmarketing4  = (empty($PAGE->theme->settings->marketing4)) ? false : $PAGE->theme->settings->marketing4;
+        $hasmarketing4  = (empty($PAGE->theme->settings->marketing4 && $PAGE->theme->settings->togglemarketing == 1)) ? false : $PAGE->theme->settings->marketing4;
         $marketing4content  = (empty($PAGE->theme->settings->marketing4content)) ? false : $PAGE->theme->settings->marketing4content;
         $marketing4buttontext  = (empty($PAGE->theme->settings->marketing4buttontext)) ? false : $PAGE->theme->settings->marketing4buttontext;
         $marketing4buttonurl  = (empty($PAGE->theme->settings->marketing4buttonurl)) ? false : $PAGE->theme->settings->marketing4buttonurl;
         $marketing4target  = (empty($PAGE->theme->settings->marketing4target)) ? false : $PAGE->theme->settings->marketing4target;
         $marketing4icon  = (empty($PAGE->theme->settings->marketing4icon)) ? false : $PAGE->theme->settings->marketing4icon;
+        $marketing4image = (empty($PAGE->theme->settings->marketing4image)) ? false : 'marketing4image'; 
 
-        $hasmarketing5  = (empty($PAGE->theme->settings->marketing5)) ? false : $PAGE->theme->settings->marketing5;
+        $hasmarketing5  = (empty($PAGE->theme->settings->marketing5 && $PAGE->theme->settings->togglemarketing == 1)) ? false : $PAGE->theme->settings->marketing5;
         $marketing5content  = (empty($PAGE->theme->settings->marketing5content)) ? false : $PAGE->theme->settings->marketing5content;
         $marketing5buttontext  = (empty($PAGE->theme->settings->marketing5buttontext)) ? false : $PAGE->theme->settings->marketing5buttontext;
         $marketing5buttonurl  = (empty($PAGE->theme->settings->marketing5buttonurl)) ? false : $PAGE->theme->settings->marketing5buttonurl;
         $marketing5target  = (empty($PAGE->theme->settings->marketing5target)) ? false : $PAGE->theme->settings->marketing5target;
         $marketing5icon  = (empty($PAGE->theme->settings->marketing5icon)) ? false : $PAGE->theme->settings->marketing5icon;
+        $marketing5image = (empty($PAGE->theme->settings->marketing5image)) ? false : 'marketing5image';
 
-        $hasmarketing6  = (empty($PAGE->theme->settings->marketing6)) ? false : $PAGE->theme->settings->marketing6;
+        $hasmarketing6  = (empty($PAGE->theme->settings->marketing6 && $PAGE->theme->settings->togglemarketing == 1)) ? false : $PAGE->theme->settings->marketing6;
         $marketing6content  = (empty($PAGE->theme->settings->marketing6content)) ? false : $PAGE->theme->settings->marketing6content;
         $marketing6buttontext  = (empty($PAGE->theme->settings->marketing6buttontext)) ? false : $PAGE->theme->settings->marketing6buttontext;
         $marketing6buttonurl  = (empty($PAGE->theme->settings->marketing6buttonurl)) ? false : $PAGE->theme->settings->marketing6buttonurl;
         $marketing6target  = (empty($PAGE->theme->settings->marketing6target)) ? false : $PAGE->theme->settings->marketing6target;
         $marketing6icon  = (empty($PAGE->theme->settings->marketing6icon)) ? false : $PAGE->theme->settings->marketing6icon;
+        $marketing6image = (empty($PAGE->theme->settings->marketing6image)) ? false : 'marketing6image';
 
         $fp_wonderboxcontext = [
 
             'hasfptextbox' => (!empty($PAGE->theme->settings->fptextbox && isloggedin())),
             'fptextbox' => $fptextbox,
 
-            'hasfptextboxlogout' => (!empty($PAGE->theme->settings->fptextboxlogout)),
+            'hasfptextboxlogout' => (!empty($PAGE->theme->settings->fptextboxlogout && !isloggedin())),
             'fptextboxlogout' => $fptextboxlogout,
 
             'hasalert' => (!empty($PAGE->theme->settings->alertbox && isloggedin())),
@@ -895,12 +901,12 @@ class core_renderer extends \core_renderer {
 
             'hasmarkettiles' => ($hasmarketing1 || $hasmarketing2 || $hasmarketing3 || $hasmarketing4 || $hasmarketing5 || $hasmarketing6) ? true : false,
             'markettiles' => array(
-                array('hastile' => $hasmarketing1, 'tileicon' => $marketing1icon, 'content' => $marketing1content, 'title' => $hasmarketing1, 'buttontext' => $marketing1buttontext, 'buttonurl' => $marketing1buttonurl, 'buttontarget' => $marketing1target),
-                array('hastile' => $hasmarketing2, 'tileicon' => $marketing2icon, 'content' => $marketing2content, 'title' => $hasmarketing2, 'buttontext' => $marketing2buttontext, 'buttonurl' => $marketing2buttonurl, 'buttontarget' => $marketing2target),
-                array('hastile' => $hasmarketing3, 'tileicon' => $marketing3icon, 'content' => $marketing3content, 'title' => $hasmarketing3, 'buttontext' => $marketing3buttontext, 'buttonurl' => $marketing3buttonurl, 'buttontarget' => $marketing3target),
-                array('hastile' => $hasmarketing4, 'tileicon' => $marketing4icon, 'content' => $marketing4content, 'title' => $hasmarketing4, 'buttontext' => $marketing4buttontext, 'buttonurl' => $marketing4buttonurl, 'buttontarget' => $marketing4target),
-                array('hastile' => $hasmarketing5, 'tileicon' => $marketing5icon, 'content' => $marketing5content, 'title' => $hasmarketing5, 'buttontext' => $marketing5buttontext, 'buttonurl' => $marketing5buttonurl, 'buttontarget' => $marketing5target),
-                array('hastile' => $hasmarketing6, 'tileicon' => $marketing6icon, 'content' => $marketing6content, 'title' => $hasmarketing6, 'buttontext' => $marketing6buttontext, 'buttonurl' => $marketing6buttonurl, 'buttontarget' => $marketing6target),
+                array('hastile' => $hasmarketing1, 'tileicon' => $marketing1icon, 'tileimage' => $marketing1image, 'content' => $marketing1content, 'title' => $hasmarketing1, 'buttontext' => $marketing1buttontext, 'buttonurl' => $marketing1buttonurl, 'buttontarget' => $marketing1target),
+                array('hastile' => $hasmarketing2, 'tileicon' => $marketing2icon, 'tileimage' => $marketing2image, 'content' => $marketing2content, 'title' => $hasmarketing2, 'buttontext' => $marketing2buttontext, 'buttonurl' => $marketing2buttonurl, 'buttontarget' => $marketing2target),
+                array('hastile' => $hasmarketing3, 'tileicon' => $marketing3icon, 'tileimage' => $marketing3image, 'content' => $marketing3content, 'title' => $hasmarketing3, 'buttontext' => $marketing3buttontext, 'buttonurl' => $marketing3buttonurl, 'buttontarget' => $marketing3target),
+                array('hastile' => $hasmarketing4, 'tileicon' => $marketing4icon, 'tileimage' => $marketing4image, 'content' => $marketing4content, 'title' => $hasmarketing4, 'buttontext' => $marketing4buttontext, 'buttonurl' => $marketing4buttonurl, 'buttontarget' => $marketing4target),
+                array('hastile' => $hasmarketing5, 'tileicon' => $marketing5icon, 'tileimage' => $marketing5image, 'content' => $marketing5content, 'title' => $hasmarketing5, 'buttontext' => $marketing5buttontext, 'buttonurl' => $marketing5buttonurl, 'buttontarget' => $marketing5target),
+                array('hastile' => $hasmarketing6, 'tileicon' => $marketing6icon, 'tileimage' => $marketing6image, 'content' => $marketing6content, 'title' => $hasmarketing6, 'buttontext' => $marketing6buttontext, 'buttonurl' => $marketing6buttonurl, 'buttontarget' => $marketing6target),
             ),
 
             // If any of the above social networks are true, sets this to true.
@@ -915,10 +921,108 @@ class core_renderer extends \core_renderer {
                 array('hasicon' => $hasnav6icon, 'linkicon' => $hasnav6icon, 'link' => $nav6buttonurl, 'linktext' => $nav6buttontext),
                 array('hasicon' => $hasnav7icon, 'linkicon' => $hasnav7icon, 'link' => $nav7buttonurl, 'linktext' => $nav7buttontext),
                 array('hasicon' => $hasnav8icon, 'linkicon' => $hasnav8icon, 'link' => $nav8buttonurl, 'linktext' => $nav8buttontext),
-            )
+            ),
         ];
 
         return $this->render_from_template('theme_fordson/fpwonderbox', $fp_wonderboxcontext);
+
+    }
+
+    public function fp_marketingtiles() {
+        global $PAGE;
+
+        $hasnav1icon    = (empty($PAGE->theme->settings->nav1icon && isloggedin())) ? false : $PAGE->theme->settings->nav1icon;
+        $hasnav2icon     = (empty($PAGE->theme->settings->nav2icon && isloggedin())) ? false : $PAGE->theme->settings->nav2icon;
+        $hasnav3icon  = (empty($PAGE->theme->settings->nav3icon && isloggedin())) ? false : $PAGE->theme->settings->nav3icon;
+        $hasnav4icon    = (empty($PAGE->theme->settings->nav4icon && isloggedin())) ? false : $PAGE->theme->settings->nav4icon;
+        $hasnav5icon     = (empty($PAGE->theme->settings->nav5icon && isloggedin())) ? false : $PAGE->theme->settings->nav5icon;
+        $hasnav6icon      = (empty($PAGE->theme->settings->nav6icon && isloggedin())) ? false : $PAGE->theme->settings->nav6icon;
+        $hasnav7icon        = (empty($PAGE->theme->settings->nav7icon && isloggedin())) ? false : $PAGE->theme->settings->nav7icon;
+        $hasnav8icon   = (empty($PAGE->theme->settings->nav8icon && isloggedin())) ? false : $PAGE->theme->settings->nav8icon;
+        $nav1buttonurl   = (empty($PAGE->theme->settings->nav1buttonurl)) ? false : $PAGE->theme->settings->nav1buttonurl;
+        $nav2buttonurl   = (empty($PAGE->theme->settings->nav2buttonurl)) ? false : $PAGE->theme->settings->nav2buttonurl;
+        $nav3buttonurl   = (empty($PAGE->theme->settings->nav3buttonurl)) ? false : $PAGE->theme->settings->nav3buttonurl;
+        $nav4buttonurl   = (empty($PAGE->theme->settings->nav4buttonurl)) ? false : $PAGE->theme->settings->nav4buttonurl;
+        $nav5buttonurl   = (empty($PAGE->theme->settings->nav5buttonurl)) ? false : $PAGE->theme->settings->nav5buttonurl;
+        $nav6buttonurl   = (empty($PAGE->theme->settings->nav6buttonurl)) ? false : $PAGE->theme->settings->nav6buttonurl;
+        $nav7buttonurl   = (empty($PAGE->theme->settings->nav7buttonurl)) ? false : $PAGE->theme->settings->nav7buttonurl;
+        $nav8buttonurl   = (empty($PAGE->theme->settings->nav8buttonurl)) ? false : $PAGE->theme->settings->nav8buttonurl;
+        $nav1buttontext   = (empty($PAGE->theme->settings->nav1buttontext)) ? false : $PAGE->theme->settings->nav1buttontext;
+        $nav2buttontext   = (empty($PAGE->theme->settings->nav2buttontext)) ? false : $PAGE->theme->settings->nav2buttontext;
+        $nav3buttontext   = (empty($PAGE->theme->settings->nav3buttontext)) ? false : $PAGE->theme->settings->nav3buttontext;
+        $nav4buttontext   = (empty($PAGE->theme->settings->nav4buttontext)) ? false : $PAGE->theme->settings->nav4buttontext;
+        $nav5buttontext   = (empty($PAGE->theme->settings->nav5buttontext)) ? false : $PAGE->theme->settings->nav5buttontext;
+        $nav6buttontext   = (empty($PAGE->theme->settings->nav6buttontext)) ? false : $PAGE->theme->settings->nav6buttontext;
+        $nav7buttontext   = (empty($PAGE->theme->settings->nav7buttontext)) ? false : $PAGE->theme->settings->nav7buttontext;
+        $nav8buttontext   = (empty($PAGE->theme->settings->nav8buttontext)) ? false : $PAGE->theme->settings->nav8buttontext;
+        $fptextbox  = (empty($PAGE->theme->settings->fptextbox && isloggedin())) ? false : $PAGE->theme->settings->fptextbox;
+        $fptextboxlogout  = (empty($PAGE->theme->settings->fptextboxlogout && !isloggedin())) ? false : $PAGE->theme->settings->fptextboxlogout;
+        $alertbox  = (empty($PAGE->theme->settings->alertbox)) ? false : $PAGE->theme->settings->alertbox;
+
+        $hasmarketing1  = (empty($PAGE->theme->settings->marketing1 && $PAGE->theme->settings->togglemarketing == 2)) ? false : $PAGE->theme->settings->marketing1;
+        $marketing1content  = (empty($PAGE->theme->settings->marketing1content)) ? false : $PAGE->theme->settings->marketing1content;
+        $marketing1buttontext  = (empty($PAGE->theme->settings->marketing1buttontext)) ? false : $PAGE->theme->settings->marketing1buttontext;
+        $marketing1buttonurl  = (empty($PAGE->theme->settings->marketing1buttonurl)) ? false : $PAGE->theme->settings->marketing1buttonurl;
+        $marketing1target  = (empty($PAGE->theme->settings->marketing1target)) ? false : $PAGE->theme->settings->marketing1target;
+        $marketing1icon  = (empty($PAGE->theme->settings->marketing1icon)) ? false : $PAGE->theme->settings->marketing1icon;
+        $marketing1image = (empty($PAGE->theme->settings->marketing1image)) ? false : 'marketing1image';
+
+        $hasmarketing2  = (empty($PAGE->theme->settings->marketing2 && $PAGE->theme->settings->togglemarketing == 2)) ? false : $PAGE->theme->settings->marketing2;
+        $marketing2content  = (empty($PAGE->theme->settings->marketing2content)) ? false : $PAGE->theme->settings->marketing2content;
+        $marketing2buttontext  = (empty($PAGE->theme->settings->marketing2buttontext)) ? false : $PAGE->theme->settings->marketing2buttontext;
+        $marketing2buttonurl  = (empty($PAGE->theme->settings->marketing2buttonurl)) ? false : $PAGE->theme->settings->marketing2buttonurl;
+        $marketing2target  = (empty($PAGE->theme->settings->marketing2target)) ? false : $PAGE->theme->settings->marketing2target;
+        $marketing2icon  = (empty($PAGE->theme->settings->marketing2icon)) ? false : $PAGE->theme->settings->marketing2icon;
+        $marketing2image = (empty($PAGE->theme->settings->marketing2image)) ? false : 'marketing2image';
+
+        $hasmarketing3  = (empty($PAGE->theme->settings->marketing3 && $PAGE->theme->settings->togglemarketing == 2)) ? false : $PAGE->theme->settings->marketing3;
+        $marketing3content  = (empty($PAGE->theme->settings->marketing3content)) ? false : $PAGE->theme->settings->marketing3content;
+        $marketing3buttontext  = (empty($PAGE->theme->settings->marketing3buttontext)) ? false : $PAGE->theme->settings->marketing3buttontext;
+        $marketing3buttonurl  = (empty($PAGE->theme->settings->marketing3buttonurl)) ? false : $PAGE->theme->settings->marketing3buttonurl;
+        $marketing3target  = (empty($PAGE->theme->settings->marketing3target)) ? false : $PAGE->theme->settings->marketing3target;
+        $marketing3icon  = (empty($PAGE->theme->settings->marketing3icon)) ? false : $PAGE->theme->settings->marketing3icon;
+        $marketing3image = (empty($PAGE->theme->settings->marketing3image)) ? false : 'marketing3image';
+
+        $hasmarketing4  = (empty($PAGE->theme->settings->marketing4 && $PAGE->theme->settings->togglemarketing == 2)) ? false : $PAGE->theme->settings->marketing4;
+        $marketing4content  = (empty($PAGE->theme->settings->marketing4content)) ? false : $PAGE->theme->settings->marketing4content;
+        $marketing4buttontext  = (empty($PAGE->theme->settings->marketing4buttontext)) ? false : $PAGE->theme->settings->marketing4buttontext;
+        $marketing4buttonurl  = (empty($PAGE->theme->settings->marketing4buttonurl)) ? false : $PAGE->theme->settings->marketing4buttonurl;
+        $marketing4target  = (empty($PAGE->theme->settings->marketing4target)) ? false : $PAGE->theme->settings->marketing4target;
+        $marketing4icon  = (empty($PAGE->theme->settings->marketing4icon)) ? false : $PAGE->theme->settings->marketing4icon;
+        $marketing4image = (empty($PAGE->theme->settings->marketing4image)) ? false : 'marketing4image'; 
+
+        $hasmarketing5  = (empty($PAGE->theme->settings->marketing5 && $PAGE->theme->settings->togglemarketing == 2)) ? false : $PAGE->theme->settings->marketing5;
+        $marketing5content  = (empty($PAGE->theme->settings->marketing5content)) ? false : $PAGE->theme->settings->marketing5content;
+        $marketing5buttontext  = (empty($PAGE->theme->settings->marketing5buttontext)) ? false : $PAGE->theme->settings->marketing5buttontext;
+        $marketing5buttonurl  = (empty($PAGE->theme->settings->marketing5buttonurl)) ? false : $PAGE->theme->settings->marketing5buttonurl;
+        $marketing5target  = (empty($PAGE->theme->settings->marketing5target)) ? false : $PAGE->theme->settings->marketing5target;
+        $marketing5icon  = (empty($PAGE->theme->settings->marketing5icon)) ? false : $PAGE->theme->settings->marketing5icon;
+        $marketing5image = (empty($PAGE->theme->settings->marketing5image)) ? false : 'marketing5image';
+
+        $hasmarketing6  = (empty($PAGE->theme->settings->marketing6 && $PAGE->theme->settings->togglemarketing == 2)) ? false : $PAGE->theme->settings->marketing6;
+        $marketing6content  = (empty($PAGE->theme->settings->marketing6content)) ? false : $PAGE->theme->settings->marketing6content;
+        $marketing6buttontext  = (empty($PAGE->theme->settings->marketing6buttontext)) ? false : $PAGE->theme->settings->marketing6buttontext;
+        $marketing6buttonurl  = (empty($PAGE->theme->settings->marketing6buttonurl)) ? false : $PAGE->theme->settings->marketing6buttonurl;
+        $marketing6target  = (empty($PAGE->theme->settings->marketing6target)) ? false : $PAGE->theme->settings->marketing6target;
+        $marketing6icon  = (empty($PAGE->theme->settings->marketing6icon)) ? false : $PAGE->theme->settings->marketing6icon;
+        $marketing6image = (empty($PAGE->theme->settings->marketing6image)) ? false : 'marketing6image';
+
+        $fp_marketingtiles = [
+
+
+            'hasmarkettiles' => ($hasmarketing1 || $hasmarketing2 || $hasmarketing3 || $hasmarketing4 || $hasmarketing5 || $hasmarketing6) ? true : false,
+            'markettiles' => array(
+                array('hastile' => $hasmarketing1, 'tileicon' => $marketing1icon, 'tileimage' => $marketing1image, 'content' => $marketing1content, 'title' => $hasmarketing1, 'buttontext' => $marketing1buttontext, 'buttonurl' => $marketing1buttonurl, 'buttontarget' => $marketing1target),
+                array('hastile' => $hasmarketing2, 'tileicon' => $marketing2icon, 'tileimage' => $marketing2image, 'content' => $marketing2content, 'title' => $hasmarketing2, 'buttontext' => $marketing2buttontext, 'buttonurl' => $marketing2buttonurl, 'buttontarget' => $marketing2target),
+                array('hastile' => $hasmarketing3, 'tileicon' => $marketing3icon, 'tileimage' => $marketing3image, 'content' => $marketing3content, 'title' => $hasmarketing3, 'buttontext' => $marketing3buttontext, 'buttonurl' => $marketing3buttonurl, 'buttontarget' => $marketing3target),
+                array('hastile' => $hasmarketing4, 'tileicon' => $marketing4icon, 'tileimage' => $marketing4image, 'content' => $marketing4content, 'title' => $hasmarketing4, 'buttontext' => $marketing4buttontext, 'buttonurl' => $marketing4buttonurl, 'buttontarget' => $marketing4target),
+                array('hastile' => $hasmarketing5, 'tileicon' => $marketing5icon, 'tileimage' => $marketing5image, 'content' => $marketing5content, 'title' => $hasmarketing5, 'buttontext' => $marketing5buttontext, 'buttonurl' => $marketing5buttonurl, 'buttontarget' => $marketing5target),
+                array('hastile' => $hasmarketing6, 'tileicon' => $marketing6icon, 'tileimage' => $marketing6image, 'content' => $marketing6content, 'title' => $hasmarketing6, 'buttontext' => $marketing6buttontext, 'buttonurl' => $marketing6buttonurl, 'buttontarget' => $marketing6target),
+            ),
+
+        ];
+
+        return $this->render_from_template('theme_fordson/fpmarkettiles', $fp_marketingtiles);
 
     }
 

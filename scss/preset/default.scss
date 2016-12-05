@@ -95,6 +95,12 @@ $fpicon-hover: #fff !default;
 $fpicon-icon: darken($fpicon-hover, 10%) !default;
 $fpicon-colour: #000 !default;
 $headerimagepadding: 200px !default;
+$marketing1image: #fff !default;
+$marketing2image: #fff !default;
+$marketing3image: #fff !default;
+$marketing4image: #fff !default;
+$marketing5image: #fff !default;
+$marketing6image: #fff !default;
 
 // Import everything.
 @import "moodle";
@@ -307,22 +313,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', e
 
 h3.sectionname {
     padding: 10px;
-}
-
-/*.course-content ul li.section.main {
-    border-bottom: none;
-}
-
-.p-a-1 {
-    padding: 0rem 1rem!important;
-}*/
-
-.course-content ul.section {
-    border-left: 3px solid #f2f2f2;
-}
-
-h3.sectionname {
-    padding: 10px;
     background-color: $gray-lightest;
 }
 
@@ -346,7 +336,7 @@ h3.sectionname {
 }
 .fpicon {
     display: inline-block;
-    margin: 0 2px;
+    margin: 5px;
     padding: 5px;
     width: 100px;
     text-align: center;
@@ -393,3 +383,7 @@ h3.sectionname {
     margin-top: initial;
     margin-bottom: initial;
 }
+
+.market-tile {padding:4rem 0rem; background-color:$brand-primary;}
+.markettiles .col-md-4 {padding: 0px; margin: 0px;}
+.marketcontent{padding:$spacer; margin:10px; border:1px solid; border-radius: 4px; background-color: $breadcrumb-bg;}
