@@ -5,10 +5,11 @@
     <div class="col-md-4">
         <div class="market-tile {{{tileimage}}}">
         <div class="marketcontent">
-        <i class="fa fa-3x fa-{{{tileicon}}}"></i>
-        <h3>{{{title}}}</h3>
+        <h3 class="card-title">{{{title}}}</h3>
         <p>{{{content}}}<p>
-        <a href = {{{buttonurl}}} title = "{{{buttontext}}}" alt="{{{buttontext}}}" id="button" target="{{{buttontarget}}}"> {{{buttontext}}} </a>
+        {{#hasbutton}}
+        {{{button}}}
+        {{/hasbutton}}
         </div>
         </div>
     </div>

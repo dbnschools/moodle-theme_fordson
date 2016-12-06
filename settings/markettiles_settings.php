@@ -56,14 +56,6 @@ $page = new admin_settingpage('theme_fordson_marketing', get_string('marketinghe
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
-
-    $name = 'theme_fordson/marketing1icon';
-    $title = get_string('marketingicon', 'theme_fordson');
-    $description = get_string('marketingicondesc', 'theme_fordson');
-    $default = 'star';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
     
     $name = 'theme_fordson/marketing1buttonurl';
     $title = get_string('marketingbuttonurl', 'theme_fordson');
@@ -121,14 +113,6 @@ $page = new admin_settingpage('theme_fordson_marketing', get_string('marketinghe
     $title = get_string('marketingbuttontext', 'theme_fordson');
     $description = get_string('marketingbuttontextdesc', 'theme_fordson');
     $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
-    $name = 'theme_fordson/marketing2icon';
-    $title = get_string('marketingicon', 'theme_fordson');
-    $description = get_string('marketingicondesc', 'theme_fordson');
-    $default = 'star';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
@@ -192,14 +176,6 @@ $page = new admin_settingpage('theme_fordson_marketing', get_string('marketinghe
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
-    
-    $name = 'theme_fordson/marketing3icon';
-    $title = get_string('marketingicon', 'theme_fordson');
-    $description = get_string('marketingicondesc', 'theme_fordson');
-    $default = 'star';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
 
     $name = 'theme_fordson/marketing3buttonurl';
     $title = get_string('marketingbuttonurl', 'theme_fordson');
@@ -257,14 +233,6 @@ $page = new admin_settingpage('theme_fordson_marketing', get_string('marketinghe
     $title = get_string('marketingbuttontext', 'theme_fordson');
     $description = get_string('marketingbuttontextdesc', 'theme_fordson');
     $default = '';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
-    $name = 'theme_fordson/marketing4icon';
-    $title = get_string('marketingicon', 'theme_fordson');
-    $description = get_string('marketingicondesc', 'theme_fordson');
-    $default = 'star';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
@@ -329,14 +297,6 @@ $page = new admin_settingpage('theme_fordson_marketing', get_string('marketinghe
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
-
-    $name = 'theme_fordson/marketing5icon';
-    $title = get_string('marketingicon', 'theme_fordson');
-    $description = get_string('marketingicondesc', 'theme_fordson');
-    $default = 'star';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
     
     $name = 'theme_fordson/marketing5buttonurl';
     $title = get_string('marketingbuttonurl', 'theme_fordson');
@@ -397,14 +357,6 @@ $page = new admin_settingpage('theme_fordson_marketing', get_string('marketinghe
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
-
-    $name = 'theme_fordson/marketing6icon';
-    $title = get_string('marketingicon', 'theme_fordson');
-    $description = get_string('marketingicondesc', 'theme_fordson');
-    $default = 'star';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
     
     $name = 'theme_fordson/marketing6buttonurl';
     $title = get_string('marketingbuttonurl', 'theme_fordson');
@@ -426,7 +378,5 @@ $page = new admin_settingpage('theme_fordson_marketing', get_string('marketinghe
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
-
-    
 // Must add the page after definiting all the settings!
 $settings->add($page);

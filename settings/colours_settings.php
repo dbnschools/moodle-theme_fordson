@@ -134,6 +134,28 @@ $page->add($setting);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+
+
+    // @breadcrumbBackground setting.
+    $name = 'theme_fordson/markettextbg';
+    $title = get_string('markettextbg', 'theme_fordson');
+    $description = get_string('markettextbg_desc', 'theme_fordson');
+    $default = 'rgba(255, 255, 255, 0.9)';
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // @breadcrumbBackground setting.
+    $name = 'theme_fordson/marketiconbg';
+    $title = get_string('marketiconbg', 'theme_fordson');
+    $description = get_string('marketiconbg_desc', 'theme_fordson');
+    $default = '#ffffff';
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+
+
     // @breadcrumbBackground setting.
     $name = 'theme_fordson/cardbkg';
     $title = get_string('cardbkg', 'theme_fordson');

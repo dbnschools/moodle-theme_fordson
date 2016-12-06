@@ -101,6 +101,10 @@ $marketing3image: #fff !default;
 $marketing4image: #fff !default;
 $marketing5image: #fff !default;
 $marketing6image: #fff !default;
+$marketiconbg: #f2f2f2 !default;
+$markettextbg: rgba(255, 255, 255, 0.8) !default;
+$markettile-radius: 5px !default;
+
 
 // Import everything.
 @import "moodle";
@@ -247,7 +251,6 @@ $marketing6image: #fff !default;
 
 /*FORDSON */
 
-
 #page-header h1 {
 font-weight:600;
 color:#fff;
@@ -279,6 +282,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', e
 }
 
 #page-header .card {
+    background-image: url([[pix:theme|headerbg]]);
     background-position: center;
     background-size: cover;
     height:$headerimagepadding;
@@ -311,11 +315,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', e
   border: 1px solid rgb(255, 255, 255);
 }
 
+.forumpost {
+    background-color: darken($card-bg, 3%);
+}
+
 h3.sectionname {
     padding: 10px;
     background-color: $gray-lightest;
 }
-
 
 .fpstartwrap {
     margin:0px;
@@ -384,6 +391,16 @@ h3.sectionname {
     margin-bottom: initial;
 }
 
-.market-tile {padding:4rem 0rem; background-color:$brand-primary;}
-.markettiles .col-md-4 {padding: 0px; margin: 0px;}
-.marketcontent{padding:$spacer; margin:10px; border:1px solid; border-radius: 4px; background-color: $breadcrumb-bg;}
+.market-tile {
+    margin: 1rem;
+    padding: 9rem 0rem 0rem 0rem;
+    background-color: #3ca5fb;
+}
+
+.markettiles .col-md-4 {padding: 0px; margin: 0px; text-align:center;}
+.marketcontent{padding:1rem 0rem; background-color: $markettextbg;}
+
+#page-badges-mybadges .fpwonderbox {
+    display:none;
+}
+body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-size:cover; background-position:center;}

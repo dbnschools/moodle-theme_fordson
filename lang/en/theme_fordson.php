@@ -208,6 +208,10 @@ $string['togglemarketing'] = 'Marketing Tile Position';
 $string['togglemarketing_desc'] = 'Determine where the marketing tiles will be located on the homepage.';
 $string['displaytop'] = 'Display at Top of Page';
 $string['displaybottom'] = 'Display at Bottom of Page';
+$string['markettextbg'] = 'Marketing Tile Text Background';
+$string['markettextbg_desc'] = 'Background colour for the text area of the marketing tiles.';
+$string['marketiconbg'] = 'Marketing Tile Icon Background';
+$string['marketiconbg_desc'] = 'Background colour for the circular icon in the marketing tiles.';
 
 //Alerts
 $string['alert'] = 'Frontpage Alert';

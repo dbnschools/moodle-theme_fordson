@@ -101,7 +101,9 @@ function theme_fordson_get_pre_scss($theme) {
         'fpstartwrap' => ['fpstartwrap-bg'],
         'fpiconnavhover' => ['fpicon-hover'],
         'fpiconcolour' => ['fpicon-colour'],
-        'headerimagepadding' => ['headerimagepadding']
+        'headerimagepadding' => ['headerimagepadding'],
+        'markettextbg' => ['markettextbg'],
+        'marketiconbg' => ['marketiconbg'],
     ];
 
     // Add settings variables.
@@ -136,7 +138,7 @@ function theme_fordson_get_pre_scss($theme) {
     // Set the background image for the login page.
     $loginbg = $theme->setting_file_url('loginimage', 'loginimage');
     if (isset($loginbg)) {
-        $prescss .= 'body#page-login-index {background-image: url("'.$loginbg.'"); background-size:cover; background-position:center;}';
+        $prescss .= 'body#page-login-index {background-image: url("'.$loginbg.'") !important; background-size:cover; background-position:center;}';
     }
 
     // Set the default image for the header.

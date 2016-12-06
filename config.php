@@ -48,8 +48,15 @@ $THEME->layouts = [
         'file' => 'frontpage.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
-        'options' => array('nonavbar' => true),
-    )
+        'options' => array('nonavbar' => true, 'langmenu' => true),
+    ),
+    // My dashboard page.
+    'mydashboard' => array(
+        'file' => 'frontpage.php',
+        'regions' => array('side-pre'),
+        'defaultregion' => 'side-pre',
+        'options' => array('nonavbar' => true, 'langmenu' => true),
+    ),
 ];
 // Call main theme scss - including the selected preset.
 $THEME->scss = function($theme) {

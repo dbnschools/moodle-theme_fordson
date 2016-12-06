@@ -847,7 +847,7 @@ class core_renderer extends \core_renderer {
         $marketing1target  = (empty($PAGE->theme->settings->marketing1target)) ? false : $PAGE->theme->settings->marketing1target;
         $marketing1icon  = (empty($PAGE->theme->settings->marketing1icon)) ? false : $PAGE->theme->settings->marketing1icon;
         $marketing1image = (empty($PAGE->theme->settings->marketing1image)) ? false : 'marketing1image';
-
+        
         $hasmarketing2  = (empty($PAGE->theme->settings->marketing2 && $PAGE->theme->settings->togglemarketing == 1)) ? false : $PAGE->theme->settings->marketing2;
         $marketing2content  = (empty($PAGE->theme->settings->marketing2content)) ? false : $PAGE->theme->settings->marketing2content;
         $marketing2buttontext  = (empty($PAGE->theme->settings->marketing2buttontext)) ? false : $PAGE->theme->settings->marketing2buttontext;
@@ -899,14 +899,15 @@ class core_renderer extends \core_renderer {
             'hasalert' => (!empty($PAGE->theme->settings->alertbox && isloggedin())),
             'alertbox' => $alertbox,
 
+            'hasbutton' => ($marketing1buttonurl || $marketing2buttonurl || $marketing3buttonurl || $marketing4buttonurl || $marketing5buttonurl || $marketing6buttonurl) ? true : false,
             'hasmarkettiles' => ($hasmarketing1 || $hasmarketing2 || $hasmarketing3 || $hasmarketing4 || $hasmarketing5 || $hasmarketing6) ? true : false,
             'markettiles' => array(
-                array('hastile' => $hasmarketing1, 'tileicon' => $marketing1icon, 'tileimage' => $marketing1image, 'content' => $marketing1content, 'title' => $hasmarketing1, 'buttontext' => $marketing1buttontext, 'buttonurl' => $marketing1buttonurl, 'buttontarget' => $marketing1target),
-                array('hastile' => $hasmarketing2, 'tileicon' => $marketing2icon, 'tileimage' => $marketing2image, 'content' => $marketing2content, 'title' => $hasmarketing2, 'buttontext' => $marketing2buttontext, 'buttonurl' => $marketing2buttonurl, 'buttontarget' => $marketing2target),
-                array('hastile' => $hasmarketing3, 'tileicon' => $marketing3icon, 'tileimage' => $marketing3image, 'content' => $marketing3content, 'title' => $hasmarketing3, 'buttontext' => $marketing3buttontext, 'buttonurl' => $marketing3buttonurl, 'buttontarget' => $marketing3target),
-                array('hastile' => $hasmarketing4, 'tileicon' => $marketing4icon, 'tileimage' => $marketing4image, 'content' => $marketing4content, 'title' => $hasmarketing4, 'buttontext' => $marketing4buttontext, 'buttonurl' => $marketing4buttonurl, 'buttontarget' => $marketing4target),
-                array('hastile' => $hasmarketing5, 'tileicon' => $marketing5icon, 'tileimage' => $marketing5image, 'content' => $marketing5content, 'title' => $hasmarketing5, 'buttontext' => $marketing5buttontext, 'buttonurl' => $marketing5buttonurl, 'buttontarget' => $marketing5target),
-                array('hastile' => $hasmarketing6, 'tileicon' => $marketing6icon, 'tileimage' => $marketing6image, 'content' => $marketing6content, 'title' => $hasmarketing6, 'buttontext' => $marketing6buttontext, 'buttonurl' => $marketing6buttonurl, 'buttontarget' => $marketing6target),
+                array('hastile' => $hasmarketing1, 'tileicon' => $marketing1icon, 'tileimage' => $marketing1image, 'content' => $marketing1content, 'title' => $hasmarketing1, 'button' => "<a href = '$marketing1buttonurl' title = '$marketing1buttontext' alt='$marketing1buttontext' id='button' class='btn btn-primary' target='$marketing1target'> $marketing1buttontext </a>"),
+                array('hastile' => $hasmarketing2, 'tileicon' => $marketing2icon, 'tileimage' => $marketing2image, 'content' => $marketing2content, 'title' => $hasmarketing2, 'button' => "<a href = '$marketing2buttonurl' title = '$marketing2buttontext' alt='$marketing2buttontext' id='button' class='btn btn-primary' target='$marketing2target'> $marketing2buttontext </a>"),
+                array('hastile' => $hasmarketing3, 'tileicon' => $marketing3icon, 'tileimage' => $marketing3image, 'content' => $marketing3content, 'title' => $hasmarketing3, 'button' => "<a href = '$marketing3buttonurl' title = '$marketing3buttontext' alt='$marketing3buttontext' id='button' class='btn btn-primary' target='$marketing3target'> $marketing3buttontext </a>"),
+                array('hastile' => $hasmarketing4, 'tileicon' => $marketing4icon, 'tileimage' => $marketing4image, 'content' => $marketing4content, 'title' => $hasmarketing4, 'button' => "<a href = '$marketing4buttonurl' title = '$marketing4buttontext' alt='$marketing4buttontext' id='button' class='btn btn-primary' target='$marketing4target'> $marketing4buttontext </a>"),
+                array('hastile' => $hasmarketing5, 'tileicon' => $marketing5icon, 'tileimage' => $marketing5image, 'content' => $marketing5content, 'title' => $hasmarketing5, 'button' => "<a href = '$marketing5buttonurl' title = '$marketing5buttontext' alt='$marketing5buttontext' id='button' class='btn btn-primary' target='$marketing5target'> $marketing5buttontext </a>"),
+                array('hastile' => $hasmarketing6, 'tileicon' => $marketing6icon, 'tileimage' => $marketing6image, 'content' => $marketing6content, 'title' => $hasmarketing6, 'button' => "<a href = '$marketing6buttonurl' title = '$marketing6buttontext' alt='$marketing6buttontext' id='button' class='btn btn-primary' target='$marketing6target'> $marketing6buttontext </a>"),
             ),
 
             // If any of the above social networks are true, sets this to true.
@@ -955,9 +956,6 @@ class core_renderer extends \core_renderer {
         $nav6buttontext   = (empty($PAGE->theme->settings->nav6buttontext)) ? false : $PAGE->theme->settings->nav6buttontext;
         $nav7buttontext   = (empty($PAGE->theme->settings->nav7buttontext)) ? false : $PAGE->theme->settings->nav7buttontext;
         $nav8buttontext   = (empty($PAGE->theme->settings->nav8buttontext)) ? false : $PAGE->theme->settings->nav8buttontext;
-        $fptextbox  = (empty($PAGE->theme->settings->fptextbox && isloggedin())) ? false : $PAGE->theme->settings->fptextbox;
-        $fptextboxlogout  = (empty($PAGE->theme->settings->fptextboxlogout && !isloggedin())) ? false : $PAGE->theme->settings->fptextboxlogout;
-        $alertbox  = (empty($PAGE->theme->settings->alertbox)) ? false : $PAGE->theme->settings->alertbox;
 
         $hasmarketing1  = (empty($PAGE->theme->settings->marketing1 && $PAGE->theme->settings->togglemarketing == 2)) ? false : $PAGE->theme->settings->marketing1;
         $marketing1content  = (empty($PAGE->theme->settings->marketing1content)) ? false : $PAGE->theme->settings->marketing1content;
@@ -1009,21 +1007,21 @@ class core_renderer extends \core_renderer {
 
         $fp_marketingtiles = [
 
+            'hasbutton' => ($marketing1buttonurl || $marketing2buttonurl || $marketing3buttonurl || $marketing4buttonurl || $marketing5buttonurl || $marketing6buttonurl) ? true : false,
 
             'hasmarkettiles' => ($hasmarketing1 || $hasmarketing2 || $hasmarketing3 || $hasmarketing4 || $hasmarketing5 || $hasmarketing6) ? true : false,
-            'markettiles' => array(
-                array('hastile' => $hasmarketing1, 'tileicon' => $marketing1icon, 'tileimage' => $marketing1image, 'content' => $marketing1content, 'title' => $hasmarketing1, 'buttontext' => $marketing1buttontext, 'buttonurl' => $marketing1buttonurl, 'buttontarget' => $marketing1target),
-                array('hastile' => $hasmarketing2, 'tileicon' => $marketing2icon, 'tileimage' => $marketing2image, 'content' => $marketing2content, 'title' => $hasmarketing2, 'buttontext' => $marketing2buttontext, 'buttonurl' => $marketing2buttonurl, 'buttontarget' => $marketing2target),
-                array('hastile' => $hasmarketing3, 'tileicon' => $marketing3icon, 'tileimage' => $marketing3image, 'content' => $marketing3content, 'title' => $hasmarketing3, 'buttontext' => $marketing3buttontext, 'buttonurl' => $marketing3buttonurl, 'buttontarget' => $marketing3target),
-                array('hastile' => $hasmarketing4, 'tileicon' => $marketing4icon, 'tileimage' => $marketing4image, 'content' => $marketing4content, 'title' => $hasmarketing4, 'buttontext' => $marketing4buttontext, 'buttonurl' => $marketing4buttonurl, 'buttontarget' => $marketing4target),
-                array('hastile' => $hasmarketing5, 'tileicon' => $marketing5icon, 'tileimage' => $marketing5image, 'content' => $marketing5content, 'title' => $hasmarketing5, 'buttontext' => $marketing5buttontext, 'buttonurl' => $marketing5buttonurl, 'buttontarget' => $marketing5target),
-                array('hastile' => $hasmarketing6, 'tileicon' => $marketing6icon, 'tileimage' => $marketing6image, 'content' => $marketing6content, 'title' => $hasmarketing6, 'buttontext' => $marketing6buttontext, 'buttonurl' => $marketing6buttonurl, 'buttontarget' => $marketing6target),
-            ),
 
+            'markettiles' => array(
+                array('hastile' => $hasmarketing1, 'tileicon' => $marketing1icon, 'tileimage' => $marketing1image, 'content' => $marketing1content, 'title' => $hasmarketing1, 'button' => "<a href = '$marketing1buttonurl' title = '$marketing1buttontext' alt='$marketing1buttontext' id='button' class='btn btn-primary' target='$marketing1target'> $marketing1buttontext </a>"),
+                array('hastile' => $hasmarketing2, 'tileicon' => $marketing2icon, 'tileimage' => $marketing2image, 'content' => $marketing2content, 'title' => $hasmarketing2, 'button' => "<a href = '$marketing2buttonurl' title = '$marketing2buttontext' alt='$marketing2buttontext' id='button' class='btn btn-primary' target='$marketing2target'> $marketing2buttontext </a>"),
+                array('hastile' => $hasmarketing3, 'tileicon' => $marketing3icon, 'tileimage' => $marketing3image, 'content' => $marketing3content, 'title' => $hasmarketing3, 'button' => "<a href = '$marketing3buttonurl' title = '$marketing3buttontext' alt='$marketing3buttontext' id='button' class='btn btn-primary' target='$marketing3target'> $marketing3buttontext </a>"),
+                array('hastile' => $hasmarketing4, 'tileicon' => $marketing4icon, 'tileimage' => $marketing4image, 'content' => $marketing4content, 'title' => $hasmarketing4, 'button' => "<a href = '$marketing4buttonurl' title = '$marketing4buttontext' alt='$marketing4buttontext' id='button' class='btn btn-primary' target='$marketing4target'> $marketing4buttontext </a>"),
+                array('hastile' => $hasmarketing5, 'tileicon' => $marketing5icon, 'tileimage' => $marketing5image, 'content' => $marketing5content, 'title' => $hasmarketing5, 'button' => "<a href = '$marketing5buttonurl' title = '$marketing5buttontext' alt='$marketing5buttontext' id='button' class='btn btn-primary' target='$marketing5target'> $marketing5buttontext </a>"),
+                array('hastile' => $hasmarketing6, 'tileicon' => $marketing6icon, 'tileimage' => $marketing6image, 'content' => $marketing6content, 'title' => $hasmarketing6, 'button' => "<a href = '$marketing6buttonurl' title = '$marketing6buttontext' alt='$marketing6buttontext' id='button' class='btn btn-primary' target='$marketing6target'> $marketing6buttontext </a>"),
+            ),
         ];
 
         return $this->render_from_template('theme_fordson/fpmarkettiles', $fp_marketingtiles);
-
     }
 
     public function footnote() {
