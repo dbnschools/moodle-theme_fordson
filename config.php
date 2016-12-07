@@ -58,6 +58,7 @@ $THEME->layouts = [
         'options' => array('nonavbar' => true, 'langmenu' => true),
     ),
 ];
+
 // Call main theme scss - including the selected preset.
 $THEME->scss = function($theme) {
     return theme_fordson_get_main_scss_content($theme);

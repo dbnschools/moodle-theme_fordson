@@ -38,6 +38,7 @@ $gray:                      #55595c !default;
 $gray-light:                #818a91 !default;
 $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
+$gray-base:                 #ccc    !default;
 
 $brand-primary:             #00acdf !default;
 $brand-success:             #77b300 !default;
@@ -126,6 +127,11 @@ $markettile-radius: 5px !default;
         padding-right: 0;
     }
 
+    .usermenu a {
+        color: lighten($brand-primary, 10%);
+        font-weight: bold;
+    }
+
     .navbar-brand {
         padding-left: 1rem;
         padding-right: 1rem;
@@ -156,12 +162,7 @@ $markettile-radius: 5px !default;
     }
 }
 
-/**
-* Drawer Background Color force
-*/
-[data-region="drawer"] {
-    background-color: $drawer-bg !important;
-}
+
 
 
 /**
@@ -251,6 +252,8 @@ $markettile-radius: 5px !default;
 
 /*FORDSON */
 
+
+
 #page-header h1 {
 font-weight:600;
 color:#fff;
@@ -258,7 +261,6 @@ color:#fff;
 
 
 #page-header .headerfade {
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.8+0,0.65+62,0.15+100 */
 background: -moz-linear-gradient(top,  rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.65) 62%, rgba(0,0,0,0.15) 100%); /* FF3.6-15 */
 background: -webkit-linear-gradient(top,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.65) 62%,rgba(0,0,0,0.15) 100%); /* Chrome10-25,Safari5.1-6 */
 background: linear-gradient(to bottom,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.65) 62%,rgba(0,0,0,0.15) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
