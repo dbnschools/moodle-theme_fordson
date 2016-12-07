@@ -104,6 +104,7 @@ function theme_fordson_get_pre_scss($theme) {
         'headerimagepadding' => ['headerimagepadding'],
         'markettextbg' => ['markettextbg'],
         'marketiconbg' => ['marketiconbg'],
+        'navbarurl' => ['navbarurl']
     ];
 
     // Add settings variables.

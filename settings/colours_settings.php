@@ -36,7 +36,8 @@ $page->add($setting);
 $name = 'theme_fordson/brandprimary';
 $title = get_string('brandprimary', 'theme_fordson');
 $description = get_string('brandprimary_desc', 'theme_fordson');
-$setting = new admin_setting_configcolourpicker($name, $title, $description, '');
+$default = '#348b96';
+$setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
@@ -102,16 +103,26 @@ $page->add($setting);
     $name = 'theme_fordson/navbarbkg';
     $title = get_string('navbarbkg', 'theme_fordson');
     $description = get_string('navbarbkg_desc', 'theme_fordson');
-    $default = '#212e41';
+    $default = '#306572';
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
     // @breadcrumbBackground setting.
+    $name = 'theme_fordson/navbarurl';
+    $title = get_string('navbarurl', 'theme_fordson');
+    $description = get_string('navbarurl_desc', 'theme_fordson');
+    $default = '#ffffff';
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+
+    // @breadcrumbBackground setting.
     $name = 'theme_fordson/fpstartwrap';
     $title = get_string('fpstartwrap', 'theme_fordson');
     $description = get_string('fpstartwrap_desc', 'theme_fordson');
-    $default = '#212e41';
+    $default = '#e8eeef';
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
@@ -120,7 +131,7 @@ $page->add($setting);
     $name = 'theme_fordson/fpiconcolour';
     $title = get_string('fpicon-colour', 'theme_fordson');
     $description = get_string('fpicon-colour_desc', 'theme_fordson');
-    $default = '#212e41';
+    $default = '#026C87';
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
@@ -129,12 +140,10 @@ $page->add($setting);
     $name = 'theme_fordson/fpiconnavhover';
     $title = get_string('fpiconnavhover', 'theme_fordson');
     $description = get_string('fpiconnavhover_desc', 'theme_fordson');
-    $default = '#212e41';
+    $default = '#bcd5db';
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
-
-
 
     // @breadcrumbBackground setting.
     $name = 'theme_fordson/markettextbg';
@@ -153,8 +162,6 @@ $page->add($setting);
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
-
-
 
     // @breadcrumbBackground setting.
     $name = 'theme_fordson/cardbkg';

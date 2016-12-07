@@ -398,6 +398,8 @@ $container-lg:                 $container-lg-desktop !default;
 $navbar-height:                    60px !default;
 $navbar-margin-bottom:             $line-height-computed !default;
 $navbar-border-radius:             $border-radius !default;
+$navbar-padding-x:        floor(($grid-gutter-width / 2)) !default;
+$navbar-padding-y:          (($navbar-height - $line-height-computed) / 2) !default;
 $navbar-collapse-max-height:       340px !default;
 
 $navbar-light-color:             #fff !default;
@@ -1262,8 +1264,6 @@ a.list-group-item {
 .popover {
   color: $text-color;
 }
-
-
 /*FORDSON */
 // CustomSettings
 

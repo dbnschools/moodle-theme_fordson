@@ -900,7 +900,6 @@ class core_renderer extends \core_renderer {
             'hasalert' => (!empty($PAGE->theme->settings->alertbox && isloggedin())),
             'alertbox' => $alertbox,
 
-            'hasbutton' => ($marketing1buttonurl || $marketing2buttonurl || $marketing3buttonurl || $marketing4buttonurl || $marketing5buttonurl || $marketing6buttonurl) ? true : false,
             'hasmarkettiles' => ($hasmarketing1 || $hasmarketing2 || $hasmarketing3 || $hasmarketing4 || $hasmarketing5 || $hasmarketing6) ? true : false,
             'markettiles' => array(
                 array('hastile' => $hasmarketing1, 'tileicon' => $marketing1icon, 'tileimage' => $marketing1image, 'content' => $marketing1content, 'title' => $hasmarketing1, 'button' => "<a href = '$marketing1buttonurl' title = '$marketing1buttontext' alt='$marketing1buttontext' id='button' class='btn btn-primary' target='$marketing1target'> $marketing1buttontext </a>"),
@@ -982,8 +981,6 @@ class core_renderer extends \core_renderer {
         $marketing6image = (empty($PAGE->theme->settings->marketing6image)) ? false : 'marketing6image';
 
         $fp_marketingtiles = [
-
-            'hasbutton' => ($marketing1buttonurl || $marketing2buttonurl || $marketing3buttonurl || $marketing4buttonurl || $marketing5buttonurl || $marketing6buttonurl) ? true : false,
 
             'hasmarkettiles' => ($hasmarketing1 || $hasmarketing2 || $hasmarketing3 || $hasmarketing4 || $hasmarketing5 || $hasmarketing6) ? true : false,
 

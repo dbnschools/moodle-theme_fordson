@@ -105,15 +105,11 @@ $marketing6image: #fff !default;
 $marketiconbg: #f2f2f2 !default;
 $markettextbg: rgba(255, 255, 255, 0.8) !default;
 $markettile-radius: 5px !default;
-
+$navbarurl: #000 !default;
 
 // Import everything.
 @import "moodle";
 
-//Reset ridiculous min-height of regionmain from core
-#region-main > .card {
-    min-height: 3rem;
-}
 
 /**
  * Navigation bar identity.
@@ -121,15 +117,17 @@ $markettile-radius: 5px !default;
 .navbar-light {
     background-color: $navbar-light-color;
     border-bottom: $border-width solid #e5e5e5;
-
     .container {
         padding-left: 0;
         padding-right: 0;
     }
 
-    .usermenu a {
-        color: lighten($brand-primary, 10%);
+    .usermenu .menubar .dropdown-toggle {
+        color: $navbarurl;
         font-weight: bold;
+    }
+    .usermenu .menubar .dropdown-toggle:hover {
+        color: darken($navbarurl, 20%);
     }
 
     .navbar-brand {
@@ -139,7 +137,7 @@ $markettile-radius: 5px !default;
         color: #fff;
         background-color: $brand-primary;
         @include hover-focus {
-            color: #fff;
+            color: #000;
         }
         &.has-logo {
             color: $brand-primary;
@@ -153,11 +151,17 @@ $markettile-radius: 5px !default;
     .navbar-nav {
         .nav-item + .nav-item {
             margin-left: $spacer * 2;
+
         }
         .nav-link {
             font-size: $font-size-sm;
             text-transform: uppercase;
             letter-spacing: 1px;
+            color: $navbarurl;
+            Font-weight:bold;
+        }
+        .nav-link:hover{
+        color: darken($navbarurl, 20%);
         }
     }
 }
