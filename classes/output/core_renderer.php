@@ -836,6 +836,7 @@ class core_renderer extends \core_renderer {
         $nav6buttontext   = (empty($PAGE->theme->settings->nav6buttontext)) ? false : $PAGE->theme->settings->nav6buttontext;
         $nav7buttontext   = (empty($PAGE->theme->settings->nav7buttontext)) ? false : $PAGE->theme->settings->nav7buttontext;
         $nav8buttontext   = (empty($PAGE->theme->settings->nav8buttontext)) ? false : $PAGE->theme->settings->nav8buttontext;
+        
         $fptextbox  = (empty($PAGE->theme->settings->fptextbox && isloggedin())) ? false : $PAGE->theme->settings->fptextbox;
         $fptextboxlogout  = (empty($PAGE->theme->settings->fptextboxlogout && !isloggedin())) ? false : $PAGE->theme->settings->fptextboxlogout;
         $alertbox  = (empty($PAGE->theme->settings->alertbox)) ? false : $PAGE->theme->settings->alertbox;
@@ -931,31 +932,6 @@ class core_renderer extends \core_renderer {
 
     public function fp_marketingtiles() {
         global $PAGE;
-
-        $hasnav1icon    = (empty($PAGE->theme->settings->nav1icon && isloggedin())) ? false : $PAGE->theme->settings->nav1icon;
-        $hasnav2icon     = (empty($PAGE->theme->settings->nav2icon && isloggedin())) ? false : $PAGE->theme->settings->nav2icon;
-        $hasnav3icon  = (empty($PAGE->theme->settings->nav3icon && isloggedin())) ? false : $PAGE->theme->settings->nav3icon;
-        $hasnav4icon    = (empty($PAGE->theme->settings->nav4icon && isloggedin())) ? false : $PAGE->theme->settings->nav4icon;
-        $hasnav5icon     = (empty($PAGE->theme->settings->nav5icon && isloggedin())) ? false : $PAGE->theme->settings->nav5icon;
-        $hasnav6icon      = (empty($PAGE->theme->settings->nav6icon && isloggedin())) ? false : $PAGE->theme->settings->nav6icon;
-        $hasnav7icon        = (empty($PAGE->theme->settings->nav7icon && isloggedin())) ? false : $PAGE->theme->settings->nav7icon;
-        $hasnav8icon   = (empty($PAGE->theme->settings->nav8icon && isloggedin())) ? false : $PAGE->theme->settings->nav8icon;
-        $nav1buttonurl   = (empty($PAGE->theme->settings->nav1buttonurl)) ? false : $PAGE->theme->settings->nav1buttonurl;
-        $nav2buttonurl   = (empty($PAGE->theme->settings->nav2buttonurl)) ? false : $PAGE->theme->settings->nav2buttonurl;
-        $nav3buttonurl   = (empty($PAGE->theme->settings->nav3buttonurl)) ? false : $PAGE->theme->settings->nav3buttonurl;
-        $nav4buttonurl   = (empty($PAGE->theme->settings->nav4buttonurl)) ? false : $PAGE->theme->settings->nav4buttonurl;
-        $nav5buttonurl   = (empty($PAGE->theme->settings->nav5buttonurl)) ? false : $PAGE->theme->settings->nav5buttonurl;
-        $nav6buttonurl   = (empty($PAGE->theme->settings->nav6buttonurl)) ? false : $PAGE->theme->settings->nav6buttonurl;
-        $nav7buttonurl   = (empty($PAGE->theme->settings->nav7buttonurl)) ? false : $PAGE->theme->settings->nav7buttonurl;
-        $nav8buttonurl   = (empty($PAGE->theme->settings->nav8buttonurl)) ? false : $PAGE->theme->settings->nav8buttonurl;
-        $nav1buttontext   = (empty($PAGE->theme->settings->nav1buttontext)) ? false : $PAGE->theme->settings->nav1buttontext;
-        $nav2buttontext   = (empty($PAGE->theme->settings->nav2buttontext)) ? false : $PAGE->theme->settings->nav2buttontext;
-        $nav3buttontext   = (empty($PAGE->theme->settings->nav3buttontext)) ? false : $PAGE->theme->settings->nav3buttontext;
-        $nav4buttontext   = (empty($PAGE->theme->settings->nav4buttontext)) ? false : $PAGE->theme->settings->nav4buttontext;
-        $nav5buttontext   = (empty($PAGE->theme->settings->nav5buttontext)) ? false : $PAGE->theme->settings->nav5buttontext;
-        $nav6buttontext   = (empty($PAGE->theme->settings->nav6buttontext)) ? false : $PAGE->theme->settings->nav6buttontext;
-        $nav7buttontext   = (empty($PAGE->theme->settings->nav7buttontext)) ? false : $PAGE->theme->settings->nav7buttontext;
-        $nav8buttontext   = (empty($PAGE->theme->settings->nav8buttontext)) ? false : $PAGE->theme->settings->nav8buttontext;
 
         $hasmarketing1  = (empty($PAGE->theme->settings->marketing1 && $PAGE->theme->settings->togglemarketing == 2)) ? false : $PAGE->theme->settings->marketing1;
         $marketing1content  = (empty($PAGE->theme->settings->marketing1content)) ? false : $PAGE->theme->settings->marketing1content;
