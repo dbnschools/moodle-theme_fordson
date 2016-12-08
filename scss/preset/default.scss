@@ -374,6 +374,11 @@ h3.sectionname {
     text-align: left;
     padding: $spacer;
 }
+
+.fpsearch {
+    text-align: center;
+}
+
 .fpicon a {color: $fpicon-colour;}
 
 [data-block="course_overview"] {
@@ -428,7 +433,7 @@ h3.sectionname {
   outline: 1px solid slategrey;
 }
 
-#page-badges-mybadges .fpwonderbox {
-    display:none;
-}
+#page-badges-mybadges .fpwonderbox {display:none;}
+#page-badges-mybadges .markettiles {display:none;}
+
 body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-size:cover; background-position:center;}

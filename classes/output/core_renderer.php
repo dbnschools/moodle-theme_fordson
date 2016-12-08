@@ -837,6 +837,8 @@ class core_renderer extends \core_renderer {
         $nav7buttontext   = (empty($PAGE->theme->settings->nav7buttontext)) ? false : $PAGE->theme->settings->nav7buttontext;
         $nav8buttontext   = (empty($PAGE->theme->settings->nav8buttontext)) ? false : $PAGE->theme->settings->nav8buttontext;
         
+        $searchurl = (new moodle_url('/course/search.php'))->out(true);
+        $fpsearch = get_string('fpsearch' , 'theme_fordson');
         $fptextbox  = (empty($PAGE->theme->settings->fptextbox && isloggedin())) ? false : $PAGE->theme->settings->fptextbox;
         $fptextboxlogout  = (empty($PAGE->theme->settings->fptextboxlogout && !isloggedin())) ? false : $PAGE->theme->settings->fptextboxlogout;
         $alertbox  = (empty($PAGE->theme->settings->alertbox)) ? false : $PAGE->theme->settings->alertbox;
@@ -899,6 +901,8 @@ class core_renderer extends \core_renderer {
 
             'hasalert' => (!empty($PAGE->theme->settings->alertbox && isloggedin())),
             'alertbox' => $alertbox,
+            'searchurl' => $searchurl,
+            'fpsearch' => $fpsearch,
 
             'hasmarkettiles' => ($hasmarketing1 || $hasmarketing2 || $hasmarketing3 || $hasmarketing4 || $hasmarketing5 || $hasmarketing6) ? true : false,
             'markettiles' => array(
