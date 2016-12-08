@@ -410,8 +410,9 @@ h3.sectionname {
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
 }
 
-.markettiles {
-
+.markettiles .col-md-4 {
+    padding: 0;
+    margin: 0;
 }
 .marketcontent {
     padding:1rem; 
@@ -431,6 +432,13 @@ h3.sectionname {
 .marketcontent::-webkit-scrollbar-thumb {
   background-color: darkgrey;
   outline: 1px solid slategrey;
+}
+
+.fpsearch .form-control:focus {
+    background-color: #fff;
+}
+.fpsearch .form-control {
+    background-color: $fpicon-hover;
 }
 
 #page-badges-mybadges .fpwonderbox {display:none;}
