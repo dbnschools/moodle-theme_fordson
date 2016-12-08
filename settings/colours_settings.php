@@ -81,6 +81,15 @@ $setting = new admin_setting_configcolourpicker($name, $title, $description, '')
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+// @bodyBackground setting.
+    $name = 'theme_fordson/headerscreen';
+    $title = get_string('headerscreen', 'theme_fordson');
+    $description = get_string('headerscreen_desc', 'theme_fordson');
+    $default = 'rgba(0,0,0,0.7)';
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
  // @bodyBackground setting.
     $name = 'theme_fordson/bodybackground';
     $title = get_string('bodybackground', 'theme_fordson');

@@ -84,6 +84,9 @@ $string['bodybackground_desc'] = 'The main colour to use for the background.';
 $string['footerbg'] = 'Footer Background Colour';
 $string['footerbg_desc'] = 'The background colour of the footer.';
 $string['fpsearch'] = 'Find and Enroll in Courses ';
+$string['headerscreen'] = 'Header Text Background';
+$string['headerscreen_desc'] = 'This background color appears below the text in the header image area.  This is meant to help make the text and breadcrumbs standout when using a header image.';
+
 
 $string['rawscss'] = 'Raw SCSS';
 $string['rawscss_desc'] = 'Use this field to provide SCSS code which will be injected at the end of the style sheet.';

@@ -105,7 +105,8 @@ function theme_fordson_get_pre_scss($theme) {
         'markettextbg' => ['markettextbg'],
         'marketiconbg' => ['marketiconbg'],
         'navbarurl' => ['navbarurl'],
-        'footerbg' => ['gray-dark']
+        'footerbg' => ['gray-dark'],
+        'headerscreen' => ['headerfade-bg']
     ];
 
     // Add settings variables.

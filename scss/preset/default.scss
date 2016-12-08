@@ -107,7 +107,7 @@ $markettextbg: rgba(255, 255, 255, 0.8) !default;
 $markettile-radius: 5px !default;
 $navbarurl: #000 !default;
 $card-footer-bg: #ccc !default;
-
+$headerfade-bg: rgba(0,0,0,0.7) !default;
 
 
 // Import everything.
@@ -266,13 +266,11 @@ font-weight:600;
 color:#fff;
 }
 
-
 #page-header .headerfade {
-background: -moz-linear-gradient(top,  rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.65) 62%, rgba(0,0,0,0.15) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.65) 62%,rgba(0,0,0,0.15) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.65) 62%,rgba(0,0,0,0.15) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#26000000',GradientType=0 ); /* IE6-9 */
+background: $headerfade-bg;
 }
+
+
 
 .pagelayout-incourse #page-header .card {
     height: initial;
@@ -443,5 +441,6 @@ h3.sectionname {
 
 #page-badges-mybadges .fpwonderbox {display:none;}
 #page-badges-mybadges .markettiles {display:none;}
+#page-user-files .fpwonderbox {display:none;}
 
 body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-size:cover; background-position:center;}
