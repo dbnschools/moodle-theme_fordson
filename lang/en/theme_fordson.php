@@ -81,6 +81,8 @@ $string['drawerbkg'] = 'Side Drawer Background Colour';
 $string['drawerbkg_desc'] = 'Side Drawer background colour for the menu on the left side of the page.';
 $string['bodybackground'] = 'Body Background Colour';
 $string['bodybackground_desc'] = 'The main colour to use for the background.';
+$string['footerbg'] = 'Footer Background Colour';
+$string['footerbg_desc'] = 'The background colour of the footer.';
 
 $string['rawscss'] = 'Raw SCSS';
 $string['rawscss_desc'] = 'Use this field to provide SCSS code which will be injected at the end of the style sheet.';

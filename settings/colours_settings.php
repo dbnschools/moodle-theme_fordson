@@ -103,7 +103,7 @@ $page->add($setting);
     $name = 'theme_fordson/navbarbkg';
     $title = get_string('navbarbkg', 'theme_fordson');
     $description = get_string('navbarbkg_desc', 'theme_fordson');
-    $default = '#306572';
+    $default = '#025169';
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
@@ -177,6 +177,15 @@ $page->add($setting);
     $title = get_string('drawerbkg', 'theme_fordson');
     $description = get_string('drawerbkg_desc', 'theme_fordson');
     $default = 'rgba(236,238,239,0.9)';
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Variable $graydark
+    $name = 'theme_fordson/footerbg';
+    $title = get_string('footerbg', 'theme_fordson');
+    $description = get_string('footerbg_desc', 'theme_fordson');
+    $default = '#025169';
     $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);

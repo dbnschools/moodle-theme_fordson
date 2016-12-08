@@ -106,6 +106,9 @@ $marketiconbg: #f2f2f2 !default;
 $markettextbg: rgba(255, 255, 255, 0.8) !default;
 $markettile-radius: 5px !default;
 $navbarurl: #000 !default;
+$card-footer-bg: #ccc !default;
+
+
 
 // Import everything.
 @import "moodle";
@@ -332,16 +335,15 @@ h3.sectionname {
 
 .fpstartwrap {
     margin:0px;
-
     border-radius: 5px;
-    text-align: center;
 }
 .fpstart {
     display: inline-block;
-    border-radius: 5px;
+    border-radius: 2px;
     padding: 15px;
     text-align: left;
     background-color:$fpstartwrap-bg;
+    width:100%;
 }
 .fpstart .iconset {
   float:left;
@@ -359,10 +361,8 @@ h3.sectionname {
 }
 
 .card-title {
-    border-bottom: 1px solid $gray-dark;
-    border-top: 1px solid $gray-dark;
-    font-size: 18px;
-    padding: 5px;
+    //border-bottom: 1px solid $gray-dark;
+    //border-top: 1px solid $gray-dark;
 }
 
 .fpicon:hover {
@@ -396,15 +396,37 @@ h3.sectionname {
     margin-top: initial;
     margin-bottom: initial;
 }
-
 .market-tile {
     margin: 1rem;
-    padding: 9rem 0rem 0rem 0rem;
-    background-color: #3ca5fb;
+    background-color: $body-bg;
+    padding: 1rem;
+    border: 1px solid $gray-base;
+    border-radius: $card-border-radius;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
 }
 
-.markettiles .col-md-4 {padding: 0px; margin: 0px; text-align:center;}
-.marketcontent{padding:1rem 0rem; background-color: $markettextbg;}
+.markettiles {
+
+}
+.marketcontent {
+    padding:1rem; 
+    background-color: $markettextbg;
+    height: 10rem;
+    overflow:auto;
+    margin-bottom: 1rem;
+}
+.marketcontent::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+.marketcontent::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+ 
+.marketcontent::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
 
 #page-badges-mybadges .fpwonderbox {
     display:none;
