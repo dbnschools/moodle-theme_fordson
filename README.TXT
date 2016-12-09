@@ -19,7 +19,7 @@ Now a Michigan Historical Site, Fordson High School is still one of the most bea
 
 Like it's namesake school, the Fordson Moodle theme is hand crafted with care and attention to small details 
 that help provide a stunningly simple and easy to use interface for students.  The frontpage wonderbox provides 
-an area to help guide and instruct students.  They reach moodle, they are logged in, now what?  
+an area to help guide and instruct students.  The students reach moodle, they log in, now what?  
 The frontpage wonderbox provides key features to help get the students enrolled in courses or 
 interacting with their current courses quickly.
 

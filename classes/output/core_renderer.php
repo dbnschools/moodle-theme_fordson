@@ -38,7 +38,9 @@ use context_course;
 use pix_icon;
 
 defined('MOODLE_INTERNAL') || die;
-
+require_once($CFG->dirroot.'/blocks/course_overview/locallib.php');
+require_once($CFG->dirroot . "/course/renderer.php");
+require_once($CFG->libdir. '/coursecatlib.php');
 /**
  * Renderers to align Moodle's HTML with that expected by Bootstrap
  *
@@ -197,7 +199,9 @@ class core_renderer extends \core_renderer {
         }
         return html_writer::tag('a', html_writer::start_tag('i', array('class' => $icon . ' fa fa-fw')) .
             html_writer::end_tag('i') . $title, array('href' => $url, 'class' => 'btn ' . $btn, 'title' => $title));
+        return $output;
     }
+
 
     /**
      * Override to inject the logo.
