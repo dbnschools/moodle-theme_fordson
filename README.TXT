@@ -1,6 +1,8 @@
 THEME_Fordson
 ===========
 
+#Fordson | A theme for K-12
+
 Fordson is a child theme for Moodle's core theme Boost.
 
 It is built on Boostrap4 and Mustache templates.
@@ -29,3 +31,6 @@ a great appearance sure to catch the eye of staff and students.
 
 Fordson is a child theme of Boost.  
 This means when Moodle updates the core Boost theme those changes will be applied to Fordson as well in most cases.
+
+## Fordson v1.1
+* Moved "Create A Course" button to right of the Icon Navigation Bar
