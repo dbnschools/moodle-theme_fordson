@@ -1,4 +1,4 @@
-THEME_STAGETWO BUILDING NOTES
+THEME_fordson BUILDING NOTES
 =============================
 
 As with previous themes I have built I have made the choice to separate sections of the

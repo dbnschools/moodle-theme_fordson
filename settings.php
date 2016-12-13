@@ -23,7 +23,7 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-/* THEME_STAGETWO BUILDING NOTES
+/* THEME_fordson BUILDING NOTES
  * =============================
  * Settings have been split into separate files, which are called from
  * this central file. This is to aid ongoing development as I find it
