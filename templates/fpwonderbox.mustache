@@ -4,6 +4,20 @@
 <div class="fpstartwrap">
 <div class="fpstart">
     <div class="iconset">
+
+        {{#fpcreateicon}}
+            {{#hasicon}}
+                <div class="fpiconcreate">
+                    <a href = {{{link}}} title = "{{{link}}}" alt="{{{link}}}" id="button">
+                        <div class="navicon" align="center">
+                            <i class="fa fa-3x fa-{{{linkicon}}}"></i>
+                        </div>
+                        {{{linktext}}}
+                    </a>
+                </div>
+            {{/hasicon}}
+        {{/fpcreateicon}}
+
         {{#fpiconnav}}
             {{#hasicon}}
             <div class="fpicon">
@@ -16,6 +30,7 @@
             </div>
             {{/hasicon}}
         {{/fpiconnav}}
+        
     </div>
 </div>
 </div>

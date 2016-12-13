@@ -816,6 +816,12 @@ class core_renderer extends \core_renderer {
     public function fp_wonderbox() {
         global $PAGE;
 
+        $context = $this->page->context;
+
+        $hascreateicon    = (empty($PAGE->theme->settings->createicon && isloggedin() && has_capability('moodle/course:create', $context))) ? false : $PAGE->theme->settings->createicon;
+        $createbuttonurl   = (empty($PAGE->theme->settings->createbuttonurl)) ? false : $PAGE->theme->settings->createbuttonurl;
+        $createbuttontext   = (empty($PAGE->theme->settings->createbuttontext)) ? false : $PAGE->theme->settings->createbuttontext;
+
         $hasnav1icon    = (empty($PAGE->theme->settings->nav1icon && isloggedin())) ? false : $PAGE->theme->settings->nav1icon;
         $hasnav2icon     = (empty($PAGE->theme->settings->nav2icon && isloggedin())) ? false : $PAGE->theme->settings->nav2icon;
         $hasnav3icon  = (empty($PAGE->theme->settings->nav3icon && isloggedin())) ? false : $PAGE->theme->settings->nav3icon;
@@ -920,7 +926,7 @@ class core_renderer extends \core_renderer {
 
             // If any of the above social networks are true, sets this to true.
             'hasfpiconnav' => ($hasnav1icon || $hasnav2icon || $hasnav3icon || $hasnav4icon || $hasnav5icon
-                || $hasnav6icon || $hasnav7icon || $hasnav8icon) ? true : false,
+                || $hasnav6icon || $hasnav7icon || $hasnav8icon || $hascreateicon) ? true : false,
             'fpiconnav' => array(
                 array('hasicon' => $hasnav1icon, 'linkicon' => $hasnav1icon, 'link' => $nav1buttonurl, 'linktext' => $nav1buttontext),
                 array('hasicon' => $hasnav2icon, 'linkicon' => $hasnav2icon, 'link' => $nav2buttonurl, 'linktext' => $nav2buttontext),
@@ -931,6 +937,10 @@ class core_renderer extends \core_renderer {
                 array('hasicon' => $hasnav7icon, 'linkicon' => $hasnav7icon, 'link' => $nav7buttonurl, 'linktext' => $nav7buttontext),
                 array('hasicon' => $hasnav8icon, 'linkicon' => $hasnav8icon, 'link' => $nav8buttonurl, 'linktext' => $nav8buttontext),
             ),
+            'fpcreateicon' => array(
+                array('hasicon' => $hascreateicon, 'linkicon' => $hascreateicon, 'link' => $createbuttonurl, 'linktext' => $createbuttontext),
+            ),
+
         ];
 
         return $this->render_from_template('theme_fordson/fpwonderbox', $fp_wonderboxcontext);

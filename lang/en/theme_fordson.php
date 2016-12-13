@@ -26,7 +26,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 // Theme strings.
-$string['choosereadme'] = 'Fordson is designed with K-12 teachers and students in mind. Built, tested, and used in Dearborn Public Schools.  Fordson utilizes the new Moodle Boost theme, using Bootstrap4 and Mustache templates.';
+$string['choosereadme'] = 'Fordson provides a unique visual experience to the default Boost theme with customization features such as color choosers and enhanced frontpage experience for students.';
 $string['configtitle'] = 'Fordson';
 $string['pluginname'] = 'Fordson';
 $string['region-side-pre'] = 'Right';
@@ -163,6 +163,9 @@ $string['navicon5'] = 'Custom Frontpage Icon Five';
 $string['navicon6'] = 'Custom Frontpage Icon Six';
 $string['navicon7'] = 'Custom Frontpage Icon Seven';
 $string['navicon8'] = 'Custom Frontpage Icon Eight';
+
+$string['createinfo'] = 'Course Creator Button';
+$string['createinfodesc'] = 'This button appears on the homepage when a user can create new courses.  Those with the role of Course Creator at the site level will see this button.';
 
 $string['navicon'] = 'Icon';
 $string['navicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after "fa-", e.g. "star".';
