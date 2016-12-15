@@ -18,15 +18,15 @@
  * Version file.
  *
  * @package    theme_fordson
- * @copyright  2016 Richard Oelmann
+ * @copyright  2016 Chris Kenniburg
  * @credits    theme_boost - MoodleHQ
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2016121300;
-$plugin->release  = 'v1.1';
+$plugin->version   = 2016121500;
+$plugin->release  = 'v1.1.1';
 $plugin->maturity  = MATURITY_STABLE;
 $plugin->requires  = 2016110800;
 $plugin->component = 'theme_fordson';

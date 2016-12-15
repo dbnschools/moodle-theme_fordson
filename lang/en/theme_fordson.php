@@ -18,7 +18,7 @@
  * Language file.
  *
  * @package    theme_fordson
- * @copyright  2016 Richard Oelmann
+ * @copyright  2016 Chris Kenniburg
  * @credits    theme_boost - MoodleHQ
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -85,15 +85,21 @@ $string['footerbg'] = 'Footer Background Colour';
 $string['footerbg_desc'] = 'The background colour of the footer.';
 $string['fpsearch'] = 'Find and Enroll in Courses ';
 $string['headerscreen'] = 'Header Text Background';
-$string['headerscreen_desc'] = 'This background color appears below the text in the header image area.  This is meant to help make the text and breadcrumbs standout when using a header image.';
-
+$string['headerscreen_desc'] = 'This background colour appears below the text in the header image area.  This is meant to help make the text and breadcrumbs standout when using a header image.';
+$string['headingcolor'] = 'Headings Colour';
+$string['headingcolor_desc'] = 'H1,H2,H3,H4,H5.H6 colour settings.';
+$string['headercolor'] = 'Page Header Text Colour';
+$string['headercolor_desc'] = 'This alters the Page Heading H1 color so that it might stand out better ontop of the header image.';
+$string['bodycolor'] = 'Default Text Colour';
+$string['bodycolor_desc'] = 'Default text color.';
+$string['linkcolor'] = 'Default Link Colour';
+$string['linkcolor_desc'] = 'Default link color.';
 
 $string['rawscss'] = 'Raw SCSS';
 $string['rawscss_desc'] = 'Use this field to provide SCSS code which will be injected at the end of the style sheet.';
 $string['rawscsspre'] = 'Raw initial SCSS';
 $string['rawscsspre_desc'] = 'In this field you can provide initialising SCSS code, it will be injected before everything else.
     Most of the time you will use this setting to define variables.';
-
 
 // Header Settings.
 $string['headingimagesettings'] = 'Heading and Course image settings';
@@ -105,7 +111,6 @@ $string['loginimage'] = 'Default Login image';
 $string['loginimage_desc'] = 'Background image for login page';
 $string['headerimagepadding'] = 'Header Image Padding';
 $string['headerimagepadding_desc'] = 'Control the padding and height of the header image for courses. A minimum of 120px should be selected if using the Radial Completion and Course Grade displays.';
-
 
 // Social Networks.
 $string['socialheading'] = 'Social Networking';
@@ -149,10 +154,10 @@ $string['sociallinkicondesc'] = 'Enter the fontawesome name of the icon for your
 $string['contentsettings'] = 'Content areas';
 $string['footnote'] = 'Footnote.';
 $string['footnotedesc'] = 'Footnote content editor for main footer';
-$string['fptextbox'] = 'Frontpage Textbox';
-$string['fptextbox_desc'] = 'This textbox appears on the frontpage and is ideal for putting a welcome message.';
-$string['fptextboxlogout'] = 'Frontpage Textbox When Logged Out';
-$string['fptextboxlogout_desc'] = 'This textbox appears on the frontpage when logged out and is ideal for putting a welcome message to visitors who have not logged in yet.';
+$string['fptextbox'] = 'Frontpage Textbox Authenticated User';
+$string['fptextbox_desc'] = 'This textbox appears on the frontpage once a user authenticates. It is ideal for putting a welcome message and providing instructions for the learner.';
+$string['fptextboxlogout'] = 'Frontpage Textbox Visitor';
+$string['fptextboxlogout_desc'] = 'This textbox appears on the frontpage for visitors and is ideal for putting a welcome message or link to the login page.';
 
 //FP Icon Nav
 $string['navicon1'] = 'Custom Frontpage Icon One';
@@ -166,6 +171,11 @@ $string['navicon8'] = 'Custom Frontpage Icon Eight';
 
 $string['createinfo'] = 'Course Creator Button';
 $string['createinfodesc'] = 'This button appears on the homepage when a user can create new courses.  Those with the role of Course Creator at the site level will see this button.';
+$string['iconwidthinfo'] = 'Icon Button Width Setting';
+$string['iconwidthinfodesc'] = 'Select a width that will allow your link text to fit inside the icon navigation buttons.';
+
+$string['iconwidth'] = 'Frontpage Icon Width';
+$string['iconwidth_desc'] = 'Width of the 8 individual icons in the icon navigation bar on the homepage.';
 
 $string['navicon'] = 'Icon';
 $string['navicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after "fa-", e.g. "star".';

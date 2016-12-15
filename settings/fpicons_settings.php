@@ -18,8 +18,8 @@
  * Social networking settings page file.
  *
  * @package    theme_fordson
- * @copyright  2016 Richard Oelmann
- * @credits    theme_fordson - MoodleHQ
+ * @copyright  2016 Chris Kenniburg
+ * 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -61,7 +61,38 @@ $page = new admin_settingpage('theme_fordson_iconnavheading', get_string('iconna
     $page->add($setting);
 
 
-    
+    // This is the descriptor for icon One
+    $name = 'theme_fordson/iconwidthinfo';
+    $heading = get_string('iconwidthinfo', 'theme_fordson');
+    $information = get_string('iconwidthinfodesc', 'theme_fordson');
+    $setting = new admin_setting_heading($name, $heading, $information);
+    $page->add($setting);
+
+    // Icon width setting.
+    $name = 'theme_fordson/iconwidth';
+    $title = get_string('iconwidth', 'theme_fordson');
+    $description = get_string('iconwidth_desc', 'theme_fordson');;
+    $default = '100px';
+    $choices = array(
+        '75px' => '75px',
+        '85px' => '85px',
+        '95px' => '95px',
+        '100px' => '100px',
+        '105px' => '105px',
+        '110px' => '110px',
+        '115px' => '115px',
+        '120px' => '120px',
+        '125px' => '125px',
+        '130px' => '130px',
+        '135px' => '135px',
+        '140px' => '140px',
+        '145px' => '145px',
+        '150px' => '150px',
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
     // This is the descriptor for icon One
     $name = 'theme_fordson/navicon1info';
     $heading = get_string('navicon1', 'theme_fordson');

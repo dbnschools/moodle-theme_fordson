@@ -18,7 +18,7 @@
  * Presets settings page file.
  *
  * @package    theme_fordson
- * @copyright  2016 Richard Oelmann
+ * @copyright  2016 Chris Kenniburg
  * @credits    theme_boost - MoodleHQ
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

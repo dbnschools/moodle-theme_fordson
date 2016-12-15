@@ -49,6 +49,7 @@ require_once($CFG->libdir. '/coursecatlib.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+
 class core_renderer extends \core_renderer {
 
     /** @var custom_menu_item language The language menu if created */
@@ -185,6 +186,7 @@ class core_renderer extends \core_renderer {
      *
      */
     public function edit_button(moodle_url $url) {
+        global $SITE, $PAGE, $USER, $CFG, $COURSE;
         $url->param('sesskey', sesskey());
         if ($this->page->user_is_editing()) {
             $url->param('edit', 'off');

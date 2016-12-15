@@ -15,22 +15,34 @@ Here are the main enhancements:
 * Enhanced Frontpage - Navigation Iconbar, Custom Textbox, Alertbox, Six Marketing Tiles
 * Customized Course Header Image - Teachers can upload an image into their course summary files and it will automatically be used in the header of their course.
 
+##Recommended Settings for Best Results
+These settings below are found in the Moodle Site Administration Pages.  These are not related to the theme but will help bring out the best of Fordson.  
+
+* defaulthomepage = SITE (Default homepage for users.  If set to Dashboard your users will not see the Enhanced Homepage upon login.)
+* frontpage = none (Frontpage items to show. Part of Moodle Frontpage Settings tab.)
+* frontpageloggedin = none or Enrolled Courses (Frontpage items to show when logged in. Part of Moodle Frontpage Settings tab.)
+* Optional: forcelogin = Checked (This forces users to login before seeing the homepage.)
+
 The Fordson Moodle theme is named after the first one million dollar high school ever built in America. 
 Fordson High School is stunningly beautiful with rich history and tradition. 
 Built in a time when hand-crafted woodwork, marble and bronze statues, and attention to detail was the norm.  
 Now a Michigan Historical Site, Fordson High School is just as beautiful as the day it was built.  
 
-Like it's namesake school, the Fordson Moodle theme is hand crafted with care and attention to small details 
-that help provide a simple and easy to use interface for students.  The enhanced frontpage provides 
-an area to help students navigate the site and locate courses. The frontpage enhancements consists of 
-an Icon Navigation Bar for visual navigation cues, a Custom Textbox for instructions, a Course Searchbox, and
-up to six versatile Marketing Tiles.
-
-Designed with K-12 in mind the Fordson theme requires very little setup.  Out of the box, Fordson provides
-a great appearance sure to catch the eye of staff and students.
-
 Fordson is a child theme of Boost.  
 This means when Moodle updates the core Boost theme those changes will be applied to Fordson as well in most cases.
+
+## Fordson v1.1.2
+* Added Icon Navigation Width Setting - $fpicon-width and $fpiconcreate-width
+* Added Heading Font Color Setting
+* Added Page Heading H1 Color Setting
+* Added several new color pickers
+* Added 16 new presets to choose from
+
+## Fordson v1.1.1
+* Removed un-needed layout and template files.
+* Tidy up code
+* Cleaned up & organized lang file for better translation
+* Moved SCSS to styles.scss so that Fordson will work with default presets and user uploaded presets.  This includes marketing tiles, navigation icons, and other custom elements added to Fordson.
 
 ## Fordson v1.1
 * Moved "Create A Course" button to right of the Icon Navigation Bar

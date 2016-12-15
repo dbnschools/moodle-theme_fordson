@@ -18,8 +18,8 @@
  * SCSS Lib file.
  *
  * @package    theme_fordson
- * @copyright  2016 Richard Oelmann
- * @credits    theme_fordson - MoodleHQ
+ * @copyright  2016 Chris Kenniburg
+ * 
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -107,6 +107,11 @@ function theme_fordson_get_pre_scss($theme) {
         'navbarurl' => ['navbarurl'],
         'footerbg' => ['gray-dark'],
         'headerscreen' => ['headerfade-bg'],
+        'iconwidth' =>  ['fpicon-width'],
+        'headingcolor'  => ['headings-color'],
+        'headercolor'  => ['header-color'],
+        'bodycolor'  => ['body-color'],
+        'linkcolor'  => ['link-color']
     ];
 
     // Add settings variables.

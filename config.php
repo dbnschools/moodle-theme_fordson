@@ -18,7 +18,7 @@
  * Theme config file.
  *
  * @package    theme_fordson
- * @copyright  2016 Richard Oelmann
+ * @copyright  2016 Chris Kenniburg
  * @credits    theme_boost - MoodleHQ
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -45,13 +45,6 @@ $THEME->editor_sheets = [''];
 $THEME->layouts = [
     // The site home page.
     'frontpage' => array(
-        'file' => 'frontpage.php',
-        'regions' => array('side-pre'),
-        'defaultregion' => 'side-pre',
-        'options' => array('nonavbar' => true, 'langmenu' => true),
-    ),
-    // My dashboard page.
-    'mydashboard' => array(
         'file' => 'frontpage.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
