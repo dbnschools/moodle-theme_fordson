@@ -158,6 +158,9 @@ $string['fptextbox'] = 'Frontpage Textbox Authenticated User';
 $string['fptextbox_desc'] = 'This textbox appears on the frontpage once a user authenticates. It is ideal for putting a welcome message and providing instructions for the learner.';
 $string['fptextboxlogout'] = 'Frontpage Textbox Visitor';
 $string['fptextboxlogout_desc'] = 'This textbox appears on the frontpage for visitors and is ideal for putting a welcome message or link to the login page.';
+$string['searchtoggle'] = 'Show the Homepage Searchbox';
+$string['searchtoggle_desc'] = 'Check this in order to show the homepage searchbox for courses.';
+
 
 //FP Icon Nav
 $string['navicon1'] = 'Custom Frontpage Icon One';

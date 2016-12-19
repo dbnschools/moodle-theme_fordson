@@ -37,6 +37,7 @@ This means when Moodle updates the core Boost theme those changes will be applie
 * Added Page Heading H1 Color Setting
 * Added several new color pickers
 * Added 16 new presets to choose from
+* Added Homepage Course Search Box Toggle Checkbox to show or hide searchbar
 
 ## Fordson v1.1.1
 * Removed un-needed layout and template files.
