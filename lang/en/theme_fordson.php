@@ -160,30 +160,35 @@ $string['fptextboxlogout'] = 'Homepage Textbox Visitor';
 $string['fptextboxlogout_desc'] = 'This textbox appears on the homepage for visitors and is ideal for putting a welcome message or link to the login page.';
 $string['searchtoggle'] = 'Show the Homepage Searchbox';
 $string['searchtoggle_desc'] = 'Check this in order to show the homepage searchbox for courses.';
-
+$string['slidetextbox'] = 'Slide Textbox';
+$string['slidetextbox_desc'] = 'This textbox content will be displayed when the Slide Button is pressed.';
 
 //FP Icon Nav
-$string['navicon1'] = 'Custom Homepage Icon One';
-$string['navicon2'] = 'Custom Homepage Icon Two';
-$string['navicon3'] = 'Custom Homepage Icon Three';
-$string['navicon4'] = 'Custom Homepage Icon Four';
-$string['navicon5'] = 'Custom Homepage Icon Five';
-$string['navicon6'] = 'Custom Homepage Icon Six';
-$string['navicon7'] = 'Custom Homepage Icon Seven';
-$string['navicon8'] = 'Custom Homepage Icon Eight';
+$string['navicon1'] = 'Homepage Icon One';
+$string['navicon2'] = 'Homepage Icon Two';
+$string['navicon3'] = 'Homepage Icon Three';
+$string['navicon4'] = 'Homepage Icon Four';
+$string['navicon5'] = 'Homepage Icon Five';
+$string['navicon6'] = 'Homepage Icon Six';
+$string['navicon7'] = 'Homepage Icon Seven';
+$string['navicon8'] = 'Homepage Icon Eight';
 
-$string['createinfo'] = 'Course Creator Button';
+$string['createinfo'] = 'Special Course Creator Button';
 $string['createinfodesc'] = 'This button appears on the homepage when a user can create new courses.  Those with the role of Course Creator at the site level will see this button.';
 $string['iconwidthinfo'] = 'Icon Button Width Setting';
 $string['iconwidthinfodesc'] = 'Select a width that will allow your link text to fit inside the icon navigation buttons.';
+$string['sliderinfo'] = 'Special Slide Icon Button';
+$string['sliderinfodesc'] = 'This button will show/hide a special textbox which slides down from the icon navigation bar.  This is ideal for featuring courses, providing help, or listing required staff training.';
 
 $string['iconwidth'] = 'Homepage Icon Width';
 $string['iconwidth_desc'] = 'Width of the 8 individual icons in the icon navigation bar on the homepage.';
 
 $string['navicon'] = 'Icon';
 $string['navicondesc'] = 'Name of the icon you wish to use. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after "fa-", e.g. "star".';
+$string['naviconslidedesc'] = 'Suggested icon text: arrow-circle-down . Or choose from the list is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after "fa-", e.g. "star".';
+
 $string['naviconbuttontext'] = 'Link Text';
-$string['naviconbuttontextdesc'] = 'Text to appear in the tooltip of the icon when the mouse hovers over it.';
+$string['naviconbuttontextdesc'] = 'Text to appear below the icon.';
 $string['naviconbuttonurl'] = 'Link URL';
 $string['naviconbuttonurldesc'] = 'URL the button will point to. You can link to anywhere including outside websites  just enter the proper URL.  If your Moodle site is in a subdirectory the default URL will not work.  Please adjust the URL to reflect the subdirectory. Example if "moodle" was your subdirectory folder then the URL would need to be changed to /moodle/my/ ';
 

@@ -28,39 +28,6 @@ defined('MOODLE_INTERNAL') || die();
 // Icon Navigation);
 $page = new admin_settingpage('theme_fordson_iconnavheading', get_string('iconnavheading', 'theme_fordson'));
 
-    // This is the descriptor for teacher create a course
-    $name = 'theme_fordson/createinfo';
-    $heading = get_string('createinfo', 'theme_fordson');
-    $information = get_string('createinfodesc', 'theme_fordson');
-    $setting = new admin_setting_heading($name, $heading, $information);
-    $page->add($setting);
-
-    // icon One
-    $name = 'theme_fordson/createicon';
-    $title = get_string('navicon', 'theme_fordson');
-    $description = get_string('navicondesc', 'theme_fordson');
-    $default = 'edit';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-    
-    $name = 'theme_fordson/createbuttontext';
-    $title = get_string('naviconbuttontext', 'theme_fordson');
-    $description = get_string('naviconbuttontextdesc', 'theme_fordson');
-    $default = 'Create a Course';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-    
-    $name = 'theme_fordson/createbuttonurl';
-    $title = get_string('naviconbuttonurl', 'theme_fordson');
-    $description = get_string('naviconbuttonurldesc', 'theme_fordson');
-    $default = '/course/edit.php?category=1';
-    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
-
     // This is the descriptor for icon One
     $name = 'theme_fordson/iconwidthinfo';
     $heading = get_string('iconwidthinfo', 'theme_fordson');
@@ -92,6 +59,74 @@ $page = new admin_settingpage('theme_fordson_iconnavheading', get_string('iconna
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
+
+
+
+    // This is the descriptor for teacher create a course
+    $name = 'theme_fordson/createinfo';
+    $heading = get_string('createinfo', 'theme_fordson');
+    $information = get_string('createinfodesc', 'theme_fordson');
+    $setting = new admin_setting_heading($name, $heading, $information);
+    $page->add($setting);
+
+    // Creator Icon
+    $name = 'theme_fordson/createicon';
+    $title = get_string('navicon', 'theme_fordson');
+    $description = get_string('navicondesc', 'theme_fordson');
+    $default = 'edit';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+    
+    $name = 'theme_fordson/createbuttontext';
+    $title = get_string('naviconbuttontext', 'theme_fordson');
+    $description = get_string('naviconbuttontextdesc', 'theme_fordson');
+    $default = 'Create a Course';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+    
+    $name = 'theme_fordson/createbuttonurl';
+    $title = get_string('naviconbuttonurl', 'theme_fordson');
+    $description = get_string('naviconbuttonurldesc', 'theme_fordson');
+    $default = '/course/edit.php?category=1';
+    $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // This is the descriptor for teacher create a course
+    $name = 'theme_fordson/sliderinfo';
+    $heading = get_string('sliderinfo', 'theme_fordson');
+    $information = get_string('sliderinfodesc', 'theme_fordson');
+    $setting = new admin_setting_heading($name, $heading, $information);
+    $page->add($setting);
+
+    // Creator Icon
+    $name = 'theme_fordson/slideicon';
+    $title = get_string('navicon', 'theme_fordson');
+    $description = get_string('naviconslidedesc', 'theme_fordson');
+    $default = '';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+    
+    $name = 'theme_fordson/slideiconbuttontext';
+    $title = get_string('naviconbuttontext', 'theme_fordson');
+    $description = get_string('naviconbuttontextdesc', 'theme_fordson');
+    $default = 'Slider Toggle';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Slide Textbox.
+    $name = 'theme_fordson/slidetextbox';
+    $title = get_string('slidetextbox', 'theme_fordson');
+    $description = get_string('slidetextbox_desc', 'theme_fordson');
+    $default = '';
+    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
 
     // This is the descriptor for icon One
     $name = 'theme_fordson/navicon1info';

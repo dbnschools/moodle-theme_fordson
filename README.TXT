@@ -31,6 +31,11 @@ Now a Michigan Historical Site, Fordson High School is just as beautiful as the 
 Fordson is a child theme of Boost.  
 This means when Moodle updates the core Boost theme those changes will be applied to Fordson as well in most cases.
 
+## Fordson v1.1.3
+* Added homepage slider feature which allows a special button in the Icon Navigation Bar to show or hide a text box which slides down from the Icon Navigation bar.  Useful for featured courses, help information, and other things that need attention but do not need to be visible all the time.
+* Added additional height settings to fine tune header image height
+
+
 ## Fordson v1.1.2
 * Added Icon Navigation Width Setting - $fpicon-width and $fpiconcreate-width
 * Added Heading Font Color Setting

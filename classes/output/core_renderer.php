@@ -824,6 +824,10 @@ class core_renderer extends \core_renderer {
         $createbuttonurl   = (empty($PAGE->theme->settings->createbuttonurl)) ? false : $PAGE->theme->settings->createbuttonurl;
         $createbuttontext   = (empty($PAGE->theme->settings->createbuttontext)) ? false : $PAGE->theme->settings->createbuttontext;
 
+        $hasslideicon   = (empty($PAGE->theme->settings->slideicon && isloggedin())) ? false : $PAGE->theme->settings->slideicon;
+        $slideiconbuttonurl   = 'data-toggle="collapse" data-target="#collapseExample';
+        $slideiconbuttontext   = (empty($PAGE->theme->settings->slideiconbuttontext)) ? false : $PAGE->theme->settings->slideiconbuttontext;
+        
         $hasnav1icon    = (empty($PAGE->theme->settings->nav1icon && isloggedin())) ? false : $PAGE->theme->settings->nav1icon;
         $hasnav2icon     = (empty($PAGE->theme->settings->nav2icon && isloggedin())) ? false : $PAGE->theme->settings->nav2icon;
         $hasnav3icon  = (empty($PAGE->theme->settings->nav3icon && isloggedin())) ? false : $PAGE->theme->settings->nav3icon;
@@ -832,6 +836,7 @@ class core_renderer extends \core_renderer {
         $hasnav6icon      = (empty($PAGE->theme->settings->nav6icon && isloggedin())) ? false : $PAGE->theme->settings->nav6icon;
         $hasnav7icon        = (empty($PAGE->theme->settings->nav7icon && isloggedin())) ? false : $PAGE->theme->settings->nav7icon;
         $hasnav8icon   = (empty($PAGE->theme->settings->nav8icon && isloggedin())) ? false : $PAGE->theme->settings->nav8icon;
+        
         $nav1buttonurl   = (empty($PAGE->theme->settings->nav1buttonurl)) ? false : $PAGE->theme->settings->nav1buttonurl;
         $nav2buttonurl   = (empty($PAGE->theme->settings->nav2buttonurl)) ? false : $PAGE->theme->settings->nav2buttonurl;
         $nav3buttonurl   = (empty($PAGE->theme->settings->nav3buttonurl)) ? false : $PAGE->theme->settings->nav3buttonurl;
@@ -840,6 +845,7 @@ class core_renderer extends \core_renderer {
         $nav6buttonurl   = (empty($PAGE->theme->settings->nav6buttonurl)) ? false : $PAGE->theme->settings->nav6buttonurl;
         $nav7buttonurl   = (empty($PAGE->theme->settings->nav7buttonurl)) ? false : $PAGE->theme->settings->nav7buttonurl;
         $nav8buttonurl   = (empty($PAGE->theme->settings->nav8buttonurl)) ? false : $PAGE->theme->settings->nav8buttonurl;
+        
         $nav1buttontext   = (empty($PAGE->theme->settings->nav1buttontext)) ? false : $PAGE->theme->settings->nav1buttontext;
         $nav2buttontext   = (empty($PAGE->theme->settings->nav2buttontext)) ? false : $PAGE->theme->settings->nav2buttontext;
         $nav3buttontext   = (empty($PAGE->theme->settings->nav3buttontext)) ? false : $PAGE->theme->settings->nav3buttontext;
@@ -854,6 +860,7 @@ class core_renderer extends \core_renderer {
         $fpsearch = get_string('fpsearch' , 'theme_fordson');
         $fptextbox  = (empty($PAGE->theme->settings->fptextbox && isloggedin())) ? false : $PAGE->theme->settings->fptextbox;
         $fptextboxlogout  = (empty($PAGE->theme->settings->fptextboxlogout && !isloggedin())) ? false : $PAGE->theme->settings->fptextboxlogout;
+        $slidetextbox  = (empty($PAGE->theme->settings->slidetextbox && isloggedin())) ? false : $PAGE->theme->settings->slidetextbox;
         $alertbox  = (empty($PAGE->theme->settings->alertbox)) ? false : $PAGE->theme->settings->alertbox;
 
         $hasmarketing1  = (empty($PAGE->theme->settings->marketing1 && $PAGE->theme->settings->togglemarketing == 1)) ? false : $PAGE->theme->settings->marketing1;
@@ -909,6 +916,9 @@ class core_renderer extends \core_renderer {
             'hasfptextbox' => (!empty($PAGE->theme->settings->fptextbox && isloggedin())),
             'fptextbox' => $fptextbox,
 
+            'hasslidetextbox' => (!empty($PAGE->theme->settings->slidetextbox && isloggedin())),
+            'slidetextbox' => $slidetextbox,
+
             'hasfptextboxlogout' => (!empty($PAGE->theme->settings->fptextboxlogout && !isloggedin())),
             'fptextboxlogout' => $fptextboxlogout,
 
@@ -930,7 +940,7 @@ class core_renderer extends \core_renderer {
 
             // If any of the above social networks are true, sets this to true.
             'hasfpiconnav' => ($hasnav1icon || $hasnav2icon || $hasnav3icon || $hasnav4icon || $hasnav5icon
-                || $hasnav6icon || $hasnav7icon || $hasnav8icon || $hascreateicon) ? true : false,
+                || $hasnav6icon || $hasnav7icon || $hasnav8icon || $hascreateicon || $hasslideicon) ? true : false,
             'fpiconnav' => array(
                 array('hasicon' => $hasnav1icon, 'linkicon' => $hasnav1icon, 'link' => $nav1buttonurl, 'linktext' => $nav1buttontext),
                 array('hasicon' => $hasnav2icon, 'linkicon' => $hasnav2icon, 'link' => $nav2buttonurl, 'linktext' => $nav2buttontext),
@@ -943,6 +953,9 @@ class core_renderer extends \core_renderer {
             ),
             'fpcreateicon' => array(
                 array('hasicon' => $hascreateicon, 'linkicon' => $hascreateicon, 'link' => $createbuttonurl, 'linktext' => $createbuttontext),
+            ),
+            'fpslideicon' => array(
+                array('hasicon' => $hasslideicon, 'linkicon' => $hasslideicon, 'link' => $slideiconbuttonurl, 'linktext' => $slideiconbuttontext),
             ),
 
         ];
