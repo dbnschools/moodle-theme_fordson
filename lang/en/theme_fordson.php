@@ -26,14 +26,14 @@
 defined('MOODLE_INTERNAL') || die();
 
 // Theme strings.
-$string['choosereadme'] = 'Fordson provides a unique visual experience to the default Boost theme with customization features such as color choosers and enhanced frontpage experience for students.';
+$string['choosereadme'] = 'Fordson provides a unique visual experience to the default Boost theme with customization features such as color choosers and enhanced homepage experience.';
 $string['configtitle'] = 'Fordson';
 $string['pluginname'] = 'Fordson';
 $string['region-side-pre'] = 'Right';
 $string['generalsettings'] = 'General settings';
 $string['advancedsettings'] = 'Advanced settings';
 $string['iconnavheading'] = 'Icon Navigation';
-$string['iconnavheadingsub'] = 'Create Buttons with Icons for use on the frontpage.  Links can go anywhere.';
+$string['iconnavheadingsub'] = 'Create Buttons with Icons for use on the homepage.  Links can go anywhere.';
 
 // Presets Settings.
 $string['presets_settings'] = 'Presets';
@@ -67,13 +67,13 @@ $string['navbarbkg'] = 'Navigation bar Background Colour';
 $string['navbarbkg_desc'] = 'Top sticky navigation bar background colour.';
 $string['navbarurl'] = 'Navigation bar Link Colour';
 $string['navbarurl_desc'] = 'Top sticky navigation bar link and menu colour.';
-$string['fpstartwrap'] = 'Frontpage Icon Navigation Background';
+$string['fpstartwrap'] = 'Homepage Icon Navigation Background';
 $string['fpstartwrap_desc'] = 'Background colour of the icon navigation bar.';
-$string['fpicon-colour'] = 'Frontpage Icon Link Colour';
+$string['fpicon-colour'] = 'Homepage Icon Link Colour';
 $string['fpicon-colour_desc'] = 'Colour of the icon navigation links.';
-$string['fpiconnavhover'] = 'Frontpage Icon Hover Background';
-$string['fpiconnavhover_desc'] = 'Frontpage icon navigation bar background colour when hovering over button.';
-$string['fpicon-Colour'] = 'Frontpage Icon Link Colour';
+$string['fpiconnavhover'] = 'Homepage Icon Hover Background';
+$string['fpiconnavhover_desc'] = 'Homepage icon navigation bar background colour when hovering over button.';
+$string['fpicon-Colour'] = 'Homepage Icon Link Colour';
 $string['fpicon-Colour_desc'] = 'Colour of the icon navigation links.';
 $string['cardbkg'] = 'Content Background Colour';
 $string['cardbkg_desc'] = 'Content background colour for course content and blocks.';
@@ -154,30 +154,30 @@ $string['sociallinkicondesc'] = 'Enter the fontawesome name of the icon for your
 $string['contentsettings'] = 'Content areas';
 $string['footnote'] = 'Footnote.';
 $string['footnotedesc'] = 'Footnote content editor for main footer';
-$string['fptextbox'] = 'Frontpage Textbox Authenticated User';
-$string['fptextbox_desc'] = 'This textbox appears on the frontpage once a user authenticates. It is ideal for putting a welcome message and providing instructions for the learner.';
-$string['fptextboxlogout'] = 'Frontpage Textbox Visitor';
-$string['fptextboxlogout_desc'] = 'This textbox appears on the frontpage for visitors and is ideal for putting a welcome message or link to the login page.';
+$string['fptextbox'] = 'Homepage Textbox Authenticated User';
+$string['fptextbox_desc'] = 'This textbox appears on the homepage once a user authenticates. It is ideal for putting a welcome message and providing instructions for the learner.';
+$string['fptextboxlogout'] = 'Homepage Textbox Visitor';
+$string['fptextboxlogout_desc'] = 'This textbox appears on the homepage for visitors and is ideal for putting a welcome message or link to the login page.';
 $string['searchtoggle'] = 'Show the Homepage Searchbox';
 $string['searchtoggle_desc'] = 'Check this in order to show the homepage searchbox for courses.';
 
 
 //FP Icon Nav
-$string['navicon1'] = 'Custom Frontpage Icon One';
-$string['navicon2'] = 'Custom Frontpage Icon Two';
-$string['navicon3'] = 'Custom Frontpage Icon Three';
-$string['navicon4'] = 'Custom Frontpage Icon Four';
-$string['navicon5'] = 'Custom Frontpage Icon Five';
-$string['navicon6'] = 'Custom Frontpage Icon Six';
-$string['navicon7'] = 'Custom Frontpage Icon Seven';
-$string['navicon8'] = 'Custom Frontpage Icon Eight';
+$string['navicon1'] = 'Custom Homepage Icon One';
+$string['navicon2'] = 'Custom Homepage Icon Two';
+$string['navicon3'] = 'Custom Homepage Icon Three';
+$string['navicon4'] = 'Custom Homepage Icon Four';
+$string['navicon5'] = 'Custom Homepage Icon Five';
+$string['navicon6'] = 'Custom Homepage Icon Six';
+$string['navicon7'] = 'Custom Homepage Icon Seven';
+$string['navicon8'] = 'Custom Homepage Icon Eight';
 
 $string['createinfo'] = 'Course Creator Button';
 $string['createinfodesc'] = 'This button appears on the homepage when a user can create new courses.  Those with the role of Course Creator at the site level will see this button.';
 $string['iconwidthinfo'] = 'Icon Button Width Setting';
 $string['iconwidthinfodesc'] = 'Select a width that will allow your link text to fit inside the icon navigation buttons.';
 
-$string['iconwidth'] = 'Frontpage Icon Width';
+$string['iconwidth'] = 'Homepage Icon Width';
 $string['iconwidth_desc'] = 'Width of the 8 individual icons in the icon navigation bar on the homepage.';
 
 $string['navicon'] = 'Icon';
@@ -238,5 +238,5 @@ $string['marketiconbg'] = 'Marketing Tile Icon Background';
 $string['marketiconbg_desc'] = 'Background colour for the circular icon in the marketing tiles.';
 
 //Alerts
-$string['alert'] = 'Frontpage Alert';
-$string['alert_desc'] = 'This is a special alert message that will appear on the frontpage.';
+$string['alert'] = 'Homepage Alert';
+$string['alert_desc'] = 'This is a special alert message that will appear on the homepage.';
