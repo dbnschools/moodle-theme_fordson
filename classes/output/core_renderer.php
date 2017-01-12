@@ -353,7 +353,7 @@ class core_renderer extends \core_renderer {
     public function navigation_menu() {
         global $PAGE, $COURSE, $OUTPUT, $CFG;
         $menu = new custom_menu();
-        
+        $context = $this->page->context;
         if (isloggedin() && !isguestuser()) {
         
                 if (ISSET($COURSE->id) && $COURSE->id > 1) {
@@ -362,15 +362,18 @@ class core_renderer extends \core_renderer {
                     $branchurl = new moodle_url('#');
                     $branch = $menu->add($branchlabel, $branchurl, $branchtitle, 10002);
 
-                    //$branchtitle = "People";
-                    //$branchlabel = $branchtitle;
-                    //$branchurl = new moodle_url('/user/index.php', array('id' => $PAGE->course->id));
-                    //$branch->add($branchlabel, $branchurl, $branchtitle, 100003);
-
-                    $branchtitle = "Enrollment";
+                    if (has_capability('mod/quiz:manage', $context)) { 
+                    $branchtitle = get_string('thiscoursequestion', 'theme_fordson');
+                    $branchlabel = $branchtitle;
+                    $branchurl = new moodle_url('/question/edit.php', array('courseid' => $PAGE->course->id));
+                    $branch->add($branchlabel, $branchurl, $branchtitle, 100003);
+                    }
+                    if (has_capability('enrol/category:config', $context)) { 
+                    $branchtitle = get_string('thiscourseenroll', 'theme_fordson');
                     $branchlabel = $branchtitle;
                     $branchurl = new moodle_url('/enrol/users.php', array('id' => $PAGE->course->id));
-                    $branch->add($branchlabel, $branchurl, $branchtitle, 100003);
+                    $branch->add($branchlabel, $branchurl, $branchtitle, 100004);
+                    }
 
                     $data = theme_fordson_get_course_activities();
 
