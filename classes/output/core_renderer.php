@@ -137,11 +137,11 @@ class core_renderer extends \core_renderer {
         $html .= $this->context_header();
         $html .= html_writer::start_div('clearfix', array('id' => 'page-navbar'));
         $html .= html_writer::tag('div', $this->navbar(), array('class' => 'breadcrumb-nav'));
+        $html .= $this->navigation_menu();
         $html .= html_writer::div($this->page_heading_button(), 'breadcrumb-button');
         $html .= html_writer::end_div(); // End page-navbar.
         $html .= html_writer::tag('div', $this->course_header(), array('id' => 'course-header'));
         $html .= html_writer::end_div(); // End card-block.
-
         if ($courseimage) {
             $html .= html_writer::end_div(); // End withimage inline style div.
         }
@@ -347,6 +347,47 @@ class core_renderer extends \core_renderer {
         }
 
         return $content;
+    }
+
+
+    public function navigation_menu() {
+        global $PAGE, $COURSE, $OUTPUT, $CFG;
+        $menu = new custom_menu();
+        
+        if (isloggedin() && !isguestuser()) {
+        
+                if (ISSET($COURSE->id) && $COURSE->id > 1) {
+                    $branchtitle = get_string('thiscourse', 'theme_fordson');
+                    $branchlabel = '<span class="menutitle">'.$branchtitle.'</span>';
+                    $branchurl = new moodle_url('#');
+                    $branch = $menu->add($branchlabel, $branchurl, $branchtitle, 10002);
+
+                    //$branchtitle = "People";
+                    //$branchlabel = $branchtitle;
+                    //$branchurl = new moodle_url('/user/index.php', array('id' => $PAGE->course->id));
+                    //$branch->add($branchlabel, $branchurl, $branchtitle, 100003);
+
+                    $branchtitle = "Enrollment";
+                    $branchlabel = $branchtitle;
+                    $branchurl = new moodle_url('/enrol/users.php', array('id' => $PAGE->course->id));
+                    $branch->add($branchlabel, $branchurl, $branchtitle, 100003);
+
+                    $data = theme_fordson_get_course_activities();
+
+                    foreach ($data as $modname => $modfullname) {
+                        if ($modname === 'resources') {
+                            $icon = $OUTPUT->pix_icon('icon', '', 'mod_page', array('class' => 'icon'));
+                            $branch->add($icon.$modfullname, new moodle_url('/course/resources.php', array('id' => $PAGE->course->id)));
+                        } else {
+                            $icon = '<img src="'.$OUTPUT->pix_url('icon', $modname) . '" class="icon" alt="" />';
+                            $branch->add($icon.$modfullname, new moodle_url('/mod/'.$modname.'/index.php',
+                                    array('id' => $PAGE->course->id)));
+                        }
+                    }
+                }
+        }
+
+        return $this->render_custom_menu($menu);
     }
 
     /**

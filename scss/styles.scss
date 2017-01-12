@@ -42,6 +42,16 @@ color: $header-color;
 background: $headerfade-bg;
 }
 
+#page-navbar .dropdown-toggle {
+    padding: 10px;
+    margin-left: 10px;
+    background-color: $breadcrumb-bg;
+    border: 1px solid $breadcrumb-bg;
+    border-radius: .25rem;
+}
+#page-navbar .open>.dropdown-menu {
+    border-radius: .25rem;
+}
 .pagelayout-incourse #page-header .card {
     height: initial;
 }
@@ -181,10 +191,12 @@ background: $headerfade-bg;
     border-radius: $card-border-radius;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
 }
+/*
 .markettiles .col-md-4 {
     padding: 0;
     margin: 0;
 }
+*/
 .marketcontent {
     padding:1rem; 
     background-color: $markettextbg;

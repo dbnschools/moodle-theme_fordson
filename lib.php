@@ -37,3 +37,4 @@ defined('MOODLE_INTERNAL') || die();
 
 require('lib/scss_lib.php');
 require('lib/filesettings_lib.php');
+require('lib/fordson_lib.php');
