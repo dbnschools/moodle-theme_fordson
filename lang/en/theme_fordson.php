@@ -109,6 +109,8 @@ $string['loginimage'] = 'Default Login image';
 $string['loginimage_desc'] = 'Background image for login page';
 $string['headerimagepadding'] = 'Header Image Height';
 $string['headerimagepadding_desc'] = 'Control the padding and height of the header image for courses. A minimum of 120px should be selected if using the Radial Completion and Course Grade displays.';
+$string['activitymenu'] = 'Course Activity Menu';
+$string['activitymenu_desc'] = 'Show the Course Activity drop down menu.  This menu appears next to the breadcrumbs and will display a listing of all activities for the student.  For the teacher it will also display a link to enrollments and the question bank.';
 
 // Social Networks.
 $string['socialheading'] = 'Social Networking';

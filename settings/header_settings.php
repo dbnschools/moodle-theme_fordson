@@ -51,9 +51,18 @@ $choices = array(
         '375px' => '375px',
         '400px' => '400px',
     );
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+ // Show hide Course Activity Menu toggle.
+$name = 'theme_fordson/activitymenu';
+$title = get_string('activitymenu', 'theme_fordson');
+$description = get_string('activitymenu_desc', 'theme_fordson');
+$default = 1;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
     
 // Default header image.
 $name = 'theme_fordson/headerdefaultimage';
