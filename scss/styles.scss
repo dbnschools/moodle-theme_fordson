@@ -27,6 +27,10 @@ $header-color: #fff !default;
 $headings-color: #3a3a3a !default;
 $body-color: #3a3a3a !default;
 $link-color: $brand-primary !default;
+$breadcrumb-padding-y: 10px !default;
+$breadcrumb-padding-x: 10px !default;
+$border-radius: 4px !default;
+$breadcrumb-bg: #fff !default;
 
 /**
 * Layout 
@@ -43,14 +47,15 @@ background: $headerfade-bg;
 }
 
 #page-navbar .dropdown-toggle {
-    padding: 10px;
+    padding: $breadcrumb-padding-y $breadcrumb-padding-x;
     margin-left: 10px;
     background-color: $breadcrumb-bg;
     border: 1px solid $breadcrumb-bg;
-    border-radius: .25rem;
+    border-radius: $border-radius;
 }
 #page-navbar .open>.dropdown-menu {
-    border-radius: .25rem;
+    border-radius: $border-radius;
+    margin-left: 5px;
 }
 .pagelayout-incourse #page-header .card {
     height: initial;
