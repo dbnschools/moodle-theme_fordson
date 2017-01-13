@@ -135,11 +135,17 @@ class core_renderer extends \core_renderer {
         $html .= html_writer::start_div('card-block');
         $html .= html_writer::div($this->context_header_settings_menu(), 'pull-xs-right context-header-settings-menu');
         $html .= $this->context_header();
-        $html .= html_writer::start_div('clearfix', array('id' => 'page-navbar'));
-        $html .= html_writer::tag('div', $this->navbar(), array('class' => 'breadcrumb-nav'));
-        $html .= $this->thiscourse_menu();
-        $html .= html_writer::div($this->page_heading_button(), 'breadcrumb-button');
-        $html .= html_writer::end_div(); // End page-navbar.
+
+        $pageheadingbutton = $this->page_heading_button();
+        if (empty($PAGE->layout_options['nonavbar'])) {
+            $html .= html_writer::start_div('clearfix', array('id' => 'page-navbar'));
+            $html .= html_writer::tag('div', $this->navbar(), array('class' => 'breadcrumb-nav'));
+            $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button');
+            $html .= $this->thiscourse_menu();
+            $html .= html_writer::end_div();
+        } else if ($pageheadingbutton) {
+            $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button nonavbar');
+        }
         $html .= html_writer::tag('div', $this->course_header(), array('id' => 'course-header'));
         $html .= html_writer::end_div(); // End card-block.
         if ($courseimage) {
@@ -185,9 +191,23 @@ class core_renderer extends \core_renderer {
      * We don't like these...
      *
      */
-    public function edit_button(moodle_url $url) {
-
-        return '';
+     public function edit_button(moodle_url $url) {
+        global $SITE, $PAGE, $USER, $CFG, $COURSE;
+        $url->param('sesskey', sesskey());
+        if ($this->page->user_is_editing()) {
+            $url->param('edit', 'off');
+            $btn = 'btn-danger';
+            $title = get_string('editoff' , 'theme_fordson');
+            $icon = 'fa-power-off';
+        } else {
+            $url->param('edit', 'on');
+            $btn = 'btn-success';
+            $title = get_string('editon' , 'theme_fordson');
+            $icon = 'fa-edit';
+        }
+        return html_writer::tag('a', html_writer::start_tag('i', array('class' => $icon . ' fa fa-fw')) .
+            html_writer::end_tag('i') . $title, array('href' => $url, 'class' => 'btn ' . $btn, 'title' => $title));
+        return $output;
     }
 
 
