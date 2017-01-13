@@ -31,6 +31,9 @@ Now a Michigan Historical Site, Fordson High School is just as beautiful as the 
 Fordson is a child theme of Boost.  
 This means when Moodle updates the core Boost theme those changes will be applied to Fordson as well in most cases.
 
+## Fordson v1.1.6
+*Fixed activity edit menu had disappeared during a Boost update.  Fixed core renderer on Fordson.
+
 ## Fordson v1.1.5
 *Added This Course(Course Activities) drop down next to breadcrumbs in header
 *Added Theme Admin Setting to toggle on/off Course Activity Menu
