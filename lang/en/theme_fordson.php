@@ -162,8 +162,9 @@ $string['searchtoggle'] = 'Show the Homepage Searchbox';
 $string['searchtoggle_desc'] = 'Check this in order to show the homepage searchbox for courses.';
 $string['slidetextbox'] = 'Slide Textbox';
 $string['slidetextbox_desc'] = 'This textbox content will be displayed when the Slide Button is pressed.';
-$string['thiscourse'] = 'Course Activities';
-$string['thiscourseenroll'] = 'Enrollment';
+$string['thiscourse'] = 'This Course';
+$string['thiscourseenroll'] = 'User Enrollment';
+$string['thiscoursegroups'] = 'Group Management';
 $string['thiscoursequestion'] = 'Question Bank';
 
 //FP Icon Nav

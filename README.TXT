@@ -33,6 +33,8 @@ This means when Moodle updates the core Boost theme those changes will be applie
 
 ## Fordson v1.1.5
 *Added This Course(Course Activities) drop down next to breadcrumbs in header
+*Added Theme Admin Setting to toggle on/off Course Activity Menu
+*Fixed Bootstrap Presets from causing issues
 
 ## Fordson v1.1.4
 *Fixed duplicate language string

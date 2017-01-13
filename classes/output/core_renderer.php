@@ -368,6 +368,12 @@ class core_renderer extends \core_renderer {
                     $branchurl = new moodle_url('/enrol/users.php', array('id' => $PAGE->course->id));
                     $branch->add($branchlabel, $branchurl, $branchtitle, 100004);
                     }
+                    if (has_capability('moodle/course:managegroups', $context)) { 
+                    $branchtitle = get_string('thiscoursegroups', 'theme_fordson');
+                    $branchlabel = $branchtitle;
+                    $branchurl = new moodle_url('/group/index.php', array('id' => $PAGE->course->id));
+                    $branch->add($branchlabel, $branchurl, $branchtitle, 100004);
+                    }
                     if (has_capability('mod/quiz:manage', $context)) { 
                     $branchtitle = get_string('thiscoursequestion', 'theme_fordson');
                     $branchlabel = $branchtitle;
