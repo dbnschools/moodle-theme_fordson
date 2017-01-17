@@ -1175,5 +1175,4 @@ class core_renderer extends \core_renderer {
         return $this->login_info(false);
     }
 
-
 }
