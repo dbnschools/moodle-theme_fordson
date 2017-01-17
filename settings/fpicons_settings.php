@@ -113,7 +113,7 @@ $page = new admin_settingpage('theme_fordson_iconnavheading', get_string('iconna
     $name = 'theme_fordson/slideiconbuttontext';
     $title = get_string('naviconbuttontext', 'theme_fordson');
     $description = get_string('naviconbuttontextdesc', 'theme_fordson');
-    $default = 'Slider Toggle';
+    $default = '';
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);

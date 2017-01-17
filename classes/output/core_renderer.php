@@ -129,13 +129,11 @@ class core_renderer extends \core_renderer {
                 'style' => 'background: url("'.$courseimage.'"); background-size: cover; background-position:center;
                 width: 100%; height: 100%;'));
         }
-
         $html .= html_writer::start_div('header-position');
         $html .= html_writer::start_div('headerfade');
         $html .= html_writer::start_div('card-block');
         $html .= html_writer::div($this->context_header_settings_menu(), 'pull-xs-right context-header-settings-menu');
         $html .= $this->context_header();
-
         $pageheadingbutton = $this->page_heading_button();
         if (empty($PAGE->layout_options['nonavbar'])) {
             $html .= html_writer::start_div('clearfix', array('id' => 'page-navbar'));
@@ -368,25 +366,32 @@ class core_renderer extends \core_renderer {
                     $branchurl = new moodle_url('#');
                     $branch = $menu->add($branchlabel, $branchurl, $branchtitle, 10002);
 
-                    if (has_capability('enrol/category:config', $context)) { 
+                    if (has_capability('enrol/category:config', $context) && $PAGE->theme->settings->userenrollmenu) { 
                     $branchtitle = get_string('thiscourseenroll', 'theme_fordson');
                     $branchlabel = $branchtitle;
                     $branchurl = new moodle_url('/enrol/users.php', array('id' => $PAGE->course->id));
-                    $branch->add($branchlabel, $branchurl, $branchtitle, 100004);
+                    $branch->add($branchlabel, $branchurl, $branchtitle, 100003);
                     }
-                    if (has_capability('moodle/course:managegroups', $context)) { 
+                    if (has_capability('moodle/course:managegroups', $context) && $PAGE->theme->settings->groupmanagemenu) { 
                     $branchtitle = get_string('thiscoursegroups', 'theme_fordson');
                     $branchlabel = $branchtitle;
                     $branchurl = new moodle_url('/group/index.php', array('id' => $PAGE->course->id));
                     $branch->add($branchlabel, $branchurl, $branchtitle, 100004);
                     }
-                    if (has_capability('mod/quiz:manage', $context)) { 
+                    if (has_capability('mod/quiz:manage', $context) && $PAGE->theme->settings->questionbankmenu) { 
                     $branchtitle = get_string('thiscoursequestion', 'theme_fordson');
                     $branchlabel = $branchtitle;
                     $branchurl = new moodle_url('/question/edit.php', array('courseid' => $PAGE->course->id));
-                    $branch->add($branchlabel, $branchurl, $branchtitle, 100003);
+                    $branch->add($branchlabel, $branchurl, $branchtitle, 100005);
+                    }
+                    if (has_capability('mod/quiz:manage', $context) && $PAGE->theme->settings->questioncategorymenu) { 
+                    $branchtitle = get_string('thiscoursequestioncat', 'theme_fordson');
+                    $branchlabel = $branchtitle;
+                    $branchurl = new moodle_url('/question/category.php', array('courseid' => $PAGE->course->id));
+                    $branch->add($branchlabel, $branchurl, $branchtitle, 100006);
                     }
 
+                    if ($PAGE->theme->settings->activitylistingmenu) {
                     $data = theme_fordson_get_course_activities();
 
                     foreach ($data as $modname => $modfullname) {
@@ -399,6 +404,7 @@ class core_renderer extends \core_renderer {
                                     array('id' => $PAGE->course->id)));
                         }
                     }
+                }
                 }
                 }
         }
@@ -1160,7 +1166,14 @@ class core_renderer extends \core_renderer {
         $footnote    = (empty($PAGE->theme->settings->footnote)) ? false : $PAGE->theme->settings->footnote;
         return $footnote;
     }
-
+    /**
+     * Secure login info.
+     *
+     * @return string
+     */
+    public function secure_login_info() {
+        return $this->login_info(false);
+    }
 
 
 }

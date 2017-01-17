@@ -100,17 +100,13 @@ $string['rawscsspre_desc'] = 'In this field you can provide initialising SCSS co
     Most of the time you will use this setting to define variables.';
 
 // Header Settings.
-$string['headingimagesettings'] = 'Heading and Course image settings';
+$string['imagesettings'] = 'Custom image settings';
 $string['headerdefaultimage'] = 'Default header image';
 $string['headerdefaultimage_desc'] = 'Default image for course headers and non-course pages';
 $string['backgroundimage'] = 'Default page background image';
 $string['backgroundimage_desc'] = 'Background image for pages';
 $string['loginimage'] = 'Default Login image';
 $string['loginimage_desc'] = 'Background image for login page';
-$string['headerimagepadding'] = 'Header Image Height';
-$string['headerimagepadding_desc'] = 'Control the padding and height of the header image for courses. A minimum of 120px should be selected if using the Radial Completion and Course Grade displays.';
-$string['activitymenu'] = 'Course Activity Menu';
-$string['activitymenu_desc'] = 'Show the Course Activity drop down menu.  This menu appears next to the breadcrumbs and will display a listing of all activities for the student.  For the teacher it will also display a link to enrollments and the question bank.';
 
 // Social Networks.
 $string['socialheading'] = 'Social Networking';
@@ -162,10 +158,30 @@ $string['searchtoggle'] = 'Show the Homepage Searchbox';
 $string['searchtoggle_desc'] = 'Check this in order to show the homepage searchbox for courses.';
 $string['slidetextbox'] = 'Slide Textbox';
 $string['slidetextbox_desc'] = 'This textbox content will be displayed when the Slide Button is pressed.';
+
+// Heading Settings
+$string['menusettings'] = 'Menu settings';
 $string['thiscourse'] = 'This Course';
 $string['thiscourseenroll'] = 'User Enrollment';
 $string['thiscoursegroups'] = 'Group Management';
 $string['thiscoursequestion'] = 'Question Bank';
+$string['thiscoursequestioncat'] = 'Question Categories';
+$string['headerimagepadding'] = 'Header Image Height';
+$string['headerimagepadding_desc'] = 'Control the padding and height of the header image for courses. A minimum of 120px should be selected if using the Radial Completion and Course Grade displays.';
+$string['activitymenu'] = 'Show This Course Drop Down Menu';
+$string['activitymenu_desc'] = 'Show the This Course drop down menu.  This menu appears next to the breadcrumbs and will display a listing of all activities for the student.  You can also customize the menu by clicking on the menu items below to control what will appear.';
+
+$string['userenrollmenu'] = 'Show Enrollment Link';
+$string['userenrollmenu_desc'] = 'Include a link to the Enrollment page in This Course drop down menu.';
+$string['groupmanagemenu'] = 'Show Group Management Link';
+$string['groupmanagemenu_desc'] = 'Include a link to the Group Management page in This Course drop down menu.';
+$string['questioncategorymenu'] = 'Show Question Categories Link';
+$string['questioncategorymenu_desc'] = 'Include a link to the Question Categories page in This Course drop down menu.';
+$string['questionbankmenu'] = 'Show Question Bank Link';
+$string['questionbankmenu_desc'] = 'Include a link to the Question Bank page in This Course drop down menu.';
+$string['activitylistingmenu'] = 'Show Activity Listings';
+$string['activitylistingmenu_desc'] = 'Include a link to show activities in This Course drop down menu.';
+
 
 //FP Icon Nav
 $string['navicon1'] = 'Homepage Icon One';
