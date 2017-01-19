@@ -198,14 +198,6 @@ $page = new admin_settingpage('theme_fordson_colours', get_string('colours_setti
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
-    // marketing tile icon background
-    $name = 'theme_fordson/marketiconbg';
-    $title = get_string('marketiconbg', 'theme_fordson');
-    $description = get_string('marketiconbg_desc', 'theme_fordson');
-    $default = '#ffffff';
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
 
     // layout card background
     $name = 'theme_fordson/cardbkg';

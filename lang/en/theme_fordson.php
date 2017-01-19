@@ -40,7 +40,7 @@ $string['presets_settings'] = 'Presets';
 $string['currentinparentheses'] = '(current)';
 $string['presetfiles'] = 'Additional theme preset files';
 $string['presetfiles_desc'] = 'Preset files can be used to dramatically alter the appearance of the theme.
-    See https://docs.moodle.org/dev/fordson_Presets for information on creating and sharing your own preset files.';
+    See https://docs.moodle.org/dev/Boost_Presets for information on creating and sharing your own preset files.';
 $string['preset'] = 'Theme preset';
 $string['preset_desc'] = 'Pick a preset to broadly change the look of the theme.';
 
@@ -63,9 +63,9 @@ $string['brandgray_desc'] = 'Gray Base setting - This is the colour used to crea
     but this can be adapted if there is a need to adjust contrast levels';
 $string['breadcrumbbkg'] = 'Breadcrumb Background Colour';
 $string['breadcrumbbkg_desc'] = 'Breadcrumb background colour.';
-$string['navbarbkg'] = 'Navigation bar Background Colour';
+$string['navbarbkg'] = 'Top Navigation bar Background Colour';
 $string['navbarbkg_desc'] = 'Top sticky navigation bar background colour.';
-$string['navbarurl'] = 'Navigation bar Link Colour';
+$string['navbarurl'] = 'Top Navigation bar Link Colour';
 $string['navbarurl_desc'] = 'Top sticky navigation bar link and menu colour.';
 $string['fpstartwrap'] = 'Homepage Icon Navigation Background';
 $string['fpstartwrap_desc'] = 'Background colour of the icon navigation bar.';
@@ -99,7 +99,7 @@ $string['rawscsspre'] = 'Raw initial SCSS';
 $string['rawscsspre_desc'] = 'In this field you can provide initialising SCSS code, it will be injected before everything else.
     Most of the time you will use this setting to define variables.';
 
-// Header Settings.
+// Image Settings.
 $string['imagesettings'] = 'Custom image settings';
 $string['headerdefaultimage'] = 'Default header image';
 $string['headerdefaultimage_desc'] = 'Default image for course headers and non-course pages';
@@ -159,7 +159,7 @@ $string['searchtoggle_desc'] = 'Check this in order to show the homepage searchb
 $string['slidetextbox'] = 'Slide Textbox';
 $string['slidetextbox_desc'] = 'This textbox content will be displayed when the Slide Button is pressed.';
 
-// Heading Settings
+// Menu Settings
 $string['menusettings'] = 'Menu settings';
 $string['thiscourse'] = 'This Course';
 $string['thiscourseenroll'] = 'User Enrollment';
@@ -259,8 +259,6 @@ $string['displaytop'] = 'Display at Top of Page';
 $string['displaybottom'] = 'Display at Bottom of Page';
 $string['markettextbg'] = 'Marketing Tile Text Background';
 $string['markettextbg_desc'] = 'Background colour for the text area of the marketing tiles.';
-$string['marketiconbg'] = 'Marketing Tile Icon Background';
-$string['marketiconbg_desc'] = 'Background colour for the circular icon in the marketing tiles.';
 
 //Alerts
 $string['alert'] = 'Homepage Alert';

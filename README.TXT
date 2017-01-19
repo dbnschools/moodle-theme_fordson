@@ -31,9 +31,17 @@ Now a Michigan Historical Site, Fordson High School is just as beautiful as the 
 Fordson is a child theme of Boost.  
 This means when Moodle updates the core Boost theme those changes will be applied to Fordson as well in most cases.
 
+#Install from Github
+Click on the button to "Clone or Download" https://github.com/kennibc/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
+
+
+## Fordson v1.1.8
+*Icon navigation bad will no longer show for users who login as guest.
+*Removed color chooser that was not used.
+*Review and corrected some language strings.
+
 ## Fordson v1.1.7
 *Made This Course Menu customizable with the abilty to checkoff menu items in Fordson Theme Admin page.  
-
 
 ## Fordson v1.1.6
 *Fixed activity edit menu had disappeared during a Boost update.  Fixed core renderer on Fordson.
