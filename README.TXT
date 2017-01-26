@@ -34,6 +34,8 @@ This means when Moodle updates the core Boost theme those changes will be applie
 #Install from Github
 Click on the button to "Clone or Download" https://github.com/kennibc/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
+## Fordson v1.1.9
+*Fixed issue where language menu appeared in two spots that used the same function to render a menu.  This was fixed and now functions as expected.
 
 ## Fordson v1.1.8
 *Icon navigation bad will no longer show for users who login as guest.

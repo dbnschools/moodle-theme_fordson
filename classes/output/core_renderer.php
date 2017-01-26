@@ -353,6 +353,18 @@ class core_renderer extends \core_renderer {
         return $content;
     }
 
+    protected function render_thiscourse_menu(custom_menu $menu) {
+        global $CFG;
+
+        $content = '';
+        foreach ($menu->get_children() as $item) {
+            $context = $item->export_for_template($this);
+            $content .= $this->render_from_template('core/custom_menu_item', $context);
+        }
+
+        return $content;
+    }
+
 
     public function thiscourse_menu() {
         global $PAGE, $COURSE, $OUTPUT, $CFG;
@@ -409,7 +421,7 @@ class core_renderer extends \core_renderer {
                 }
         }
 
-        return $this->render_custom_menu($menu);
+        return $this->render_thiscourse_menu($menu);
     }
 
     /**
