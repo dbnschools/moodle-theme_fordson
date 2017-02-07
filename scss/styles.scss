@@ -58,7 +58,13 @@ background: $headerfade-bg;
 }
 }
 @media screen and (max-width: 450px) {
-#page-navbar .breadcrumb-button {
+#page-navbar .breadcrumb-button .btn-success {
+    display:none;
+    visibility:hidden;
+}
+}
+@media screen and (max-width: 450px) {
+#page-navbar .breadcrumb-button .btn-danger {
     display:none;
     visibility:hidden;
 }
@@ -107,7 +113,9 @@ background: $headerfade-bg;
 
 #page-header .card-block {padding: .5rem .5rem; margin-bottom:0px}
 #page-header .card {margin-bottom:0px}
-
+.breadcrumb-button {
+    float: right;
+}
 
 /* Enhanced Homepage */
 
