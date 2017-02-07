@@ -57,6 +57,12 @@ background: $headerfade-bg;
     visibility:hidden;
 }
 }
+@media screen and (max-width: 450px) {
+#page-navbar .breadcrumb-button {
+    display:none;
+    visibility:hidden;
+}
+}
 #page-navbar .open>.dropdown-menu {
     border-radius: $border-radius;
     margin-left: 5px;
