@@ -19,7 +19,7 @@ $marketing5image: #fff !default;
 $marketing6image: #fff !default;
 $markettextbg: rgba(255, 255, 255, 0.8) !default;
 $markettile-radius: 5px !default;
-$navbarurl: #000 !default;
+$navbarurl: #FFF !default;
 $card-footer-bg: #ccc !default;
 $headerfade-bg: rgba(0,0,0,0.7) !default;
 $header-color: #fff !default;
@@ -32,7 +32,7 @@ $border-radius: 4px !default;
 $breadcrumb-bg: #fff !default;
 
 /**
-* Layout 
+* Layout Header
 **/
 
 
@@ -50,6 +50,12 @@ background: $headerfade-bg;
     margin-left: 10px;
     background-color: $breadcrumb-bg;
     border-radius: $border-radius;
+}
+@media screen and (max-width: 450px) {
+#page-navbar .dropdown-toggle {
+    display:none;
+    visibility:hidden;
+}
 }
 #page-navbar .open>.dropdown-menu {
     border-radius: $border-radius;
@@ -95,12 +101,6 @@ background: $headerfade-bg;
 
 #page-header .card-block {padding: .5rem .5rem; margin-bottom:0px}
 #page-header .card {margin-bottom:0px}
-
-[data-block="course_overview"] {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border: 0px;
-}
 
 
 /* Enhanced Homepage */

@@ -112,9 +112,6 @@ $breadcrumb-divider-rtl: "/" !default;
     .usermenu .menubar .dropdown-toggle:hover {
         color: darken($navbarurl, 20%);
     }
-    .usermenu {
-        color: $navbarurl;
-    }
 
     .navbar-brand {
         padding-left: 1rem;
@@ -182,12 +179,6 @@ $breadcrumb-divider-rtl: "/" !default;
     }
 }
 
-[data-block="course_overview"] {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    border: 0px;
-}
-
 /**
  * Blocks.
  */
@@ -222,25 +213,138 @@ $breadcrumb-divider-rtl: "/" !default;
     margin-top: 0;
 }
 
+/**
+ * Blocks go Vertical thanks to Mary Evans and Morecandy.
+ *
+ */
+
+.jsenabled #page-content .block-region .card-block {
+    border-color: $brand-primary;
+    border-style: solid;
+    border-width: 0px 0px 0px 34px;
+    position: relative;
+}
+
+.jsenabled .card-block h3.card-title,
+.jsenabled .card-block .settingsform h2,
+#frontpage-course-list h2 {
+    /* Border is the new background */
+    background: none;
+    color: #fff;
+    font-family: Sans-Serif;
+    font-size: 12px;
+    font-weight: bold;
+    left: 0;
+    letter-spacing: 2px;
+    line-height: 24px;
+    /* Abs positioning makes it not take up vert space */
+    position: absolute;
+    text-transform: uppercase;
+    top: 0;
+    padding-top: 3px;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 10px;
+
+    /* Rotate from top left corner (not default) */
+    -webkit-transform-origin: 0 0;
+       -moz-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+         -o-transform-origin: 0 0;
+            transform-origin: 0 0;
+
+    -webkit-transform: rotate(90deg);
+       -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+         -o-transform: rotate(90deg);
+            transform: rotate(90deg);
+}
+
+/* Block min-height
+-------------------------*/
+.jsenabled .block_messages .card-block,
+.jsenabled .block_site_main_menu .card-block,
+.jsenabled .block_tags .card-block {
+    min-height: 100px;
+}
+.jsenabled .block_blog_recent .card-block {
+    min-height: 120px;
+}
+.jsenabled .block_lp .card-block,
+.jsenabled .block_progress .card-block,
+.jsenabled .block_globalsearch{
+    min-height: 135px;
+}
+.jsenabled .block_private_files .card-block {
+    min-height: 150px;
+}
+.jsenabled .block_adminblock .card-block,
+.jsenabled .block_badges .card-block,
+.jsenabled .block_blog_menu .card-block,
+.jsenabled .block_blog_tags .card-block,
+.jsenabled .block_book_toc .card-block,
+.jsenabled .block_calendar_upcoming .card-block,
+.jsenabled .block_comments .card-block,
+.jsenabled .block_community .card-block,
+.jsenabled .block_course_badges .card-block,
+.jsenabled .block_course_list .card-block,
+.jsenabled .block_feedback .card-block,
+.jsenabled .block_flickr .card-block,
+.jsenabled .block_heritage .card-block,
+.jsenabled .block_html .card-block,
+.jsenabled .block_login .card-block,
+.jsenabled .block_lrc .card-block,
+.jsenabled .block_mentees .card-block,
+.jsenabled .block_myprofile .card-block,
+.jsenabled .block_navigation .card-block,
+.jsenabled .block_news_items .card-block,
+.jsenabled .block_people .card-block,
+.jsenabled .block_rss_client .card-block,
+.jsenabled .block_rss_plus .card-block,
+.jsenabled .block_settings .card-block,
+.jsenabled .block_youtube .card-block {
+    min-height: 160px;
+}
+
+.jsenabled .block_activity_modules .card-block,
+.jsenabled .block_activity_results .card-block,
+.jsenabled .block_admin_bookmarks .card-block,
+.jsenabled .block_calendar_month .card-block,
+.jsenabled .block_course_overview .card-block,
+.jsenabled .block_glossary_random .card-block,
+.jsenabled .block_online_users .card-block,
+.jsenabled .block_participants .card-block,
+.jsenabled .block_quiz_navblock .card-block,
+.jsenabled .block_quiz_results .card-block,
+.jsenabled .block_recent_activity .card-block,
+.jsenabled .block_search_forums .card-block,
+.jsenabled .block_section_links .card-block,
+.jsenabled .block_twitter_search .card-block {
+    min-height: 165px;
+}
+
+.jsenabled .block_admin_bookmarks .card-block,
+.jsenabled .block_completionstatus .card-block,
+.jsenabled .block_selfcompletion .card-block {
+    min-height: 175px;
+}
+
+
 /* FORDSON Default Styling */
 
 
 .path-mod-assign [data-region="grading-navigation"] {
     background-color: #fff;
 }
-
-.card {
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
-  border: 1px solid rgb(255, 255, 255);
+.breadcrumb-nav {
+    margin-bottom: 4px;
 }
-
 .forumpost {
     background-color: darken($card-bg, 3%);
 }
 
 h3.sectionname {
     padding: 10px;
-    background-color: $gray-lightest;
+    background-color: $gray-lighter;
 }
-
 body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-size:cover; background-position:center;}

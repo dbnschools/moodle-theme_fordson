@@ -137,9 +137,11 @@ class core_renderer extends \core_renderer {
         $pageheadingbutton = $this->page_heading_button();
         if (empty($PAGE->layout_options['nonavbar'])) {
             $html .= html_writer::start_div('clearfix', array('id' => 'page-navbar'));
+
             $html .= html_writer::tag('div', $this->navbar(), array('class' => 'breadcrumb-nav'));
             $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button');
             $html .= $this->thiscourse_menu();
+            
             $html .= html_writer::end_div();
         } else if ($pageheadingbutton) {
             $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button nonavbar');
@@ -365,60 +367,60 @@ class core_renderer extends \core_renderer {
         return $content;
     }
 
-
     public function thiscourse_menu() {
         global $PAGE, $COURSE, $OUTPUT, $CFG;
         $menu = new custom_menu();
         $context = $this->page->context;
+
         if (isloggedin() && !isguestuser()) {
-        if (!empty($PAGE->theme->settings->activitymenu)) {
-                if (ISSET($COURSE->id) && $COURSE->id > 1) {
-                    $branchtitle = get_string('thiscourse', 'theme_fordson');
-                    $branchlabel = '<span class="menutitle">'.$branchtitle.'</span>';
-                    $branchurl = new moodle_url('#');
-                    $branch = $menu->add($branchlabel, $branchurl, $branchtitle, 10002);
+            if (!empty($PAGE->theme->settings->activitymenu)) {
+                    if (ISSET($COURSE->id) && $COURSE->id > 1) {
+                        $branchtitle = get_string('thiscourse', 'theme_fordson');
+                        $branchlabel = '<span class="menutitle">'.$branchtitle.'</span>';
+                        $branchurl = new moodle_url('#');
+                        $branch = $menu->add($branchlabel, $branchurl, $branchtitle, 10002);
 
                     if (has_capability('enrol/category:config', $context) && $PAGE->theme->settings->userenrollmenu) { 
-                    $branchtitle = get_string('thiscourseenroll', 'theme_fordson');
-                    $branchlabel = $branchtitle;
-                    $branchurl = new moodle_url('/enrol/users.php', array('id' => $PAGE->course->id));
-                    $branch->add($branchlabel, $branchurl, $branchtitle, 100003);
-                    }
+                        $branchtitle = get_string('thiscourseenroll', 'theme_fordson');
+                        $branchlabel = $branchtitle;
+                        $branchurl = new moodle_url('/enrol/users.php', array('id' => $PAGE->course->id));
+                        $branch->add($branchlabel, $branchurl, $branchtitle, 100003);
+                        }
                     if (has_capability('moodle/course:managegroups', $context) && $PAGE->theme->settings->groupmanagemenu) { 
-                    $branchtitle = get_string('thiscoursegroups', 'theme_fordson');
-                    $branchlabel = $branchtitle;
-                    $branchurl = new moodle_url('/group/index.php', array('id' => $PAGE->course->id));
-                    $branch->add($branchlabel, $branchurl, $branchtitle, 100004);
-                    }
+                        $branchtitle = get_string('thiscoursegroups', 'theme_fordson');
+                        $branchlabel = $branchtitle;
+                        $branchurl = new moodle_url('/group/index.php', array('id' => $PAGE->course->id));
+                        $branch->add($branchlabel, $branchurl, $branchtitle, 100004);
+                        }
                     if (has_capability('mod/quiz:manage', $context) && $PAGE->theme->settings->questionbankmenu) { 
-                    $branchtitle = get_string('thiscoursequestion', 'theme_fordson');
-                    $branchlabel = $branchtitle;
-                    $branchurl = new moodle_url('/question/edit.php', array('courseid' => $PAGE->course->id));
-                    $branch->add($branchlabel, $branchurl, $branchtitle, 100005);
-                    }
+                        $branchtitle = get_string('thiscoursequestion', 'theme_fordson');
+                        $branchlabel = $branchtitle;
+                        $branchurl = new moodle_url('/question/edit.php', array('courseid' => $PAGE->course->id));
+                        $branch->add($branchlabel, $branchurl, $branchtitle, 100005);
+                        }
                     if (has_capability('mod/quiz:manage', $context) && $PAGE->theme->settings->questioncategorymenu) { 
-                    $branchtitle = get_string('thiscoursequestioncat', 'theme_fordson');
-                    $branchlabel = $branchtitle;
-                    $branchurl = new moodle_url('/question/category.php', array('courseid' => $PAGE->course->id));
-                    $branch->add($branchlabel, $branchurl, $branchtitle, 100006);
-                    }
+                        $branchtitle = get_string('thiscoursequestioncat', 'theme_fordson');
+                        $branchlabel = $branchtitle;
+                        $branchurl = new moodle_url('/question/category.php', array('courseid' => $PAGE->course->id));
+                        $branch->add($branchlabel, $branchurl, $branchtitle, 100006);
+                        }
 
                     if ($PAGE->theme->settings->activitylistingmenu) {
-                    $data = theme_fordson_get_course_activities();
+                        $data = theme_fordson_get_course_activities();
 
-                    foreach ($data as $modname => $modfullname) {
-                        if ($modname === 'resources') {
-                            $icon = $OUTPUT->pix_icon('icon', '', 'mod_page', array('class' => 'icon'));
-                            $branch->add($icon.$modfullname, new moodle_url('/course/resources.php', array('id' => $PAGE->course->id)));
-                        } else {
-                            $icon = '<img src="'.$OUTPUT->pix_url('icon', $modname) . '" class="icon" alt="" />';
-                            $branch->add($icon.$modfullname, new moodle_url('/mod/'.$modname.'/index.php',
-                                    array('id' => $PAGE->course->id)));
+                        foreach ($data as $modname => $modfullname) {
+                            if ($modname === 'resources') {
+                                $icon = $OUTPUT->pix_icon('icon', '', 'mod_page', array('class' => 'icon'));
+                                $branch->add($icon.$modfullname, new moodle_url('/course/resources.php', array('id' => $PAGE->course->id)));
+                            } else {
+                                $icon = '<img src="'.$OUTPUT->pix_url('icon', $modname) . '" class="icon" alt="" />';
+                                $branch->add($icon.$modfullname, new moodle_url('/mod/'.$modname.'/index.php',
+                                        array('id' => $PAGE->course->id)));
+                            }
                         }
                     }
                 }
-                }
-                }
+            }
         }
 
         return $this->render_thiscourse_menu($menu);
