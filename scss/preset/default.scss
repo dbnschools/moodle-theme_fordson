@@ -252,3 +252,15 @@ h3.sectionname {
 }
 
 body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-size:cover; background-position:center;}
+
+#nav-drawer::-webkit-scrollbar {
+    width: 7px;
+}
+#nav-drawer::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 7px rgba(0,0,0,0.6);
+    border-radius: 5%;
+}
+#nav-drawer::-webkit-scrollbar-thumb {
+  background-color: #348b96;
+  outline: 1px solid slategrey;
+}
