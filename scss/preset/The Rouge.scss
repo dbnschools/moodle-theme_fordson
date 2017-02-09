@@ -56,10 +56,6 @@ $body-color: #000 !default;
 $breadcrumb-padding-y: 10px !default;
 $breadcrumb-padding-x: 10px !default;
 $border-radius: 3px !default;
-$breadcrumb-bg: #577582 !default;
-
-
-
 
 // Body
 $body-bg:    #2B3E50 !default;
@@ -198,7 +194,7 @@ $breadcrumb-divider-rtl: "/" !default;
     border-color: #ddd;
 }
 .nav-tabs .nav-link {
-    border-radius: none;
+    border-radius: 0px;
 }
 .nav-tabs .nav-link:hover {
     border-color: #eceeef;
