@@ -261,6 +261,6 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
     border-radius: 5%;
 }
 #nav-drawer::-webkit-scrollbar-thumb {
-  background-color: #348b96;
+  background-color: $brand-primary;
   outline: 1px solid slategrey;
 }
