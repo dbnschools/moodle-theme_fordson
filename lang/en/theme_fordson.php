@@ -46,6 +46,8 @@ $string['preset_desc'] = 'Pick a preset to broadly change the look of the theme.
 
 // Colours Settings.
 $string['colours_settings'] = 'Colours';
+$string['colours_headingsub'] = 'Colour Settings';
+$string['colours_desc'] = 'Colour choosers will allow you to customize the look and feel of the main elements on the page.  If you are using a Preset other than the default, you will need to remove any custom colors below for best results as these will over-ride the Preset with undesireable results.  Generally, the Preset will have default colors that you will want to see before customizing them here.';
 $string['brandColour'] = 'Brand Colour';
 $string['brandColour_desc'] = 'Your main brand colour';
 $string['brandprimary'] = 'Brand Primary';

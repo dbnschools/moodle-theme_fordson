@@ -25,6 +25,9 @@
 defined('MOODLE_INTERNAL') || die();
 
 $page = new admin_settingpage('theme_fordson_colours', get_string('colours_settings', 'theme_fordson'));
+$page->add(new admin_setting_heading('theme_fordson_colours', get_string('colours_headingsub', 'theme_fordson'),
+        format_text(get_string('colours_desc' , 'theme_fordson'), FORMAT_MARKDOWN)));
+
 
     // Raw SCSS to include before the content.
     $setting = new admin_setting_configtextarea('theme_fordson/scsspre',
@@ -36,8 +39,7 @@ $page = new admin_settingpage('theme_fordson_colours', get_string('colours_setti
     $name = 'theme_fordson/bodycolor';
     $title = get_string('bodycolor', 'theme_fordson');
     $description = get_string('bodycolor_desc', 'theme_fordson');
-    $default = '#3a3a3a';
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
@@ -45,8 +47,7 @@ $page = new admin_settingpage('theme_fordson_colours', get_string('colours_setti
     $name = 'theme_fordson/linkcolor';
     $title = get_string('linkcolor', 'theme_fordson');
     $description = get_string('linkcolor_desc', 'theme_fordson');
-    $default = '#348b96';
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
@@ -54,8 +55,7 @@ $page = new admin_settingpage('theme_fordson_colours', get_string('colours_setti
     $name = 'theme_fordson/brandprimary';
     $title = get_string('brandprimary', 'theme_fordson');
     $description = get_string('brandprimary_desc', 'theme_fordson');
-    $default = '#348b96';
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
@@ -111,8 +111,7 @@ $page = new admin_settingpage('theme_fordson_colours', get_string('colours_setti
     $name = 'theme_fordson/headercolor';
     $title = get_string('headercolor', 'theme_fordson');
     $description = get_string('headercolor_desc', 'theme_fordson');
-    $default = '#ffffff';
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
@@ -120,8 +119,7 @@ $page = new admin_settingpage('theme_fordson_colours', get_string('colours_setti
     $name = 'theme_fordson/headerscreen';
     $title = get_string('headerscreen', 'theme_fordson');
     $description = get_string('headerscreen_desc', 'theme_fordson');
-    $default = 'rgba(0,0,0,0.7)';
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
@@ -129,8 +127,7 @@ $page = new admin_settingpage('theme_fordson_colours', get_string('colours_setti
     $name = 'theme_fordson/bodybackground';
     $title = get_string('bodybackground', 'theme_fordson');
     $description = get_string('bodybackground_desc', 'theme_fordson');
-    $default = '#f6f6f6';
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
@@ -138,8 +135,7 @@ $page = new admin_settingpage('theme_fordson_colours', get_string('colours_setti
     $name = 'theme_fordson/breadcrumbbkg';
     $title = get_string('breadcrumbbkg', 'theme_fordson');
     $description = get_string('breadcrumbbkg_desc', 'theme_fordson');
-    $default = 'rgba(255, 255, 255, 0.8)';
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
@@ -147,8 +143,7 @@ $page = new admin_settingpage('theme_fordson_colours', get_string('colours_setti
     $name = 'theme_fordson/navbarbkg';
     $title = get_string('navbarbkg', 'theme_fordson');
     $description = get_string('navbarbkg_desc', 'theme_fordson');
-    $default = '#025169';
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
@@ -156,8 +151,7 @@ $page = new admin_settingpage('theme_fordson_colours', get_string('colours_setti
     $name = 'theme_fordson/navbarurl';
     $title = get_string('navbarurl', 'theme_fordson');
     $description = get_string('navbarurl_desc', 'theme_fordson');
-    $default = '#ffffff';
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
@@ -166,8 +160,7 @@ $page = new admin_settingpage('theme_fordson_colours', get_string('colours_setti
     $name = 'theme_fordson/fpstartwrap';
     $title = get_string('fpstartwrap', 'theme_fordson');
     $description = get_string('fpstartwrap_desc', 'theme_fordson');
-    $default = '#e8eeef';
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
@@ -175,8 +168,7 @@ $page = new admin_settingpage('theme_fordson_colours', get_string('colours_setti
     $name = 'theme_fordson/fpiconcolour';
     $title = get_string('fpicon-colour', 'theme_fordson');
     $description = get_string('fpicon-colour_desc', 'theme_fordson');
-    $default = '#026C87';
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
@@ -184,8 +176,7 @@ $page = new admin_settingpage('theme_fordson_colours', get_string('colours_setti
     $name = 'theme_fordson/fpiconnavhover';
     $title = get_string('fpiconnavhover', 'theme_fordson');
     $description = get_string('fpiconnavhover_desc', 'theme_fordson');
-    $default = '#bcd5db';
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
@@ -193,8 +184,7 @@ $page = new admin_settingpage('theme_fordson_colours', get_string('colours_setti
     $name = 'theme_fordson/markettextbg';
     $title = get_string('markettextbg', 'theme_fordson');
     $description = get_string('markettextbg_desc', 'theme_fordson');
-    $default = 'rgba(255, 255, 255, 0.9)';
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
@@ -203,8 +193,7 @@ $page = new admin_settingpage('theme_fordson_colours', get_string('colours_setti
     $name = 'theme_fordson/cardbkg';
     $title = get_string('cardbkg', 'theme_fordson');
     $description = get_string('cardbkg_desc', 'theme_fordson');
-    $default = '#ffffff';
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
@@ -212,8 +201,7 @@ $page = new admin_settingpage('theme_fordson_colours', get_string('colours_setti
     $name = 'theme_fordson/drawerbkg';
     $title = get_string('drawerbkg', 'theme_fordson');
     $description = get_string('drawerbkg_desc', 'theme_fordson');
-    $default = 'rgba(236,238,239,0.9)';
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
@@ -221,8 +209,7 @@ $page = new admin_settingpage('theme_fordson_colours', get_string('colours_setti
     $name = 'theme_fordson/footerbg';
     $title = get_string('footerbg', 'theme_fordson');
     $description = get_string('footerbg_desc', 'theme_fordson');
-    $default = '#025169';
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 

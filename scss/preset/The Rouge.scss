@@ -31,23 +31,55 @@ $bootstrap-sass-asset-helper: false !default;
  *
  * Use this space to customise variables, create mixins and override SCSS.
  */
+// Fordson Defaults #258682 
+$fpstartwrap-bg: #4E5D6C !default;
+$fpicon-hover: #E5376E !default;
+$fpicon-icon: darken($fpicon-hover, 10%) !default;
+$fpicon-colour: #fff !default;
+$fpicon-width: 130px !default;
+$fpiconcreate-width: 150px !default;
+$headerimagepadding: 250px !default;
+$marketing1image: #fff !default;
+$marketing2image: #fff !default;
+$marketing3image: #fff !default;
+$marketing4image: #fff !default;
+$marketing5image: #fff !default;
+$marketing6image: #fff !default;
+$markettextbg: rgba(255, 255, 255, 0.1) !default;
+$markettile-radius: 5px !default;
+$navbarurl: #FFF !default;
+$card-footer-bg: #ccc !default;
+$headerfade-bg: rgba(78, 93, 108, 0.6) !default;
+$header-color: #fff !default;
+$headings-color: #000 !default;
+$body-color: #000 !default;
+$breadcrumb-padding-y: 10px !default;
+$breadcrumb-padding-x: 10px !default;
+$border-radius: 3px !default;
+$breadcrumb-bg: #577582 !default;
+
+
+
+
+// Body
+$body-bg:    #2B3E50 !default;
+$drawer-bg: $body-bg !default;
 
 // Colors
-$gray-dark:                 #373a3c !default;
+$gray-dark:                 $body-bg !default;
 $gray:                      #55595c !default;
 $gray-light:                #818a91 !default;
 $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 $gray-base:                 #ccc    !default;
 
-$brand-primary:             #348b96 !default;
-$brand-success:             #77b300 !default;
+//$brand-primary:             #0b9fea !default;
+$brand-primary:             #2fd8b4 !default;
+$brand-success:             #35ab21 !default;
 $brand-warning:             #ff8800 !default;
-$brand-danger:              #ff4136 !default;
+$brand-danger:              #c13838 !default;
 $brand-inverse:             $gray-dark !default;
 $navbar-height:             50px !default;
-$drawer-bg:                 rgba(236,238,239,0.9) !default;
-
 
 // Spacing
 $spacer:   1rem !default;
@@ -55,8 +87,6 @@ $spacer-x: $spacer !default;
 $spacer-y: $spacer !default;
 $border-width: 1px !default;
 
-// Body
-$body-bg:    #f6f6f6 !default;
 
 // Typography
 $font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
@@ -74,18 +104,20 @@ $dropdown-border-color:          #e2e2e2 !default;
 $dropdown-link-color:            rgba(0, 0, 0, .535) !default;
 
 // Navbar
-$navbar-light-color:                #025169 !default;
+
+$navbar-light-color:                #4E5D6C !default;
 $navbar-light-hover-color:          $brand-primary !default;
 $navbar-light-active-color:         $brand-primary !default;
 
 // Cards
-$card-border-radius:       1px !default;
-$card-border-color:        rgba(238, 238, 238, 1) !default;
+$card-bg:                  #577582 !default;
+$card-border-radius:       0px !default;
+$card-border-color:        #73859F !default;
 
 
 // Breadcrumbs
 
-$breadcrumb-bg:               rgba(255, 255, 255, 0.9) !default;
+$breadcrumb-bg:               #fff !default;
 $breadcrumb-padding:          0px 10px 0px 10px !default;
 $breadcrumb-divider: "/" !default;
 $breadcrumb-divider-rtl: "/" !default;
@@ -153,7 +185,26 @@ $breadcrumb-divider-rtl: "/" !default;
         }
     }
 }
+.context-header-settings-menu .action-menu {
+    white-space: nowrap;
+    background-color: $breadcrumb-bg;
+    padding: 5px;
+    border-radius: $border-radius;
+}
 
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.open .nav-link, .nav-tabs .nav-link.active:focus, .nav-tabs .nav-item.open .nav-link:focus, .nav-tabs .nav-link.active:hover, .nav-tabs .nav-item.open .nav-link:hover {
+    color: $body-bg;
+    background-color: $brand-primary;
+    border-color: #ddd;
+}
+.nav-tabs .nav-link {
+    border-radius: none;
+}
+.nav-tabs .nav-link:hover {
+    border-color: #eceeef;
+    color: $body-bg;
+    background-color: $brand-primary;
+}
 
 /**
  * User picture.
@@ -224,8 +275,9 @@ $breadcrumb-divider-rtl: "/" !default;
     margin-top: 0;
 }
 
-/* FORDSON Default Styling */
 
+
+/* FORDSON Default Styling */
 
 .path-mod-assign [data-region="grading-navigation"] {
     background-color: #fff;
@@ -233,22 +285,64 @@ $breadcrumb-divider-rtl: "/" !default;
 
 .card {
   box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
-  border: 1px solid rgb(255, 255, 255);
+  border: none;
 }
+
 
 .forumpost {
-    background-color: darken($card-bg, 3%);
+    background-color: darken($body-bg, 3%);
 }
 
+h3.sectionname {
+    padding: 10px;
+    background-color: $gray-lightest;
+    border-radius: $border-radius;
+}
+
+body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-size:cover; background-position:center;}
+
+/*#page-header .card {
+    border: none;
+    box-shadow: none;
+}*/
+
+#page-footer h1, #page-footer h2, #page-footer h3, #page-footer h4, #page-footer h5, #page-footer h6 {
+    color: #fff;
+}
+.market-tile {
+    background-color: #4488ab;
+}
+
+#nav-drawer::-webkit-scrollbar {
+    width: 7px;
+}
+#nav-drawer::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 7px rgba(0,0,0,0.6);
+    border-radius: 5%;
+}
+#nav-drawer::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+.course-content ul.topics {
+    font-size: larger;
+}
 .courses .coursebox.even, .courses .coursebox.odd {
     background-color: $card-bg; 
 }
 .courses .coursebox:hover {
     background-color: $gray-lightest;
 }
-h3.sectionname {
-    padding: 10px;
-    background-color: $gray-lightest;
+.marketcontent a:hover {
+    color: #fff;
 }
-
-body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-size:cover; background-position:center;}
+.maincalendar .calendarmonth td, .maincalendar .calendarmonth th {
+    border: 1px solid #f4f4f4;
+}
+.p-a-1 {
+    padding: 1rem 1rem 0px 1rem !important;
+}
+.filemanager-container {
+    background-color: #fff;
+}
