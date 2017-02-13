@@ -36,7 +36,7 @@ Click on the button to "Clone or Download" https://github.com/kennibc/moodle-the
 
 ## Fordson v1.2.1
 *Removed default colors being set on install.  This created issues when swapping out presets as the colors would override the preset.
-*Created 4 new presets: The Rouge, The Rouge X, Ford Field, Ford Field X
+*Created new presets: The Rouge, The Rouge X, Ford Field, Ford Field X, City Hall, City Hall X, Michigan Ave, Michigan Ave X
 *Fixed undesired headers being made vertical when using X series presets
 
 ## Fordson v1.2.0
