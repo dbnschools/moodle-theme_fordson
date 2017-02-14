@@ -32,7 +32,8 @@ $bootstrap-sass-asset-helper: false !default;
  * Use this space to customise variables, create mixins and override SCSS.
  */
 
- // Fordson Defaults #258682 
+
+// Fordson Defaults
 $fpstartwrap-bg: #3482ab !default;
 $fpicon-icon: #8E101E !default;
 $fpicon-hover: darken($fpicon-icon, 10%) !default;
@@ -58,6 +59,7 @@ $border-radius: 3px !default;
 
 
 // Colors
+
 $gray-dark:                 #8E101E !default;
 $gray:                      #55595c !default;
 $gray-light:                #818a91 !default;
@@ -73,39 +75,48 @@ $brand-inverse:             $gray-dark !default;
 $navbar-height:             50px !default;
 $drawer-bg:                 rgba(60, 70, 97,0.8) !default;
 
+
 // Spacing
 $spacer:   1rem !default;
 $spacer-x: $spacer !default;
 $spacer-y: $spacer !default;
 $border-width: 1px !default;
 
+
 // Body
 $body-bg:    #22334F !default;
+
 
 // Typography
 $font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
 $font-size-root: 14px !default;
 
+
+// Cards
+$card-border-radius:       $border-width !default;
+$card-border-color:        rgba(238, 238, 238, 1) !default;
+$card-bg:                  #EDEEE8 !default;
+
+
 // Tables
 $table-bg:                      transparent !default;
-$table-bg-accent:               #fafafa !default;
-$table-bg-hover:                lighten($brand-primary, 55%) !default;
+$table-bg-accent:               transparent !default;
+$table-bg-hover:                lighten($card-bg, 30%) !default;
 $table-bg-active:               $table-bg-hover !default;
-$table-border-color:            #f4f4f4 !default;
+$table-border-width:            $border-width !default;
+$table-border-color:            $gray-lighter !default;
+
 
 // Dropdowns
 $dropdown-border-color:          #e2e2e2 !default;
 $dropdown-link-color:            rgba(0, 0, 0, .5) !default;
+
 
 // Navbar
 $navbar-light-color:                #8E101E !default;
 $navbar-light-hover-color:          $brand-primary !default;
 $navbar-light-active-color:         $brand-primary !default;
 
-// Cards
-$card-border-radius:       1px !default;
-$card-border-color:        rgba(238, 238, 238, 1) !default;
-$card-bg:                  #EDEEE8 !default;
 
 // Breadcrumbs
 $breadcrumb-divider: "/" !default;
@@ -182,6 +193,7 @@ $breadcrumb-bg: #fff !default;
     border-radius: 10%;
 }
 
+
 /**
  * For background in content areas.
  */
@@ -204,6 +216,7 @@ $breadcrumb-bg: #fff !default;
     }
 }
 
+
 /**
  * Blocks.
  */
@@ -216,6 +229,7 @@ $breadcrumb-bg: #fff !default;
     }
 }
 
+
 /**
  * Navigation.
  */
@@ -225,6 +239,7 @@ $breadcrumb-bg: #fff !default;
         margin: ($spacer/2) 0;
     }
 }
+
 
 /**
  * Form styles.
@@ -240,12 +255,15 @@ $breadcrumb-bg: #fff !default;
 
 
 /* FORDSON Default Styling */
+
 .path-mod-assign [data-region="grading-navigation"] {
     background-color: #fff;
 }
+
 .breadcrumb-nav {
     margin-bottom: 4px;
 }
+
 .forumpost {
     background-color: darken($card-bg, 3%);
 }
@@ -254,6 +272,7 @@ h3.sectionname {
     padding: 10px;
     background-color: $gray-lighter;
 }
+
 body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-size:cover; background-position:center;}
 
 .market-tile {
@@ -271,14 +290,9 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
   background-color: $brand-primary;
   outline: 1px solid slategrey;
 }
+
 .filemanager-container {
     background-color: #fff;
-}
-.courses .coursebox.even, .courses .coursebox.odd {
-    background-color: $card-bg; 
-}
-.courses .coursebox:hover {
-    background-color: $gray-lightest;
 }
 
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.open .nav-link, .nav-tabs .nav-link.active:focus, .nav-tabs .nav-item.open .nav-link:focus, .nav-tabs .nav-link.active:hover, .nav-tabs .nav-item.open .nav-link:hover {
@@ -286,9 +300,11 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
     background-color: $brand-primary;
     border-color: #ddd;
 }
+
 .nav-tabs .nav-link {
     border-radius: none;
 }
+
 .nav-tabs .nav-link:hover {
     border-color: #eceeef;
     color: $body-bg;

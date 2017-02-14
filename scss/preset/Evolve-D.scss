@@ -32,11 +32,11 @@ $bootstrap-sass-asset-helper: false !default;
  * Use this space to customise variables, create mixins and override SCSS.
  */
 
-// Colors 
+// Colors #f2ff47
 
 $fpstartwrap-bg: #0a8e94 !default;
-$fpicon-hover: #f9eeb5 !default;
-$fpicon-icon: darken($fpicon-hover, 10%) !default;
+$fpicon-icon: #f2ff47 !default;
+$fpicon-hover: darken($fpicon-icon, 15%) !default;
 $fpicon-colour: #645E5B !default;
 $fpicon-width: 110px !default;
 $fpiconcreate-width: 150px !default;
@@ -64,9 +64,9 @@ $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 $gray-base:                 #ccc    !default;
 $brand-primary:             #0a8e94 !default;
-$brand-success:             #77b300 !default;
+$brand-success:             #5fe3e4 !default;
 $brand-warning:             #ff8800 !default;
-$brand-danger:              #ff4136 !default;
+$brand-danger:              #ff8b77 !default;
 $component-active-color: #fff !default;
 $component-active-bg:    $brand-primary !default;
 

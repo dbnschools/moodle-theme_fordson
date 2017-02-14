@@ -48,18 +48,14 @@ $marketing3image: #fff !default;
 $marketing4image: #fff !default;
 $marketing5image: #fff !default;
 $marketing6image: #fff !default;
-
 $markettextbg: rgba(255, 255, 255, 0.8) !default;
 $markettile-radius: 5px !default;
 
 $navbarurl: #FFF !default;
-
 $headerfade-bg: rgba(0, 0, 0, 0.5) !default;
 $header-color: #fff !default;
 $headings-color: #000 !default;
 $body-color: #000 !default;
-$border-radius: 3px !default;
-
 
 
 // Colors
@@ -80,47 +76,57 @@ $navbar-height:             50px !default;
 $drawer-bg:                 #95A99F !default;
 $btn-secondary-color:       $brand-primary !default;
 
+
 // Spacing
 $spacer:   1rem !default;
 $spacer-x: $spacer !default;
 $spacer-y: $spacer !default;
 $border-width: 1px !default;
+$border-radius: 3px !default;
 
-// Body#F6F3F0 
+
+// Body
 $body-bg:    #CDD1BC !default;
+
 
 // Typography
 $font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
 $font-size-root: 14px !default;
 
-// Tables
-$table-bg:                      transparent !default;
-$table-bg-accent:               #fafafa !default;
-$table-bg-hover:                lighten($brand-primary, 55%) !default;
-$table-bg-active:               $table-bg-hover !default;
-$table-border-color:            #f4f4f4 !default;
 
 // Dropdowns
 $dropdown-border-color:          #e2e2e2 !default;
 $dropdown-link-color:            rgba(0, 0, 0, .535) !default;
+
 
 // Navbar
 $navbar-light-color:                #23231F !default;
 $navbar-light-hover-color:          $brand-primary !default;
 $navbar-light-active-color:         $brand-primary !default;
 
+
 // Cards
 $card-border-radius:       1px !default;
 $card-border-color:        rgba(238, 238, 238, 1) !default;
 $card-bg:                  #ADC5B6 !default;
 
+
+// Tables
+$table-bg:                      transparent !default;
+$table-bg-accent:               transparent !default;
+$table-bg-hover:                lighten($body-bg, 50%) !default;
+$table-bg-active:               $table-bg-hover !default;
+$table-border-width:            $border-width !default;
+$table-border-color:            $gray-lighter !default;
+
+
 // Breadcrumbs
 $breadcrumb-bg:               #CDD1BC !default;
 $breadcrumb-padding:          0px 10px 0px 10px !default;
-$breadcrumb-divider: "/" !default;
-$breadcrumb-divider-rtl: "/" !default;
 $breadcrumb-padding-y: 10px !default;
 $breadcrumb-padding-x: 10px !default;
+$breadcrumb-divider: "/" !default;
+$breadcrumb-divider-rtl: "/" !default;
 
 
 // Import everything.
@@ -375,6 +381,7 @@ $breadcrumb-padding-x: 10px !default;
 
 
 /* FORDSON Default Styling */
+
 .path-mod-assign [data-region="grading-navigation"] {
     background-color: #fff;
 }
@@ -388,12 +395,6 @@ $breadcrumb-padding-x: 10px !default;
     background-color: darken($card-bg, 3%);
 }
 
-.courses .coursebox.even, .courses .coursebox.odd {
-    background-color: $card-bg; 
-}
-.courses .coursebox:hover {
-    background-color: $gray-lightest;
-}
 h3.sectionname {
     padding: 10px;
     background-color: $gray-lightest;
@@ -412,6 +413,7 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
   background-color: $brand-primary;
   outline: 1px solid slategrey;
 }
+
 .context-header-settings-menu .action-menu {
     white-space: nowrap;
     background-color: $breadcrumb-bg;
@@ -432,10 +434,16 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
     color: $body-bg;
     background-color: $brand-primary;
 }
+
 .filemanager-container {
     background-color: #fff;
 }
 
 .userenrolment .col_userdetails .subfield {
     padding: 5px 0px 5px 0px;
+}
+
+.bg-inverse {
+    color: $body-color !important;
+    background-color: $card-bg !important;
 }

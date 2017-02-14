@@ -239,12 +239,6 @@ $breadcrumb-divider-rtl: "/" !default;
     background-color: darken($card-bg, 3%);
 }
 
-.courses .coursebox.even, .courses .coursebox.odd {
-    background-color: $card-bg; 
-}
-.courses .coursebox:hover {
-    background-color: $gray-lightest;
-}
 h3.sectionname {
     padding: 10px;
     background-color: $gray-lightest;
