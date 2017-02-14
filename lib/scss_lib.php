@@ -110,7 +110,9 @@ function theme_fordson_get_pre_scss($theme) {
         'headingcolor'  => ['headings-color'],
         'headercolor'  => ['header-color'],
         'bodycolor'  => ['body-color'],
-        'linkcolor'  => ['link-color']
+        'linkcolor'  => ['link-color'],
+        'sectionicon'  => ['sectionicon'],
+        'headericon'  => ['headericon']
     ];
 
     // Add settings variables.

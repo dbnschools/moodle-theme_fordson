@@ -1,7 +1,7 @@
 THEME_Fordson
 ===========
 
-#Fordson | A theme for K-12
+#Fordson
 
 Fordson is a child theme for Moodle's core theme Boost.
 
@@ -23,16 +23,14 @@ These settings below are found in the Moodle Site Administration Pages.  These a
 * frontpageloggedin = none or Enrolled Courses (Frontpage items to show when logged in. Part of Moodle Frontpage Settings tab.)
 * Optional: forcelogin = Checked (This forces users to login before seeing the homepage.)
 
-The Fordson Moodle theme is named after the first one million dollar high school ever built in America. 
-Fordson High School is stunningly beautiful with rich history and tradition. 
-Built in a time when hand-crafted woodwork, marble and bronze statues, and attention to detail was the norm.  
-Now a Michigan Historical Site, Fordson High School is just as beautiful as the day it was built.  
-
 Fordson is a child theme of Boost.  
 This means when Moodle updates the core Boost theme those changes will be applied to Fordson as well in most cases.
 
 #Install from Github
 Click on the button to "Clone or Download" https://github.com/kennibc/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
+
+## Fordson v1.2.3
+*Added Font-Awesome icons for each section in a course as well as the main header title.  Each can be set using Fontawesome unicode with parenthesis around the unicode. Examples in the setting description are provided.
 
 ## Fordson v1.2.2
 *Style Presets have been refined for better control of colors and variables.  

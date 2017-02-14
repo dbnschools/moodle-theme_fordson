@@ -36,6 +36,26 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    //Topic and Weekly Section Titles Icon
+    $name = 'theme_fordson/headericon';
+    $title = get_string('headericon','theme_fordson');
+    $description = get_string('headericon_desc', 'theme_fordson');
+    $default = '"\f02d"';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    //Topic and Weekly Section Titles Icon
+    $name = 'theme_fordson/sectionicon';
+    $title = get_string('sectionicon','theme_fordson');
+    $description = get_string('sectionicon_desc', 'theme_fordson');
+    $default = '"\f0c9"';
+    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+
+
 	// Frontpage Textbox.
     $name = 'theme_fordson/fptextbox';
     $title = get_string('fptextbox', 'theme_fordson');

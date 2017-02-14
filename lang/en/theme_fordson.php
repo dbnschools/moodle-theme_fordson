@@ -150,7 +150,7 @@ $string['sociallinkicondesc'] = 'Enter the fontawesome name of the icon for your
 
 // Content settings.
 $string['contentsettings'] = 'Content areas';
-$string['footnote'] = 'Footnote.';
+$string['footnote'] = 'Footnote';
 $string['footnotedesc'] = 'Footnote content editor for main footer';
 $string['fptextbox'] = 'Homepage Textbox Authenticated User';
 $string['fptextbox_desc'] = 'This textbox appears on the homepage once a user authenticates. It is ideal for putting a welcome message and providing instructions for the learner.';
@@ -160,6 +160,12 @@ $string['searchtoggle'] = 'Show the Homepage Searchbox';
 $string['searchtoggle_desc'] = 'Check this in order to show the homepage searchbox for courses.';
 $string['slidetextbox'] = 'Slide Textbox';
 $string['slidetextbox_desc'] = 'This textbox content will be displayed when the Slide Button is pressed.';
+$string['sectionicon'] = 'Course Section Icon';
+$string['sectionicon_desc'] = 'This allows you to change the icon that appears next to each section in a course.  You must include parenthesis " and the unicode for the Font Awesome icon. Example including parenthesis: "\f0c9"';
+$string['headericon'] = 'Header Title Icon';
+$string['headericon_desc'] = 'This allows you to change the icon that appears in the header area next to the page title.  You must include parenthesis " and the unicode for the Font Awesome icon. Example including parenthesis: "\f02d"';
+
+
 
 // Menu Settings
 $string['menusettings'] = 'Menu settings';

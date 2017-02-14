@@ -225,6 +225,32 @@ $breadcrumb-divider-rtl: "/" !default;
 
 /* FORDSON Default Styling */
 
+$headericon: "\f02d" !default;
+.page-header-headings h1:before {
+    color: $header-color;
+    display: block;
+    float: left;
+    font-family: FontAwesome;
+    margin-right: .5rem;
+    text-align: center;
+    border-radius: 2px;
+    content: $headericon;
+}
+#page-my-index .page-header-headings h1:before, #page-badges-mybadges .page-header-headings h1:before, #page-user-preferences .page-header-headings h1:before, #page-grade-report-overview-index .page-header-headings h1:before, #page-message-index .page-header-headings h1:before {
+    content: "";
+}
+
+$sectionicon: "\f0c9" !default;
+h3.sectionname:before {
+    color: $brand-primary;
+    display: block;
+    float: left;
+    font-family: FontAwesome;
+    margin-right: .5rem;
+    text-align: center;
+    border-radius: 2px;
+    content: $sectionicon;
+}
 
 .path-mod-assign [data-region="grading-navigation"] {
     background-color: #fff;
