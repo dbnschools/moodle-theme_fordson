@@ -43,6 +43,7 @@ color: $header-color;
 
 #page-header .headerfade {
 background: $headerfade-bg;
+border-radius: 0px 0px $card-border-radius $card-border-radius;
 }
 
 #page-navbar .dropdown-toggle {
