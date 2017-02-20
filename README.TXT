@@ -32,7 +32,9 @@ Click on the button to "Clone or Download" https://github.com/kennibc/moodle-the
 
 ## Fordson v1.2.5
 *Added language strings for default text of icon navigation
-*Changed font awesome icons from text field to drop down select. 
+*Changed font awesome icons from text field to drop down select to make things very simple.  Also included the option to remove the icons next to section and header titles from the drop down. 
+*Upgraded to font awesome 4.7
+
 
 ## Fordson v1.2.4
 *Fixed issue with header information getting distorted on smaller screen sizes with small header image height set.  The text would sometimes get cut off.  

@@ -40,9 +40,8 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $name = 'theme_fordson/headericon';
     $title = get_string('headericon','theme_fordson');
     $description = get_string('headericon_desc', 'theme_fordson');
-    $default = 'Clone';
+    $default = '"\f24d"';
     $choices = array(
-        '""' => 'None - No Icon',
         '"\f24d"' => 'Clone',
         '"\f02e"' => 'Bookmark',
         '"\f02d"' => 'Book',
@@ -72,6 +71,7 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
         '"\f054"' => 'Chevron Right',
         '"\f005"' => 'Star',
         '"\f2bd"' => 'User Circle',
+        '""' => 'None - No Icon',
     );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -81,9 +81,8 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $name = 'theme_fordson/sectionicon';
     $title = get_string('sectionicon','theme_fordson');
     $description = get_string('sectionicon_desc', 'theme_fordson');
-    $default = 'Folder Open';
+    $default = '"\f07c"';
     $choices = array(
-        '""' => 'None - No Icon',
         '"\f24d"' => 'Clone',
         '"\f02e"' => 'Bookmark',
         '"\f02d"' => 'Book',
@@ -113,6 +112,7 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
         '"\f054"' => 'Chevron Right',
         '"\f005"' => 'Star',
         '"\f2bd"' => 'User Circle',
+        '""' => 'None - No Icon',
     );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');

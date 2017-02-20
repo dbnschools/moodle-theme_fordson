@@ -161,11 +161,9 @@ $string['searchtoggle_desc'] = 'Check this in order to show the homepage searchb
 $string['slidetextbox'] = 'Slide Textbox';
 $string['slidetextbox_desc'] = 'This textbox content will be displayed when the Slide Button is pressed.';
 $string['sectionicon'] = 'Course Section Icon';
-$string['sectionicon_desc'] = 'This allows you to change the icon that appears next to each section in a course.  You must include parenthesis " and the unicode for the Font Awesome icon. Example including parenthesis: "\f07c"';
+$string['sectionicon_desc'] = 'This allows you to change the icon that appears next to each section in a course.  These are Font-Awesome icons. These appear in the following presets: Default and Evolve-D.';
 $string['headericon'] = 'Header Title Icon';
-$string['headericon_desc'] = 'This allows you to change the icon that appears in the header area next to the page title.  You must include parenthesis " and the unicode for the Font Awesome icon. Example including parenthesis: "\f02d"';
-
-
+$string['headericon_desc'] = 'This allows you to change the icon that appears in the header area next to the page title. These are Font-Awesome icons. These appear in the following presets: Default and Evolve-D.';
 
 // Menu Settings
 $string['menusettings'] = 'Menu settings';
@@ -189,7 +187,6 @@ $string['questionbankmenu'] = 'Show Question Bank Link';
 $string['questionbankmenu_desc'] = 'Include a link to the Question Bank page in This Course drop down menu.';
 $string['activitylistingmenu'] = 'Show Activity Listings';
 $string['activitylistingmenu_desc'] = 'Include a link to show activities in This Course drop down menu.';
-
 
 //FP Icon Nav
 $string['navicon1'] = 'Homepage Icon One';
@@ -226,7 +223,6 @@ $string['naviconbuttontext'] = 'Link Text';
 $string['naviconbuttontextdesc'] = 'Text to appear below the icon.';
 $string['naviconbuttonurl'] = 'Link URL';
 $string['naviconbuttonurldesc'] = 'URL the button will point to. You can link to anywhere including outside websites  just enter the proper URL.  If your Moodle site is in a subdirectory the default URL will not work.  Please adjust the URL to reflect the subdirectory. Example if "moodle" was your subdirectory folder then the URL would need to be changed to /moodle/my/ ';
-
 
 //Edit Button Text
 $string['editon'] = 'Turn Edit On';

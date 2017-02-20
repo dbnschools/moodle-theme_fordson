@@ -77,5 +77,5 @@ class course_renderer extends \core_course_renderer {
 
         return $this->render_from_template('theme_boost/course_search_form', $data);
     }
-
+    
 }
