@@ -104,7 +104,7 @@ function theme_fordson_get_pre_scss($theme) {
         'headerimagepadding' => ['headerimagepadding'],
         'markettextbg' => ['markettextbg'],
         'navbarurl' => ['navbarurl'],
-        'footerbg' => ['gray-dark'],
+        'footerbg' => ['footer-bg'],
         'headerscreen' => ['headerfade-bg'],
         'iconwidth' =>  ['fpicon-width'],
         'headingcolor'  => ['headings-color'],

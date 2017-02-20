@@ -161,7 +161,7 @@ $string['searchtoggle_desc'] = 'Check this in order to show the homepage searchb
 $string['slidetextbox'] = 'Slide Textbox';
 $string['slidetextbox_desc'] = 'This textbox content will be displayed when the Slide Button is pressed.';
 $string['sectionicon'] = 'Course Section Icon';
-$string['sectionicon_desc'] = 'This allows you to change the icon that appears next to each section in a course.  You must include parenthesis " and the unicode for the Font Awesome icon. Example including parenthesis: "\f0c9"';
+$string['sectionicon_desc'] = 'This allows you to change the icon that appears next to each section in a course.  You must include parenthesis " and the unicode for the Font Awesome icon. Example including parenthesis: "\f07c"';
 $string['headericon'] = 'Header Title Icon';
 $string['headericon_desc'] = 'This allows you to change the icon that appears in the header area next to the page title.  You must include parenthesis " and the unicode for the Font Awesome icon. Example including parenthesis: "\f02d"';
 
@@ -200,6 +200,13 @@ $string['navicon5'] = 'Homepage Icon Five';
 $string['navicon6'] = 'Homepage Icon Six';
 $string['navicon7'] = 'Homepage Icon Seven';
 $string['navicon8'] = 'Homepage Icon Eight';
+
+//FP Icon Nav default text for buttons
+$string['naviconbutton1textdefault'] = 'Dashboard';
+$string['naviconbutton2textdefault'] = 'Calendar';
+$string['naviconbutton3textdefault'] = 'Badges';
+$string['naviconbutton4textdefault'] = 'All Courses';
+$string['naviconbuttoncreatetextdefault'] = 'Create a Course';
 
 $string['createinfo'] = 'Special Course Creator Button';
 $string['createinfodesc'] = 'This button appears on the homepage when a user can create new courses.  Those with the role of Course Creator at the site level will see this button.';

@@ -84,7 +84,7 @@ $border-width: 1px !default;
 
 // Body
 $body-bg:    #22334F !default;
-
+$footer-bg: lighten($body-bg, 15%) !default;
 
 // Typography
 $font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
@@ -151,6 +151,7 @@ $breadcrumb-bg: #fff !default;
     .navbar-brand {
         padding-left: 1rem;
         padding-right: 1rem;
+        border-radius: $border-radius;
         margin-right: $spacer * 2;
         color: #fff;
         background-color: $brand-primary;
@@ -160,6 +161,8 @@ $breadcrumb-bg: #fff !default;
         &.has-logo {
             color: $brand-primary;
             background-color: transparent;
+            padding-top: 0;
+            padding-bottom: 0;
             @include hover-focus {
                 color: $brand-primary;
             }
@@ -248,6 +251,70 @@ $breadcrumb-bg: #fff !default;
     margin-top: 0;
 }
 
+
+/* FORDSON Default Styling */
+
+.path-mod-assign [data-region="grading-navigation"] {
+    background-color: #fff;
+}
+
+.breadcrumb-nav {
+    margin-bottom: 4px;
+}
+
+.forumpost {
+    background-color: darken($card-bg, 3%);
+}
+
+h3.sectionname {
+    padding: 10px;
+    background-color: $gray-lighter;
+}
+
+body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-size:cover; background-position:center;}
+
+.market-tile {
+    background-color: #fff;
+}
+
+#nav-drawer::-webkit-scrollbar {
+    width: 7px;
+}
+#nav-drawer::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 7px rgba(0,0,0,0.6);
+    border-radius: 5%;
+}
+#nav-drawer::-webkit-scrollbar-thumb {
+  background-color: $brand-primary;
+  outline: 1px solid slategrey;
+}
+
+.filemanager-container {
+    background-color: #fff;
+}
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.open .nav-link, .nav-tabs .nav-link.active:focus, .nav-tabs .nav-item.open .nav-link:focus, .nav-tabs .nav-link.active:hover, .nav-tabs .nav-item.open .nav-link:hover {
+    color: $body-bg;
+    background-color: $brand-primary;
+    border-color: #ddd;
+}
+
+.nav-tabs .nav-link {
+    border-radius: none;
+}
+
+.nav-tabs .nav-link:hover {
+    border-color: #eceeef;
+    color: $body-bg;
+    background-color: $brand-primary;
+}
+
+.bg-inverse {
+    color: $body-color !important;
+    background-color: $footer-bg !important;
+}
+
+
 /**
  * Blocks go Vertical thanks to Mary Evans and Morecandy.
  *
@@ -272,7 +339,7 @@ $breadcrumb-bg: #fff !default;
     font-weight: bold;
     left: 0;
     letter-spacing: 2px;
-    line-height: 24px;
+    line-height: 14px;
     /* Abs positioning makes it not take up vert space */
     position: absolute;
     text-transform: uppercase;
@@ -363,63 +430,5 @@ $breadcrumb-bg: #fff !default;
 .jsenabled .block_admin_bookmarks .card-block,
 .jsenabled .block_completionstatus .card-block,
 .jsenabled .block_selfcompletion .card-block {
-    min-height: 175px;
-}
-
-
-/* FORDSON Default Styling */
-
-.path-mod-assign [data-region="grading-navigation"] {
-    background-color: #fff;
-}
-
-.breadcrumb-nav {
-    margin-bottom: 4px;
-}
-
-.forumpost {
-    background-color: darken($card-bg, 3%);
-}
-
-h3.sectionname {
-    padding: 10px;
-    background-color: $gray-lighter;
-}
-
-body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-size:cover; background-position:center;}
-
-.market-tile {
-    background-color: #fff;
-}
-
-#nav-drawer::-webkit-scrollbar {
-    width: 7px;
-}
-#nav-drawer::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 7px rgba(0,0,0,0.6);
-    border-radius: 5%;
-}
-#nav-drawer::-webkit-scrollbar-thumb {
-  background-color: $brand-primary;
-  outline: 1px solid slategrey;
-}
-
-.filemanager-container {
-    background-color: #fff;
-}
-
-.nav-tabs .nav-link.active, .nav-tabs .nav-item.open .nav-link, .nav-tabs .nav-link.active:focus, .nav-tabs .nav-item.open .nav-link:focus, .nav-tabs .nav-link.active:hover, .nav-tabs .nav-item.open .nav-link:hover {
-    color: $body-bg;
-    background-color: $brand-primary;
-    border-color: #ddd;
-}
-
-.nav-tabs .nav-link {
-    border-radius: none;
-}
-
-.nav-tabs .nav-link:hover {
-    border-color: #eceeef;
-    color: $body-bg;
-    background-color: $brand-primary;
+    min-height: 200px;
 }

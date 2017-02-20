@@ -34,13 +34,14 @@ $bootstrap-sass-asset-helper: false !default;
 
 // Colors #f2ff47
 
-$fpstartwrap-bg: #0a8e94 !default;
-$fpicon-icon: #f2ff47 !default;
-$fpicon-hover: darken($fpicon-icon, 15%) !default;
-$fpicon-colour: #645E5B !default;
+$fpstartwrap-bg: #7892a2 !default;
+$fpicon-icon: #ececec !default;
+$fpicon-hover: darken($fpicon-icon, 25%) !default;
+$fpicon-colour: #5a5a5a !default;
 $fpicon-width: 110px !default;
 $fpiconcreate-width: 150px !default;
 $headerimagepadding: 200px !default;
+
 $marketing1image: #fff !default;
 $marketing2image: #fff !default;
 $marketing3image: #fff !default;
@@ -49,8 +50,10 @@ $marketing5image: #fff !default;
 $marketing6image: #fff !default;
 $markettextbg: rgba(255, 255, 255, 0.8) !default;
 $markettile-radius: 3px !default;
+
 $navbarurl: #FFF !default;
 $card-footer-bg: #ccc !default;
+
 $headerfade-bg: rgba(0, 0, 0, 0.7) !default;  
 $header-color: #fff !default;
 $headings-color: #3a3a3a !default;
@@ -64,7 +67,7 @@ $gray-lighter:              #eceeef !default;
 $gray-lightest:             #f7f7f9 !default;
 $gray-base:                 #ccc    !default;
 $brand-primary:             #0a8e94 !default;
-$brand-success:             #5fe3e4 !default;
+$brand-success:             #9ae674 !default;
 $brand-warning:             #ff8800 !default;
 $brand-danger:              #ff8b77 !default;
 $component-active-color: #fff !default;
@@ -82,6 +85,9 @@ $border-radius: 3px !default;
 // Body
 $body-bg:    #cdd6d7 !default;
 $brand-inverse: $body-bg !default;
+$headericon: "\f02d" !default;
+$sectionicon: "\f07c" !default;
+$footer-bg: $body-bg !default;
 
 
 // Typography
@@ -185,6 +191,7 @@ $dropdown-header-color:          $gray-light !default;
     .navbar-brand {
         padding-left: 1rem;
         padding-right: 1rem;
+        border-radius: $border-radius;
         margin-right: $spacer * 2;
         color: #fff;
         background-color: $brand-primary;
@@ -194,6 +201,8 @@ $dropdown-header-color:          $gray-light !default;
         &.has-logo {
             color: $brand-primary;
             background-color: transparent;
+            padding-top: 0;
+            padding-bottom: 0;
             @include hover-focus {
                 color: $brand-primary;
             }
@@ -308,7 +317,7 @@ $dropdown-header-color:          $gray-light !default;
     margin-right: .5rem;
     text-align: center;
     border-radius: 2px;
-    content: "\f02d";
+    content: $headericon;
 }
 h3.sectionname:before {
     color: $brand-primary;
@@ -318,7 +327,7 @@ h3.sectionname:before {
     margin-right: .5rem;
     text-align: center;
     border-radius: 2px;
-    content: "\f0c9";
+    content: $sectionicon;
 }
 
 .card {
@@ -366,6 +375,14 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
   outline: 1px solid slategrey;
 }
 
+.btn-success {
+    color: initial;
+}
+
+div#fpslider {
+    background-color: lighten($fpstartwrap-bg, 15%);
+}
+
 .course-content .current::before {
     content: "";
     border-left: $brand-primary 8px solid;
@@ -377,13 +394,8 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
 
 .bg-inverse {
     color: $body-color !important;
-    background-color: $body-bg !important;
+    background-color: $footer-bg !important;
 }
-
-.withimage {
-    border-radius: $card-border-radius;
-}
-
 
 
 /*Special thanks to Shaun Daubney (Theme Aardvark)

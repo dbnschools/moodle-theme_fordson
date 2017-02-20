@@ -29,10 +29,22 @@ This means when Moodle updates the core Boost theme those changes will be applie
 #Install from Github
 Click on the button to "Clone or Download" https://github.com/kennibc/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
+
+## Fordson v1.2.5
+*Added language strings for default text of icon navigation
+*Changed font awesome icons from text field to drop down select. 
+
+## Fordson v1.2.4
+*Fixed issue with header information getting distorted on smaller screen sizes with small header image height set.  The text would sometimes get cut off.  
+*Fixed Footer color selector to use a common SCSS $footer-bg for all presets.
+
 ## Fordson v1.2.3
 *Added Font-Awesome icons for each section in a course as well as the main header title.  Each can be set using Fontawesome unicode with parenthesis around the unicode. Examples in the setting description are provided.
+*Continued enhancements of the preset style sheets.  Specifically for default and evolve-D.
+*Social icon links now open in new window.
+*Fixed logo navbar display where image and text were not aligning properly in the center of the navbar.
 
-## Fordson v1.2.2
+## Fordson v1.2.2  non published
 *Style Presets have been refined for better control of colors and variables.  
 *NEW Style Preset: Evolve-D.  This preset has many of the style elements of the Evolve-D theme for those users who might want to migrate from Evolve-D to Fordson.  Switching and upgrading will utilize the new features of Boost but have a similar look and feel of Evolve-D.
 

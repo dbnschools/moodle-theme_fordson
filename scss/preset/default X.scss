@@ -36,7 +36,7 @@ $bootstrap-sass-asset-helper: false !default;
 $gray-dark:                 #373a3c !default;
 $gray:                      #55595c !default;
 $gray-light:                #818a91 !default;
-$gray-lighter:              #eceeef !default;
+$gray-lighter:              #e0e0e0 !default;
 $gray-lightest:             #f7f7f9 !default;
 $gray-base:                 #ccc    !default;
 
@@ -46,20 +46,24 @@ $brand-warning:             #ff8800 !default;
 $brand-danger:              #ff4136 !default;
 $brand-inverse:             $gray-dark !default;
 $navbar-height:             50px !default;
-$drawer-bg:                 rgba(236,238,239,0.9) !default;
+$drawer-bg:                 rgba(118, 182, 189, 0.9) !default;
 
 // Spacing
 $spacer:   1rem !default;
 $spacer-x: $spacer !default;
 $spacer-y: $spacer !default;
 $border-width: 1px !default;
+$border-radius: 3px !default;
 
 // Body
-$body-bg:    #f6f6f6 !default;
+$body-bg: #dae6e5 !default;
+$footer-bg: $body-bg !default;
 
 // Typography
 $font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
 $font-size-root: 14px !default;
+$headericon: "" !default;
+$sectionicon: "" !default;
 
 // Tables
 $table-bg:                      transparent !default;
@@ -70,15 +74,15 @@ $table-border-color:            #f4f4f4 !default;
 
 // Dropdowns
 $dropdown-border-color:          #e2e2e2 !default;
-$dropdown-link-color:            rgba(0, 0, 0, .5) !default;
+$dropdown-link-color:            rgba(0, 0, 0, .535) !default;
 
 // Navbar
-$navbar-light-color:                rgba(0, 0, 0, .8) !default;
+$navbar-light-color:                #025169 !default;
 $navbar-light-hover-color:          $brand-primary !default;
 $navbar-light-active-color:         $brand-primary !default;
 
 // Cards
-$card-border-radius:       1px !default;
+$card-border-radius:       $border-radius !default;
 $card-border-color:        rgba(238, 238, 238, 1) !default;
 
 
@@ -113,10 +117,14 @@ $breadcrumb-divider-rtl: "/" !default;
     .usermenu .menubar .dropdown-toggle:hover {
         color: darken($navbarurl, 20%);
     }
+    .usermenu {
+        color: $navbarurl;
+    }
 
     .navbar-brand {
         padding-left: 1rem;
         padding-right: 1rem;
+        border-radius: $border-radius;
         margin-right: $spacer * 2;
         color: #fff;
         background-color: $brand-primary;
@@ -126,12 +134,14 @@ $breadcrumb-divider-rtl: "/" !default;
         &.has-logo {
             color: $brand-primary;
             background-color: transparent;
+            padding-top: 0;
+            padding-bottom: 0;
             @include hover-focus {
                 color: $brand-primary;
             }
         }
     }
-
+    
     .navbar-nav {
         .nav-item + .nav-item {
             margin-left: $spacer * 2;
@@ -155,7 +165,7 @@ $breadcrumb-divider-rtl: "/" !default;
  * User picture.
  */
 .userpicture {
-    border-radius: 10%;
+    border-radius: $border-radius;
 }
 
 /**
@@ -178,6 +188,12 @@ $breadcrumb-divider-rtl: "/" !default;
         border: 0;
         padding: 0;
     }
+}
+
+[data-block="course_overview"] {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 0px;
 }
 
 /**
@@ -214,6 +230,78 @@ $breadcrumb-divider-rtl: "/" !default;
     margin-top: 0;
 }
 
+/* FORDSON Default Styling */
+
+
+.page-header-headings h1:before {
+    color: $header-color;
+    display: block;
+    float: left;
+    font-family: FontAwesome;
+    margin-right: .5rem;
+    text-align: center;
+    border-radius: 2px;
+    content: $headericon;
+}
+#page-my-index .page-header-headings h1:before, #page-badges-mybadges .page-header-headings h1:before, #page-user-preferences .page-header-headings h1:before, #page-grade-report-overview-index .page-header-headings h1:before, #page-message-index .page-header-headings h1:before {
+    content: "";
+}
+
+h3.sectionname:before {
+    color: $brand-primary;
+    display: block;
+    float: left;
+    font-family: FontAwesome;
+    margin-right: .5rem;
+    text-align: center;
+    border-radius: 2px;
+    content: $sectionicon;
+}
+
+.path-mod-assign [data-region="grading-navigation"] {
+    background-color: #fff;
+}
+
+.card {
+    box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.3);
+    border: 1px solid #fff;
+}
+
+.forumpost {
+    background-color: lighten($brand-primary, 45%);
+}
+
+h3.sectionname {
+    padding: 10px;
+    background-color: $gray-lighter;
+    border-radius: $border-radius;
+}
+
+body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-size:cover; background-position:center;}
+
+#nav-drawer::-webkit-scrollbar {
+    width: 7px;
+}
+#nav-drawer::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 7px rgba(0,0,0,0.6);
+    border-radius: 5%;
+}
+#nav-drawer::-webkit-scrollbar-thumb {
+    background-color: darken($brand-primary, 15%);
+    outline: 1px solid slategrey;
+}
+
+
+
+.course-content .current::before {
+    border-left: $brand-primary 8px solid;
+}
+
+.bg-inverse {
+    color: $body-color !important;
+    background-color: $footer-bg !important;
+}
+
 /**
  * Blocks go Vertical thanks to Mary Evans and Morecandy.
  *
@@ -238,7 +326,7 @@ $breadcrumb-divider-rtl: "/" !default;
     font-weight: bold;
     left: 0;
     letter-spacing: 2px;
-    line-height: 24px;
+    line-height: 14px;
     /* Abs positioning makes it not take up vert space */
     position: absolute;
     text-transform: uppercase;
@@ -329,51 +417,5 @@ $breadcrumb-divider-rtl: "/" !default;
 .jsenabled .block_admin_bookmarks .card-block,
 .jsenabled .block_completionstatus .card-block,
 .jsenabled .block_selfcompletion .card-block {
-    min-height: 175px;
-}
-
-
-/* FORDSON Default Styling */
-
-
-.path-mod-assign [data-region="grading-navigation"] {
-    background-color: #fff;
-}
-.breadcrumb-nav {
-    margin-bottom: 4px;
-}
-.forumpost {
-    background-color: darken($card-bg, 3%);
-}
-
-h3.sectionname {
-    padding: 10px;
-    background-color: $gray-lighter;
-}
-body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-size:cover; background-position:center;}
-
-
-#nav-drawer::-webkit-scrollbar {
-    width: 7px;
-}
-#nav-drawer::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 7px rgba(0,0,0,0.6);
-    border-radius: 5%;
-}
-#nav-drawer::-webkit-scrollbar-thumb {
-  background-color: $brand-primary;
-  outline: 1px solid slategrey;
-}
-.nav-tabs .nav-link.active, .nav-tabs .nav-item.open .nav-link, .nav-tabs .nav-link.active:focus, .nav-tabs .nav-item.open .nav-link:focus, .nav-tabs .nav-link.active:hover, .nav-tabs .nav-item.open .nav-link:hover {
-    color: $body-bg;
-    background-color: $brand-primary;
-    border-color: #ddd;
-}
-.nav-tabs .nav-link {
-    border-radius: 0px;
-}
-.nav-tabs .nav-link:hover {
-    border-color: #eceeef;
-    color: $body-bg;
-    background-color: $brand-primary;
+    min-height: 200px;
 }

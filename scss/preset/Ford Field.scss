@@ -83,7 +83,7 @@ $border-width: 1px !default;
 
 // Body
 $body-bg:    #addac8 !default;
-
+$footer-bg: $body-bg !default;
 
 // Typography
 $font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
@@ -154,6 +154,7 @@ $breadcrumb-divider-rtl: "/" !default;
     .navbar-brand {
         padding-left: 1rem;
         padding-right: 1rem;
+        border-radius: $border-radius;
         margin-right: $spacer * 2;
         color: #fff;
         background-color: $brand-primary;
@@ -163,6 +164,8 @@ $breadcrumb-divider-rtl: "/" !default;
         &.has-logo {
             color: $brand-primary;
             background-color: transparent;
+            padding-top: 0;
+            padding-bottom: 0;
             @include hover-focus {
                 color: $brand-primary;
             }
@@ -306,4 +309,9 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
 #nav-drawer::-webkit-scrollbar-thumb {
   background-color: $brand-primary;
   outline: 1px solid slategrey;
+}
+
+.bg-inverse {
+    color: $body-color !important;
+    background-color: $footer-bg !important;
 }

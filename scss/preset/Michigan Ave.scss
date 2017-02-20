@@ -88,6 +88,7 @@ $border-radius: 3px !default;
 
 // Body
 $body-bg:    #CDD1BC !default;
+$footer-bg: $body-bg !default;
 
 
 // Typography
@@ -159,6 +160,7 @@ $breadcrumb-divider-rtl: "/" !default;
     .navbar-brand {
         padding-left: 1rem;
         padding-right: 1rem;
+        border-radius: $border-radius;
         margin-right: $spacer * 2;
         color: #fff;
         background-color: $brand-primary;
@@ -168,6 +170,8 @@ $breadcrumb-divider-rtl: "/" !default;
         &.has-logo {
             color: $brand-primary;
             background-color: transparent;
+            padding-top: 0;
+            padding-bottom: 0;
             @include hover-focus {
                 color: $brand-primary;
             }
@@ -328,5 +332,5 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
 
 .bg-inverse {
     color: $body-color !important;
-    background-color: $card-bg !important;
+    background-color: $footer-bg !important;
 }

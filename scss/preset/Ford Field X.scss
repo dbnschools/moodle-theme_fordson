@@ -84,6 +84,7 @@ $border-width: 1px !default;
 
 // Body
 $body-bg:    #addac8 !default;
+$footer-bg: $body-bg !default;
 
 
 // Typography
@@ -155,6 +156,7 @@ $breadcrumb-divider-rtl: "/" !default;
     .navbar-brand {
         padding-left: 1rem;
         padding-right: 1rem;
+        border-radius: $border-radius;
         margin-right: $spacer * 2;
         color: #fff;
         background-color: $brand-primary;
@@ -164,6 +166,8 @@ $breadcrumb-divider-rtl: "/" !default;
         &.has-logo {
             color: $brand-primary;
             background-color: transparent;
+            padding-top: 0;
+            padding-bottom: 0;
             @include hover-focus {
                 color: $brand-primary;
             }
@@ -264,6 +268,60 @@ $breadcrumb-divider-rtl: "/" !default;
 }
 
 
+/* FORDSON Default Styling */
+
+.path-mod-assign [data-region="grading-navigation"] {
+    background-color: #fff;
+}
+
+.card {
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.forumpost {
+    background-color: darken($body-bg, 3%);
+}
+
+h3.sectionname {
+    padding: 10px;
+    background-color: $gray-lightest;
+}
+
+body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-size:cover; background-position:center;}
+
+#page-header .card {
+    border: none;
+    box-shadow: none;
+}
+
+#page-footer a {
+    color: #383838;
+}
+
+.market-tile {
+    background-color: $fpstartwrap-bg;
+}
+
+.filemanager-container {
+    background-color: #fff;
+}
+
+#nav-drawer::-webkit-scrollbar {
+    width: 7px;
+}
+#nav-drawer::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 7px rgba(0,0,0,0.6);
+}
+#nav-drawer::-webkit-scrollbar-thumb {
+  background-color: $brand-primary;
+  outline: 1px solid slategrey;
+}
+
+.bg-inverse {
+    color: $body-color !important;
+    background-color: $footer-bg !important;
+}
 
 /**
  * Blocks go Vertical thanks to Mary Evans and Morecandy.
@@ -289,7 +347,7 @@ $breadcrumb-divider-rtl: "/" !default;
     font-weight: bold;
     left: 0;
     letter-spacing: 2px;
-    line-height: 24px;
+    line-height: 14px;
     /* Abs positioning makes it not take up vert space */
     position: absolute;
     text-transform: uppercase;
@@ -380,56 +438,5 @@ $breadcrumb-divider-rtl: "/" !default;
 .jsenabled .block_admin_bookmarks .card-block,
 .jsenabled .block_completionstatus .card-block,
 .jsenabled .block_selfcompletion .card-block {
-    min-height: 175px;
-}
-
-
-/* FORDSON Default Styling */
-
-.path-mod-assign [data-region="grading-navigation"] {
-    background-color: #fff;
-}
-
-.card {
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
-  border: 1px solid rgb(255, 255, 255);
-}
-
-.forumpost {
-    background-color: darken($body-bg, 3%);
-}
-
-h3.sectionname {
-    padding: 10px;
-    background-color: $gray-lightest;
-}
-
-body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-size:cover; background-position:center;}
-
-#page-header .card {
-    border: none;
-    box-shadow: none;
-}
-
-#page-footer a {
-    color: #383838;
-}
-
-.market-tile {
-    background-color: $fpstartwrap-bg;
-}
-
-.filemanager-container {
-    background-color: #fff;
-}
-
-#nav-drawer::-webkit-scrollbar {
-    width: 7px;
-}
-#nav-drawer::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 7px rgba(0,0,0,0.6);
-}
-#nav-drawer::-webkit-scrollbar-thumb {
-  background-color: $brand-primary;
-  outline: 1px solid slategrey;
+    min-height: 200px;
 }

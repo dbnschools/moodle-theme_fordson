@@ -40,8 +40,40 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $name = 'theme_fordson/headericon';
     $title = get_string('headericon','theme_fordson');
     $description = get_string('headericon_desc', 'theme_fordson');
-    $default = '"\f02d"';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $default = 'Clone';
+    $choices = array(
+        '""' => 'None - No Icon',
+        '"\f24d"' => 'Clone',
+        '"\f02e"' => 'Bookmark',
+        '"\f02d"' => 'Book',
+        '"\f0a3"' => 'Certificate',
+        '"\f108"' => 'Desktop',
+        '"\f19d"' => 'Graduation Cap',
+        '"\f0c0"' => 'Users',
+        '"\f0c9"' => 'Bars',
+        '"\f1d8"' => 'Paper Plane',
+        '"\f055"' => 'Plus Circle',
+        '"\f0e8"' => 'Sitemap',
+        '"\f12e"' => 'Puzzle Piece',
+        '"\f110"' => 'Spinner',
+        '"\f1ce"' => 'Circle O Notch',
+        '"\f046"' => 'Check Square O',
+        '"\f196"' => 'Plus Square O',
+        '"\f138"' => 'Chevron Circle Right',
+        '"\f0a9"' => 'Arrow Circle Right',
+        '"\f0d7"' => 'Caret Down',
+        '"\f04e"' => 'Forward',
+        '"\f15c"' => 'File Text',
+        '"\f038"' => 'Align Right',
+        '"\f101"' => 'Angle Double Right',
+        '"\f07c"' => 'Folder Open',
+        '"\f07b"' => 'Folder',
+        '"\f115"' => 'Folder Open O',
+        '"\f054"' => 'Chevron Right',
+        '"\f005"' => 'Star',
+        '"\f2bd"' => 'User Circle',
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
@@ -49,12 +81,42 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $name = 'theme_fordson/sectionicon';
     $title = get_string('sectionicon','theme_fordson');
     $description = get_string('sectionicon_desc', 'theme_fordson');
-    $default = '"\f0c9"';
-    $setting = new admin_setting_configtext($name, $title, $description, $default);
+    $default = 'Folder Open';
+    $choices = array(
+        '""' => 'None - No Icon',
+        '"\f24d"' => 'Clone',
+        '"\f02e"' => 'Bookmark',
+        '"\f02d"' => 'Book',
+        '"\f0a3"' => 'Certificate',
+        '"\f108"' => 'Desktop',
+        '"\f19d"' => 'Graduation Cap',
+        '"\f0c0"' => 'Users',
+        '"\f0c9"' => 'Bars',
+        '"\f1d8"' => 'Paper Plane',
+        '"\f055"' => 'Plus Circle',
+        '"\f0e8"' => 'Sitemap',
+        '"\f12e"' => 'Puzzle Piece',
+        '"\f110"' => 'Spinner',
+        '"\f1ce"' => 'Circle O Notch',
+        '"\f046"' => 'Check Square O',
+        '"\f196"' => 'Plus Square O',
+        '"\f138"' => 'Chevron Circle Right',
+        '"\f0a9"' => 'Arrow Circle Right',
+        '"\f0d7"' => 'Caret Down',
+        '"\f04e"' => 'Forward',
+        '"\f15c"' => 'File Text',
+        '"\f038"' => 'Align Right',
+        '"\f101"' => 'Angle Double Right',
+        '"\f07c"' => 'Folder Open',
+        '"\f07b"' => 'Folder',
+        '"\f115"' => 'Folder Open O',
+        '"\f054"' => 'Chevron Right',
+        '"\f005"' => 'Star',
+        '"\f2bd"' => 'User Circle',
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
-
-
 
 	// Frontpage Textbox.
     $name = 'theme_fordson/fptextbox';

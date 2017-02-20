@@ -81,7 +81,7 @@ $page = new admin_settingpage('theme_fordson_iconnavheading', get_string('iconna
     $name = 'theme_fordson/createbuttontext';
     $title = get_string('naviconbuttontext', 'theme_fordson');
     $description = get_string('naviconbuttontextdesc', 'theme_fordson');
-    $default = 'Create a Course';
+    $default = get_string('naviconbuttoncreatetextdefault', 'theme_fordson');
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
@@ -147,7 +147,7 @@ $page = new admin_settingpage('theme_fordson_iconnavheading', get_string('iconna
     $name = 'theme_fordson/nav1buttontext';
     $title = get_string('naviconbuttontext', 'theme_fordson');
     $description = get_string('naviconbuttontextdesc', 'theme_fordson');
-    $default = 'Dashboard';
+    $default = get_string('naviconbutton1textdefault', 'theme_fordson');
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
@@ -178,7 +178,7 @@ $page = new admin_settingpage('theme_fordson_iconnavheading', get_string('iconna
     $name = 'theme_fordson/nav2buttontext';
     $title = get_string('naviconbuttontext', 'theme_fordson');
     $description = get_string('naviconbuttontextdesc', 'theme_fordson');
-    $default = 'Calendar';
+    $default = get_string('naviconbutton2textdefault', 'theme_fordson');
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
@@ -209,7 +209,7 @@ $page = new admin_settingpage('theme_fordson_iconnavheading', get_string('iconna
     $name = 'theme_fordson/nav3buttontext';
     $title = get_string('naviconbuttontext', 'theme_fordson');
     $description = get_string('naviconbuttontextdesc', 'theme_fordson');
-    $default = 'Badges';
+    $default = get_string('naviconbutton3textdefault', 'theme_fordson');
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
@@ -240,7 +240,7 @@ $page = new admin_settingpage('theme_fordson_iconnavheading', get_string('iconna
     $name = 'theme_fordson/nav4buttontext';
     $title = get_string('naviconbuttontext', 'theme_fordson');
     $description = get_string('naviconbuttontextdesc', 'theme_fordson');
-    $default = 'All Courses';
+    $default = get_string('naviconbutton4textdefault', 'theme_fordson');
     $setting = new admin_setting_configtext($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);

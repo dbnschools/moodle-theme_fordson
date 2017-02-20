@@ -30,6 +30,7 @@ $breadcrumb-padding-y: 10px !default;
 $breadcrumb-padding-x: 10px !default;
 $border-radius: 4px !default;
 $breadcrumb-bg: #fff !default;
+$footer-bg: $body-bg !default;
 
 /**
 * Layout Header
@@ -44,6 +45,9 @@ color: $header-color;
 #page-header .headerfade {
 background: $headerfade-bg;
 border-radius: 0px 0px $card-border-radius $card-border-radius;
+}
+.withimage {
+    border-radius: $card-border-radius;
 }
 
 #page-navbar .dropdown-toggle {
@@ -70,6 +74,7 @@ border-radius: 0px 0px $card-border-radius $card-border-radius;
     visibility:hidden;
 }
 }
+
 #page-navbar .open>.dropdown-menu {
     border-radius: $border-radius;
     margin-left: 5px;
@@ -83,7 +88,12 @@ border-radius: 0px 0px $card-border-radius $card-border-radius;
     bottom: 0;
     width: 100%;
 }
+@media screen and (max-width: 768px) {
+    #page-header .header-position {
+    position: initial;
+    }
 
+}
 .pagelayout-incourse #page-header .header-position {
     position: initial;
     bottom: 0;
@@ -96,7 +106,12 @@ border-radius: 0px 0px $card-border-radius $card-border-radius;
     background-size: cover;
     height:$headerimagepadding;
 }
+@media screen and (max-width: 768px) {
+    #page-header .card {
+    height: 100%;
+    }
 
+}
 .pagelayout-incourse #page-header .card {
     height: initial;
 }
@@ -184,6 +199,13 @@ border-radius: 0px 0px $card-border-radius $card-border-radius;
 }
 .fpsearch .form-control {
     background-color: $fpicon-hover;
+}
+
+div#fpslider {
+    background-color: $fpstartwrap-bg;
+    padding: $spacer;
+    border-radius: $border-radius;
+    border: 1px solid $gray-lighter;
 }
 
 .alertbox {

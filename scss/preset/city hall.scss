@@ -34,7 +34,7 @@ $bootstrap-sass-asset-helper: false !default;
 
 
 // Fordson Defaults
-$fpstartwrap-bg: #3482ab !default;
+$fpstartwrap-bg: #6aa5c3 !default;
 $fpicon-icon: #8E101E !default;
 $fpicon-hover: darken($fpicon-icon, 10%) !default;
 $fpicon-colour: #fff !default;
@@ -85,7 +85,7 @@ $border-width: 1px !default;
 
 // Body
 $body-bg:    #22334F !default;
-
+$footer-bg: lighten($body-bg, 15%) !default;
 
 // Typography
 $font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
@@ -152,6 +152,7 @@ $breadcrumb-bg: #fff !default;
     .navbar-brand {
         padding-left: 1rem;
         padding-right: 1rem;
+        border-radius: $border-radius;
         margin-right: $spacer * 2;
         color: #fff;
         background-color: $brand-primary;
@@ -161,6 +162,8 @@ $breadcrumb-bg: #fff !default;
         &.has-logo {
             color: $brand-primary;
             background-color: transparent;
+            padding-top: 0;
+            padding-bottom: 0;
             @include hover-focus {
                 color: $brand-primary;
             }
@@ -309,4 +312,8 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
     border-color: #eceeef;
     color: $body-bg;
     background-color: $brand-primary;
+}
+.bg-inverse {
+    color: $body-color !important;
+    background-color: $footer-bg !important;
 }
