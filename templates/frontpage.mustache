@@ -121,11 +121,11 @@
     </div>
     {{{ output.social_icons }}}
 </footer>
-
 </body>
 </html>
 {{#js}}
 require(['theme_boost/loader']);
+require(['jquery','theme_boost/tooltip'], function($){$('[data-toggle="tooltip"]').tooltip()});
 require(['theme_boost/drawer'], function(mod) {
     mod.init();
 });

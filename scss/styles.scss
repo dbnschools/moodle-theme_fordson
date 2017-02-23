@@ -256,6 +256,53 @@ div#fpslider {
   outline: 1px solid slategrey;
 }
 
+/**
+* Available Courses
+**/
+.class-box {
+    min-height: 200px;
+    max-height: 225px;
+    margin: 1rem;
+    background-color: $body-bg;
+    padding: 1rem;
+    border: 1px solid $body-bg;
+    border-radius: $card-border-radius;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+}
+
+.class-box .course-title {
+    background-color: $card-bg;
+    padding: $spacer;
+    margin-bottom: 0;
+    text-align: center;
+    border: 1px solid $gray-base;
+    border-radius: $card-border-radius;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+}
+
+.class-box .course-summary {
+    padding:1rem; 
+    background-color: #fff;
+    height: 5rem;
+    overflow:auto;
+    margin-bottom: 1rem;
+}
+.class-box .course-summary::-webkit-scrollbar {
+    width: 7px;
+}
+.class-box .course-summary::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 7px rgba(0,0,0,0.3);
+    border-radius: 5%;
+}
+.class-box .course-summary::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+.tooltip-inner {
+    max-width: 350px;
+    font-size:14px;
+}
+
 
 /** 
 * TIDY UP 

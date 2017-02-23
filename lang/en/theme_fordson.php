@@ -164,6 +164,8 @@ $string['sectionicon'] = 'Course Section Icon';
 $string['sectionicon_desc'] = 'This allows you to change the icon that appears next to each section in a course.  These are Font-Awesome icons. These appear in the following presets: Default and Evolve-D.';
 $string['headericon'] = 'Header Title Icon';
 $string['headericon_desc'] = 'This allows you to change the icon that appears in the header area next to the page title. These are Font-Awesome icons. These appear in the following presets: Default and Evolve-D.';
+$string['enablefrontpageavailablecoursebox'] = 'Enable Enhanced Frontpage Coursebox';
+$string['enablefrontpageavailablecoursebox_desc'] = 'The enhanced frontpage coursebox feature displays available courses in a styled and attractive box. To use Moodle default presentation uncheck this option.';
 
 // Menu Settings
 $string['menusettings'] = 'Menu settings';
