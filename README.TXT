@@ -34,7 +34,7 @@ Click on the button to "Clone or Download" https://github.com/kennibc/moodle-the
 *Added language strings for default text of icon navigation
 *Changed font awesome icons from text field to drop down select to make things very simple.  Also included the option to remove the icons next to section and header titles from the drop down. 
 *Upgraded to font awesome 4.7
-*Added Frontpage Available courses box styling.  Setting in theme admin settings will allow Site admin to switch between default Moodle presentation of available courses and the new Fordson display.  
+*Added Frontpage Available courses box styling.  Setting in theme admin settings will allow Site admin to switch between default Moodle presentation of available courses and the new Fordson display.  SPECIAL THANKS TO José Miguel Dager Montoya for helping get this feature started.
 
 
 ## Fordson v1.2.4
