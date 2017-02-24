@@ -45,6 +45,74 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    // Courses height
+    $name = 'theme_fordson/courseboxheight';
+    $title = get_string('courseboxheight', 'theme_fordson');
+    $description = get_string('courseboxheight_desc', 'theme_fordson');;
+    $default = '275px';
+    $choices = array(
+            '100px' => '100px',
+            '105px' => '105px',
+            '110px' => '110px',
+            '115px' => '115px',
+            '120px' => '120px',
+            '125px' => '125px',
+            '150px' => '150px',
+            '175px' => '175px',
+            '200px' => '200px',
+            '225px' => '225px',
+            '250px' => '250px',
+            '275px' => '275px',
+            '300px' => '300px',
+            '325px' => '325px',
+            '350px' => '350px',
+            '375px' => '375px',
+            '400px' => '400px',
+        );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    //Topic and Weekly Section Titles Icon
+    $name = 'theme_fordson/catsicon';
+    $title = get_string('catsicon','theme_fordson');
+    $description = get_string('catsicon_desc', 'theme_fordson');
+    $default = 'folder';
+    $choices = array(
+        'clone' => 'Clone',
+        'bookmark' => 'Bookmark',
+        'book' => 'Book',
+        'certificate' => 'Certificate',
+        'desktop' => 'Desktop',
+        'graduation-cap' => 'Graduation Cap',
+        'users' => 'Users',
+        'bars' => 'Bars',
+        'paper-plane' => 'Paper Plane',
+        'plus-circle' => 'Plus Circle',
+        'Sitemap' => 'Sitemap',
+        'puzzle-piece' => 'Puzzle Piece',
+        'spinner' => 'Spinner',
+        'circle-o-notch' => 'Circle O Notch',
+        'check-square-o' => 'Check Square O',
+        'plus-square-o' => 'Plus Square O',
+        'chevron-circle-right' => 'Chevron Circle Right',
+        'arrow-circle-right' => 'Arrow Circle Right',
+        'carrot-down' => 'Caret Down',
+        'forward' => 'Forward',
+        'file-text' => 'File Text',
+        'align-right' => 'Align Right',
+        'angle-double-right' => 'Angle Double Right',
+        'folder-open' => 'Folder Open',
+        'folder' => 'Folder',
+        'folder-open-o' => 'Folder Open O',
+        'chevron-right' => 'Chevron Right',
+        'star' => 'Star',
+        'user-circle' => 'User Circle',
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
     //Topic and Weekly Section Titles Icon
     $name = 'theme_fordson/headericon';
     $title = get_string('headericon','theme_fordson');

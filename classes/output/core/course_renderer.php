@@ -170,7 +170,7 @@ class course_renderer extends \core_course_renderer {
     
     			   $rowcontent .= '
     					<div class="col-md-4">
-                        	<div class="class-box" style="background-image: url('.$imgurl.');background-repeat: no-repeat;background-size:cover; background-position:center;">
+                        	<div class="class-box-fp" style="background-image: url('.$imgurl.');background-repeat: no-repeat;background-size:cover; background-position:center;">
                         		';
     			   //$rowcontent .= $courseimg;
                    $rowcontent .= '
@@ -214,7 +214,7 @@ class course_renderer extends \core_course_renderer {
                 'viewmoretext' => new lang_string('fulllistofcourses')
         ));
 
-        $chelper->set_attributes(array('class' => 'frontpage-course-list-all'));
+        $chelper->set_attributes(array('class' => 'category-course-list-all'));
         $courses = coursecat::get($id)->get_courses($chelper->get_courses_display_options());
         $totalcount = coursecat::get($id)->get_courses_count($chelper->get_courses_display_options());
 
@@ -223,11 +223,11 @@ class course_renderer extends \core_course_renderer {
         $newcourse = get_string('availablecourses');
 
         $header = '
-                <div id="frontpage-course-list">
+                <div id="category-course-list">
                     <div class="class-list">
                         <h2>'.$newcourse.'</h2>
                     </div>
-                    <div class="courses frontpage-course-list-all">';
+                    <div class="courses category-course-list-all">';
         
         $content = '';
         
@@ -279,7 +279,7 @@ class course_renderer extends \core_course_renderer {
     
                    $rowcontent .= '
                         <div class="col-md-4">
-                            <div class="class-box" style="background-image: url('.$imgurl.');background-repeat: no-repeat;background-size:cover; background-position:center;">
+                            <div class="class-box">
                                 ';
                    //$rowcontent .= $courseimg;
                    $rowcontent .= '
@@ -369,26 +369,19 @@ class course_renderer extends \core_course_renderer {
         }
 
         // ADD HERE GRID OPTIONS AND BOX CSS
-        $classes[] = 'col-md-2 box-class';
+        $classes[] = 'col-md-3 box-class';
         $content = '<div class="'.join(' ', $classes).'" data-categoryid="'.$coursecat->id.'" data-depth="'.$depth.'" data-showcourses="'.$chelper->get_show_courses().'" data-type="'.self::COURSECAT_TYPE_CATEGORY.'">';
         $content .= '   <div>';
-         // ADD HERE A CLASS TO SHOW COURSES COUNT IN A CORNER OR WHERE YOU THINK IS BETTER.
-        if ($chelper->get_show_courses() == self::COURSECAT_SHOW_COURSES_COUNT) {
-            $coursescount = $coursecat->get_courses_count();
-            $content .= '       <div>';
-            $content .= '           <span class="" title="'.get_string('numberofcourses').'">('.$coursescount.')</span>';
-            $content .= '       </div>';
-        }
-    
-            // LOAD ICON
-            $val = "folder";
-            $url= new moodle_url('/course/index.php', array('categoryid' => $coursecat->id));
-            $content .= '       <div class="img-class">';
-            $content .= '           <a href="'.$url.'">';
-            $content .= '               <i class="fa fa-5x fa-'.$val.'"></i>';
-            $content .= '           </a>';
-            $content .= '       </div>';
-        
+
+        // LOAD ICON
+        $val = theme_fordson_get_setting('catsicon');
+        $url= new moodle_url('/course/index.php', array('categoryid' => $coursecat->id));
+        $content .= '       <div class="img-class">';
+        $content .= '           <a href="'.$url.'">';
+        $content .= '               <i class="fa fa-5x fa-'.$val.'"></i>';
+        $content .= '           </a>';
+        $content .= '       </div>';
+        //Cat title
         $categoryname = $coursecat->get_formatted_name();
         $content .= '       <div class="info">';
         $content .= '           <div>';
@@ -397,6 +390,14 @@ class course_renderer extends \core_course_renderer {
         $content .= '               </a>';
         $content .= '           </div>';
         $content .= '       </div>';
+
+        // ADD HERE A CLASS TO SHOW COURSES COUNT IN A CORNER OR WHERE YOU THINK IS BETTER.
+        if ($chelper->get_show_courses() == self::COURSECAT_SHOW_COURSES_COUNT) {
+            $coursescount = $coursecat->get_courses_count();
+            $content .= '       <div>';
+            $content .= '           <span class="" title="'.get_string('numberofcourses').'">('.$coursescount.')</span>';
+            $content .= '       </div>';
+        }
         
         $content .= '   </div>'; // BORDER DIV END.
     

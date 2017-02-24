@@ -11,6 +11,7 @@ $fpicon-colour: #026C87 !default;
 $fpicon-width: 100px !default;
 $fpiconcreate-width: 150px !default;
 $headerimagepadding: 275px !default;
+$courseboxheight: 250px !default;
 $marketing1image: #fff !default;
 $marketing2image: #fff !default;
 $marketing3image: #fff !default;
@@ -259,9 +260,9 @@ div#fpslider {
 /**
 * Available Courses
 **/
-.class-box {
-    min-height: 200px;
-    max-height: 225px;
+
+.class-box-fp {
+    height: $courseboxheight;
     margin: 1rem;
     background-color: $body-bg;
     padding: 1rem;
@@ -270,6 +271,40 @@ div#fpslider {
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
 }
 
+.class-box-fp .course-title {
+    background-color: $card-bg;
+    padding: $spacer;
+    margin-bottom: 0;
+    text-align: center;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+}
+
+.class-box-fp .course-summary {
+    padding:1rem; 
+    background-color: $markettextbg;
+    height: 5rem;
+    overflow:auto;
+    margin-bottom: 1rem;
+}
+.class-box-fp .course-summary::-webkit-scrollbar {
+    width: 7px;
+}
+.class-box-fp .course-summary::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 7px rgba(0,0,0,0.3);
+    border-radius: 5%;
+}
+.class-box-fp .course-summary::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+.class-box {
+    background-color: $body-bg;
+    padding: 1rem;
+    margin: 1rem;
+    border: 1px solid $body-bg;
+    border-radius: $card-border-radius;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+}
 .class-box .course-title {
     background-color: $card-bg;
     padding: $spacer;
@@ -281,7 +316,7 @@ div#fpslider {
 .class-box .course-summary {
     padding:1rem; 
     background-color: $markettextbg;
-    height: 5rem;
+    height: 9rem;
     overflow:auto;
     margin-bottom: 1rem;
 }
@@ -296,12 +331,16 @@ div#fpslider {
   background-color: darkgrey;
   outline: 1px solid slategrey;
 }
+
 .tooltip-inner {
     max-width: 350px;
     font-size:14px;
 }
 .course_category_tree {
     padding: 1rem;
+}
+.category.loaded.col-md-3.box-class {
+    text-align: center;
 }
 
 /** 

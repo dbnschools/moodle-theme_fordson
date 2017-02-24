@@ -166,6 +166,10 @@ $string['headericon'] = 'Header Title Icon';
 $string['headericon_desc'] = 'This allows you to change the icon that appears in the header area next to the page title. These are Font-Awesome icons. These appear in the following presets: Default and Evolve-D.';
 $string['enablefrontpageavailablecoursebox'] = 'Enable Enhanced Frontpage Coursebox';
 $string['enablefrontpageavailablecoursebox_desc'] = 'The enhanced frontpage coursebox feature displays available courses in a styled and attractive box. To use Moodle default presentation uncheck this option.';
+$string['courseboxheight'] = 'Courses Box Height';
+$string['courseboxheight_desc'] = 'Control the height of the Coursebox on the frontpage.';
+$string['catsicon'] = 'Category Icon';
+$string['catsicon_desc'] = 'Choose an icon to represent course categories.';
 
 // Menu Settings
 $string['menusettings'] = 'Menu settings';
@@ -175,7 +179,7 @@ $string['thiscoursegroups'] = 'Group Management';
 $string['thiscoursequestion'] = 'Question Bank';
 $string['thiscoursequestioncat'] = 'Question Categories';
 $string['headerimagepadding'] = 'Header Image Height';
-$string['headerimagepadding_desc'] = 'Control the padding and height of the header image for courses. A minimum of 120px should be selected if using the Radial Completion and Course Grade displays.';
+$string['headerimagepadding_desc'] = 'Control the padding and height of the header image for courses.';
 $string['activitymenu'] = 'Show This Course Drop Down Menu';
 $string['activitymenu_desc'] = 'Show the This Course drop down menu.  This menu appears next to the breadcrumbs and will display a listing of all activities for the student.  You can also customize the menu by clicking on the menu items below to control what will appear.';
 
