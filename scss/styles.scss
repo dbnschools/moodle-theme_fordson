@@ -275,14 +275,12 @@ div#fpslider {
     padding: $spacer;
     margin-bottom: 0;
     text-align: center;
-    border: 1px solid $gray-base;
-    border-radius: $card-border-radius;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
 }
 
 .class-box .course-summary {
     padding:1rem; 
-    background-color: #fff;
+    background-color: $markettextbg;
     height: 5rem;
     overflow:auto;
     margin-bottom: 1rem;
@@ -302,7 +300,9 @@ div#fpslider {
     max-width: 350px;
     font-size:14px;
 }
-
+.course_category_tree {
+    padding: 1rem;
+}
 
 /** 
 * TIDY UP 
