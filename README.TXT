@@ -29,6 +29,9 @@ This means when Moodle updates the core Boost theme those changes will be applie
 #Install from Github
 Click on the button to "Clone or Download" https://github.com/kennibc/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
+## Fordson 1.2.6
+*Added Frontpage Available courses box styling.  Setting in theme admin settings will allow Site admin to switch between default Moodle presentation of available courses and the new Fordson display.  SPECIAL THANKS TO José Miguel Dager Montoya for helping get this feature started.
+*Added Category Icon view. Working on having courses in category view displayed as boxes just like frontpage available courses.
 
 ## Fordson v1.2.5
 *Added language strings for default text of icon navigation

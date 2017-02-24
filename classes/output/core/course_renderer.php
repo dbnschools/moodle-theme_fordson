@@ -33,6 +33,7 @@ use stdClass;
 use course_in_list;
 use context_course;
 use pix_url;
+use heading;
 
 require_once($CFG->dirroot . '/course/renderer.php');
 
@@ -44,7 +45,9 @@ require_once($CFG->dirroot . '/course/renderer.php');
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 class course_renderer extends \core_course_renderer {
-
+    
+    protected $countcategories = 0;
+    
     /**
      * Renders html to display a course search form.
      *
@@ -85,7 +88,7 @@ class course_renderer extends \core_course_renderer {
         return $this->render_from_template('theme_boost/course_search_form', $data);
     }
     
-    public function frontpage_available_courses() {
+    public function frontpage_available_courses($id=0) {
     	/* available courses */
     if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
     	global $CFG, $OUTPUT, $PAGE;
@@ -181,12 +184,14 @@ class course_renderer extends \core_course_renderer {
     	}
     
     	$coursehtml = $header.$content.$footer;
-    	echo $coursehtml;
+    	if($id == 0){
+            echo $coursehtml;
+            if (!$totalcount && !$this->page->user_is_editing() && has_capability('moodle/course:create', context_system::instance())) {
+                // Print link to create a new course, for the 1st available category.
+                echo $this->add_new_course_button();
+            }
+        }
     
-    	if (!$totalcount && !$this->page->user_is_editing() && has_capability('moodle/course:create', context_system::instance())) {
-    		// Print link to create a new course, for the 1st available category.
-    		echo $this->add_new_course_button();
-    	}
     }
 else {
     global $CFG;
@@ -211,4 +216,86 @@ else {
     }
 }
 
+protected function coursecat_category(coursecat_helper $chelper, $coursecat, $depth)
+    {
+        global $CFG;
+        // open category tag
+        $classes = array('category');
+        if (empty($coursecat->visible)) {
+            $classes[] = 'dimmed_category';
+        }
+        if ($chelper->get_subcat_depth() > 0 && $depth >= $chelper->get_subcat_depth()) {
+            // do not load content
+            $categorycontent = '';
+            $classes[] = 'notloaded';
+            if ($coursecat->get_children_count() ||
+                    ($chelper->get_show_courses() >= self::COURSECAT_SHOW_COURSES_COLLAPSED && $coursecat->get_courses_count())
+                    ) {
+                        $classes[] = 'with_children';
+                        $classes[] = 'collapsed';
+                    }
+        } else {
+            // load category content
+            // DONT LOAD CATEGORY TREE FOR EXPANDABLE ACTION.
+            //$categorycontent = $this->coursecat_category_content($chelper, $coursecat, $depth);
+            $classes[] = 'loaded';
+            if (!empty($categorycontent)) {
+                $classes[] = 'with_children';
+            }
+        }
+        
+        // ADD HERE GRID OPTIONS AND BOX CSS
+        $classes[] = 'col-md-2 box-class';
+        $content = '<div class="'.join(' ', $classes).'" data-categoryid="'.$coursecat->id.'" data-depth="'.$depth.'" data-showcourses="'.$chelper->get_show_courses().'" data-type="'.self::COURSECAT_TYPE_CATEGORY.'">';
+        $content .= '   <div>';
+    
+        // ADD HERE A CLASS TO SHOW COURSES COUNT IN A CORNER OR WHERE YOU THINK IS BETTER.
+        if ($chelper->get_show_courses() == self::COURSECAT_SHOW_COURSES_COUNT) {
+            $coursescount = $coursecat->get_courses_count();
+            $content .= '       <div>';
+            $content .= '           <span class="" title="'.get_string('numberofcourses').'">('.$coursescount.')</span>';
+            $content .= '       </div>';
+        }
+
+        // HERE LOAD AN ICON, BECAUSE CAT HAVNT SUMMARY FILES TO SEARCH A IMG. OR LOAD A IMG FROM THEME FOLDER WITH THE CATEGORY IDNUMBER.
+        $noImg = false;
+        if($noImg){
+            $imgsrc = $OUTPUT->pix_url(noimg,'theme');
+            $url= new moodle_url('/course/index.php', array('categoryid' => $coursecat->id));
+            $content .= '       <div class="img-class">';
+            $content .= '           <a href="'.$url.'">';
+            $content .= '               <img src="'.$imgurl.'" width="243" height="165" alt="'.$coursecat->get_formatted_name().'">';
+            $content .= '           </a>';
+            $content .= '       </div>';
+        }
+        else{
+            // LOAD ICON
+            $val = "folder";
+            $url= new moodle_url('/course/index.php', array('categoryid' => $coursecat->id));
+            $content .= '       <div class="img-class">';
+            $content .= '           <a href="'.$url.'">';
+            $content .= '               <i class="fa fa-5x fa-'.$val.'"></i>';
+            $content .= '           </a>';
+            $content .= '       </div>';
+        }
+        
+        $categoryname = $coursecat->get_formatted_name();
+        $content .= '       <div class="info">';
+        $content .= '           <div>';
+        $content .= '               <a href="'.$url.'">';
+        $content .= '                   <span class="class-category">'.$categoryname.'</span>';
+        $content .= '               </a>';
+        $content .= '           </div>';
+        $content .= '       </div>';
+        
+        $content .= '   </div>'; // BORDER DIV END.
+    
+        // I DONT LOAD EXPANDBLE CAT INFO (SUBCAT AND COURSES)
+//      $content .= '       <div class="content">';
+//      $content .= $categorycontent;
+//      $content .= html_writer::tag('div', $categorycontent, array('class' => 'content'));
+    
+        $content .= '</div>'; // COL-MD-4 DIV END
+        return $content;
+    }    
 }
