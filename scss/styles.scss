@@ -271,6 +271,8 @@ div#fpslider {
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
 }
 
+.class-box-fp .course-title h4 a:hover {text-decoration: none;}
+
 .class-box-fp .course-title {
     background-color: $card-bg;
     padding: $spacer;
@@ -278,6 +280,16 @@ div#fpslider {
     text-align: center;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
 }
+
+.class-box-fp .course-title h4:after {
+    text-decoration: none;
+    display:block;
+    content: '';
+    border-bottom: solid 5px $brand-primary;  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+.class-box-fp .course-title h4:hover:after {transform: scaleX(1); }
 
 .class-box-fp .course-summary {
     padding:1rem; 
@@ -294,29 +306,43 @@ div#fpslider {
     border-radius: 5%;
 }
 .class-box-fp .course-summary::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
+    background-color: darken($brand-primary, 15%);
+    outline: 1px solid slategrey;
 }
+
 .class-box {
-    background-color: $body-bg;
-    padding: 1rem;
-    margin: 1rem;
+    margin-bottom: 2rem;
     border: 1px solid $body-bg;
     border-radius: $card-border-radius;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
 }
+
+.class-box .course-title h4 a:hover {text-decoration: none;}
+
 .class-box .course-title {
     background-color: $card-bg;
-    padding: $spacer;
-    margin-bottom: 0;
+    padding-top: $spacer;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
     text-align: center;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
 }
+.class-box .course-title:after {
+    text-decoration: none;
+    display:block;
+    content: '';
+    border-bottom: solid 1rem $brand-primary;  
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;
+}
+.class-box .course-title:hover:after {transform: scaleX(1); }
+
+.course-image-view {padding-top:10rem;}
 
 .class-box .course-summary {
     padding:1rem; 
     background-color: $markettextbg;
-    height: 9rem;
+    max-height: 7rem;
     overflow:auto;
     margin-bottom: 1rem;
 }
@@ -328,20 +354,41 @@ div#fpslider {
     border-radius: 5%;
 }
 .class-box .course-summary::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
+    background-color: darken($brand-primary, 15%);
+    outline: 1px solid slategrey;
 }
 
 .tooltip-inner {
     max-width: 350px;
     font-size:14px;
 }
+
 .course_category_tree {
     padding: 1rem;
 }
+
 .category.loaded.col-md-3.box-class {
     text-align: center;
 }
+
+.info {
+    background-color: $body-bg;
+    display: inline-block;
+    padding: $spacer;
+    border-radius: $border-radius;
+}
+.category.loaded.col-md-3.box-class {
+    padding-bottom: $spacer;
+}
+
+.category.notloaded.col-md-3.box-class {
+    padding-bottom: $spacer;
+}
+.circle-count {
+    float: right;
+    padding-left:3px;
+}
+
 
 /** 
 * TIDY UP 

@@ -49,16 +49,8 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $name = 'theme_fordson/courseboxheight';
     $title = get_string('courseboxheight', 'theme_fordson');
     $description = get_string('courseboxheight_desc', 'theme_fordson');;
-    $default = '275px';
+    $default = '250px';
     $choices = array(
-            '100px' => '100px',
-            '105px' => '105px',
-            '110px' => '110px',
-            '115px' => '115px',
-            '120px' => '120px',
-            '125px' => '125px',
-            '150px' => '150px',
-            '175px' => '175px',
             '200px' => '200px',
             '225px' => '225px',
             '250px' => '250px',
@@ -73,7 +65,60 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
-    //Topic and Weekly Section Titles Icon
+    // trim title setting.
+    $name = 'theme_fordson/trimtitle';
+    $title = get_string('trimtitle', 'theme_fordson');
+    $description = get_string('trimtitle_desc', 'theme_fordson');
+    $default = '90';
+    $choices = array(
+            '30' => '30',
+            '40' => '40',
+            '50' => '50',
+            '60' => '60',
+            '70' => '70',
+            '80' => '80',
+            '90' => '90',
+            '100' => '100',
+            '110' => '110',
+            '120' => '120',
+            '130' => '130',
+            '140' => '140',
+            '150' => '150',
+            '175' => '175',
+            '200' => '200',
+            '256' => '256',
+        );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+
+    // trim title setting.
+    $name = 'theme_fordson/trimsummary';
+    $title = get_string('trimsummary', 'theme_fordson');
+    $description = get_string('trimsummary_desc', 'theme_fordson');
+    $default = '300';
+    $choices = array(
+            '30' => '30',
+            '60' => '60',
+            '90' => '90',
+            '100' => '100',
+            '150' => '150',
+            '200' => '200',
+            '250' => '250',
+            '300' => '300',
+            '350' => '350',
+            '400' => '400',
+            '450' => '450',
+            '500' => '500',
+            '600' => '600',
+            '800' => '800',
+        );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    //course category Icon
     $name = 'theme_fordson/catsicon';
     $title = get_string('catsicon','theme_fordson');
     $description = get_string('catsicon_desc', 'theme_fordson');

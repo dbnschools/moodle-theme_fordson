@@ -164,12 +164,16 @@ $string['sectionicon'] = 'Course Section Icon';
 $string['sectionicon_desc'] = 'This allows you to change the icon that appears next to each section in a course.  These are Font-Awesome icons. These appear in the following presets: Default and Evolve-D.';
 $string['headericon'] = 'Header Title Icon';
 $string['headericon_desc'] = 'This allows you to change the icon that appears in the header area next to the page title. These are Font-Awesome icons. These appear in the following presets: Default and Evolve-D.';
-$string['enablefrontpageavailablecoursebox'] = 'Enable Enhanced Frontpage Coursebox';
-$string['enablefrontpageavailablecoursebox_desc'] = 'The enhanced frontpage coursebox feature displays available courses in a styled and attractive box. To use Moodle default presentation uncheck this option.';
-$string['courseboxheight'] = 'Courses Box Height';
-$string['courseboxheight_desc'] = 'Control the height of the Coursebox on the frontpage.';
+$string['enablefrontpageavailablecoursebox'] = 'Enable Enhanced Course Display';
+$string['enablefrontpageavailablecoursebox_desc'] = 'Enhanced Course Display will display courses as tiles in a grid and use icons in a grid view for course categories. To use Moodle default presentation uncheck this option.';
+$string['courseboxheight'] = 'Frontpage Courses Tile Height';
+$string['courseboxheight_desc'] = 'Control the height of the Course tile on the frontpage.';
 $string['catsicon'] = 'Category Icon';
 $string['catsicon_desc'] = 'Choose an icon to represent course categories.';
+$string['trimtitle'] = 'Trim Course Title';
+$string['trimtitle_desc'] = 'Enter a number to trim the title length.  This number represents characters that will be displayed.';
+$string['trimsummary'] = 'Trim Course Summary';
+$string['trimsummary_desc'] = 'Enter a number to trim the summary length.  This number represents characters that will be displayed.';
 
 // Menu Settings
 $string['menusettings'] = 'Menu settings';

@@ -176,7 +176,7 @@ class course_renderer extends \core_course_renderer {
                    $rowcontent .= '
                                 
                         		<div class="course-title">
-                       				<h3><a data-toggle="tooltip" data-placement= "top" title="'.$course->fullname.'" href="'.$courseurl.'">'.$trimtitle.'</a></h3>
+                       				<h4><a data-toggle="tooltip" data-placement= "bottom" title="'.$course->fullname.'" href="'.$courseurl.'">'.$trimtitle.'</a></h4>
                         		</div>
                         	</div>
                         </div>';
@@ -243,9 +243,12 @@ class course_renderer extends \core_course_renderer {
                 foreach ($courseids as $courseid) {
                     $course = get_course($courseid);
 
+                    $trimtitlevalue = $PAGE->theme->settings->trimtitle;
+                    $trimsummaryvalue = $PAGE->theme->settings->trimsummary;
+
                     $summary = theme_fordson_strip_html_tags($course->summary);
-                    $summary = theme_fordson_course_trim_char($summary, 90);
-                    $trimtitle = theme_fordson_course_trim_char($course->fullname, 30);
+                    $summary = theme_fordson_course_trim_char($summary, $trimsummaryvalue);
+                    $trimtitle = theme_fordson_course_trim_char($course->fullname, $trimtitlevalue);
 
                     $noimgurl = $OUTPUT->pix_url(noimg, 'theme');
                     $courseurl = new moodle_url('/course/view.php', array('id' => $courseid ));
@@ -283,12 +286,12 @@ class course_renderer extends \core_course_renderer {
                                 ';
                    //$rowcontent .= $courseimg;
                    $rowcontent .= '
-                                
-                                <div class="course-title">
-                                    <h3><a data-toggle="tooltip" data-placement= "top" title="'.$course->fullname.'" href="'.$courseurl.'">'.$trimtitle.'</a></h3>
+                                <div class="course-title"><h4><a data-toggle="tooltip" data-placement= "top" title="'.$course->fullname.'" href="'.$courseurl.'">'.$course->fullname.'</a></h4></div>
+                                <div class="course-image-view" style="background-image: url('.$imgurl.');background-repeat: no-repeat;background-size:cover; background-position:center;">
+                                    
                                 </div>
                                 <div class="course-summary">
-                                '.$course->summary.'
+                                '.$summary.'
                                 </div>
                             </div>
                         </div>';
@@ -388,16 +391,15 @@ class course_renderer extends \core_course_renderer {
         $content .= '               <a href="'.$url.'">';
         $content .= '                   <span class="class-category">'.$categoryname.'</span>';
         $content .= '               </a>';
-        $content .= '           </div>';
-        $content .= '       </div>';
-
         // ADD HERE A CLASS TO SHOW COURSES COUNT IN A CORNER OR WHERE YOU THINK IS BETTER.
         if ($chelper->get_show_courses() == self::COURSECAT_SHOW_COURSES_COUNT) {
             $coursescount = $coursecat->get_courses_count();
-            $content .= '       <div>';
-            $content .= '           <span class="" title="'.get_string('numberofcourses').'">('.$coursescount.')</span>';
+            $content .= '       <div class="circle-count">';
+            $content .= '           <span class="numberofcourses" title="'.get_string('numberofcourses').'">('.$coursescount.')</span>';
             $content .= '       </div>';
         }
+        $content .= '           </div>';
+        $content .= '       </div>';
         
         $content .= '   </div>'; // BORDER DIV END.
     
