@@ -353,12 +353,16 @@ div#fpslider {
     text-align: center;
 }
 
-.info {
+.info-enhanced {
     background-color: $body-bg;
     display: inline-block;
     padding: $spacer;
     border-radius: $border-radius;
 }
+.cat-icon {
+    margin:5px;
+}
+
 .category.loaded.col-md-3.box-class {
     padding-bottom: $spacer;
 }

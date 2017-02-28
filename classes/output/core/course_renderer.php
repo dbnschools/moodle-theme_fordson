@@ -90,7 +90,7 @@ class course_renderer extends \core_course_renderer {
         return $this->render_from_template('theme_boost/course_search_form', $data);
     }
     
-    
+
     public function frontpage_available_courses($id=0) {
     	/* available courses */
     	global $CFG, $OUTPUT, $PAGE;
@@ -133,9 +133,9 @@ class course_renderer extends \core_course_renderer {
     			foreach ($courseids as $courseid) {
     				$course = get_course($courseid);
 
-                    $summary = theme_fordson_strip_html_tags($course->summary);
-                    $summary = theme_fordson_course_trim_char($summary, 90);
-                    $trimtitle = theme_fordson_course_trim_char($course->fullname, 30);
+                    $trimtitlevalue = $PAGE->theme->settings->trimtitle;
+                    
+                    $trimtitle = theme_fordson_course_trim_char($course->fullname, $trimtitlevalue);
 
     				$noimgurl = $OUTPUT->pix_url(noimg, 'theme');
     				$courseurl = new moodle_url('/course/view.php', array('id' => $courseid ));
@@ -212,7 +212,7 @@ class course_renderer extends \core_course_renderer {
     
         $chelper = new coursecat_helper();
         $chelper->set_show_courses(self::COURSECAT_SHOW_COURSES_EXPANDED)->set_courses_display_options(array(
-                'recursive' => true,
+                'recursive' => false,
                 'limit' => $CFG->frontpagecourselimit,
                 'viewmoreurl' => new moodle_url('/course/index.php'),
                 'viewmoretext' => new lang_string('fulllistofcourses')
@@ -388,23 +388,18 @@ class course_renderer extends \core_course_renderer {
         // ADD HERE GRID OPTIONS AND BOX CSS
         $classes[] = 'col-md-3 box-class';
         $content = '<div class="'.join(' ', $classes).'" data-categoryid="'.$coursecat->id.'" data-depth="'.$depth.'" data-showcourses="'.$chelper->get_show_courses().'" data-type="'.self::COURSECAT_TYPE_CATEGORY.'">';
-        $content .= '   <div>';
+        $content .= '   <div class="cat-icon">';
 
         // LOAD ICON
         $val = theme_fordson_get_setting('catsicon');
         $url= new moodle_url('/course/index.php', array('categoryid' => $coursecat->id));
-        $content .= '       <div class="img-class">';
-        $content .= '           <a href="'.$url.'">';
+        $content .= '<a href="'.$url.'">';
         $content .= '               <i class="fa fa-5x fa-'.$val.'"></i>';
-        $content .= '           </a>';
-        $content .= '       </div>';
-        //Cat title
+                //Cat title
         $categoryname = $coursecat->get_formatted_name();
-        $content .= '       <div class="info">';
-        $content .= '           <div>';
-        $content .= '               <a href="'.$url.'">';
+        $content .= '   <div>';
+        $content .= '       <div class="info-enhanced">';
         $content .= '                   <span class="class-category">'.$categoryname.'</span>';
-        $content .= '               </a>';
         // ADD HERE A CLASS TO SHOW COURSES COUNT IN A CORNER OR WHERE YOU THINK IS BETTER.
         if ($chelper->get_show_courses() == self::COURSECAT_SHOW_COURSES_COUNT) {
             $coursescount = $coursecat->get_courses_count();
@@ -412,8 +407,10 @@ class course_renderer extends \core_course_renderer {
             $content .= '           <span class="numberofcourses" title="'.get_string('numberofcourses').'">('.$coursescount.')</span>';
             $content .= '       </div>';
         }
-        $content .= '           </div>';
         $content .= '       </div>';
+        $content .= '   </div>';
+        $content .= '</a>';
+
         
         $content .= '   </div>'; // BORDER DIV END.
     
