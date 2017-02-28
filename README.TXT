@@ -34,7 +34,8 @@ Click on the button to "Clone or Download" https://github.com/kennibc/moodle-the
 *Added Category Icon view. 
 *Added icon chooser in theme admin for course categories.
 *Added Frontpage Course tile height which allows you to make them smaller if needed.
-*Added Course Title and Summary Trim value for the display of courses in category view.  Must be a number
+*Added Course Title and Summary Trim value for the display of courses in category view.
+*Added toggle to show or hide course tile tooltips.
 
 
 ## Fordson v1.2.5

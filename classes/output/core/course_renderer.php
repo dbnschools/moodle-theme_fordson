@@ -90,8 +90,7 @@ class course_renderer extends \core_course_renderer {
         return $this->render_from_template('theme_boost/course_search_form', $data);
     }
     
-
-
+    
     public function frontpage_available_courses($id=0) {
     	/* available courses */
     	global $CFG, $OUTPUT, $PAGE;
@@ -167,20 +166,25 @@ class course_renderer extends \core_course_renderer {
                         }
                     }
                     
-    
     			   $rowcontent .= '
     					<div class="col-md-4">
                         	<div class="class-box-fp" style="background-image: url('.$imgurl.');background-repeat: no-repeat;background-size:cover; background-position:center;">
                         		';
-    			   //$rowcontent .= $courseimg;
-                   $rowcontent .= '
-                                
-                        		<div class="course-title">
-                       				<h4><a data-toggle="tooltip" data-placement= "bottom" title="'.$course->fullname.'" href="'.$courseurl.'">'.$trimtitle.'</a></h4>
-                        		</div>
-                        	</div>
+    			                
+                                if ($PAGE->theme->settings->titletooltip) {
+                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="'.$course->fullname.'"';
+                                } else {
+                                $tooltiptext = '';
+                                }
+
+                       $rowcontent .= '
+                                    <div class="course-title">
+                                    <h4><a '.$tooltiptext.' href="'.$courseurl.'">'.$trimtitle.'</a></h4>
+                                    </div>
+                                </div>
                         </div>';
-    			}
+                        }
+
     			$content .= $rowcontent;
     			$content .= '</div> </div>';
     		}
@@ -248,8 +252,10 @@ class course_renderer extends \core_course_renderer {
 
                     $summary = theme_fordson_strip_html_tags($course->summary);
                     $summary = theme_fordson_course_trim_char($summary, $trimsummaryvalue);
-                    $trimtitle = theme_fordson_course_trim_char($course->fullname, $trimtitlevalue);
 
+                    
+                    $trimtitle = theme_fordson_course_trim_char($course->fullname, $trimtitlevalue);
+    
                     $noimgurl = $OUTPUT->pix_url(noimg, 'theme');
                     $courseurl = new moodle_url('/course/view.php', array('id' => $courseid ));
     
@@ -279,23 +285,31 @@ class course_renderer extends \core_course_renderer {
                         }
                     }
                     
-    
+                    
                    $rowcontent .= '
                         <div class="col-md-4">
                             <div class="class-box">
                                 ';
-                   //$rowcontent .= $courseimg;
-                   $rowcontent .= '
-                                <div class="course-title"><h4><a data-toggle="tooltip" data-placement= "top" title="'.$course->fullname.'" href="'.$courseurl.'">'.$course->fullname.'</a></h4></div>
-                                <div class="course-image-view" style="background-image: url('.$imgurl.');background-repeat: no-repeat;background-size:cover; background-position:center;">
-                                    
+                                
+                                if ($PAGE->theme->settings->titletooltip) {
+                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="'.$course->fullname.'"';
+                                } else {
+                                $tooltiptext = '';
+                                }
+
+                       $rowcontent .= '
+                                    <div class="course-title">
+                                    <h4><a '.$tooltiptext.' href="'.$courseurl.'">'.$trimtitle.'</a></h4>
+                                    </div>
+                                    <div class="course-image-view" style="background-image: url('.$imgurl.');background-repeat: no-repeat;background-size:cover; background-position:center;">
+                                    </div>
+                                    <div class="course-summary">
+                                    '.$summary.'
+                                    </div>
                                 </div>
-                                <div class="course-summary">
-                                '.$summary.'
-                                </div>
-                            </div>
                         </div>';
-                }
+                        }
+
                 $content .= $rowcontent;
                 $content .= '</div> </div>';
             }

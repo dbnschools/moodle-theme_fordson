@@ -174,6 +174,8 @@ $string['trimtitle'] = 'Trim Course Title';
 $string['trimtitle_desc'] = 'Enter a number to trim the title length.  This number represents characters that will be displayed.';
 $string['trimsummary'] = 'Trim Course Summary';
 $string['trimsummary_desc'] = 'Enter a number to trim the summary length.  This number represents characters that will be displayed.';
+$string['titletooltip'] = 'Course Title Tooltip';
+$string['titletooltip_desc'] = 'If using Trim Course Title you can use tooltips which will display the entire course title in a tooltip.  Check this box to turn on tooltips.';
 
 // Menu Settings
 $string['menusettings'] = 'Menu settings';
