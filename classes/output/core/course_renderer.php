@@ -33,6 +33,7 @@ use stdClass;
 use course_in_list;
 use context_course;
 use pix_url;
+use html_writer;
 use heading;
 
 require_once($CFG->dirroot . '/course/renderer.php');
@@ -87,7 +88,7 @@ class course_renderer extends \core_course_renderer {
             'value' => $value
         ];
 
-        return $this->render_from_template('theme_boost/course_search_form', $data);
+        return $this->render_from_template('theme_fordson/course_search_form', $data);
     }
     
 
@@ -204,8 +205,7 @@ class course_renderer extends \core_course_renderer {
         }
     }
 
-
-    public function view_available_courses($id=0) {
+    public function view_available_courses($id = 0, $courses = NULL, $totalcount = NULL) {
         /* available courses */
         global $CFG, $OUTPUT, $PAGE;
         require_once($CFG->libdir. '/coursecatlib.php');
@@ -219,12 +219,17 @@ class course_renderer extends \core_course_renderer {
         ));
 
         $chelper->set_attributes(array('class' => 'category-course-list-all'));
-        $courses = coursecat::get($id)->get_courses($chelper->get_courses_display_options());
-        $totalcount = coursecat::get($id)->get_courses_count($chelper->get_courses_display_options());
+        if (!$courses) {
+            $courses = coursecat::get($id)->get_courses($chelper->get_courses_display_options());
+            $totalcount = coursecat::get($id)->get_courses_count($chelper->get_courses_display_options());
+        }
 
         $rcourseids = array_keys($courses);
         $acourseids = array_chunk($rcourseids, 3);
+        
+        if($id!=0){
         $newcourse = get_string('availablecourses');
+        }
 
         $header = '
                 <div id="category-course-list">
@@ -317,16 +322,8 @@ class course_renderer extends \core_course_renderer {
     
         $coursehtml = $header.$content.$footer;
 
-        if($id == 0){
-            echo $coursehtml;
-            if (!$totalcount && !$this->page->user_is_editing() && has_capability('moodle/course:create', context_system::instance())) {
-                // Print link to create a new course, for the 1st available category.
-                echo $this->add_new_course_button();
-            }
-        }else{
             $coursehtml .= '<br/><br/>';
             return $coursehtml;
-        }
     }
 
 
@@ -414,11 +411,6 @@ class course_renderer extends \core_course_renderer {
         
         $content .= '   </div>'; // BORDER DIV END.
     
-        // I DONT LOAD EXPANDBLE CAT INFO (SUBCAT AND COURSES)
-        //      $content .= '       <div class="content">';
-        //      $content .= $categorycontent;
-        //      $content .= html_writer::tag('div', $categorycontent, array('class' => 'content'));
-    
         $content .= '</div>'; // COL-MD-4 DIV END
         if($totalcount == $this->countcategories){
         }
@@ -426,12 +418,13 @@ class course_renderer extends \core_course_renderer {
         return $content;
     }
 
+
+                
     protected function coursecat_courses(coursecat_helper $chelper, $courses, $totalcount = null) {
+       
             $categoryid = optional_param('categoryid', 0, PARAM_INT);
             $content = '<div class="clearfix"></div>';
-            if($categoryid){
-                $content .= $this->view_available_courses($categoryid);
-            }
+            $content .= $this->view_available_courses($categoryid, $courses, $totalcount);
             return $content;
     }
   

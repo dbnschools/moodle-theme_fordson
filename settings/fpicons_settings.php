@@ -89,7 +89,7 @@ $page = new admin_settingpage('theme_fordson_iconnavheading', get_string('iconna
     $name = 'theme_fordson/createbuttonurl';
     $title = get_string('naviconbuttonurl', 'theme_fordson');
     $description = get_string('naviconbuttonurldesc', 'theme_fordson');
-    $default = '/course/edit.php?category=1';
+    $default =  $CFG->wwwroot.'/course/edit.php?category=1';
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
@@ -155,7 +155,7 @@ $page = new admin_settingpage('theme_fordson_iconnavheading', get_string('iconna
     $name = 'theme_fordson/nav1buttonurl';
     $title = get_string('naviconbuttonurl', 'theme_fordson');
     $description = get_string('naviconbuttonurldesc', 'theme_fordson');
-    $default = '/my/';
+    $default =  $CFG->wwwroot.'/my/';
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
@@ -186,7 +186,7 @@ $page = new admin_settingpage('theme_fordson_iconnavheading', get_string('iconna
     $name = 'theme_fordson/nav2buttonurl';
     $title = get_string('naviconbuttonurl', 'theme_fordson');
     $description = get_string('naviconbuttonurldesc', 'theme_fordson');
-    $default = '/calendar/view.php?view=month';
+    $default =  $CFG->wwwroot.'/calendar/view.php?view=month';
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
@@ -217,7 +217,7 @@ $page = new admin_settingpage('theme_fordson_iconnavheading', get_string('iconna
     $name = 'theme_fordson/nav3buttonurl';
     $title = get_string('naviconbuttonurl', 'theme_fordson');
     $description = get_string('naviconbuttonurldesc', 'theme_fordson');
-    $default = '/badges/mybadges.php';
+    $default =  $CFG->wwwroot.'/badges/mybadges.php';
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
@@ -248,7 +248,7 @@ $page = new admin_settingpage('theme_fordson_iconnavheading', get_string('iconna
     $name = 'theme_fordson/nav4buttonurl';
     $title = get_string('naviconbuttonurl', 'theme_fordson');
     $description = get_string('naviconbuttonurldesc', 'theme_fordson');
-    $default = '/course/';
+    $default =  $CFG->wwwroot.'/course/';
     $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
