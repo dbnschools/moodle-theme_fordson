@@ -349,8 +349,17 @@ div#fpslider {
     padding: 1rem;
 }
 
-.category.loaded.col-md-3.box-class {
+.cat-icon {
+    margin:5px;
+}
+
+.category.box-class {
+    padding-bottom: $spacer;
     text-align: center;
+}
+
+.category.box-class:nth-child(5) { 
+    clear:both;
 }
 
 .info-enhanced {
@@ -359,17 +368,7 @@ div#fpslider {
     padding: $spacer;
     border-radius: $border-radius;
 }
-.cat-icon {
-    margin:5px;
-}
 
-.category.loaded.col-md-3.box-class {
-    padding-bottom: $spacer;
-}
-
-.category.notloaded.col-md-3.box-class {
-    padding-bottom: $spacer;
-}
 .circle-count {
     float: right;
     padding-left:3px;

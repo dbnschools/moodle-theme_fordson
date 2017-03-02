@@ -351,15 +351,13 @@ class course_renderer extends \core_course_renderer {
             $categorycontent = '';
             $classes[] = 'notloaded';
             if ($coursecat->get_children_count() ||
-                    ($chelper->get_show_courses() >= self::COURSECAT_SHOW_COURSES_COLLAPSED && $coursecat->get_courses_count())
-                    ) {
-                        $classes[] = 'with_children';
-                        $classes[] = 'collapsed';
-                    }
+                    ($chelper->get_show_courses() >= self::COURSECAT_SHOW_COURSES_COLLAPSED && $coursecat->get_courses_count())) {
+                $classes[] = 'with_children';
+                $classes[] = 'collapsed';
+            }
         } else {
             // load category content
-            // DONT LOAD CATEGORY TREE FOR EXPANDABLE ACTION.
-            //$categorycontent = $this->coursecat_category_content($chelper, $coursecat, $depth);
+            $categorycontent = $this->coursecat_category_content($chelper, $coursecat, $depth);
             $classes[] = 'loaded';
             if (!empty($categorycontent)) {
                 $classes[] = 'with_children';
@@ -385,41 +383,35 @@ class course_renderer extends \core_course_renderer {
         // ADD HERE GRID OPTIONS AND BOX CSS
         $classes[] = 'col-md-3 box-class';
         $content = '<div class="'.join(' ', $classes).'" data-categoryid="'.$coursecat->id.'" data-depth="'.$depth.'" data-showcourses="'.$chelper->get_show_courses().'" data-type="'.self::COURSECAT_TYPE_CATEGORY.'">';
-        $content .= '   <div class="cat-icon">';
+        $content .= '<div class="cat-icon">';
 
         // LOAD ICON
         $val = theme_fordson_get_setting('catsicon');
         $url= new moodle_url('/course/index.php', array('categoryid' => $coursecat->id));
         $content .= '<a href="'.$url.'">';
-        $content .= '               <i class="fa fa-5x fa-'.$val.'"></i>';
+        $content .= '<i class="fa fa-5x fa-'.$val.'"></i>';
                 //Cat title
         $categoryname = $coursecat->get_formatted_name();
-        $content .= '   <div>';
-        $content .= '       <div class="info-enhanced">';
-        $content .= '                   <span class="class-category">'.$categoryname.'</span>';
+        $content .= '<div>';
+        $content .= '<div class="info-enhanced">';
+        $content .= '<span class="class-category">'.$categoryname.'</span>';
         // ADD HERE A CLASS TO SHOW COURSES COUNT IN A CORNER OR WHERE YOU THINK IS BETTER.
         if ($chelper->get_show_courses() == self::COURSECAT_SHOW_COURSES_COUNT) {
             $coursescount = $coursecat->get_courses_count();
-            $content .= '       <div class="circle-count">';
-            $content .= '           <span class="numberofcourses" title="'.get_string('numberofcourses').'">('.$coursescount.')</span>';
-            $content .= '       </div>';
+            $content .= '  <span class="numberofcourses" title="'.get_string('numberofcourses').'">('.$coursescount.')</span>';
         }
-        $content .= '       </div>';
-        $content .= '   </div>';
+        $content .= '</div>';
+        $content .= '</div>';
         $content .= '</a>';
 
-        
-        $content .= '   </div>'; // BORDER DIV END.
-    
+        $content .= '</div>'; // BORDER DIV END.
         $content .= '</div>'; // COL-MD-4 DIV END
         if($totalcount == $this->countcategories){
         }
         ++$this->countcategories;
         return $content;
     }
-
-
-                
+         
     protected function coursecat_courses(coursecat_helper $chelper, $courses, $totalcount = null) {
        
             $categoryid = optional_param('categoryid', 0, PARAM_INT);
