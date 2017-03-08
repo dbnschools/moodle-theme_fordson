@@ -321,6 +321,7 @@ div#fpslider {
 .class-box .course-title:hover:after {transform: scaleX(1); }
 
 .course-image-view {padding-top:10rem;}
+.dash-course-image-view {padding-top:5rem;}
 
 .class-box .course-summary {
     padding:1rem;
@@ -394,4 +395,9 @@ div#fpslider {
 }
 .pagelayout-incourse #page-navbar .dropdown-toggle {
     display: none;
+}
+#region-main .block-region .card {
+    box-shadow: initial;
+    -webkit-box-shadow: initial;
+    border: 0;
 }

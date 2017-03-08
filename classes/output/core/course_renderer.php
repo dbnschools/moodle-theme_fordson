@@ -306,8 +306,10 @@ class course_renderer extends \core_course_renderer {
                                     <div class="course-title">
                                     <h4><a '.$tooltiptext.' href="'.$courseurl.'">'.$trimtitle.'</a></h4>
                                     </div>
+                                    <a href="'.$courseurl.'">
                                     <div class="course-image-view" style="background-image: url('.$imgurl.');background-repeat: no-repeat;background-size:cover; background-position:center;">
                                     </div>
+                                    </a>
                                     <div class="course-summary">
                                     '.$summary.'
                                     </div>
