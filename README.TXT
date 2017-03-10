@@ -29,6 +29,10 @@ This means when Moodle updates the core Boost theme those changes will be applie
 #Install from Github
 Click on the button to "Clone or Download" https://github.com/kennibc/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
+## Fordson 1.2.9
+*Fixed Moodle 3.2.1+ changes to Boost theme that impact Fordson.  Issue related to header elements breaking such as the This Course Dropdown.
+*Continued improvements to Default Style Preset
+
 ## Fordson 1.2.8
 *Made changes so that Marketing tiles, frontpage textboxes, and other elements are more compatible with language plugins.
 *Fixed issue with "This Course" drop-down menu appearing on pages other than the homepage of the course.  This caused problems when viewing courses on smaller screens and running out of space in the header.  

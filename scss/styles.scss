@@ -130,9 +130,9 @@ border-radius: 0px 0px $card-border-radius $card-border-radius;
 
 #page-header .card-block {padding: .5rem .5rem; margin-bottom:0px}
 #page-header .card {margin-bottom:0px}
-.breadcrumb-button {
-    float: right;
-}
+
+.thiscourse {float:left;}
+
 
 /* Enhanced Homepage */
 
@@ -400,4 +400,12 @@ div#fpslider {
     box-shadow: initial;
     -webkit-box-shadow: initial;
     border: 0;
+}
+
+//fixes alignment where group icons appear over edit menu
+.action-menu .menubar .dropdown {
+    float: left;
+}
+.course-content ul.topics li.section .left {
+    padding-top: initial;
 }

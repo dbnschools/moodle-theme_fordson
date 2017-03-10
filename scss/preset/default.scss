@@ -271,11 +271,28 @@ h3.sectionname:before {
     background-color: lighten($brand-primary, 45%);
 }
 
-h3.sectionname {
+/*h3.sectionname {
     padding: 10px;
     background-color: $gray-lighter;
     border-radius: $border-radius;
+}*/
+
+.course-content ul li.section.main {
+    border-bottom: 7px solid $body-bg;
 }
+
+/*.course-content ul.topics li.section .content, .course-content ul.weeks li.section .content {
+    margin: 0;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}*/
+
+.course-content ul.topics li.section, .course-content ul.weeks li.section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+
 
 body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-size:cover; background-position:center;}
 
@@ -517,3 +534,4 @@ aside.block_comments h3:before {
     background-color: #3e647e;
     content:"\f02d";
 }
+

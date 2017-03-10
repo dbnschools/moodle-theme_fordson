@@ -38,9 +38,11 @@ use context_course;
 use pix_icon;
 
 defined('MOODLE_INTERNAL') || die;
+
 require_once($CFG->dirroot.'/blocks/course_overview/locallib.php');
 require_once($CFG->dirroot . "/course/renderer.php");
 require_once($CFG->libdir. '/coursecatlib.php');
+
 /**
  * Renderers to align Moodle's HTML with that expected by Bootstrap
  *
@@ -77,7 +79,7 @@ class core_renderer extends \core_renderer {
      */
     public function full_header() {
 
-        global $CFG, $COURSE;
+        global $CFG, $COURSE, $PAGE;
 
         // Get course overview files.
         if (empty($CFG->courseoverviewfileslimit)) {
@@ -133,18 +135,18 @@ class core_renderer extends \core_renderer {
         $html .= html_writer::start_div('headerfade');
         $html .= html_writer::start_div('card-block');
         $html .= html_writer::div($this->context_header_settings_menu(), 'pull-xs-right context-header-settings-menu');
+        $html .= html_writer::start_div('pull-xs-left');
         $html .= $this->context_header();
+        $html .= html_writer::end_div();
         $pageheadingbutton = $this->page_heading_button();
         if (empty($PAGE->layout_options['nonavbar'])) {
-            $html .= html_writer::start_div('clearfix', array('id' => 'page-navbar'));
-
+            $html .= html_writer::start_div('clearfix w-100 pull-xs-left', array('id' => 'page-navbar'));
             $html .= html_writer::tag('div', $this->navbar(), array('class' => 'breadcrumb-nav'));
-            $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button');
-            $html .= $this->thiscourse_menu();
-            
+            $html .= html_writer::tag('div', $this->thiscourse_menu(), array('class' => 'thiscourse'));
+            $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button pull-xs-right');
             $html .= html_writer::end_div();
         } else if ($pageheadingbutton) {
-            $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button nonavbar');
+            $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button nonavbar pull-xs-right');
         }
         $html .= html_writer::tag('div', $this->course_header(), array('id' => 'course-header'));
         $html .= html_writer::end_div(); // End card-block.
@@ -376,7 +378,7 @@ class core_renderer extends \core_renderer {
             if (!empty($PAGE->theme->settings->activitymenu)) {
                     if (ISSET($COURSE->id) && $COURSE->id > 1) {
                         $branchtitle = get_string('thiscourse', 'theme_fordson');
-                        $branchlabel = '<span class="menutitle">'.$branchtitle.'</span>';
+                        $branchlabel = '<div class="menutitle">'.$branchtitle.'</span>';
                         $branchurl = new moodle_url('#');
                         $branch = $menu->add($branchlabel, $branchurl, $branchtitle, 10002);
 
@@ -410,11 +412,11 @@ class core_renderer extends \core_renderer {
 
                         foreach ($data as $modname => $modfullname) {
                             if ($modname === 'resources') {
-                                $icon = $OUTPUT->pix_icon('icon', '', 'mod_page', array('class' => 'icon'));
-                                $branch->add($icon.$modfullname, new moodle_url('/course/resources.php', array('id' => $PAGE->course->id)));
+                                
+                                $branch->add($modfullname, new moodle_url('/course/resources.php', array('id' => $PAGE->course->id)));
                             } else {
-                                $icon = '<img src="'.$OUTPUT->pix_url('icon', $modname) . '" class="icon" alt="" />';
-                                $branch->add($icon.$modfullname, new moodle_url('/mod/'.$modname.'/index.php',
+    
+                                $branch->add($modfullname, new moodle_url('/mod/'.$modname.'/index.php',
                                         array('id' => $PAGE->course->id)));
                             }
                         }
