@@ -378,7 +378,7 @@ class core_renderer extends \core_renderer {
             if (!empty($PAGE->theme->settings->activitymenu)) {
                     if (ISSET($COURSE->id) && $COURSE->id > 1) {
                         $branchtitle = get_string('thiscourse', 'theme_fordson');
-                        $branchlabel = '<div class="menutitle">'.$branchtitle.'</span>';
+                        $branchlabel = $branchtitle;
                         $branchurl = new moodle_url('#');
                         $branch = $menu->add($branchlabel, $branchurl, $branchtitle, 10002);
 

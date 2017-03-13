@@ -138,7 +138,7 @@ class course_renderer extends \core_course_renderer {
                     
                     $trimtitle = theme_fordson_course_trim_char($course->fullname, $trimtitlevalue);
 
-    				$noimgurl = $OUTPUT->pix_url(noimg, 'theme');
+    				$noimgurl = $OUTPUT->pix_url('noimg', 'theme');
     				$courseurl = new moodle_url('/course/view.php', array('id' => $courseid ));
     
     				if ($course instanceof stdClass) {
@@ -261,7 +261,7 @@ class course_renderer extends \core_course_renderer {
                     
                     $trimtitle = theme_fordson_course_trim_char($course->fullname, $trimtitlevalue);
     
-                    $noimgurl = $OUTPUT->pix_url(noimg, 'theme');
+                    $noimgurl = $OUTPUT->pix_url('noimg', 'theme');
                     $courseurl = new moodle_url('/course/view.php', array('id' => $courseid ));
     
                     if ($course instanceof stdClass) {
