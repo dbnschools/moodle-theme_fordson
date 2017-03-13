@@ -229,6 +229,8 @@ class course_renderer extends \core_course_renderer {
         
         if($id!=0){
         $newcourse = get_string('availablecourses');
+        } else {
+            $newcourse = NULL;
         }
 
         $header = '

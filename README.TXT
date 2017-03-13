@@ -32,6 +32,7 @@ Click on the button to "Clone or Download" https://github.com/kennibc/moodle-the
 ## Fordson 1.2.9b
 *Revisited and removed entire tag for This Course drop down title.
 *Fixed noimg URL for displaying tiled courses where no background image is used.
+*fixed course renderer when cat ID=0 undefined issue.
 
 ## Fordson 1.2.9a
 *Fixed closing div tag introduced in version 1.2.9 in This Course drop down.
