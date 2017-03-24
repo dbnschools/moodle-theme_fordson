@@ -76,5 +76,66 @@ $setting = new admin_setting_configcheckbox($name, $title, $description, $defaul
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+
+//Drawer Menu
+// This is the descriptor for icon One
+$name = 'theme_fordson/drawermenuinfo';
+$heading = get_string('setting_removenodesheading', 'theme_fordson');
+$information = get_string('setting_removenodesperformancehint', 'theme_fordson');
+$setting = new admin_setting_heading($name, $heading, $information);
+$page->add($setting);
+
+// Toggle Marketing Spots.
+$name = 'theme_fordson/toggledrawermenu';
+$title = get_string('toggledrawermenu' , 'theme_fordson');
+$description = get_string('toggledrawermenu_desc', 'theme_fordson');
+$alwaysdisplay = get_string('activateonboth', 'theme_fordson');
+$displayhome = get_string('activateonhomepage', 'theme_fordson');
+$displaycourse = get_string('activateoncoursepage', 'theme_fordson');
+$default = '1';
+$choices = array('1'=>$alwaysdisplay, '2'=>$displayhome, '3'=>$displaycourse);
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+$name = 'theme_fordson/removehomenode';
+$title = get_string('setting_removehomenode', 'theme_fordson');
+$description = get_string('setting_removehomenode_desc', 'theme_fordson');
+$default = 0;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+$name = 'theme_fordson/removecalendarnode';
+$title = get_string('setting_removecalendarnode', 'theme_fordson');
+$description = get_string('setting_removecalendarnode_desc', 'theme_fordson');
+$default = 0;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+$name = 'theme_fordson/removeprivatefilesnode';
+$title = get_string('setting_removeprivatefilesnode', 'theme_fordson');
+$description = get_string('setting_removeprivatefilesnode_desc', 'theme_fordson');
+$default = 0;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+$name = 'theme_fordson/removemycoursesnode';
+$title = get_string('setting_removemycoursesnode', 'theme_fordson');
+$description = get_string('setting_removemycoursesnode_desc', 'theme_fordson');
+$default = 0;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+$name = 'theme_fordson/adddrawermenu';
+$title = get_string('adddrawermenu', 'theme_fordson');
+$description = get_string('adddrawermenu_desc', 'theme_fordson');
+$setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 // Must add the page after definiting all the settings!
 $settings->add($page);

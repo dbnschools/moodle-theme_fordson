@@ -192,17 +192,14 @@ class course_renderer extends \core_course_renderer {
     	}
     
     	$coursehtml = $header.$content.$footer;
-
-    	if($id == 0){
+        if($id == 0){
             echo $coursehtml;
-            if (!$totalcount && !$this->page->user_is_editing() && has_capability('moodle/course:create', context_system::instance())) {
-                // Print link to create a new course, for the 1st available category.
-                echo $this->add_new_course_button();
-            }
+
         }else{
             $coursehtml .= '<br/><br/>';
             return $coursehtml;
         }
+
     }
 
     public function view_available_courses($id = 0, $courses = NULL, $totalcount = NULL) {

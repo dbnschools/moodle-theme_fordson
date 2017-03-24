@@ -411,3 +411,11 @@ div#fpslider {
 .course-content ul.topics li.section .left {
     padding-top: initial;
 }
+
+/* H5P regression fix for editor https://moodle.org/mod/forum/discuss.php?d=347602#p1402801 */
+@media (min-width:544px) {
+    .form-inline .form-control-static {
+        display: block!important;
+    }
+}
+/* End H5P */

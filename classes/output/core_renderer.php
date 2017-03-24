@@ -286,6 +286,7 @@ class core_renderer extends \core_renderer {
         $custommenu = new custom_menu($custommenuitems, current_language());
         return $this->render_custom_menu($custommenu);
     }
+    
 
     /**
      * We want to show the custom menus as a list of links in the footer on small screens.

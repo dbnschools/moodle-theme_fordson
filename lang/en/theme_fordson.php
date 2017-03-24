@@ -201,6 +201,38 @@ $string['questionbankmenu_desc'] = 'Include a link to the Question Bank page in 
 $string['activitylistingmenu'] = 'Show Activity Listings';
 $string['activitylistingmenu_desc'] = 'Include a link to show activities in This Course drop down menu.';
 
+$string['setting_removenodesheading'] = 'Remove Menu Items from the Nav Drawer';
+$string['setting_removenodesperformancehint'] = 'Technically, this is done by setting the Menu Item\'s showinflatnavigation attribute to false. Thus, the node will only be hidden from the nav drawer, but it will remain in the navigation tree and can still be accessed by other parts of Moodle.';
+$string['setting_removecalendarnode'] = 'Remove "Calendar" Menu Item';
+$string['setting_removecalendarnode_desc'] = 'Enabling this setting will remove the "Calendar" Menu Item from Boost\'s nav drawer.';
+$string['setting_removehomenode'] = 'Remove "Home" Menu Item';
+$string['setting_removehomenode_desc'] = 'Enabling this setting will remove the "Home" Menu Item from Boost\'s nav drawer.';
+$string['setting_removesecondhomenode'] = 'Remove second "Home" or "Dashboard" Menu Item';
+$string['setting_removesecondhomenode_desc'] = 'Enabling this setting will remove the "Home" or "Dashboard" Menu Item, depending on what the user chose not to be his home page, from Boost\'s nav drawer.';
+$string['setting_removedashboardnode'] = 'Remove "Dashboard" Menu Item';
+$string['setting_removedashboardnode_desc'] = 'Enabling this setting will remove the "Dashboard" Menu Item from Boost\'s nav drawer.';
+$string['setting_removemycoursesnode'] = 'Remove "My courses" Menu Item';
+$string['setting_removemycoursesnode_desc'] = 'Enabling this setting will remove the "My courses" Menu Item from Boost\'s nav drawer.';
+$string['setting_removemycoursesnodeperformancehint'] = 'Please note: If you enable this setting and have also enabled the setting <a href="/admin/search.php?query=navshowmycoursecategories">navshowmycoursecategories</a>, removing the "My courses" node takes more time and you should consider disabling the navshowmycoursecategories setting.';
+$string['setting_removeprivatefilesnode'] = 'Remove "Private files" Menu Item';
+$string['setting_removeprivatefilesnode_desc'] = 'Enabling this setting will remove the "Private files" Menu Item from Boost\'s nav drawer.';
+$string['adddrawermenu'] = 'Add Custom Items to the Navigation Drawer';
+$string['adddrawermenu_desc'] = 'You can add custom items to the Navigation Menu using the following syntax.
+Identical to that used in the custom menu at theme settings.
+<br>
+Example:
+<br>
+Moodle community|http://moodle.org/support
+<br>
+Moodle company|http://moodle.com';
+$string['toggledrawermenu'] = 'Activate Custom Navigation Drawer';
+$string['toggledrawermenu_desc'] = 'Determine where these settings will be applied.';
+$string['activateonhomepage'] = 'Activate on Homepage';
+$string['activateoncoursepage'] = 'Activate on Coursepage';
+$string['activateonboth'] = 'Activate on All Pages';
+
+
+
 //FP Icon Nav
 $string['navicon1'] = 'Homepage Icon One';
 $string['navicon2'] = 'Homepage Icon Two';
