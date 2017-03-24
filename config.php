@@ -52,12 +52,12 @@ $THEME->layouts = [
     ),
     // Main course page.
     'course' => array(
-        'file' => 'columns2.php',
+        'file' => 'course.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
     ),
-    'coursecategory' => array(
-        'file' => 'columns2.php',
+    'incourse' => array(
+        'file' => 'course.php',
         'regions' => array('side-pre'),
         'defaultregion' => 'side-pre',
     ),
