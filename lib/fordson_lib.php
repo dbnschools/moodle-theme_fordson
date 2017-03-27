@@ -136,7 +136,7 @@ function theme_fordson_course_trim_char($str, $n = 500, $endchar = '&#8230;') {
  * @copyright  2017 Alexander Bias, Ulm University <alexander.bias@uni-ulm.de>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
-function boostnavigation_extend_navigation(global_navigation $navigation) {
+function fordson_boostnavigation_extend_navigation(global_navigation $navigation) {
     global $PAGE, $CFG;
 
     // Check if admin wanted us to remove the home node from Boost's nav drawer.
@@ -160,7 +160,7 @@ function boostnavigation_extend_navigation(global_navigation $navigation) {
     // Check if admin wanted us to remove the privatefiles node from Boost's nav drawer.
     if (!empty($PAGE->theme->settings->removeprivatefilesnode)) {
         // If yes, do it.
-        if ($privatefilesnode = boostnavigation_find_privatefiles_node($navigation)) {
+        if ($privatefilesnode = fordson_boostnavigation_find_privatefiles_node($navigation)) {
             // Hide privatefiles node.
             $privatefilesnode->showinflatnavigation = false;
         }
@@ -179,7 +179,7 @@ function boostnavigation_extend_navigation(global_navigation $navigation) {
                 // If the admin decided to display categories, things get slightly complicated.
                 if ($CFG->navshowmycoursecategories) {
                     // We need to find all children nodes first.
-                    $allchildrennodes = boostnavigation_get_all_childrenkeys($mycoursesnode->get($k));
+                    $allchildrennodes = fordson_boostnavigation_get_all_childrenkeys($mycoursesnode->get($k));
                     // Then we can hide each children node.
                     // Unfortunately, the children nodes have navigation_node type TYPE_MY_CATEGORY or navigation_node type
                     // TYPE_COURSE, thus we need to search without a specific navigation_node type.
@@ -211,7 +211,7 @@ function boostnavigation_extend_navigation(global_navigation $navigation) {
  * @param global_navigation $navigation
  * @return navigation_node
  */
-function boostnavigation_find_privatefiles_node(global_navigation $navigation) {
+function fordson_boostnavigation_find_privatefiles_node(global_navigation $navigation) {
     // Get front page course node.
     if ($coursenode = $navigation->find('1', null)) {
         // Get children of the front page course node.
@@ -250,7 +250,7 @@ function boostnavigation_find_privatefiles_node(global_navigation $navigation) {
  * @param navigation_node $navigationnode
  * @return array
  */
-function boostnavigation_get_all_childrenkeys(navigation_node $navigationnode) {
+function fordson_boostnavigation_get_all_childrenkeys(navigation_node $navigationnode) {
     // Empty array to hold all children.
     $allchildren = array();
 
@@ -264,7 +264,7 @@ function boostnavigation_get_all_childrenkeys(navigation_node $navigationnode) {
         $childrennodeskeys = $navigationnode->get_children_key_list();
         // Get all children keys of our children recursively.
         foreach ($childrennodeskeys as $ck) {
-            $allchildren = array_merge($allchildren, boostnavigation_get_all_childrenkeys($navigationnode->get($ck)));
+            $allchildren = array_merge($allchildren, fordson_boostnavigation_get_all_childrenkeys($navigationnode->get($ck)));
         }
         // And add our own children keys to the result.
         $allchildren = array_merge($allchildren, $childrennodeskeys);
@@ -288,13 +288,13 @@ function boostnavigation_get_all_childrenkeys(navigation_node $navigationnode) {
  * @param object $navigation global_navigation
  * @return void
  */
-function local_navigation_extend_navigation(global_navigation $navigation) {
+function fordson_local_navigation_extend_navigation(global_navigation $navigation) {
     global $PAGE;
 
         $menu = new custom_menu($PAGE->theme->settings->adddrawermenu, current_language());
         if ($menu->has_children()) {
             foreach ($menu->get_children() as $item) {
-                navigation_custom_menu_item($item, 0, null);
+                fordson_navigation_custom_menu_item($item, 0, null);
             }
         }
 }
@@ -315,7 +315,7 @@ function local_navigation_extend_navigation(global_navigation $navigation) {
  * @param int $flatenabled show master node in boost navigation
  * @return void
  */
-function navigation_custom_menu_item(custom_menu_item $menunode, $parent, $pmasternode) {
+function fordson_navigation_custom_menu_item(custom_menu_item $menunode, $parent, $pmasternode) {
     global $PAGE, $CFG;
 
     static $submenucount = 0;
@@ -329,15 +329,15 @@ function navigation_custom_menu_item(custom_menu_item $menunode, $parent, $pmast
             $url = null;
         }
         if ($parent > 0) {
-            $masternode = $pmasternode->add(local_navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CONTAINER);
+            $masternode = $pmasternode->add(fordson_local_navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CONTAINER);
             $masternode->title($menunode->get_title());
         } else {
-            $masternode = $PAGE->navigation->add(local_navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CONTAINER);
+            $masternode = $PAGE->navigation->add(fordson_local_navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CONTAINER);
             $masternode->title($menunode->get_title());
                 $masternode->showinflatnavigation = true;
         }
         foreach ($menunode->get_children() as $menunode) {
-            navigation_custom_menu_item($menunode, $submenucount, $masternode);
+            fordson_navigation_custom_menu_item($menunode, $submenucount, $masternode);
         }
     } else {
         $url = $CFG->wwwroot;
@@ -350,7 +350,7 @@ function navigation_custom_menu_item(custom_menu_item $menunode, $parent, $pmast
             $childnode = $pmasternode->add(navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CUSTOM);
             $childnode->title($menunode->get_title());
         } else {
-            $masternode = $PAGE->navigation->add(local_navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CONTAINER);
+            $masternode = $PAGE->navigation->add(fordson_local_navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CONTAINER);
             $masternode->title($menunode->get_title());
                 $masternode->showinflatnavigation = true;
             }
@@ -376,7 +376,7 @@ function navigation_custom_menu_item(custom_menu_item $menunode, $parent, $pmast
  * @param string $string text to translate.
  * @return string
  */
-function local_navigation_get_string($string) {
+function fordson_local_navigation_get_string($string) {
     $title = $string;
     $text = explode(',', $string, 2);
     if (count($text) == 2) {

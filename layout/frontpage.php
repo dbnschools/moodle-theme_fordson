@@ -53,11 +53,11 @@ $templatecontext = [
 ];
 
 if ($PAGE->theme->settings->toggledrawermenu==1) {
-boostnavigation_extend_navigation($PAGE->navigation);
-local_navigation_extend_navigation($PAGE->navigation);
+fordson_boostnavigation_extend_navigation($PAGE->navigation);
+fordson_local_navigation_extend_navigation($PAGE->navigation);
 } else if($PAGE->theme->settings->toggledrawermenu==2) {
-boostnavigation_extend_navigation($PAGE->navigation);
-local_navigation_extend_navigation($PAGE->navigation);
+fordson_boostnavigation_extend_navigation($PAGE->navigation);
+fordson_local_navigation_extend_navigation($PAGE->navigation);
 }
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;
