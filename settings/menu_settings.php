@@ -76,9 +76,40 @@ $setting = new admin_setting_configcheckbox($name, $title, $description, $defaul
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+// This is the descriptor for nav drawer
+$name = 'theme_fordson/mycoursesmenuinfo';
+$heading = get_string('mycoursesinfo', 'theme_fordson');
+$information = get_string('mycoursesinfodesc', 'theme_fordson');
+$setting = new admin_setting_heading($name, $heading, $information);
+$page->add($setting);
+
+// Toggle courses display in custommenu.
+$name = 'theme_fordson/displaymycourses';
+$title = get_string('displaymycourses', 'theme_fordson');
+$description = get_string('displaymycoursesdesc', 'theme_fordson');
+$default = true;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+// Set terminology for dropdown course list
+$name = 'theme_fordson/mycoursetitle';
+$title = get_string('mycoursetitle','theme_fordson');
+$description = get_string('mycoursetitledesc', 'theme_fordson');
+$default = 'course';
+$choices = array(
+	'course' => get_string('mycourses', 'theme_fordson'),
+	'unit' => get_string('myunits', 'theme_fordson'),
+	'class' => get_string('myclasses', 'theme_fordson'),
+	'module' => get_string('mymodules', 'theme_fordson')
+);
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 
 //Drawer Menu
-// This is the descriptor for icon One
+// This is the descriptor for nav drawer
 $name = 'theme_fordson/drawermenuinfo';
 $heading = get_string('setting_removenodesheading', 'theme_fordson');
 $information = get_string('setting_removenodesperformancehint', 'theme_fordson');

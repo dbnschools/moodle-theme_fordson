@@ -231,7 +231,18 @@ $string['activateonhomepage'] = 'Activate on Homepage';
 $string['activateoncoursepage'] = 'Activate on Coursepage';
 $string['activateonboth'] = 'Activate on All Pages';
 
+$string['mycoursesinfo'] = 'Dynamic Enrolled Courses List';
+$string['mycoursesinfodesc'] = 'Displays a dynamic list of enrolled courses to the user in the top navigation bar.';
+$string['displaymycourses'] = 'Display enrolled courses';
+$string['displaymycoursesdesc'] = 'Display enrolled courses for users in the top navigation bar.';
 
+$string['mycoursetitle'] = 'Terminology';
+$string['mycoursetitledesc'] = 'Change the terminology for the "My Courses" link in the dropdown menu';
+$string['mycourses'] = 'My Courses';
+$string['myunits'] = 'My Units';
+$string['mymodules'] = 'My Modules';
+$string['myclasses'] = 'My Classes';
+$string['noenrolments'] = 'You have no current enrolments';
 
 //FP Icon Nav
 $string['navicon1'] = 'Homepage Icon One';

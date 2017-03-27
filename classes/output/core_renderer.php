@@ -349,6 +349,36 @@ class core_renderer extends \core_renderer {
             }
         }
 
+        $hasdisplaymycourses = (empty($this->page->theme->settings->displaymycourses)) ? false : $this->page->theme->settings->displaymycourses;
+        if (isloggedin() && !isguestuser() && $hasdisplaymycourses) {
+            $mycoursetitle = $this->page->theme->settings->mycoursetitle;
+            if ($mycoursetitle == 'module') {
+                $branchtitle = get_string('mymodules', 'theme_fordson');
+            } else if ($mycoursetitle == 'unit') {
+                $branchtitle = get_string('myunits', 'theme_fordson');
+            } else if ($mycoursetitle == 'class') {
+                $branchtitle = get_string('myclasses', 'theme_fordson');
+            } else {
+                $branchtitle = get_string('mycourses', 'theme_fordson');
+            }
+            $branchlabel = $branchtitle;
+            $branchurl   = new moodle_url('/my/index.php');
+            $branchsort  = 10000;
+ 
+            $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+            if ($courses = enrol_get_my_courses(NULL, 'fullname ASC')) {
+                foreach ($courses as $course) {
+                    if ($course->visible){
+                        $branch->add(format_string($course->fullname), new moodle_url('/course/view.php?id='.$course->id), format_string($course->shortname));
+                    }
+                }
+            } else {
+                $noenrolments = get_string('noenrolments', 'theme_fordson');
+                $branch->add('<em>'.$noenrolments.'</em>', new moodle_url('/'), $noenrolments);
+            }
+            
+        }
+
         $content = '';
         foreach ($menu->get_children() as $item) {
             $context = $item->export_for_template($this);
@@ -357,6 +387,7 @@ class core_renderer extends \core_renderer {
 
         return $content;
     }
+        
 
     protected function render_thiscourse_menu(custom_menu $menu) {
         global $CFG;

@@ -128,6 +128,14 @@ function theme_fordson_course_trim_char($str, $n = 500, $endchar = '&#8230;') {
     return $out;
 }
 
+
+/**
+ * Local plugin "Boost navigation fumbling" - Library
+ *
+ * @package    local_boostnavigation
+ * @copyright  2017 Alexander Bias, Ulm University <alexander.bias@uni-ulm.de>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 function boostnavigation_extend_navigation(global_navigation $navigation) {
     global $PAGE, $CFG;
 
@@ -189,7 +197,13 @@ function boostnavigation_extend_navigation(global_navigation $navigation) {
 
 }
 
-
+/**
+ * Local plugin "Boost navigation fumbling" - Library
+ *
+ * @package    local_boostnavigation
+ * @copyright  2017 Alexander Bias, Ulm University <alexander.bias@uni-ulm.de>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 /**
  * Moodle core does not add a key to the privatefiles node when adding it to the navigation,
  * so we need to find it with some overhead.
@@ -222,7 +236,13 @@ function boostnavigation_find_privatefiles_node(global_navigation $navigation) {
     return false;
 }
 
-
+/**
+ * Local plugin "Boost navigation fumbling" - Library
+ *
+ * @package    local_boostnavigation
+ * @copyright  2017 Alexander Bias, Ulm University <alexander.bias@uni-ulm.de>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 /**
  * Moodle core does not have a built-in functionality to get all keys of all children of a navigation node,
  * so we need to get these ourselves.
@@ -254,6 +274,13 @@ function boostnavigation_get_all_childrenkeys(navigation_node $navigationnode) {
     }
 }
 
+/**
+ * Extend navigation to add new options.
+ *
+ * @package    local_navigation
+ * @author     Carlos Escobedo <http://www.twitter.com/carlosagile>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
 /**
  * Extend Navigation block and add options
@@ -261,7 +288,7 @@ function boostnavigation_get_all_childrenkeys(navigation_node $navigationnode) {
  * @param object $navigation global_navigation
  * @return void
  */
-function navigation_extend_navigation(global_navigation $navigation) {
+function local_navigation_extend_navigation(global_navigation $navigation) {
     global $PAGE;
 
         $menu = new custom_menu($PAGE->theme->settings->adddrawermenu, current_language());
@@ -271,7 +298,13 @@ function navigation_extend_navigation(global_navigation $navigation) {
             }
         }
 }
-
+/**
+ * Extend navigation to add new options.
+ *
+ * @package    local_navigation
+ * @author     Carlos Escobedo <http://www.twitter.com/carlosagile>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 /**
  * ADD custom menu in navigation recursive childs node
  * Is like render custom menu items
@@ -296,10 +329,10 @@ function navigation_custom_menu_item(custom_menu_item $menunode, $parent, $pmast
             $url = null;
         }
         if ($parent > 0) {
-            $masternode = $pmasternode->add(navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CONTAINER);
+            $masternode = $pmasternode->add(local_navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CONTAINER);
             $masternode->title($menunode->get_title());
         } else {
-            $masternode = $PAGE->navigation->add(navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CONTAINER);
+            $masternode = $PAGE->navigation->add(local_navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CONTAINER);
             $masternode->title($menunode->get_title());
                 $masternode->showinflatnavigation = true;
         }
@@ -317,7 +350,7 @@ function navigation_custom_menu_item(custom_menu_item $menunode, $parent, $pmast
             $childnode = $pmasternode->add(navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CUSTOM);
             $childnode->title($menunode->get_title());
         } else {
-            $masternode = $PAGE->navigation->add(navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CONTAINER);
+            $masternode = $PAGE->navigation->add(local_navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CONTAINER);
             $masternode->title($menunode->get_title());
                 $masternode->showinflatnavigation = true;
             }
@@ -325,6 +358,14 @@ function navigation_custom_menu_item(custom_menu_item $menunode, $parent, $pmast
 
     return true;
 }
+
+/**
+ * Extend navigation to add new options.
+ *
+ * @package    local_navigation
+ * @author     Carlos Escobedo <http://www.twitter.com/carlosagile>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 
 /**
  * Translate Custom Navigation Nodes
@@ -335,7 +376,7 @@ function navigation_custom_menu_item(custom_menu_item $menunode, $parent, $pmast
  * @param string $string text to translate.
  * @return string
  */
-function navigation_get_string($string) {
+function local_navigation_get_string($string) {
     $title = $string;
     $text = explode(',', $string, 2);
     if (count($text) == 2) {

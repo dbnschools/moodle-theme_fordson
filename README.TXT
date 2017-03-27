@@ -30,6 +30,10 @@ This means when Moodle updates the core Boost theme those changes will be applie
 Click on the button to "Clone or Download" https://github.com/kennibc/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
 
+## Fordson 1.3.1
+* Added MyCourse drop down to the top navigation bar.  Settings are on the Menu page within the theme.
+
+
 ## Fordson 1.3.0
 *Customized Nav Drawer - Add and remove items from the Boost navigation drawer.  Ability to have customizations appear on all pages, frontpage only, course pages only. Special thanks to Alexander Bias with https://github.com/moodleuulm/moodle-local_boostnavigation and Carlos Escobedo with https://moodle.org/plugins/local_navigation.  I was able to combine these two plugins to remove default menu items and add new menu items.  Because this is done with a theme we also added a toggle to allow you to determine where the customizations appear.
 
