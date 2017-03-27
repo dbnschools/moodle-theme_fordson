@@ -243,6 +243,8 @@ $string['myunits'] = 'My Units';
 $string['mymodules'] = 'My Modules';
 $string['myclasses'] = 'My Classes';
 $string['noenrolments'] = 'You have no current enrolments';
+$string['siteadminquicklink'] = 'Site Administration';
+
 
 //FP Icon Nav
 $string['navicon1'] = 'Homepage Icon One';

@@ -226,7 +226,7 @@ class core_renderer extends \core_renderer {
         if ($this->should_display_main_logo($headinglevel)) {
             $sitename = format_string($SITE->fullname, true, array('context' => context_course::instance(SITEID)));
             return html_writer::div(html_writer::empty_tag('img', [
-                'src' => $this->get_logo_url(null, 75), 'alt' => $sitename]), 'logo');
+                'src' => $this->get_logo_url(null, 150), 'alt' => $sitename]), 'logo');
         }
 
         return parent::context_header($headerinfo, $headinglevel);
@@ -238,7 +238,7 @@ class core_renderer extends \core_renderer {
      * @return string
      */
     public function get_compact_logo_url($maxwidth = 100, $maxheight = 100) {
-        return parent::get_compact_logo_url(null, 35);
+        return parent::get_compact_logo_url(null, 70);
     }
 
     /**
@@ -328,9 +328,10 @@ class core_renderer extends \core_renderer {
      */
     protected function render_custom_menu(custom_menu $menu) {
         global $CFG;
-
+        $context = $this->page->context;
         $langs = get_string_manager()->get_list_of_translations();
         $haslangmenu = $this->lang_menu() != '';
+
         $hasdisplaymycourses = (empty($this->page->theme->settings->displaymycourses)) ? false : $this->page->theme->settings->displaymycourses;
         if (isloggedin() && !isguestuser() && $hasdisplaymycourses) {
             $mycoursetitle = $this->page->theme->settings->mycoursetitle;
@@ -348,6 +349,7 @@ class core_renderer extends \core_renderer {
             $branchsort  = 10000;
  
             $branch = $menu->add($branchlabel, $branchurl, $branchtitle, $branchsort);
+            
             if ($courses = enrol_get_my_courses(NULL, 'fullname ASC')) {
                 foreach ($courses as $course) {
                     if ($course->visible){
@@ -358,7 +360,13 @@ class core_renderer extends \core_renderer {
                 $noenrolments = get_string('noenrolments', 'theme_fordson');
                 $branch->add('<em>'.$noenrolments.'</em>', new moodle_url('/'), $noenrolments);
             }
-            
+            if (is_siteadmin()) {
+                        $branchtitle = get_string('siteadminquicklink', 'theme_fordson');
+                        $branchlabel = $branchtitle;
+                        $branchurl = new moodle_url('/admin/search.php');
+                        $branch = $menu->add($branchlabel, $branchurl, $branchtitle);
+        }
+
         }
 
         if (!$menu->has_children() && !$haslangmenu) {
