@@ -33,6 +33,7 @@ Click on the button to "Clone or Download" https://github.com/kennibc/moodle-the
 ## Fordson 1.3.1
 * Added MyCourse drop down to the top navigation bar.  Settings are on the Menu page within the theme.
 * Fixed duplicate function issue.
+* Adjusted some default settings on install.
 
 ## Fordson 1.3.0
 *Customized Nav Drawer - Add and remove items from the Boost navigation drawer.  Ability to have customizations appear on all pages, frontpage only, course pages only. Special thanks to Alexander Bias with https://github.com/moodleuulm/moodle-local_boostnavigation and Carlos Escobedo with https://moodle.org/plugins/local_navigation.  I was able to combine these two plugins to remove default menu items and add new menu items.  Because this is done with a theme we also added a toggle to allow you to determine where the customizations appear.
