@@ -22,8 +22,8 @@ $markettextbg: rgba(255, 255, 255, 0.8) !default;
 $markettile-radius: 5px !default;
 $navbarurl: #FFF !default;
 $card-footer-bg: #ccc !default;
-$headerfade-bg: rgba(0,0,0,0.7) !default;
-$header-color: #fff !default;
+$headerfade-bg: #d4d4d4 !default;
+$header-color: #FFF !default;
 $headings-color: #3a3a3a !default;
 $body-color: #3a3a3a !default;
 $link-color: $brand-primary !default;
@@ -32,11 +32,11 @@ $breadcrumb-padding-x: 10px !default;
 $border-radius: 4px !default;
 $breadcrumb-bg: #fff !default;
 $footer-bg: $body-bg !default;
+$learningcontentpadding: 400px !default;
 
 /**
 * Layout Header
 **/
-
 
 #page-header h1 {
 font-weight:600;
@@ -45,10 +45,28 @@ color: $header-color;
 
 #page-header .headerfade {
 background: $headerfade-bg;
-border-radius: 0px 0px $card-border-radius $card-border-radius;
 }
-.withimage {
-    border-radius: $card-border-radius;
+
+@media screen and (min-width: 768px) {
+#page.container-fluid {
+    padding: 0 6rem !important;
+}
+}
+
+.headerbkg {
+    margin-top:50px;
+    height:$headerimagepadding;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%
+}
+div#learningcontent {
+    position:relative;
+    margin-top: $learningcontentpadding;
+    background-color: $card-bg;
 }
 
 #page-navbar .dropdown-toggle {
@@ -57,19 +75,16 @@ border-radius: 0px 0px $card-border-radius $card-border-radius;
     background-color: $breadcrumb-bg;
     border-radius: $border-radius;
 }
+
 @media screen and (max-width: 450px) {
 #page-navbar .dropdown-toggle {
     display:none;
     visibility:hidden;
 }
-}
-@media screen and (max-width: 450px) {
 #page-navbar .breadcrumb-button .btn-success {
     display:none;
     visibility:hidden;
 }
-}
-@media screen and (max-width: 450px) {
 #page-navbar .breadcrumb-button .btn-danger {
     display:none;
     visibility:hidden;
@@ -82,56 +97,7 @@ border-radius: 0px 0px $card-border-radius $card-border-radius;
     border-radius: $border-radius;
     margin-left: 5px;
 }
-.pagelayout-incourse #page-header .card {
-    height: initial;
-}
 
-#page-header .header-position {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-@media screen and (max-width: 768px) {
-    #page-header .header-position {
-    position: initial;
-    }
-
-}
-.pagelayout-incourse #page-header .header-position {
-    position: initial;
-    bottom: 0;
-    width: 100%;
-}
-
-#page-header .card {
-    background-image: url([[pix:theme|headerbg]]);
-    background-position: center;
-    background-size: cover;
-    height:$headerimagepadding;
-}
-@media screen and (max-width: 768px) {
-    #page-header .card {
-    height: 100%;
-    }
-
-}
-.pagelayout-incourse #page-header .card {
-    height: initial;
-}
-
-#page-header .card-block {
-    bottom: 0;
-    width: 100%;
-}
-
-.pagelayout-incourse #page-header .card-block {
-    position: initial;
-    bottom: 0;
-    width: 100%;
-}
-
-#page-header .card-block {padding: .5rem .5rem; margin-bottom:0px}
-#page-header .card {margin-bottom:0px}
 
 .thiscourse {float:left;}
 
@@ -259,10 +225,26 @@ div#fpslider {
   outline: 1px solid slategrey;
 }
 
+form#enrolform_easy {
+    text-align: center;
+    padding: 20px 0px;
+}
+form#enrolform_easy .input-group-addon.qr-button {
+    font-size: 2rem;
+}
+
+form#enrolform_easy input#enrolform_course_code {
+    font-size: 2rem;
+}
+
+form#enrolform_easy button.btn.btn-primary {
+    font-size: 2rem;
+}
+
 /**
 * Available Courses
 **/
-
+.coursedimmed {background-color: #dedede; }
 .class-box-fp {
     height: $courseboxheight;
     margin: 1rem;
@@ -278,6 +260,7 @@ div#fpslider {
 .class-box-fp .course-title {
     background-color: $card-bg;
     padding: $spacer;
+    padding-top: 2rem;
     margin-bottom: 0;
     text-align: center;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
@@ -385,6 +368,8 @@ div#fpslider {
 #page-badges-mybadges .markettiles {display:none;}
 #page-user-files .fpwonderbox {display:none;}
 
+.p-a-1 {padding: 0 1rem !important;}
+
 .socials_wrapper {
     margin:0 auto;
     .socials {
@@ -392,12 +377,15 @@ div#fpslider {
         margin-bottom:0;
     }
 }
+
 .single-section h3.sectionname {
     text-align: initial;
 }
+
 .pagelayout-incourse #page-navbar .dropdown-toggle {
     display: none;
 }
+
 #region-main .block-region .card {
     box-shadow: initial;
     -webkit-box-shadow: initial;
@@ -408,6 +396,7 @@ div#fpslider {
 .action-menu .menubar .dropdown {
     float: left;
 }
+
 .course-content ul.topics li.section .left {
     padding-top: initial;
 }

@@ -113,7 +113,8 @@ function theme_fordson_get_pre_scss($theme) {
         'linkcolor'  => ['link-color'],
         'sectionicon'  => ['sectionicon'],
         'headericon'  => ['headericon'],
-        'courseboxheight'  => ['courseboxheight']
+        'courseboxheight'  => ['courseboxheight'],
+        'learningcontentpadding' => ['learningcontentpadding'],
     ];
 
     // Add settings variables.
@@ -136,8 +137,10 @@ function theme_fordson_get_pre_scss($theme) {
     $headerbg = $theme->setting_file_url('headerdefaultimage', 'headerdefaultimage');
     if (isset($headerbg)) {
         // Add a fade in transition to avoid the flicker on course headers ***.
-        $prescss .= 'header#page-header .card {background-image: url("'.$headerbg.'"); background-size:cover; background-position:center;}';
-    }
+        $prescss .= '.headerbkg {background-image: url("'.$headerbg.'"); background-size:cover; background-position:center;}';
+    } else {
+        $prescss .= '.headerbkg {background-image: url([[pix:theme|headerbg]]);}';
+     }
 
     // Set the background image for the page.
     $pagebg = $theme->setting_file_url('backgroundimage', 'backgroundimage');

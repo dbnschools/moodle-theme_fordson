@@ -36,7 +36,11 @@ $extraclasses = [];
 if ($navdraweropen) {
     $extraclasses[] = 'drawer-open-left';
 }
+$plugin = enrol_get_plugin('easy');
 
+            if ($plugin) {
+                $enrolform = $plugin->get_form();
+            }
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
@@ -50,6 +54,7 @@ $templatecontext = [
     'navdraweropen' => $navdraweropen,
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
+    'enrolform' => $enrolform,
 ];
 
 if ($PAGE->theme->settings->toggledrawermenu==1) {

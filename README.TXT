@@ -29,6 +29,9 @@ This means when Moodle updates the core Boost theme those changes will be applie
 #Install from Github
 Click on the button to "Clone or Download" https://github.com/kennibc/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
+## Fordson 1.4.0
+* NOTICE - Major changes to layout!  This is a major change in direction for the Fordson theme.  Try out the new design on a non-production server to see if you like it.
+* Added ability to turn off teacher course files in header so that all courses get the default image in the header area.
 
 ## Fordson 1.3.1
 * Added MyCourse drop down to the top navigation bar.  Settings are on the Menu page within the theme.

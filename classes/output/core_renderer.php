@@ -72,6 +72,8 @@ class core_renderer extends \core_renderer {
         return parent::box_start($classes . ' p-y-1', $id, $attributes);
     }
 
+    
+
     /**
      * Wrapper for header elements.
      *
@@ -79,9 +81,40 @@ class core_renderer extends \core_renderer {
      */
     public function full_header() {
 
-        global $CFG, $COURSE, $PAGE;
+        global $PAGE;
 
-        // Get course overview files.
+        $html = html_writer::start_tag('header', array('id' => 'page-header', 'class' => 'row'));
+        //$html .= html_writer::tag('div', $this->headerimage());
+        $html .= html_writer::start_div('col-xs-12 p-a-1');
+        $html .= html_writer::start_div('card');
+        $html .= html_writer::start_div('headerfade');
+        $html .= html_writer::start_div('card-block');
+        $html .= html_writer::div($this->context_header_settings_menu(), 'pull-xs-right context-header-settings-menu');
+        $html .= html_writer::start_div('pull-xs-left');
+        $html .= $this->context_header();
+        $html .= html_writer::end_div();
+        $pageheadingbutton = $this->page_heading_button();
+        if (empty($PAGE->layout_options['nonavbar'])) {
+            $html .= html_writer::start_div('clearfix w-100 pull-xs-left', array('id' => 'page-navbar'));
+            $html .= html_writer::tag('div', $this->navbar(), array('class' => 'breadcrumb-nav'));
+            $html .= html_writer::tag('div', $this->thiscourse_menu(), array('class' => 'thiscourse'));
+            $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button pull-xs-right');
+            $html .= html_writer::end_div();
+        } else if ($pageheadingbutton) {
+            $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button nonavbar pull-xs-right');
+        }
+        $html .= html_writer::tag('div', $this->course_header(), array('id' => 'course-header'));
+        $html .= html_writer::end_div();
+        $html .= html_writer::end_div();
+        $html .= html_writer::end_div();
+        $html .= html_writer::end_div(); //headerfade
+        $html .= html_writer::end_tag('header');
+        return $html;
+    }
+
+    public function headerimage() {
+        global $CFG, $COURSE;
+                // Get course overview files.
         if (empty($CFG->courseoverviewfileslimit)) {
             return array();
         }
@@ -121,45 +154,22 @@ class core_renderer extends \core_renderer {
         }
 
         // Create html for header.
-        $html = html_writer::start_tag('header', array('id' => 'page-header', 'class' => 'row'));
-        $html .= html_writer::start_div('col-xs-12 p-a-1');
-        $html .= html_writer::start_div('card');
-
+        $html = html_writer::start_div('headerbkg');
         // If course image display it in separate div to allow css styling of inline style.
-        if ($courseimage) {
+        if ($courseimage && theme_fordson_get_setting('showcourseheaderimage')) {
             $html .= html_writer::start_div('withimage', array(
-                'style' => 'background: url("'.$courseimage.'"); background-size: cover; background-position:center;
+                'style' => 'background-image: url("'.$courseimage.'"); background-size: cover; background-position:center;
                 width: 100%; height: 100%;'));
         }
-        $html .= html_writer::start_div('header-position');
-        $html .= html_writer::start_div('headerfade');
-        $html .= html_writer::start_div('card-block');
-        $html .= html_writer::div($this->context_header_settings_menu(), 'pull-xs-right context-header-settings-menu');
-        $html .= html_writer::start_div('pull-xs-left');
-        $html .= $this->context_header();
-        $html .= html_writer::end_div();
-        $pageheadingbutton = $this->page_heading_button();
-        if (empty($PAGE->layout_options['nonavbar'])) {
-            $html .= html_writer::start_div('clearfix w-100 pull-xs-left', array('id' => 'page-navbar'));
-            $html .= html_writer::tag('div', $this->navbar(), array('class' => 'breadcrumb-nav'));
-            $html .= html_writer::tag('div', $this->thiscourse_menu(), array('class' => 'thiscourse'));
-            $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button pull-xs-right');
-            $html .= html_writer::end_div();
-        } else if ($pageheadingbutton) {
-            $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button nonavbar pull-xs-right');
-        }
-        $html .= html_writer::tag('div', $this->course_header(), array('id' => 'course-header'));
-        $html .= html_writer::end_div(); // End card-block.
-        if ($courseimage) {
+        if ($courseimage && theme_fordson_get_setting('showcourseheaderimage')) {
             $html .= html_writer::end_div(); // End withimage inline style div.
         }
-        $html .= html_writer::end_div(); // End card.
-        $html .= html_writer::end_div(); // End card.
-        $html .= html_writer::end_div(); // End card.
-        $html .= html_writer::end_div(); // End col-xs-12 p-a-1.
-        $html .= html_writer::end_tag('header');
+        $html .= html_writer::end_div();
+
         return $html;
+        
     }
+
 
     /**
      * The standard tags that should be included in the <head> tag
@@ -1230,5 +1240,7 @@ class core_renderer extends \core_renderer {
     public function secure_login_info() {
         return $this->login_info(false);
     }
+
+
 
 }

@@ -120,9 +120,8 @@ $navbar-height:                     50px !default;
 $card-border-color:        rgba(238, 238, 238, 1) !default;
 $card-spacer-x:            1.25rem !default;
 $card-spacer-y:            .75rem !default;
-$card-border-width:        1px !default;
+$card-border-width:        0px !default;
 $card-border-radius:       $border-radius !default;
-$card-border-color:        rgba(0,0,0,.125) !default;
 $card-border-radius-inner: $card-border-radius !default;
 $card-cap-bg:              #f5f5f5 !default;
 $card-bg:                  #fff !default;
@@ -330,14 +329,14 @@ h3.sectionname:before {
     content: $sectionicon;
 }
 
-.card {
+div#learningcontent {
     position:relative;       
     -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
        -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
             box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
-.card:before, .card:after {
+div#learningcontent:before, div#learningcontent:after {
     content:"";
     position:absolute; 
     z-index:-1;
@@ -356,10 +355,6 @@ h3.sectionname:before {
     background-color: darken($card-bg, 3%);
 }
 
-h3.sectionname {
-    padding: 10px;
-    background-color: lighten($body-bg, 15%);
-}
 
 body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-size:cover; background-position:center;}
 

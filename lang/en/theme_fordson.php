@@ -84,8 +84,8 @@ $string['bodybackground_desc'] = 'The main colour to use for the background.';
 $string['footerbg'] = 'Footer Background Colour';
 $string['footerbg_desc'] = 'The background colour of the footer.';
 $string['fpsearch'] = 'Find and Enroll in Courses ';
-$string['headerscreen'] = 'Header Text Background';
-$string['headerscreen_desc'] = 'This background colour appears below the text in the header image area.  This is meant to help make the text and breadcrumbs standout when using a header image.';
+$string['headerscreen'] = 'Header Box Background';
+$string['headerscreen_desc'] = 'This background colour appears in the header area to help separate it from the course content.';
 $string['headingcolor'] = 'Headings Colour';
 $string['headingcolor_desc'] = 'H1,H2,H3,H4,H5.H6 colour settings.';
 $string['headercolor'] = 'Page Header Text Colour';
@@ -109,6 +109,10 @@ $string['backgroundimage'] = 'Default page background image';
 $string['backgroundimage_desc'] = 'Background image for pages';
 $string['loginimage'] = 'Default Login image';
 $string['loginimage_desc'] = 'Background image for login page';
+$string['learningcontentpadding'] = 'Learning Content Spacing';
+$string['learningcontentpadding_desc'] = 'This controls how much space between the top of the page and course content. Generally, you want this to be less than the height of the header image.';
+$string['showcourseheaderimage'] = 'Show Course Images';
+$string['showcourseheaderimage_desc'] = 'Allow teachers to customize the course header image by uploading an image file into course settings.';
 
 // Social Networks.
 $string['socialheading'] = 'Social Networking';

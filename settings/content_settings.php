@@ -31,7 +31,7 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $name = 'theme_fordson/searchtoggle';
     $title = get_string('searchtoggle', 'theme_fordson');
     $description = get_string('searchtoggle_desc', 'theme_fordson');
-    $default = 1;
+    $default = 0;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);

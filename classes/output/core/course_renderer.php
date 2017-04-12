@@ -256,13 +256,19 @@ class course_renderer extends \core_course_renderer {
 
                     $summary = theme_fordson_strip_html_tags($course->summary);
                     $summary = theme_fordson_course_trim_char($summary, $trimsummaryvalue);
-
                     
                     $trimtitle = theme_fordson_course_trim_char($course->fullname, $trimtitlevalue);
     
                     $noimgurl = $OUTPUT->pix_url('noimg', 'theme');
-                    $courseurl = new moodle_url('/course/view.php', array('id' => $courseid ));
-    
+
+                    $coursename = 'chris';
+                    $coursenum = '76';
+                    
+
+                    $courseurl = new moodle_url('/course/view.php', array('id' => $courseid));
+
+                    
+                    
                     if ($course instanceof stdClass) {
                         require_once($CFG->libdir. '/coursecatlib.php');
                         $course = new course_in_list($course);
@@ -288,10 +294,11 @@ class course_renderer extends \core_course_renderer {
                             $imgurl = $noimgurl;
                         }
                     }
-                    
-                    
+                   
                    $rowcontent .= '
-                        <div class="col-md-4">
+                        <div class="col-md-4">';
+                    $rowcontent .= html_writer::start_tag('div', array('class' => $course->visible ? '' : 'coursedimmed'));
+                    $rowcontent .= '
                             <div class="class-box">
                                 ';
                                 
@@ -300,7 +307,7 @@ class course_renderer extends \core_course_renderer {
                                 } else {
                                 $tooltiptext = '';
                                 }
-
+                       
                        $rowcontent .= '
                                     <div class="course-title">
                                     <h4><a '.$tooltiptext.' href="'.$courseurl.'">'.$trimtitle.'</a></h4>
@@ -313,17 +320,18 @@ class course_renderer extends \core_course_renderer {
                                     '.$summary.'
                                     </div>
                                 </div>
+                        </div>
                         </div>';
-                        }
-
+                        } 
                 $content .= $rowcontent;
                 $content .= '</div> </div>';
             }
         }
-    
-        $coursehtml = $header.$content.$footer;
 
+        $coursehtml = $header.$content.$footer;
+            
             $coursehtml .= '<br/><br/>';
+
             return $coursehtml;
     }
 
