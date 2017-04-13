@@ -100,6 +100,14 @@ $setting = new admin_setting_configcheckbox($name, $title, $description, $defaul
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+// logo image.
+$name = 'theme_fordson/headerlogo';
+$title = get_string('headerlogo', 'theme_fordson');
+$description = get_string('headerlogo_desc', 'theme_fordson');
+$setting = new admin_setting_configstoredfile($name, $title, $description, 'headerlogo');
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 // Default header image.
 $name = 'theme_fordson/headerdefaultimage';
 $title = get_string('headerdefaultimage', 'theme_fordson');

@@ -113,6 +113,10 @@ $string['learningcontentpadding'] = 'Learning Content Spacing';
 $string['learningcontentpadding_desc'] = 'This controls how much space between the top of the page and course content. Generally, you want this to be less than the height of the header image.';
 $string['showcourseheaderimage'] = 'Show Course Images';
 $string['showcourseheaderimage_desc'] = 'Allow teachers to customize the course header image by uploading an image file into course settings.';
+$string['headerlogo'] = 'Header Logo';
+$string['headerlogo_desc'] = 'This logo will be displayed at the top of the page in the header area.';
+
+
 
 // Social Networks.
 $string['socialheading'] = 'Social Networking';

@@ -134,6 +134,13 @@ function theme_fordson_get_pre_scss($theme) {
     }
 
     // Set the default image for the header.
+    $headerlogo = $theme->setting_file_url('headerlogo', 'headerlogo');
+    if (isset($headerlogo)) {
+        // Add a fade in transition to avoid the flicker on course headers ***.
+        $prescss .= '.headerlogo {background-image: url("'.$headerlogo.'"); background-size:contain; background-repeat: no-repeat; background-position:center; max-width: 400px; height: 125px;}';
+    }
+
+    // Set the default image for the header.
     $headerbg = $theme->setting_file_url('headerdefaultimage', 'headerdefaultimage');
     if (isset($headerbg)) {
         // Add a fade in transition to avoid the flicker on course headers ***.

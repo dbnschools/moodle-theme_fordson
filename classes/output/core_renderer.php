@@ -166,6 +166,9 @@ class core_renderer extends \core_renderer {
         }
         $html .= html_writer::end_div();
 
+        $html .= html_writer::start_div('headerlogo');
+        $html .= html_writer::end_div();
+
         return $html;
         
     }
