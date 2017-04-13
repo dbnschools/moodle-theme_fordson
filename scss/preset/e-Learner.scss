@@ -318,6 +318,11 @@ $dropdown-header-color:          $gray-light !default;
     border-radius: 2px;
     content: $headericon;
 }
+
+#page-header .headerfade {
+    border-radius: $border-radius;
+}
+
 h3.sectionname:before {
     color: $brand-primary;
     display: block;

@@ -82,8 +82,9 @@ class core_renderer extends \core_renderer {
     public function full_header() {
 
         global $PAGE;
-
-        $html = html_writer::start_tag('header', array('id' => 'page-header', 'class' => 'row'));
+        $html = html_writer::start_div('headerlogo');
+        $html .= html_writer::end_div();
+        $html .= html_writer::start_tag('header', array('id' => 'page-header', 'class' => 'row'));
         //$html .= html_writer::tag('div', $this->headerimage());
         $html .= html_writer::start_div('col-xs-12 p-a-1');
         $html .= html_writer::start_div('card');
@@ -164,9 +165,6 @@ class core_renderer extends \core_renderer {
         if ($courseimage && theme_fordson_get_setting('showcourseheaderimage')) {
             $html .= html_writer::end_div(); // End withimage inline style div.
         }
-        $html .= html_writer::end_div();
-
-        $html .= html_writer::start_div('headerlogo');
         $html .= html_writer::end_div();
 
         return $html;

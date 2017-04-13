@@ -114,9 +114,7 @@ $string['learningcontentpadding_desc'] = 'This controls how much space between t
 $string['showcourseheaderimage'] = 'Show Course Images';
 $string['showcourseheaderimage_desc'] = 'Allow teachers to customize the course header image by uploading an image file into course settings.';
 $string['headerlogo'] = 'Header Logo';
-$string['headerlogo_desc'] = 'This logo will be displayed at the top of the page in the header area.';
-
-
+$string['headerlogo_desc'] = 'This logo will be displayed at the top of the page in the header area. Image is sized for max width of 400px and a fixed height of 125px';
 
 // Social Networks.
 $string['socialheading'] = 'Social Networking';
