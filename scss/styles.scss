@@ -33,6 +33,7 @@ $border-radius: 4px !default;
 $breadcrumb-bg: #fff !default;
 $footer-bg: $body-bg !default;
 $learningcontentpadding: 400px !default;
+$blockwidthfordson: 280px !default;
 
 /**
 * Layout Header
@@ -106,6 +107,19 @@ div#learningcontent {
     display:block;
     margin-left: auto;
     margin-right: auto;
+}
+
+
+@media screen and (min-width: 991px) {
+#region-main.has-blocks {
+    width: calc(100% - #{$blockwidthfordson});
+    }
+}
+
+@media screen and (min-width: 991px) {
+[data-region="blocks-column"] {
+    width: calc(#{$blockwidthfordson} - 30px);
+    }
 }
 
 

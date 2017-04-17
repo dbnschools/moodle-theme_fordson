@@ -45,6 +45,27 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    // Block and Content widths
+    $name = 'theme_fordson/blockwidthfordson';
+    $title = get_string('blockwidthfordson', 'theme_fordson');
+    $description = get_string('blockwidthfordson_desc', 'theme_fordson');;
+    $default = '250px';
+    $choices = array(
+            '280px' => '250px',
+            '305px' => '275px',
+            '330px' => '300px',
+            '355px' => '325px',
+            '380px' => '350px',
+            '405px' => '375px',
+            '430px' => '400px',
+            '455px' => '425px',
+            '480px' => '450px',
+        );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+
     // Courses height
     $name = 'theme_fordson/courseboxheight';
     $title = get_string('courseboxheight', 'theme_fordson');

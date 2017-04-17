@@ -183,6 +183,10 @@ $string['trimsummary_desc'] = 'Enter a number to trim the summary length.  This 
 $string['titletooltip'] = 'Course Title Tooltip';
 $string['titletooltip_desc'] = 'If using Trim Course Title you can use tooltips which will display the entire course title in a tooltip.  Check this box to turn on tooltips.';
 $string['dashactivityoverview'] = 'ACTIVITIES OVERVIEW';
+$string['blockwidthfordson'] = 'Block Column Width';
+$string['blockwidthfordson_desc'] = 'Adjust the width of the block column.';
+
+
 
 // Menu Settings
 $string['menusettings'] = 'Menu settings';

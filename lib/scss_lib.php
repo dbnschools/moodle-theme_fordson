@@ -115,6 +115,7 @@ function theme_fordson_get_pre_scss($theme) {
         'headericon'  => ['headericon'],
         'courseboxheight'  => ['courseboxheight'],
         'learningcontentpadding' => ['learningcontentpadding'],
+        'blockwidthfordson' => ['blockwidthfordson'],
     ];
 
     // Add settings variables.
