@@ -82,9 +82,8 @@ class core_renderer extends \core_renderer {
     public function full_header() {
 
         global $PAGE;
-        $html = html_writer::start_div('headerlogo');
-        $html .= html_writer::end_div();
-        $html .= html_writer::start_tag('header', array('id' => 'page-header', 'class' => 'row'));
+
+        $html = html_writer::start_tag('header', array('id' => 'page-header', 'class' => 'row'));
         //$html .= html_writer::tag('div', $this->headerimage());
         $html .= html_writer::start_div('col-xs-12 p-a-1');
         $html .= html_writer::start_div('card');
@@ -1225,6 +1224,37 @@ class core_renderer extends \core_renderer {
         ];
 
         return $this->render_from_template('theme_fordson/fpmarkettiles', $fp_marketingtiles);
+    }
+
+    public function fp_slideshow() {
+        global $PAGE;
+
+        $slideshowon = $PAGE->theme->settings->showslideshow == 1;
+
+        $hasslide1 = (empty($PAGE->theme->settings->slide1title)) ? false : format_text($PAGE->theme->settings->slide1title);
+        $slide1content = (empty($PAGE->theme->settings->slide1content)) ? false : format_text($PAGE->theme->settings->slide1content);
+
+        $hasslide2 = (empty($PAGE->theme->settings->slide2title)) ? false : format_text($PAGE->theme->settings->slide2title);
+        $slide2content = (empty($PAGE->theme->settings->slide2content)) ? false : format_text($PAGE->theme->settings->slide2content);
+
+        $hasslide3 = (empty($PAGE->theme->settings->slide3title)) ? false : format_text($PAGE->theme->settings->slide3title);
+        $slide3content = (empty($PAGE->theme->settings->slide3content)) ? false : format_text($PAGE->theme->settings->slide3content);
+
+        $fp_slideshow = [
+
+            'hasfpslideshow' => $slideshowon,
+
+            'hasslide1' => $hasslide1 ? true : false,
+            'hasslide2' => $hasslide2 ? true : false,
+            'hasslide3' => $hasslide3 ? true : false,
+
+            'slide1'    => array('slidetitle' => $hasslide1, 'slidecontent' => $slide1content),
+            'slide2'    => array('slidetitle' => $hasslide2, 'slidecontent' => $slide2content),
+            'slide3'    => array('slidetitle' => $hasslide3, 'slidecontent' => $slide3content),
+
+        ];
+
+        return $this->render_from_template('theme_fordson/slideshow', $fp_slideshow);
     }
 
     public function footnote() {

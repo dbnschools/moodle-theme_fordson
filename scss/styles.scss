@@ -34,7 +34,7 @@ $breadcrumb-bg: #fff !default;
 $footer-bg: $body-bg !default;
 $learningcontentpadding: 400px !default;
 $blockwidthfordson: 280px !default;
-
+$slideshowheight: 250px !default;
 /**
 * Layout Header
 **/
@@ -46,7 +46,10 @@ $blockwidthfordson: 280px !default;
 
 #page-header .headerfade {
     background: $headerfade-bg;
+    border-left: 1px solid $card-bg;
+    border-right: 1px solid $card-bg;
 }
+
 
 @media screen and (min-width: 768px) {
 #page.container-fluid {
@@ -103,10 +106,8 @@ div#learningcontent {
 .thiscourse {float:left;}
 
 .headerlogo {
-    position: relative;
-    display:block;
-    margin-left: auto;
-    margin-right: auto;
+    background-color: $headerfade-bg;
+    width:100%;
 }
 
 
@@ -120,6 +121,22 @@ div#learningcontent {
 [data-region="blocks-column"] {
     width: calc(#{$blockwidthfordson} - 30px);
     }
+}
+
+/* Slideshow */
+
+.carousel-item {
+    height: $slideshowheight;
+}
+.carousel-caption.d-none.d-md-block {
+    background: rgba(0,0,0,0.7);
+    border-radius: 1rem 1rem 0 0;
+}
+.carousel-caption {
+    bottom: 0px;
+}
+.carousel-indicators {
+    bottom: 0!important;
 }
 
 

@@ -1,0 +1,51 @@
+{{#hasfpslideshow}}
+
+<div id="fordsoncarousel" class="carousel slide" data-ride="carousel">
+
+  <ol class="carousel-indicators">
+    {{#hasslide1}}<li data-target="#fordsoncarousel" data-slide-to="0" class="active"></li>{{/hasslide1}}
+    {{#hasslide2}}<li data-target="#fordsoncarousel" data-slide-to="1"></li>{{/hasslide2}}
+    {{#hasslide3}}<li data-target="#fordsoncarousel" data-slide-to="2"></li>{{/hasslide3}}
+  </ol>
+
+<div class="carousel-inner" role="listbox">
+    {{#slide1}}
+    {{#hasslide1}}
+    <div class="carousel-item active">
+      <div class="slide1image"></div>
+      <div class="carousel-caption d-none d-md-block">
+        <h3>{{{slidetitle}}}</h3>
+        <p>{{{slidecontent}}}</p>
+      </div>
+    </div>
+    {{/hasslide1}}
+    {{/slide1}}
+
+    {{#slide2}}
+    {{#hasslide2}}
+    <div class="carousel-item">
+      <div class="slide2image"></div>
+      <div class="carousel-caption d-none d-md-block">
+        <h3>{{{slidetitle}}}</h3>
+        <p>{{{slidecontent}}}</p>
+      </div>
+    </div>
+    {{/hasslide2}}
+    {{/slide2}}
+
+    {{#slide3}}
+    {{#hasslide3}}
+    <div class="carousel-item">
+      <div class="slide3image"></div>
+      <div class="carousel-caption d-none d-md-block">
+        <h3>{{{slidetitle}}}</h3>
+        <p>{{{slidecontent}}}</p>
+      </div>
+    </div>
+    {{/hasslide3}}
+    {{/slide3}}
+</div>
+
+</div>
+
+{{/hasfpslideshow}}

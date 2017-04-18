@@ -81,7 +81,7 @@ function theme_fordson_get_main_scss_content($theme) {
  * @return array
  */
 function theme_fordson_get_pre_scss($theme) {
-    global $CFG;
+    global $CFG, $PAGE;
 
     $prescss = '';
 
@@ -116,6 +116,7 @@ function theme_fordson_get_pre_scss($theme) {
         'courseboxheight'  => ['courseboxheight'],
         'learningcontentpadding' => ['learningcontentpadding'],
         'blockwidthfordson' => ['blockwidthfordson'],
+        'slideshowheight' => ['slideshowheight'],
     ];
 
     // Add settings variables.
@@ -138,7 +139,28 @@ function theme_fordson_get_pre_scss($theme) {
     $headerlogo = $theme->setting_file_url('headerlogo', 'headerlogo');
     if (isset($headerlogo)) {
         // Add a fade in transition to avoid the flicker on course headers ***.
-        $prescss .= '.headerlogo {background-image: url("'.$headerlogo.'"); background-size:contain; background-repeat: no-repeat; background-position:center; max-width: 400px; height: 125px;}';
+        $prescss .= '.headerlogo {background-image: url("'.$headerlogo.'"); background-repeat: no-repeat; background-position:left; height: 125px;}';
+    }
+
+    // Set the default image for the header.
+    $slide1image = $theme->setting_file_url('slide1image', 'slide1image');
+    if (isset($slide1image)) {
+        // Add a fade in transition to avoid the flicker on course headers ***.
+        $prescss .= '.slide1image {background-image: url("'.$slide1image.'"); background-size:cover; background-repeat: no-repeat; background-position:center; height:100%;}';
+    }
+
+    // Set the default image for the header.
+    $slide2image = $theme->setting_file_url('slide2image', 'slide2image');
+    if (isset($slide1image)) {
+        // Add a fade in transition to avoid the flicker on course headers ***.
+        $prescss .= '.slide2image {background-image: url("'.$slide2image.'"); background-size:cover; background-repeat: no-repeat; background-position:center; height:100%;}';
+    }
+
+    // Set the default image for the header.
+    $slide3image = $theme->setting_file_url('slide3image', 'slide3image');
+    if (isset($slide3image)) {
+        // Add a fade in transition to avoid the flicker on course headers ***.
+        $prescss .= '.slide3image {background-image: url("'.$slide3image.'"); background-size:cover; background-repeat: no-repeat; background-position:center; height:100%;}';
     }
 
     // Set the default image for the header.

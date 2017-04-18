@@ -319,6 +319,10 @@ $dropdown-header-color:          $gray-light !default;
     content: $headericon;
 }
 
+div#fordsoncarousel h3, div#fordsoncarousel p {
+    color: #fff;
+}
+
 #page-header .headerfade {
     border-radius: $border-radius;
 }

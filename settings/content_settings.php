@@ -45,6 +45,41 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    // Content spacing
+    $name = 'theme_fordson/learningcontentpadding';
+    $title = get_string('learningcontentpadding', 'theme_fordson');
+    $description = get_string('learningcontentpadding_desc', 'theme_fordson');;
+    $default = '175px';
+    $choices = array(
+            '50px' => '50px',
+            '75px' => '75px',
+            '100px' => '100px',
+            '125px' => '125px',
+            '150px' => '150px',
+            '175px' => '175px',
+            '200px' => '200px',
+            '225px' => '225px',
+            '250px' => '250px',
+            '275px' => '275px',
+            '300px' => '300px',
+            '325px' => '325px',
+            '350px' => '350px',
+            '375px' => '375px',
+            '400px' => '400px',
+            '425px' => '425px',
+            '450px' => '450px',
+            '475px' => '475px',
+            '500px' => '500px',
+            '525px' => '525px',
+            '550px' => '550px',
+            '575px' => '575px',
+            '600px' => '600px',
+        );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+
     // Block and Content widths
     $name = 'theme_fordson/blockwidthfordson';
     $title = get_string('blockwidthfordson', 'theme_fordson');

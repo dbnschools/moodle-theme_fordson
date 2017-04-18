@@ -116,6 +116,26 @@ $string['showcourseheaderimage_desc'] = 'Allow teachers to customize the course 
 $string['headerlogo'] = 'Header Logo';
 $string['headerlogo_desc'] = 'This logo will be displayed at the top of the page in the header area. Image is sized for max width of 400px and a fixed height of 125px';
 
+//Slideshow
+$string['slideshowsettings'] = 'Slideshow';
+$string['slideshowheight'] = 'Slideshow Height';
+$string['slideshowheight_desc'] = 'Adjust the height of the slideshow.';
+$string['showslideshow'] = 'Activate Slideshow';
+$string['showslideshow_desc'] = 'Check this option to turn on the slideshow feature.';
+$string['slide1info'] = 'Slide 1';
+$string['slide1infodesc'] = 'Slide 1 details.';
+$string['slide2info'] = 'Slide 2';
+$string['slide2infodesc'] = 'Slide 2 details.';
+$string['slide3info'] = 'Slide 3';
+$string['slide3infodesc'] = 'Slide 3 details.';
+$string['slidetitle'] = 'Slide Title';
+$string['slidetitle_desc'] = 'Enter a title for this slide.';
+$string['slidecontent'] = 'Slide Description';
+$string['slidecontent_desc'] = 'Add a description for this slide.';
+$string['slideimage'] = 'Slide Image';
+$string['slideimage_desc'] = 'Add a background image for this slide.';
+
+
 // Social Networks.
 $string['socialheading'] = 'Social Networking';
 $string['socialheadingsub'] = 'Engage your users with social networking.';

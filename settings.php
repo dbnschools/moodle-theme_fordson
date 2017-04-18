@@ -48,5 +48,6 @@ if ($ADMIN->fulltree) {
     require('settings/socialicons_settings.php');
     require('settings/fpicons_settings.php');
     require('settings/markettiles_settings.php');
+    require('settings/slideshow_settings.php');
 
 }

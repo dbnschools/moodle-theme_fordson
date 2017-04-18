@@ -244,6 +244,10 @@ $breadcrumb-divider-rtl: "/" !default;
     content: $headericon;
 }
 
+div#fordsoncarousel h3, div#fordsoncarousel p {
+    color: #fff;
+}
+
 .card {border:0px;}
 
 #page-my-index .page-header-headings h1:before, #page-badges-mybadges .page-header-headings h1:before, #page-user-preferences .page-header-headings h1:before, #page-grade-report-overview-index .page-header-headings h1:before, #page-message-index .page-header-headings h1:before {
@@ -267,8 +271,9 @@ h3.sectionname:before {
 
 div#learningcontent {
     box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.3);
-    border: 1px solid #fff;
+    border: 1px solid $card-bg;
 }
+
 
 
 .forumpost {background-color: initial; border-radius: 0px;}
