@@ -1,0 +1,59 @@
+<div class="teacherdashbutton"><a role="button" data-toggle="collapse" href="#teacherdashslider" aria-expanded="false" aria-controls="teacherdashslider">{{{togglebutton}}}</a></div>
+<div class="collapse" id="teacherdashslider">
+<div class="teacherdashboard">
+    <div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-3 userlinks">
+                <h3>{{{userlinkstitle}}}</h3>
+                <p>{{{userlinksdesc}}}</p>
+        <div class="list-group">
+            {{#dashlinks}}
+            {{#hasuserlinks}}
+                <a href="{{{url}}}" class="list-group-item">{{{title}}}</a>
+            {{/hasuserlinks}}
+            {{/dashlinks}}
+        </div>
+        </div>
+
+        <div class="col-md-3 questionlinks">
+                <h3>{{{qbanktitle}}}</h3>
+                <p>{{{qbankdesc}}}</p>
+        <div class="list-group">
+            {{#dashlinks}}
+            {{#hasqbanklinks}}
+                <a href="{{{url}}}" class="list-group-item">{{{title}}}</a>
+            {{/hasqbanklinks}}
+            {{/dashlinks}}
+        </div>
+        </div>
+
+        <div class="col-md-3 questionlinks">
+                <h3>{{{badgestitle}}}</h3>
+                <p>{{{badgesdesc}}}</p>
+        <div class="list-group">
+            {{#dashlinks}}
+            {{#hasbadgelinks}}
+                <a href="{{{url}}}" class="list-group-item">{{{title}}}</a>
+            {{/hasbadgelinks}}
+            {{/dashlinks}}
+        </div>
+        </div>
+
+        <div class="col-md-3 coursemanagelinks">
+                <h3>{{{coursemanagetitle}}}</h3>
+                <p>{{{coursemanagedesc}}}</p>
+        <div class="list-group">
+            {{#dashlinks}}
+            {{#hascoursemanagelinks}}
+                <a href="{{{url}}}" class="list-group-item">{{{title}}}</a>
+            {{/hascoursemanagelinks}}
+            {{/dashlinks}}
+        </div>
+        </div>
+
+    </div>
+    </div>
+</div>
+</div>
+<div style="clear:both;"></div>

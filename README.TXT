@@ -29,6 +29,12 @@ This means when Moodle updates the core Boost theme those changes will be applie
 #Install from Github
 Click on the button to "Clone or Download" https://github.com/kennibc/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
+## Fordson 1.4.2
+* Introducing a brand new navigation concept: Teacher Course Management Panel.  This intuitive sliding panel displays a custom list of links that help the teacher manage the course.  It appears in the upper right side of the page just above the Turn Editing On button.  This is the first implementation and future plans include a custom textbox, icons, better descriptions, and other enahncements to make managing your course easier for the teachers.  
+* Added Bootstrap Carousel left and right controls to autoplay slideshow.
+* Multiple styling enhancements.
+
+
 ## Fordson 1.4.1
 * Added Block Column width to control block widths in Fordson Content Areas page
 * Added Boostrap Carousel slideshow with three slides to frontpage. Add a title, description, and image background.  Image background will scale with the size of the page and is not meant to contain actual content.  To be in ADA compliance we prefer to use the description text to display information and not text in a image.  

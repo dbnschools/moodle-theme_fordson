@@ -35,46 +35,16 @@ $default = 1;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
-// Show hide user enrollment toggle.
-$name = 'theme_fordson/userenrollmenu';
-$title = get_string('userenrollmenu', 'theme_fordson');
-$description = get_string('userenrollmenu_desc', 'theme_fordson');
-$default = 0;
-$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-// Show hide user enrollment toggle.
-$name = 'theme_fordson/groupmanagemenu';
-$title = get_string('groupmanagemenu', 'theme_fordson');
-$description = get_string('groupmanagemenu_desc', 'theme_fordson');
-$default = 0;
-$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-// Show hide user enrollment toggle.
-$name = 'theme_fordson/questionbankmenu';
-$title = get_string('questionbankmenu', 'theme_fordson');
-$description = get_string('questionbankmenu_desc', 'theme_fordson');
-$default = 0;
-$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-// Show hide user enrollment toggle.
-$name = 'theme_fordson/questioncategorymenu';
-$title = get_string('questioncategorymenu', 'theme_fordson');
-$description = get_string('questioncategorymenu_desc', 'theme_fordson');
-$default = 0;
-$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-// Show hide user enrollment toggle.
-$name = 'theme_fordson/activitylistingmenu';
-$title = get_string('activitylistingmenu', 'theme_fordson');
-$description = get_string('activitylistingmenu_desc', 'theme_fordson');
+
+// Show/hide coursemanagement slider toggle.
+$name = 'theme_fordson/coursemanagementtoggle';
+$title = get_string('coursemanagementtoggle', 'theme_fordson');
+$description = get_string('coursemanagementtoggle_desc', 'theme_fordson');
 $default = 1;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
+
 
 // This is the descriptor for nav drawer
 $name = 'theme_fordson/mycoursesmenuinfo';

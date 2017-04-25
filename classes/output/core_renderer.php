@@ -432,32 +432,6 @@ class core_renderer extends \core_renderer {
                         $branchurl = new moodle_url('#');
                         $branch = $menu->add($branchlabel, $branchurl, $branchtitle, 10002);
 
-                    if (has_capability('enrol/category:config', $context) && $PAGE->theme->settings->userenrollmenu) { 
-                        $branchtitle = get_string('thiscourseenroll', 'theme_fordson');
-                        $branchlabel = $branchtitle;
-                        $branchurl = new moodle_url('/enrol/users.php', array('id' => $PAGE->course->id));
-                        $branch->add($branchlabel, $branchurl, $branchtitle, 100003);
-                        }
-                    if (has_capability('moodle/course:managegroups', $context) && $PAGE->theme->settings->groupmanagemenu) { 
-                        $branchtitle = get_string('thiscoursegroups', 'theme_fordson');
-                        $branchlabel = $branchtitle;
-                        $branchurl = new moodle_url('/group/index.php', array('id' => $PAGE->course->id));
-                        $branch->add($branchlabel, $branchurl, $branchtitle, 100004);
-                        }
-                    if (has_capability('mod/quiz:manage', $context) && $PAGE->theme->settings->questionbankmenu) { 
-                        $branchtitle = get_string('thiscoursequestion', 'theme_fordson');
-                        $branchlabel = $branchtitle;
-                        $branchurl = new moodle_url('/question/edit.php', array('courseid' => $PAGE->course->id));
-                        $branch->add($branchlabel, $branchurl, $branchtitle, 100005);
-                        }
-                    if (has_capability('mod/quiz:manage', $context) && $PAGE->theme->settings->questioncategorymenu) { 
-                        $branchtitle = get_string('thiscoursequestioncat', 'theme_fordson');
-                        $branchlabel = $branchtitle;
-                        $branchurl = new moodle_url('/question/category.php', array('courseid' => $PAGE->course->id));
-                        $branch->add($branchlabel, $branchurl, $branchtitle, 100006);
-                        }
-
-                    if ($PAGE->theme->settings->activitylistingmenu) {
                         $data = theme_fordson_get_course_activities();
 
                         foreach ($data as $modname => $modfullname) {
@@ -470,7 +444,6 @@ class core_renderer extends \core_renderer {
                                         array('id' => $PAGE->course->id)));
                             }
                         }
-                    }
                 }
             }
         }
@@ -1105,6 +1078,7 @@ class core_renderer extends \core_renderer {
         $marketing6icon  = (empty($PAGE->theme->settings->marketing6icon)) ? false : $PAGE->theme->settings->marketing6icon;
         $marketing6image = (empty($PAGE->theme->settings->marketing6image)) ? false : 'marketing6image';
 
+        
         $fp_wonderboxcontext = [
 
             'hasfptextbox' => (!empty($PAGE->theme->settings->fptextbox && isloggedin())),
@@ -1153,7 +1127,8 @@ class core_renderer extends \core_renderer {
             ),
 
         ];
-
+    
+        
         return $this->render_from_template('theme_fordson/fpwonderbox', $fp_wonderboxcontext);
 
     }
@@ -1255,6 +1230,106 @@ class core_renderer extends \core_renderer {
         ];
 
         return $this->render_from_template('theme_fordson/slideshow', $fp_slideshow);
+    }
+
+    public function teacherdash() {
+        global $PAGE, $COURSE, $CFG;
+        $context = $this->page->context;
+        
+        //link catagories
+        $togglebutton = get_string('coursemanagementbutton', 'theme_fordson');
+        $userlinks = get_string('userlinks', 'theme_fordson');
+        $userlinksdesc = get_string('userlinks_desc', 'theme_fordson');
+        $qbank = get_string('qbank', 'theme_fordson');
+        $qbankdesc = get_string('qbank_desc', 'theme_fordson');
+        $badges = get_string('badges', 'theme_fordson');
+        $badgesdesc = get_string('badges_desc', 'theme_fordson');
+        $coursemanage = get_string('coursemanage', 'theme_fordson');
+        $coursemanagedesc = get_string('coursemanage_desc', 'theme_fordson');
+
+        //user links
+        $enroltitle = get_string('enrolledusers', 'enrol');
+        $enrollink = new moodle_url('/enrol/users.php', array('id' => $PAGE->course->id));
+        $grouptitle = get_string('groups', 'group');
+        $grouplink = new moodle_url('/group/index.php', array('id' => $PAGE->course->id));
+        $enrolmethodtitle = get_string('enrolmentinstances', 'enrol');
+        $enrolmethodlink = new moodle_url('/enrol/instances.php', array('id' => $PAGE->course->id));
+        //user reports
+        $logstitle = get_string('logs', 'moodle');
+        $logslink = new moodle_url('/report/log/index.php', array('id' => $PAGE->course->id));
+        $livelogstitle = get_string('loglive:view', 'report_loglive');
+        $liveloglink = new moodle_url('/report/loglive/index.php', array('id' => $PAGE->course->id));
+        $participationtitle = get_string('participation:view', 'report_participation');
+        $participationlink = new moodle_url('/report/participation/index.php', array('id' => $PAGE->course->id));
+        $activitytitle = get_string('outline:view', 'report_outline');
+        $activitylink = new moodle_url('/report/outline/index.php', array('id' => $PAGE->course->id));
+
+        //questionbank
+        $qbanktitle = get_string('questionbank', 'question');
+        $qbanklink = new moodle_url('/question/edit.php', array('courseid' => $PAGE->course->id));
+        $qcattitle = get_string('questioncategory', 'question');
+        $qcatlink = new moodle_url('/question/category.php', array('courseid' => $PAGE->course->id));
+        $qimporttitle = get_string('import', 'question');
+        $qimportlink = new moodle_url('/question/import.php', array('courseid' => $PAGE->course->id));
+        $qexporttitle = get_string('export', 'question');
+        $qexportlink = new moodle_url('/question/export.php', array('courseid' => $PAGE->course->id));
+        //manage course
+        $courseadmintitle = get_string('courseadministration', 'moodle');
+        $courseadminlink = new moodle_url('/course/admin.php', array('courseid' => $PAGE->course->id));
+        $courseresettitle = get_string('reset', 'moodle');
+        $courseresetlink = new moodle_url('/course/reset.php', array('id' => $PAGE->course->id));
+        $coursebackuptitle = get_string('backup', 'moodle');
+        $coursebackuplink = new moodle_url('/backup/backup.php', array('id' => $PAGE->course->id));
+        $courserestoretitle = get_string('restore', 'moodle');
+        $courserestorelink = new moodle_url('/backup/restorefile.php', array('contextid' => $PAGE->context->id));
+        $courseimporttitle = get_string('import', 'moodle');
+        $courseimportlink = new moodle_url('/backup/import.php', array('id' => $PAGE->course->id));
+        $courseedittitle = get_string('editcoursesettings', 'moodle');
+        $courseeditlink = new moodle_url('/course/edit.php', array('id' => $PAGE->course->id));
+        //badges
+        $badgemanagetitle = get_string('managebadges', 'badges');
+        $badgemanagelink = new moodle_url('/badges/index.php?type=2', array('id' => $PAGE->course->id));
+        $badgeaddtitle = get_string('newbadge', 'badges');
+        $badgeaddlink = new moodle_url('/badges/newbadge.php?type=2', array('id' => $PAGE->course->id));
+
+        $dashlinks = [
+        'togglebutton' => $togglebutton,
+        'userlinkstitle' => $userlinks,
+        'userlinksdesc' => $userlinksdesc,
+        'qbanktitle' => $qbank,
+        'qbankdesc' => $qbankdesc,
+        'badgestitle' => $badges,
+        'badgesdesc' => $badgesdesc,
+        'coursemanagetitle' => $coursemanage,
+        'coursemanagedesc' => $coursemanagedesc,
+
+
+        'dashlinks' => array(
+                array('hasuserlinks' => $enroltitle, 'title' => $enroltitle, 'url' => $enrollink),
+                array('hasuserlinks' => $grouptitle, 'title' => $grouptitle, 'url' => $grouplink),
+                array('hasuserlinks' => $enrolmethodtitle, 'title' => $enrolmethodtitle, 'url' => $enrolmethodlink),
+                array('hasuserlinks' => $logstitle, 'title' => $logstitle, 'url' => $logslink),
+                array('hasuserlinks' => $livelogstitle, 'title' => $livelogstitle, 'url' => $livelogslink),
+                array('hasuserlinks' => $participationtitle, 'title' => $participationtitle, 'url' => $participationlink),
+                array('hasuserlinks' => $activitytitle, 'title' => $activitytitle, 'url' => $activitylink),
+                array('hasqbanklinks' => $qbanktitle, 'title' => $qbanktitle, 'url' => $qbanklink),
+                array('hasqbanklinks' => $qcattitle, 'title' => $qcattitle, 'url' => $qcatlink),
+                array('hasqbanklinks' => $qimporttitle, 'title' => $qimporttitle, 'url' => $qimportlink),
+                array('hasqbanklinks' => $qexporttitle, 'title' => $qexporttitle, 'url' => $qexportlink),
+                array('hascoursemanagelinks' => $courseedittitle, 'title' => $courseedittitle, 'url' => $courseeditlink),
+                array('hascoursemanagelinks' => $courseadmintitle, 'title' => $courseadmintitle, 'url' => $courseadminlink),
+                array('hascoursemanagelinks' => $courseresettitle, 'title' => $courseresettitle, 'url' => $courseresetlink),
+                array('hascoursemanagelinks' => $coursebackuptitle, 'title' => $coursebackuptitle, 'url' => $coursebackuplink),
+                array('hascoursemanagelinks' => $courserestoretitle, 'title' => $courserestoretitle, 'url' => $courserestorelink),
+                array('hascoursemanagelinks' => $courseimporttitle, 'title' => $courseimporttitle, 'url' => $courseimportlink),
+                array('hasbadgelinks' => $badgemanagetitle, 'title' => $badgemanagetitle, 'url' => $badgemanagelink),
+                array('hasbadgelinks' => $badgeaddtitle, 'title' => $badgeaddtitle, 'url' => $badgeaddlink),
+            ),
+        ];
+        
+        if (has_capability('enrol/category:config', $context) && $PAGE->theme->settings->coursemanagementtoggle && ISSET($COURSE->id) && $COURSE->id > 1) {
+            return $this->render_from_template('theme_fordson/teacherdash', $dashlinks );
+        }
     }
 
     public function footnote() {

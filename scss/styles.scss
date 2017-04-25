@@ -123,9 +123,29 @@ div#learningcontent {
     }
 }
 
+/* Teacher Dashboard */
+.teacherdashboard {
+    padding: 1rem;
+}
+.teacherdashbutton {
+    position: absolute;
+    top: -33px;
+    right: -2px;
+    background-color: $card-bg;
+    padding: 5px 10px;
+    border-width:1px 1px 0px 1px;
+    border-style:solid solid solid solid;
+    border-radius: $border-radius $border-radius 0px 0px;
+}
+
+
 /* Slideshow */
 
-.carousel-item {
+/*.carousel-item {
+    
+}*/
+
+.slide1image, .slide2image, .slide3image {
     height: $slideshowheight;
 }
 .carousel-caption.d-none.d-md-block {
@@ -139,6 +159,31 @@ div#learningcontent {
     bottom: 0!important;
 }
 
+.carousel-indicators li {
+    width: 40px;
+    height: 10px;
+    margin: 0;
+    border-radius: 0px;
+}
+.carousel-indicators .active {
+    width: 40px;
+    height: 10px;
+    margin: 0;
+    background-color: #fff;
+    border-radius: 0px;
+}
+a.left.carousel-control .fa-chevron-left {
+    font-size: 35px;
+    position: absolute;
+    left: 10px;
+    bottom: 40%;
+}
+a.right.carousel-control .fa-chevron-right {
+    font-size: 35px;
+    position: absolute;
+    right: 10px;
+    bottom: 40%;
+}
 
 /* Enhanced Homepage */
 
@@ -153,9 +198,9 @@ div#learningcontent {
     text-align: left;
     background-color:$fpstartwrap-bg;
     width:100%;
+    text-align:center;
 }
 .fpstart .iconset {
-  float:left;
   display:block;
 }
 

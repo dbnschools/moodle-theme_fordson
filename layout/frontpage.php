@@ -36,8 +36,8 @@ $extraclasses = [];
 if ($navdraweropen) {
     $extraclasses[] = 'drawer-open-left';
 }
+$enrolform = '';
 $plugin = enrol_get_plugin('easy');
-
             if ($plugin) {
                 $enrolform = $plugin->get_form();
             }

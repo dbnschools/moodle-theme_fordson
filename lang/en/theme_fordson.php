@@ -206,30 +206,28 @@ $string['dashactivityoverview'] = 'ACTIVITIES OVERVIEW';
 $string['blockwidthfordson'] = 'Block Column Width';
 $string['blockwidthfordson_desc'] = 'Adjust the width of the block column.';
 
+//teacher dashboard slider
+$string['userlinks'] = 'User Links';
+$string['userlinks_desc'] = 'Manage your students';
+$string['qbank'] = 'Question Bank';
+$string['qbank_desc'] = 'Create and organize quiz questions';
+$string['badges'] = 'Badges';
+$string['badges_desc'] = 'Award your students';
+$string['coursemanage'] = 'Course Management';
+$string['coursemanage_desc'] = 'Manage your entire course';
+$string['coursemanagementbutton'] = 'Course Management';
 
 
 // Menu Settings
 $string['menusettings'] = 'Menu settings';
 $string['thiscourse'] = 'This Course';
-$string['thiscourseenroll'] = 'User Enrollment';
-$string['thiscoursegroups'] = 'Group Management';
-$string['thiscoursequestion'] = 'Question Bank';
-$string['thiscoursequestioncat'] = 'Question Categories';
 $string['headerimagepadding'] = 'Header Image Height';
 $string['headerimagepadding_desc'] = 'Control the padding and height of the header image for courses.';
 $string['activitymenu'] = 'Show This Course Drop Down Menu';
 $string['activitymenu_desc'] = 'Show the This Course drop down menu.  This menu appears next to the breadcrumbs and will display a listing of all activities for the student.  You can also customize the menu by clicking on the menu items below to control what will appear.';
 
-$string['userenrollmenu'] = 'Show Enrollment Link';
-$string['userenrollmenu_desc'] = 'Include a link to the Enrollment page in This Course drop down menu.';
-$string['groupmanagemenu'] = 'Show Group Management Link';
-$string['groupmanagemenu_desc'] = 'Include a link to the Group Management page in This Course drop down menu.';
-$string['questioncategorymenu'] = 'Show Question Categories Link';
-$string['questioncategorymenu_desc'] = 'Include a link to the Question Categories page in This Course drop down menu.';
-$string['questionbankmenu'] = 'Show Question Bank Link';
-$string['questionbankmenu_desc'] = 'Include a link to the Question Bank page in This Course drop down menu.';
-$string['activitylistingmenu'] = 'Show Activity Listings';
-$string['activitylistingmenu_desc'] = 'Include a link to show activities in This Course drop down menu.';
+$string['coursemanagementtoggle'] = 'Show Course Management Panel';
+$string['coursemanagementtoggle_desc'] = 'This displays an easy to use sliding panel for teachers to manage their course with easy to find links to important areas of the course.';
 
 $string['setting_removenodesheading'] = 'Remove Menu Items from the Nav Drawer';
 $string['setting_removenodesperformancehint'] = 'Technically, this is done by setting the Menu Item\'s showinflatnavigation attribute to false. Thus, the node will only be hidden from the nav drawer, but it will remain in the navigation tree and can still be accessed by other parts of Moodle.';
