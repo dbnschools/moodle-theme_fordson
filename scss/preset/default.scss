@@ -233,6 +233,9 @@ $breadcrumb-divider-rtl: "/" !default;
 
 /* FORDSON Default Styling */
 
+div#coursecontrols {
+    border-radius: 10px 10px 0px 0px;
+}
 .page-header-headings h1:before {
     color: $header-color;
     display: block;

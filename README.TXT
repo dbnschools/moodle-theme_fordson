@@ -29,6 +29,17 @@ This means when Moodle updates the core Boost theme those changes will be applie
 #Install from Github
 Click on the button to "Clone or Download" https://github.com/kennibc/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
+## Fordson 1.4.3
+* Added custom textbox to provide teachers a message in the Course Management Panel. 
+* Added new items to Course Management Panel.
+* Added logic to show/hide contextual menu when using the Course Management Panel.  This will hide the Editing Cog when using Course Management Panel and display it when not activated.  It also shows the menu only on the homepage when using Course Management Panel. You can also force the contextual menu to appear with the course management panel menu.
+* Moved This Course drop down to be with the Course Management Panel menu. 
+* fixed styling issues with presets and the new course management panel menu. 
+* fixed responsive issues and the new course management panel menu. 
+* Turn Editing On button is now visible at all times.  Previously it would hide when viewing on a phone but since you can now hide the contextual course editing cog it is important to be able to turn editing on from the button when not accessible from the menu. 
+* Fixed ADA issue with each icon on homepage having the same ID=button.  Thanks Emma Richardson.
+ 
+
 ## Fordson 1.4.2
 * Introducing a brand new navigation concept: Teacher Course Management Panel.  This intuitive sliding panel displays a custom list of links that help the teacher manage the course.  It appears in the upper right side of the page just above the Turn Editing On button.  This is the first implementation and future plans include a custom textbox, icons, better descriptions, and other enahncements to make managing your course easier for the teachers.  
 * Added Bootstrap Carousel left and right controls to autoplay slideshow.

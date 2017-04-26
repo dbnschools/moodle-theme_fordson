@@ -81,15 +81,18 @@ class core_renderer extends \core_renderer {
      */
     public function full_header() {
 
-        global $PAGE;
+        global $PAGE, $COURSE;
 
         $html = html_writer::start_tag('header', array('id' => 'page-header', 'class' => 'row'));
-        //$html .= html_writer::tag('div', $this->headerimage());
         $html .= html_writer::start_div('col-xs-12 p-a-1');
         $html .= html_writer::start_div('card');
         $html .= html_writer::start_div('headerfade');
         $html .= html_writer::start_div('card-block');
-        $html .= html_writer::div($this->context_header_settings_menu(), 'pull-xs-right context-header-settings-menu');
+        if (!$PAGE->theme->settings->coursemanagementtoggle) {
+            $html .= html_writer::div($this->context_header_settings_menu(), 'pull-xs-right context-header-settings-menu');
+        } elseif (ISSET($COURSE->id) && $COURSE->id == 1) {
+            $html .= html_writer::div($this->context_header_settings_menu(), 'pull-xs-right context-header-settings-menu');
+        }
         $html .= html_writer::start_div('pull-xs-left');
         $html .= $this->context_header();
         $html .= html_writer::end_div();
@@ -97,13 +100,13 @@ class core_renderer extends \core_renderer {
         if (empty($PAGE->layout_options['nonavbar'])) {
             $html .= html_writer::start_div('clearfix w-100 pull-xs-left', array('id' => 'page-navbar'));
             $html .= html_writer::tag('div', $this->navbar(), array('class' => 'breadcrumb-nav'));
-            $html .= html_writer::tag('div', $this->thiscourse_menu(), array('class' => 'thiscourse'));
+            //$html .= html_writer::tag('div', $this->thiscourse_menu(), array('class' => 'thiscourse'));
             $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button pull-xs-right');
             $html .= html_writer::end_div();
         } else if ($pageheadingbutton) {
             $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button nonavbar pull-xs-right');
         }
-        $html .= html_writer::tag('div', $this->course_header(), array('id' => 'course-header'));
+       $html .= html_writer::tag('div', $this->course_header(), array('id' => 'course-header'));
         $html .= html_writer::end_div();
         $html .= html_writer::end_div();
         $html .= html_writer::end_div();
@@ -1098,12 +1101,12 @@ class core_renderer extends \core_renderer {
 
             'hasmarkettiles' => ($hasmarketing1 || $hasmarketing2 || $hasmarketing3 || $hasmarketing4 || $hasmarketing5 || $hasmarketing6) ? true : false,
             'markettiles' => array(
-                array('hastile' => $hasmarketing1, 'tileicon' => $marketing1icon, 'tileimage' => $marketing1image, 'content' => $marketing1content, 'title' => $hasmarketing1, 'button' => "<a href = '$marketing1buttonurl' title = '$marketing1buttontext' alt='$marketing1buttontext' id='button' class='btn btn-primary' target='$marketing1target'> $marketing1buttontext </a>"),
-                array('hastile' => $hasmarketing2, 'tileicon' => $marketing2icon, 'tileimage' => $marketing2image, 'content' => $marketing2content, 'title' => $hasmarketing2, 'button' => "<a href = '$marketing2buttonurl' title = '$marketing2buttontext' alt='$marketing2buttontext' id='button' class='btn btn-primary' target='$marketing2target'> $marketing2buttontext </a>"),
-                array('hastile' => $hasmarketing3, 'tileicon' => $marketing3icon, 'tileimage' => $marketing3image, 'content' => $marketing3content, 'title' => $hasmarketing3, 'button' => "<a href = '$marketing3buttonurl' title = '$marketing3buttontext' alt='$marketing3buttontext' id='button' class='btn btn-primary' target='$marketing3target'> $marketing3buttontext </a>"),
-                array('hastile' => $hasmarketing4, 'tileicon' => $marketing4icon, 'tileimage' => $marketing4image, 'content' => $marketing4content, 'title' => $hasmarketing4, 'button' => "<a href = '$marketing4buttonurl' title = '$marketing4buttontext' alt='$marketing4buttontext' id='button' class='btn btn-primary' target='$marketing4target'> $marketing4buttontext </a>"),
-                array('hastile' => $hasmarketing5, 'tileicon' => $marketing5icon, 'tileimage' => $marketing5image, 'content' => $marketing5content, 'title' => $hasmarketing5, 'button' => "<a href = '$marketing5buttonurl' title = '$marketing5buttontext' alt='$marketing5buttontext' id='button' class='btn btn-primary' target='$marketing5target'> $marketing5buttontext </a>"),
-                array('hastile' => $hasmarketing6, 'tileicon' => $marketing6icon, 'tileimage' => $marketing6image, 'content' => $marketing6content, 'title' => $hasmarketing6, 'button' => "<a href = '$marketing6buttonurl' title = '$marketing6buttontext' alt='$marketing6buttontext' id='button' class='btn btn-primary' target='$marketing6target'> $marketing6buttontext </a>"),
+                array('hastile' => $hasmarketing1, 'tileicon' => $marketing1icon, 'tileimage' => $marketing1image, 'content' => $marketing1content, 'title' => $hasmarketing1, 'button' => "<a href = '$marketing1buttonurl' title = '$marketing1buttontext' alt='$marketing1buttontext' class='btn btn-primary' target='$marketing1target'> $marketing1buttontext </a>"),
+                array('hastile' => $hasmarketing2, 'tileicon' => $marketing2icon, 'tileimage' => $marketing2image, 'content' => $marketing2content, 'title' => $hasmarketing2, 'button' => "<a href = '$marketing2buttonurl' title = '$marketing2buttontext' alt='$marketing2buttontext' class='btn btn-primary' target='$marketing2target'> $marketing2buttontext </a>"),
+                array('hastile' => $hasmarketing3, 'tileicon' => $marketing3icon, 'tileimage' => $marketing3image, 'content' => $marketing3content, 'title' => $hasmarketing3, 'button' => "<a href = '$marketing3buttonurl' title = '$marketing3buttontext' alt='$marketing3buttontext' class='btn btn-primary' target='$marketing3target'> $marketing3buttontext </a>"),
+                array('hastile' => $hasmarketing4, 'tileicon' => $marketing4icon, 'tileimage' => $marketing4image, 'content' => $marketing4content, 'title' => $hasmarketing4, 'button' => "<a href = '$marketing4buttonurl' title = '$marketing4buttontext' alt='$marketing4buttontext' class='btn btn-primary' target='$marketing4target'> $marketing4buttontext </a>"),
+                array('hastile' => $hasmarketing5, 'tileicon' => $marketing5icon, 'tileimage' => $marketing5image, 'content' => $marketing5content, 'title' => $hasmarketing5, 'button' => "<a href = '$marketing5buttonurl' title = '$marketing5buttontext' alt='$marketing5buttontext' class='btn btn-primary' target='$marketing5target'> $marketing5buttontext </a>"),
+                array('hastile' => $hasmarketing6, 'tileicon' => $marketing6icon, 'tileimage' => $marketing6image, 'content' => $marketing6content, 'title' => $hasmarketing6, 'button' => "<a href = '$marketing6buttonurl' title = '$marketing6buttontext' alt='$marketing6buttontext' class='btn btn-primary' target='$marketing6target'> $marketing6buttontext </a>"),
             ),
 
             // If any of the above social networks are true, sets this to true.
@@ -1189,12 +1192,12 @@ class core_renderer extends \core_renderer {
             'hasmarkettiles' => ($hasmarketing1 || $hasmarketing2 || $hasmarketing3 || $hasmarketing4 || $hasmarketing5 || $hasmarketing6) ? true : false,
 
             'markettiles' => array(
-                array('hastile' => $hasmarketing1, 'tileicon' => $marketing1icon, 'tileimage' => $marketing1image, 'content' => $marketing1content, 'title' => $hasmarketing1, 'button' => "<a href = '$marketing1buttonurl' title = '$marketing1buttontext' alt='$marketing1buttontext' id='button' class='btn btn-primary' target='$marketing1target'> $marketing1buttontext </a>"),
-                array('hastile' => $hasmarketing2, 'tileicon' => $marketing2icon, 'tileimage' => $marketing2image, 'content' => $marketing2content, 'title' => $hasmarketing2, 'button' => "<a href = '$marketing2buttonurl' title = '$marketing2buttontext' alt='$marketing2buttontext' id='button' class='btn btn-primary' target='$marketing2target'> $marketing2buttontext </a>"),
-                array('hastile' => $hasmarketing3, 'tileicon' => $marketing3icon, 'tileimage' => $marketing3image, 'content' => $marketing3content, 'title' => $hasmarketing3, 'button' => "<a href = '$marketing3buttonurl' title = '$marketing3buttontext' alt='$marketing3buttontext' id='button' class='btn btn-primary' target='$marketing3target'> $marketing3buttontext </a>"),
-                array('hastile' => $hasmarketing4, 'tileicon' => $marketing4icon, 'tileimage' => $marketing4image, 'content' => $marketing4content, 'title' => $hasmarketing4, 'button' => "<a href = '$marketing4buttonurl' title = '$marketing4buttontext' alt='$marketing4buttontext' id='button' class='btn btn-primary' target='$marketing4target'> $marketing4buttontext </a>"),
-                array('hastile' => $hasmarketing5, 'tileicon' => $marketing5icon, 'tileimage' => $marketing5image, 'content' => $marketing5content, 'title' => $hasmarketing5, 'button' => "<a href = '$marketing5buttonurl' title = '$marketing5buttontext' alt='$marketing5buttontext' id='button' class='btn btn-primary' target='$marketing5target'> $marketing5buttontext </a>"),
-                array('hastile' => $hasmarketing6, 'tileicon' => $marketing6icon, 'tileimage' => $marketing6image, 'content' => $marketing6content, 'title' => $hasmarketing6, 'button' => "<a href = '$marketing6buttonurl' title = '$marketing6buttontext' alt='$marketing6buttontext' id='button' class='btn btn-primary' target='$marketing6target'> $marketing6buttontext </a>"),
+                array('hastile' => $hasmarketing1, 'tileicon' => $marketing1icon, 'tileimage' => $marketing1image, 'content' => $marketing1content, 'title' => $hasmarketing1, 'button' => "<a href = '$marketing1buttonurl' title = '$marketing1buttontext' alt='$marketing1buttontext' class='btn btn-primary' target='$marketing1target'> $marketing1buttontext </a>"),
+                array('hastile' => $hasmarketing2, 'tileicon' => $marketing2icon, 'tileimage' => $marketing2image, 'content' => $marketing2content, 'title' => $hasmarketing2, 'button' => "<a href = '$marketing2buttonurl' title = '$marketing2buttontext' alt='$marketing2buttontext' class='btn btn-primary' target='$marketing2target'> $marketing2buttontext </a>"),
+                array('hastile' => $hasmarketing3, 'tileicon' => $marketing3icon, 'tileimage' => $marketing3image, 'content' => $marketing3content, 'title' => $hasmarketing3, 'button' => "<a href = '$marketing3buttonurl' title = '$marketing3buttontext' alt='$marketing3buttontext' class='btn btn-primary' target='$marketing3target'> $marketing3buttontext </a>"),
+                array('hastile' => $hasmarketing4, 'tileicon' => $marketing4icon, 'tileimage' => $marketing4image, 'content' => $marketing4content, 'title' => $hasmarketing4, 'button' => "<a href = '$marketing4buttonurl' title = '$marketing4buttontext' alt='$marketing4buttontext' class='btn btn-primary' target='$marketing4target'> $marketing4buttontext </a>"),
+                array('hastile' => $hasmarketing5, 'tileicon' => $marketing5icon, 'tileimage' => $marketing5image, 'content' => $marketing5content, 'title' => $hasmarketing5, 'button' => "<a href = '$marketing5buttonurl' title = '$marketing5buttontext' alt='$marketing5buttontext' class='btn btn-primary' target='$marketing5target'> $marketing5buttontext </a>"),
+                array('hastile' => $hasmarketing6, 'tileicon' => $marketing6icon, 'tileimage' => $marketing6image, 'content' => $marketing6content, 'title' => $hasmarketing6, 'button' => "<a href = '$marketing6buttonurl' title = '$marketing6buttontext' alt='$marketing6buttontext' class='btn btn-primary' target='$marketing6target'> $marketing6buttontext </a>"),
             ),
         ];
 
@@ -1234,9 +1237,15 @@ class core_renderer extends \core_renderer {
 
     public function teacherdash() {
         global $PAGE, $COURSE, $CFG;
+
         $context = $this->page->context;
-        
+        $haseditcog = $PAGE->theme->settings->courseeditingcog;
+        $editcog = html_writer::div($this->context_header_settings_menu(), 'pull-xs-right context-header-settings-menu');
+        $thiscourse = html_writer::tag('div', $this->thiscourse_menu(), array('class' => 'thiscourse'));
+        $showincourseonly = ISSET($COURSE->id) && $COURSE->id > 1;
+
         //link catagories
+        $haspermission = has_capability('enrol/category:config', $context) && $PAGE->theme->settings->coursemanagementtoggle && ISSET($COURSE->id) && $COURSE->id > 1;
         $togglebutton = get_string('coursemanagementbutton', 'theme_fordson');
         $userlinks = get_string('userlinks', 'theme_fordson');
         $userlinksdesc = get_string('userlinks_desc', 'theme_fordson');
@@ -1246,19 +1255,23 @@ class core_renderer extends \core_renderer {
         $badgesdesc = get_string('badges_desc', 'theme_fordson');
         $coursemanage = get_string('coursemanage', 'theme_fordson');
         $coursemanagedesc = get_string('coursemanage_desc', 'theme_fordson');
+        $coursemanagementmessage = (empty($PAGE->theme->settings->coursemanagementtextbox)) ? false : format_text($PAGE->theme->settings->coursemanagementtextbox);
 
         //user links
+        $gradestitle = get_string('gradesoverview', 'gradereport_overview');
+        $gradeslink = new moodle_url('/grade/report/grader/index.php', array('id' => $PAGE->course->id));
         $enroltitle = get_string('enrolledusers', 'enrol');
         $enrollink = new moodle_url('/enrol/users.php', array('id' => $PAGE->course->id));
         $grouptitle = get_string('groups', 'group');
         $grouplink = new moodle_url('/group/index.php', array('id' => $PAGE->course->id));
         $enrolmethodtitle = get_string('enrolmentinstances', 'enrol');
         $enrolmethodlink = new moodle_url('/enrol/instances.php', array('id' => $PAGE->course->id));
+        
         //user reports
         $logstitle = get_string('logs', 'moodle');
         $logslink = new moodle_url('/report/log/index.php', array('id' => $PAGE->course->id));
         $livelogstitle = get_string('loglive:view', 'report_loglive');
-        $liveloglink = new moodle_url('/report/loglive/index.php', array('id' => $PAGE->course->id));
+        $livelogslink = new moodle_url('/report/loglive/index.php', array('id' => $PAGE->course->id));
         $participationtitle = get_string('participation:view', 'report_participation');
         $participationlink = new moodle_url('/report/participation/index.php', array('id' => $PAGE->course->id));
         $activitytitle = get_string('outline:view', 'report_outline');
@@ -1291,8 +1304,18 @@ class core_renderer extends \core_renderer {
         $badgemanagelink = new moodle_url('/badges/index.php?type=2', array('id' => $PAGE->course->id));
         $badgeaddtitle = get_string('newbadge', 'badges');
         $badgeaddlink = new moodle_url('/badges/newbadge.php?type=2', array('id' => $PAGE->course->id));
+        //misc
+        $recyclebintitle = get_string('pluginname', 'tool_recyclebin');
+        $recyclebinlink = new moodle_url('/admin/tool/recyclebin/index.php', array('contextid' => $PAGE->context->id));
+        $filtertitle = get_string('filtersettings', 'filters');
+        $filterlink = new moodle_url('/filter/manage.php', array('contextid' => $PAGE->context->id));
 
         $dashlinks = [
+        'showincourseonly' =>$showincourseonly,
+        'haspermission' => $haspermission,
+        'thiscourse' => $thiscourse,
+        'haseditcog' => $haseditcog,
+        'editcog' => $editcog,
         'togglebutton' => $togglebutton,
         'userlinkstitle' => $userlinks,
         'userlinksdesc' => $userlinksdesc,
@@ -1302,9 +1325,10 @@ class core_renderer extends \core_renderer {
         'badgesdesc' => $badgesdesc,
         'coursemanagetitle' => $coursemanage,
         'coursemanagedesc' => $coursemanagedesc,
-
+        'coursemanagementmessage' =>$coursemanagementmessage,
 
         'dashlinks' => array(
+                array('hasuserlinks' => $gradestitle, 'title' => $gradestitle, 'url' => $gradeslink),
                 array('hasuserlinks' => $enroltitle, 'title' => $enroltitle, 'url' => $enrollink),
                 array('hasuserlinks' => $grouptitle, 'title' => $grouptitle, 'url' => $grouplink),
                 array('hasuserlinks' => $enrolmethodtitle, 'title' => $enrolmethodtitle, 'url' => $enrolmethodlink),
@@ -1322,14 +1346,16 @@ class core_renderer extends \core_renderer {
                 array('hascoursemanagelinks' => $coursebackuptitle, 'title' => $coursebackuptitle, 'url' => $coursebackuplink),
                 array('hascoursemanagelinks' => $courserestoretitle, 'title' => $courserestoretitle, 'url' => $courserestorelink),
                 array('hascoursemanagelinks' => $courseimporttitle, 'title' => $courseimporttitle, 'url' => $courseimportlink),
+                array('hascoursemanagelinks' => $recyclebintitle, 'title' => $recyclebintitle, 'url' => $recyclebinlink),
+                array('hascoursemanagelinks' => $filtertitle, 'title' => $filtertitle, 'url' => $filterlink),
                 array('hasbadgelinks' => $badgemanagetitle, 'title' => $badgemanagetitle, 'url' => $badgemanagelink),
                 array('hasbadgelinks' => $badgeaddtitle, 'title' => $badgeaddtitle, 'url' => $badgeaddlink),
             ),
         ];
         
-        if (has_capability('enrol/category:config', $context) && $PAGE->theme->settings->coursemanagementtoggle && ISSET($COURSE->id) && $COURSE->id > 1) {
+        
             return $this->render_from_template('theme_fordson/teacherdash', $dashlinks );
-        }
+        
     }
 
     public function footnote() {

@@ -226,8 +226,14 @@ $string['headerimagepadding_desc'] = 'Control the padding and height of the head
 $string['activitymenu'] = 'Show This Course Drop Down Menu';
 $string['activitymenu_desc'] = 'Show the This Course drop down menu.  This menu appears next to the breadcrumbs and will display a listing of all activities for the student.  You can also customize the menu by clicking on the menu items below to control what will appear.';
 
+$string['coursemanagementinfo'] = 'Course Management Panel Menu';
+$string['coursemanagementinfodesc'] = 'These settings allow you to display and easy to use course management menu for teachers.  The Course Management Menu now includes the This Course Drop-down, a sliding Course Admin panel, and the ability to include the default Moodle Course Editing Cog.';
 $string['coursemanagementtoggle'] = 'Show Course Management Panel';
 $string['coursemanagementtoggle_desc'] = 'This displays an easy to use sliding panel for teachers to manage their course with easy to find links to important areas of the course.';
+$string['coursemanagementtextbox'] = 'Course Management Message';
+$string['coursemanagementtextbox_desc'] = 'Add a message for teachers in the course management panel on every course page.';
+$string['courseeditingcog'] = 'Show Default Course Settings Edit';
+$string['courseeditingcog_desc'] = 'If using the Course Management Panel you might want to hide the Moodle Course Editing Cog.';
 
 $string['setting_removenodesheading'] = 'Remove Menu Items from the Nav Drawer';
 $string['setting_removenodesperformancehint'] = 'Technically, this is done by setting the Menu Item\'s showinflatnavigation attribute to false. Thus, the node will only be hidden from the nav drawer, but it will remain in the navigation tree and can still be accessed by other parts of Moodle.';

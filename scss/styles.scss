@@ -80,11 +80,7 @@ div#learningcontent {
     border-radius: $border-radius;
 }
 
-@media screen and (max-width: 450px) {
-#page-navbar .dropdown-toggle {
-    display:none;
-    visibility:hidden;
-}
+/*@media screen and (max-width: 450px) {
 #page-navbar .breadcrumb-button .btn-success {
     display:none;
     visibility:hidden;
@@ -93,7 +89,7 @@ div#learningcontent {
     display:none;
     visibility:hidden;
 }
-}
+}*/
 
 .breadcrumb-nav .breadcrumb {margin-bottom: .5rem;}
 
@@ -124,18 +120,43 @@ div#learningcontent {
 }
 
 /* Teacher Dashboard */
+div#coursecontrols {
+    position: absolute;
+    top: -51px;
+    right: -1px;
+    padding: 7px 15px 4px 15px;
+    border-top: 5px solid $brand-primary;
+    background-color: $card-bg;
+}
+@media screen and (max-width: 450px) {
+    div#coursecontrols {
+        position: initial;
+    }
+    .thiscoursebutton {
+    display:none;
+    }
+}
 .teacherdashboard {
     padding: 1rem;
 }
 .teacherdashbutton {
-    position: absolute;
-    top: -33px;
-    right: -2px;
-    background-color: $card-bg;
-    padding: 5px 10px;
-    border-width:1px 1px 0px 1px;
-    border-style:solid solid solid solid;
-    border-radius: $border-radius $border-radius 0px 0px;
+    font-size: 16px;
+    float:right;
+    padding:5px 10px;
+    border-radius: $border-radius;
+}
+.thiscoursebutton {
+    font-size: 16px;
+    float:right;
+    padding:5px 10px;
+    border-radius: $border-radius;
+}
+.editcogbutton {
+    float:right;
+    border-radius: $border-radius;
+}
+.teacherdashbutton:hover, .thiscoursebutton:hover, .editcogbutton:hover {
+    background-color: darken($card-bg, 5%)
 }
 
 

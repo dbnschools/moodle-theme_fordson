@@ -41,7 +41,7 @@ $fpicon-colour: #5a5a5a !default;
 $fpicon-width: 110px !default;
 $fpiconcreate-width: 150px !default;
 $headerimagepadding: 200px !default;
-$elearnerbkg: rgba(255,255,255, 0.8) !default;
+$elearnerbkg: rgba(255,255,255, 0.9) !default;
 $marketing1image: #fff !default;
 $marketing2image: #fff !default;
 $marketing3image: #fff !default;
@@ -303,7 +303,30 @@ $dropdown-header-color:          $gray-light !default;
 
 
 /* FORDSON Default Styling */
+div#coursecontrols {
+    position: absolute;
+    top: -50px;
+    right: 40px;
+    padding: 7px 15px 4px 15px;
+    border-top: 5px solid $brand-primary;
+    background-color: $elearnerbkg;
+    border-radius: 10px 10px 0px 0px;
+}
 
+/*.teacherdashbutton {
+    position: absolute;
+    top: -40px;
+    right: 44px;
+    background-color: $elearnerbkg;
+    padding: 7px 10px 4px 10px;
+    border-top: 5px solid $brand-primary;
+    font-size: 16px;
+    border-radius: 10px 10px 0px 0px;
+}
+.teacherdashbutton:hover {
+    background-color: $card-bg;
+}
+*/
 .path-mod-assign [data-region="grading-navigation"] {
     background-color: #fff;
 }

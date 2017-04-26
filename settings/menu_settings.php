@@ -27,6 +27,31 @@ defined('MOODLE_INTERNAL') || die();
 
 $page = new admin_settingpage('theme_fordson_menusettings', get_string('menusettings', 'theme_fordson'));
 
+// This is the descriptor for Course Management Panel
+$name = 'theme_fordson/coursemanagementinfo';
+$heading = get_string('coursemanagementinfo', 'theme_fordson');
+$information = get_string('coursemanagementinfodesc', 'theme_fordson');
+$setting = new admin_setting_heading($name, $heading, $information);
+$page->add($setting);
+
+// Show/hide coursemanagement slider toggle.
+$name = 'theme_fordson/coursemanagementtoggle';
+$title = get_string('coursemanagementtoggle', 'theme_fordson');
+$description = get_string('coursemanagementtoggle_desc', 'theme_fordson');
+$default = 1;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+// Show/hide course editing cog.
+$name = 'theme_fordson/courseeditingcog';
+$title = get_string('courseeditingcog', 'theme_fordson');
+$description = get_string('courseeditingcog_desc', 'theme_fordson');
+$default = 1;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 // Show hide Course Activity Menu toggle.
 $name = 'theme_fordson/activitymenu';
 $title = get_string('activitymenu', 'theme_fordson');
@@ -36,12 +61,12 @@ $setting = new admin_setting_configcheckbox($name, $title, $description, $defaul
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// Show/hide coursemanagement slider toggle.
-$name = 'theme_fordson/coursemanagementtoggle';
-$title = get_string('coursemanagementtoggle', 'theme_fordson');
-$description = get_string('coursemanagementtoggle_desc', 'theme_fordson');
-$default = 1;
-$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+// Frontpage Textbox.
+$name = 'theme_fordson/coursemanagementtextbox';
+$title = get_string('coursemanagementtextbox', 'theme_fordson');
+$description = get_string('coursemanagementtextbox_desc', 'theme_fordson');
+$default = '';
+$setting = new admin_setting_confightmleditor($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
