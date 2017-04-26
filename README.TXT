@@ -38,6 +38,7 @@ Click on the button to "Clone or Download" https://github.com/kennibc/moodle-the
 * fixed responsive issues and the new course management panel menu. 
 * Turn Editing On button is now visible at all times.  Previously it would hide when viewing on a phone but since you can now hide the contextual course editing cog it is important to be able to turn editing on from the button when not accessible from the menu. 
 * Fixed ADA issue with each icon on homepage having the same ID=button.  Thanks Emma Richardson.
+*Fixed HeaderLogo image on small screen sizes.  Thanks Emma Richardson.
  
 
 ## Fordson 1.4.2

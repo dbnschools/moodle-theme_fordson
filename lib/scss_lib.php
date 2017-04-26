@@ -139,7 +139,7 @@ function theme_fordson_get_pre_scss($theme) {
     $headerlogo = $theme->setting_file_url('headerlogo', 'headerlogo');
     if (isset($headerlogo)) {
         // Add a fade in transition to avoid the flicker on course headers ***.
-        $prescss .= '.headerlogo {background-image: url("'.$headerlogo.'"); background-repeat: no-repeat; background-position:left; height: 125px;}';
+        $prescss .= '.headerlogo {background-image: url("'.$headerlogo.'"); background-repeat: no-repeat; background-position:left;}';
     }
 
     // Set the default image for the header.

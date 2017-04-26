@@ -98,12 +98,16 @@ div#learningcontent {
     margin-left: 5px;
 }
 
-
-.thiscourse {float:left;}
-
 .headerlogo {
     background-color: $headerfade-bg;
     width:100%;
+    height: 125px;
+}
+@media screen and (max-width: 450px) {
+.headerlogo {
+    height: 75px;
+    background-size: contain;
+}
 }
 
 
