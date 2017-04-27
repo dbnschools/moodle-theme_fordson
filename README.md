@@ -1,7 +1,7 @@
 THEME_Fordson
 ===========
 
-#Fordson
+# Fordson
 
 Fordson is a child theme for Moodle's core theme Boost.
 
