@@ -15,7 +15,7 @@ Here are the main enhancements:
 * Enhanced Frontpage - Navigation Iconbar, Custom Textbox, Alertbox, Six Marketing Tiles
 * Customized Course Header Image - Teachers can upload an image into their course summary files and it will automatically be used in the header of their course.
 
-##Recommended Settings for Best Results
+## Recommended Settings for Best Results
 These settings below are found in the Moodle Site Administration Pages.  These are not related to the theme but will help bring out the best of Fordson.  
 
 * defaulthomepage = SITE (Default homepage for users.  If set to Dashboard your users will not see the Enhanced Homepage upon login.)
@@ -26,7 +26,7 @@ These settings below are found in the Moodle Site Administration Pages.  These a
 Fordson is a child theme of Boost.  
 This means when Moodle updates the core Boost theme those changes will be applied to Fordson as well in most cases.
 
-#Install from Github
+# Install from Github
 Click on the button to "Clone or Download" https://github.com/kennibc/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
 ## Fordson 1.4.3
