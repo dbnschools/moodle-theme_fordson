@@ -148,11 +148,19 @@ div#coursecontrols {
     padding:5px 10px;
     border-radius: $border-radius;
 }
+.teacherdashboard i.dashicon {
+    float:right;
+    padding: 0px 4px;
+}
 .thiscoursebutton {
     font-size: 16px;
     float:right;
     padding:5px 10px;
     border-radius: $border-radius;
+}
+.thiscoursebutton .dropdown-menu {
+    right: -10px;
+    left: initial;
 }
 .editcogbutton {
     float:right;

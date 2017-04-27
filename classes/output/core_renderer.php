@@ -39,7 +39,6 @@ use pix_icon;
 
 defined('MOODLE_INTERNAL') || die;
 
-require_once($CFG->dirroot.'/blocks/course_overview/locallib.php');
 require_once($CFG->dirroot . "/course/renderer.php");
 require_once($CFG->libdir. '/coursecatlib.php');
 
@@ -221,7 +220,7 @@ class core_renderer extends \core_renderer {
             $icon = 'fa-edit';
         }
         return html_writer::tag('a', html_writer::start_tag('i', array('class' => $icon . ' fa fa-fw')) .
-            html_writer::end_tag('i') . $title, array('href' => $url, 'class' => 'btn ' . $btn, 'title' => $title));
+            html_writer::end_tag('i') . $title, array('href' => $url, 'class' => 'btn  ' . $btn, 'title' => $title));
         return $output;
     }
 
@@ -726,6 +725,7 @@ class core_renderer extends \core_renderer {
      *
      * @return string
      */
+
        public function context_header_settings_menu() {
         $context = $this->page->context;
         $menu = new action_menu();

@@ -47,7 +47,7 @@ $page->add($setting);
 $name = 'theme_fordson/courseeditingcog';
 $title = get_string('courseeditingcog', 'theme_fordson');
 $description = get_string('courseeditingcog_desc', 'theme_fordson');
-$default = 1;
+$default = 0;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);

@@ -54,6 +54,14 @@ $choices = array(
         '550px' => '550px',
         '575px' => '575px',
         '600px' => '600px',
+        '625px' => '625px',
+        '650px' => '650px',
+        '675px' => '675px',
+        '700px' => '700px',
+        '725px' => '725px',
+        '750px' => '750px',
+        '775px' => '775px',
+        '800px' => '800px',
     );
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');

@@ -1,10 +1,13 @@
 {{#showincourseonly}}
+
 <div id="coursecontrols">
     {{#haseditcog}}<div class="editcogbutton">{{{editcog}}}</div>{{/haseditcog}}
     {{#haspermission}}<div class="teacherdashbutton"><a role="button" data-toggle="collapse" href="#teacherdashslider" aria-expanded="false" aria-controls="teacherdashslider">{{{togglebutton}}}</a></div> {{/haspermission}}
-    <div class="thiscoursebutton">{{{thiscourse}}}</div> 
+    <div class="thiscoursebutton">{{{thiscourse}}}</div>
 </div>
+
 <div style="clear:both;"></div>
+
 {{#haspermission}}
 <div class="collapse" id="teacherdashslider">
 <div class="teacherdashboard">
@@ -12,33 +15,13 @@
     <div class="container-fluid">
     <div class="coursemanagementmessage">{{{coursemanagementmessage}}}</div>
     <div class="row">
-        <div class="col-md-3 userlinks">
-                <h3>{{{userlinkstitle}}}</h3>
-                <p>{{{userlinksdesc}}}</p>
-        <div class="list-group">
-            {{#dashlinks}}
-            {{#hasuserlinks}}
-                <a href="{{{url}}}" class="list-group-item">{{{title}}}</a>
-            {{/hasuserlinks}}
-            {{/dashlinks}}
-        </div>
-        </div>
 
-        <div class="col-md-3 questionlinks">
-                <h3>{{{qbanktitle}}}</h3>
-                <p>{{{qbankdesc}}}</p>
-        <div class="list-group">
-            {{#dashlinks}}
-            {{#hasqbanklinks}}
-                <a href="{{{url}}}" class="list-group-item">{{{title}}}</a>
-            {{/hasqbanklinks}}
-            {{/dashlinks}}
+        <div class="col-md-3 badges">
+        <div class="dashtitle">
+        <i class="fa fa-2x fa-trophy dashicon"></i>
+            <h3>{{{badgestitle}}}</h3>
+            <p>{{{badgesdesc}}}</p>
         </div>
-        </div>
-
-        <div class="col-md-3 questionlinks">
-                <h3>{{{badgestitle}}}</h3>
-                <p>{{{badgesdesc}}}</p>
         <div class="list-group">
             {{#dashlinks}}
             {{#hasbadgelinks}}
@@ -48,9 +31,27 @@
         </div>
         </div>
 
+        <div class="col-md-3 questionlinks">
+        <div class="dashtitle">
+        <i class="fa fa-2x fa-question-circle dashicon"></i>
+                <h3>{{{qbanktitle}}}</h3>
+                <p>{{{qbankdesc}}}</p>
+        </div>
+        <div class="list-group">
+            {{#dashlinks}}
+            {{#hasqbanklinks}}
+                <a href="{{{url}}}" class="list-group-item">{{{title}}}</a>
+            {{/hasqbanklinks}}
+            {{/dashlinks}}
+        </div>
+        </div>
+
         <div class="col-md-3 coursemanagelinks">
+        <div class="dashtitle">
+        <i class="fa fa-2x fa-cogs dashicon"></i>
                 <h3>{{{coursemanagetitle}}}</h3>
                 <p>{{{coursemanagedesc}}}</p>
+        </div>
         <div class="list-group">
             {{#dashlinks}}
             {{#hascoursemanagelinks}}
@@ -60,10 +61,29 @@
         </div>
         </div>
 
+        <div class="col-md-3 userlinks">
+        <div class="dashtitle">
+        <i class="fa fa-2x fa-users dashicon"></i>
+                <h3>{{{userlinkstitle}}}</h3>
+                <p>{{{userlinksdesc}}}</p>
+        </div>
+        <div class="list-group">
+            {{#dashlinks}}
+            {{#hasuserlinks}}
+                <a href="{{{url}}}" class="list-group-item">{{{title}}}</a>
+            {{/hasuserlinks}}
+            {{/dashlinks}}
+        </div>
+        </div>
+
     </div>
     </div>
+
 </div>
 </div>
+
 {{/haspermission}}
+
 <div style="clear:both;"></div>
+
 {{/showincourseonly}}

@@ -236,6 +236,14 @@ $breadcrumb-divider-rtl: "/" !default;
 div#coursecontrols {
     border-radius: 10px 10px 0px 0px;
 }
+.teacherdashboard .list-group-item:first-child {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+}
+.teacherdashboard .dashtitle {
+    padding: 5px;
+    background-color: lighten($brand-primary,15%);
+}
 .page-header-headings h1:before {
     color: $header-color;
     display: block;

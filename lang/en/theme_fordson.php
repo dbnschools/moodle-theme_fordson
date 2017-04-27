@@ -213,7 +213,7 @@ $string['qbank'] = 'Question Bank';
 $string['qbank_desc'] = 'Create and organize quiz questions';
 $string['badges'] = 'Badges';
 $string['badges_desc'] = 'Award your students';
-$string['coursemanage'] = 'Course Management';
+$string['coursemanage'] = 'Course Settings';
 $string['coursemanage_desc'] = 'Manage your entire course';
 $string['coursemanagementbutton'] = 'Course Management';
 
@@ -322,7 +322,7 @@ $string['editoff'] = 'Turn Edit Off';
 
 //Marketing Tiles
 $string['marketingheading'] = 'Marketing Tiles';
-$string['marketinginfodesc'] = 'Enter the settings for your marketing spot.';
+$string['marketinginfodesc'] = 'Enter the settings for your marketing spot.  You must include a title in order for the Marketing Spot to appear.  The title will activate the individual Marketing Spots.';
 $string['marketingheadingsub'] = 'Three locations on the front page to add information and links';
 $string['marketboxcolor'] = 'Marketing Box Background Color';
 $string['marketboxcolor_desc'] = 'The color of the background for the marketing box.';
@@ -340,7 +340,7 @@ $string['marketing4'] = 'Marketing Spot Four';
 $string['marketing5'] = 'Marketing Spot Five';
 $string['marketing6'] = 'Marketing Spot six';
 $string['marketingtitle'] = 'Title';
-$string['marketingtitledesc'] = 'Title to show in this marketing spot';
+$string['marketingtitledesc'] = 'Title to show in this marketing spot.  You must include a title in order for the Marketing Tile to appear.';
 $string['marketingicon'] = 'Link Icon';
 $string['marketingicondesc'] = 'Name of the icon you wish to use in the marketing URL Button. List is <a href="http://fortawesome.github.io/Font-Awesome/cheatsheet/" target="_new">here</a>.  Just enter what is after "fa-", e.g. "star".';
 $string['marketingimage'] = 'Image';
