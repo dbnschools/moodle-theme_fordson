@@ -35,6 +35,8 @@ use context_course;
 use pix_url;
 use html_writer;
 use heading;
+use pix_icon;
+use image_url;
 
 require_once($CFG->dirroot . '/course/renderer.php');
 
@@ -47,7 +49,7 @@ require_once($CFG->dirroot . '/course/renderer.php');
  */
 
 if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
-class course_renderer extends \core_course_renderer {
+class course_renderer extends \theme_boost\output\core\course_renderer {
     
     protected $countcategories = 0;
     
@@ -261,9 +263,6 @@ class course_renderer extends \core_course_renderer {
     
                     $noimgurl = $OUTPUT->pix_url('noimg', 'theme');
 
-                    $coursename = 'chris';
-                    $coursenum = '76';
-                    
 
                     $courseurl = new moodle_url('/course/view.php', array('id' => $courseid));
 

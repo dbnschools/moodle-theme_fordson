@@ -32,7 +32,7 @@ defined('MOODLE_INTERNAL') || die();
  * @param theme_config $theme The theme config object.
  */
 function theme_fordson_css_tree_post_processor($tree, $theme) {
-    $prefixer = new theme_fordson\autoprefixer($tree);
+    $prefixer = new theme_boost\autoprefixer($tree);
     $prefixer->prefix();
 }
 

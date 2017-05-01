@@ -166,7 +166,13 @@ div#coursecontrols {
     float:right;
     border-radius: $border-radius;
 }
-.teacherdashbutton:hover, .thiscoursebutton:hover, .editcogbutton:hover {
+.enrollcodebutton {
+    font-size: 16px;
+    float:right;
+    padding:5px 10px;
+    border-radius: $border-radius;
+}
+.teacherdashbutton:hover, .thiscoursebutton:hover, .enrollcodebutton:hover, .editcogbutton:hover {
     background-color: darken($card-bg, 5%)
 }
 

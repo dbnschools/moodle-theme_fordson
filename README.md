@@ -29,6 +29,11 @@ This means when Moodle updates the core Boost theme those changes will be applie
 # Install from Github
 Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
+## Fordson 1.4.4
+* New integrations with Easy Enrollment plugin: When easy enrollment is activated on a course a new link appears which will show the teacher all their enrollment codes for the course.  This is in the header area just above the Turn Editing on button in the upper right of the course page.
+* Prepped and ready for the release of Easy Enrollment Plugin on github
+* Cleaned up classes and functions as to not override core more than needed
+
 ## Fordson 1.4.3
 * Added custom textbox to provide teachers a message in the Course Management Panel. 
 * Added new items to Course Management Panel.

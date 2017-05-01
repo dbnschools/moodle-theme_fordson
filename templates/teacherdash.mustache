@@ -3,6 +3,7 @@
 <div id="coursecontrols">
     {{#haseditcog}}<div class="editcogbutton">{{{editcog}}}</div>{{/haseditcog}}
     {{#haspermission}}<div class="teacherdashbutton"><a role="button" data-toggle="collapse" href="#teacherdashslider" aria-expanded="false" aria-controls="teacherdashslider">{{{togglebutton}}}</a></div> {{/haspermission}}
+    {{#haspermission}}{{#dashlinks}}{{#haseasyenrollment}}<div class="enrollcodebutton"><a href="{{{url}}}">{{{title}}}</a></div>{{/haseasyenrollment}}{{/dashlinks}}{{/haspermission}}
     <div class="thiscoursebutton">{{{thiscourse}}}</div>
 </div>
 
@@ -68,6 +69,13 @@
                 <p>{{{userlinksdesc}}}</p>
         </div>
         <div class="list-group">
+            {{#haspermission}}
+            {{#dashlinks}}
+            {{#haseasyenrollment}}
+                <a href="{{{url}}}" class="list-group-item">{{{title}}}</a>
+            {{/haseasyenrollment}}
+            {{/dashlinks}}
+            {{/haspermission}}
             {{#dashlinks}}
             {{#hasuserlinks}}
                 <a href="{{{url}}}" class="list-group-item">{{{title}}}</a>
