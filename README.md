@@ -29,18 +29,28 @@ This means when Moodle updates the core Boost theme those changes will be applie
 # Install from Github
 Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
-## Fordson 1.4.6
-* New releases for Fordson on Moodle 3.2 will only be bug fixes.  All new development and features require Moodle 3.3 and components only in Moodle 3.3 such as the new course overview block to help build the student dashboard slider and other features. 
-* Fixed issue with Easy Enrollment integration where Easy Enrollment is installed but not used on a particular course.  This led to an unknown variable issue.
+## Fordson Moodle 33 1.4.6 2017051600
+* Removed frontpage course search box as this can be accomplished by simply enabling it through normal frontpage settings for moodle.  We are also more focused on the Easy Enrollment form which allows students to enroll with a six digit code instantly.  It's not needed as it duplicates a built in function and we want to be as lean as possible.
+* Cleaned up some language strings and Settings pages.
+* Enhanced some of the styling when viewing course categories.  Applied a hover effect for activities in courses.
+* Fixed undefined variable when using Easy Enrollment plugin at the site level but disabling it on a course. Also fixed unknown variable issue when Easy Enroll is not installed for some users.
+* Changed some default settings for a better experience when first installing Fordson.
+* First Implementation of the Student Dashboard slider now called "This Course". Will allow students to see course information at a glance. Very useful.
+* This Course drop down menu has been incorporated into a new This Course slider (And Course Management slider if a teacher) which displays Course Completion, Gradebook Link, and other pertinent course information.
+* Added logic so that teachers and non-editing teachers only see Course management panel while students only see This Course panel inside courses.  This eliminates any overlapping of sliding panels which can cause visual issues.
 
-## Fordson 1.4.5
+## Fordson Moodle 33 1.4.5 2017051200
 * Fixed compatibility with collapsed topic course format thanks to Gareth
 * Fixed issue when Easy Enrollment plugin was not installed and the course management panel integration
+* Removed MarketingTile icon setting as it was never included in final implementation. An image uploader was used instead.
+* Removed empty style folder carried over from Moodle 3.2 version
+* New forumpost styling
+* New Course Category display improvements such as hover effects and other micro interactions
 
 ## Fordson 1.4.4
 * New integrations with Easy Enrollment plugin: When easy enrollment is activated on a course a new link appears which will show the teacher all their enrollment codes for the course.  This is in the header area just above the Turn Editing on button in the upper right of the course page.
 * Prepped and ready for the release of Easy Enrollment Plugin on github
-* Cleaned up classes and functions as to not override core more than needed
+* Cleaned up classes and functions as to not override core more than needed.
 
 ## Fordson 1.4.3
 * Added custom textbox to provide teachers a message in the Course Management Panel. 
@@ -79,7 +89,7 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 * Adjusted some default settings on install.
 
 ## Fordson 1.3.0
-* Customized Nav Drawer - Add and remove items from the Boost navigation drawer.  Ability to have customizations appear on all pages, frontpage only, course pages only. Special thanks to Alexander Bias with https://github.com/moodleuulm/moodle-local_boostnavigation and Carlos Escobedo with https://moodle.org/plugins/local_navigation.  I was able to combine these two plugins to remove default menu items and add new menu items.  Because this is done with a theme we also added a toggle to allow you to determine where the customizations appear.
+*Customized Nav Drawer - Add and remove items from the Boost navigation drawer.  Ability to have customizations appear on all pages, frontpage only, course pages only. Special thanks to Alexander Bias with https://github.com/moodleuulm/moodle-local_boostnavigation and Carlos Escobedo with https://moodle.org/plugins/local_navigation.  I was able to combine these two plugins to remove default menu items and add new menu items.  Because this is done with a theme we also added a toggle to allow you to determine where the customizations appear.
 
 ## Fordson 1.2.9b
 * Revisited and removed entire tag for This Course drop down title.

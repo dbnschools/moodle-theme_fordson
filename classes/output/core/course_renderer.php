@@ -90,7 +90,7 @@ class course_renderer extends \theme_boost\output\core\course_renderer {
             'value' => $value
         ];
 
-        return $this->render_from_template('theme_fordson/course_search_form', $data);
+        return $this->render_from_template('theme_boost/course_search_form', $data);
     }
     
 
@@ -140,7 +140,7 @@ class course_renderer extends \theme_boost\output\core\course_renderer {
                     
                     $trimtitle = theme_fordson_course_trim_char($course->fullname, $trimtitlevalue);
 
-    				$noimgurl = $OUTPUT->pix_url('noimg', 'theme');
+    				$noimgurl = $OUTPUT->image_url('noimg', 'theme');
     				$courseurl = new moodle_url('/course/view.php', array('id' => $courseid ));
     
     				if ($course instanceof stdClass) {
@@ -261,8 +261,7 @@ class course_renderer extends \theme_boost\output\core\course_renderer {
                     
                     $trimtitle = theme_fordson_course_trim_char($course->fullname, $trimtitlevalue);
     
-                    $noimgurl = $OUTPUT->pix_url('noimg', 'theme');
-
+                    $noimgurl = $OUTPUT->image_url('noimg', 'theme');
 
                     $courseurl = new moodle_url('/course/view.php', array('id' => $courseid));
 
@@ -308,11 +307,16 @@ class course_renderer extends \theme_boost\output\core\course_renderer {
                                 }
                        
                        $rowcontent .= '
-                                    <div class="course-title">
-                                    <h4><a '.$tooltiptext.' href="'.$courseurl.'">'.$trimtitle.'</a></h4>
-                                    </div>
-                                    <a href="'.$courseurl.'">
+                                    <a '.$tooltiptext.' href="'.$courseurl.'">
+                                    <div class="courseimagecontainer">
                                     <div class="course-image-view" style="background-image: url('.$imgurl.');background-repeat: no-repeat;background-size:cover; background-position:center;">
+                                    </div>
+                                    <div class="course-overlay">
+                                    <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="course-title">
+                                    <h4>'.$trimtitle.'</h4>
+                                    </div>
                                     </div>
                                     </a>
                                     <div class="course-summary">

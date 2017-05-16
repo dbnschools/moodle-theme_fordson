@@ -1,6 +1,11 @@
+
 // Set image location.
 $breadcrumb-divider: "▶" !default;
 $breadcrumb-divider-rtl: "◀" !default;
+
+// Import font awesome.
+@import "../../boost/scss/fontawesome/moodle-path";
+@import "../../boost/scss/fontawesome/font-awesome";
 
 // Import the bootstrap variables.
 @import "../../boost/scss/bootstrap/bootstrap";
@@ -41,5 +46,6 @@ $breadcrumb-divider-rtl: "◀" !default;
 @import "../../boost/scss/moodle/tool_usertours";
 @import "../../boost/scss/moodle/responsive-tabs";
 @import "../../boost/scss/moodle/bs2-compat";
+@import "../../boost/scss/moodle/print";
 
 @import "styles";

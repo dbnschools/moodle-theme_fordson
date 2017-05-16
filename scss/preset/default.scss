@@ -48,6 +48,7 @@ $brand-inverse:             $gray-dark !default;
 $navbar-height:             50px !default;
 $drawer-bg:                 rgba(128, 143, 154, 0.9) !default;
 $headerfade-bg:             #025169 !default;
+$activityhover:             #fff6ae !default;
 
 // Spacing
 $spacer:   1rem !default;
@@ -233,17 +234,15 @@ $breadcrumb-divider-rtl: "/" !default;
 
 /* FORDSON Default Styling */
 
-div#coursecontrols {
-    border-radius: 10px 10px 0px 0px;
-}
-.teacherdashboard .list-group-item:first-child {
+.teacherdashboard .list-group-item:first-child, .studentdashboard .list-group-item:first-child {
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
 }
-.teacherdashboard .dashtitle {
+.teacherdashboard .dashtitle, .studentdashboard .dashtitle {
     padding: 5px;
     background-color: lighten($brand-primary,15%);
 }
+ 
 .page-header-headings h1:before {
     color: $header-color;
     display: block;
@@ -285,15 +284,24 @@ div#learningcontent {
     border: 1px solid $card-bg;
 }
 
+.forumpost {
+    background-color: $gray-lightest; 
+    border-radius: 0px;
+    box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.3);
+    border: 1px solid $card-bg;
+    margin-bottom: 2rem;
+}
 
+.forumpost .subject {
+    font-size: 1.5rem;
+}
 
-.forumpost {background-color: initial; border-radius: 0px;}
-
-.forumpost .header {margin-bottom: 1rem; background-color: $gray-lightest; padding: 5px;}
-
-/*.course-content ul li.section.main {
-    border-bottom: 7px solid $body-bg;
-}*/
+.forumpost .content .posting {
+    background-color: $card-bg;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border: 1px solid $gray-lighter;
+}
 
 .course-content ul.topics li.section, .course-content ul.weeks li.section {
     padding-top: 4rem;
@@ -306,7 +314,6 @@ div#learningcontent {
 }
 
 #page-course-view-topics .course-content ul.topics li.section:hover {
-  //box-shadow: 0 7px 14px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
   background-color: $gray-lightest;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
@@ -318,9 +325,21 @@ div#learningcontent {
 }
 
 #page-course-view-weeks .course-content ul.weeks li.section:hover {
-  //box-shadow: 0 7px 14px rgba(0,0,0,0.25), 0 5px 5px rgba(0,0,0,0.22);
   background-color: $gray-lightest;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.section li.activity {
+    padding: 7px;
+    border-radius: 5px;
+}
+
+.section li.activity:hover {
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    background-color: $activityhover;
+}
+.editing .section .activity:hover, .editing .section .activity.action-menu-shown {
+    background-color: $activityhover;
 }
 
 body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-size:cover; background-position:center;}
@@ -356,6 +375,8 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
     color: $body-color !important;
     background-color: $footer-bg !important;
 }
+
+
 
 
 /*Special thanks to Shaun Daubney (Theme Aardvark)

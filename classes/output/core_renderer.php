@@ -69,7 +69,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $html .= html_writer::start_div('card-block');
         if (!$PAGE->theme->settings->coursemanagementtoggle) {
             $html .= html_writer::div($this->context_header_settings_menu(), 'pull-xs-right context-header-settings-menu');
-        } elseif (ISSET($COURSE->id) && $COURSE->id == 1) {
+        } elseif (isset($COURSE->id) && $COURSE->id == 1) {
             $html .= html_writer::div($this->context_header_settings_menu(), 'pull-xs-right context-header-settings-menu');
         }
         $html .= html_writer::start_div('pull-xs-left');
@@ -259,7 +259,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $content = '';
         foreach ($menu->get_children() as $item) {
             $context = $item->export_for_template($this);
-            $content .= $this->render_from_template('core/custom_menu_item', $context);
+            $content .= $this->render_from_template('theme_fordson/activitygroups', $context);
         }
 
         return $content;
@@ -272,7 +272,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
 
         if (isloggedin() && !isguestuser()) {
             if (!empty($PAGE->theme->settings->activitymenu)) {
-                    if (ISSET($COURSE->id) && $COURSE->id > 1) {
+                    if (isset($COURSE->id) && $COURSE->id > 1) {
                         $branchtitle = get_string('thiscourse', 'theme_fordson');
                         $branchlabel = $branchtitle;
                         $branchurl = new moodle_url('#');
@@ -406,7 +406,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $marketing1buttontext  = (empty($PAGE->theme->settings->marketing1buttontext)) ? false : format_text($PAGE->theme->settings->marketing1buttontext);
         $marketing1buttonurl  = (empty($PAGE->theme->settings->marketing1buttonurl)) ? false : $PAGE->theme->settings->marketing1buttonurl;
         $marketing1target  = (empty($PAGE->theme->settings->marketing1target)) ? false : $PAGE->theme->settings->marketing1target;
-        $marketing1icon  = (empty($PAGE->theme->settings->marketing1icon)) ? false : $PAGE->theme->settings->marketing1icon;
         $marketing1image = (empty($PAGE->theme->settings->marketing1image)) ? false : 'marketing1image';
         
         $hasmarketing2  = (empty($PAGE->theme->settings->marketing2 && $PAGE->theme->settings->togglemarketing == 1)) ? false : format_text($PAGE->theme->settings->marketing2);
@@ -414,7 +413,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $marketing2buttontext  = (empty($PAGE->theme->settings->marketing2buttontext)) ? false : format_text($PAGE->theme->settings->marketing2buttontext);
         $marketing2buttonurl  = (empty($PAGE->theme->settings->marketing2buttonurl)) ? false : $PAGE->theme->settings->marketing2buttonurl;
         $marketing2target  = (empty($PAGE->theme->settings->marketing2target)) ? false : $PAGE->theme->settings->marketing2target;
-        $marketing2icon  = (empty($PAGE->theme->settings->marketing2icon)) ? false : $PAGE->theme->settings->marketing2icon;
         $marketing2image = (empty($PAGE->theme->settings->marketing2image)) ? false : 'marketing2image';
 
         $hasmarketing3  = (empty($PAGE->theme->settings->marketing3 && $PAGE->theme->settings->togglemarketing == 1)) ? false : format_text($PAGE->theme->settings->marketing3);
@@ -422,7 +420,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $marketing3buttontext  = (empty($PAGE->theme->settings->marketing3buttontext)) ? false : format_text($PAGE->theme->settings->marketing3buttontext);
         $marketing3buttonurl  = (empty($PAGE->theme->settings->marketing3buttonurl)) ? false : $PAGE->theme->settings->marketing3buttonurl;
         $marketing3target  = (empty($PAGE->theme->settings->marketing3target)) ? false : $PAGE->theme->settings->marketing3target;
-        $marketing3icon  = (empty($PAGE->theme->settings->marketing3icon)) ? false : $PAGE->theme->settings->marketing3icon;
         $marketing3image = (empty($PAGE->theme->settings->marketing3image)) ? false : 'marketing3image';
 
         $hasmarketing4  = (empty($PAGE->theme->settings->marketing4 && $PAGE->theme->settings->togglemarketing == 1)) ? false : format_text($PAGE->theme->settings->marketing4);
@@ -430,7 +427,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $marketing4buttontext  = (empty($PAGE->theme->settings->marketing4buttontext)) ? false : format_text($PAGE->theme->settings->marketing4buttontext);
         $marketing4buttonurl  = (empty($PAGE->theme->settings->marketing4buttonurl)) ? false : $PAGE->theme->settings->marketing4buttonurl;
         $marketing4target  = (empty($PAGE->theme->settings->marketing4target)) ? false : $PAGE->theme->settings->marketing4target;
-        $marketing4icon  = (empty($PAGE->theme->settings->marketing4icon)) ? false : $PAGE->theme->settings->marketing4icon;
         $marketing4image = (empty($PAGE->theme->settings->marketing4image)) ? false : 'marketing4image'; 
 
         $hasmarketing5  = (empty($PAGE->theme->settings->marketing5 && $PAGE->theme->settings->togglemarketing == 1)) ? false : format_text($PAGE->theme->settings->marketing5);
@@ -438,7 +434,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $marketing5buttontext  = (empty($PAGE->theme->settings->marketing5buttontext)) ? false : format_text($PAGE->theme->settings->marketing5buttontext);
         $marketing5buttonurl  = (empty($PAGE->theme->settings->marketing5buttonurl)) ? false : $PAGE->theme->settings->marketing5buttonurl;
         $marketing5target  = (empty($PAGE->theme->settings->marketing5target)) ? false : $PAGE->theme->settings->marketing5target;
-        $marketing5icon  = (empty($PAGE->theme->settings->marketing5icon)) ? false : $PAGE->theme->settings->marketing5icon;
         $marketing5image = (empty($PAGE->theme->settings->marketing5image)) ? false : 'marketing5image';
 
         $hasmarketing6  = (empty($PAGE->theme->settings->marketing6 && $PAGE->theme->settings->togglemarketing == 1)) ? false : format_text($PAGE->theme->settings->marketing6);
@@ -446,7 +441,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $marketing6buttontext  = (empty($PAGE->theme->settings->marketing6buttontext)) ? false : format_text($PAGE->theme->settings->marketing6buttontext);
         $marketing6buttonurl  = (empty($PAGE->theme->settings->marketing6buttonurl)) ? false : $PAGE->theme->settings->marketing6buttonurl;
         $marketing6target  = (empty($PAGE->theme->settings->marketing6target)) ? false : $PAGE->theme->settings->marketing6target;
-        $marketing6icon  = (empty($PAGE->theme->settings->marketing6icon)) ? false : $PAGE->theme->settings->marketing6icon;
         $marketing6image = (empty($PAGE->theme->settings->marketing6image)) ? false : 'marketing6image';
 
         
@@ -469,12 +463,12 @@ class core_renderer extends \theme_boost\output\core_renderer {
 
             'hasmarkettiles' => ($hasmarketing1 || $hasmarketing2 || $hasmarketing3 || $hasmarketing4 || $hasmarketing5 || $hasmarketing6) ? true : false,
             'markettiles' => array(
-                array('hastile' => $hasmarketing1, 'tileicon' => $marketing1icon, 'tileimage' => $marketing1image, 'content' => $marketing1content, 'title' => $hasmarketing1, 'button' => "<a href = '$marketing1buttonurl' title = '$marketing1buttontext' alt='$marketing1buttontext' class='btn btn-primary' target='$marketing1target'> $marketing1buttontext </a>"),
-                array('hastile' => $hasmarketing2, 'tileicon' => $marketing2icon, 'tileimage' => $marketing2image, 'content' => $marketing2content, 'title' => $hasmarketing2, 'button' => "<a href = '$marketing2buttonurl' title = '$marketing2buttontext' alt='$marketing2buttontext' class='btn btn-primary' target='$marketing2target'> $marketing2buttontext </a>"),
-                array('hastile' => $hasmarketing3, 'tileicon' => $marketing3icon, 'tileimage' => $marketing3image, 'content' => $marketing3content, 'title' => $hasmarketing3, 'button' => "<a href = '$marketing3buttonurl' title = '$marketing3buttontext' alt='$marketing3buttontext' class='btn btn-primary' target='$marketing3target'> $marketing3buttontext </a>"),
-                array('hastile' => $hasmarketing4, 'tileicon' => $marketing4icon, 'tileimage' => $marketing4image, 'content' => $marketing4content, 'title' => $hasmarketing4, 'button' => "<a href = '$marketing4buttonurl' title = '$marketing4buttontext' alt='$marketing4buttontext' class='btn btn-primary' target='$marketing4target'> $marketing4buttontext </a>"),
-                array('hastile' => $hasmarketing5, 'tileicon' => $marketing5icon, 'tileimage' => $marketing5image, 'content' => $marketing5content, 'title' => $hasmarketing5, 'button' => "<a href = '$marketing5buttonurl' title = '$marketing5buttontext' alt='$marketing5buttontext' class='btn btn-primary' target='$marketing5target'> $marketing5buttontext </a>"),
-                array('hastile' => $hasmarketing6, 'tileicon' => $marketing6icon, 'tileimage' => $marketing6image, 'content' => $marketing6content, 'title' => $hasmarketing6, 'button' => "<a href = '$marketing6buttonurl' title = '$marketing6buttontext' alt='$marketing6buttontext' class='btn btn-primary' target='$marketing6target'> $marketing6buttontext </a>"),
+                array('hastile' => $hasmarketing1, 'tileimage' => $marketing1image, 'content' => $marketing1content, 'title' => $hasmarketing1, 'button' => "<a href = '$marketing1buttonurl' title = '$marketing1buttontext' alt='$marketing1buttontext' class='btn btn-primary' target='$marketing1target'> $marketing1buttontext </a>"),
+                array('hastile' => $hasmarketing2, 'tileimage' => $marketing2image, 'content' => $marketing2content, 'title' => $hasmarketing2, 'button' => "<a href = '$marketing2buttonurl' title = '$marketing2buttontext' alt='$marketing2buttontext' class='btn btn-primary' target='$marketing2target'> $marketing2buttontext </a>"),
+                array('hastile' => $hasmarketing3, 'tileimage' => $marketing3image, 'content' => $marketing3content, 'title' => $hasmarketing3, 'button' => "<a href = '$marketing3buttonurl' title = '$marketing3buttontext' alt='$marketing3buttontext' class='btn btn-primary' target='$marketing3target'> $marketing3buttontext </a>"),
+                array('hastile' => $hasmarketing4, 'tileimage' => $marketing4image, 'content' => $marketing4content, 'title' => $hasmarketing4, 'button' => "<a href = '$marketing4buttonurl' title = '$marketing4buttontext' alt='$marketing4buttontext' class='btn btn-primary' target='$marketing4target'> $marketing4buttontext </a>"),
+                array('hastile' => $hasmarketing5, 'tileimage' => $marketing5image, 'content' => $marketing5content, 'title' => $hasmarketing5, 'button' => "<a href = '$marketing5buttonurl' title = '$marketing5buttontext' alt='$marketing5buttontext' class='btn btn-primary' target='$marketing5target'> $marketing5buttontext </a>"),
+                array('hastile' => $hasmarketing6, 'tileimage' => $marketing6image, 'content' => $marketing6content, 'title' => $hasmarketing6, 'button' => "<a href = '$marketing6buttonurl' title = '$marketing6buttontext' alt='$marketing6buttontext' class='btn btn-primary' target='$marketing6target'> $marketing6buttontext </a>"),
             ),
 
             // If any of the above social networks are true, sets this to true.
@@ -512,7 +506,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $marketing1buttontext  = (empty($PAGE->theme->settings->marketing1buttontext)) ? false : format_text($PAGE->theme->settings->marketing1buttontext);
         $marketing1buttonurl  = (empty($PAGE->theme->settings->marketing1buttonurl)) ? false : $PAGE->theme->settings->marketing1buttonurl;
         $marketing1target  = (empty($PAGE->theme->settings->marketing1target)) ? false : $PAGE->theme->settings->marketing1target;
-        $marketing1icon  = (empty($PAGE->theme->settings->marketing1icon)) ? false : $PAGE->theme->settings->marketing1icon;
         $marketing1image = (empty($PAGE->theme->settings->marketing1image)) ? false : 'marketing1image';
         
         $hasmarketing2  = (empty($PAGE->theme->settings->marketing2 && $PAGE->theme->settings->togglemarketing == 2)) ? false : format_text($PAGE->theme->settings->marketing2);
@@ -520,7 +513,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $marketing2buttontext  = (empty($PAGE->theme->settings->marketing2buttontext)) ? false : format_text($PAGE->theme->settings->marketing2buttontext);
         $marketing2buttonurl  = (empty($PAGE->theme->settings->marketing2buttonurl)) ? false : $PAGE->theme->settings->marketing2buttonurl;
         $marketing2target  = (empty($PAGE->theme->settings->marketing2target)) ? false : $PAGE->theme->settings->marketing2target;
-        $marketing2icon  = (empty($PAGE->theme->settings->marketing2icon)) ? false : $PAGE->theme->settings->marketing2icon;
         $marketing2image = (empty($PAGE->theme->settings->marketing2image)) ? false : 'marketing2image';
 
         $hasmarketing3  = (empty($PAGE->theme->settings->marketing3 && $PAGE->theme->settings->togglemarketing == 2)) ? false : format_text($PAGE->theme->settings->marketing3);
@@ -528,7 +520,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $marketing3buttontext  = (empty($PAGE->theme->settings->marketing3buttontext)) ? false : format_text($PAGE->theme->settings->marketing3buttontext);
         $marketing3buttonurl  = (empty($PAGE->theme->settings->marketing3buttonurl)) ? false : $PAGE->theme->settings->marketing3buttonurl;
         $marketing3target  = (empty($PAGE->theme->settings->marketing3target)) ? false : $PAGE->theme->settings->marketing3target;
-        $marketing3icon  = (empty($PAGE->theme->settings->marketing3icon)) ? false : $PAGE->theme->settings->marketing3icon;
         $marketing3image = (empty($PAGE->theme->settings->marketing3image)) ? false : 'marketing3image';
 
         $hasmarketing4  = (empty($PAGE->theme->settings->marketing4 && $PAGE->theme->settings->togglemarketing == 2)) ? false : format_text($PAGE->theme->settings->marketing4);
@@ -536,7 +527,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $marketing4buttontext  = (empty($PAGE->theme->settings->marketing4buttontext)) ? false : format_text($PAGE->theme->settings->marketing4buttontext);
         $marketing4buttonurl  = (empty($PAGE->theme->settings->marketing4buttonurl)) ? false : $PAGE->theme->settings->marketing4buttonurl;
         $marketing4target  = (empty($PAGE->theme->settings->marketing4target)) ? false : $PAGE->theme->settings->marketing4target;
-        $marketing4icon  = (empty($PAGE->theme->settings->marketing4icon)) ? false : $PAGE->theme->settings->marketing4icon;
         $marketing4image = (empty($PAGE->theme->settings->marketing4image)) ? false : 'marketing4image'; 
 
         $hasmarketing5  = (empty($PAGE->theme->settings->marketing5 && $PAGE->theme->settings->togglemarketing == 2)) ? false : format_text($PAGE->theme->settings->marketing5);
@@ -544,7 +534,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $marketing5buttontext  = (empty($PAGE->theme->settings->marketing5buttontext)) ? false : format_text($PAGE->theme->settings->marketing5buttontext);
         $marketing5buttonurl  = (empty($PAGE->theme->settings->marketing5buttonurl)) ? false : $PAGE->theme->settings->marketing5buttonurl;
         $marketing5target  = (empty($PAGE->theme->settings->marketing5target)) ? false : $PAGE->theme->settings->marketing5target;
-        $marketing5icon  = (empty($PAGE->theme->settings->marketing5icon)) ? false : $PAGE->theme->settings->marketing5icon;
         $marketing5image = (empty($PAGE->theme->settings->marketing5image)) ? false : 'marketing5image';
 
         $hasmarketing6  = (empty($PAGE->theme->settings->marketing6 && $PAGE->theme->settings->togglemarketing == 2)) ? false : format_text($PAGE->theme->settings->marketing6);
@@ -552,7 +541,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $marketing6buttontext  = (empty($PAGE->theme->settings->marketing6buttontext)) ? false : format_text($PAGE->theme->settings->marketing6buttontext);
         $marketing6buttonurl  = (empty($PAGE->theme->settings->marketing6buttonurl)) ? false : $PAGE->theme->settings->marketing6buttonurl;
         $marketing6target  = (empty($PAGE->theme->settings->marketing6target)) ? false : $PAGE->theme->settings->marketing6target;
-        $marketing6icon  = (empty($PAGE->theme->settings->marketing6icon)) ? false : $PAGE->theme->settings->marketing6icon;
         $marketing6image = (empty($PAGE->theme->settings->marketing6image)) ? false : 'marketing6image';
 
         $fp_marketingtiles = [
@@ -560,12 +548,12 @@ class core_renderer extends \theme_boost\output\core_renderer {
             'hasmarkettiles' => ($hasmarketing1 || $hasmarketing2 || $hasmarketing3 || $hasmarketing4 || $hasmarketing5 || $hasmarketing6) ? true : false,
 
             'markettiles' => array(
-                array('hastile' => $hasmarketing1, 'tileicon' => $marketing1icon, 'tileimage' => $marketing1image, 'content' => $marketing1content, 'title' => $hasmarketing1, 'button' => "<a href = '$marketing1buttonurl' title = '$marketing1buttontext' alt='$marketing1buttontext' class='btn btn-primary' target='$marketing1target'> $marketing1buttontext </a>"),
-                array('hastile' => $hasmarketing2, 'tileicon' => $marketing2icon, 'tileimage' => $marketing2image, 'content' => $marketing2content, 'title' => $hasmarketing2, 'button' => "<a href = '$marketing2buttonurl' title = '$marketing2buttontext' alt='$marketing2buttontext' class='btn btn-primary' target='$marketing2target'> $marketing2buttontext </a>"),
-                array('hastile' => $hasmarketing3, 'tileicon' => $marketing3icon, 'tileimage' => $marketing3image, 'content' => $marketing3content, 'title' => $hasmarketing3, 'button' => "<a href = '$marketing3buttonurl' title = '$marketing3buttontext' alt='$marketing3buttontext' class='btn btn-primary' target='$marketing3target'> $marketing3buttontext </a>"),
-                array('hastile' => $hasmarketing4, 'tileicon' => $marketing4icon, 'tileimage' => $marketing4image, 'content' => $marketing4content, 'title' => $hasmarketing4, 'button' => "<a href = '$marketing4buttonurl' title = '$marketing4buttontext' alt='$marketing4buttontext' class='btn btn-primary' target='$marketing4target'> $marketing4buttontext </a>"),
-                array('hastile' => $hasmarketing5, 'tileicon' => $marketing5icon, 'tileimage' => $marketing5image, 'content' => $marketing5content, 'title' => $hasmarketing5, 'button' => "<a href = '$marketing5buttonurl' title = '$marketing5buttontext' alt='$marketing5buttontext' class='btn btn-primary' target='$marketing5target'> $marketing5buttontext </a>"),
-                array('hastile' => $hasmarketing6, 'tileicon' => $marketing6icon, 'tileimage' => $marketing6image, 'content' => $marketing6content, 'title' => $hasmarketing6, 'button' => "<a href = '$marketing6buttonurl' title = '$marketing6buttontext' alt='$marketing6buttontext' class='btn btn-primary' target='$marketing6target'> $marketing6buttontext </a>"),
+                array('hastile' => $hasmarketing1, 'tileimage' => $marketing1image, 'content' => $marketing1content, 'title' => $hasmarketing1, 'button' => "<a href = '$marketing1buttonurl' title = '$marketing1buttontext' alt='$marketing1buttontext' class='btn btn-primary' target='$marketing1target'> $marketing1buttontext </a>"),
+                array('hastile' => $hasmarketing2, 'tileimage' => $marketing2image, 'content' => $marketing2content, 'title' => $hasmarketing2, 'button' => "<a href = '$marketing2buttonurl' title = '$marketing2buttontext' alt='$marketing2buttontext' class='btn btn-primary' target='$marketing2target'> $marketing2buttontext </a>"),
+                array('hastile' => $hasmarketing3, 'tileimage' => $marketing3image, 'content' => $marketing3content, 'title' => $hasmarketing3, 'button' => "<a href = '$marketing3buttonurl' title = '$marketing3buttontext' alt='$marketing3buttontext' class='btn btn-primary' target='$marketing3target'> $marketing3buttontext </a>"),
+                array('hastile' => $hasmarketing4, 'tileimage' => $marketing4image, 'content' => $marketing4content, 'title' => $hasmarketing4, 'button' => "<a href = '$marketing4buttonurl' title = '$marketing4buttontext' alt='$marketing4buttontext' class='btn btn-primary' target='$marketing4target'> $marketing4buttontext </a>"),
+                array('hastile' => $hasmarketing5, 'tileimage' => $marketing5image, 'content' => $marketing5content, 'title' => $hasmarketing5, 'button' => "<a href = '$marketing5buttonurl' title = '$marketing5buttontext' alt='$marketing5buttontext' class='btn btn-primary' target='$marketing5target'> $marketing5buttontext </a>"),
+                array('hastile' => $hasmarketing6, 'tileimage' => $marketing6image, 'content' => $marketing6content, 'title' => $hasmarketing6, 'button' => "<a href = '$marketing6buttonurl' title = '$marketing6buttontext' alt='$marketing6buttontext' class='btn btn-primary' target='$marketing6target'> $marketing6buttontext </a>"),
             ),
         ];
 
@@ -604,12 +592,27 @@ class core_renderer extends \theme_boost\output\core_renderer {
     }
 
     public function teacherdash() {
-        global $PAGE, $COURSE, $CFG, $DB;
-
+        global $PAGE, $COURSE, $CFG, $DB, $OUTPUT;
+        require_once($CFG->dirroot.'/completion/classes/progress.php');
+        $togglebutton = '';
+        $togglebuttonstudent = '';
+        $hasteacherdash = '';
+        $hasstudentdash = '';
+        if (isloggedin() && ISSET($COURSE->id) && $COURSE->id > 1) {
+            $course = $this->page->course;
+            $context = context_course::instance($course->id);
+            $hasteacherdash = has_capability('moodle/course:viewhiddenactivities', $context);
+            $hasstudentdash = !has_capability('moodle/course:viewhiddenactivities', $context);
+            if (has_capability('moodle/course:viewhiddenactivities', $context)) {
+                $togglebutton = get_string('coursemanagementbutton', 'theme_fordson');
+            } else {
+                $togglebuttonstudent = get_string('studentdashbutton', 'theme_fordson');
+            }
+        }
         $context = $this->page->context;
         $haseditcog = $PAGE->theme->settings->courseeditingcog;
         $editcog = html_writer::div($this->context_header_settings_menu(), 'pull-xs-right context-header-settings-menu');
-        $thiscourse = html_writer::tag('div', $this->thiscourse_menu(), array('class' => 'thiscourse'));
+        $thiscourse = $this->thiscourse_menu();
         $showincourseonly = isset($COURSE->id) && $COURSE->id > 1;
         $globalhaseasyenrollment = enrol_get_plugin('easy');
         $coursehaseasyenrollment = '';
@@ -619,7 +622,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         }
         //link catagories
         $haspermission = has_capability('enrol/category:config', $context) && $PAGE->theme->settings->coursemanagementtoggle && isset($COURSE->id) && $COURSE->id > 1;
-        $togglebutton = get_string('coursemanagementbutton', 'theme_fordson');
+
         $userlinks = get_string('userlinks', 'theme_fordson');
         $userlinksdesc = get_string('userlinks_desc', 'theme_fordson');
         $qbank = get_string('qbank', 'theme_fordson');
@@ -629,9 +632,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $coursemanage = get_string('coursemanage', 'theme_fordson');
         $coursemanagedesc = get_string('coursemanage_desc', 'theme_fordson');
         $coursemanagementmessage = (empty($PAGE->theme->settings->coursemanagementtextbox)) ? false : format_text($PAGE->theme->settings->coursemanagementtextbox);
+        $studentdashboardtextbox = (empty($PAGE->theme->settings->studentdashboardtextbox)) ? false : format_text($PAGE->theme->settings->studentdashboardtextbox);
 
         //user links
-        
         if($coursehaseasyenrollment && isset($COURSE->id) && $COURSE->id > 1){
             $easycodetitle = get_string('header_coursecodes', 'enrol_easy');
             $easycodelink = new moodle_url('/enrol/editinstance.php', array('courseid' => $PAGE->course->id, 'id' => $easyenrollinstance->id, 'type' =>'easy'));
@@ -688,6 +691,74 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $filtertitle = get_string('filtersettings', 'filters');
         $filterlink = new moodle_url('/filter/manage.php', array('contextid' => $PAGE->context->id));
 
+        //Student Dash
+            if (\core_completion\progress::get_course_progress_percentage($PAGE->course)) {
+                $comppercent = \core_completion\progress::get_course_progress_percentage($PAGE->course);
+                $hasprogress = true;
+            } else {
+                $comppercent = 0;
+                $hasprogress = false;
+            }
+            $progresschartcontext = [
+                'hasprogress' => $hasprogress,
+                'progress' => $comppercent
+            ];
+            $progresschart = $this->render_from_template('block_myoverview/progress-chart', $progresschartcontext);
+            $gradeslink = new moodle_url('/grade/report/user/index.php', array('id' => $PAGE->course->id));
+
+            $hascourseinfogroup = array (
+                'title' => get_string('courseinfo', 'theme_fordson'),
+                'icon' => 'map'
+            );
+            $summary = theme_fordson_strip_html_tags($COURSE->summary);
+            $summary = theme_fordson_course_trim_char($COURSE->summary, 300);
+            $courseinfo = array (
+                array(
+                    'content' => $summary,
+                )
+            );
+            $hascoursestaff = array (
+                'title' => get_string('coursestaff', 'theme_fordson'),
+                'icon' => 'users'
+            );
+            $courseteachers = array();
+            $courseother = array();
+            $role = $DB->get_record('role', array('shortname' => 'editingteacher'));
+            $context = context_course::instance($PAGE->course->id);
+            $teachers = get_role_users($role->id, $context, false,
+                'u.id, u.firstname, u.middlename, u.lastname, u.alternatename,
+                u.firstnamephonetic, u.lastnamephonetic, u.email, u.picture,
+                u.imagealt');
+
+            foreach ($teachers as $staff) {
+                $picture = $OUTPUT->user_picture($staff, array('size' => 50));
+                $courseteachers[] = array (
+                    'name' => $staff->firstname . ' ' . $staff->lastname . ' ' . $staff->alternatename,
+                    'email' => $staff->email,
+                    'picture' => $picture,
+                );
+            }
+            $role = $DB->get_record('role', array('shortname' => 'teacher'));
+            $context = context_course::instance($PAGE->course->id);
+            $teachers = get_role_users($role->id, $context, false,
+                'u.id, u.firstname, u.middlename, u.lastname, u.alternatename,
+                u.firstnamephonetic, u.lastnamephonetic, u.email, u.picture,
+                u.imagealt');
+            foreach ($teachers as $staff) {
+                $picture = $OUTPUT->user_picture($staff, array('size' => 50));
+                $courseother = array (
+                    'name' => $staff->firstname . ' ' . $staff->lastname,
+                    'email' => $staff->email,
+                    'picture' => $picture
+                );
+            }
+
+            $activitylinkstitle = get_string('activitylinkstitle', 'theme_fordson');
+            $activitylinkstitle_desc = get_string('activitylinkstitle_desc', 'theme_fordson');
+            $mygradestext = get_string('mygradestext', 'theme_fordson');
+            $myprogresstext = get_string('myprogresstext', 'theme_fordson');
+
+
         $dashlinks = [
         'showincourseonly' =>$showincourseonly,
         'haspermission' => $haspermission,
@@ -695,15 +766,30 @@ class core_renderer extends \theme_boost\output\core_renderer {
         'haseditcog' => $haseditcog,
         'editcog' => $editcog,
         'togglebutton' => $togglebutton,
+        'togglebuttonstudent' => $togglebuttonstudent,
         'userlinkstitle' => $userlinks,
         'userlinksdesc' => $userlinksdesc,
         'qbanktitle' => $qbank,
+        'activitylinkstitle' => $activitylinkstitle,
+        'activitylinkstitle_desc' => $activitylinkstitle_desc,
         'qbankdesc' => $qbankdesc,
         'badgestitle' => $badges,
         'badgesdesc' => $badgesdesc,
         'coursemanagetitle' => $coursemanage,
         'coursemanagedesc' => $coursemanagedesc,
         'coursemanagementmessage' =>$coursemanagementmessage,
+        'progresschart' => $progresschart,
+        'gradeslink' => $gradeslink,
+        'hascourseinfogroup' => $hascourseinfogroup,
+        'courseinfo' => $courseinfo,
+        'hascoursestaffgroup' => $hascoursestaff,
+        'courseteachers' => $courseteachers,
+        'courseother' => $courseother,
+        'myprogresstext' => $myprogresstext,
+        'mygradestext' => $mygradestext,
+        'studentdashboardtextbox' => $studentdashboardtextbox,
+        'hasteacherdash' => $hasteacherdash,
+        'hasstudentdash' => $hasstudentdash,
 
         'dashlinks' => array(
                 array('hasuserlinks' => $gradestitle, 'title' => $gradestitle, 'url' => $gradeslink),
@@ -734,8 +820,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         if ($globalhaseasyenrollment && $coursehaseasyenrollment) {
             $dashlinks['dashlinks'][] = array('haseasyenrollment' => $coursehaseasyenrollment, 'title' => $easycodetitle, 'url' => $easycodelink);
 
-        }
-        
+        } 
             return $this->render_from_template('theme_fordson/teacherdash', $dashlinks );
         
     }

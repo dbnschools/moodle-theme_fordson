@@ -110,7 +110,7 @@ $string['backgroundimage_desc'] = 'Background image for pages';
 $string['loginimage'] = 'Default Login image';
 $string['loginimage_desc'] = 'Background image for login page';
 $string['learningcontentpadding'] = 'Learning Content Spacing';
-$string['learningcontentpadding_desc'] = 'This controls how much space between the top of the page and course content. Generally, you want this to be less than the height of the header image.';
+$string['learningcontentpadding_desc'] = 'This controls how much space between the top of the page and the main course content. Generally, you want this to be less than the height of the header image.';
 $string['showcourseheaderimage'] = 'Show Course Images';
 $string['showcourseheaderimage_desc'] = 'Allow teachers to customize the course header image by uploading an image file into course settings.';
 $string['headerlogo'] = 'Header Logo';
@@ -187,9 +187,9 @@ $string['searchtoggle_desc'] = 'Check this in order to show the homepage searchb
 $string['slidetextbox'] = 'Slide Textbox';
 $string['slidetextbox_desc'] = 'This textbox content will be displayed when the Slide Button is pressed.';
 $string['sectionicon'] = 'Course Section Icon';
-$string['sectionicon_desc'] = 'This allows you to change the icon that appears next to each section in a course.  These are Font-Awesome icons. These appear in the following presets: Default and Evolve-D.';
+$string['sectionicon_desc'] = 'This allows you to change the icon that appears next to each topic/week in a course.  These are Font-Awesome icons.';
 $string['headericon'] = 'Header Title Icon';
-$string['headericon_desc'] = 'This allows you to change the icon that appears in the header area next to the page title. These are Font-Awesome icons. These appear in the following presets: Default and Evolve-D.';
+$string['headericon_desc'] = 'This allows you to change the icon that appears in the header area next to the page title. These are Font-Awesome icons.';
 $string['enablefrontpageavailablecoursebox'] = 'Enable Enhanced Course Display';
 $string['enablefrontpageavailablecoursebox_desc'] = 'Enhanced Course Display will display courses as tiles in a grid and use icons in a grid view for course categories. To use Moodle default presentation uncheck this option.';
 $string['courseboxheight'] = 'Frontpage Courses Tile Height';
@@ -206,7 +206,7 @@ $string['dashactivityoverview'] = 'ACTIVITIES OVERVIEW';
 $string['blockwidthfordson'] = 'Block Column Width';
 $string['blockwidthfordson_desc'] = 'Adjust the width of the block column.';
 
-//teacher dashboard slider
+//teacher and student dashboard slider
 $string['userlinks'] = 'User Links';
 $string['userlinks_desc'] = 'Manage your students';
 $string['qbank'] = 'Question Bank';
@@ -216,7 +216,13 @@ $string['badges_desc'] = 'Award your students';
 $string['coursemanage'] = 'Course Settings';
 $string['coursemanage_desc'] = 'Manage your entire course';
 $string['coursemanagementbutton'] = 'Course Management';
-
+$string['studentdashbutton'] = 'This Course';
+$string['courseinfo'] = 'Course Description';
+$string['coursestaff'] = 'Course Teachers';
+$string['activitylinkstitle'] = 'Activities';
+$string['activitylinkstitle_desc'] = 'View All Activities in Course';
+$string['myprogresstext'] = 'My Progress';
+$string['mygradestext'] = 'My Grades';
 
 // Menu Settings
 $string['menusettings'] = 'Menu settings';
@@ -224,7 +230,7 @@ $string['thiscourse'] = 'This Course';
 $string['headerimagepadding'] = 'Header Image Height';
 $string['headerimagepadding_desc'] = 'Control the padding and height of the header image for courses.';
 $string['activitymenu'] = 'Show This Course Drop Down Menu';
-$string['activitymenu_desc'] = 'Show the This Course drop down menu.  This menu appears next to the breadcrumbs and will display a listing of all activities for the student.  You can also customize the menu by clicking on the menu items below to control what will appear.';
+$string['activitymenu_desc'] = 'Show the This Course drop down menu.  This menu displays a grouped list of all activities for the student.';
 
 $string['coursemanagementinfo'] = 'Course Management Panel Menu';
 $string['coursemanagementinfodesc'] = 'These settings allow you to display and easy to use course management menu for teachers.  The Course Management Menu now includes the This Course Drop-down, a sliding Course Admin panel, and the ability to include the default Moodle Course Editing Cog.';
@@ -232,10 +238,12 @@ $string['coursemanagementtoggle'] = 'Show Course Management Panel';
 $string['coursemanagementtoggle_desc'] = 'This displays an easy to use sliding panel for teachers to manage their course with easy to find links to important areas of the course.';
 $string['coursemanagementtextbox'] = 'Course Management Message';
 $string['coursemanagementtextbox_desc'] = 'Add a message for teachers in the course management panel on every course page.';
+$string['studentdashboardtextbox'] = 'Student Dashboard Message';
+$string['studentdashboardtextbox_desc'] = 'Add a message for students in the student dashboard panel on every course page.';
 $string['courseeditingcog'] = 'Show Default Course Settings Edit';
 $string['courseeditingcog_desc'] = 'If using the Course Management Panel you might want to hide the Moodle Course Editing Cog.';
 
-$string['setting_removenodesheading'] = 'Remove Menu Items from the Nav Drawer';
+$string['setting_removenodesheading'] = 'Customize the Nav Drawer';
 $string['setting_removenodesperformancehint'] = 'Technically, this is done by setting the Menu Item\'s showinflatnavigation attribute to false. Thus, the node will only be hidden from the nav drawer, but it will remain in the navigation tree and can still be accessed by other parts of Moodle.';
 $string['setting_removecalendarnode'] = 'Remove "Calendar" Menu Item';
 $string['setting_removecalendarnode_desc'] = 'Enabling this setting will remove the "Calendar" Menu Item from Boost\'s nav drawer.';

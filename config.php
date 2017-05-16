@@ -40,7 +40,7 @@ $THEME->parents = ['boost'];
  * to generate dynamically from the scss presets and settings and is not
  * used by Moodle's default editor (Atto).
  */
-$THEME->sheets = array('font-awesome');
+$THEME->sheets = [''];
 $THEME->editor_sheets = [''];
 $THEME->layouts = [
     // The site home page.
@@ -73,15 +73,18 @@ $THEME->scss = function($theme) {
     return theme_fordson_get_main_scss_content($theme);
 };
 
-// Call css/scss processing functions and renderers.
-$THEME->csstreepostprocessor = 'theme_fordson_css_tree_post_processor';
-$THEME->extrascsscallback = 'theme_fordson_get_extra_scss';
-$THEME->prescsscallback = 'theme_fordson_get_pre_scss';
-$THEME->rendererfactory = 'theme_overridden_renderer_factory';
-
 // Additional theme options.
 $THEME->supportscssoptimisation = false;
+
+// Call css/scss processing functions and renderers.
+$THEME->csstreepostprocessor = 'theme_fordson_css_tree_post_processor';
+$THEME->prescsscallback = 'theme_fordson_get_pre_scss';
+$THEME->extrascsscallback = 'theme_fordson_get_extra_scss';
+$THEME->rendererfactory = 'theme_overridden_renderer_factory';
+
+$THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
+//$THEME->iconsystem = \core\output\icon_system::FONTAWESOME;
+
 $THEME->enable_dock = false;
 $THEME->yuicssmodules = array();
 $THEME->requiredblocks = '';
-$THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;

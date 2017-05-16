@@ -4,7 +4,7 @@
 **/
 
 // FORDSON CustomSettings
-$fpstartwrap-bg: #e8eeef !default;
+$fpstartwrap-bg: #FFF !default;
 $fpicon-hover: #bcd5db !default;
 $fpicon-icon: darken($fpicon-hover, 10%) !default;
 $fpicon-colour: #026C87 !default;
@@ -51,7 +51,7 @@ $slideshowheight: 250px !default;
 }
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
 #page.container-fluid {
     padding: 0 6rem !important;
 }
@@ -130,16 +130,13 @@ div#coursecontrols {
     padding: 7px 15px 4px 15px;
     border-top: 5px solid $brand-primary;
     background-color: $card-bg;
+    border-radius: 10px 10px 0px 0px;
 }
-@media screen and (max-width: 450px) {
-    div#coursecontrols {
-        position: initial;
-    }
-    .thiscoursebutton {
-    display:none;
-    }
-}
+
 .teacherdashboard {
+    padding: 1rem;
+}
+.studentdashboard {
     padding: 1rem;
 }
 .teacherdashbutton {
@@ -149,8 +146,12 @@ div#coursecontrols {
     border-radius: $border-radius;
 }
 .teacherdashboard i.dashicon {
-    float:right;
+    float:left;
     padding: 0px 4px;
+}
+.coursestafflisting img.userpicture {
+    margin-right: 0;
+    float: right;
 }
 .thiscoursebutton {
     font-size: 16px;
@@ -176,6 +177,17 @@ div#coursecontrols {
     background-color: darken($card-bg, 5%)
 }
 
+@media screen and (max-width: 576px) {
+    div#coursecontrols {
+        position: initial;
+    }
+    div#coursecontrols {
+    border-radius: 0px 0px 0px 0px;
+    }
+    .enrollcodebutton {
+    display:none;
+    }
+}
 
 /* Slideshow */
 
@@ -406,6 +418,11 @@ form#enrolform_easy button.btn.btn-primary {
     padding: 1rem;
 }
 
+.course-title {
+    padding-top: 1rem;
+}
+
+/*
 .class-box .course-title h4 a:hover {text-decoration: none;}
 
 .class-box .course-title {
@@ -425,13 +442,13 @@ form#enrolform_easy button.btn.btn-primary {
 }
 
 .class-box .course-title:hover:after {transform: scaleX(1); }
+*/
 
 .course-image-view {padding-top:10rem;}
 .dash-course-image-view {padding-top:5rem;}
 
 .class-box .course-summary {
-    padding:1rem;
-    max-height: 7rem;
+    height: 3rem;
     overflow:auto;
     margin-bottom: 1rem;
 }
@@ -481,6 +498,25 @@ form#enrolform_easy button.btn.btn-primary {
     padding-left:3px;
 }
 
+.courseimagecontainer:hover .course-overlay {
+    opacity: 1;
+}
+
+.courseimagecontainer:hover .course-image-view {
+    opacity: 0.3;
+}
+
+.course-overlay {
+    -webkit-transition: .5s ease;
+    -o-transition: .5s ease;
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    left: 40%;
+    font-size: 5rem;
+    margin-top: -8rem;
+    color: $gray-dark;
+}
 
 /** 
 * TIDY UP 

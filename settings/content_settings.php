@@ -27,15 +27,6 @@ defined('MOODLE_INTERNAL') || die();
 
 $page = new admin_settingpage('theme_fordson_content', get_string('contentsettings', 'theme_fordson'));
 
-    // search form toggle on homepage.
-    $name = 'theme_fordson/searchtoggle';
-    $title = get_string('searchtoggle', 'theme_fordson');
-    $description = get_string('searchtoggle_desc', 'theme_fordson');
-    $default = 0;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
     // Frontpage Available Courses enhancement
     $name = 'theme_fordson/enablefrontpageavailablecoursebox';
     $title = get_string('enablefrontpageavailablecoursebox', 'theme_fordson');
@@ -49,7 +40,7 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $name = 'theme_fordson/learningcontentpadding';
     $title = get_string('learningcontentpadding', 'theme_fordson');
     $description = get_string('learningcontentpadding_desc', 'theme_fordson');;
-    $default = '175px';
+    $default = '150px';
     $choices = array(
             '50px' => '50px',
             '75px' => '75px',
