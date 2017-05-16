@@ -513,13 +513,9 @@ form#enrolform_easy button.btn.btn-primary {
     border: 0;
 }
 
-//fixes alignment where group icons appear over edit menu
-.action-menu .menubar .dropdown {
-    float: left;
-}
-
-.course-content ul.topics li.section .left {
-    padding-top: initial;
+//Fix for collapsed topic course format
+body.format-topcoll h3.sectionname:before {
+    display: none;
 }
 
 /* H5P regression fix for editor https://moodle.org/mod/forum/discuss.php?d=347602#p1402801 */

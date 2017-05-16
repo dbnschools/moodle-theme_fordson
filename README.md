@@ -29,6 +29,14 @@ This means when Moodle updates the core Boost theme those changes will be applie
 # Install from Github
 Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
+## Fordson 1.4.6
+* New releases for Fordson on Moodle 3.2 will only be bug fixes.  All new development and features require Moodle 3.3 and components only in Moodle 3.3 such as the new course overview block to help build the student dashboard slider and other features. 
+* Fixed issue with Easy Enrollment integration where Easy Enrollment is installed but not used on a particular course.  This led to an unknown variable issue.
+
+## Fordson 1.4.5
+* Fixed compatibility with collapsed topic course format thanks to Gareth
+* Fixed issue when Easy Enrollment plugin was not installed and the course management panel integration
+
 ## Fordson 1.4.4
 * New integrations with Easy Enrollment plugin: When easy enrollment is activated on a course a new link appears which will show the teacher all their enrollment codes for the course.  This is in the header area just above the Turn Editing on button in the upper right of the course page.
 * Prepped and ready for the release of Easy Enrollment Plugin on github
@@ -43,7 +51,7 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 * fixed responsive issues and the new course management panel menu. 
 * Turn Editing On button is now visible at all times.  Previously it would hide when viewing on a phone but since you can now hide the contextual course editing cog it is important to be able to turn editing on from the button when not accessible from the menu. 
 * Fixed ADA issue with each icon on homepage having the same ID=button.  Thanks Emma Richardson.
-*Fixed HeaderLogo image on small screen sizes.  Thanks Emma Richardson.
+* Fixed HeaderLogo image on small screen sizes.  Thanks Emma Richardson.
  
 
 ## Fordson 1.4.2
@@ -71,7 +79,7 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 * Adjusted some default settings on install.
 
 ## Fordson 1.3.0
-*Customized Nav Drawer - Add and remove items from the Boost navigation drawer.  Ability to have customizations appear on all pages, frontpage only, course pages only. Special thanks to Alexander Bias with https://github.com/moodleuulm/moodle-local_boostnavigation and Carlos Escobedo with https://moodle.org/plugins/local_navigation.  I was able to combine these two plugins to remove default menu items and add new menu items.  Because this is done with a theme we also added a toggle to allow you to determine where the customizations appear.
+* Customized Nav Drawer - Add and remove items from the Boost navigation drawer.  Ability to have customizations appear on all pages, frontpage only, course pages only. Special thanks to Alexander Bias with https://github.com/moodleuulm/moodle-local_boostnavigation and Carlos Escobedo with https://moodle.org/plugins/local_navigation.  I was able to combine these two plugins to remove default menu items and add new menu items.  Because this is done with a theme we also added a toggle to allow you to determine where the customizations appear.
 
 ## Fordson 1.2.9b
 * Revisited and removed entire tag for This Course drop down title.

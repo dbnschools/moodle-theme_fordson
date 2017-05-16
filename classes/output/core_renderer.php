@@ -610,13 +610,15 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $haseditcog = $PAGE->theme->settings->courseeditingcog;
         $editcog = html_writer::div($this->context_header_settings_menu(), 'pull-xs-right context-header-settings-menu');
         $thiscourse = html_writer::tag('div', $this->thiscourse_menu(), array('class' => 'thiscourse'));
-        $showincourseonly = ISSET($COURSE->id) && $COURSE->id > 1;
+        $showincourseonly = isset($COURSE->id) && $COURSE->id > 1;
         $globalhaseasyenrollment = enrol_get_plugin('easy');
-        $coursehaseasyenrollment = $DB->record_exists('enrol', array('courseid' => $COURSE->id, 'enrol' => 'easy'));
-        $easyenrollinstance = $DB->get_record('enrol', array('courseid' => $COURSE->id, 'enrol' => 'easy'));
-
+        $coursehaseasyenrollment = '';
+        if($globalhaseasyenrollment) {
+            $coursehaseasyenrollment = $DB->record_exists('enrol', array('courseid' => $COURSE->id, 'enrol' => 'easy'));
+            $easyenrollinstance = $DB->get_record('enrol', array('courseid' => $COURSE->id, 'enrol' => 'easy'));
+        }
         //link catagories
-        $haspermission = has_capability('enrol/category:config', $context) && $PAGE->theme->settings->coursemanagementtoggle && ISSET($COURSE->id) && $COURSE->id > 1;
+        $haspermission = has_capability('enrol/category:config', $context) && $PAGE->theme->settings->coursemanagementtoggle && isset($COURSE->id) && $COURSE->id > 1;
         $togglebutton = get_string('coursemanagementbutton', 'theme_fordson');
         $userlinks = get_string('userlinks', 'theme_fordson');
         $userlinksdesc = get_string('userlinks_desc', 'theme_fordson');
@@ -629,8 +631,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $coursemanagementmessage = (empty($PAGE->theme->settings->coursemanagementtextbox)) ? false : format_text($PAGE->theme->settings->coursemanagementtextbox);
 
         //user links
-        $easycodetitle = get_string('header_coursecodes', 'enrol_easy');
-        if(ISSET($COURSE->id) && $COURSE->id > 1){
+        
+        if($coursehaseasyenrollment && isset($COURSE->id) && $COURSE->id > 1){
+            $easycodetitle = get_string('header_coursecodes', 'enrol_easy');
             $easycodelink = new moodle_url('/enrol/editinstance.php', array('courseid' => $PAGE->course->id, 'id' => $easyenrollinstance->id, 'type' =>'easy'));
         }
         $gradestitle = get_string('gradesoverview', 'gradereport_overview');
