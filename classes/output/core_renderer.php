@@ -269,28 +269,25 @@ class core_renderer extends \theme_boost\output\core_renderer {
         global $PAGE, $COURSE, $OUTPUT, $CFG;
         $menu = new custom_menu();
         $context = $this->page->context;
+            if (isset($COURSE->id) && $COURSE->id > 1) {
+                $branchtitle = get_string('thiscourse', 'theme_fordson');
+                $branchlabel = $branchtitle;
+                $branchurl = new moodle_url('#');
+                $branch = $menu->add($branchlabel, $branchurl, $branchtitle, 10002);
 
-        if (isloggedin() && !isguestuser()) {
-            
-                    if (isset($COURSE->id) && $COURSE->id > 1) {
-                        $branchtitle = get_string('thiscourse', 'theme_fordson');
-                        $branchlabel = $branchtitle;
-                        $branchurl = new moodle_url('#');
-                        $branch = $menu->add($branchlabel, $branchurl, $branchtitle, 10002);
+                $data = theme_fordson_get_course_activities();
 
-                        $data = theme_fordson_get_course_activities();
+                foreach ($data as $modname => $modfullname) {
+                    if ($modname === 'resources') {
+                        
+                        $branch->add($modfullname, new moodle_url('/course/resources.php', array('id' => $PAGE->course->id)));
+                    } else {
 
-                        foreach ($data as $modname => $modfullname) {
-                            if ($modname === 'resources') {
-                                
-                                $branch->add($modfullname, new moodle_url('/course/resources.php', array('id' => $PAGE->course->id)));
-                            } else {
-    
-                                $branch->add($modfullname, new moodle_url('/mod/'.$modname.'/index.php',
-                                        array('id' => $PAGE->course->id)));
-                            }
-                        }
+                        $branch->add($modfullname, new moodle_url('/mod/'.$modname.'/index.php',
+                                array('id' => $PAGE->course->id)));
+                    }
                 }
+                
         }
 
         return $this->render_thiscourse_menu($menu);
@@ -614,7 +611,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $haseditcog = $PAGE->theme->settings->courseeditingcog;
         $editcog = html_writer::div($this->context_header_settings_menu(), 'pull-xs-right context-header-settings-menu');
         $thiscourse = $this->thiscourse_menu();
-        $showincourseonly = isset($COURSE->id) && $COURSE->id > 1 && $PAGE->theme->settings->coursemanagementtoggle; 
+        $showincourseonly = isset($COURSE->id) && $COURSE->id > 1 && $PAGE->theme->settings->coursemanagementtoggle && isloggedin() && !isguestuser(); 
         $globalhaseasyenrollment = enrol_get_plugin('easy');
         $coursehaseasyenrollment = '';
         if($globalhaseasyenrollment) {
