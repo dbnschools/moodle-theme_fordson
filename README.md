@@ -31,6 +31,7 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 ## Fordson Moodle 33 1.4.6 2017051700
 * Added permissions for teacher dashboard links to check if they have the proper capability to access the links
+* Fixed issue where hidden code for Course Management link was present for students in code.  Adjusted permission settings to completely remove it.
 
 ## Fordson Moodle 33 1.4.6 2017051600
 * Removed frontpage course search box as this can be accomplished by simply enabling it through normal frontpage settings for moodle.  We are also more focused on the Easy Enrollment form which allows students to enroll with a six digit code instantly.  It's not needed as it duplicates a built in function and we want to be as lean as possible.

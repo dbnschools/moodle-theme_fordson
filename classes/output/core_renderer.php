@@ -608,7 +608,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 $togglebuttonstudent = get_string('studentdashbutton', 'theme_fordson');
             }
         }
-        $context = $this->page->context;
+        $course = $this->page->course;
+        $context = context_course::instance($course->id);
+        $coursemanagementmessage = (empty($PAGE->theme->settings->coursemanagementtextbox)) ? false : format_text($PAGE->theme->settings->coursemanagementtextbox);
         $haseditcog = $PAGE->theme->settings->courseeditingcog;
         $editcog = html_writer::div($this->context_header_settings_menu(), 'pull-xs-right context-header-settings-menu');
         $thiscourse = $this->thiscourse_menu();
@@ -796,8 +798,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
         'myprogresstext' => $myprogresstext,
         'mygradestext' => $mygradestext,
         'studentdashboardtextbox' => $studentdashboardtextbox,
-        'hasteacherdash' =>array('hasteacherdash' => $hasteacherdash, 'hasquestionpermission' => $hasquestionpermission, 'hasbadgepermission' => $hasbadgepermission, 'hascoursepermission' => $hascoursepermission, 'hasuserpermission' => $hasuserpermission),
-        'hasstudentdash' =>$hasstudentdash,
+        'hasteacherdash' => $hasteacherdash,
+        'teacherdash' =>array('hasquestionpermission' => $hasquestionpermission, 'hasbadgepermission' => $hasbadgepermission, 'hascoursepermission' => $hascoursepermission, 'hasuserpermission' => $hasuserpermission),
+        'hasstudentdash' => $hasstudentdash,
 
         'dashlinks' => array(
                 array('hasuserlinks' => $gradestitle, 'title' => $gradestitle, 'url' => $gradeslink),

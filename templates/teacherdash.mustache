@@ -1,9 +1,13 @@
 {{#showincourseonly}}
 <div id="coursecontrols">
 
-    {{#haseditcog}}<div class="editcogbutton">{{{editcog}}}</div>{{/haseditcog}}
+    {{#haseditcog}}
+    <div class="editcogbutton">{{{editcog}}}</div>
+    {{/haseditcog}}
 
-    {{#hasteacherdash}} <div class="teacherdashbutton"><a role="button" data-toggle="collapse" href="#teacherdashslider" aria-expanded="false" aria-controls="teacherdashslider">{{{togglebutton}}}</a></div> {{/hasteacherdash}}
+    {{#hasteacherdash}} 
+    <div class="teacherdashbutton"><a role="button" data-toggle="collapse" href="#teacherdashslider" aria-expanded="false" aria-controls="teacherdashslider">{{{togglebutton}}}</a></div>
+    {{/hasteacherdash}}
 
     {{#haspermission}}{{#dashlinks}}{{#haseasyenrollment}}
     <div class="enrollcodebutton"><a href="{{{url}}}">{{{title}}}</a></div>
@@ -19,7 +23,7 @@
 
 
 {{#hasteacherdash}}
-
+{{#teacherdash}}
 <div class="collapse" id="teacherdashslider">
 <div class="teacherdashboard">
 
@@ -111,11 +115,11 @@
 
 </div>
 </div>
-
+{{/teacherdash}}
 {{/hasteacherdash}}
 
-{{#hasstudentdash}}
 
+{{#hasstudentdash}}
 <div class="collapse" id="studentdashslider">
 <div class="studentdashboard">
 <div class="container-fluid">
@@ -198,7 +202,6 @@
 </div>
 </div>
 </div>
-
 {{/hasstudentdash}}
 
 <div style="clear:both;"></div>
