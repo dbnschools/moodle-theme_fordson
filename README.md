@@ -29,6 +29,9 @@ This means when Moodle updates the core Boost theme those changes will be applie
 # Install from Github
 Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
+## Fordson Moodle 33 1.4.6 2017051700
+* Added permissions for teacher dashboard links to check if they have the proper capability to access the links
+
 ## Fordson Moodle 33 1.4.6 2017051600
 * Removed frontpage course search box as this can be accomplished by simply enabling it through normal frontpage settings for moodle.  We are also more focused on the Easy Enrollment form which allows students to enroll with a six digit code instantly.  It's not needed as it duplicates a built in function and we want to be as lean as possible.
 * Cleaned up some language strings and Settings pages.

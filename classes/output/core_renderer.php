@@ -271,7 +271,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $context = $this->page->context;
 
         if (isloggedin() && !isguestuser()) {
-            if (!empty($PAGE->theme->settings->activitymenu)) {
+            
                     if (isset($COURSE->id) && $COURSE->id > 1) {
                         $branchtitle = get_string('thiscourse', 'theme_fordson');
                         $branchlabel = $branchtitle;
@@ -291,7 +291,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
                             }
                         }
                 }
-            }
         }
 
         return $this->render_thiscourse_menu($menu);
@@ -613,16 +612,16 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $haseditcog = $PAGE->theme->settings->courseeditingcog;
         $editcog = html_writer::div($this->context_header_settings_menu(), 'pull-xs-right context-header-settings-menu');
         $thiscourse = $this->thiscourse_menu();
-        $showincourseonly = isset($COURSE->id) && $COURSE->id > 1;
+        $showincourseonly = isset($COURSE->id) && $COURSE->id > 1 && $PAGE->theme->settings->coursemanagementtoggle; 
         $globalhaseasyenrollment = enrol_get_plugin('easy');
         $coursehaseasyenrollment = '';
         if($globalhaseasyenrollment) {
             $coursehaseasyenrollment = $DB->record_exists('enrol', array('courseid' => $COURSE->id, 'enrol' => 'easy'));
             $easyenrollinstance = $DB->get_record('enrol', array('courseid' => $COURSE->id, 'enrol' => 'easy'));
         }
+        
         //link catagories
         $haspermission = has_capability('enrol/category:config', $context) && $PAGE->theme->settings->coursemanagementtoggle && isset($COURSE->id) && $COURSE->id > 1;
-
         $userlinks = get_string('userlinks', 'theme_fordson');
         $userlinksdesc = get_string('userlinks_desc', 'theme_fordson');
         $qbank = get_string('qbank', 'theme_fordson');
@@ -633,7 +632,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $coursemanagedesc = get_string('coursemanage_desc', 'theme_fordson');
         $coursemanagementmessage = (empty($PAGE->theme->settings->coursemanagementtextbox)) ? false : format_text($PAGE->theme->settings->coursemanagementtextbox);
         $studentdashboardtextbox = (empty($PAGE->theme->settings->studentdashboardtextbox)) ? false : format_text($PAGE->theme->settings->studentdashboardtextbox);
-
+        
         //user links
         if($coursehaseasyenrollment && isset($COURSE->id) && $COURSE->id > 1){
             $easycodetitle = get_string('header_coursecodes', 'enrol_easy');
@@ -667,6 +666,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $qimportlink = new moodle_url('/question/import.php', array('courseid' => $PAGE->course->id));
         $qexporttitle = get_string('export', 'question');
         $qexportlink = new moodle_url('/question/export.php', array('courseid' => $PAGE->course->id));
+        
         //manage course
         $courseadmintitle = get_string('courseadministration', 'moodle');
         $courseadminlink = new moodle_url('/course/admin.php', array('courseid' => $PAGE->course->id));
@@ -680,11 +680,13 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $courseimportlink = new moodle_url('/backup/import.php', array('id' => $PAGE->course->id));
         $courseedittitle = get_string('editcoursesettings', 'moodle');
         $courseeditlink = new moodle_url('/course/edit.php', array('id' => $PAGE->course->id));
+        
         //badges
         $badgemanagetitle = get_string('managebadges', 'badges');
         $badgemanagelink = new moodle_url('/badges/index.php?type=2', array('id' => $PAGE->course->id));
         $badgeaddtitle = get_string('newbadge', 'badges');
         $badgeaddlink = new moodle_url('/badges/newbadge.php?type=2', array('id' => $PAGE->course->id));
+        
         //misc
         $recyclebintitle = get_string('pluginname', 'tool_recyclebin');
         $recyclebinlink = new moodle_url('/admin/tool/recyclebin/index.php', array('contextid' => $PAGE->context->id));
@@ -758,7 +760,13 @@ class core_renderer extends \theme_boost\output\core_renderer {
             $mygradestext = get_string('mygradestext', 'theme_fordson');
             $myprogresstext = get_string('myprogresstext', 'theme_fordson');
 
+            //permissionchecks for teacher access
+            $hasquestionpermission = has_capability('moodle/question:add', $context);
+            $hasbadgepermission = has_capability('moodle/badges:awardbadge', $context);
+            $hascoursepermission = has_capability('moodle/backup:backupcourse', $context);
+            $hasuserpermission = has_capability('moodle/course:viewhiddenactivities', $context);
 
+        //send to template
         $dashlinks = [
         'showincourseonly' =>$showincourseonly,
         'haspermission' => $haspermission,
@@ -788,8 +796,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
         'myprogresstext' => $myprogresstext,
         'mygradestext' => $mygradestext,
         'studentdashboardtextbox' => $studentdashboardtextbox,
-        'hasteacherdash' => $hasteacherdash,
-        'hasstudentdash' => $hasstudentdash,
+        'hasteacherdash' =>array('hasteacherdash' => $hasteacherdash, 'hasquestionpermission' => $hasquestionpermission, 'hasbadgepermission' => $hasbadgepermission, 'hascoursepermission' => $hascoursepermission, 'hasuserpermission' => $hasuserpermission),
+        'hasstudentdash' =>$hasstudentdash,
 
         'dashlinks' => array(
                 array('hasuserlinks' => $gradestitle, 'title' => $gradestitle, 'url' => $gradeslink),
@@ -816,7 +824,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 array('hasbadgelinks' => $badgeaddtitle, 'title' => $badgeaddtitle, 'url' => $badgeaddlink),
             ),
         ];
-        
+
+        //attach easy enrollment links if active
         if ($globalhaseasyenrollment && $coursehaseasyenrollment) {
             $dashlinks['dashlinks'][] = array('haseasyenrollment' => $coursehaseasyenrollment, 'title' => $easycodetitle, 'url' => $easycodelink);
 

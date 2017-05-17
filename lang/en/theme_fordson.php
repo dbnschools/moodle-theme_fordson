@@ -229,19 +229,19 @@ $string['menusettings'] = 'Menu settings';
 $string['thiscourse'] = 'This Course';
 $string['headerimagepadding'] = 'Header Image Height';
 $string['headerimagepadding_desc'] = 'Control the padding and height of the header image for courses.';
-$string['activitymenu'] = 'Show This Course Drop Down Menu';
-$string['activitymenu_desc'] = 'Show the This Course drop down menu.  This menu displays a grouped list of all activities for the student.';
+$string['activitymenu'] = 'Show Grouped Activities Menu';
+$string['activitymenu_desc'] = 'Show the grouped activity listings in the student and teacher panels.  This menu displays a grouped list of all activities for the student and teacher.';
 
 $string['coursemanagementinfo'] = 'Course Management Panel Menu';
 $string['coursemanagementinfodesc'] = 'These settings allow you to display and easy to use course management menu for teachers.  The Course Management Menu now includes the This Course Drop-down, a sliding Course Admin panel, and the ability to include the default Moodle Course Editing Cog.';
-$string['coursemanagementtoggle'] = 'Show Course Management Panel';
-$string['coursemanagementtoggle_desc'] = 'This displays an easy to use sliding panel for teachers to manage their course with easy to find links to important areas of the course.';
+$string['coursemanagementtoggle'] = 'Show Student and Teacher Dashboard Panels';
+$string['coursemanagementtoggle_desc'] = 'This displays an easy to use sliding panel for teachers to manage their course. It will also display a course overview panel for students with grades, course completion, and other items from the course.';
 $string['coursemanagementtextbox'] = 'Course Management Message';
 $string['coursemanagementtextbox_desc'] = 'Add a message for teachers in the course management panel on every course page.';
 $string['studentdashboardtextbox'] = 'Student Dashboard Message';
 $string['studentdashboardtextbox_desc'] = 'Add a message for students in the student dashboard panel on every course page.';
-$string['courseeditingcog'] = 'Show Default Course Settings Edit';
-$string['courseeditingcog_desc'] = 'If using the Course Management Panel you might want to hide the Moodle Course Editing Cog.';
+$string['courseeditingcog'] = 'Show Default Course Settings Menu';
+$string['courseeditingcog_desc'] = 'If using the Course Management Panel the default menu is hidden.  By checking this you can show the default menu as well as the teacher course management panel. This is ideal if using a third party plugin which uses the course menu for access to settings.';
 
 $string['setting_removenodesheading'] = 'Customize the Nav Drawer';
 $string['setting_removenodesperformancehint'] = 'Technically, this is done by setting the Menu Item\'s showinflatnavigation attribute to false. Thus, the node will only be hidden from the nav drawer, but it will remain in the navigation tree and can still be accessed by other parts of Moodle.';

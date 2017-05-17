@@ -3,11 +3,15 @@
 
     {{#haseditcog}}<div class="editcogbutton">{{{editcog}}}</div>{{/haseditcog}}
 
-    {{#hasteacherdash}}<div class="teacherdashbutton"><a role="button" data-toggle="collapse" href="#teacherdashslider" aria-expanded="false" aria-controls="teacherdashslider">{{{togglebutton}}}</a></div> {{/hasteacherdash}}
+    {{#hasteacherdash}} <div class="teacherdashbutton"><a role="button" data-toggle="collapse" href="#teacherdashslider" aria-expanded="false" aria-controls="teacherdashslider">{{{togglebutton}}}</a></div> {{/hasteacherdash}}
 
-    {{#haspermission}}{{#dashlinks}}{{#haseasyenrollment}}<div class="enrollcodebutton"><a href="{{{url}}}">{{{title}}}</a></div>{{/haseasyenrollment}}{{/dashlinks}}{{/haspermission}}
+    {{#haspermission}}{{#dashlinks}}{{#haseasyenrollment}}
+    <div class="enrollcodebutton"><a href="{{{url}}}">{{{title}}}</a></div>
+    {{/haseasyenrollment}}{{/dashlinks}}{{/haspermission}}
 
-    {{#hasstudentdash}}<div class="thiscoursebutton"><a role="button" data-toggle="collapse" href="#studentdashslider" aria-expanded="false" aria-controls="studentdashslider">{{{togglebuttonstudent}}}</a></div>{{/hasstudentdash}}
+    {{#hasstudentdash}}
+    <div class="thiscoursebutton"><a role="button" data-toggle="collapse" href="#studentdashslider" aria-expanded="false" aria-controls="studentdashslider">{{{togglebuttonstudent}}}</a></div>
+    {{/hasstudentdash}}
 
 </div>
 
@@ -15,6 +19,7 @@
 
 
 {{#hasteacherdash}}
+
 <div class="collapse" id="teacherdashslider">
 <div class="teacherdashboard">
 
@@ -31,8 +36,9 @@
         {{{thiscourse}}}
         </div>
         </div>
-        
+
         <div class="col-md-3 questionlinks">
+        {{#hasquestionpermission}}
         <div class="dashtitle">
             <h3><i class="fa fa-question-circle dashicon"></i>{{{qbanktitle}}}</h3>
             <p>{{{qbankdesc}}}</p>
@@ -44,6 +50,8 @@
             {{/hasqbanklinks}}
             {{/dashlinks}}
         </div>
+        {{/hasquestionpermission}}
+        {{#hasbadgepermission}}
         <div class="dashtitle">
             <h3><i class="fa fa-trophy dashicon"></i>{{{badgestitle}}}</h3>
             <p>{{{badgesdesc}}}</p>
@@ -55,8 +63,10 @@
             {{/hasbadgelinks}}
             {{/dashlinks}}
         </div>
+        {{/hasbadgepermission}}
         </div>
 
+        {{#hascoursepermission}}
         <div class="col-md-3 coursemanagelinks">
         <div class="dashtitle">
             <h3><i class="fa fa-cogs dashicon"></i>{{{coursemanagetitle}}}</h3>
@@ -70,7 +80,9 @@
             {{/dashlinks}}
         </div>
         </div>
+        {{/hascoursepermission}}
 
+        {{#hasuserpermission}}
         <div class="col-md-3 userlinks">
         <div class="dashtitle">
             <h3><i class="fa fa-users dashicon"></i>{{{userlinkstitle}}}</h3>
@@ -92,19 +104,22 @@
             {{/dashlinks}}
         </div>
         </div>
+        {{/hasuserpermission}}
 
     </div>
     </div>
 
 </div>
 </div>
+
 {{/hasteacherdash}}
 
 {{#hasstudentdash}}
+
 <div class="collapse" id="studentdashslider">
 <div class="studentdashboard">
+<div class="container-fluid">
 
-    <div class="container-fluid">
     <div class="row">
         <div class="col-md-8">
             <div class="studentdashboardtextbox">{{{studentdashboardtextbox}}}</div>
@@ -119,12 +134,14 @@
             <p>{{{mygradestext}}}</p><a href="{{{gradeslink}}}" alt="{{{mygradestext}}}"><i class="fa fa-5x fa-bar-chart"></i></a>
         </div>
     </div>
+
     <div class="row">
+
         <div class="col-md-4 coursesummary">
         {{#hascourseinfogroup}}
             <div class="dashtitle">
-                    <h3><i class="fa fa-{{{icon}}}">&nbsp</i>{{{title}}}</h3>
-                </div>
+                <h3><i class="fa fa-{{{icon}}}">&nbsp</i>{{{title}}}</h3>
+            </div>
                 <div class="card-block">
                     {{#courseinfo}}
                         {{{content}}}
@@ -134,7 +151,7 @@
         </div>
 
         <div class="col-md-5 coursestafflisting">
-            {{#hascoursestaffgroup}}
+        {{#hascoursestaffgroup}}
             <div class="dashtitle">
                 <h3><i class="fa fa-{{{icon}}}">&nbsp</i>{{{title}}}</h3>
             </div>
@@ -164,7 +181,7 @@
                 </div>
             {{/courseother}}
             </div>
-            {{/hascoursestaffgroup}}
+        {{/hascoursestaffgroup}}
         </div>
 
         <div class="col-md-3 activitylinks">
@@ -177,11 +194,13 @@
         </div>
 
     </div>
-    </div>
 
 </div>
 </div>
+</div>
+
 {{/hasstudentdash}}
+
 <div style="clear:both;"></div>
 
 {{/showincourseonly}}
