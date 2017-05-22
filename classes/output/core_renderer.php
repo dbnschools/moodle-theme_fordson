@@ -762,8 +762,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
             $hasbadgepermission = has_capability('moodle/badges:awardbadge', $context);
             $hascoursepermission = has_capability('moodle/backup:backupcourse', $context);
             $hasuserpermission = has_capability('moodle/course:viewhiddenactivities', $context);
-            $hasgradebookshow = $PAGE->COURSE->showgrades==1;
-            $hascompletionshow = $PAGE->COURSE->enablecompletion==1;
+            $hasgradebookshow = $PAGE->course->showgrades == 1 && $PAGE->theme->settings->showstudentgrades == 1;
+            $hascompletionshow = $PAGE->course->enablecompletion == 1 && $PAGE->theme->settings->showstudentgrades == 1;
 
         //send to template
         $dashlinks = [

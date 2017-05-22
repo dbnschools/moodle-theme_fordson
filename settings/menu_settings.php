@@ -70,6 +70,24 @@ $setting = new admin_setting_configcheckbox($name, $title, $description, $defaul
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+// Show/hide course editing cog.
+$name = 'theme_fordson/showstudentgrades';
+$title = get_string('showstudentgrades', 'theme_fordson');
+$description = get_string('showstudentgrades_desc', 'theme_fordson');
+$default = 1;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+// Show/hide course editing cog.
+$name = 'theme_fordson/showstudentcompletion';
+$title = get_string('showstudentcompletion', 'theme_fordson');
+$description = get_string('showstudentcompletion_desc', 'theme_fordson');
+$default = 1;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 // This is the descriptor for nav drawer
 $name = 'theme_fordson/mycoursesmenuinfo';
 $heading = get_string('mycoursesinfo', 'theme_fordson');

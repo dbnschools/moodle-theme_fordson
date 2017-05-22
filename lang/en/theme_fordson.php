@@ -240,6 +240,10 @@ $string['studentdashboardtextbox'] = 'Student Dashboard Message';
 $string['studentdashboardtextbox_desc'] = 'Add a message for students in the student dashboard panel on every course page.';
 $string['courseeditingcog'] = 'Show Default Course Settings Menu';
 $string['courseeditingcog_desc'] = 'If using the Course Management Panel the default menu is hidden.  By checking this you can show the default menu as well as the teacher course management panel. This is ideal if using a third party plugin which uses the course menu for access to settings.';
+$string['showstudentcompletion'] = 'Show Student Completion';
+$string['showstudentcompletion_desc'] = 'Show student completion radial in student dashboard panel.  Even with this checked the course must have completion turned on in order to display.';
+$string['showstudentgrades'] = 'Show Student Grades';
+$string['showstudentgrades_desc'] = 'Show student gradebook link in student dashboard panel.  Even with this checked the course must have Show Student Grades turned on in order to display.';
 
 $string['setting_removenodesheading'] = 'Customize the Nav Drawer';
 $string['setting_removenodesperformancehint'] = 'Technically, this is done by setting the Menu Item\'s showinflatnavigation attribute to false. Thus, the node will only be hidden from the nav drawer, but it will remain in the navigation tree and can still be accessed by other parts of Moodle.';
