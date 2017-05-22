@@ -390,8 +390,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $nav8buttontext   = (empty($PAGE->theme->settings->nav8buttontext)) ? false : $PAGE->theme->settings->nav8buttontext;
         
         $searchurl = (new moodle_url('/course/search.php'))->out(true);
-        $hasfpsearch = $PAGE->theme->settings->searchtoggle == 1;
-        $fpsearch = get_string('fpsearch' , 'theme_fordson');
         $fptextbox  = (empty($PAGE->theme->settings->fptextbox && isloggedin())) ? false : format_text($PAGE->theme->settings->fptextbox);
         $fptextboxlogout  = (empty($PAGE->theme->settings->fptextboxlogout && !isloggedin())) ? false : format_text($PAGE->theme->settings->fptextboxlogout);
         $slidetextbox  = (empty($PAGE->theme->settings->slidetextbox && isloggedin())) ? false : format_text($PAGE->theme->settings->slidetextbox);
@@ -448,14 +446,12 @@ class core_renderer extends \theme_boost\output\core_renderer {
             'hasslidetextbox' => (!empty($PAGE->theme->settings->slidetextbox && isloggedin())),
             'slidetextbox' => $slidetextbox,
 
-            'hasfptextboxlogout' => (!empty($PAGE->theme->settings->fptextboxlogout && !isloggedin())),
+            'hasfptextboxlogout' => !isloggedin(),
             'fptextboxlogout' => $fptextboxlogout,
 
             'hasalert' => (!empty($PAGE->theme->settings->alertbox && isloggedin())),
             'alertbox' => $alertbox,
             'searchurl' => $searchurl,
-            'fpsearch' => $fpsearch,
-            'hasfpsearch' => $hasfpsearch,
 
             'hasmarkettiles' => ($hasmarketing1 || $hasmarketing2 || $hasmarketing3 || $hasmarketing4 || $hasmarketing5 || $hasmarketing6) ? true : false,
             'markettiles' => array(
@@ -694,7 +690,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
 
         //Student Dash
             if (\core_completion\progress::get_course_progress_percentage($PAGE->course)) {
-                $comppercent = \core_completion\progress::get_course_progress_percentage($PAGE->course);
+                $comppc = \core_completion\progress::get_course_progress_percentage($PAGE->course);
+                $comppercent = number_format($comppc, 0);
                 $hasprogress = true;
             } else {
                 $comppercent = 0;
@@ -754,6 +751,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 );
             }
 
+//var_dump($PAGE);
             $activitylinkstitle = get_string('activitylinkstitle', 'theme_fordson');
             $activitylinkstitle_desc = get_string('activitylinkstitle_desc', 'theme_fordson');
             $mygradestext = get_string('mygradestext', 'theme_fordson');
@@ -764,6 +762,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
             $hasbadgepermission = has_capability('moodle/badges:awardbadge', $context);
             $hascoursepermission = has_capability('moodle/backup:backupcourse', $context);
             $hasuserpermission = has_capability('moodle/course:viewhiddenactivities', $context);
+            $hasgradebookshow = $PAGE->COURSE->showgrades==1;
+            $hascompletionshow = $PAGE->COURSE->enablecompletion==1;
 
         //send to template
         $dashlinks = [
@@ -798,6 +798,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
         'hasteacherdash' => $hasteacherdash,
         'teacherdash' =>array('hasquestionpermission' => $hasquestionpermission, 'hasbadgepermission' => $hasbadgepermission, 'hascoursepermission' => $hascoursepermission, 'hasuserpermission' => $hasuserpermission),
         'hasstudentdash' => $hasstudentdash,
+        'hasgradebookshow' => $hasgradebookshow,
+        'hascompletionshow' => $hascompletionshow,
 
         'dashlinks' => array(
                 array('hasuserlinks' => $gradestitle, 'title' => $gradestitle, 'url' => $gradeslink),

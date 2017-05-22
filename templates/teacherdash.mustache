@@ -125,18 +125,28 @@
 <div class="container-fluid">
 
     <div class="row">
+    
+        {{#studentdashboardtextbox}}
         <div class="col-md-8">
             <div class="studentdashboardtextbox">{{{studentdashboardtextbox}}}</div>
         </div>
+        {{/studentdashboardtextbox}}
+
+        {{#hascompletionshow}}
         <div class="col-md-2">
             {{#progresschart}}
                 <p>{{{myprogresstext}}}</p>
                 {{{progresschart}}}
             {{/progresschart}}
         </div>
+        {{/hascompletionshow}}
+
+        {{#hasgradebookshow}}
         <div class="col-md-2">
             <p>{{{mygradestext}}}</p><a href="{{{gradeslink}}}" alt="{{{mygradestext}}}"><i class="fa fa-5x fa-bar-chart"></i></a>
         </div>
+        {{/hasgradebookshow}}
+
     </div>
 
     <div class="row">

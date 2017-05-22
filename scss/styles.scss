@@ -58,7 +58,7 @@ $slideshowheight: 250px !default;
 }
 
 .headerbkg {
-    margin-top:50px;
+    margin-top:48px;
     height:$headerimagepadding;
     background-position: center;
     background-size: cover;
@@ -100,15 +100,7 @@ div#learningcontent {
 
 .headerlogo {
     background-color: $headerfade-bg;
-    width:100%;
 }
-@media screen and (max-width: 450px) {
-.headerlogo {
-    height: 75px;
-    background-size: contain;
-}
-}
-
 
 @media screen and (min-width: 991px) {
 #region-main.has-blocks {
@@ -120,6 +112,30 @@ div#learningcontent {
 [data-region="blocks-column"] {
     width: calc(#{$blockwidthfordson} - 30px);
     }
+}
+
+/* login on frontpage */
+div#fpsignup {
+    border-radius: $border-radius;
+    background-color: $gray-lightest;
+    padding: $spacer;
+    box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.3);
+    border: 1px solid $card-bg;
+}
+.sign-up-btn {
+    margin-top: 2rem;
+}
+div#fpsignup .input-group {
+    margin-bottom: 1rem;
+}
+div#fpsignup .form-control {
+    font-size: 2rem;
+}
+.sign-up-btn button {
+    font-size: 2rem;
+}
+.sign-up-btn {
+    float: right;
 }
 
 /* Teacher Dashboard */
@@ -287,21 +303,6 @@ a.right.carousel-control .fa-chevron-right {
     border-radius: 5px;
 }
 
-.fptextbox {
-    text-align: left;
-    padding: $spacer;
-}
-
-.fpsearch {
-    text-align: center;
-    padding: $spacer;
-}
-.fpsearch .form-control:focus {
-    background-color: #fff;
-}
-.fpsearch .form-control {
-    background-color: $fpicon-hover;
-}
 
 div#fpslider {
     background-color: $fpstartwrap-bg;

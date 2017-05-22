@@ -83,7 +83,6 @@ $string['bodybackground'] = 'Body Background Colour';
 $string['bodybackground_desc'] = 'The main colour to use for the background.';
 $string['footerbg'] = 'Footer Background Colour';
 $string['footerbg_desc'] = 'The background colour of the footer.';
-$string['fpsearch'] = 'Find and Enroll in Courses ';
 $string['headerscreen'] = 'Header Box Background';
 $string['headerscreen_desc'] = 'This background colour appears in the header area to help separate it from the course content.';
 $string['headingcolor'] = 'Headings Colour';
@@ -182,8 +181,6 @@ $string['fptextbox'] = 'Homepage Textbox Authenticated User';
 $string['fptextbox_desc'] = 'This textbox appears on the homepage once a user authenticates. It is ideal for putting a welcome message and providing instructions for the learner.';
 $string['fptextboxlogout'] = 'Homepage Textbox Visitor';
 $string['fptextboxlogout_desc'] = 'This textbox appears on the homepage for visitors and is ideal for putting a welcome message or link to the login page.';
-$string['searchtoggle'] = 'Show the Homepage Searchbox';
-$string['searchtoggle_desc'] = 'Check this in order to show the homepage searchbox for courses.';
 $string['slidetextbox'] = 'Slide Textbox';
 $string['slidetextbox_desc'] = 'This textbox content will be displayed when the Slide Button is pressed.';
 $string['sectionicon'] = 'Course Section Icon';
@@ -205,6 +202,7 @@ $string['titletooltip_desc'] = 'If using Trim Course Title you can use tooltips 
 $string['dashactivityoverview'] = 'ACTIVITIES OVERVIEW';
 $string['blockwidthfordson'] = 'Block Column Width';
 $string['blockwidthfordson_desc'] = 'Adjust the width of the block column.';
+$string['fpsignup'] = 'Sign In';
 
 //teacher and student dashboard slider
 $string['userlinks'] = 'User Links';

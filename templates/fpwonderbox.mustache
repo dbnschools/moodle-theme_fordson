@@ -74,9 +74,46 @@
 {{/hasfptextbox}}
 
 {{#hasfptextboxlogout}}
-    <div class="fptextbox">
-        {{{fptextboxlogout}}}
+    <div class="col-md-4" id="fpsignup">
+            <h3>{{#str}}fpsignup, theme_fordson{{/str}}</h3>
+                        <form class="m-t-1" action="{{{ config.wwwroot }}}/login/index.php" method="POST" role="form">
+                            <label for="username">
+                              {{^canloginbyemail}}
+                                  {{#str}}username{{/str}}
+                              {{/canloginbyemail}}
+                              {{#canloginbyemail}}
+                                  {{#str}}usernameemail{{/str}}
+                              {{/canloginbyemail}}
+                            </label>
+                            <div class="input-group">
+                              <div class="input-group-addon"><i class="fa fa-envelope add-on"></i></div>
+                              <input type="text" class="form-control" id="username" name="username" placeholder="{{#str}}username{{/str}}" required />
+                            </div>
+
+                            <label for="password">{{#str}}password{{/str}}</label>
+                            <div class="input-group">
+                              <div class="input-group-addon"><i class="fa fa-lock add-on"></i></div>
+                              <input type="password" class="form-control" id="password" name="password" placeholder="{{#str}}password{{/str}}" required />
+                            </div>
+
+                            <div class="sign-up-btn">
+                                <button type="submit" class="btn btn-primary">{{#str}}login{{/str}}</button>
+                            </div>
+                        </form>
+
+                        <p><a href="{{{ config.wwwroot }}}/login/forgot_password.php">{{#str}}forgotten{{/str}}</a></p>
+
+                        {{#cansignup}}
+                            <a class="btn btn-register btn-primary" href="{{{ config.wwwroot }}}/login/signup.php?">{{#str}}newaccount{{/str}}</a>
+                        {{/cansignup}}
     </div>
+    <div class="col-md-8">
+        <div class="fptextbox">
+            {{{fptextboxlogout}}}
+        </div>
+    </div>
+
+
     <div style="clear:both;"></div>
 {{/hasfptextboxlogout}}
 
