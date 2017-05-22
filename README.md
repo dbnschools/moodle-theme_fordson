@@ -31,13 +31,14 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 
 ## Fordson Moodle 33 1.4.7 2017051700
+* Fixed Radial Course Completion showing percent and decimal points.
 * Added permissions for teacher dashboard links to check if they have the proper capability to access the links
 * Fixed issue where hidden code for Course Management link was present for students in code.  Adjusted permission settings to completely remove it.
-* Added frontpage custom login block in case you do not force users to login.  This was sorely lacking in Fordson for convenience.
+* Added frontpage custom login form just in case you do not force users to login.  This was sorely lacking in Fordson.
 * Added course checks for: Show grades to students and enable course completion.  If the teacher shows the gradebook to students in course settings then a link to view grades will appear in the "This Course" sliding menu for students.  Same for course completion.  If course completion is set to Yes in course settings then a course completion radial will appear for students to view progress.
 * SCSS fix to just import directly from Boost all default styles.
 * Added theme admin setting to turn off completely show grade and course completion to students regardless of course settings.
-
+* Fixed several layout and template issues.
 
 
 ## Fordson Moodle 33 1.4.6 2017051600

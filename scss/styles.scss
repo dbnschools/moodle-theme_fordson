@@ -252,7 +252,9 @@ a.right.carousel-control .fa-chevron-right {
 }
 
 /* Enhanced Homepage */
-
+.fpwonderbox {
+    margin-bottom:1rem;
+}
 .fpstartwrap {
     margin:0px;
     border-radius: 5px;
@@ -326,20 +328,14 @@ div#fpslider {
     margin-bottom: initial;
 }
 
+
 .market-tile {
-    margin: 1rem;
+    margin: 1rem 0rem;
     background-color: $body-bg;
     padding: 1rem;
     border: 1px solid $gray-base;
-    border-radius: $card-border-radius;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+    border-top: 7px solid;
 }
-/*
-.markettiles .col-md-4 {
-    padding: 0;
-    margin: 0;
-}
-*/
 .marketcontent {
     padding:1rem; 
     background-color: $markettextbg;
