@@ -30,6 +30,13 @@ This means when Moodle updates the core Boost theme those changes will be applie
 Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
 
+## Fordson Moodle 33 1.4.8 2017051800
+* Continued fixes to templates for layout consistency.
+* New branding in footer area with Organization name, website, email, phone
+* Better layout in footer to better present footer content
+* Smaller social icons in footer
+* General CSS fixes
+
 ## Fordson Moodle 33 1.4.7 2017051700
 * Fixed Radial Course Completion showing percent and decimal points.
 * Added permissions for teacher dashboard links to check if they have the proper capability to access the links
