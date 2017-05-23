@@ -115,7 +115,7 @@ div#learningcontent {
 }
 
 /* login on frontpage */
-div#fpsignup {
+.fpsignup {
     border-radius: $border-radius;
     background-color: $gray-lightest;
     padding: $spacer;
@@ -124,19 +124,18 @@ div#fpsignup {
 }
 .sign-up-btn {
     margin-top: 2rem;
-}
-div#fpsignup .input-group {
     margin-bottom: 1rem;
 }
-div#fpsignup .form-control {
+.fpsignup .input-group {
+    margin: 1rem 0;
+}
+.fpsignup .form-control {
     font-size: 2rem;
 }
 .sign-up-btn button {
     font-size: 2rem;
 }
-.sign-up-btn {
-    float: right;
-}
+
 
 /* Teacher Dashboard */
 div#coursecontrols {
@@ -328,7 +327,9 @@ div#fpslider {
     margin-bottom: initial;
 }
 
-
+.markettiles {
+    margin: 1rem 0;
+}
 .market-tile {
     margin: 1rem 0rem;
     background-color: $body-bg;

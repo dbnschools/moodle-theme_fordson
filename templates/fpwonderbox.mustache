@@ -85,8 +85,9 @@
 {{#hasfptextboxlogout}}
 <div class="container-fluid">
     <div class="row">
-    <div class="col-md-12">
-            <div class="col-md-4" id="fpsignup">
+
+            <div class="col-md-4">
+            <div class="fpsignup">
             <h3>{{#str}}fpsignup, theme_fordson{{/str}}</h3>
                         <form class="m-t-1" action="{{{ config.wwwroot }}}/login/index.php" method="POST" role="form">
                             <label for="username">
@@ -119,12 +120,14 @@
                             <a class="btn btn-register btn-primary" href="{{{ config.wwwroot }}}/login/signup.php?">{{#str}}newaccount{{/str}}</a>
                         {{/cansignup}}
             </div>
+            </div>
+
             <div class="col-md-8">
                 <div class="fptextbox">
                     {{{fptextboxlogout}}}
                 </div>
             </div>
-        </div>
+
     </div>
     </div>
     <div style="clear:both;"></div>
@@ -134,7 +137,6 @@
 <div class="markettiles">
     <div class="container-fluid">
     <div class="row">
-    <div class="col-md-12">
 
         {{#markettiles}}
         {{#hastile}}
@@ -152,7 +154,6 @@
         {{/hastile}}
         {{/markettiles}}
 
-    </div>
     </div>
     </div>
 </div>
