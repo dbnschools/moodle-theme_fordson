@@ -36,6 +36,7 @@ use paging_bar;
 use url_select;
 use context_course;
 use pix_icon;
+use theme_config;
 
 defined('MOODLE_INTERNAL') || die;
 
@@ -841,6 +842,26 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $footnote = '';
         $footnote    = (empty($PAGE->theme->settings->footnote)) ? false : format_text($PAGE->theme->settings->footnote);
         return $footnote;
+    }
+    public function brandorganization_footer() {
+        $theme = theme_config::load('fordson');
+        $setting = $theme->settings->brandorganization;
+        return $setting != '' ? $setting : '';
+    }
+    public function brandwebsite_footer() {
+        $theme = theme_config::load('fordson');
+        $setting = $theme->settings->brandwebsite;
+        return $setting != '' ? $setting : '';
+    }
+    public function brandphone_footer() {
+        $theme = theme_config::load('fordson');
+        $setting = $theme->settings->brandphone;
+        return $setting != '' ? $setting : '';
+    }
+    public function brandemail_footer() {
+        $theme = theme_config::load('fordson');
+        $setting = $theme->settings->brandemail;
+        return $setting != '' ? $setting : '';
     }
    
 }

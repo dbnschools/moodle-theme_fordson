@@ -80,17 +80,6 @@ div#learningcontent {
     border-radius: $border-radius;
 }
 
-/*@media screen and (max-width: 450px) {
-#page-navbar .breadcrumb-button .btn-success {
-    display:none;
-    visibility:hidden;
-}
-#page-navbar .breadcrumb-button .btn-danger {
-    display:none;
-    visibility:hidden;
-}
-}*/
-
 .breadcrumb-nav .breadcrumb {margin-bottom: .5rem;}
 
 #page-navbar .open>.dropdown-menu {
@@ -204,12 +193,12 @@ div#coursecontrols {
     }
 }
 
+/* Footer */
+ul.footercontact {
+    list-style: none;
+}
+
 /* Slideshow */
-
-/*.carousel-item {
-    
-}*/
-
 .slide1image, .slide2image, .slide3image {
     height: $slideshowheight;
 }
@@ -528,9 +517,11 @@ form#enrolform_easy button.btn.btn-primary {
 .socials_wrapper {
     margin:0 auto;
     .socials {
-        text-align:center;
         margin-bottom:0;
     }
+}
+.socials a:hover{
+    text-decoration:none;
 }
 
 .single-section h3.sectionname {

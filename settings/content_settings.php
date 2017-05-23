@@ -313,19 +313,10 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
-    // Slert setting.
+    // Alert setting.
     $name = 'theme_fordson/alertbox';
     $title = get_string('alert', 'theme_fordson');
     $description = get_string('alert_desc', 'theme_fordson');
-    $default = '';
-    $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
-    // Footnote setting.
-    $name = 'theme_fordson/footnote';
-    $title = get_string('footnote', 'theme_fordson');
-    $description = get_string('footnotedesc', 'theme_fordson');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');

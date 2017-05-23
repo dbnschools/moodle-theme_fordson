@@ -135,10 +135,19 @@ $string['slideimage'] = 'Slide Image';
 $string['slideimage_desc'] = 'Add a background image for this slide.';
 
 
-// Social Networks.
-$string['socialheading'] = 'Social Networking';
-$string['socialheadingsub'] = 'Engage your users with social networking.';
-$string['socialdesc'] = 'Provide direct links to the core social networks that promote your brand.  These will appear in the header of every page.';
+// Footer
+$string['footerheading'] = 'Footer';
+$string['brandorganization'] = 'Organization Name';
+$string['brandorganizationdesc'] = 'Organization name to appear in the footer.';
+$string['brandwebsite'] = 'Organization Website';
+$string['brandwebsitedesc'] = 'Website address to appear in footer for organization.';
+$string['brandphone'] = 'Organization Phone';
+$string['brandphonedesc'] = 'Phone number to appear in footer.';
+$string['brandemail'] = 'Organization Email';
+$string['brandemaildesc'] = 'Email address for organization that appears in footer.';
+$string['footerheadingsub'] = 'Customize the footer of the homepage';
+$string['footerdesc'] = 'The items below allow you provide branding to the theme footer.';
+$string['footerheadingsocial'] ='Social Icons';
 $string['socialnetworks'] = 'Social Networks';
 $string['facebook'] = 'Facebook URL';
 $string['facebookdesc'] = 'Enter the URL of your Facebook page. (i.e http://www.facebook.com/)';
