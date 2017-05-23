@@ -42,6 +42,7 @@ $plugin = enrol_get_plugin('easy');
                 $enrolform = $plugin->get_form();
             }
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
+$headerlogo = $PAGE->theme->setting_file_url('headerlogo', 'headerlogo');
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
@@ -52,6 +53,7 @@ $templatecontext = [
     'hasblocks' => $hasblocks,
     'bodyattributes' => $bodyattributes,
     'navdraweropen' => $navdraweropen,
+    'headerlogo' => $headerlogo,
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
     'enrolform' => $enrolform,

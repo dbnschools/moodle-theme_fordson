@@ -90,6 +90,9 @@ div#learningcontent {
 .headerlogo {
     background-color: $headerfade-bg;
 }
+.headerlogo img {
+    padding: $spacer;
+}
 
 @media screen and (min-width: 991px) {
 #region-main.has-blocks {
