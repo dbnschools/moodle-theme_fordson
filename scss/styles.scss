@@ -65,7 +65,8 @@ $slideshowheight: 250px !default;
     position: absolute;
     top:0;
     left:0;
-    width:100%
+    width:100%;
+    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.7);
 }
 div#learningcontent {
     position:relative;

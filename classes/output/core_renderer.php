@@ -148,19 +148,35 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 'style' => 'background-image: url("'.$courseimage.'"); background-size: cover; background-position:center;
                 width: 100%; height: 100%;'));
             $html .= html_writer::end_div(); // End withimage inline style div.
-        }
-        if (!$courseimage && isset($headerbg)) {
+        }elseif (!$courseimage && isset($headerbg) && theme_fordson_get_setting('showcourseheaderimage')) {
             $html .= html_writer::start_div('withoutimage', array(
                 'style' => 'background-image: url("'.$headerbgimgurl.'"); background-size: cover; background-position:center;
                 width: 100%; height: 100%;'));
             $html .= html_writer::end_div(); // End withoutimage inline style div.
-        }
-        if (!$courseimage && !isset($headerbg)) {
+        }elseif (!$courseimage && empty($headerbg) && theme_fordson_get_setting('showcourseheaderimage')) {
             $html .= html_writer::start_div('default', array(
                 'style' => 'background-image: url("'.$defaultimgurl.'"); background-size: cover; background-position:center;
                 width: 100%; height: 100%;'));
             $html .= html_writer::end_div(); // End default inline style div.
         }
+
+        if ($courseimage && isset($headerbg) && !theme_fordson_get_setting('showcourseheaderimage')) {
+            $html .= html_writer::start_div('withoutimage', array(
+                'style' => 'background-image: url("'.$headerbgimgurl.'"); background-size: cover; background-position:center;
+                width: 100%; height: 100%;'));
+            $html .= html_writer::end_div(); // End withoutimage inline style div.
+        }elseif (!$courseimage && isset($headerbg) && !theme_fordson_get_setting('showcourseheaderimage')) {
+            $html .= html_writer::start_div('withoutimage', array(
+                'style' => 'background-image: url("'.$headerbgimgurl.'"); background-size: cover; background-position:center;
+                width: 100%; height: 100%;'));
+            $html .= html_writer::end_div(); // End withoutimage inline style div.
+        }elseif (!$courseimage && empty($headerbg) && !theme_fordson_get_setting('showcourseheaderimage')) {
+            $html .= html_writer::start_div('default', array(
+                'style' => 'background-image: url("'.$defaultimgurl.'"); background-size: cover; background-position:center;
+                width: 100%; height: 100%;'));
+            $html .= html_writer::end_div(); // End default inline style div.
+        }
+
 
         $html .= html_writer::end_div();
 
