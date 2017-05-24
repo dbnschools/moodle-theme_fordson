@@ -158,12 +158,7 @@ function theme_fordson_get_pre_scss($theme) {
 
     // Set the default image for the header.
     $headerbg = $theme->setting_file_url('headerdefaultimage', 'headerdefaultimage');
-    if (isset($headerbg)) {
-        // Add a fade in transition to avoid the flicker on course headers ***.
-        $prescss .= '.headerbkg {background-image: url("'.$headerbg.'"); background-size:cover; background-position:center;}';
-    } else {
-        $prescss .= '.headerbkg {background-image: url([[pix:theme|headerbg]]);}';
-     }
+    
 
     // Set the background image for the page.
     $pagebg = $theme->setting_file_url('backgroundimage', 'backgroundimage');

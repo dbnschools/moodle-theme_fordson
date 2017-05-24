@@ -96,7 +96,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
     }
 
     public function headerimage() {
-        global $CFG, $COURSE;
+        global $CFG, $COURSE, $PAGE, $OUTPUT;
                 // Get course overview files.
         if (empty($CFG->courseoverviewfileslimit)) {
             return array();
@@ -126,6 +126,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
 
         // Get course overview files as images - set $courseimage.
         // The loop means that the LAST stored image will be the one displayed if >1 image file.
+
         $courseimage = '';
         foreach ($files as $file) {
             $isimage = $file->is_valid_image();
@@ -136,6 +137,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
             }
         }
 
+        $headerbg = $PAGE->theme->setting_file_url('headerdefaultimage', 'headerdefaultimage');
+        $headerbgimgurl = $PAGE->theme->setting_file_url('headerdefaultimage', 'headerdefaultimage', true);
+        $defaultimgurl = $OUTPUT->image_url('headerbg', 'theme');
         // Create html for header.
         $html = html_writer::start_div('headerbkg');
         // If course image display it in separate div to allow css styling of inline style.
@@ -143,10 +147,21 @@ class core_renderer extends \theme_boost\output\core_renderer {
             $html .= html_writer::start_div('withimage', array(
                 'style' => 'background-image: url("'.$courseimage.'"); background-size: cover; background-position:center;
                 width: 100%; height: 100%;'));
-        }
-        if ($courseimage && theme_fordson_get_setting('showcourseheaderimage')) {
             $html .= html_writer::end_div(); // End withimage inline style div.
         }
+        if (!$courseimage && isset($headerbg)) {
+            $html .= html_writer::start_div('withoutimage', array(
+                'style' => 'background-image: url("'.$headerbgimgurl.'"); background-size: cover; background-position:center;
+                width: 100%; height: 100%;'));
+            $html .= html_writer::end_div(); // End withoutimage inline style div.
+        }
+        if (!$courseimage && !isset($headerbg)) {
+            $html .= html_writer::start_div('default', array(
+                'style' => 'background-image: url("'.$defaultimgurl.'"); background-size: cover; background-position:center;
+                width: 100%; height: 100%;'));
+            $html .= html_writer::end_div(); // End default inline style div.
+        }
+
         $html .= html_writer::end_div();
 
         return $html;
