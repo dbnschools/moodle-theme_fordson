@@ -36,6 +36,9 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 * Better layout in footer to better present footer content
 * Smaller social icons in footer
 * General CSS fixes
+* Stripped html from course summary when displaying in student dashboard.  This will fix bad html and some other issues that caused display for students to not work.
+* Fixed language strings for Icon Navigation so that multilanguage plugins will work on the text links.
+* Fixed header logo to utilize standard bootstrap responsive classes.
 
 ## Fordson Moodle 33 1.4.7 2017051700
 * Fixed Radial Course Completion showing percent and decimal points.

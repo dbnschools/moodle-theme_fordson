@@ -710,10 +710,10 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 'icon' => 'map'
             );
             $summary = theme_fordson_strip_html_tags($COURSE->summary);
-            $summary = theme_fordson_course_trim_char($COURSE->summary, 300);
+            $summarytrim = theme_fordson_course_trim_char($summary, 300);
             $courseinfo = array (
                 array(
-                    'content' => format_text($summary),
+                    'content' => format_text($summarytrim),
                 )
             );
             $hascoursestaff = array (
