@@ -212,6 +212,8 @@ $string['dashactivityoverview'] = 'ACTIVITIES OVERVIEW';
 $string['blockwidthfordson'] = 'Block Column Width';
 $string['blockwidthfordson_desc'] = 'Adjust the width of the block column.';
 $string['fpsignup'] = 'Sign In';
+$string['showloginform'] = 'Show Login Form';
+$string['showloginform_desc'] = 'Uncheck this to hide the custom login form on the homepage for logged out users.';
 
 //teacher and student dashboard slider
 $string['userlinks'] = 'User Links';

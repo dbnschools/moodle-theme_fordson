@@ -85,8 +85,9 @@
 {{#hasfptextboxlogout}}
 <div class="container-fluid">
     <div class="row">
-
-            <div class="col-md-4">
+    <div class="col-md-12">
+    {{#hasshowloginform}}
+            <div class="col-md-4 signinform">
             <div class="fpsignup">
             <h3>{{#str}}fpsignup, theme_fordson{{/str}}</h3>
                         <form class="m-t-1" action="{{{ config.wwwroot }}}/login/index.php" method="POST" role="form">
@@ -121,13 +122,13 @@
                         {{/cansignup}}
             </div>
             </div>
+            {{/hasshowloginform}}
 
-            <div class="col-md-8">
                 <div class="fptextbox">
                     {{{fptextboxlogout}}}
                 </div>
-            </div>
 
+    </div>
     </div>
     </div>
     <div style="clear:both;"></div>

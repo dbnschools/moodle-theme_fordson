@@ -313,6 +313,15 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    // Frontpage show login form
+    $name = 'theme_fordson/showloginform';
+    $title = get_string('showloginform', 'theme_fordson');
+    $description = get_string('showloginform_desc', 'theme_fordson');
+    $default = 1;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
     // Alert setting.
     $name = 'theme_fordson/alertbox';
     $title = get_string('alert', 'theme_fordson');

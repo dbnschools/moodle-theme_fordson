@@ -140,6 +140,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $headerbg = $PAGE->theme->setting_file_url('headerdefaultimage', 'headerdefaultimage');
         $headerbgimgurl = $PAGE->theme->setting_file_url('headerdefaultimage', 'headerdefaultimage', true);
         $defaultimgurl = $OUTPUT->image_url('headerbg', 'theme');
+
         // Create html for header.
         $html = html_writer::start_div('headerbkg');
         // If course image display it in separate div to allow css styling of inline style.
@@ -413,7 +414,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $nav7buttontext   = (empty($PAGE->theme->settings->nav7buttontext)) ? false : format_text($PAGE->theme->settings->nav7buttontext);
         $nav8buttontext   = (empty($PAGE->theme->settings->nav8buttontext)) ? false : format_text($PAGE->theme->settings->nav8buttontext);
         
-        $searchurl = (new moodle_url('/course/search.php'))->out(true);
         $fptextbox  = (empty($PAGE->theme->settings->fptextbox && isloggedin())) ? false : format_text($PAGE->theme->settings->fptextbox);
         $fptextboxlogout  = (empty($PAGE->theme->settings->fptextboxlogout && !isloggedin())) ? false : format_text($PAGE->theme->settings->fptextboxlogout);
         $slidetextbox  = (empty($PAGE->theme->settings->slidetextbox && isloggedin())) ? false : format_text($PAGE->theme->settings->slidetextbox);
@@ -472,10 +472,10 @@ class core_renderer extends \theme_boost\output\core_renderer {
 
             'hasfptextboxlogout' => !isloggedin(),
             'fptextboxlogout' => $fptextboxlogout,
+            'hasshowloginform' => $PAGE->theme->settings->showloginform,
 
             'hasalert' => (!empty($PAGE->theme->settings->alertbox && isloggedin())),
             'alertbox' => $alertbox,
-            'searchurl' => $searchurl,
 
             'hasmarkettiles' => ($hasmarketing1 || $hasmarketing2 || $hasmarketing3 || $hasmarketing4 || $hasmarketing5 || $hasmarketing6) ? true : false,
             'markettiles' => array(
