@@ -32,6 +32,7 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 ## Fordson Moodle 33 1.4.9 2017051900
 * Fixed header image so that only one image is served to the page. This will help with page load times. It also eliminates using prescss to attach the background image to a css class.
 * Added show/hide toggle for frontpage custom login form. Default is show.
+* Added scroll to top button and admin setting to turn it on and off.
 
 
 ## Fordson Moodle 33 1.4.8 2017051800
