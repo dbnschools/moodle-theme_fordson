@@ -141,6 +141,14 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+$name = 'theme_fordson/shownavclosed';
+$title = get_string('shownavclosed', 'theme_fordson');
+$description = get_string('shownavclosed_desc', 'theme_fordson');
+$default = 0;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 $name = 'theme_fordson/removehomenode';
 $title = get_string('setting_removehomenode', 'theme_fordson');
 $description = get_string('setting_removehomenode_desc', 'theme_fordson');

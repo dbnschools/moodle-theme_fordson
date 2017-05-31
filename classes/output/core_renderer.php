@@ -579,17 +579,25 @@ class core_renderer extends \theme_boost\output\core_renderer {
     public function fp_slideshow() {
         global $PAGE;
 
+        $theme = theme_config::load('fordson');
+
         $slideshowon = $PAGE->theme->settings->showslideshow == 1;
 
-        $hasslide1 = (empty($PAGE->theme->settings->slide1title)) ? false : format_text($PAGE->theme->settings->slide1title);
+        $hasslide1 = (empty($theme->setting_file_url('slide1image', 'slide1image'))) ? false : $theme->setting_file_url('slide1image', 'slide1image');
+        $slide1 = (empty($PAGE->theme->settings->slide1title)) ? false : format_text($PAGE->theme->settings->slide1title);
         $slide1content = (empty($PAGE->theme->settings->slide1content)) ? false : format_text($PAGE->theme->settings->slide1content);
+        $showtext1 = (empty($PAGE->theme->settings->slide1title)) ? false : format_text($PAGE->theme->settings->slide1title);
 
-        $hasslide2 = (empty($PAGE->theme->settings->slide2title)) ? false : format_text($PAGE->theme->settings->slide2title);
+        $hasslide2 = (empty($theme->setting_file_url('slide2image', 'slide2image'))) ? false : $theme->setting_file_url('slide2image', 'slide2image');
+        $slide2 = (empty($PAGE->theme->settings->slide2title)) ? false : format_text($PAGE->theme->settings->slide2title);
         $slide2content = (empty($PAGE->theme->settings->slide2content)) ? false : format_text($PAGE->theme->settings->slide2content);
+        $showtext2 = (empty($PAGE->theme->settings->slide2title)) ? false : format_text($PAGE->theme->settings->slide2title);
 
-        $hasslide3 = (empty($PAGE->theme->settings->slide3title)) ? false : format_text($PAGE->theme->settings->slide3title);
+        $hasslide3 = (empty($theme->setting_file_url('slide3image', 'slide3image'))) ? false : $theme->setting_file_url('slide3image', 'slide3image');
+        $slide3 = (empty($PAGE->theme->settings->slide3title)) ? false : format_text($PAGE->theme->settings->slide3title);
         $slide3content = (empty($PAGE->theme->settings->slide3content)) ? false : format_text($PAGE->theme->settings->slide3content);
-
+        $showtext3 = (empty($PAGE->theme->settings->slide3title)) ? false : format_text($PAGE->theme->settings->slide3title);
+        
         $fp_slideshow = [
 
             'hasfpslideshow' => $slideshowon,
@@ -598,9 +606,13 @@ class core_renderer extends \theme_boost\output\core_renderer {
             'hasslide2' => $hasslide2 ? true : false,
             'hasslide3' => $hasslide3 ? true : false,
 
-            'slide1'    => array('slidetitle' => $hasslide1, 'slidecontent' => $slide1content),
-            'slide2'    => array('slidetitle' => $hasslide2, 'slidecontent' => $slide2content),
-            'slide3'    => array('slidetitle' => $hasslide3, 'slidecontent' => $slide3content),
+            'showtext1' => $showtext1 ? true : false,
+            'showtext2' => $showtext2 ? true : false,
+            'showtext3' => $showtext3 ? true : false,
+
+            'slide1'    => array('slidetitle' => $slide1, 'slidecontent' => $slide1content),
+            'slide2'    => array('slidetitle' => $slide2, 'slidecontent' => $slide2content),
+            'slide3'    => array('slidetitle' => $slide3, 'slidecontent' => $slide3content),
 
         ];
 
@@ -775,7 +787,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 );
             }
 
-//var_dump($PAGE);
             $activitylinkstitle = get_string('activitylinkstitle', 'theme_fordson');
             $activitylinkstitle_desc = get_string('activitylinkstitle_desc', 'theme_fordson');
             $mygradestext = get_string('mygradestext', 'theme_fordson');

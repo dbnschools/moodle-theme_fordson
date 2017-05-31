@@ -234,6 +234,12 @@ $breadcrumb-divider-rtl: "/" !default;
 
 /* FORDSON Default Styling */
 
+span.section-modchooser-link, a.add-sections {
+    background-color: $gray-lighter;
+    padding: 10px;
+    border-radius: $border-radius;
+}
+
 .teacherdashboard .list-group-item:first-child, .studentdashboard .list-group-item:first-child {
     border-top-right-radius: 0px;
     border-top-left-radius: 0px;
@@ -586,4 +592,3 @@ aside.block_comments h3:before {
     background-color: #3e647e;
     content:"\f02d";
 }
-

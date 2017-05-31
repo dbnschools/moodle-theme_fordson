@@ -27,7 +27,7 @@ defined('MOODLE_INTERNAL') || die();
 user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
 require_once($CFG->libdir . '/behat/lib.php');
 
-if (isloggedin()) {
+if (isloggedin() && $PAGE->theme->settings->shownavclosed==0) {
     $navdraweropen = (get_user_preferences('drawer-open-nav', 'true') == 'true');
 } else {
     $navdraweropen = false;
@@ -60,8 +60,10 @@ fordson_boostnavigation_extend_navigation($PAGE->navigation);
 fordson_local_navigation_extend_navigation($PAGE->navigation);
 }
 
+if ($PAGE->theme->settings->showbacktotop==1) {
 $PAGE->requires->jquery();
 $PAGE->requires->js('/theme/fordson/javascript/scrolltotop.js');
+}
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;
 echo $OUTPUT->render_from_template('theme_fordson/columns2', $templatecontext);

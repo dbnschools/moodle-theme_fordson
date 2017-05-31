@@ -9,41 +9,49 @@
   </ol>
 
 <div class="carousel-inner" role="listbox">
-    {{#slide1}}
+
     {{#hasslide1}}
     <div class="carousel-item active">
       <div class="slide1image"></div>
+      {{#showtext1}}
+      {{#slide1}}
       <div class="carousel-caption d-none d-md-block">
         <h3>{{{slidetitle}}}</h3>
         <p>{{{slidecontent}}}</p>
       </div>
+      {{/slide1}}
+      {{/showtext1}}
     </div>
     {{/hasslide1}}
-    {{/slide1}}
-
-    {{#slide2}}
+    
     {{#hasslide2}}
     <div class="carousel-item">
       <div class="slide2image"></div>
+      {{#showtext2}}
+      {{#slide2}}
       <div class="carousel-caption d-none d-md-block">
         <h3>{{{slidetitle}}}</h3>
         <p>{{{slidecontent}}}</p>
       </div>
+      {{/slide2}}
+      {{/showtext2}}
     </div>
     {{/hasslide2}}
-    {{/slide2}}
 
-    {{#slide3}}
     {{#hasslide3}}
     <div class="carousel-item">
       <div class="slide3image"></div>
+      {{#showtext3}}
+      {{#slide3}}
       <div class="carousel-caption d-none d-md-block">
         <h3>{{{slidetitle}}}</h3>
         <p>{{{slidecontent}}}</p>
       </div>
+      {{/slide3}}
+      {{/showtext3}}
     </div>
     {{/hasslide3}}
-    {{/slide3}}
+
 </div>
     <a class="left carousel-control" href="#fordsoncarousel" role="button" data-slide="prev">
       <i class="fa fa-chevron-left" aria-hidden="true"></i>

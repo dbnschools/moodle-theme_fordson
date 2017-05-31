@@ -29,6 +29,13 @@ This means when Moodle updates the core Boost theme those changes will be applie
 # Install from Github
 Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
+## Fordson Moodle 33 1.5.0 2017051900
+* New feature on menu page to show the nav drawer collapsed by default for all users.
+* Fixed slideshow so that you can use just an image. Text will only appear if you use a title.
+* Removed scroll to top javascript when not activated.
+* Added styling to Add activity or resource link so that it stands out more when editing a page.
+* Added styling to Add topics/weeks link so that it stands out more when editing a page.
+
 ## Fordson Moodle 33 1.4.9 2017051900
 * Fixed header image so that only one image is served to the page. This will help with page load times. It also eliminates using prescss to attach the background image to a css class.
 * Added show/hide toggle for frontpage custom login form. Default is show.

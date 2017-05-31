@@ -302,7 +302,8 @@ $string['mymodules'] = 'My Modules';
 $string['myclasses'] = 'My Classes';
 $string['noenrolments'] = 'You have no current enrolments';
 $string['siteadminquicklink'] = 'Site Administration';
-
+$string['shownavclosed'] = 'Nav Drawer Closed by Default';
+$string['shownavclosed_desc'] = 'Show the navigation drawer collapsed for all users by default on each page.';
 
 //FP Icon Nav
 $string['navicon1'] = 'Homepage Icon One';
