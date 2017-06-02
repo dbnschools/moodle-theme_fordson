@@ -35,6 +35,8 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 * Removed scroll to top javascript when not activated.
 * Added styling to Add activity or resource link so that it stands out more when editing a page.
 * Added styling to Add topics/weeks link so that it stands out more when editing a page.
+* Added messaging contact option - if messaging is activated - to show link in student dashboard to contact teachers.
+* New Icons for Acitivities and Resources.  Can be removed if you delete the pix_plugins folder. https://material.io
 
 ## Fordson Moodle 33 1.4.9 2017051900
 * Fixed header image so that only one image is served to the page. This will help with page load times. It also eliminates using prescss to attach the background image to a css class.

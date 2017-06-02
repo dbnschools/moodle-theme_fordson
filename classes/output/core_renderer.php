@@ -621,6 +621,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
 
     public function teacherdash() {
         global $PAGE, $COURSE, $CFG, $DB, $OUTPUT;
+
         require_once($CFG->dirroot.'/completion/classes/progress.php');
         $togglebutton = '';
         $togglebuttonstudent = '';
@@ -766,10 +767,14 @@ class core_renderer extends \theme_boost\output\core_renderer {
 
             foreach ($teachers as $staff) {
                 $picture = $OUTPUT->user_picture($staff, array('size' => 50));
+                $messaging = new moodle_url('/message/index.php', array('id' => $staff->id));
+                $hasmessaging = $CFG->messaging==1;
                 $courseteachers[] = array (
                     'name' => $staff->firstname . ' ' . $staff->lastname . ' ' . $staff->alternatename,
                     'email' => $staff->email,
                     'picture' => $picture,
+                    'messaging' => $messaging,
+                    'hasmessaging' => $hasmessaging,
                 );
             }
             $role = $DB->get_record('role', array('shortname' => 'teacher'));
@@ -799,7 +804,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
             $hasuserpermission = has_capability('moodle/course:viewhiddenactivities', $context);
             $hasgradebookshow = $PAGE->course->showgrades == 1 && $PAGE->theme->settings->showstudentgrades == 1;
             $hascompletionshow = $PAGE->course->enablecompletion == 1 && $PAGE->theme->settings->showstudentgrades == 1;
+            
 
+//var_dump($CFG);
         //send to template
         $dashlinks = [
         'showincourseonly' =>$showincourseonly,

@@ -320,8 +320,8 @@ div#learningcontent {
 }
 
 #page-course-view-topics .course-content ul.topics li.section:hover {
-  background-color: $gray-lightest;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background-color: $gray-lightest;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 #page-course-view-weeks .course-content ul.weeks li.section {
@@ -331,21 +331,34 @@ div#learningcontent {
 }
 
 #page-course-view-weeks .course-content ul.weeks li.section:hover {
-  background-color: $gray-lightest;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background-color: $gray-lightest;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 .section li.activity {
-    padding: 7px;
+    padding: $spacer;
     border-radius: 5px;
+    border-bottom: 1px dashed $gray-lighter;
+    font-size: 16px;
 }
-
 .section li.activity:hover {
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     background-color: $activityhover;
 }
 .editing .section .activity:hover, .editing .section .activity.action-menu-shown {
     background-color: $activityhover;
+}
+img.activityicon {
+    height: 36px;
+    width: 36px;
+    vertical-align: middle!important;
+}
+span.actions .icon {
+    width: 30px;
+    height: 30px;
+}
+span.instancename {
+    margin-left: 1rem;
 }
 
 body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-size:cover; background-position:center;}

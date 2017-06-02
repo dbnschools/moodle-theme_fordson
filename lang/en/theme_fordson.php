@@ -236,6 +236,7 @@ $string['activitylinkstitle_desc'] = 'View All Activities in Course';
 $string['myprogresstext'] = 'My Progress';
 $string['mygradestext'] = 'My Grades';
 
+
 // Menu Settings
 $string['menusettings'] = 'Menu settings';
 $string['thiscourse'] = 'This Course';
