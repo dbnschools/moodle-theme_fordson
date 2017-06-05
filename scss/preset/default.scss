@@ -395,7 +395,25 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
     background-color: $footer-bg !important;
 }
 
-
+//fixes for phone with main content area
+@media screen and (max-width: 576px) {
+    #page-course-view-topics .course-content ul.topics li.section {
+        padding: 0px;
+    }
+    .card-block {
+        padding: .5rem;
+    }
+    .section li.activity {
+        padding: .5rem;
+    }
+    .course-content ul.section {
+        margin: 0;
+    }
+}
+.path-course-view .completionprogress {
+    position: absolute;
+    right: $spacer;
+}
 
 
 /*Special thanks to Shaun Daubney (Theme Aardvark)

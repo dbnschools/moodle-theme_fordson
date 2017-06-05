@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="completion-manual-n.svg">
+   sodipodi:docname="completion-auto-n.svg">
   <metadata
      id="metadata12">
     <rdf:RDF>
@@ -37,23 +37,23 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1001"
-     inkscape:window-height="480"
+     inkscape:window-width="872"
+     inkscape:window-height="773"
      id="namedview8"
      showgrid="false"
      inkscape:zoom="9.8333333"
-     inkscape:cx="-3.0508475"
+     inkscape:cx="12"
      inkscape:cy="12"
      inkscape:window-x="10"
      inkscape:window-y="34"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg2" />
   <path
+     d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"
+     id="path4"
+     style="fill:#999999" />
+  <path
      d="M0 0h24v24H0z"
      fill="none"
-     id="path4" />
-  <path
-     d="M19 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.11 0 2-.9 2-2V5c0-1.1-.89-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-     id="path6"
-     style="fill:#999999;fill-opacity:1" />
+     id="path6" />
 </svg>

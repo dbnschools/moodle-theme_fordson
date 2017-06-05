@@ -806,7 +806,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
             $hascompletionshow = $PAGE->course->enablecompletion == 1 && $PAGE->theme->settings->showstudentgrades == 1;
             
 
-//var_dump($CFG);
         //send to template
         $dashlinks = [
         'showincourseonly' =>$showincourseonly,
