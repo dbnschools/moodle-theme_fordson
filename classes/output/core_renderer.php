@@ -40,8 +40,8 @@ use theme_config;
 
 defined('MOODLE_INTERNAL') || die;
 
-require_once($CFG->dirroot . "/course/renderer.php");
-require_once($CFG->libdir. '/coursecatlib.php');
+require_once($CFG->dirroot ."/course/renderer.php");
+require_once($CFG->libdir.'/coursecatlib.php');
 
 /**
  * Renderers to align Moodle's HTML with that expected by Bootstrap
@@ -93,6 +93,13 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $html .= html_writer::end_div(); //headerfade
         $html .= html_writer::end_tag('header');
         return $html;
+    }
+
+    public function image_url($imagename, $component = 'moodle') {
+        // Strip -24, -64, -256  etc from the end of filetype icons so we
+        // only need to provide one SVG, see MDL-47082.
+        $imagename = \preg_replace('/-\d\d\d?$/', '', $imagename);
+        return $this->page->theme->image_url($imagename, $component);
     }
 
     public function headerimage() {
@@ -200,8 +207,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
             html_writer::end_tag('i') . $title, array('href' => $url, 'class' => 'btn  ' . $btn, 'title' => $title));
         return $output;
     }
-
-
     /*
      * This renders the bootstrap top menu.
      *
