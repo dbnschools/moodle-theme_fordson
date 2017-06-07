@@ -37,7 +37,7 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="640"
+     inkscape:window-width="742"
      inkscape:window-height="480"
      id="namedview8"
      showgrid="false"
@@ -53,7 +53,8 @@
      fill="none"
      id="path4" />
   <path
-     d="M2 20h20v-4H2v4zm2-3h2v2H4v-2zM2 4v4h20V4H2zm4 3H4V5h2v2zm-4 7h20v-4H2v4zm2-3h2v2H4v-2z"
+     d="m 2,21.932203 20,0 0,-4.991526 -20,0 0,4.991526 z m 2,-3.743644 2,0 0,2.495763 -2,0 0,-2.495763 z M 2,1.9661017 l 0,4.9915255 20,0 0,-4.9915255 -20,0 z m 4,3.743644 -2,0 0,-2.4957627 2,0 0,2.4957627 z m -4,8.7351693 20,0 0,-4.9915251 -20,0 0,4.9915251 z m 2,-3.743644 2,0 0,2.495762 -2,0 0,-2.495762 z"
      id="path6"
-     style="fill:#999999" />
+     style="fill:#4b76a3;fill-opacity:1"
+     inkscape:connector-curvature="0" />
 </svg>

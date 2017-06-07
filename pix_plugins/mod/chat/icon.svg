@@ -37,12 +37,12 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="640"
+     inkscape:window-width="742"
      inkscape:window-height="480"
      id="namedview8"
      showgrid="false"
      inkscape:zoom="4.9166667"
-     inkscape:cx="24"
+     inkscape:cx="29.084746"
      inkscape:cy="24"
      inkscape:window-x="10"
      inkscape:window-y="34"
@@ -51,7 +51,7 @@
   <path
      d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"
      id="path4"
-     style="fill:#999999" />
+     style="fill:#d500ff;fill-opacity:1" />
   <path
      d="M0 0h24v24H0z"
      fill="none"

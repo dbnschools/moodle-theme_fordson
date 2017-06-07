@@ -7,19 +7,27 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   enable-background="new 0 0 64 64"
-   height="64px"
-   version="1.1"
-   viewBox="0 0 64 64"
-   width="64px"
-   xml:space="preserve"
+   height="1792"
+   viewBox="0 0 1792 1792"
+   width="1792"
    id="svg2"
+   version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="database.svg"><metadata
-     id="metadata38"><rdf:RDF><cc:Work
-         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /></cc:Work></rdf:RDF></metadata><defs
-     id="defs36" /><sodipodi:namedview
+   sodipodi:docname="database.svg">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1"
@@ -28,51 +36,19 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="694"
-     inkscape:window-height="480"
-     id="namedview34"
+     inkscape:window-width="957"
+     inkscape:window-height="785"
+     id="namedview6"
      showgrid="false"
-     inkscape:zoom="3.6875"
-     inkscape:cx="32"
-     inkscape:cy="32"
-     inkscape:window-x="0"
-     inkscape:window-y="24"
+     inkscape:zoom="0.13169643"
+     inkscape:cx="-242.98304"
+     inkscape:cy="896.00001"
+     inkscape:window-x="10"
+     inkscape:window-y="34"
      inkscape:window-maximized="0"
-     inkscape:current-layer="Layer_1" /><g
-     id="Layer_1"><g
-       id="g5"
-       style="fill:#999999"><circle
-         cx="32"
-         cy="32"
-         fill="#E0E0D1"
-         r="32"
-         id="circle7"
-         style="fill:#999999" /></g><g
-       opacity="0.2"
-       id="g9"><path
-         d="M33.752,53.565c-0.968,0.581-2.537,0.581-3.504,0L12.726,43.051c-0.968-0.581-0.968-1.522,0-2.103    l17.522-10.513c0.968-0.581,2.537-0.581,3.504,0l17.522,10.513c0.968,0.581,0.968,1.522,0,2.103L33.752,53.565z"
-         fill="#231F20"
-         id="path11" /></g><g
-       id="g13"><path
-         d="M33.752,51.565c-0.968,0.581-2.537,0.581-3.504,0L12.726,41.051c-0.968-0.581-0.968-1.522,0-2.103    l17.522-10.513c0.968-0.581,2.537-0.581,3.504,0l17.522,10.513c0.968,0.581,0.968,1.522,0,2.103L33.752,51.565z"
-         fill="#C75C5C"
-         id="path15" /></g><g
-       opacity="0.2"
-       id="g17"><path
-         d="M33.752,45.565c-0.968,0.581-2.537,0.581-3.504,0L12.726,35.051c-0.968-0.581-0.968-1.522,0-2.103    l17.522-10.513c0.968-0.581,2.537-0.581,3.504,0l17.522,10.513c0.968,0.581,0.968,1.522,0,2.103L33.752,45.565z"
-         fill="#231F20"
-         id="path19" /></g><g
-       id="g21"><path
-         d="M33.752,43.565c-0.968,0.581-2.537,0.581-3.504,0L12.726,33.051c-0.968-0.581-0.968-1.522,0-2.103    l17.522-10.513c0.968-0.581,2.537-0.581,3.504,0l17.522,10.513c0.968,0.581,0.968,1.522,0,2.103L33.752,43.565z"
-         fill="#76C2AF"
-         id="path23" /></g><g
-       opacity="0.2"
-       id="g25"><path
-         d="M33.752,37.565c-0.968,0.581-2.537,0.581-3.504,0L12.726,27.051c-0.968-0.581-0.968-1.522,0-2.103    l17.522-10.513c0.968-0.581,2.537-0.581,3.504,0l17.522,10.513c0.968,0.581,0.968,1.522,0,2.103L33.752,37.565z"
-         fill="#231F20"
-         id="path27" /></g><g
-       id="g29"><path
-         d="M33.752,35.565c-0.968,0.581-2.537,0.581-3.504,0L12.726,25.051c-0.968-0.581-0.968-1.522,0-2.103    l17.522-10.513c0.968-0.581,2.537-0.581,3.504,0l17.522,10.513c0.968,0.581,0.968,1.522,0,2.103L33.752,35.565z"
-         fill="#4F5D73"
-         id="path31" /></g></g><g
-     id="Layer_2" /></svg>
+     inkscape:current-layer="svg2" />
+  <path
+     d="M896 768q237 0 443-43t325-127v170q0 69-103 128t-280 93.5-385 34.5-385-34.5-280-93.5-103-128v-170q119 84 325 127t443 43zm0 768q237 0 443-43t325-127v170q0 69-103 128t-280 93.5-385 34.5-385-34.5-280-93.5-103-128v-170q119 84 325 127t443 43zm0-384q237 0 443-43t325-127v170q0 69-103 128t-280 93.5-385 34.5-385-34.5-280-93.5-103-128v-170q119 84 325 127t443 43zm0-1152q208 0 385 34.5t280 93.5 103 128v128q0 69-103 128t-280 93.5-385 34.5-385-34.5-280-93.5-103-128v-128q0-69 103-128t280-93.5 385-34.5z"
+     id="path4"
+     style="fill:#615ba3;fill-opacity:1" />
+</svg>

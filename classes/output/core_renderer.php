@@ -779,7 +779,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
                     'email' => $staff->email,
                     'picture' => $picture,
                     'messaging' => $messaging,
-                    'hasmessaging' => $hasmessaging,
+                    'hasmessaging' => $hasmessaging
                 );
             }
             $role = $DB->get_record('role', array('shortname' => 'teacher'));
@@ -790,10 +790,14 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 u.imagealt');
             foreach ($teachers as $staff) {
                 $picture = $OUTPUT->user_picture($staff, array('size' => 50));
-                $courseother = array (
+                $messaging = new moodle_url('/message/index.php', array('id' => $staff->id));
+                $hasmessaging = $CFG->messaging==1;
+                $courseother[] = array (
                     'name' => $staff->firstname . ' ' . $staff->lastname,
                     'email' => $staff->email,
-                    'picture' => $picture
+                    'picture' => $picture,
+                    'messaging' => $messaging,
+                    'hasmessaging' => $hasmessaging
                 );
             }
 

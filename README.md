@@ -29,6 +29,12 @@ This means when Moodle updates the core Boost theme those changes will be applie
 # Install from Github
 Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
+## Fordson Moodle 33 1.5.1 2017060700 bug fixes
+* Fixed student dashboard only showing one non-editing teacher in contact listing
+* Added missing message option for non-editing teacher listing for student dashboard
+* Enhanced icons with color and more consistent look
+* Fixed proper use of icons when uploading a file or editing is turned on (ajax core renderer)
+
 ## Fordson Moodle 33 1.5.0 2017051900
 * New feature on menu page to show the nav drawer collapsed by default for all users.
 * Fixed slideshow so that you can use just an image. Text will only appear if you use a title.
@@ -36,7 +42,7 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 * Added styling to Add activity or resource link so that it stands out more when editing a page.
 * Added styling to Add topics/weeks link so that it stands out more when editing a page.
 * Added messaging contact option - if messaging is activated - to show link in student dashboard to contact teachers.
-* New Icons for Acitivities, Resources, and File Types.  Can be removed if you delete the pix_plugins & Pix_core folders. Icon credits: https://material.io and https://www.elegantthemes.com/blog/freebie-of-the-week/beautiful-flat-icons-for-free
+* New Icons for Acitivities, Resources, and File Types.  Can be removed if you delete the pix_plugins & Pix_core folders. Icon credits: https://material.io , https://www.elegantthemes.com/blog/freebie-of-the-week/beautiful-flat-icons-for-free , https://www.iconfinder.com/
 * CSS adjustments to maximize screen space on small devices.  Removed padding and margins for certain elements.
 
 ## Fordson Moodle 33 1.4.9 2017051900

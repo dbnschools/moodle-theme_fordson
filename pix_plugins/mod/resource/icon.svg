@@ -37,8 +37,8 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="640"
-     inkscape:window-height="480"
+     inkscape:window-width="953"
+     inkscape:window-height="693"
      id="namedview8"
      showgrid="false"
      inkscape:zoom="4.9166667"
@@ -53,7 +53,8 @@
      fill="none"
      id="path4" />
   <path
-     d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"
+     d="m 1.779661,13.19209 9.084746,0 0,-11.412429 -9.084746,0 0,11.412429 z m 0,9.129943 9.084746,0 0,-6.847457 -9.084746,0 0,6.847457 z m 11.355932,0 9.084746,0 0,-11.412429 -9.084746,0 0,11.412429 z m 0,-20.542372 0,6.8474577 9.084746,0 0,-6.8474577 -9.084746,0 z"
      id="path6"
-     style="fill:#999999" />
+     style="fill:#d35f5f"
+     inkscape:connector-curvature="0" />
 </svg>
