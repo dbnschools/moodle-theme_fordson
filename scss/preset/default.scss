@@ -48,7 +48,7 @@ $brand-inverse:             $gray-dark !default;
 $navbar-height:             50px !default;
 $drawer-bg:                 rgba(128, 143, 154, 0.9) !default;
 $headerfade-bg:             #025169 !default;
-$activityhover:             #fff6ae !default;
+
 
 // Spacing
 $spacer:   1rem !default;
@@ -248,6 +248,9 @@ span.section-modchooser-link, a.add-sections {
     padding: 5px;
     background-color: lighten($brand-primary,15%);
 }
+.teacherdashboard .list-group-item:hover {
+    background-color: $gray-lightest;
+}
  
 .page-header-headings h1:before {
     color: $header-color;
@@ -349,8 +352,8 @@ div#learningcontent {
     background-color: $activityhover;
 }
 img.activityicon {
-    height: 36px;
-    width: 36px;
+    height: $activityiconsize;
+    width: $activityiconsize;
     vertical-align: middle!important;
 }
 span.actions .icon {

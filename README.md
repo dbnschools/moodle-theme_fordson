@@ -31,9 +31,11 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 ## Fordson Moodle 33 1.5.1 2017060700 bug fixes
 * Fixed student dashboard only showing one non-editing teacher in contact listing
-* Added missing message option for non-editing teacher listing for student dashboard
-* Enhanced icons with color and more consistent look
+* Added missing message contact option for non-editing teacher listing for student dashboard
+* Enhanced icons with color and other styling
 * Fixed proper use of icons when uploading a file or editing is turned on (ajax core renderer)
+* Added dropdown setting for Activity Icon size in Fordson > Content Areas.  default 36px.
+* Updated elearner and default_x style presets.
 
 ## Fordson Moodle 33 1.5.0 2017051900
 * New feature on menu page to show the nav drawer collapsed by default for all users.

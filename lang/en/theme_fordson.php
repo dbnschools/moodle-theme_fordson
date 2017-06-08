@@ -217,6 +217,8 @@ $string['showloginform_desc'] = 'Uncheck this to hide the custom login form on t
 $string['backtotop'] = 'Back to Top';
 $string['showbacktotop'] = 'Show Back to Top Button';
 $string['showbacktotop_desc'] = 'Uncheck this to hide the Back to Top button in the lower right of the page.';
+$string['activityiconsize'] = 'Activity Icon Size';
+$string['activityiconsize_desc'] = 'Adjust the size of the activity icons used in courses.';
 
 //teacher and student dashboard slider
 $string['userlinks'] = 'User Links';

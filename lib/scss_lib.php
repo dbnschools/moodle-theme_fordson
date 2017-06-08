@@ -117,6 +117,7 @@ function theme_fordson_get_pre_scss($theme) {
         'learningcontentpadding' => ['learningcontentpadding'],
         'blockwidthfordson' => ['blockwidthfordson'],
         'slideshowheight' => ['slideshowheight'],
+        'activityiconsize' => ['activityiconsize'],
     ];
 
     // Add settings variables.

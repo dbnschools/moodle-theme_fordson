@@ -100,6 +100,28 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    // Courses height
+    $name = 'theme_fordson/activityiconsize';
+    $title = get_string('activityiconsize', 'theme_fordson');
+    $description = get_string('activityiconsize_desc', 'theme_fordson');;
+    $default = '36px';
+    $choices = array(
+            '24px' => '24px',
+            '28px' => '28px',
+            '32px' => '32px',
+            '36px' => '36px',
+            '40px' => '40px',
+            '44px' => '44px',
+            '48px' => '48px',
+            '52px' => '52px',
+            '56px' => '56px',
+            '60px' => '60px',
+            '64px' => '64px',
+        );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
 
     // Courses height
     $name = 'theme_fordson/courseboxheight';

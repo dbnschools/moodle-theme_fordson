@@ -403,6 +403,37 @@ div#learningcontent {
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
+.section li.activity {
+    padding: $spacer;
+    border-radius: 5px;
+    border-bottom: 1px dashed $gray-lighter;
+    font-size: 16px;
+}
+
+.section li.activity:hover {
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    background-color: $activityhover;
+}
+
+.editing .section .activity:hover, .editing .section .activity.action-menu-shown {
+    background-color: $activityhover;
+}
+
+img.activityicon {
+    height: $activityiconsize;
+    width: $activityiconsize;
+    vertical-align: middle!important;
+}
+
+span.actions .icon {
+    width: 30px;
+    height: 30px;
+}
+
+span.instancename {
+    margin-left: 1rem;
+}
+
 .forumpost {
     background-color: darken($card-bg, 3%);
 }
@@ -442,6 +473,26 @@ div#fpslider {
 .bg-inverse {
     color: $body-color !important;
     background-color: $footer-bg !important;
+}
+
+//fixes for phone with main content area
+@media screen and (max-width: 576px) {
+    #page-course-view-topics .course-content ul.topics li.section {
+        padding: 0px;
+    }
+    .card-block {
+        padding: .5rem;
+    }
+    .section li.activity {
+        padding: .5rem;
+    }
+    .course-content ul.section {
+        margin: 0;
+    }
+}
+.path-course-view .completionprogress {
+    position: absolute;
+    right: $spacer;
 }
 
 
