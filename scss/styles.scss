@@ -41,6 +41,10 @@ $activityhover: #fff6ae !default;
 /**
 * Layout Header
 **/
+
+.class-list {
+    clear: both;
+}
 #page-header h1 {
     font-weight:600;
     color: $header-color;

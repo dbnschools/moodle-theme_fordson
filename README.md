@@ -29,6 +29,11 @@ This means when Moodle updates the core Boost theme those changes will be applie
 # Install from Github
 Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
+## Fordson Moodle 33 1.5.2 2017060700 Design and Style
+* New Preset - Default Fullscreen Background.  This is exactly the same as the default preset but the image background for each course is fullscreen instead of just a block at the top of the page.
+* New activity icon colors and size fixes thanks to Michelle Lomman.
+* New icon for student dashboard (This Course) which will allow the student to unenroll.
+
 ## Fordson Moodle 33 1.5.1 2017060700 bug fixes
 * Fixed student dashboard only showing one non-editing teacher in contact listing
 * Added missing message contact option for non-editing teacher listing for student dashboard

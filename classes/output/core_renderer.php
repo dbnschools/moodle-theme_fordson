@@ -745,6 +745,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
             ];
             $progresschart = $this->render_from_template('block_myoverview/progress-chart', $progresschartcontext);
             $gradeslink = new moodle_url('/grade/report/user/index.php', array('id' => $PAGE->course->id));
+            
 
             $hascourseinfogroup = array (
                 'title' => get_string('courseinfo', 'theme_fordson'),
@@ -805,6 +806,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
             $activitylinkstitle_desc = get_string('activitylinkstitle_desc', 'theme_fordson');
             $mygradestext = get_string('mygradestext', 'theme_fordson');
             $myprogresstext = get_string('myprogresstext', 'theme_fordson');
+            $studentcoursemanage = get_string('courseadministration', 'moodle');
 
             //permissionchecks for teacher access
             $hasquestionpermission = has_capability('moodle/question:add', $context);
@@ -850,6 +852,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
         'hasstudentdash' => $hasstudentdash,
         'hasgradebookshow' => $hasgradebookshow,
         'hascompletionshow' => $hascompletionshow,
+        'studentcourseadminlink' => $courseadminlink,
+        'studentcoursemanage' => $studentcoursemanage,
 
         'dashlinks' => array(
                 array('hasuserlinks' => $gradestitle, 'title' => $gradestitle, 'url' => $gradeslink),

@@ -127,7 +127,7 @@
     <div class="row">
     
         {{#studentdashboardtextbox}}
-        <div class="col-md-8">
+        <div class="col-md-6">
             <div class="studentdashboardtextbox">{{{studentdashboardtextbox}}}</div>
         </div>
         {{/studentdashboardtextbox}}
@@ -146,6 +146,14 @@
             <p>{{{mygradestext}}}</p><a href="{{{gradeslink}}}" alt="{{{mygradestext}}}"><i class="fa fa-5x fa-bar-chart"></i></a>
         </div>
         {{/hasgradebookshow}}
+
+        {{#studentcourseadminlink}}
+        <div class="col-md-2">
+            <p>{{{studentcoursemanage}}}</p><a href="{{{studentcourseadminlink}}}" alt="{{{studentcoursemanage}}}"><i class="fa fa-5x fa-cog"></i></a>
+        </div>
+        {{/studentcourseadminlink}}
+
+        
 
     </div>
 
