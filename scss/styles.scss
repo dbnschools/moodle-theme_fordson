@@ -41,10 +41,6 @@ $activityhover: #fff6ae !default;
 /**
 * Layout Header
 **/
-
-.class-list {
-    clear: both;
-}
 #page-header h1 {
     font-weight:600;
     color: $header-color;
@@ -55,7 +51,6 @@ $activityhover: #fff6ae !default;
     border-left: 1px solid $card-bg;
     border-right: 1px solid $card-bg;
 }
-
 
 @media screen and (min-width: 992px) {
 #page.container-fluid {
@@ -307,7 +302,6 @@ a.right.carousel-control .fa-chevron-right {
     border-radius: 5px;
 }
 
-
 div#fpslider {
     background-color: $fpstartwrap-bg;
     padding: $spacer;
@@ -421,6 +415,14 @@ form#enrolform_easy button.btn.btn-primary {
 
 .course-title {
     padding-top: 1rem;
+}
+
+.class-list {
+    clear: both;
+}
+
+.coursesmorelink {
+    padding: 1rem;
 }
 
 /*
