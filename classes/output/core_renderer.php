@@ -105,8 +105,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
     public function headerimage() {
         global $CFG, $COURSE, $PAGE, $OUTPUT;
                 // Get course overview files.
+        
         if (empty($CFG->courseoverviewfileslimit)) {
-            return array();
+            return '';
         }
         require_once($CFG->libdir. '/filestorage/file_storage.php');
         require_once($CFG->dirroot. '/course/lib.php');
@@ -707,6 +708,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
         //manage course
         $courseadmintitle = get_string('courseadministration', 'moodle');
         $courseadminlink = new moodle_url('/course/admin.php', array('courseid' => $PAGE->course->id));
+        $coursecompletiontitle = get_string('coursecompletion', 'moodle');
+        $coursecompletionlink = new moodle_url('/course/completion.php', array('id' => $PAGE->course->id));
         $courseresettitle = get_string('reset', 'moodle');
         $courseresetlink = new moodle_url('/course/reset.php', array('id' => $PAGE->course->id));
         $coursebackuptitle = get_string('backup', 'moodle');
@@ -869,6 +872,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 array('hasqbanklinks' => $qimporttitle, 'title' => $qimporttitle, 'url' => $qimportlink),
                 array('hasqbanklinks' => $qexporttitle, 'title' => $qexporttitle, 'url' => $qexportlink),
                 array('hascoursemanagelinks' => $courseedittitle, 'title' => $courseedittitle, 'url' => $courseeditlink),
+                array('hascoursemanagelinks' => $coursecompletiontitle, 'title' => $coursecompletiontitle, 'url' => $coursecompletionlink),
                 array('hascoursemanagelinks' => $courseadmintitle, 'title' => $courseadmintitle, 'url' => $courseadminlink),
                 array('hascoursemanagelinks' => $courseresettitle, 'title' => $courseresettitle, 'url' => $courseresetlink),
                 array('hascoursemanagelinks' => $coursebackuptitle, 'title' => $coursebackuptitle, 'url' => $coursebackuplink),

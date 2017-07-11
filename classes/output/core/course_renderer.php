@@ -37,6 +37,7 @@ use html_writer;
 use heading;
 use pix_icon;
 use image_url;
+use single_select;
 
 require_once($CFG->dirroot . '/course/renderer.php');
 
@@ -52,47 +53,6 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
 class course_renderer extends \theme_boost\output\core\course_renderer {
     
     protected $countcategories = 0;
-    
-    /**
-     * Renders html to display a course search form.
-     *
-     * @param string $value default value to populate the search field
-     * @param string $format display format - 'plain' (default), 'short' or 'navbar'
-     * @return string
-     */
-    public function course_search_form($value = '', $format = 'plain') {
-        static $count = 0;
-        $formid = 'coursesearch';
-        if ((++$count) > 1) {
-            $formid .= $count;
-        }
-
-        switch ($format) {
-            case 'navbar' :
-                $formid = 'coursesearchnavbar';
-                $inputid = 'navsearchbox';
-                $inputsize = 20;
-                break;
-            case 'short' :
-                $inputid = 'shortsearchbox';
-                $inputsize = 12;
-                break;
-            default :
-                $inputid = 'coursesearchbox';
-                $inputsize = 30;
-        }
-
-        $data = (object) [
-            'searchurl' => (new moodle_url('/course/search.php'))->out(false),
-            'id' => $formid,
-            'inputid' => $inputid,
-            'inputsize' => $inputsize,
-            'value' => $value
-        ];
-
-        return $this->render_from_template('theme_boost/course_search_form', $data);
-    }
-    
 
     public function frontpage_available_courses($id=0) {
     	/* available courses */
@@ -118,7 +78,7 @@ class course_renderer extends \theme_boost\output\core\course_renderer {
     	$header = '
     			<div id="frontpage-course-list">
     				<div class="class-list">
-        				<h2>'.$newcourse.'</h2>
+        				<h4>'.$newcourse.'</h4>
         			</div>
         			<div class="courses frontpage-course-list-all">';
     	
@@ -205,11 +165,12 @@ class course_renderer extends \theme_boost\output\core\course_renderer {
     }
 
     public function view_available_courses($id = 0, $courses = NULL, $totalcount = NULL) {
+
         /* available courses */
         global $CFG, $OUTPUT, $PAGE;
 
         $rcourseids = array_keys($courses);
-        $acourseids = array_chunk($rcourseids, 3);
+        $acourseids = array_chunk($rcourseids, 4);
         
         if($id!=0){
         $newcourse = get_string('availablecourses');
@@ -219,15 +180,16 @@ class course_renderer extends \theme_boost\output\core\course_renderer {
 
         $header = '
                 <div id="category-course-list">
+                    <div class="courses category-course-list-all">
+                    <hr>
                     <div class="class-list">
-                        <h2>'.$newcourse.'</h2>
-                    </div>
-                    <div class="courses category-course-list-all">';
+                        <h4>'.$newcourse.'</h4>
+                    </div>';
         
         $content = '';
         
-        $footer = '
-                    </div>
+        $footer = '<hr>
+                   </div>
                 </div>';
     
         if (count($rcourseids) > 0) {
@@ -279,7 +241,7 @@ class course_renderer extends \theme_boost\output\core\course_renderer {
                     }
                    
                    $rowcontent .= '
-                        <div class="col-md-4">';
+                        <div class="col-md-3">';
                     $rowcontent .= html_writer::start_tag('div', array('class' => $course->visible ? '' : 'coursedimmed'));
                     $rowcontent .= '
                             <div class="class-box">
@@ -320,95 +282,11 @@ class course_renderer extends \theme_boost\output\core\course_renderer {
 
         return $coursehtml;
     }
-
-
-
-    /**
-     * Returns HTML to display the subcategories and courses in the given category
-     *
-     * This method is re-used by AJAX to expand content of not loaded category
-     *
-     * @param coursecat_helper $chelper various display options
-     * @param coursecat $coursecat
-     * @param int $depth depth of the category in the current tree
-     * @return string
-     */
-        protected function coursecat_category(coursecat_helper $chelper, $coursecat, $depth) {
-
-        global $CFG, $OUTPUT;
-        // open category tag
-        $classes = array('category');
-        if (empty($coursecat->visible)) {
-            $classes[] = 'dimmed_category';
-        }
-        if ($chelper->get_subcat_depth() > 0 && $depth >= $chelper->get_subcat_depth()) {
-            // do not load content
-            $categorycontent = '';
-            $classes[] = 'notloaded';
-            if ($coursecat->get_children_count() ||
-                    ($chelper->get_show_courses() >= self::COURSECAT_SHOW_COURSES_COLLAPSED && $coursecat->get_courses_count())) {
-                $classes[] = 'with_children';
-                $classes[] = 'collapsed';
-            }
-        } else {
-            // load category content
-            $categorycontent = $this->coursecat_category_content($chelper, $coursecat, $depth);
-            $classes[] = 'loaded';
-            if (!empty($categorycontent)) {
-                $classes[] = 'with_children';
-            }
-        }
-        
-        $totalcount = coursecat::get(0)->get_children_count();
-        
-        $content = '';
-        if($this->countcategories == 0 || ($this->countcategories % 3) == 0){
-            if(($this->countcategories % 3) == 0 && $totalcount != $this->countcategories){
-                $content .= '</div> </div>';
-            }
-            if($totalcount != $this->countcategories || $this->countcategories == 0){
-                $categoryparam = optional_param('categoryid', 0, PARAM_INT);
-                if($categoryparam){
-                    $content .= $OUTPUT->heading(get_string('categories'));
-                }
-                $content .= '<div class="container-fluid"><div class="row">';
-            }
-        }
-
-        // ADD HERE GRID OPTIONS AND BOX CSS
-        $classes[] = 'col-md-3 box-class';
-        $content = '<div class="'.join(' ', $classes).'" data-categoryid="'.$coursecat->id.'" data-depth="'.$depth.'" data-showcourses="'.$chelper->get_show_courses().'" data-type="'.self::COURSECAT_TYPE_CATEGORY.'">';
-        $content .= '<div class="cat-icon">';
-
-        // LOAD ICON
-        $val = theme_fordson_get_setting('catsicon');
-        $url= new moodle_url('/course/index.php', array('categoryid' => $coursecat->id));
-        $content .= '<a href="'.$url.'">';
-        $content .= '<i class="fa fa-5x fa-'.$val.'"></i>';
-                //Cat title
-        $categoryname = $coursecat->get_formatted_name();
-        $content .= '<div>';
-        $content .= '<div class="info-enhanced">';
-        $content .= '<span class="class-category">'.$categoryname.'</span>';
-        // ADD HERE A CLASS TO SHOW COURSES COUNT IN A CORNER OR WHERE YOU THINK IS BETTER.
-        if ($chelper->get_show_courses() == self::COURSECAT_SHOW_COURSES_COUNT) {
-            $coursescount = $coursecat->get_courses_count();
-            $content .= '  <span class="numberofcourses" title="'.get_string('numberofcourses').'">('.$coursescount.')</span>';
-        }
-        $content .= '</div>';
-        $content .= '</div>';
-        $content .= '</a>';
-
-        $content .= '</div>'; // BORDER DIV END.
-        $content .= '</div>'; // COL-MD-4 DIV END
-        if($totalcount == $this->countcategories){
-        }
-        ++$this->countcategories;
-        return $content;
-    }
          
     protected function coursecat_courses(coursecat_helper $chelper, $courses, $totalcount = null) {
-global $CFG;
+        
+        global $CFG;
+
         if ($totalcount === null) {
             $totalcount = count($courses);
         }

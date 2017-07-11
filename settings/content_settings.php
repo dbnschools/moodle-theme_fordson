@@ -204,46 +204,6 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
-    //course category Icon
-    $name = 'theme_fordson/catsicon';
-    $title = get_string('catsicon','theme_fordson');
-    $description = get_string('catsicon_desc', 'theme_fordson');
-    $default = 'folder';
-    $choices = array(
-        'clone' => 'Clone',
-        'bookmark' => 'Bookmark',
-        'book' => 'Book',
-        'certificate' => 'Certificate',
-        'desktop' => 'Desktop',
-        'graduation-cap' => 'Graduation Cap',
-        'users' => 'Users',
-        'bars' => 'Bars',
-        'paper-plane' => 'Paper Plane',
-        'plus-circle' => 'Plus Circle',
-        'Sitemap' => 'Sitemap',
-        'puzzle-piece' => 'Puzzle Piece',
-        'spinner' => 'Spinner',
-        'circle-o-notch' => 'Circle O Notch',
-        'check-square-o' => 'Check Square O',
-        'plus-square-o' => 'Plus Square O',
-        'chevron-circle-right' => 'Chevron Circle Right',
-        'arrow-circle-right' => 'Arrow Circle Right',
-        'carrot-down' => 'Caret Down',
-        'forward' => 'Forward',
-        'file-text' => 'File Text',
-        'align-right' => 'Align Right',
-        'angle-double-right' => 'Angle Double Right',
-        'folder-open' => 'Folder Open',
-        'folder' => 'Folder',
-        'folder-open-o' => 'Folder Open O',
-        'chevron-right' => 'Chevron Right',
-        'star' => 'Star',
-        'user-circle' => 'User Circle',
-    );
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
     //Topic and Weekly Section Titles Icon
     $name = 'theme_fordson/headericon';
     $title = get_string('headericon','theme_fordson');
