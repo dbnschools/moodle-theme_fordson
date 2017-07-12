@@ -29,6 +29,9 @@ This means when Moodle updates the core Boost theme those changes will be applie
 # Install from Github
 Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
+## Fordson Moodle 33 1.5.4
+* Added option to toggle on/off course category icons.  The icons were removed in previous version but we realize some may find them useful and better than the Moodle default.  
+
 
 ## Fordson Moodle 33 1.5.3 2017062200
 * Major change to course directory listings.  We opted to remove the icon display of categories.  User feedback suggested this was too many clicks and a useability issue when browsing for a course.  Instead of icons, we kept courses displayed as boxes and used the default Moodle list category display which allows the user to collapse and expand to view courses as boxes.  This makes browsing courses MUCH faster and easier for the user.

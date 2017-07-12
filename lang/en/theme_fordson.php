@@ -197,7 +197,7 @@ $string['sectionicon_desc'] = 'This allows you to change the icon that appears n
 $string['headericon'] = 'Header Title Icon';
 $string['headericon_desc'] = 'This allows you to change the icon that appears in the header area next to the page title. These are Font-Awesome icons.';
 $string['enablefrontpageavailablecoursebox'] = 'Enable Enhanced Course Display';
-$string['enablefrontpageavailablecoursebox_desc'] = 'Enhanced Course Display will display courses as tiles in a grid and use icons in a grid view for course categories. To use Moodle default presentation uncheck this option.';
+$string['enablefrontpageavailablecoursebox_desc'] = 'Enhanced Course Display will display courses as tiles in a grid. To use Moodle default presentation of courses uncheck this option.';
 $string['courseboxheight'] = 'Frontpage Courses Tile Height';
 $string['courseboxheight_desc'] = 'Control the height of the Course tile on the frontpage.';
 $string['catsicon'] = 'Category Icon';
@@ -219,6 +219,8 @@ $string['showbacktotop'] = 'Show Back to Top Button';
 $string['showbacktotop_desc'] = 'Uncheck this to hide the Back to Top button in the lower right of the page.';
 $string['activityiconsize'] = 'Activity Icon Size';
 $string['activityiconsize_desc'] = 'Adjust the size of the activity icons used in courses.';
+$string['enablecategoryicon'] = 'Category Display Icons';
+$string['enablecategoryicon_desc'] = 'When checked this will display course categories as icons';
 
 //teacher and student dashboard slider
 $string['userlinks'] = 'User Links';

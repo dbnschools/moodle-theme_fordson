@@ -27,10 +27,10 @@ defined('MOODLE_INTERNAL') || die();
 
 $page = new admin_settingpage('theme_fordson_content', get_string('contentsettings', 'theme_fordson'));
 
-    // Frontpage Available Courses enhancement
-    $name = 'theme_fordson/enablefrontpageavailablecoursebox';
-    $title = get_string('enablefrontpageavailablecoursebox', 'theme_fordson');
-    $description = get_string('enablefrontpageavailablecoursebox_desc', 'theme_fordson');
+    // Frontpage show login form
+    $name = 'theme_fordson/showloginform';
+    $title = get_string('showloginform', 'theme_fordson');
+    $description = get_string('showloginform_desc', 'theme_fordson');
     $default = 1;
     $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
@@ -204,6 +204,65 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    // Frontpage Available Courses enhancement
+    $name = 'theme_fordson/enablefrontpageavailablecoursebox';
+    $title = get_string('enablefrontpageavailablecoursebox', 'theme_fordson');
+    $description = get_string('enablefrontpageavailablecoursebox_desc', 'theme_fordson');
+    $default = 1;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // category icons on or off
+    $name = 'theme_fordson/enablecategoryicon';
+    $title = get_string('enablecategoryicon', 'theme_fordson');
+    $description = get_string('enablecategoryicon_desc', 'theme_fordson');
+    $default = 1;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    //course category Icon
+    $name = 'theme_fordson/catsicon';
+    $title = get_string('catsicon','theme_fordson');
+    $description = get_string('catsicon_desc', 'theme_fordson');
+    $default = 'folder';
+    $choices = array(
+        'clone' => 'Clone',
+        'bookmark' => 'Bookmark',
+        'book' => 'Book',
+        'certificate' => 'Certificate',
+        'desktop' => 'Desktop',
+        'graduation-cap' => 'Graduation Cap',
+        'users' => 'Users',
+        'bars' => 'Bars',
+        'paper-plane' => 'Paper Plane',
+        'plus-circle' => 'Plus Circle',
+        'Sitemap' => 'Sitemap',
+        'puzzle-piece' => 'Puzzle Piece',
+        'spinner' => 'Spinner',
+        'circle-o-notch' => 'Circle O Notch',
+        'check-square-o' => 'Check Square O',
+        'plus-square-o' => 'Plus Square O',
+        'chevron-circle-right' => 'Chevron Circle Right',
+        'arrow-circle-right' => 'Arrow Circle Right',
+        'carrot-down' => 'Caret Down',
+        'forward' => 'Forward',
+        'file-text' => 'File Text',
+        'align-right' => 'Align Right',
+        'angle-double-right' => 'Angle Double Right',
+        'folder-open' => 'Folder Open',
+        'folder' => 'Folder',
+        'folder-open-o' => 'Folder Open O',
+        'chevron-right' => 'Chevron Right',
+        'star' => 'Star',
+        'user-circle' => 'User Circle',
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+
     //Topic and Weekly Section Titles Icon
     $name = 'theme_fordson/headericon';
     $title = get_string('headericon','theme_fordson');
@@ -301,15 +360,6 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $description = get_string('fptextboxlogout_desc', 'theme_fordson');
     $default = '';
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
-    // Frontpage show login form
-    $name = 'theme_fordson/showloginform';
-    $title = get_string('showloginform', 'theme_fordson');
-    $description = get_string('showloginform_desc', 'theme_fordson');
-    $default = 1;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
