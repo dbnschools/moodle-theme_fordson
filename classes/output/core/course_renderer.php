@@ -284,7 +284,7 @@ class course_renderer extends \theme_boost\output\core\course_renderer {
     }
 
 
-       /**
+    /**
      * Returns HTML to display the subcategories and courses in the given category
      *
      * This method is re-used by AJAX to expand content of not loaded category
@@ -294,14 +294,13 @@ class course_renderer extends \theme_boost\output\core\course_renderer {
      * @param int $depth depth of the category in the current tree
      * @return string
      */
+    protected function coursecat_category(coursecat_helper $chelper, $coursecat, $depth) {
+        if (!theme_fordson_get_setting('enablecategoryicon')) {
+            return parent::coursecat_category($chelper, $coursecat, $depth);
+        }
 
-       
-        
-            
-        protected function coursecat_category(coursecat_helper $chelper, $coursecat, $depth) {
         global $CFG, $OUTPUT;
 
-        if (theme_fordson_get_setting('enablecategoryicon')) {
         // open category tag
         $classes = array('category');
         if (empty($coursecat->visible)) {
@@ -371,65 +370,7 @@ class course_renderer extends \theme_boost\output\core\course_renderer {
         }
         ++$this->countcategories;
         return $content;
-
-    }else {
-        // open category tag
-        $classes = array('category');
-        if (empty($coursecat->visible)) {
-            $classes[] = 'dimmed_category';
-        }
-        if ($chelper->get_subcat_depth() > 0 && $depth >= $chelper->get_subcat_depth()) {
-            // do not load content
-            $categorycontent = '';
-            $classes[] = 'notloaded';
-            if ($coursecat->get_children_count() ||
-                    ($chelper->get_show_courses() >= self::COURSECAT_SHOW_COURSES_COLLAPSED && $coursecat->get_courses_count())) {
-                $classes[] = 'with_children';
-                $classes[] = 'collapsed';
-            }
-        } else {
-            // load category content
-            $categorycontent = $this->coursecat_category_content($chelper, $coursecat, $depth);
-            $classes[] = 'loaded';
-            if (!empty($categorycontent)) {
-                $classes[] = 'with_children';
-            }
-        }
-
-        // Make sure JS file to expand category content is included.
-        $this->coursecat_include_js();
-
-        $content = html_writer::start_tag('div', array(
-            'class' => join(' ', $classes),
-            'data-categoryid' => $coursecat->id,
-            'data-depth' => $depth,
-            'data-showcourses' => $chelper->get_show_courses(),
-            'data-type' => self::COURSECAT_TYPE_CATEGORY,
-        ));
-
-        // category name
-        $categoryname = $coursecat->get_formatted_name();
-        $categoryname = html_writer::link(new moodle_url('/course/index.php',
-                array('categoryid' => $coursecat->id)),
-                $categoryname);
-        if ($chelper->get_show_courses() == self::COURSECAT_SHOW_COURSES_COUNT
-                && ($coursescount = $coursecat->get_courses_count())) {
-            $categoryname .= html_writer::tag('span', ' ('. $coursescount.')',
-                    array('title' => get_string('numberofcourses'), 'class' => 'numberofcourse'));
-        }
-        $content .= html_writer::start_tag('div', array('class' => 'info'));
-
-        $content .= html_writer::tag(($depth > 1) ? 'h4' : 'h3', $categoryname, array('class' => 'categoryname'));
-        $content .= html_writer::end_tag('div'); // .info
-
-        // add category content to the output
-        $content .= html_writer::tag('div', $categorycontent, array('class' => 'content'));
-
-        $content .= html_writer::end_tag('div'); // .category
-
-        // Return the course category tree HTML
-        return $content;
-    }
+    
     }
     
     
