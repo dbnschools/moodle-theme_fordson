@@ -27,6 +27,13 @@ defined('MOODLE_INTERNAL') || die();
 
 $page = new admin_settingpage('theme_fordson_content', get_string('contentsettings', 'theme_fordson'));
 
+    // Content Info
+    $name = 'theme_fordson/generalcontentinfo';
+    $heading = get_string('generalcontentinfo', 'theme_fordson');
+    $information = get_string('generalcontentinfodesc', 'theme_fordson');
+    $setting = new admin_setting_heading($name, $heading, $information);
+    $page->add($setting);
+
     // Frontpage show login form
     $name = 'theme_fordson/showloginform';
     $title = get_string('showloginform', 'theme_fordson');
@@ -122,147 +129,6 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
-
-    // Courses height
-    $name = 'theme_fordson/courseboxheight';
-    $title = get_string('courseboxheight', 'theme_fordson');
-    $description = get_string('courseboxheight_desc', 'theme_fordson');;
-    $default = '250px';
-    $choices = array(
-            '200px' => '200px',
-            '225px' => '225px',
-            '250px' => '250px',
-            '275px' => '275px',
-            '300px' => '300px',
-            '325px' => '325px',
-            '350px' => '350px',
-            '375px' => '375px',
-            '400px' => '400px',
-        );
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
-    // trim title setting.
-    $name = 'theme_fordson/trimtitle';
-    $title = get_string('trimtitle', 'theme_fordson');
-    $description = get_string('trimtitle_desc', 'theme_fordson');
-    $default = '256';
-    $choices = array(
-            '30' => '30',
-            '40' => '40',
-            '50' => '50',
-            '60' => '60',
-            '70' => '70',
-            '80' => '80',
-            '90' => '90',
-            '100' => '100',
-            '110' => '110',
-            '120' => '120',
-            '130' => '130',
-            '140' => '140',
-            '150' => '150',
-            '175' => '175',
-            '200' => '200',
-            '256' => '256',
-        );
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
-    // Frontpage Available Courses enhancement
-    $name = 'theme_fordson/titletooltip';
-    $title = get_string('titletooltip', 'theme_fordson');
-    $description = get_string('titletooltip_desc', 'theme_fordson');
-    $default = 0;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
-    // trim title setting.
-    $name = 'theme_fordson/trimsummary';
-    $title = get_string('trimsummary', 'theme_fordson');
-    $description = get_string('trimsummary_desc', 'theme_fordson');
-    $default = '300';
-    $choices = array(
-            '30' => '30',
-            '60' => '60',
-            '90' => '90',
-            '100' => '100',
-            '150' => '150',
-            '200' => '200',
-            '250' => '250',
-            '300' => '300',
-            '350' => '350',
-            '400' => '400',
-            '450' => '450',
-            '500' => '500',
-            '600' => '600',
-            '800' => '800',
-        );
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
-    // Frontpage Available Courses enhancement
-    $name = 'theme_fordson/enablefrontpageavailablecoursebox';
-    $title = get_string('enablefrontpageavailablecoursebox', 'theme_fordson');
-    $description = get_string('enablefrontpageavailablecoursebox_desc', 'theme_fordson');
-    $default = 1;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
-    // category icons on or off
-    $name = 'theme_fordson/enablecategoryicon';
-    $title = get_string('enablecategoryicon', 'theme_fordson');
-    $description = get_string('enablecategoryicon_desc', 'theme_fordson');
-    $default = 1;
-    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
-    //course category Icon
-    $name = 'theme_fordson/catsicon';
-    $title = get_string('catsicon','theme_fordson');
-    $description = get_string('catsicon_desc', 'theme_fordson');
-    $default = 'folder';
-    $choices = array(
-        'clone' => 'Clone',
-        'bookmark' => 'Bookmark',
-        'book' => 'Book',
-        'certificate' => 'Certificate',
-        'desktop' => 'Desktop',
-        'graduation-cap' => 'Graduation Cap',
-        'users' => 'Users',
-        'bars' => 'Bars',
-        'paper-plane' => 'Paper Plane',
-        'plus-circle' => 'Plus Circle',
-        'Sitemap' => 'Sitemap',
-        'puzzle-piece' => 'Puzzle Piece',
-        'spinner' => 'Spinner',
-        'circle-o-notch' => 'Circle O Notch',
-        'check-square-o' => 'Check Square O',
-        'plus-square-o' => 'Plus Square O',
-        'chevron-circle-right' => 'Chevron Circle Right',
-        'arrow-circle-right' => 'Arrow Circle Right',
-        'carrot-down' => 'Caret Down',
-        'forward' => 'Forward',
-        'file-text' => 'File Text',
-        'align-right' => 'Align Right',
-        'angle-double-right' => 'Angle Double Right',
-        'folder-open' => 'Folder Open',
-        'folder' => 'Folder',
-        'folder-open-o' => 'Folder Open O',
-        'chevron-right' => 'Chevron Right',
-        'star' => 'Star',
-        'user-circle' => 'User Circle',
-    );
-    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
-
     //Topic and Weekly Section Titles Icon
     $name = 'theme_fordson/headericon';
     $title = get_string('headericon','theme_fordson');
@@ -343,6 +209,176 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     );
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+
+
+    // This is the descriptor for icon One
+    $name = 'theme_fordson/coursetileinfo';
+    $heading = get_string('coursetileinfo', 'theme_fordson');
+    $information = get_string('coursetileinfodesc', 'theme_fordson');
+    $setting = new admin_setting_heading($name, $heading, $information);
+    $page->add($setting);
+
+    // Frontpage Available Courses enhancement
+    $name = 'theme_fordson/enablefrontpageavailablecoursebox';
+    $title = get_string('enablefrontpageavailablecoursebox', 'theme_fordson');
+    $description = get_string('enablefrontpageavailablecoursebox_desc', 'theme_fordson');
+    $default = 1;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // trim title setting.
+    $name = 'theme_fordson/trimtitle';
+    $title = get_string('trimtitle', 'theme_fordson');
+    $description = get_string('trimtitle_desc', 'theme_fordson');
+    $default = '256';
+    $choices = array(
+            '15' => '15',
+            '20' => '20',
+            '30' => '30',
+            '40' => '40',
+            '50' => '50',
+            '60' => '60',
+            '70' => '70',
+            '80' => '80',
+            '90' => '90',
+            '100' => '100',
+            '110' => '110',
+            '120' => '120',
+            '130' => '130',
+            '140' => '140',
+            '150' => '150',
+            '175' => '175',
+            '200' => '200',
+            '256' => '256',
+        );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Frontpage Available Courses enhancement
+    $name = 'theme_fordson/titletooltip';
+    $title = get_string('titletooltip', 'theme_fordson');
+    $description = get_string('titletooltip_desc', 'theme_fordson');
+    $default = 0;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // trim title setting.
+    $name = 'theme_fordson/trimsummary';
+    $title = get_string('trimsummary', 'theme_fordson');
+    $description = get_string('trimsummary_desc', 'theme_fordson');
+    $default = '300';
+    $choices = array(
+            '30' => '30',
+            '60' => '60',
+            '90' => '90',
+            '100' => '100',
+            '150' => '150',
+            '200' => '200',
+            '250' => '250',
+            '300' => '300',
+            '350' => '350',
+            '400' => '400',
+            '450' => '450',
+            '500' => '500',
+            '600' => '600',
+            '800' => '800',
+        );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Toggle FP Textbox Spots.
+    $name = 'theme_fordson/coursetilestyle';
+    $title = get_string('coursetilestyle' , 'theme_fordson');
+    $description = get_string('coursetilestyle_desc', 'theme_fordson');
+    $coursestyle1 = get_string('coursestyle1', 'theme_fordson');
+    $coursestyle2 = get_string('coursestyle2', 'theme_fordson');
+    $coursestyle3 = get_string('coursestyle3', 'theme_fordson');
+    $default = '1';
+    $choices = array('1'=>$coursestyle1, '2'=>$coursestyle2, '3'=>$coursestyle3);
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Courses height
+    $name = 'theme_fordson/courseboxheight';
+    $title = get_string('courseboxheight', 'theme_fordson');
+    $description = get_string('courseboxheight_desc', 'theme_fordson');;
+    $default = '250px';
+    $choices = array(
+            '200px' => '200px',
+            '225px' => '225px',
+            '250px' => '250px',
+            '275px' => '275px',
+            '300px' => '300px',
+            '325px' => '325px',
+            '350px' => '350px',
+            '375px' => '375px',
+            '400px' => '400px',
+        );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // category icons on or off
+    $name = 'theme_fordson/enablecategoryicon';
+    $title = get_string('enablecategoryicon', 'theme_fordson');
+    $description = get_string('enablecategoryicon_desc', 'theme_fordson');
+    $default = 1;
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    //course category Icon
+    $name = 'theme_fordson/catsicon';
+    $title = get_string('catsicon','theme_fordson');
+    $description = get_string('catsicon_desc', 'theme_fordson');
+    $default = 'folder';
+    $choices = array(
+        'clone' => 'Clone',
+        'bookmark' => 'Bookmark',
+        'book' => 'Book',
+        'certificate' => 'Certificate',
+        'desktop' => 'Desktop',
+        'graduation-cap' => 'Graduation Cap',
+        'users' => 'Users',
+        'bars' => 'Bars',
+        'paper-plane' => 'Paper Plane',
+        'plus-circle' => 'Plus Circle',
+        'Sitemap' => 'Sitemap',
+        'puzzle-piece' => 'Puzzle Piece',
+        'spinner' => 'Spinner',
+        'circle-o-notch' => 'Circle O Notch',
+        'check-square-o' => 'Check Square O',
+        'plus-square-o' => 'Plus Square O',
+        'chevron-circle-right' => 'Chevron Circle Right',
+        'arrow-circle-right' => 'Arrow Circle Right',
+        'carrot-down' => 'Caret Down',
+        'forward' => 'Forward',
+        'file-text' => 'File Text',
+        'align-right' => 'Align Right',
+        'angle-double-right' => 'Angle Double Right',
+        'folder-open' => 'Folder Open',
+        'folder' => 'Folder',
+        'folder-open-o' => 'Folder Open O',
+        'chevron-right' => 'Chevron Right',
+        'star' => 'Star',
+        'user-circle' => 'User Circle',
+    );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Content Info
+    $name = 'theme_fordson/textcontentinfo';
+    $heading = get_string('textcontentinfo', 'theme_fordson');
+    $information = get_string('textcontentinfodesc', 'theme_fordson');
+    $setting = new admin_setting_heading($name, $heading, $information);
     $page->add($setting);
 
 	// Frontpage Textbox.

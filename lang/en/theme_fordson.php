@@ -183,6 +183,14 @@ $string['sociallinkicon'] = 'Link Icon';
 $string['sociallinkicondesc'] = 'Enter the fontawesome name of the icon for your link<br />A full list of FontAwesome icons can be found at http://fontawesome.io/icons/';
 
 // Content settings.
+
+$string['coursetileinfo'] = 'Course Display Options';
+$string['coursetileinfodesc'] = 'These settings allow you to customize how courses will be displayed on the frontpage as well as course categories.';
+$string['textcontentinfo'] = 'Custom Content';
+$string['textcontentinfodesc'] = 'Use the textboxes below to add a customized information for users.';
+$string['generalcontentinfo'] = 'General Content Display Settings';
+$string['generalcontentinfodesc'] = 'The options below help you customize the way content is displayed and turn on additional features for Fordson.';
+
 $string['contentsettings'] = 'Content areas';
 $string['footnote'] = 'Footnote';
 $string['footnotedesc'] = 'Footnote content editor for main footer';
@@ -198,8 +206,8 @@ $string['headericon'] = 'Header Title Icon';
 $string['headericon_desc'] = 'This allows you to change the icon that appears in the header area next to the page title. These are Font-Awesome icons.';
 $string['enablefrontpageavailablecoursebox'] = 'Enable Enhanced Course Display';
 $string['enablefrontpageavailablecoursebox_desc'] = 'Enhanced Course Display will display courses as tiles in a grid. To use Moodle default presentation of courses uncheck this option.';
-$string['courseboxheight'] = 'Frontpage Courses Tile Height';
-$string['courseboxheight_desc'] = 'Control the height of the Course tile on the frontpage.';
+$string['courseboxheight'] = 'Course Tile Height';
+$string['courseboxheight_desc'] = 'Control the height of the Course tile on the frontpage and course categories.';
 $string['catsicon'] = 'Category Icon';
 $string['catsicon_desc'] = 'Choose an icon to represent course categories.';
 $string['trimtitle'] = 'Trim Course Title';
@@ -221,6 +229,12 @@ $string['activityiconsize'] = 'Activity Icon Size';
 $string['activityiconsize_desc'] = 'Adjust the size of the activity icons used in courses.';
 $string['enablecategoryicon'] = 'Category Display Icons';
 $string['enablecategoryicon_desc'] = 'When checked this will display course categories as icons';
+$string['coursestyle1'] = 'Style One';
+$string['coursestyle2'] = 'Style Two';
+$string['coursestyle3'] = 'Style Three';
+$string['coursetilestyle'] = 'Course Tile Display';
+$string['coursetilestyle_desc'] = 'When viewing course categories you can choose from the following styles to display courses.';
+
 
 //teacher and student dashboard slider
 $string['userlinks'] = 'User Links';
