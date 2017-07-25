@@ -33,7 +33,10 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 ## Fordson Moodle 33 1.5.5
 * New Feature:  Pick from 3 different styles to display courses on the frontpage as well as course category and search pages.  Each style has unique look and feel.  
 * Cleaned up some of the content area settings page to group settings.
-* Course Tile Height setting now applies to all three styles as well as anywhere the course tile may appear.  
+* Course Tile Height setting now applies to all three styles as well as anywhere the course tile may appear.
+* New setting to control the spacing on the sides of the main content box.  
+* CSS and styling fixes.
+* Added teacher names to course tile display.  Removed course summary.  May revisit in future if I can find a cleaner way to all the information in a small tiled box. Our students need to see the teacher name to identify the proper course.
 
 ## Fordson Moodle 33 1.5.4
 * Added option to toggle on/off course category icons.  The icons were removed in previous version but we realize some may find them useful and better than the Moodle default.  

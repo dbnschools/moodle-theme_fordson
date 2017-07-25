@@ -86,6 +86,32 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    // gutter width
+    $name = 'theme_fordson/gutterwidth';
+    $title = get_string('gutterwidth', 'theme_fordson');
+    $description = get_string('gutterwidth_desc', 'theme_fordson');;
+    $default = '6rem';
+    $choices = array(
+            '2rem' => '2rem',
+            '3rem' => '3rem',
+            '4rem' => '4rem',
+            '5rem' => '5rem',
+            '6rem' => '6rem',
+            '7rem' => '7rem',
+            '8rem' => '8rem',
+            '9rem' => '9rem',
+            '10rem' => '10rem',
+            '12rem' => '12rem',
+            '14rem' => '14rem',
+            '16rem' => '16rem',
+            '18rem' => '18rem',
+            '20rem' => '20rem',
+            '22rem' => '22rem',
+            '24rem' => '24rem',
+        );
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
 
     // Block and Content widths
     $name = 'theme_fordson/blockwidthfordson';
@@ -107,6 +133,7 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    
     // Courses height
     $name = 'theme_fordson/activityiconsize';
     $title = get_string('activityiconsize', 'theme_fordson');

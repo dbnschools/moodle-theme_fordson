@@ -190,6 +190,7 @@ $string['textcontentinfo'] = 'Custom Content';
 $string['textcontentinfodesc'] = 'Use the textboxes below to add a customized information for users.';
 $string['generalcontentinfo'] = 'General Content Display Settings';
 $string['generalcontentinfodesc'] = 'The options below help you customize the way content is displayed and turn on additional features for Fordson.';
+$string['enrollcoursecard'] = 'Enroll';
 
 $string['contentsettings'] = 'Content areas';
 $string['footnote'] = 'Footnote';
@@ -234,7 +235,8 @@ $string['coursestyle2'] = 'Style Two';
 $string['coursestyle3'] = 'Style Three';
 $string['coursetilestyle'] = 'Course Tile Display';
 $string['coursetilestyle_desc'] = 'When viewing course categories you can choose from the following styles to display courses.';
-
+$string['gutterwidth'] = 'Content Padding';
+$string['gutterwidth_desc'] = 'This setting controls how much spacing is used on the left and right of the main content.';
 
 //teacher and student dashboard slider
 $string['userlinks'] = 'User Links';

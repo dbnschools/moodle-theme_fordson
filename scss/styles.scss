@@ -37,6 +37,7 @@ $blockwidthfordson: 280px !default;
 $slideshowheight: 250px !default;
 $activityiconsize: 36px !default;
 $activityhover: #fff6ae !default;
+$gutterwidth: 6rem !default;
 
 /**
 * Layout Header
@@ -55,7 +56,7 @@ $activityhover: #fff6ae !default;
 
 @media screen and (min-width: 992px) {
 #page.container-fluid {
-    padding: 0 6rem !important;
+    padding: 0 $gutterwidth  !important;
 }
 }
 
@@ -448,12 +449,18 @@ form#enrolform_easy button.btn.btn-primary {
 
 .class-box-fp .course-title:hover:after  {transform: scaleX(1); }
 
+.courseimagecontainer {
+    height: calc(45%);
+}
+
 .class-box {
     margin-bottom: 2rem;
     border: 1px solid $card-bg;
     border-radius: $card-border-radius;
     box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.3);
     padding: 1rem;
+    height: $courseboxheight;
+    overflow: hidden;
 }
 
 .course-title {
@@ -468,12 +475,14 @@ form#enrolform_easy button.btn.btn-primary {
     padding: 1rem;
 }
 
-.course-image-view {padding-top:10rem;}
+.course-image-view {
+    height: 100%;
+}
 
 .dash-course-image-view {padding-top:5rem;}
 
 .class-box .course-summary {
-    height: 3rem;
+    height: 4rem;
     overflow:auto;
     margin-bottom: 1rem;
 }
@@ -542,7 +551,7 @@ form#enrolform_easy button.btn.btn-primary {
     position: absolute;
     left: 40%;
     font-size: 5rem;
-    margin-top: -8rem;
+    margin-top: -7rem;
     color: $gray-dark;
 }
 
@@ -589,7 +598,7 @@ form#enrolform_easy button.btn.btn-primary {
 
 .coursestyle2 figcaption {
   position: absolute;
-  height: 70px;
+  height: 98px;
   bottom: 0px;
   left: 0px;
   right: 0px;
@@ -606,22 +615,7 @@ form#enrolform_easy button.btn.btn-primary {
   margin: 3px 0;
 }
 
-.coursestyle2 h5 {
-  font-weight: 400;
-  margin: 0;
-  text-transform: uppercase;
-  color: #bbb;
-  letter-spacing: 1px;
-}
-
-.coursestyle2 blockquote {
-  padding: 2rem 0 0 0;
-  margin: 0;
-  font-style: italic;
-  font-size: 1em;
-}
-
-.coursestyle2 a {
+a.coursestyle2url {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -641,13 +635,50 @@ a.coursestyle3url {
 
 .coursestyle2:hover figcaption,
 .coursestyle2.hover figcaption {
-  height: calc(75%);
+  height: calc(100%);
+}
+
+.coursestyle2:hover p.course-summary::-webkit-scrollbar {
+    width: 7px;
+}
+
+.coursestyle2:hover p.course-summary::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 7px rgba(0,0,0,0.3);
+    border-radius: 5%;
+}
+
+.coursestyle2:hover p.course-summary::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
+}
+
+@media screen and (min-width: 992px) {
+    .coursestyle2:hover p.course-summary,
+    .coursestyle2.hover p.course-summary {
+      overflow-y: auto;
+      height: 5rem;
+    }
+}
+
+.coursestyle2 .course-card {
+    margin-top: 4rem;
+}
+
+.coursestyle2:hover .course-card {
+    margin-top: 0rem;
+}
+
+ul.teacherscourseview {
+    list-style-type: none;
+    font-weight: bold;
+    font-style: italic;
 }
 
 .tilecontainer {
     position: relative;
     margin: 3rem 0 2rem 0;
 }
+
 
 /** 
 * TIDY UP 

@@ -118,6 +118,7 @@ function theme_fordson_get_pre_scss($theme) {
         'blockwidthfordson' => ['blockwidthfordson'],
         'slideshowheight' => ['slideshowheight'],
         'activityiconsize' => ['activityiconsize'],
+        'gutterwidth' => ['gutterwidth'],
     ];
 
     // Add settings variables.
