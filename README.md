@@ -29,6 +29,8 @@ This means when Moodle updates the core Boost theme those changes will be applie
 # Install from Github
 Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
+## Fordson Moodle 33 1.5.6
+* New Course Style 4 is exactly the same as style one but adds a course summary back into the display.  This was at the request of a user.  It is the only course display option that includes a course summary.
 
 ## Fordson Moodle 33 1.5.5
 * New Feature:  Pick from 3 different styles to display courses on the frontpage as well as course category and search pages.  Each style has unique look and feel.  

@@ -233,6 +233,7 @@ $string['enablecategoryicon_desc'] = 'When checked this will display course cate
 $string['coursestyle1'] = 'Style One';
 $string['coursestyle2'] = 'Style Two';
 $string['coursestyle3'] = 'Style Three';
+$string['coursestyle4'] = 'Style Four w/course summary';
 $string['coursetilestyle'] = 'Course Tile Display';
 $string['coursetilestyle_desc'] = 'When viewing course categories you can choose from the following styles to display courses.';
 $string['gutterwidth'] = 'Content Padding';

@@ -246,6 +246,53 @@ class course_renderer extends \theme_boost\output\core\course_renderer {
                                </div> 
                         </div>';
                 }
+                if ($PAGE->theme->settings->coursetilestyle == 4) {
+                    $rowcontent .= '
+                        <div class="col-md-4">';
+                    $rowcontent .= html_writer::start_tag('div', array('class' => $course->visible ? '' : 'coursedimmed1'));
+                    $rowcontent .= '
+                            <div class="class-box">
+                                ';
+                                
+                                if ($PAGE->theme->settings->titletooltip) {
+                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="'.$course->fullname.'"';
+                                } else {
+                                $tooltiptext = '';
+                                }
+                       
+                       $rowcontent .= '
+                                    <a '.$tooltiptext.' href="'.$courseurl.'">
+                                    <div class="courseimagecontainer">
+                                    <div class="course-image-view" style="background-image: url('.$imgurl.');background-repeat: no-repeat;background-size:cover; background-position:center;">
+                                    </div>
+                                    <div class="course-overlay">
+                                    <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                                    </div>
+                                    
+                                    </div>
+                                    <div class="course-title">
+                                    <h4>'.$trimtitle.'</h4>
+                                    </div>
+                                    </a>
+                                    <div class="course-summary">
+                                    '.$summary.'
+                                    ';
+                        if ($course->has_course_contacts()) {
+
+                        $rowcontent .= html_writer::start_tag('ul', array('class' => 'teacherscourseview'));
+                        foreach ($course->get_course_contacts() as $userid => $coursecontact) {
+                            
+                            $name = $coursecontact['rolename'].': '.$coursecontact['username'];
+                            $rowcontent .= html_writer::tag('li', $name);
+                        }
+                        $rowcontent .= html_writer::end_tag('ul'); // .teachers
+                        }
+                        $rowcontent .='
+                                    </div>
+                                </div>
+                        </div>
+                        </div>';
+                }
 
                 }
 
@@ -368,6 +415,7 @@ class course_renderer extends \theme_boost\output\core\course_renderer {
                                     </div>
                                     </a>
                                     <div class="course-summary">
+                                    
                                     ';
                         if ($course->has_course_contacts()) {
 
@@ -450,6 +498,53 @@ class course_renderer extends \theme_boost\output\core\course_renderer {
                                     </a>
                                 </div>
                                </div> 
+                        </div>';
+                }
+            if ($PAGE->theme->settings->coursetilestyle == 4) {
+                    $rowcontent .= '
+                        <div class="col-md-3">';
+                    $rowcontent .= html_writer::start_tag('div', array('class' => $course->visible ? '' : 'coursedimmed1'));
+                    $rowcontent .= '
+                            <div class="class-box">
+                                ';
+                                
+                                if ($PAGE->theme->settings->titletooltip) {
+                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="'.$course->fullname.'"';
+                                } else {
+                                $tooltiptext = '';
+                                }
+                       
+                       $rowcontent .= '
+                                    <a '.$tooltiptext.' href="'.$courseurl.'">
+                                    <div class="courseimagecontainer">
+                                    <div class="course-image-view" style="background-image: url('.$imgurl.');background-repeat: no-repeat;background-size:cover; background-position:center;">
+                                    </div>
+                                    <div class="course-overlay">
+                                    <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                                    </div>
+                                    
+                                    </div>
+                                    <div class="course-title">
+                                    <h4>'.$trimtitle.'</h4>
+                                    </div>
+                                    </a>
+                                    <div class="course-summary">
+                                    '.$summary.'
+                                    ';
+                        if ($course->has_course_contacts()) {
+
+                        $rowcontent .= html_writer::start_tag('ul', array('class' => 'teacherscourseview'));
+                        foreach ($course->get_course_contacts() as $userid => $coursecontact) {
+                            
+                            $name = $coursecontact['rolename'].': '.$coursecontact['username'];
+                            $rowcontent .= html_writer::tag('li', $name);
+                        }
+                        $rowcontent .= html_writer::end_tag('ul'); // .teachers
+                        }
+                        $rowcontent .='
+                                    </div>
+                                </div>
+                        </div>
                         </div>';
                 }
                 

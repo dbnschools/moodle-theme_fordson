@@ -326,8 +326,9 @@ $page = new admin_settingpage('theme_fordson_content', get_string('contentsettin
     $coursestyle1 = get_string('coursestyle1', 'theme_fordson');
     $coursestyle2 = get_string('coursestyle2', 'theme_fordson');
     $coursestyle3 = get_string('coursestyle3', 'theme_fordson');
+    $coursestyle4 = get_string('coursestyle4', 'theme_fordson');
     $default = '1';
-    $choices = array('1'=>$coursestyle1, '2'=>$coursestyle2, '3'=>$coursestyle3);
+    $choices = array('1'=>$coursestyle1, '2'=>$coursestyle2, '3'=>$coursestyle3, '4'=>$coursestyle4);
     $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
