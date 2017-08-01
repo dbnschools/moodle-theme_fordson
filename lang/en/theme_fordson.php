@@ -413,3 +413,14 @@ $string['markettextbg_desc'] = 'Background colour for the text area of the marke
 //Alerts
 $string['alert'] = 'Homepage Alert';
 $string['alert_desc'] = 'This is a special alert message that will appear on the homepage.';
+
+// OCJ HILLBROOK MOD
+// modchooser extensions strings
+$string['modchoosersettingspage'] = 'Activities/Resources';
+$string['commonlyused'] = 'Customized activity and resource modules.';
+$string['commonlyuseddesc'] = 'Comma separated list of activities/resources to list at top of Activity/Resource Picker.<br>
+assign,book,chat,choice,data,feedback,folder,forum,glossary,imscp,label,lesson,lti,page,quiz,resource,scorm,survey,url,wiki,workshop';
+$string['modchoosercommonlyused'] = 'Commonly Used';
+$string['showonlycustomactivities'] = 'Show Only Custom Menu';
+$string['showonlycustomactivities_desc'] = 'If checked only the custom menu will be displayed.  This allows an organization to pick and choose which activities and resources will be used in courses. WARNING:  You must have a comma separated list of activities/resources set in the textbox above.  Otherwise you will not see any activities or resources when editing a course.';
+$string['modchoosercommonlyusedtitle'] = 'Learning Tools';
