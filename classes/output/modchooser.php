@@ -53,7 +53,7 @@ class modchooser extends chooser {
      * @param stdClass[] $modules The modules.
      */
     public function __construct($course, $modules) {
-
+        global $PAGE;
         // This copy of the modchooser is modified for Hillbrook Anglican School theme fordson
         // It contains functionality to output a section of modules defined as "commonly used" in the theme_fordson settings
 
@@ -62,6 +62,8 @@ class modchooser extends chooser {
         $sections = [];
         $context = context_course::instance($course->id);
         $showonlycustom = get_config('theme_fordson', 'showonlycustomactivities');
+        $showallmanager = get_config('theme_fordson', 'showalltomanager');
+        $ismanager = has_capability('moodle/site:configview', $context);
 
         // Commonly Used - Only created if anything is configured in "commonlyused" theme setting
         $commonlyused = array();
@@ -82,7 +84,7 @@ class modchooser extends chooser {
 
         // Commonly Used
         if (count($commonlyused)) {
-            $sections[] = new chooser_section('commonlyused', new lang_string('modchoosercommonlyusedtitle','theme_fordson'),
+            $sections[] = new chooser_section('commonlyused', new lang_string('modchoosercommonlyusedtitle', 'theme_fordson', $PAGE->theme->settings->modchoosercustomlabel),
                 array_map(function($module) use ($context) {
                     return new modchooser_item($module, $context);
                 }, $commonlyused)
@@ -113,7 +115,60 @@ class modchooser extends chooser {
                 }, $resources)
             );
         }
-        } 
+        }
+
+        if ($showonlycustom == 1 && $ismanager && $showallmanager) {
+        // Activities.
+        $activities = array_filter($modules, function($mod) {
+            return ($mod->archetype !== MOD_ARCHETYPE_RESOURCE && $mod->archetype !== MOD_ARCHETYPE_SYSTEM);
+        });
+        if (count($activities)) {
+            $sections[] = new chooser_section('activities', new lang_string('activities'),
+                array_map(function($module) use ($context) {
+                    return new modchooser_item($module, $context);
+                }, $activities)
+            );
+        }
+
+        // Resources
+        $resources = array_filter($modules, function($mod) {
+            return ($mod->archetype === MOD_ARCHETYPE_RESOURCE);
+        });
+        if (count($resources)) {
+            $sections[] = new chooser_section('resources', new lang_string('resources'),
+                array_map(function($module) use ($context) {
+                    return new modchooser_item($module, $context);
+                }, $resources)
+            );
+        }
+        }
+
+        if (has_capability('moodle/site:config', $context)) {
+        // Activities.
+        $activities = array_filter($modules, function($mod) {
+            return ($mod->archetype !== MOD_ARCHETYPE_RESOURCE && $mod->archetype !== MOD_ARCHETYPE_SYSTEM);
+        });
+        if (count($activities)) {
+            $sections[] = new chooser_section('activities', new lang_string('activities'),
+                array_map(function($module) use ($context) {
+                    return new modchooser_item($module, $context);
+                }, $activities)
+            );
+        }
+
+        // Resources
+        $resources = array_filter($modules, function($mod) {
+            return ($mod->archetype === MOD_ARCHETYPE_RESOURCE);
+        });
+        if (count($resources)) {
+            $sections[] = new chooser_section('resources', new lang_string('resources'),
+                array_map(function($module) use ($context) {
+                    return new modchooser_item($module, $context);
+                }, $resources)
+            );
+        }
+        }
+
 
         $actionurl = new moodle_url('/course/jumpto.php');
         $title = new lang_string('addresourceoractivity');

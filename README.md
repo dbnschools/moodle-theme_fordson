@@ -32,6 +32,8 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 ## Fordson Moodle 33 1.5.6
 * New Course Style 4 is exactly the same as style one but adds a course summary back into the display.  This was at the request of a user.  It is the only course display option that includes a course summary.
 * New Add Activity/Resource picker feature- Control the "Add an Activity or Resource" panel in courses.  Using a comma separated list you can add a list of top or commonly used activities or choose to only show custom items.  This gives you control over what items a teacher can use and how they are presented (ordering) to the teacher.  Special thanks to Oliver Jackson at https://www.hillbrook.qld.edu.au/.  I saw he had forked Fordson on Github and had added some customizations.  This being one of them.  This is a great feature!
+* New Custom Label for Activity/Resource custom menu of modules.  This allows you to call the module label whatever you want. "Top Modules", "Most Used Activities", "Learning Tools", etc are examples.
+* New permissions for Activity/Resource menu.  If restricted, teachers will only see the custom menu.  However, with the new checkbox you can allow users with the role of Manager to see all acitivities and resources.  Site Administrators will always see all menu items regardless of settings.
 
 ## Fordson Moodle 33 1.5.5
 * New Feature:  Pick from 3 different styles to display courses on the frontpage as well as course category and search pages.  Each style has unique look and feel.  

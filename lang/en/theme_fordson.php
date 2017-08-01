@@ -423,4 +423,8 @@ assign,book,chat,choice,data,feedback,folder,forum,glossary,imscp,label,lesson,l
 $string['modchoosercommonlyused'] = 'Commonly Used';
 $string['showonlycustomactivities'] = 'Show Only Custom Menu';
 $string['showonlycustomactivities_desc'] = 'If checked only the custom menu will be displayed.  This allows an organization to pick and choose which activities and resources will be used in courses. WARNING:  You must have a comma separated list of activities/resources set in the textbox above.  Otherwise you will not see any activities or resources when editing a course.';
-$string['modchoosercommonlyusedtitle'] = 'Learning Tools';
+$string['modchoosercommonlyusedtitle'] = '{$a}';
+$string['modchoosercustomlabel'] = 'Custom Chooser Label';
+$string['modchoosercustomlabel_desc'] = 'Add your own custom label for this new menu in the Chooser Module panel.';
+$string['showalltomanager'] = 'Show All Activities and Resources to Managers';
+$string['showalltomanager_desc'] = 'This setting will allow users who have the role of Manager see and access ALL activities and resources even if it is set to only show the custom menu.  Generally, a manager role is given to a user at the site or category level.  Teachers will still only see the custom menu.  This feature is determined by the user permission: View the Site Administration Tree - moodle/site:configview . Site Administrators will always see all activities and resources.';
