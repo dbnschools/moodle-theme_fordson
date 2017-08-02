@@ -64,6 +64,7 @@ class modchooser extends chooser {
         $showonlycustom = get_config('theme_fordson', 'showonlycustomactivities');
         $showallmanager = get_config('theme_fordson', 'showalltomanager');
         $ismanager = has_capability('moodle/site:configview', $context);
+        $issiteadmin = has_capability('moodle/site:config', $context);
 
         // Commonly Used - Only created if anything is configured in "commonlyused" theme setting
         $commonlyused = array();
@@ -143,7 +144,7 @@ class modchooser extends chooser {
         }
         }
 
-        if (has_capability('moodle/site:config', $context)) {
+        if ($issiteadmin && !$showallmanager && $showonlycustom) {
         // Activities.
         $activities = array_filter($modules, function($mod) {
             return ($mod->archetype !== MOD_ARCHETYPE_RESOURCE && $mod->archetype !== MOD_ARCHETYPE_SYSTEM);

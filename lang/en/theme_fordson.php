@@ -419,7 +419,10 @@ $string['alert_desc'] = 'This is a special alert message that will appear on the
 $string['modchoosersettingspage'] = 'Activities/Resources';
 $string['commonlyused'] = 'Customized activity and resource modules.';
 $string['commonlyuseddesc'] = 'Comma separated list of activities/resources to list at top of Activity/Resource Picker.<br>
-assign,book,chat,choice,data,feedback,folder,forum,glossary,imscp,label,lesson,lti,page,quiz,resource,scorm,survey,url,wiki,workshop';
+Default Activities:<br>
+assign,chat,choice,data,feedback,forum,glossary,lesson,lti,quiz,scorm,survey,wiki,workshop<br>
+DEfault Resources:<br>
+book,file,folder,imscp,label,page,resource,url';
 $string['modchoosercommonlyused'] = 'Commonly Used';
 $string['showonlycustomactivities'] = 'Show Only Custom Menu';
 $string['showonlycustomactivities_desc'] = 'If checked only the custom menu will be displayed.  This allows an organization to pick and choose which activities and resources will be used in courses. WARNING:  You must have a comma separated list of activities/resources set in the textbox above.  Otherwise you will not see any activities or resources when editing a course.';

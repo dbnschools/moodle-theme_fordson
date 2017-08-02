@@ -25,7 +25,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2017073100;
+$plugin->version   = 2017080200;
 $plugin->release  = 'Moodle 3.3 Fordson v1.5.6';
 $plugin->maturity  = MATURITY_STABLE;
 $plugin->requires  = 2017042000;
