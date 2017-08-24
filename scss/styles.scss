@@ -112,6 +112,11 @@ div#learningcontent {
     }
 }
 
+.moodle-dialogue-bd div[role="alert"] {
+    background-color: $brand-danger;
+    padding: 1rem;
+}
+
 /* login on frontpage */
 
 .fpsignup {
@@ -767,6 +772,11 @@ body.format-topcoll h3.sectionname:before {
     .gradingform_rubric .criterion .levels .level.checked {
         background-color: #ccc;
         -webkit-print-color-adjust: exact;
+    }
+    .editor_atto_content {
+        position: relative !important;
+        -webkit-print-color-adjust: exact;
+        display: block !important;
     }
 
 }

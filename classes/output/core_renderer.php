@@ -682,6 +682,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $enrollink = new moodle_url('/enrol/users.php', array('id' => $PAGE->course->id));
         $participantstitle = get_string('participants', 'moodle');
         $participantslink = new moodle_url('/user/index.php', array('id' => $PAGE->course->id));
+        $activitycompletiontitle = get_string('activitycompletion', 'completion');
+        $activitycompletionlink = new moodle_url('/report/progress/index.php', array('course' => $PAGE->course->id));
         $grouptitle = get_string('groups', 'group');
         $grouplink = new moodle_url('/group/index.php', array('id' => $PAGE->course->id));
         $enrolmethodtitle = get_string('enrolmentinstances', 'enrol');
@@ -864,6 +866,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 array('hasuserlinks' => $gradestitle, 'title' => $gradestitle, 'url' => $gradeslink),
                 array('hasuserlinks' => $enroltitle, 'title' => $enroltitle, 'url' => $enrollink),
                 array('hasuserlinks' => $participantstitle, 'title' => $participantstitle, 'url' => $participantslink),
+                array('hasuserlinks' => $activitycompletiontitle, 'title' => $activitycompletiontitle, 'url' => $activitycompletionlink),
                 array('hasuserlinks' => $grouptitle, 'title' => $grouptitle, 'url' => $grouplink),
                 array('hasuserlinks' => $enrolmethodtitle, 'title' => $enrolmethodtitle, 'url' => $enrolmethodlink),
                 array('hasuserlinks' => $logstitle, 'title' => $logstitle, 'url' => $logslink),

@@ -133,7 +133,7 @@
         {{/studentdashboardtextbox}}
 
         {{#hascompletionshow}}
-        <div class="col-md-2">
+        <div class="col-md-2 studentcompletion">
             {{#progresschart}}
                 <p>{{{myprogresstext}}}</p>
                 {{{progresschart}}}
@@ -142,13 +142,13 @@
         {{/hascompletionshow}}
 
         {{#hasgradebookshow}}
-        <div class="col-md-2">
+        <div class="col-md-2 studentgradebook">
             <p>{{{mygradestext}}}</p><a href="{{{gradeslink}}}" alt="{{{mygradestext}}}"><i class="fa fa-5x fa-bar-chart"></i></a>
         </div>
         {{/hasgradebookshow}}
 
         {{#studentcourseadminlink}}
-        <div class="col-md-2">
+        <div class="col-md-2 studentadministration">
             <p>{{{studentcoursemanage}}}</p><a href="{{{studentcourseadminlink}}}" alt="{{{studentcoursemanage}}}"><i class="fa fa-5x fa-cog"></i></a>
         </div>
         {{/studentcourseadminlink}}
