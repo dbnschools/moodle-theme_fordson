@@ -31,7 +31,8 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 ## Fordson Moodle 33 1.5.7
 * New Activity Completion Report Link was added to the teacher dashboard panel just below Participants link. 
-* Unique CSS classes for student buttons in This Course dashboard.  Can be used to hide the Course Administration button for students if not needed. 
+* Unique CSS classes for student buttons in This Course dashboard.  Can be used to hide the Course Administration button for students if not needed.
+* Fixed issue with $gradeslink variable for dashboard template.  Used same name twice.  Changed variable for grade view student to $gradeslinkstudent.
 
 ## Fordson Moodle 33 1.5.6
 * New Course Style 4 is exactly the same as style one but adds a course summary back into the display.  This was at the request of a user.  It is the only course display option that includes a course summary.

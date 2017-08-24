@@ -677,7 +677,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
             $easycodelink = new moodle_url('/enrol/editinstance.php', array('courseid' => $PAGE->course->id, 'id' => $easyenrollinstance->id, 'type' =>'easy'));
         }
         $gradestitle = get_string('gradesoverview', 'gradereport_overview');
-        $gradeslink = new moodle_url('/grade/report/grader/index.php', array('id' => $PAGE->course->id));
+        $gradeslink = new moodle_url('/grade/report/index.php', array('id' => $PAGE->course->id));
         $enroltitle = get_string('enrolledusers', 'enrol');
         $enrollink = new moodle_url('/enrol/users.php', array('id' => $PAGE->course->id));
         $participantstitle = get_string('participants', 'moodle');
@@ -751,7 +751,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 'progress' => $comppercent
             ];
             $progresschart = $this->render_from_template('block_myoverview/progress-chart', $progresschartcontext);
-            $gradeslink = new moodle_url('/grade/report/user/index.php', array('id' => $PAGE->course->id));
+            $gradeslinkstudent = new moodle_url('/grade/report/user/index.php', array('id' => $PAGE->course->id));
             
 
             $hascourseinfogroup = array (
@@ -846,6 +846,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         'coursemanagementmessage' =>$coursemanagementmessage,
         'progresschart' => $progresschart,
         'gradeslink' => $gradeslink,
+        'gradeslinkstudent' => $gradeslinkstudent,
         'hascourseinfogroup' => $hascourseinfogroup,
         'courseinfo' => $courseinfo,
         'hascoursestaffgroup' => $hascoursestaff,
