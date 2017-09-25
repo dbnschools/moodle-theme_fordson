@@ -29,6 +29,9 @@ This means when Moodle updates the core Boost theme those changes will be applie
 # Install from Github
 Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
+## Fordson Moodle 33 1.5.8
+* Fixed issue where site uses custom roles to define teacher and non-editing teacher roles.  This caused Fordson to not identify the teacher role to display contact information to the student in the student "This Course" panel. This caused Fordson to display all users of the course as teachers.  This fix will show no users as teachers.  In file classes/output/core_renderer.php you can find code comments on where you should change the teacher and non-editing teacher shortnames to match your customized roles around lines 775 and 797.
+
 ## Fordson Moodle 33 1.5.7
 * New Activity Completion Report Link was added to the teacher dashboard panel just below Participants link. 
 * Unique CSS classes for student buttons in This Course dashboard.  Can be used to hide the Course Administration button for students if not needed.

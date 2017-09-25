@@ -771,44 +771,49 @@ class core_renderer extends \theme_boost\output\core_renderer {
             );
             $courseteachers = array();
             $courseother = array();
+            //If you created custom roles, please change the shortname value to match the name of your role.  This is teacher.
             $role = $DB->get_record('role', array('shortname' => 'editingteacher'));
-            $context = context_course::instance($PAGE->course->id);
-            $teachers = get_role_users($role->id, $context, false,
-                'u.id, u.firstname, u.middlename, u.lastname, u.alternatename,
-                u.firstnamephonetic, u.lastnamephonetic, u.email, u.picture,
-                u.imagealt');
+            if($role){
+                $context = context_course::instance($PAGE->course->id);
+                $teachers = get_role_users($role->id, $context, false,
+                    'u.id, u.firstname, u.middlename, u.lastname, u.alternatename,
+                    u.firstnamephonetic, u.lastnamephonetic, u.email, u.picture,
+                    u.imagealt');
 
-            foreach ($teachers as $staff) {
-                $picture = $OUTPUT->user_picture($staff, array('size' => 50));
-                $messaging = new moodle_url('/message/index.php', array('id' => $staff->id));
-                $hasmessaging = $CFG->messaging==1;
-                $courseteachers[] = array (
-                    'name' => $staff->firstname . ' ' . $staff->lastname . ' ' . $staff->alternatename,
-                    'email' => $staff->email,
-                    'picture' => $picture,
-                    'messaging' => $messaging,
-                    'hasmessaging' => $hasmessaging
-                );
+                foreach ($teachers as $staff) {
+                    $picture = $OUTPUT->user_picture($staff, array('size' => 50));
+                    $messaging = new moodle_url('/message/index.php', array('id' => $staff->id));
+                    $hasmessaging = $CFG->messaging==1;
+                    $courseteachers[] = array (
+                        'name' => $staff->firstname . ' ' . $staff->lastname . ' ' . $staff->alternatename,
+                        'email' => $staff->email,
+                        'picture' => $picture,
+                        'messaging' => $messaging,
+                        'hasmessaging' => $hasmessaging
+                    );
+                }
             }
+            //If you created custom roles, please change the shortname value to match the name of your role.  This is non-editing teacher.
             $role = $DB->get_record('role', array('shortname' => 'teacher'));
-            $context = context_course::instance($PAGE->course->id);
-            $teachers = get_role_users($role->id, $context, false,
-                'u.id, u.firstname, u.middlename, u.lastname, u.alternatename,
-                u.firstnamephonetic, u.lastnamephonetic, u.email, u.picture,
-                u.imagealt');
-            foreach ($teachers as $staff) {
-                $picture = $OUTPUT->user_picture($staff, array('size' => 50));
-                $messaging = new moodle_url('/message/index.php', array('id' => $staff->id));
-                $hasmessaging = $CFG->messaging==1;
-                $courseother[] = array (
-                    'name' => $staff->firstname . ' ' . $staff->lastname,
-                    'email' => $staff->email,
-                    'picture' => $picture,
-                    'messaging' => $messaging,
-                    'hasmessaging' => $hasmessaging
-                );
+            if($role){
+                $context = context_course::instance($PAGE->course->id);
+                $teachers = get_role_users($role->id, $context, false,
+                    'u.id, u.firstname, u.middlename, u.lastname, u.alternatename,
+                    u.firstnamephonetic, u.lastnamephonetic, u.email, u.picture,
+                    u.imagealt');
+                foreach ($teachers as $staff) {
+                    $picture = $OUTPUT->user_picture($staff, array('size' => 50));
+                    $messaging = new moodle_url('/message/index.php', array('id' => $staff->id));
+                    $hasmessaging = $CFG->messaging==1;
+                    $courseother[] = array (
+                        'name' => $staff->firstname . ' ' . $staff->lastname,
+                        'email' => $staff->email,
+                        'picture' => $picture,
+                        'messaging' => $messaging,
+                        'hasmessaging' => $hasmessaging
+                    );
+                }
             }
-
             $activitylinkstitle = get_string('activitylinkstitle', 'theme_fordson');
             $activitylinkstitle_desc = get_string('activitylinkstitle_desc', 'theme_fordson');
             $mygradestext = get_string('mygradestext', 'theme_fordson');

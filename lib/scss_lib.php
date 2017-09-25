@@ -174,42 +174,42 @@ function theme_fordson_get_pre_scss($theme) {
         $prescss .= 'body#page-login-index {background-image: url("'.$loginbg.'") !important; background-size:cover; background-position:center;}';
     }
 
-    // Set the default image for the header.
+    // Set the image.
     $marketing1image = $theme->setting_file_url('marketing1image', 'marketing1image');
     if (isset($marketing1image)) {
         // Add a fade in transition to avoid the flicker on course headers ***.
         $prescss .= '.marketing1image {background-image: url("'.$marketing1image.'"); background-size:cover; background-position:center;}';
     }
 
-    // Set the default image for the header.
+    // Set the image.
     $marketing2image = $theme->setting_file_url('marketing2image', 'marketing2image');
     if (isset($marketing2image)) {
         // Add a fade in transition to avoid the flicker on course headers ***.
         $prescss .= '.marketing2image {background-image: url("'.$marketing2image.'"); background-size:cover; background-position:center;}';
     }
 
-    // Set the default image for the header.
+    // Set the image.
     $marketing3image = $theme->setting_file_url('marketing3image', 'marketing3image');
     if (isset($marketing3image)) {
         // Add a fade in transition to avoid the flicker on course headers ***.
         $prescss .= '.marketing3image {background-image: url("'.$marketing3image.'"); background-size:cover; background-position:center;}';
     }
 
-    // Set the default image for the header.
+    // Set the image.
     $marketing4image = $theme->setting_file_url('marketing4image', 'marketing4image');
     if (isset($marketing4image)) {
         // Add a fade in transition to avoid the flicker on course headers ***.
         $prescss .= '.marketing4image {background-image: url("'.$marketing4image.'"); background-size:cover; background-position:center;}';
     }
 
-    // Set the default image for the header.
+    // Set the image.
     $marketing5image = $theme->setting_file_url('marketing5image', 'marketing5image');
     if (isset($marketing5image)) {
         // Add a fade in transition to avoid the flicker on course headers ***.
         $prescss .= '.marketing5image {background-image: url("'.$marketing5image.'"); background-size:cover; background-position:center;}';
     }
 
-    // Set the default image for the header.
+    // Set the image.
     $marketing6image = $theme->setting_file_url('marketing6image', 'marketing6image');
     if (isset($marketing6image)) {
         // Add a fade in transition to avoid the flicker on course headers ***.
