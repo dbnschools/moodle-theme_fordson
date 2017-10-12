@@ -29,6 +29,9 @@ This means when Moodle updates the core Boost theme those changes will be applie
 # Install from Github
 Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
 
+## Fordson Moodle 33 1.5.9
+* New Preset - Corporate Learner.  Very simple, no background image preset.  Most colors are tied to 2 settings: Brand Primary and Body Background Colour.  Changing these two colors will drastically alter the look of the page.  Designed to be distraction free with minimal color.  This preset gives you all the features of Fordson with the simplicity of the Boost theme.
+
 ## Fordson Moodle 33 1.5.8
 * Fixed issue where site uses custom roles to define teacher and non-editing teacher roles.  This caused Fordson to not identify the teacher role to display contact information to the student in the student "This Course" panel. This caused Fordson to display all users of the course as teachers.  This fix will show no users as teachers.  In file classes/output/core_renderer.php you can find code comments on where you should change the teacher and non-editing teacher shortnames to match your customized roles around lines 775 and 797.
 

@@ -347,7 +347,7 @@ function fordson_navigation_custom_menu_item(custom_menu_item $menunode, $parent
             $url = null;
         }
         if ($parent) {
-            $childnode = $pmasternode->add(navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CUSTOM);
+            $childnode = $pmasternode->add(fordson_local_navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CUSTOM);
             $childnode->title($menunode->get_title());
         } else {
             $masternode = $PAGE->navigation->add(fordson_local_navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CONTAINER);
