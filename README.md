@@ -27,7 +27,11 @@ Fordson is a child theme of Boost.
 This means when Moodle updates the core Boost theme those changes will be applied to Fordson as well in most cases.
 
 # Install from Github
-Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration. 
+Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration.
+
+## Fordson Moodle 33 1.6.0
+* New Preset - University Learner. This new preset is a beautiful full-screen design with a university in mind.  You can get interesting results by adjusting the Header Image Height to minimaize or make larger the header image.  Minimal use of color makes customization a breeze.  Pick the Brand Primary and away you go.
+* Many of the presets have been updated with some style tweaks here and there based on feedback from some of our users.  
 
 ## Fordson Moodle 33 1.5.9
 * New Preset - Corporate Learner.  Very simple, no background image preset.  Most colors are tied to 2 settings: Brand Primary and Body Background Colour.  Changing these two colors will drastically alter the look of the page.  Designed to be distraction free with minimal color.  This preset gives you all the features of Fordson with the simplicity of the Boost theme.

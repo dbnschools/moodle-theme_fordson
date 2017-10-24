@@ -145,7 +145,7 @@ div#learningcontent {
 }
 
 .col-md-4.signinform {
-    padding-left: 0px;
+    padding-left: 0;
     padding-right: 20px;
     margin-right: 15px;
 }
@@ -212,7 +212,7 @@ div#coursecontrols {
 }
 
 .teacherdashbutton:hover, .thiscoursebutton:hover, .enrollcodebutton:hover, .editcogbutton:hover {
-    background-color: darken($card-bg, 5%)
+    background-color: darken($card-bg, 5%);
 }
 
 @media screen and (max-width: 576px) {
@@ -220,7 +220,7 @@ div#coursecontrols {
         position: initial;
     }
     div#coursecontrols {
-    border-radius: 0px 0px 0px 0px;
+    border-radius: 0;
     }
     .enrollcodebutton {
     display:none;

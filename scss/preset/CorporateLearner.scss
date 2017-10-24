@@ -166,7 +166,7 @@ $breadcrumb-divider-rtl: "/" !default;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: $navbarurl;
-            Font-weight:bold;
+            font-weight:bold;
         }
         .nav-link:hover{
         color: darken($navbarurl, 20%);
@@ -178,7 +178,7 @@ $breadcrumb-divider-rtl: "/" !default;
  * User picture.
  */
 .userpicture {
-    border-radius: $border-radius;
+    border-radius: 50%;
 }
 
 /**
@@ -206,7 +206,7 @@ $breadcrumb-divider-rtl: "/" !default;
 [data-block="course_overview"] {
     -webkit-box-shadow: none;
     box-shadow: none;
-    border: 0px;
+    border: 0;
 }
 
 /**
@@ -252,8 +252,8 @@ span.section-modchooser-link, a.add-sections {
 }
 
 .teacherdashboard .list-group-item:first-child, .studentdashboard .list-group-item:first-child {
-    border-top-right-radius: 0px;
-    border-top-left-radius: 0px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
 }
 .teacherdashboard .dashtitle, .studentdashboard .dashtitle {
     padding: 5px;
@@ -278,21 +278,30 @@ div#fordsoncarousel h3, div#fordsoncarousel p {
     color: #fff;
 }
 
-.card {border:0px;}
+.card {border:0;}
 
 #page-my-index .page-header-headings h1:before, #page-badges-mybadges .page-header-headings h1:before, #page-user-preferences .page-header-headings h1:before, #page-grade-report-overview-index .page-header-headings h1:before, #page-message-index .page-header-headings h1:before {
     content: "";
 }
 
+h3.sectionname {
+    text-align: center;
+    border-top: 8px solid $body-bg;
+    padding: $spacer;
+    border-bottom: 8px solid $body-bg;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
 h3.sectionname:before {
     color: $brand-primary;
-    display: block;
-    float: left;
+    display: inline-block;
     font-family: FontAwesome;
     margin-right: .5rem;
     text-align: center;
     border-radius: 2px;
     content: $sectionicon;
+}
+h3.sectionname:hover {
+    background-color: $body-bg;
 }
 
 .path-mod-assign [data-region="grading-navigation"] {
@@ -306,7 +315,7 @@ div#learningcontent {
 
 .forumpost {
     background-color: $gray-lightest; 
-    border-radius: 0px;
+    border-radius: 0;
     box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.3);
     border: 1px solid $card-bg;
     margin-bottom: 2rem;
@@ -337,8 +346,6 @@ div#learningcontent {
 }
 
 .section li.activity {
-    padding: $spacer;
-    border-radius: 5px;
     border-bottom: 1px dashed $gray-lighter;
     font-size: 16px;
 }
@@ -399,7 +406,7 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
 //fixes for phone with main content area
 @media screen and (max-width: 576px) {
     #page-course-view-topics .course-content ul.topics li.section {
-        padding: 0px;
+        padding: 0;
     }
     .card-block {
         padding: .5rem;

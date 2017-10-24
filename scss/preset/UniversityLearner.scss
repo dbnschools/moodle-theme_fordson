@@ -40,14 +40,15 @@ $gray-lighter:              #e0e0e0 !default;
 $gray-lightest:             #f7f7f9 !default;
 $gray-base:                 #ccc    !default;
 
-$brand-primary:             #348b96 !default;
+$brand-primary:             #2588a0 !default;
 $brand-success:             #77b300 !default;
 $brand-warning:             #ff8800 !default;
 $brand-danger:              #ff4136 !default;
 $brand-inverse:             $gray-dark !default;
-$drawer-bg:                 rgba(128, 143, 154, 0.9) !default;
-$headerfade-bg:             #025169 !default;
-
+$navbar-height:             50px !default;
+$drawer-bg:                 #434c50 !default;
+$headerfade-bg:             #fff !default;
+$header-color:              #505050 !default;
 
 // Spacing
 $spacer:   1rem !default;
@@ -78,11 +79,10 @@ $dropdown-border-color:          #e2e2e2 !default;
 $dropdown-link-color:            rgba(0, 0, 0, .535) !default;
 
 // Navbar
-$navbar-light-color:                #025169 !default;
+$navbar-light-color:                rgba(255, 255, 255, 0.9) !default;
 $navbar-light-hover-color:          $brand-primary !default;
 $navbar-light-active-color:         $brand-primary !default;
-$navbarurl:                         #fff !default;
-$navbar-height:                     50px !default;
+$navbarurl:                         #000 !default;
 
 // Cards
 $card-border-radius:       $border-radius !default;
@@ -91,10 +91,10 @@ $card-border-width:        1px !default;
 
 // Breadcrumbs
 
-$breadcrumb-bg:               rgba(255, 255, 255, 0.9) !default;
+$breadcrumb-bg:               $gray-lighter !default;
 $breadcrumb-padding:          0px 10px 0px 10px !default;
-$breadcrumb-divider: "/" !default;
-$breadcrumb-divider-rtl: "/" !default;
+$breadcrumb-divider:          "/" !default;
+$breadcrumb-divider-rtl:      "/" !default;
 
 
 
@@ -155,7 +155,7 @@ $breadcrumb-divider-rtl: "/" !default;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: $navbarurl;
-            Font-weight:bold;
+            font-weight:bold;
         }
         .nav-link:hover{
         color: darken($navbarurl, 20%);
@@ -168,15 +168,110 @@ $breadcrumb-divider-rtl: "/" !default;
  * User picture.
  */
 .userpicture {
-    border-radius: $border-radius;
+    border-radius: 50%;
 }
 
 /**
- * For background in content areas.
+ * Full-width changes
  */
 #page.container-fluid {
-    padding: 0 (2 * $spacer);
+    padding: 0!important;
+    z-index:2;
 }
+.row {
+    margin-left:0px;
+    margin-right:0px;
+}
+.p-a-1 {padding:0!important;}
+
+.headerbkg {
+    margin-top: 0px!important;
+    height:$headerimagepadding !important;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+}
+div#learningcontent {
+    position:relative;
+    margin-top: $headerimagepadding;
+    background-color: $card-bg;
+}
+
+.course-content ul.section {
+    margin: 1rem;
+    border-top: 7px solid lighten($brand-primary,25%);
+    border-left: 1px solid $gray-lighter;
+    border-right: 1px solid $gray-lighter;
+    border-bottom: 1px solid $gray-lighter;
+    padding: 1rem;
+}
+.course-content ul.topics li.section, .course-content ul.weeks li.section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.course-content ul.section {
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.course-content ul.section:hover {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+li.activity.label{
+    border: initial;
+}
+div#coursecontrols {
+    border-radius: 0;
+    background-color: #fff6ae;
+}
+#page-header .headerfade .pull-xs-left {
+    float: none!important;
+}
+.pagelayout-course .page-context-header .page-header-headings {
+    width: 100%;
+}
+#page-header h1 {
+    text-align: center;
+}
+div#page-navbar {
+    border-top: 1px solid $gray-lighter;
+    border-bottom: 1px solid $gray-lighter;
+    padding-top: 1rem;
+    padding-bottom: .5rem;
+}
+.teacherdashbutton:hover, .thiscoursebutton:hover, .enrollcodebutton:hover, .editcogbutton:hover {
+    background-color: $card-bg;
+}
+
+/**
+* Can be used to create a neat effect for footer.  Must pay attention to page-wrapper margin-bottom for slide effect.
+*/
+
+/*
+#page-footer {
+    min-height: 130px;
+    text-align: left;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+#page-wrapper {
+    min-height: 100%;
+    padding-bottom: 1rem;
+    margin-bottom: 130px;
+    z-index: 2;
+    position: relative;
+}
+#page-wrapper::after {
+    min-height: 0;
+}
+*/
 
 #block-region-side-pre {
     padding-left: 0;
@@ -235,16 +330,6 @@ $breadcrumb-divider-rtl: "/" !default;
 
 /* FORDSON Default Styling */
 
-.headerbkg {
-    height: 100%;
-    width: 100%;
-    position:fixed !important;
-}
-
-#page-footer {
-    position: relative;
-}
-
 span.section-modchooser-link, a.add-sections {
     background-color: $gray-lighter;
     padding: 10px;
@@ -257,7 +342,7 @@ span.section-modchooser-link, a.add-sections {
 }
 .teacherdashboard .dashtitle, .studentdashboard .dashtitle {
     padding: 5px;
-    background-color: lighten($brand-primary,15%);
+    background-color: $gray-lighter;
 }
 .teacherdashboard .list-group-item:hover {
     background-color: $gray-lightest;
@@ -265,8 +350,7 @@ span.section-modchooser-link, a.add-sections {
  
 .page-header-headings h1:before {
     color: $header-color;
-    display: block;
-    float: left;
+    display: inline-block;
     font-family: FontAwesome;
     margin-right: .5rem;
     text-align: center;
@@ -323,63 +407,14 @@ div#learningcontent {
     border: 1px solid $gray-lighter;
 }
 
-/*Previously used topic and week style
-.course-content ul.topics li.section, .course-content ul.weeks li.section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-}
-#page-course-view-topics .course-content ul.topics li.section {
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    margin-bottom: 3rem;
-    padding: $spacer;
-}
-#page-course-view-topics .course-content ul.topics li.section:hover {
-    background-color: $gray-lightest;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-#page-course-view-weeks .course-content ul.weeks li.section {
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-    margin-bottom: 3rem;
-    padding: $spacer;
-}
-#page-course-view-weeks .course-content ul.weeks li.section:hover {
-    background-color: $gray-lightest;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-*/
-
-.course-content ul.section {
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-}
-
-.course-content ul.section:hover {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-.course-content ul.section {
-    margin: 1rem;
-    border-top: 7px solid lighten($brand-primary,25%);
-    border-left: 1px solid $gray-lighter;
-    border-right: 1px solid $gray-lighter;
-    border-bottom: 1px solid $gray-lighter;
-    padding: 1rem;
-}
-li.activity.label{
-    border: initial;
-}
-
 .section li.activity {
-    /*padding: $spacer;*/
-    padding: calc($spacer - 50%);
-    border-radius: 5px;
     border-bottom: 1px dashed $gray-lighter;
-    font-size: 16px;
+    font-size: initial;
 }
 .section li.activity:hover {
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     background-color: $activityhover;
 }
-
 .editing .section .activity:hover, .editing .section .activity.action-menu-shown {
     background-color: $activityhover;
 }
@@ -438,9 +473,6 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
     .card-block {
         padding: .5rem;
     }
-    .section li.activity {
-        padding: .5rem;
-    }
     .course-content ul.section {
         margin: 0;
     }
@@ -454,6 +486,10 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
     .p-a-1 {
         padding: 0!important;
     }
+    div#coursecontrols {
+        position: absolute;
+    }
+
 }
 .path-course-view .completionprogress {
     position: absolute;
