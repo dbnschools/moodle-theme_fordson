@@ -22,15 +22,16 @@
 // THE SOFTWARE.
 //
 $bootstrap-sass-asset-helper: false !default;
-// Flatly 3.3.7
-// Variables
-// --------------------------------------------------
-/* stylelint-disable color-hex-length */
+
 /**
  * Default preset file.
  *
  * Use this space to customise variables, create mixins and override SCSS.
  */
+ 
+// Body
+$body-bg: #eef1e2  !default;
+$footer-bg: $body-bg !default;
 
 // Colors
 $gray-dark:                 #373a3c !default;
@@ -40,13 +41,21 @@ $gray-lighter:              #e0e0e0 !default;
 $gray-lightest:             #f7f7f9 !default;
 $gray-base:                 #ccc    !default;
 
-$brand-primary:             #348b96 !default;
+$brand-primary:             #4288a7 !default;
 $brand-success:             #77b300 !default;
 $brand-warning:             #ff8800 !default;
 $brand-danger:              #ff4136 !default;
 $brand-inverse:             $gray-dark !default;
-$drawer-bg:                 rgba(128, 143, 154, 0.9) !default;
-$headerfade-bg:             #025169 !default;
+$navbar-height:             50px !default;
+$drawer-bg:                 rgba(168, 171, 154, 0.7) !default;
+$headerfade-bg:             $brand-primary !default;
+
+$fpstartwrap-bg: #FFF !default;
+$fpicon-hover: darken($brand-primary, 10%) !default;
+$fpicon-icon: $brand-primary !default;
+$fpicon-colour:  $body-bg !default;
+$fpicon-width: 100px !default;
+$fpiconcreate-width: 150px !default;
 
 
 // Spacing
@@ -55,10 +64,7 @@ $spacer-x: $spacer !default;
 $spacer-y: $spacer !default;
 $border-width: 1px !default;
 $border-radius: 3px !default;
-
-// Body
-$body-bg: #dae6e5 !default;
-$footer-bg: $body-bg !default;
+$learningcontentpadding: 125px !default;
 
 // Typography
 $font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
@@ -78,11 +84,10 @@ $dropdown-border-color:          #e2e2e2 !default;
 $dropdown-link-color:            rgba(0, 0, 0, .535) !default;
 
 // Navbar
-$navbar-light-color:                #025169 !default;
-$navbar-light-hover-color:          $brand-primary !default;
-$navbar-light-active-color:         $brand-primary !default;
-$navbarurl:                         #fff !default;
-$navbar-height:                     50px !default;
+$navbar-light-color:                #ffffff !default;
+$navbar-light-hover-color:          $gray-dark !default;
+$navbar-light-active-color:         $gray-dark !default;
+$navbarurl:                         $gray !default;
 
 // Cards
 $card-border-radius:       $border-radius !default;
@@ -101,6 +106,12 @@ $breadcrumb-divider-rtl: "/" !default;
 // Import everything.
 @import "moodle";
 
+/* University Resets */
+.headerbkg {display:none;}
+
+.class-box {
+    background-color: $body-bg;
+}
 
 /**
  * Navigation bar identity.
@@ -155,7 +166,7 @@ $breadcrumb-divider-rtl: "/" !default;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: $navbarurl;
-            Font-weight:bold;
+            font-weight:bold;
         }
         .nav-link:hover{
         color: darken($navbarurl, 20%);
@@ -163,12 +174,11 @@ $breadcrumb-divider-rtl: "/" !default;
     }
 }
 
-
 /**
  * User picture.
  */
 .userpicture {
-    border-radius: $border-radius;
+    border-radius: 50%;
 }
 
 /**
@@ -235,16 +245,6 @@ $breadcrumb-divider-rtl: "/" !default;
 
 /* FORDSON Default Styling */
 
-.headerbkg {
-    height: 100%;
-    width: 100%;
-    position:fixed !important;
-}
-
-#page-footer {
-    position: relative;
-}
-
 span.section-modchooser-link, a.add-sections {
     background-color: $gray-lighter;
     padding: 10px;
@@ -284,15 +284,24 @@ div#fordsoncarousel h3, div#fordsoncarousel p {
     content: "";
 }
 
+h3.sectionname {
+    text-align: center;
+    border-top: 8px solid $body-bg;
+    padding: $spacer;
+    border-bottom: 8px solid $body-bg;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
 h3.sectionname:before {
     color: $brand-primary;
-    display: block;
-    float: left;
+    display: inline-block;
     font-family: FontAwesome;
     margin-right: .5rem;
     text-align: center;
     border-radius: 2px;
     content: $sectionicon;
+}
+h3.sectionname:hover {
+    background-color: $body-bg;
 }
 
 .path-mod-assign [data-region="grading-navigation"] {
@@ -323,55 +332,20 @@ div#learningcontent {
     border: 1px solid $gray-lighter;
 }
 
-/*Previously used topic and week style
+/*
 .course-content ul.topics li.section, .course-content ul.weeks li.section {
     padding-top: 4rem;
     padding-bottom: 4rem;
-}
+}*/
 #page-course-view-topics .course-content ul.topics li.section {
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     margin-bottom: 3rem;
-    padding: $spacer;
 }
-#page-course-view-topics .course-content ul.topics li.section:hover {
-    background-color: $gray-lightest;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
+
 #page-course-view-weeks .course-content ul.weeks li.section {
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     margin-bottom: 3rem;
-    padding: $spacer;
-}
-#page-course-view-weeks .course-content ul.weeks li.section:hover {
-    background-color: $gray-lightest;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-*/
-
-.course-content ul.section {
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-}
-
-.course-content ul.section:hover {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-.course-content ul.section {
-    margin: 1rem;
-    border-top: 7px solid lighten($brand-primary,25%);
-    border-left: 1px solid $gray-lighter;
-    border-right: 1px solid $gray-lighter;
-    border-bottom: 1px solid $gray-lighter;
-    padding: 1rem;
-}
-li.activity.label{
-    border: initial;
 }
 
 .section li.activity {
-    /*padding: $spacer;*/
-    padding: calc($spacer - 50%);
-    border-radius: 5px;
     border-bottom: 1px dashed $gray-lighter;
     font-size: 16px;
 }
@@ -379,7 +353,6 @@ li.activity.label{
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     background-color: $activityhover;
 }
-
 .editing .section .activity:hover, .editing .section .activity.action-menu-shown {
     background-color: $activityhover;
 }
@@ -433,7 +406,7 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
 //fixes for phone with main content area
 @media screen and (max-width: 576px) {
     #page-course-view-topics .course-content ul.topics li.section {
-        padding: 0;
+        padding: 2rem 0;
     }
     .card-block {
         padding: .5rem;

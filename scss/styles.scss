@@ -217,9 +217,6 @@ div#coursecontrols {
 
 @media screen and (max-width: 576px) {
     div#coursecontrols {
-        position: initial;
-    }
-    div#coursecontrols {
     border-radius: 0;
     }
     .enrollcodebutton {
@@ -729,6 +726,18 @@ ul.teacherscourseview {
     box-shadow: initial;
     -webkit-box-shadow: initial;
     border: 0;
+}
+
+.path-mod-assign .no-overflow {
+    overflow: auto;
+}
+
+//lesson progressbar fix
+.path-mod-lesson .progress_bar_completed {
+    background-color: $brand-success;
+    text-align: right;
+    vertical-align: middle;
+    color: #fff;
 }
 
 //Fix for collapsed topic course format

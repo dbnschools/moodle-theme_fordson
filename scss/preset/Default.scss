@@ -246,8 +246,8 @@ span.section-modchooser-link, a.add-sections {
     border-top-left-radius: 0;
 }
 .teacherdashboard .dashtitle, .studentdashboard .dashtitle {
-    padding: 5px;
-    background-color: lighten($brand-primary,15%);
+    padding: .5rem;
+    background-color: $gray-lighter;
 }
 .teacherdashboard .list-group-item:hover {
     background-color: $gray-lightest;
@@ -274,20 +274,36 @@ div#fordsoncarousel h3, div#fordsoncarousel p {
     content: "";
 }
 
+
+h3.sectionname {
+    text-align: center;
+    border-top: 8px solid $body-bg;
+    padding: $spacer;
+    border-bottom: 8px solid $body-bg;
+    background-color: $body-bg;
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
 h3.sectionname:before {
     color: $brand-primary;
-    display: block;
-    float: left;
+    display: inline-block;
     font-family: FontAwesome;
     margin-right: .5rem;
     text-align: center;
     border-radius: 2px;
     content: $sectionicon;
 }
-
+.section_action_menu {
+    background-color: $card-bg;
+    padding: .5rem;
+    border-radius: $border-radius;
+}
+/*h3.sectionname:hover {
+    background-color: $gray-lightest;
+}*/
 .path-mod-assign [data-region="grading-navigation"] {
     background-color: #fff;
 }
+
 
 div#learningcontent {
     box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.3);
@@ -313,11 +329,16 @@ div#learningcontent {
     border: 1px solid $gray-lighter;
 }
 
-/*Previously used Topic and Week Styling
 .course-content ul.topics li.section, .course-content ul.weeks li.section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
 }
+.course-content ul li.section.main {
+    border-bottom: 0;
+    margin-top: 0;
+}
+
+/*Previously used Topic and Week Styling
 #page-course-view-topics .course-content ul.topics li.section {
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     margin-bottom: 3rem;
@@ -341,6 +362,7 @@ div#learningcontent {
 }
 */
 
+/*
 .course-content ul.section {
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
@@ -357,14 +379,16 @@ div#learningcontent {
     border-bottom: 1px solid $gray-lighter;
     padding: 1rem;
 }
+*/
+
 li.activity.label{
     border: initial;
 }
 
 .section li.activity {
-    /*padding: $spacer;*/
+    /*padding: $spacer;
+    border-radius: 5px;*/
     padding: calc($spacer - 50%);
-    border-radius: 5px;
     border-bottom: 1px dashed $gray-lighter;
     font-size: 16px;
 }
@@ -425,7 +449,7 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
 //fixes for phone with main content area
 @media screen and (max-width: 576px) {
     #page-course-view-topics .course-content ul.topics li.section {
-        padding: 0;
+        padding: 2rem 0;
     }
     .card-block {
         padding: .5rem;

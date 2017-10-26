@@ -22,16 +22,15 @@
 // THE SOFTWARE.
 //
 $bootstrap-sass-asset-helper: false !default;
-
+// Flatly 3.3.7
+// Variables
+// --------------------------------------------------
+/* stylelint-disable color-hex-length */
 /**
  * Default preset file.
  *
  * Use this space to customise variables, create mixins and override SCSS.
  */
- 
-// Body
-$body-bg: #eef1e2  !default;
-$footer-bg: $body-bg !default;
 
 // Colors
 $gray-dark:                 #373a3c !default;
@@ -41,22 +40,18 @@ $gray-lighter:              #e0e0e0 !default;
 $gray-lightest:             #f7f7f9 !default;
 $gray-base:                 #ccc    !default;
 
-$brand-primary:             #4288a7 !default;
+$brand-primary:             #07889B !default;
 $brand-success:             #77b300 !default;
 $brand-warning:             #ff8800 !default;
 $brand-danger:              #ff4136 !default;
 $brand-inverse:             $gray-dark !default;
-$navbar-height:             50px !default;
-$drawer-bg:                 rgba(168, 171, 154, 0.7) !default;
-$headerfade-bg:             $brand-primary !default;
+$headerfade-bg:             $gray-lightest !default;
+$header-color:              $gray !default;
 
-$fpstartwrap-bg: #FFF !default;
-$fpicon-hover: darken($brand-primary, 10%) !default;
-$fpicon-icon: $brand-primary !default;
-$fpicon-colour:  $body-bg !default;
-$fpicon-width: 100px !default;
-$fpiconcreate-width: 150px !default;
-
+$fpstartwrap-bg:            #FFF !default;
+$fpicon-hover:              #bcd5db !default;
+$fpicon-icon:               #ff7e1f !default;
+$fpicon-colour:             $gray-dark !default;
 
 // Spacing
 $spacer:   1rem !default;
@@ -64,7 +59,11 @@ $spacer-x: $spacer !default;
 $spacer-y: $spacer !default;
 $border-width: 1px !default;
 $border-radius: 3px !default;
-$learningcontentpadding: 125px !default;
+
+// Body
+$body-bg: #dae6e5 !default;
+$footer-bg: $body-bg !default;
+$drawer-bg: $body-bg !default;
 
 // Typography
 $font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
@@ -84,10 +83,11 @@ $dropdown-border-color:          #e2e2e2 !default;
 $dropdown-link-color:            rgba(0, 0, 0, .535) !default;
 
 // Navbar
-$navbar-light-color:                #ffffff !default;
-$navbar-light-hover-color:          $gray-dark !default;
-$navbar-light-active-color:         $gray-dark !default;
+$navbar-light-color:                #fff !default;
+$navbar-light-hover-color:          darken($brand-primary, 15%) !default;
+$navbar-light-active-color:         $gray !default;
 $navbarurl:                         $gray !default;
+$navbar-height:                     50px !default;
 
 // Cards
 $card-border-radius:       $border-radius !default;
@@ -96,7 +96,7 @@ $card-border-width:        1px !default;
 
 // Breadcrumbs
 
-$breadcrumb-bg:               rgba(255, 255, 255, 0.9) !default;
+$breadcrumb-bg:               $gray-lighter !default;
 $breadcrumb-padding:          0px 10px 0px 10px !default;
 $breadcrumb-divider: "/" !default;
 $breadcrumb-divider-rtl: "/" !default;
@@ -106,19 +106,13 @@ $breadcrumb-divider-rtl: "/" !default;
 // Import everything.
 @import "moodle";
 
-/* University Resets */
-.headerbkg {display:none;}
-
-.class-box {
-    background-color: $body-bg;
-}
 
 /**
  * Navigation bar identity.
  */
 .navbar-light {
     background-color: $navbar-light-color;
-    border-bottom: $border-width solid #e5e5e5;
+    border-bottom: $border-width solid $gray-lighter;
     .container {
         padding-left: 0;
         padding-right: 0;
@@ -174,11 +168,12 @@ $breadcrumb-divider-rtl: "/" !default;
     }
 }
 
+
 /**
  * User picture.
  */
 .userpicture {
-    border-radius: 50%;
+    border-radius: $border-radius;
 }
 
 /**
@@ -243,6 +238,36 @@ $breadcrumb-divider-rtl: "/" !default;
     margin-top: 0;
 }
 
+/**
+ * Full-width changes
+ */
+#page.container-fluid {
+    padding: 0!important;
+}
+.row {
+    margin-left:0px;
+    margin-right:0px;
+}
+.p-a-1 {padding:0!important;}
+
+.headerbkg {
+    margin-top: 0px!important;
+    height:0;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+}
+.pagelayout-course  .headerbkg {
+    height: $headerimagepadding !important;
+}
+
+div#coursecontrols {
+    background-color: $body-bg;
+}
+
 /* FORDSON Default Styling */
 
 span.section-modchooser-link, a.add-sections {
@@ -256,8 +281,8 @@ span.section-modchooser-link, a.add-sections {
     border-top-left-radius: 0;
 }
 .teacherdashboard .dashtitle, .studentdashboard .dashtitle {
-    padding: 5px;
-    background-color: lighten($brand-primary,15%);
+    padding: .5rem;
+    background-color: $gray-lighter;
 }
 .teacherdashboard .list-group-item:hover {
     background-color: $gray-lightest;
@@ -277,6 +302,9 @@ span.section-modchooser-link, a.add-sections {
 div#fordsoncarousel h3, div#fordsoncarousel p {
     color: #fff;
 }
+div#fpslider {
+    background-color: $body-bg;
+}
 
 .card {border:0;}
 
@@ -284,11 +312,13 @@ div#fordsoncarousel h3, div#fordsoncarousel p {
     content: "";
 }
 
+
 h3.sectionname {
     text-align: center;
     border-top: 8px solid $body-bg;
     padding: $spacer;
     border-bottom: 8px solid $body-bg;
+    background-color: $body-bg;
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
 h3.sectionname:before {
@@ -300,18 +330,35 @@ h3.sectionname:before {
     border-radius: 2px;
     content: $sectionicon;
 }
-h3.sectionname:hover {
-    background-color: $body-bg;
+.section_action_menu {
+    background-color: $card-bg;
+    padding: .5rem;
+    border-radius: $border-radius;
 }
-
+/*h3.sectionname:hover {
+    background-color: $gray-lightest;
+}*/
 .path-mod-assign [data-region="grading-navigation"] {
     background-color: #fff;
 }
 
 div#learningcontent {
+    position:relative;
+    margin-top: 0;
+    background-color: $card-bg;
     box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.3);
     border: 1px solid $card-bg;
 }
+
+.pagelayout-course div#learningcontent {
+    margin-top: $headerimagepadding;
+}
+
+/*
+#page-site-index div#learningcontent, #page-calendar-view div#learningcontent, #page-my-index div#learningcontent,#page-badges-mybadges div#learningcontent, #page-course-index div#learningcontent, #page-course-index-category div#learningcontent {
+    margin-top: 0;
+}
+*/
 
 .forumpost {
     background-color: $gray-lightest; 
@@ -332,20 +379,66 @@ div#learningcontent {
     border: 1px solid $gray-lighter;
 }
 
-/*
 .course-content ul.topics li.section, .course-content ul.weeks li.section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-}*/
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+.course-content ul li.section.main {
+    border-bottom: 0;
+    margin-top: 0;
+}
+
+/*Previously used Topic and Week Styling
 #page-course-view-topics .course-content ul.topics li.section {
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     margin-bottom: 3rem;
+    padding: $spacer;
+}
+
+#page-course-view-topics .course-content ul.topics li.section:hover {
+    background-color: $gray-lightest;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 #page-course-view-weeks .course-content ul.weeks li.section {
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     margin-bottom: 3rem;
+    padding: $spacer;
+}
+
+#page-course-view-weeks .course-content ul.weeks li.section:hover {
+    background-color: $gray-lightest;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+*/
+
+/*
+.course-content ul.section {
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.course-content ul.section:hover {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.course-content ul.section {
+    margin: 1rem;
+    border-top: 7px solid lighten($brand-primary,25%);
+    border-left: 1px solid $gray-lighter;
+    border-right: 1px solid $gray-lighter;
+    border-bottom: 1px solid $gray-lighter;
+    padding: 1rem;
+}
+*/
+
+li.activity.label{
+    border: initial;
 }
 
 .section li.activity {
+    /*padding: $spacer;
+    border-radius: 5px;*/
+    padding: calc($spacer - 50%);
     border-bottom: 1px dashed $gray-lighter;
     font-size: 16px;
 }
@@ -406,7 +499,7 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
 //fixes for phone with main content area
 @media screen and (max-width: 576px) {
     #page-course-view-topics .course-content ul.topics li.section {
-        padding: 0;
+        padding: 2rem 0;
     }
     .card-block {
         padding: .5rem;
@@ -416,6 +509,16 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
     }
     .course-content ul.section {
         margin: 0;
+    }
+    #page.container-fluid {
+        padding: 0;
+    }
+    .row {
+        margin-left:0;
+        margin-right:0;
+    }
+    .p-a-1 {
+        padding: 0!important;
     }
 }
 .path-course-view .completionprogress {

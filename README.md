@@ -31,7 +31,10 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 ## Fordson Moodle 33 1.6.0
 * New Preset - University Learner. This new preset is a beautiful full-screen design with a university in mind.  You can get interesting results by adjusting the Header Image Height to minimaize or make larger the header image.  Minimal use of color makes customization a breeze.  Pick the Brand Primary and away you go.
-* Many of the presets have been updated with some style tweaks here and there based on feedback from some of our users.  
+* New Preset - Dearborn Public Schools. This new preset is a beautiful full-screen design based off the default preset but allows the content to be fullscreen.  You can adjust the Header Image Height to minimize or make larger the header image.  This is a very clean style with minimal use of color.  
+* Many of the presets have been updated with some style tweaks here and there based on feedback from some of our users.
+* Fordson now has 7 very interesting presets to further customize the look and feel of your Moodle.  Each one has been further refined and styled.
+* Work on documentation is underway for how to configure and setup Fordson for best results with each preset. https://docs.google.com/document/d/1QYI8SaG1EQaxB9E-9ZXjxq-uedALsHxpQMqtng6wE-E/edit?usp=sharing
 
 ## Fordson Moodle 33 1.5.9
 * New Preset - Corporate Learner.  Very simple, no background image preset.  Most colors are tied to 2 settings: Brand Primary and Body Background Colour.  Changing these two colors will drastically alter the look of the page.  Designed to be distraction free with minimal color.  This preset gives you all the features of Fordson with the simplicity of the Boost theme.

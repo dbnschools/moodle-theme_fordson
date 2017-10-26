@@ -46,7 +46,7 @@ $brand-warning:             #ff8800 !default;
 $brand-danger:              #ff4136 !default;
 $brand-inverse:             $gray-dark !default;
 $navbar-height:             50px !default;
-$drawer-bg:                 #434c50 !default;
+$drawer-bg:                 lighten($brand-primary,25%) !default;
 $headerfade-bg:             #fff !default;
 $header-color:              #505050 !default;
 
@@ -122,6 +122,9 @@ $breadcrumb-divider-rtl:      "/" !default;
     }
     .usermenu {
         color: $navbarurl;
+        padding: 0 .5rem;
+        background-color: #fff;
+        border-radius: $border-radius;
     }
 
     .navbar-brand {
@@ -176,7 +179,6 @@ $breadcrumb-divider-rtl:      "/" !default;
  */
 #page.container-fluid {
     padding: 0!important;
-    z-index:2;
 }
 .row {
     margin-left:0px;
@@ -226,7 +228,8 @@ li.activity.label{
 }
 div#coursecontrols {
     border-radius: 0;
-    background-color: #fff6ae;
+    background-color: $activityhover;
+    border-top: 5px solid lighten($brand-primary,25%);
 }
 #page-header .headerfade .pull-xs-left {
     float: none!important;
@@ -378,6 +381,14 @@ h3.sectionname:before {
     border-radius: 2px;
     content: $sectionicon;
 }
+h3.sectionname {
+    margin-bottom: 2rem;
+}
+.section_action_menu {
+    background-color: $gray-lighter;
+    padding: .5rem;
+    border-radius: $border-radius;
+}
 
 .path-mod-assign [data-region="grading-navigation"] {
     background-color: #fff;
@@ -468,9 +479,12 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
 //fixes for phone with main content area
 @media screen and (max-width: 576px) {
     #page-course-view-topics .course-content ul.topics li.section {
-        padding: 0;
+        padding: 2rem 0;
     }
     .card-block {
+        padding: .5rem;
+    }
+    .section li.activity {
         padding: .5rem;
     }
     .course-content ul.section {
@@ -486,10 +500,6 @@ body#page-login-index {background-image: url([[pix:theme|headerbg]]);background-
     .p-a-1 {
         padding: 0!important;
     }
-    div#coursecontrols {
-        position: absolute;
-    }
-
 }
 .path-course-view .completionprogress {
     position: absolute;
