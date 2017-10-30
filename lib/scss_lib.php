@@ -67,7 +67,7 @@ function theme_fordson_get_main_scss_content($theme) {
             $scss .= $presetfile->get_content();
         } else {
             // Safety fallback - maybe new installs etc.
-            $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/preset/default.scss');
+            $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/preset/Default.scss');
         }
     }
 

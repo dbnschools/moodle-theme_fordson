@@ -27,7 +27,13 @@ Fordson is a child theme of Boost.
 This means when Moodle updates the core Boost theme those changes will be applied to Fordson as well in most cases.
 
 # Install from Github
-Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration.
+Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration.\
+
+## Fordson Moodle 33 1.6.1
+* New topic completion progress bar for each topic.  
+
+## Fordson Moodle 33 1.6.0 r1
+* Fixed issue when upgrading you lose all styling.  This was caused by renaming a preset.  Fixed with a fallback properly named.  /lib/scss.php line70 changed default.scss to Default.scss. 
 
 ## Fordson Moodle 33 1.6.0
 * New Preset - University Learner. This new preset is a beautiful full-screen design with a university in mind.  You can get interesting results by adjusting the Header Image Height to minimaize or make larger the header image.  Minimal use of color makes customization a breeze.  Pick the Brand Primary and away you go.

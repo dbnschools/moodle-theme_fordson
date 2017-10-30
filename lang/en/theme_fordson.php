@@ -34,6 +34,7 @@ $string['generalsettings'] = 'General settings';
 $string['advancedsettings'] = 'Advanced settings';
 $string['iconnavheading'] = 'Icon Navigation';
 $string['iconnavheadingsub'] = 'Create Buttons with Icons for use on the homepage.  Links can go anywhere.';
+$string['section_mods'] = 'Modules:';
 
 // Presets Settings.
 $string['presets_settings'] = 'Presets';
@@ -183,7 +184,6 @@ $string['sociallinkicon'] = 'Link Icon';
 $string['sociallinkicondesc'] = 'Enter the fontawesome name of the icon for your link<br />A full list of FontAwesome icons can be found at http://fontawesome.io/icons/';
 
 // Content settings.
-
 $string['coursetileinfo'] = 'Course Display Options';
 $string['coursetileinfodesc'] = 'These settings allow you to customize how courses will be displayed on the frontpage as well as course categories.';
 $string['textcontentinfo'] = 'Custom Content';

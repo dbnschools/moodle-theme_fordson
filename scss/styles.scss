@@ -697,13 +697,6 @@ ul.teacherscourseview {
     border-radius: $border-radius;
 }
 
-.quizattemptcounts {
-    padding: 1rem;
-    background-color: $body-bg;
-    border-radius: $border-radius;
-}
-
-
 .socials_wrapper {
     margin:0 auto;
     .socials {
@@ -792,4 +785,38 @@ body.format-topcoll h3.sectionname:before {
     padding: 3rem;
     }
 
+}
+
+.progress {
+    height: 30px;
+    overflow: hidden;
+    background-color: $gray-lighter;
+    width: 40%;
+    border-radius: .5rem;
+}
+@media screen and (max-width: 576px) {
+    .progress {
+    width: 100%;
+    }
+}
+.progress-bar {
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 16px;
+    line-height: 30px;
+    color: #fff;
+    text-align: center;
+    background-color: $brand-primary;
+}
+li.section.hidden {
+    background-color: $gray-lightest;
+}
+.section-summary-activities {
+    margin: 0 2rem;
+    padding: 1rem;
+    border-top: 2px solid $gray-lighter;
+}
+.course-content .section-summary {
+    border: 0;
 }
