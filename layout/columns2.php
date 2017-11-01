@@ -64,4 +64,3 @@ $PAGE->requires->js('/theme/fordson/javascript/scrolltotop.js');
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;
 echo $OUTPUT->render_from_template('theme_fordson/columns2', $templatecontext);
-

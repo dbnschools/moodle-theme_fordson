@@ -114,11 +114,10 @@ $choices = array(
 	'unit' => get_string('myunits', 'theme_fordson'),
 	'class' => get_string('myclasses', 'theme_fordson'),
 	'module' => get_string('mymodules', 'theme_fordson')
-);
+	);
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
-
 
 //Drawer Menu
 // This is the descriptor for nav drawer

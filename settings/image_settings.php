@@ -15,13 +15,13 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Heading and course images settings page file.
- *
- * @packagetheme_fordson
- * @copyright  2016 Chris Kenniburg
- * @creditstheme_boost - MoodleHQ
- * @licensehttp://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
+* Heading and course images settings page file.
+*
+* @packagetheme_fordson
+* @copyright  2016 Chris Kenniburg
+* @creditstheme_boost - MoodleHQ
+* @licensehttp://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+*/
 
 defined('MOODLE_INTERNAL') || die();
 
@@ -31,37 +31,37 @@ $page = new admin_settingpage('theme_fordson_images', get_string('imagesettings'
 $name = 'theme_fordson/headerimagepadding';
 $title = get_string('headerimagepadding', 'theme_fordson');
 $description = get_string('headerimagepadding_desc', 'theme_fordson');;
-$default = '500px';
+$default = '275px';
 $choices = array(
-        '100px' => '100px',
-        '125px' => '125px',
-        '150px' => '150px',
-        '175px' => '175px',
-        '200px' => '200px',
-        '225px' => '225px',
-        '250px' => '250px',
-        '275px' => '275px',
-        '300px' => '300px',
-        '325px' => '325px',
-        '350px' => '350px',
-        '375px' => '375px',
-        '400px' => '400px',
-        '425px' => '425px',
-        '450px' => '450px',
-        '475px' => '475px',
-        '500px' => '500px',
-        '525px' => '525px',
-        '550px' => '550px',
-        '575px' => '575px',
-        '600px' => '600px',
-        '625px' => '625px',
-        '650px' => '650px',
-        '675px' => '675px',
-        '700px' => '700px',
-        '725px' => '725px',
-        '750px' => '750px',
-        '775px' => '775px',
-        '800px' => '800px',
+    '100px' => '100px',
+    '125px' => '125px',
+    '150px' => '150px',
+    '175px' => '175px',
+    '200px' => '200px',
+    '225px' => '225px',
+    '250px' => '250px',
+    '275px' => '275px',
+    '300px' => '300px',
+    '325px' => '325px',
+    '350px' => '350px',
+    '375px' => '375px',
+    '400px' => '400px',
+    '425px' => '425px',
+    '450px' => '450px',
+    '475px' => '475px',
+    '500px' => '500px',
+    '525px' => '525px',
+    '550px' => '550px',
+    '575px' => '575px',
+    '600px' => '600px',
+    '625px' => '625px',
+    '650px' => '650px',
+    '675px' => '675px',
+    '700px' => '700px',
+    '725px' => '725px',
+    '750px' => '750px',
+    '775px' => '775px',
+    '800px' => '800px',
     );
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');

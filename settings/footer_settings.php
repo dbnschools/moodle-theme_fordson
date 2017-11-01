@@ -15,20 +15,19 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Social networking settings page file.
- *
- * @package    theme_fordson
- * @copyright  2016 Chris Kenniburg
- * @credits    theme_boost - MoodleHQ
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
+* Social networking settings page file.
+*
+* @package    theme_fordson
+* @copyright  2016 Chris Kenniburg
+* @credits    theme_boost - MoodleHQ
+* @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+*/
 
 defined('MOODLE_INTERNAL') || die();
 
 /* Social Network Settings */
 $page = new admin_settingpage('theme_fordson_footer', get_string('footerheading', 'theme_fordson'));
-$page->add(new admin_setting_heading('theme_fordson_footer', get_string('footerheadingsub', 'theme_fordson'),
-format_text(get_string('footerdesc' , 'theme_fordson'), FORMAT_MARKDOWN)));
+$page->add(new admin_setting_heading('theme_fordson_footer', get_string('footerheadingsub', 'theme_fordson'), format_text(get_string('footerdesc' , 'theme_fordson'), FORMAT_MARKDOWN)));
 
 // footer branding
 $name = 'theme_fordson/brandorganization';

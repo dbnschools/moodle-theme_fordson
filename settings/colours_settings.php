@@ -25,13 +25,11 @@
 defined('MOODLE_INTERNAL') || die();
 
 $page = new admin_settingpage('theme_fordson_colours', get_string('colours_settings', 'theme_fordson'));
-$page->add(new admin_setting_heading('theme_fordson_colours', get_string('colours_headingsub', 'theme_fordson'),
-        format_text(get_string('colours_desc' , 'theme_fordson'), FORMAT_MARKDOWN)));
-
+$page->add(new admin_setting_heading('theme_fordson_colours', get_string('colours_headingsub', 'theme_fordson'), format_text(get_string('colours_desc' , 'theme_fordson'), FORMAT_MARKDOWN)));
 
     // Raw SCSS to include before the content.
     $setting = new admin_setting_configtextarea('theme_fordson/scsspre',
-        get_string('rawscsspre', 'theme_fordson'), get_string('rawscsspre_desc', 'theme_fordson'), '', PARAM_RAW);
+    get_string('rawscsspre', 'theme_fordson'), get_string('rawscsspre_desc', 'theme_fordson'), '', PARAM_RAW);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
@@ -213,11 +211,11 @@ $page->add(new admin_setting_heading('theme_fordson_colours', get_string('colour
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
-// Raw SCSS to include after the content.
-$setting = new admin_setting_configtextarea('theme_fordson/scss', get_string('rawscss', 'theme_fordson'),
+    // Raw SCSS to include after the content.
+    $setting = new admin_setting_configtextarea('theme_fordson/scss', get_string('rawscss', 'theme_fordson'),
     get_string('rawscss_desc', 'theme_fordson'), '', PARAM_RAW);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
 
 // Must add the page after definiting all the settings!
 $settings->add($page);

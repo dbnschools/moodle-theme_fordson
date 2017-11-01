@@ -30,7 +30,10 @@ This means when Moodle updates the core Boost theme those changes will be applie
 Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration.\
 
 ## Fordson Moodle 33 1.6.1
-* New topic completion progress bar for each topic.  
+* New topic completion progress bar for each topic.  This small enhancement makes a big improvement for students.  It displays a progress bar based on course completion for each topic in a course.  To see it you must use topic course format and set Course Layout to "Show One Section Per Page".  On the main course page you will now see the progress bar for each topic.
+* Dearborn Public Schools is now the default preset.
+* New default background for theme: https://pixabay.com/en/background-abstract-futuristic-1462755/
+* Default theme settings have been adjusted to reflect settings needed for the new Dearborn Public Schools preset.
 
 ## Fordson Moodle 33 1.6.0 r1
 * Fixed issue when upgrading you lose all styling.  This was caused by renaming a preset.  Fixed with a fallback properly named.  /lib/scss.php line70 changed default.scss to Default.scss. 

@@ -51,32 +51,31 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
         $o .= html_writer::start_tag('li', array('id' => 'section-'.$section->section,
             'class' => $classattr, 'role' => 'region', 'aria-label' => $title));
 
-            $o .= html_writer::tag('div', '', array('class' => 'left side'));
-            $o .= html_writer::tag('div', '', array('class' => 'right side'));
-            $o .= html_writer::start_tag('div', array('class' => 'content'));
+        $o .= html_writer::tag('div', '', array('class' => 'left side'));
+        $o .= html_writer::tag('div', '', array('class' => 'right side'));
+        $o .= html_writer::start_tag('div', array('class' => 'content'));
 
-            if ($section->uservisible) {
-                $title = html_writer::tag('a', $title,
-                    array('href' => course_get_url($course, $section->section), 'class' => $linkclasses));
-            }
+        if ($section->uservisible) {
+            $title = html_writer::tag('a', $title,
+                array('href' => course_get_url($course, $section->section), 'class' => $linkclasses));
+        }
             //add .sectionname so that fontawesome icon can be applied to this page too
-            $o .= $this->output->heading($title, 3, 'section-title sectionname');
+        $o .= $this->output->heading($title, 3, 'section-title sectionname');
+        $o .= html_writer::start_tag('div', array('class' => 'summarytext'));
+        $o .= $this->format_summary_text($section);
+        $o .= $this->section_activity_summary($section, $course, null);
+        $o .= html_writer::end_tag('div');
 
-            $o .= html_writer::start_tag('div', array('class' => 'summarytext'));
-            $o .= $this->format_summary_text($section);
-            $o .= html_writer::end_tag('div');
-            $o .= $this->section_activity_summary($section, $course, null);
-
-            $context = context_course::instance($course->id);
-            $o .= $this->section_availability_message($section,
-                has_capability('moodle/course:viewhiddensections', $context));
+        $context = context_course::instance($course->id);
+        $o .= $this->section_availability_message($section,
+            has_capability('moodle/course:viewhiddensections', $context));
 
             $o .= html_writer::end_tag('div'); // Content.
 
             $o .= html_writer::end_tag('li');
 
             return $o;
-    }
+        }
 
     /**
      * Generate a summary of the activites in a section
@@ -87,6 +86,8 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
      * @return string HTML to output.
      */
     protected function section_activity_summary($section, $course, $mods) {
+        global $PAGE;
+
         $modinfo = get_fast_modinfo($course);
         if (empty($modinfo->sections[$section->section])) {
             return '';
@@ -118,61 +119,61 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
                     $total++;
                     $completiondata = $completioninfo->get_data($thismod, true);
                     if ($completiondata->completionstate == COMPLETION_COMPLETE ||
-                            $completiondata->completionstate == COMPLETION_COMPLETE_PASS) {
+                        $completiondata->completionstate == COMPLETION_COMPLETE_PASS) {
                         $complete++;
-                    }
                 }
             }
         }
+    }
 
-        if (empty($sectionmods)) {
+    if (empty($sectionmods)) {
             // No sections.
-            return '';
-        }
+        return '';
+    }
 
-        $output = '';
+    $output = '';
 
         // Output section activities summary
-        $output = html_writer::start_tag('div', array('class' => 'section-summary-activities'));
+    $output = html_writer::start_tag('div', array('class' => 'section-summary-activities'));
 
         //Special thanks to Willian Mono for the topic progress bar code
-        if ($total > 0) {
-            $completion = new stdClass;
-            $completion->complete = $complete;
-            $completion->total = $total;
+    if ($total > 0) {
+        $completion = new stdClass;
+        $completion->complete = $complete;
+        $completion->total = $total;
 
-            $percent = 0;
-            if ($complete > 0) {
-                $percent = (int) (($complete / $total) * 100);
-            }
-            $output .= "<div class='progress'>";
-            $output .= "<div class='progress-bar progress-bar-info' role='progressbar' aria-valuenow='{$percent}' ";
-            $output .= " aria-valuemin='0' aria-valuemax='100' style='width: {$percent}%;'>";
-            $output .= "{$percent}%";
-            $output .= "</div>";
-            $output .= "</div>";
+        $percent = 0;
+        if ($complete > 0) {
+            $percent = (int) (($complete / $total) * 100);
         }
+        $output .= "<div class='progress'>";
+        $output .= "<div class='progress-bar progress-bar-info' role='progressbar' aria-valuenow='{$percent}' ";
+        $output .= " aria-valuemin='0' aria-valuemax='100' style='width: {$percent}%;'>";
+        $output .= "{$percent}%";
+        $output .= "</div>";
+        $output .= "</div>";
+    }
         //End Willian Mono
-        
-        $output .= html_writer::tag('span',get_string('section_mods', 'theme_fordson'), array('class' => 'activity-count'));
-        foreach ($sectionmods as $mod) {
+
+    $output .= html_writer::tag('span',get_string('section_mods', 'theme_fordson'), array('class' => 'activity-count'));
+    foreach ($sectionmods as $mod) {
         $output .= html_writer::start_tag('span', array('class' => 'activity-count'));
         $output .= $mod['name'].': '.$mod['count'];
         $output .= html_writer::end_tag('span');
-        }
+    }
 
         // Output section completion data
-        if ($total > 0) {
-            $a = new stdClass;
-            $a->complete = $complete;
-            $a->total = $total;
-            $output.= '<br>';
-            $output.= html_writer::tag('span', get_string('progresstotal', 'completion', $a), array('class' => 'activity-count'));
-        }
-
-        $output .= html_writer::end_tag('div');
-
-        return $output;
+    if ($total > 0) {
+        $a = new stdClass;
+        $a->complete = $complete;
+        $a->total = $total;
+        $output.= '<br>';
+        $output.= html_writer::tag('span', get_string('progresstotal', 'completion', $a), array('class' => 'activity-count'));
     }
-}
 
+    $output .= html_writer::end_tag('div');
+
+    return $output;
+    }
+
+}

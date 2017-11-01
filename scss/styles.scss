@@ -1,4 +1,3 @@
-
 /**
 * FORDSON CUSTOMIZATIONS FOR NEW ELEMENTS AND DEFAULT STYLING
 **/
@@ -39,12 +38,13 @@ $activityiconsize: 36px !default;
 $activityhover: #fff6ae !default;
 $gutterwidth: 6rem !default;
 
+
 /**
 * Layout Header
 **/
 
 #page-header h1 {
-    font-weight:600;
+    font-weight: 600;
     color: $header-color;
 }
 
@@ -55,25 +55,25 @@ $gutterwidth: 6rem !default;
 }
 
 @media screen and (min-width: 992px) {
-#page.container-fluid {
-    padding: 0 $gutterwidth  !important;
-}
+    #page.container-fluid {
+        padding: 0 $gutterwidth !important;
+    }
 }
 
 .headerbkg {
-    margin-top:48px;
-    height:$headerimagepadding;
+    margin-top: 48px;
+    height: $headerimagepadding;
     background-position: center;
     background-size: cover;
     position: absolute;
-    top:0;
-    left:0;
-    width:100%;
-    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.7);
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.7);
 }
 
 div#learningcontent {
-    position:relative;
+    position: relative;
     margin-top: $learningcontentpadding;
     background-color: $card-bg;
 }
@@ -85,7 +85,9 @@ div#learningcontent {
     border-radius: $border-radius;
 }
 
-.breadcrumb-nav .breadcrumb {margin-bottom: .5rem;}
+.breadcrumb-nav .breadcrumb {
+    margin-bottom: .5rem;
+}
 
 #page-navbar .open>.dropdown-menu {
     border-radius: $border-radius;
@@ -101,14 +103,14 @@ div#learningcontent {
 }
 
 @media screen and (min-width: 991px) {
-#region-main.has-blocks {
-    width: calc(100% - #{$blockwidthfordson});
+    #region-main.has-blocks {
+        width: calc(100% - #{$blockwidthfordson});
     }
 }
 
 @media screen and (min-width: 991px) {
-[data-region="blocks-column"] {
-    width: calc(#{$blockwidthfordson} - 30px);
+    [data-region="blocks-column"] {
+        width: calc(#{$blockwidthfordson} - 30px);
     }
 }
 
@@ -117,13 +119,14 @@ div#learningcontent {
     padding: 1rem;
 }
 
+
 /* login on frontpage */
 
 .fpsignup {
     border-radius: $border-radius;
     background-color: $gray-lightest;
     padding: $spacer;
-    box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.3);
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
     border: 1px solid $card-bg;
 }
 
@@ -150,6 +153,7 @@ div#learningcontent {
     margin-right: 15px;
 }
 
+
 /* Teacher Dashboard */
 
 div#coursecontrols {
@@ -172,13 +176,13 @@ div#coursecontrols {
 
 .teacherdashbutton {
     font-size: 16px;
-    float:right;
-    padding:5px 10px;
+    float: right;
+    padding: 5px 10px;
     border-radius: $border-radius;
 }
 
 .teacherdashboard i.dashicon {
-    float:left;
+    float: left;
     padding: 0px 4px;
 }
 
@@ -189,8 +193,8 @@ div#coursecontrols {
 
 .thiscoursebutton {
     font-size: 16px;
-    float:right;
-    padding:5px 10px;
+    float: right;
+    padding: 5px 10px;
     border-radius: $border-radius;
 }
 
@@ -200,29 +204,33 @@ div#coursecontrols {
 }
 
 .editcogbutton {
-    float:right;
+    float: right;
     border-radius: $border-radius;
 }
 
 .enrollcodebutton {
     font-size: 16px;
-    float:right;
-    padding:5px 10px;
+    float: right;
+    padding: 5px 10px;
     border-radius: $border-radius;
 }
 
-.teacherdashbutton:hover, .thiscoursebutton:hover, .enrollcodebutton:hover, .editcogbutton:hover {
+.teacherdashbutton:hover,
+.thiscoursebutton:hover,
+.enrollcodebutton:hover,
+.editcogbutton:hover {
     background-color: darken($card-bg, 5%);
 }
 
 @media screen and (max-width: 576px) {
     div#coursecontrols {
-    border-radius: 0;
+        border-radius: 0;
     }
     .enrollcodebutton {
-    display:none;
+        display: none;
     }
 }
+
 
 /* Footer */
 
@@ -230,14 +238,17 @@ ul.footercontact {
     list-style: none;
 }
 
+
 /* Slideshow */
 
-.slide1image, .slide2image, .slide3image {
+.slide1image,
+.slide2image,
+.slide3image {
     height: $slideshowheight;
 }
 
 .carousel-caption.d-none.d-md-block {
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
     border-radius: 1rem 1rem 0 0;
 }
 
@@ -278,14 +289,15 @@ a.right.carousel-control .fa-chevron-right {
     bottom: 40%;
 }
 
+
 /* Enhanced Homepage */
 
 .fpwonderbox {
-    margin-bottom:1rem;
+    margin-bottom: 1rem;
 }
 
 .fpstartwrap {
-    margin:0px;
+    margin: 0px;
     border-radius: 5px;
 }
 
@@ -294,13 +306,13 @@ a.right.carousel-control .fa-chevron-right {
     border-radius: 2px;
     padding: 15px;
     text-align: left;
-    background-color:$fpstartwrap-bg;
-    width:100%;
-    text-align:center;
+    background-color: $fpstartwrap-bg;
+    width: 100%;
+    text-align: center;
 }
 
 .fpstart .iconset {
-  display:block;
+    display: block;
 }
 
 .fpicon {
@@ -325,9 +337,13 @@ a.right.carousel-control .fa-chevron-right {
     border-radius: 5px;
 }
 
-.fpicon a {color: $fpicon-colour;}
+.fpicon a {
+    color: $fpicon-colour;
+}
 
-.fpiconcreate a {color: $fpicon-colour;}
+.fpiconcreate a {
+    color: $fpicon-colour;
+}
 
 .fpicon:hover {
     background-color: $fpicon-hover;
@@ -349,18 +365,18 @@ div#fpslider {
 }
 
 .alertbox {
-    text-align:center;
+    text-align: center;
 }
 
 .alertmessage {
-    display:inline-block;
+    display: inline-block;
     background-color: $brand-warning;
-    border-radius:5px;
+    border-radius: 5px;
     padding: 15px;
     margin: 20px;
 }
 
-.alertmessage p{
+.alertmessage p {
     margin-top: initial;
     margin-bottom: initial;
 }
@@ -378,10 +394,10 @@ div#fpslider {
 }
 
 .marketcontent {
-    padding:1rem; 
+    padding: 1rem;
     background-color: $markettextbg;
     height: 10rem;
-    overflow:auto;
+    overflow: auto;
     margin-bottom: 1rem;
 }
 
@@ -390,13 +406,13 @@ div#fpslider {
 }
 
 .marketcontent::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 7px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.3);
     border-radius: 5%;
 }
 
 .marketcontent::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
 }
 
 form#enrolform_easy {
@@ -416,6 +432,7 @@ form#enrolform_easy button.btn.btn-primary {
     font-size: 2rem;
 }
 
+
 /**
 * Available Courses
 **/
@@ -426,10 +443,12 @@ form#enrolform_easy button.btn.btn-primary {
     padding: 1rem;
     border: 1px solid $body-bg;
     border-radius: $card-border-radius;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
-.class-box-fp .course-title h4 a:hover {text-decoration: none;}
+.class-box-fp .course-title h4 a:hover {
+    text-decoration: none;
+}
 
 .class-box-fp .course-title {
     background-color: $card-bg;
@@ -437,19 +456,21 @@ form#enrolform_easy button.btn.btn-primary {
     padding-top: 2rem;
     margin-bottom: 0;
     text-align: center;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 .class-box-fp .course-title:after {
     text-decoration: none;
-    display:block;
+    display: block;
     content: '';
-    border-bottom: solid 1rem $brand-primary;   
-    transform: scaleX(0);  
+    border-bottom: solid 1rem $brand-primary;
+    transform: scaleX(0);
     transition: transform 250ms ease-in-out;
 }
 
-.class-box-fp .course-title:hover:after  {transform: scaleX(1); }
+.class-box-fp .course-title:hover:after {
+    transform: scaleX(1);
+}
 
 .courseimagecontainer {
     height: calc(45%);
@@ -459,7 +480,7 @@ form#enrolform_easy button.btn.btn-primary {
     margin-bottom: 2rem;
     border: 1px solid $card-bg;
     border-radius: $card-border-radius;
-    box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.3);
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
     padding: 1rem;
     height: $courseboxheight;
     overflow: hidden;
@@ -481,11 +502,13 @@ form#enrolform_easy button.btn.btn-primary {
     height: 100%;
 }
 
-.dash-course-image-view {padding-top:5rem;}
+.dash-course-image-view {
+    padding-top: 5rem;
+}
 
 .class-box .course-summary {
     height: 4rem;
-    overflow:auto;
+    overflow: auto;
     margin-bottom: 1rem;
 }
 
@@ -494,7 +517,7 @@ form#enrolform_easy button.btn.btn-primary {
 }
 
 .class-box .course-summary::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 7px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.3);
     border-radius: 5%;
 }
 
@@ -505,7 +528,7 @@ form#enrolform_easy button.btn.btn-primary {
 
 .tooltip-inner {
     max-width: 350px;
-    font-size:14px;
+    font-size: 14px;
 }
 
 .course_category_tree {
@@ -513,7 +536,7 @@ form#enrolform_easy button.btn.btn-primary {
 }
 
 .cat-icon {
-    margin:5px;
+    margin: 5px;
 }
 
 .category.box-class {
@@ -521,8 +544,8 @@ form#enrolform_easy button.btn.btn-primary {
     text-align: center;
 }
 
-.category.box-class:nth-child(5) { 
-    clear:both;
+.category.box-class:nth-child(5) {
+    clear: both;
 }
 
 .info-enhanced {
@@ -534,7 +557,7 @@ form#enrolform_easy button.btn.btn-primary {
 
 .circle-count {
     float: right;
-    padding-left:3px;
+    padding-left: 3px;
 }
 
 .courseimagecontainer:hover .course-overlay {
@@ -564,66 +587,65 @@ form#enrolform_easy button.btn.btn-primary {
     color: #fff;
     text-align: left;
     font-size: 16px;
-    -webkit-box-shadow: 0 0 5px rgba(0,0,0,.15);
-    box-shadow: 0 0 5px rgba(0,0,0,.15);
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .15);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .15);
 }
 
 .coursedimmed1 {
-    background-color: rgba(150,150,150,0.9);
-
+    background-color: rgba(150, 150, 150, 0.9);
 }
 
 .coursedimmed2 {
-    background-color: rgba(150,150,150,0.9);
+    background-color: rgba(150, 150, 150, 0.9);
     height: 100%;
 }
 
 .coursedimmed3 {
-    background-color: rgba(150,150,150,.9);
+    background-color: rgba(150, 150, 150, .9);
     padding: 1rem;
 }
 
 .class-box-courseview {
     background-color: #dae6e5;
     border: 1px solid #dae6e5;
-    -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,.2);
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
     height: 100%;
 }
 
 .coursestyle2 * {
-  -webkit-transition: all 0.35s;
-  transition: all 0.35s;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .coursestyle2 figcaption {
-  position: absolute;
-  height: 98px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  overflow: hidden;
-  padding: 15px;
-  background-color: rgba(0, 0, 0, 0.75);
+    position: absolute;
+    height: 98px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    overflow: hidden;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.75);
 }
 
 .coursestyle2 h3 {
-  text-transform: uppercase;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
-  margin: 3px 0;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 3px 0;
 }
 
 a.coursestyle2url {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  cursor: pointer;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    cursor: pointer;
 }
 
 a.coursestyle3url {
@@ -637,7 +659,7 @@ a.coursestyle3url {
 
 .coursestyle2:hover figcaption,
 .coursestyle2.hover figcaption {
-  height: calc(100%);
+    height: calc(100%);
 }
 
 .coursestyle2:hover p.course-summary::-webkit-scrollbar {
@@ -645,20 +667,20 @@ a.coursestyle3url {
 }
 
 .coursestyle2:hover p.course-summary::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 7px rgba(0,0,0,0.3);
+    -webkit-box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.3);
     border-radius: 5%;
 }
 
 .coursestyle2:hover p.course-summary::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
 }
 
 @media screen and (min-width: 992px) {
     .coursestyle2:hover p.course-summary,
     .coursestyle2.hover p.course-summary {
-      overflow-y: auto;
-      height: 5rem;
+        overflow-y: auto;
+        height: 5rem;
     }
 }
 
@@ -682,14 +704,26 @@ ul.teacherscourseview {
 }
 
 
+
 /** 
 * TIDY UP 
 **/
-#page-badges-mybadges .fpwonderbox {display:none;}
-#page-badges-mybadges .markettiles {display:none;}
-#page-user-files .fpwonderbox {display:none;}
 
-.p-a-1 {padding: 0 1rem !important;}
+#page-badges-mybadges .fpwonderbox {
+    display: none;
+}
+
+#page-badges-mybadges .markettiles {
+    display: none;
+}
+
+#page-user-files .fpwonderbox {
+    display: none;
+}
+
+.p-a-1 {
+    padding: 0 1rem !important;
+}
 
 .glossarycontrol span.helplink {
     padding: 1rem;
@@ -698,13 +732,14 @@ ul.teacherscourseview {
 }
 
 .socials_wrapper {
-    margin:0 auto;
+    margin: 0 auto;
     .socials {
-        margin-bottom:0;
+        margin-bottom: 0;
     }
 }
-.socials a:hover{
-    text-decoration:none;
+
+.socials a:hover {
+    text-decoration: none;
 }
 
 .single-section h3.sectionname {
@@ -738,12 +773,15 @@ body.format-topcoll h3.sectionname:before {
     display: none;
 }
 
+
 /* H5P regression fix for editor https://moodle.org/mod/forum/discuss.php?d=347602#p1402801 */
+
 @media (min-width:544px) {
     .form-inline .form-control-static {
         display: block!important;
     }
 }
+
 /* End H5P */
 
 #back-to-top {
@@ -760,11 +798,7 @@ body.format-topcoll h3.sectionname:before {
     opacity: 1;
 }
 
-
-
-
 /* Fix print page for Assignments */
-
 @media print {
 
     .path-mod-assign [data-region="grade-panel"] {
@@ -782,9 +816,8 @@ body.format-topcoll h3.sectionname:before {
     }
 
     .path-mod-assign [data-region="user-info"] .nowrap {
-    padding: 3rem;
+        padding: 3rem;
     }
-
 }
 
 .progress {
@@ -793,12 +826,16 @@ body.format-topcoll h3.sectionname:before {
     background-color: $gray-lighter;
     width: 40%;
     border-radius: .5rem;
+    margin-right: auto;
+    margin-left: auto;
 }
+
 @media screen and (max-width: 576px) {
     .progress {
-    width: 100%;
+        width: 100%;
     }
 }
+
 .progress-bar {
     float: left;
     width: 0;
@@ -809,14 +846,17 @@ body.format-topcoll h3.sectionname:before {
     text-align: center;
     background-color: $brand-primary;
 }
+
 li.section.hidden {
     background-color: $gray-lightest;
 }
+
 .section-summary-activities {
-    margin: 0 2rem;
     padding: 1rem;
     border-top: 2px solid $gray-lighter;
+    text-align: center;
 }
+
 .course-content .section-summary {
     border: 0;
 }

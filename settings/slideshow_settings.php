@@ -66,7 +66,6 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-
 // This is the descriptor for slide
 $name = 'theme_fordson/slide1info';
 $heading = get_string('slide1info', 'theme_fordson');
@@ -99,7 +98,6 @@ $description = get_string('slideimage_desc', 'theme_fordson');
 $setting = new admin_setting_configstoredfile($name, $title, $description, 'slide1image');
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
-
 
 // This is the descriptor for slide
 $name = 'theme_fordson/slide2info';
@@ -165,7 +163,6 @@ $description = get_string('slideimage_desc', 'theme_fordson');
 $setting = new admin_setting_configstoredfile($name, $title, $description, 'slide3image');
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
-
 
 // Must add the page after definiting all the settings!
 $settings->add($page);

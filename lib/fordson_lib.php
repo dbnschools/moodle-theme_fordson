@@ -93,15 +93,15 @@ function theme_fordson_strip_html_tags( $text ) {
             '@</?((form)|(button)|(fieldset)|(legend)|(input))@iu',
             '@</?((label)|(select)|(optgroup)|(option)|(textarea))@iu',
             '@</?((frameset)|(frame)|(iframe))@iu',
-        ),
+            ),
         array(
             ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
             "\n\$0", "\n\$0", "\n\$0", "\n\$0", "\n\$0", "\n\$0",
             "\n\$0", "\n\$0",
-        ),
+            ),
         $text
-    );
-    return strip_tags( $text );
+        );
+return strip_tags( $text );
 }
 
 /**
@@ -291,12 +291,12 @@ function fordson_boostnavigation_get_all_childrenkeys(navigation_node $navigatio
 function fordson_local_navigation_extend_navigation(global_navigation $navigation) {
     global $PAGE;
 
-        $menu = new custom_menu($PAGE->theme->settings->adddrawermenu, current_language());
-        if ($menu->has_children()) {
-            foreach ($menu->get_children() as $item) {
-                fordson_navigation_custom_menu_item($item, 0, null);
-            }
+    $menu = new custom_menu($PAGE->theme->settings->adddrawermenu, current_language());
+    if ($menu->has_children()) {
+        foreach ($menu->get_children() as $item) {
+            fordson_navigation_custom_menu_item($item, 0, null);
         }
+    }
 }
 /**
  * Extend navigation to add new options.
@@ -334,7 +334,7 @@ function fordson_navigation_custom_menu_item(custom_menu_item $menunode, $parent
         } else {
             $masternode = $PAGE->navigation->add(fordson_local_navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CONTAINER);
             $masternode->title($menunode->get_title());
-                $masternode->showinflatnavigation = true;
+            $masternode->showinflatnavigation = true;
         }
         foreach ($menunode->get_children() as $menunode) {
             fordson_navigation_custom_menu_item($menunode, $submenucount, $masternode);
@@ -352,8 +352,8 @@ function fordson_navigation_custom_menu_item(custom_menu_item $menunode, $parent
         } else {
             $masternode = $PAGE->navigation->add(fordson_local_navigation_get_string($menunode->get_text()), $url, navigation_node::TYPE_CONTAINER);
             $masternode->title($menunode->get_title());
-                $masternode->showinflatnavigation = true;
-            }
+            $masternode->showinflatnavigation = true;
+        }
     }
 
     return true;
