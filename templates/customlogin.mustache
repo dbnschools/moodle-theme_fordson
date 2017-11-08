@@ -20,17 +20,20 @@
 </div>
 
 {{/hasfpiconnav}}
-
-<div class="row fpcustomtext">
-            <div class="col-md-8">
+{{#hasfeature1}}
+        <div class="row fpcustomtext">
+            <div class="col-md-8 fpcustomtext">
                 <div class="featuretext">
                 {{{feature1text}}}
                 </div>
             </div>
             <div class="col-md-4">
+                <div class="loginfeaturedimage">
                 <img src="{{{ feature1image }}}" class="img-fluid" alt="Responsive image">
             </div>
         </div>
+{{/hasfeature1}}
+{{#hasfeature2}}
         <div class="row fpcustomtext">
             <div class="col-md-8">
                 <div class="featuretext">
@@ -38,9 +41,13 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <img src="{{{ feature2image }}}" class="img-fluid" alt="Responsive image">
+                <div class="loginfeaturedimage">
+                    <img src="{{{ feature2image }}}" class="img-fluid" alt="Responsive image">
+                </div>
             </div>
         </div>
+{{/hasfeature2}}
+{{#hasfeature3}}
         <div class="row fpcustomtext">
             <div class="col-md-8">
                 <div class="featuretext">
@@ -48,8 +55,11 @@
                 </div>
             </div>
             <div class="col-md-4">
-                <img src="{{{ feature3image }}}" class="img-fluid" alt="Responsive image">
+                <div class="loginfeaturedimage">
+                    <img src="{{{ feature3image }}}" class="img-fluid" alt="Responsive image">
+                </div>
             </div>
         </div>
+{{/hasfeature3}}
 </div>
 {{/hascustomlogin}}

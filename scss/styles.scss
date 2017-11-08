@@ -185,6 +185,8 @@ div#fordsonlogin {
     background-color: $fpicon-icon;
     border-radius: 50%;
     margin-bottom: $spacer;
+    box-shadow: 0 1px 1px 1px rgba(0,0,0,.3);
+    border: 1px solid #fff;
 }
 
 .card.loginicon {
@@ -197,6 +199,19 @@ div#fordsonlogin {
 
 .featuretext {
     text-align: initial;
+}
+
+.logintop {
+    text-align: center;
+}
+
+.logintopimage {
+    display: inline-block;
+}
+
+.loginfeaturedimage img {
+    box-shadow: 0 1px 1px 1px rgba(0,0,0,.3);
+    border: 1px solid #fff;
 }
 
 .featuretext h4 {

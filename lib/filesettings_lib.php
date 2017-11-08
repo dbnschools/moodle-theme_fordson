@@ -60,6 +60,8 @@ function theme_fordson_pluginfile($course, $cm, $context, $filearea, $args, $for
         return $theme->setting_file_serve('backgroundimage', $args, $forcedownload, $options);
     } else if ($filearea === 'loginimage') { // Login page image.
         return $theme->setting_file_serve('loginimage', $args, $forcedownload, $options);
+    } else if ($filearea === 'logintopimage') { // Default header image.
+        return $theme->setting_file_serve('logintopimage', $args, $forcedownload, $options);
     } else if ($filearea === 'marketing1image') { // Login page image.
         return $theme->setting_file_serve('marketing1image', $args, $forcedownload, $options);
     } else if ($filearea === 'marketing2image') { // Login page image.

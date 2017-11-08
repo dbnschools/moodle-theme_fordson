@@ -170,7 +170,14 @@
     </div>
 
     <div class="col-xl-9 col-md-8">
-    {{#alertbox}}
+        <div class="logintop">
+        {{#logintopimage}}
+            <div class="logintopimage">
+                <img src="{{{ logintopimage }}}" class="img-fluid" alt="Responsive image">
+            </div>
+        {{/logintopimage}}
+        </div>
+        {{#alertbox}}
             <div class="alertbox">
                 <div class="alertmessage">
                 {{{alertbox}}}

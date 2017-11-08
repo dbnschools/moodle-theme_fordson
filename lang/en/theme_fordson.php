@@ -353,14 +353,18 @@ $string['featuretext_desc'] = 'This text will appear next to the featured image 
 $string['feature1info'] = 'Feature One';
 $string['feature2info'] = 'Feature Two';
 $string['feature3info'] = 'Feature Three';
-$string['featureinfo_desc'] = 'A feature consists of an image and text which will appear on the custom login page in a row.';
+$string['featureinfo_desc'] = 'A feature consists of an image and text which will appear on the custom login page in a row. You must add both an image and text in order for the feature to appear.';
 $string['customlogininfo'] = 'Custom Login Page Settings';
 $string['customlogininfo_desc'] = 'This allows you to create a custom login page.  Other settings in the theme that will display on the login page include the following:<br>
-* Site Administration > Security > Site Policies > Force Users To Login = Make sure this is checked so that users will be taken to your custom login page.<br>
+<b>* Site Administration > Security > Site Policies > Force Users To Login = Make sure this is checked so that users will be taken to your custom login page.<br>
+* Site Administration > Appearance > Logos > Logo = Upload an image here and it will appear above the login form.<br>
 * Fordson > Custom Image Settings > Default Login Image can be used to change the background image for the login page. <br>
-* Fordson > Content Areas > Homepage Alert can be used to provide a notice on the top of the page. ';
+* Fordson > Content Areas > Homepage Alert can be used to provide a notice on the top of the page. </b>';
 $string['showcustomlogin'] = 'Turn on Custom Login';
 $string['showcustomlogin_desc'] = 'You must turn this on to activate the custom settings below.';
+$string['logintopimage'] = 'Login Page Banner Image';
+$string['logintopimage_desc'] = 'This image appears on the login page to the right of the login form.  This is ideal for a logo or banner with a transparent background.';
+
 
 //FP Icon Nav default text for buttons
 $string['naviconbutton1textdefault'] = 'Dashboard';

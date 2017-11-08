@@ -702,6 +702,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
         'hascustomlogin' => $hascustomlogin,
         'hasdefaultlogin' => $hasdefaultlogin,
 
+        'hasfeature1' => !empty($PAGE->theme->setting_file_url('feature1image', 'feature1image')) && !empty($PAGE->theme->settings->feature1text),
+        'hasfeature2' => !empty($PAGE->theme->setting_file_url('feature2image', 'feature2image')) && !empty($PAGE->theme->settings->feature2text),
+        'hasfeature3' => !empty($PAGE->theme->setting_file_url('feature3image', 'feature3image')) && !empty($PAGE->theme->settings->feature3text),
         'feature1image' => $PAGE->theme->setting_file_url('feature1image', 'feature1image'),
         'feature2image' => $PAGE->theme->setting_file_url('feature2image', 'feature2image'),
         'feature3image' => $PAGE->theme->setting_file_url('feature3image', 'feature3image'),
@@ -1386,6 +1389,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
 
         // Custom logins.
         $context->logintext_custom = format_text($PAGE->theme->settings->fptextboxlogout);
+        $context->logintopimage = $PAGE->theme->setting_file_url('logintopimage', 'logintopimage');
         $context->hascustomlogin = $PAGE->theme->settings->showcustomlogin == 1;
         $context->hasdefaultlogin = $PAGE->theme->settings->showcustomlogin == 0;
         $context->alertbox = format_text($PAGE->theme->settings->alertbox);
