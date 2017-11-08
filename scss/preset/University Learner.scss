@@ -64,10 +64,7 @@ $body-bg: #dae6e5 !default;
 $footer-bg: $body-bg !default;
 
 // Typography
-$font-family-sans-serif: "Open Sans",
-"Helvetica Neue",
-Arial,
-sans-serif !default;
+$font-family-sans-serif: "Open Sans","Helvetica Neue",Arial,sans-serif !default;
 $font-size-root: 14px !default;
 $headericon: "" !default;
 $sectionicon: "" !default;
@@ -153,7 +150,7 @@ $breadcrumb-divider-rtl : "/" !default;
     }
 
     .navbar-nav {
-        .nav-item+.nav-item {
+        .nav-item + .nav-item {
             margin-left: $spacer * 2;
         }
         .nav-link {
@@ -184,7 +181,7 @@ $breadcrumb-divider-rtl : "/" !default;
  */
 
 #page.container-fluid {
-    padding: 0!important;
+    padding: 0 !important;
 }
 
 .row {
@@ -193,11 +190,11 @@ $breadcrumb-divider-rtl : "/" !default;
 }
 
 .p-a-1 {
-    padding: 0!important;
+    padding: 0 !important;
 }
 
 .headerbkg {
-    margin-top: 0px!important;
+    margin-top: 0px !important;
     height: $headerimagepadding !important;
     background-position: center;
     background-size: cover;
@@ -247,7 +244,7 @@ div#coursecontrols {
 }
 
 #page-header .headerfade .pull-xs-left {
-    float: none!important;
+    float: none !important;
 }
 
 .pagelayout-course .page-context-header .page-header-headings {
@@ -455,7 +452,7 @@ div#learningcontent {
 img.activityicon {
     height: $activityiconsize;
     width: $activityiconsize;
-    vertical-align: middle!important;
+    vertical-align: middle !important;
 }
 
 span.actions .icon {
@@ -505,6 +502,14 @@ body#page-login-index {
     background-color: $footer-bg !important;
 }
 
+#page-footer a {
+    color: $footer-link-color !important;
+    text-decoration: initial;
+    .icon {
+        color: $footer-link-color !important;
+    }
+}
+
 //fixes for phone with main content area
 @media screen and (max-width: 576px) {
     #page-course-view-topics .course-content ul.topics li.section {
@@ -527,7 +532,7 @@ body#page-login-index {
         margin-right: 0;
     }
     .p-a-1 {
-        padding: 0!important;
+        padding: 0 !important;
     }
 }
 

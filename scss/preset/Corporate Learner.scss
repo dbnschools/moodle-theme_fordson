@@ -44,14 +44,14 @@ $gray-base: #ccc !default;
 
 $brand-primary: #4288a7 !default;
 $brand-success: #77b300 !default;
-$brand-warning: #ff8800 !default;
+$brand-warning: #f80 !default;
 $brand-danger: #ff4136 !default;
 $brand-inverse: $gray-dark !default;
 $navbar-height: 50px !default;
 $drawer-bg: rgba(168, 171, 154, 0.7) !default;
 $headerfade-bg: $brand-primary !default;
 
-$fpstartwrap-bg: #FFF !default;
+$fpstartwrap-bg: #fff !default;
 $fpicon-hover: darken($brand-primary, 10%) !default;
 $fpicon-icon: $brand-primary !default;
 $fpicon-colour: $body-bg !default;
@@ -67,10 +67,7 @@ $border-radius: 3px !default;
 $learningcontentpadding: 125px !default;
 
 // Typography
-$font-family-sans-serif: Open Sans,
-Helvetica Neue,
-Arial,
-sans-serif !default;
+$font-family-sans-serif: Open Sans,Helvetica Neue,Arial,sans-serif !default;
 $font-size-root: 14px !default;
 $headericon: "" !default;
 $sectionicon: "" !default;
@@ -87,7 +84,7 @@ $dropdown-border-color: #e2e2e2 !default;
 $dropdown-link-color: rgba(0, 0, 0, .535) !default;
 
 // Navbar
-$navbar-light-color: #ffffff !default;
+$navbar-light-color: #fff !default;
 $navbar-light-hover-color: $gray-dark !default;
 $navbar-light-active-color: $gray-dark !default;
 $navbarurl: $gray !default;
@@ -161,7 +158,7 @@ $breadcrumb-divider-rtl: "/" !default;
     }
 
     .navbar-nav {
-        .nav-item+.nav-item {
+        .nav-item + .nav-item {
             margin-left: $spacer * 2;
         }
         .nav-link {
@@ -398,11 +395,6 @@ span.instancename {
     margin-left: 1rem;
 }
 
-body#page-login-index {
-    background-image: url([[pix:theme|headerbg]]);
-    background-size: cover;
-    background-position: center;
-}
 
 #nav-drawer::-webkit-scrollbar {
     width: 7px;
@@ -434,6 +426,14 @@ body#page-login-index {
 .bg-inverse {
     color: $body-color !important;
     background-color: $footer-bg !important;
+}
+
+#page-footer a {
+    color: $footer-link-color !important;
+    text-decoration: initial;
+    .icon {
+        color: $footer-link-color !important;
+    }
 }
 
 //fixes for phone with main content area
@@ -487,7 +487,7 @@ aside.block h3:before {
 }
 
 .block_news_items h3:before {
-    background-color: #29A294;
+    background-color: #29a294;
     content: "\f0a1";
 }
 
@@ -560,7 +560,7 @@ aside.block h3:before {
 }
 
 .block_html h3:before {
-    background-color: #eeeeee;
+    background-color: #eee;
 }
 
 .block_section_links h3:before {
@@ -631,7 +631,7 @@ aside.block_comments h3:before {
 }
 
 .block_adminblock h3:before {
-    background-color: #E0F52A;
+    background-color: #e0F52a;
     content: "\f055";
 }
 

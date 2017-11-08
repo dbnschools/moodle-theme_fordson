@@ -25,11 +25,12 @@
 defined('MOODLE_INTERNAL') || die();
 
 user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
-require_once($CFG->libdir . '/behat/lib.php');
+require_once ($CFG->libdir . '/behat/lib.php');
 
-if (isloggedin() && $PAGE->theme->settings->shownavclosed==0) {
+if (isloggedin() && $PAGE->theme->settings->shownavclosed == 0) {
     $navdraweropen = (get_user_preferences('drawer-open-nav', 'true') == 'true');
-} else {
+}
+else {
     $navdraweropen = false;
 }
 $extraclasses = [];
@@ -40,27 +41,27 @@ $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
-$templatecontext = [
-    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
-    'output' => $OUTPUT,
-    'showbacktotop' => $PAGE->theme->settings->showbacktotop==1,
-    'sidepreblocks' => $blockshtml,
-    'hasblocks' => $hasblocks,
-    'bodyattributes' => $bodyattributes,
-    'navdraweropen' => $navdraweropen,
-    'regionmainsettingsmenu' => $regionmainsettingsmenu,
-    'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu)
+$templatecontext = ['sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID) , "escape" => false]) , 
+    'output' => $OUTPUT, 
+    'showbacktotop' => $PAGE->theme->settings->showbacktotop == 1, 
+    'sidepreblocks' => $blockshtml, 
+    'hasblocks' => $hasblocks, 
+    'bodyattributes' => $bodyattributes, 
+    'navdraweropen' => $navdraweropen, 
+    'regionmainsettingsmenu' => $regionmainsettingsmenu, 
+    'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu) 
 ];
 
-if ($PAGE->theme->settings->toggledrawermenu==1) {
-fordson_boostnavigation_extend_navigation($PAGE->navigation);
-fordson_local_navigation_extend_navigation($PAGE->navigation);
+if ($PAGE->theme->settings->toggledrawermenu == 1) {
+    fordson_boostnavigation_extend_navigation($PAGE->navigation);
+    fordson_local_navigation_extend_navigation($PAGE->navigation);
 }
 
-if ($PAGE->theme->settings->showbacktotop==1) {
-$PAGE->requires->jquery();
-$PAGE->requires->js('/theme/fordson/javascript/scrolltotop.js');
+if ($PAGE->theme->settings->showbacktotop == 1) {
+    $PAGE->requires->jquery();
+    $PAGE->requires->js('/theme/fordson/javascript/scrolltotop.js');
 }
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;
 echo $OUTPUT->render_from_template('theme_fordson/columns2', $templatecontext);
+

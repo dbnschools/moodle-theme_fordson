@@ -13,6 +13,7 @@
 //
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
 /**
  * Overriden course topics format renderer.
  *
@@ -21,10 +22,9 @@
  */
 defined('MOODLE_INTERNAL') || die();
 
-require_once($CFG->dirroot . '/course/format/topics/renderer.php');
+require_once ($CFG->dirroot . '/course/format/topics/renderer.php');
 
 class theme_fordson_format_topics_renderer extends format_topics_renderer {
-
 
     /**
      * Generate a summary of a section for display on the 'coruse index page'
@@ -42,40 +42,53 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
         if (!$section->visible) {
             $classattr .= ' hidden';
             $linkclasses .= ' dimmed_text';
-        } else if (course_get_format($course)->is_section_current($section)) {
+        }
+        else if (course_get_format($course)->is_section_current($section)) {
             $classattr .= ' current';
         }
 
         $title = get_section_name($course, $section);
         $o = '';
-        $o .= html_writer::start_tag('li', array('id' => 'section-'.$section->section,
-            'class' => $classattr, 'role' => 'region', 'aria-label' => $title));
+        $o .= html_writer::start_tag('li', array(
+            'id' => 'section-' . $section->section,
+            'class' => $classattr,
+            'role' => 'region',
+            'aria-label' => $title
+        ));
 
-        $o .= html_writer::tag('div', '', array('class' => 'left side'));
-        $o .= html_writer::tag('div', '', array('class' => 'right side'));
-        $o .= html_writer::start_tag('div', array('class' => 'content'));
+        $o .= html_writer::tag('div', '', array(
+            'class' => 'left side'
+        ));
+        $o .= html_writer::tag('div', '', array(
+            'class' => 'right side'
+        ));
+        $o .= html_writer::start_tag('div', array(
+            'class' => 'content'
+        ));
 
         if ($section->uservisible) {
-            $title = html_writer::tag('a', $title,
-                array('href' => course_get_url($course, $section->section), 'class' => $linkclasses));
+            $title = html_writer::tag('a', $title, array(
+                'href' => course_get_url($course, $section->section) ,
+                'class' => $linkclasses
+            ));
         }
-            //add .sectionname so that fontawesome icon can be applied to this page too
+        //add .sectionname so that fontawesome icon can be applied to this page too
         $o .= $this->output->heading($title, 3, 'section-title sectionname');
-        $o .= html_writer::start_tag('div', array('class' => 'summarytext'));
+        $o .= html_writer::start_tag('div', array(
+            'class' => 'summarytext'
+        ));
         $o .= $this->format_summary_text($section);
         $o .= $this->section_activity_summary($section, $course, null);
         $o .= html_writer::end_tag('div');
 
         $context = context_course::instance($course->id);
-        $o .= $this->section_availability_message($section,
-            has_capability('moodle/course:viewhiddensections', $context));
+        $o .= $this->section_availability_message($section, has_capability('moodle/course:viewhiddensections', $context));
 
-            $o .= html_writer::end_tag('div'); // Content.
+        $o .= html_writer::end_tag('div'); // Content.
+        $o .= html_writer::end_tag('li');
 
-            $o .= html_writer::end_tag('li');
-
-            return $o;
-        }
+        return $o;
+    }
 
     /**
      * Generate a summary of the activites in a section
@@ -111,69 +124,76 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
                 if (isset($sectionmods[$thismod->modname])) {
                     $sectionmods[$thismod->modname]['name'] = $thismod->modplural;
                     $sectionmods[$thismod->modname]['count']++;
-                } else {
+                }
+                else {
                     $sectionmods[$thismod->modname]['name'] = $thismod->modfullname;
                     $sectionmods[$thismod->modname]['count'] = 1;
                 }
                 if ($cancomplete && $completioninfo->is_enabled($thismod) != COMPLETION_TRACKING_NONE) {
                     $total++;
                     $completiondata = $completioninfo->get_data($thismod, true);
-                    if ($completiondata->completionstate == COMPLETION_COMPLETE ||
-                        $completiondata->completionstate == COMPLETION_COMPLETE_PASS) {
+                    if ($completiondata->completionstate == COMPLETION_COMPLETE || $completiondata->completionstate == COMPLETION_COMPLETE_PASS) {
                         $complete++;
+                    }
                 }
             }
         }
-    }
 
-    if (empty($sectionmods)) {
+        if (empty($sectionmods)) {
             // No sections.
-        return '';
-    }
+            return '';
+        }
 
-    $output = '';
+        $output = '';
 
         // Output section activities summary
-    $output = html_writer::start_tag('div', array('class' => 'section-summary-activities'));
+        $output = html_writer::start_tag('div', array(
+            'class' => 'section-summary-activities'
+        ));
 
         //Special thanks to Willian Mono for the topic progress bar code
-    if ($total > 0) {
-        $completion = new stdClass;
-        $completion->complete = $complete;
-        $completion->total = $total;
+        if ($total > 0) {
+            $completion = new stdClass;
+            $completion->complete = $complete;
+            $completion->total = $total;
 
-        $percent = 0;
-        if ($complete > 0) {
-            $percent = (int) (($complete / $total) * 100);
+            $percent = 0;
+            if ($complete > 0) {
+                $percent = (int)(($complete / $total) * 100);
+            }
+            $output .= "<div class='progress'>";
+            $output .= "<div class='progress-bar progress-bar-info' role='progressbar' aria-valuenow='{$percent}' ";
+            $output .= " aria-valuemin='0' aria-valuemax='100' style='width: {$percent}%;'>";
+            $output .= "{$percent}%";
+            $output .= "</div>";
+            $output .= "</div>";
         }
-        $output .= "<div class='progress'>";
-        $output .= "<div class='progress-bar progress-bar-info' role='progressbar' aria-valuenow='{$percent}' ";
-        $output .= " aria-valuemin='0' aria-valuemax='100' style='width: {$percent}%;'>";
-        $output .= "{$percent}%";
-        $output .= "</div>";
-        $output .= "</div>";
-    }
         //End Willian Mono
-
-    $output .= html_writer::tag('span',get_string('section_mods', 'theme_fordson'), array('class' => 'activity-count'));
-    foreach ($sectionmods as $mod) {
-        $output .= html_writer::start_tag('span', array('class' => 'activity-count'));
-        $output .= $mod['name'].': '.$mod['count'];
-        $output .= html_writer::end_tag('span');
-    }
+        $output .= html_writer::tag('span', get_string('section_mods', 'theme_fordson') , array(
+            'class' => 'activity-count'
+        ));
+        foreach ($sectionmods as $mod) {
+            $output .= html_writer::start_tag('span', array(
+                'class' => 'activity-count'
+            ));
+            $output .= $mod['name'] . ': ' . $mod['count'];
+            $output .= html_writer::end_tag('span');
+        }
 
         // Output section completion data
-    if ($total > 0) {
-        $a = new stdClass;
-        $a->complete = $complete;
-        $a->total = $total;
-        $output.= '<br>';
-        $output.= html_writer::tag('span', get_string('progresstotal', 'completion', $a), array('class' => 'activity-count'));
-    }
+        if ($total > 0) {
+            $a = new stdClass;
+            $a->complete = $complete;
+            $a->total = $total;
+            $output .= '<br>';
+            $output .= html_writer::tag('span', get_string('progresstotal', 'completion', $a) , array(
+                'class' => 'activity-count'
+            ));
+        }
 
-    $output .= html_writer::end_tag('div');
+        $output .= html_writer::end_tag('div');
 
-    return $output;
+        return $output;
     }
 
 }

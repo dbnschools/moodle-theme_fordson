@@ -51,5 +51,5 @@ if ($ADMIN->fulltree) {
     require('settings/slideshow_settings.php');
     // OCJ HILLBROOK MOD
     require('settings/modchooser_settings.php');
-
+    require('settings/customlogin_settings.php');
 }

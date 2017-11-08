@@ -56,7 +56,6 @@ class modchooser extends chooser {
         global $PAGE;
         // This copy of the modchooser is modified for Hillbrook Anglican School theme fordson
         // It contains functionality to output a section of modules defined as "commonly used" in the theme_fordson settings
-
         $this->course = $course;
 
         $sections = [];
@@ -69,13 +68,13 @@ class modchooser extends chooser {
         // Commonly Used - Only created if anything is configured in "commonlyused" theme setting
         $commonlyused = array();
         $commonlyusedsetting = get_config('theme_fordson', 'commonlyused');
-        if(isset($commonlyusedsetting)) {
+        if (isset($commonlyusedsetting)) {
             // get list of commonly used mods
-            $commonlyuseditems = explode(',',$commonlyusedsetting);
-            foreach($commonlyuseditems as $item) {
+            $commonlyuseditems = explode(',', $commonlyusedsetting);
+            foreach ($commonlyuseditems as $item) {
                 $item = trim($item);
                 // if mod is available then add it to $commonlyused array
-                if(isset($modules[$item])) {
+                if (isset($modules[$item])) {
                     $commonlyused[$item] = $modules[$item];
                     // remove it from available mods so it won't appear a second time under Activities or Resources lists below
                     unset($modules[$item]);
@@ -85,91 +84,83 @@ class modchooser extends chooser {
 
         // Commonly Used
         if (count($commonlyused)) {
-            $sections[] = new chooser_section('commonlyused', new lang_string('modchoosercommonlyusedtitle', 'theme_fordson', $PAGE->theme->settings->modchoosercustomlabel),
-                array_map(function($module) use ($context) {
-                    return new modchooser_item($module, $context);
-                }, $commonlyused)
-            );
+            $sections[] = new chooser_section('commonlyused', new lang_string('modchoosercommonlyusedtitle', 'theme_fordson', $PAGE->theme->settings->modchoosercustomlabel) , array_map(function ($module) use ($context) {
+                return new modchooser_item($module, $context);
+            }
+            , $commonlyused));
         }
 
         if ($showonlycustom == 0) {
-         // Activities.
-        $activities = array_filter($modules, function($mod) {
-            return ($mod->archetype !== MOD_ARCHETYPE_RESOURCE && $mod->archetype !== MOD_ARCHETYPE_SYSTEM);
-        });
-        if (count($activities)) {
-            $sections[] = new chooser_section('activities', new lang_string('activities'),
-                array_map(function($module) use ($context) {
+            // Activities.
+            $activities = array_filter($modules, function ($mod) {
+                return ($mod->archetype !== MOD_ARCHETYPE_RESOURCE && $mod->archetype !== MOD_ARCHETYPE_SYSTEM);
+            });
+            if (count($activities)) {
+                $sections[] = new chooser_section('activities', new lang_string('activities') , array_map(function ($module) use ($context) {
                     return new modchooser_item($module, $context);
-                }, $activities)
-            );
-        }
+                }
+                , $activities));
+            }
 
-        // Resources
-        $resources = array_filter($modules, function($mod) {
-            return ($mod->archetype === MOD_ARCHETYPE_RESOURCE);
-        });
-        if (count($resources)) {
-            $sections[] = new chooser_section('resources', new lang_string('resources'),
-                array_map(function($module) use ($context) {
+            // Resources
+            $resources = array_filter($modules, function ($mod) {
+                return ($mod->archetype === MOD_ARCHETYPE_RESOURCE);
+            });
+            if (count($resources)) {
+                $sections[] = new chooser_section('resources', new lang_string('resources') , array_map(function ($module) use ($context) {
                     return new modchooser_item($module, $context);
-                }, $resources)
-            );
-        }
+                }
+                , $resources));
+            }
         }
 
         if ($showonlycustom == 1 && $ismanager && $showallmanager) {
-        // Activities.
-        $activities = array_filter($modules, function($mod) {
-            return ($mod->archetype !== MOD_ARCHETYPE_RESOURCE && $mod->archetype !== MOD_ARCHETYPE_SYSTEM);
-        });
-        if (count($activities)) {
-            $sections[] = new chooser_section('activities', new lang_string('activities'),
-                array_map(function($module) use ($context) {
+            // Activities.
+            $activities = array_filter($modules, function ($mod) {
+                return ($mod->archetype !== MOD_ARCHETYPE_RESOURCE && $mod->archetype !== MOD_ARCHETYPE_SYSTEM);
+            });
+            if (count($activities)) {
+                $sections[] = new chooser_section('activities', new lang_string('activities') , array_map(function ($module) use ($context) {
                     return new modchooser_item($module, $context);
-                }, $activities)
-            );
-        }
+                }
+                , $activities));
+            }
 
-        // Resources
-        $resources = array_filter($modules, function($mod) {
-            return ($mod->archetype === MOD_ARCHETYPE_RESOURCE);
-        });
-        if (count($resources)) {
-            $sections[] = new chooser_section('resources', new lang_string('resources'),
-                array_map(function($module) use ($context) {
+            // Resources
+            $resources = array_filter($modules, function ($mod) {
+                return ($mod->archetype === MOD_ARCHETYPE_RESOURCE);
+            });
+            if (count($resources)) {
+                $sections[] = new chooser_section('resources', new lang_string('resources') , array_map(function ($module) use ($context) {
                     return new modchooser_item($module, $context);
-                }, $resources)
-            );
-        }
+                }
+                , $resources));
+            }
         }
 
         if ($issiteadmin && !$showallmanager && $showonlycustom) {
-        // Activities.
-        $activities = array_filter($modules, function($mod) {
-            return ($mod->archetype !== MOD_ARCHETYPE_RESOURCE && $mod->archetype !== MOD_ARCHETYPE_SYSTEM);
-        });
-        if (count($activities)) {
-            $sections[] = new chooser_section('activities', new lang_string('activities'),
-                array_map(function($module) use ($context) {
+            // Activities.
+            $activities = array_filter($modules, function ($mod) {
+                return ($mod->archetype !== MOD_ARCHETYPE_RESOURCE && $mod->archetype !== MOD_ARCHETYPE_SYSTEM);
+            });
+            if (count($activities)) {
+                $sections[] = new chooser_section('activities', new lang_string('activities') , array_map(function ($module) use ($context) {
                     return new modchooser_item($module, $context);
-                }, $activities)
-            );
-        }
+                }
+                , $activities));
+            }
 
-        // Resources
-        $resources = array_filter($modules, function($mod) {
-            return ($mod->archetype === MOD_ARCHETYPE_RESOURCE);
-        });
-        if (count($resources)) {
-            $sections[] = new chooser_section('resources', new lang_string('resources'),
-                array_map(function($module) use ($context) {
+            // Resources
+            $resources = array_filter($modules, function ($mod) {
+                return ($mod->archetype === MOD_ARCHETYPE_RESOURCE);
+            });
+            if (count($resources)) {
+                $sections[] = new chooser_section('resources', new lang_string('resources') , array_map(function ($module) use ($context) {
                     return new modchooser_item($module, $context);
-                }, $resources)
-            );
+                }
+                , $resources));
+            }
         }
-        }
-
 
         $actionurl = new moodle_url('/course/jumpto.php');
         $title = new lang_string('addresourceoractivity');
@@ -193,3 +184,4 @@ class modchooser extends chooser {
     }
 
 }
+

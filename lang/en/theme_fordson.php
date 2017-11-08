@@ -33,6 +33,7 @@ $string['region-side-pre'] = 'Right';
 $string['generalsettings'] = 'General settings';
 $string['advancedsettings'] = 'Advanced settings';
 $string['iconnavheading'] = 'Icon Navigation';
+$string['customloginheading'] = 'Custom Login Page';
 $string['iconnavheadingsub'] = 'Create Buttons with Icons for use on the homepage.  Links can go anywhere.';
 $string['section_mods'] = 'Modules:';
 
@@ -249,7 +250,7 @@ $string['badges_desc'] = 'Award your students';
 $string['coursemanage'] = 'Course Settings';
 $string['coursemanage_desc'] = 'Manage your entire course';
 $string['coursemanagementbutton'] = 'Course Management';
-$string['studentdashbutton'] = 'This Course';
+$string['studentdashbutton'] = 'Student Dashboard';
 $string['courseinfo'] = 'Course Description';
 $string['coursestaff'] = 'Course Teachers';
 $string['activitylinkstitle'] = 'Activities';
@@ -336,6 +337,30 @@ $string['navicon5'] = 'Homepage Icon Five';
 $string['navicon6'] = 'Homepage Icon Six';
 $string['navicon7'] = 'Homepage Icon Seven';
 $string['navicon8'] = 'Homepage Icon Eight';
+// Custom Login Icon Nav
+$string['loginnavicon1'] = 'Icon One';
+$string['loginnavicon2'] = 'Icon Two';
+$string['loginnavicon3'] = 'Icon Three';
+$string['loginnavicon4'] = 'Icon Four';
+$string['loginnavicontitletext'] = 'Icon Title';
+$string['loginnavicontitletextdesc'] = 'Text to appear below the icon as a title.';
+$string['loginnavicontext'] = 'Icon Text';
+$string['loginnavicontextdesc'] = 'Text that will appear below the icon.  Keep things short for best results.';
+$string['featureimage'] = 'Feature Image';
+$string['featureimage_desc'] = 'This image will appear next to the featured text in a row.';
+$string['featuretext'] = 'Feature Text';
+$string['featuretext_desc'] = 'This text will appear next to the featured image in a row. Use a Heading4 to generate a special title within the textbox.  In the Atto Editor H4 is Heading Medium.';
+$string['feature1info'] = 'Feature One';
+$string['feature2info'] = 'Feature Two';
+$string['feature3info'] = 'Feature Three';
+$string['featureinfo_desc'] = 'A feature consists of an image and text which will appear on the custom login page in a row.';
+$string['customlogininfo'] = 'Custom Login Page Settings';
+$string['customlogininfo_desc'] = 'This allows you to create a custom login page.  Other settings in the theme that will display on the login page include the following:<br>
+* Site Administration > Security > Site Policies > Force Users To Login = Make sure this is checked so that users will be taken to your custom login page.<br>
+* Fordson > Custom Image Settings > Default Login Image can be used to change the background image for the login page. <br>
+* Fordson > Content Areas > Homepage Alert can be used to provide a notice on the top of the page. ';
+$string['showcustomlogin'] = 'Turn on Custom Login';
+$string['showcustomlogin_desc'] = 'You must turn this on to activate the custom settings below.';
 
 //FP Icon Nav default text for buttons
 $string['naviconbutton1textdefault'] = 'Dashboard';

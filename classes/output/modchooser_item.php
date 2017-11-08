@@ -54,7 +54,8 @@ class modchooser_item extends \core\output\chooser_item {
         $icon = new pix_icon('icon', '', $modulename, ['class' => 'icon']);
         $help = isset($module->help) ? $module->help : new lang_string('nohelpforactivityorresource', 'moodle');
 
-        parent::__construct($module->name, $module->title, $module->link->out(false), $icon, $help, $context);
+        parent::__construct($module->name, $module->title, $module->link->out(false) , $icon, $help, $context);
     }
 
 }
+

@@ -14,22 +14,23 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-/**
- * Version file.
- *
- * @package    theme_fordson
- * @copyright  2016 Chris Kenniburg
- * @credits    theme_boost - MoodleHQ
- * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
- */
-
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2017110800;
-$plugin->release  = 'Moodle 3.3 Fordson v1.6.2';
-$plugin->maturity  = MATURITY_STABLE;
-$plugin->requires  = 2017042000;
-$plugin->component = 'theme_fordson';
-$plugin->dependencies = array(
-    'theme_boost'  => 2016120500,
-);
+/**
+ * A login page layout for the boost theme.
+ *
+ * @package   theme_boost
+ * @copyright 2016 Damyon Wiese
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+$bodyattributes = $OUTPUT->body_attributes();
+
+$templatecontext = [
+    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
+    'output' => $OUTPUT,
+    'bodyattributes' => $bodyattributes,
+    'hascustomlogin' => $PAGE->theme->settings->showcustomlogin == 1,
+];
+
+echo $OUTPUT->render_from_template('theme_fordson/login', $templatecontext);

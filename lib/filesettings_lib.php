@@ -48,6 +48,12 @@ function theme_fordson_pluginfile($course, $cm, $context, $filearea, $args, $for
         return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
     } else if ($filearea === 'headerlogo') { // Default header image.
         return $theme->setting_file_serve('headerlogo', $args, $forcedownload, $options);
+    } else if ($filearea === 'feature1image') { // Default header image.
+        return $theme->setting_file_serve('feature1image', $args, $forcedownload, $options);
+    } else if ($filearea === 'feature2image') { // Default header image.
+        return $theme->setting_file_serve('feature2image', $args, $forcedownload, $options);
+    } else if ($filearea === 'feature3image') { // Default header image.
+        return $theme->setting_file_serve('feature3image', $args, $forcedownload, $options);
     } else if ($filearea === 'headerdefaultimage') { // Default header image.
         return $theme->setting_file_serve('headerdefaultimage', $args, $forcedownload, $options);
     } else if ($filearea === 'backgroundimage') { // Background image.

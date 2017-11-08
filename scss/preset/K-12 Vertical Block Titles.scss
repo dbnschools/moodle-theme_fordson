@@ -64,10 +64,7 @@ $body-bg: #dae6e5 !default;
 $footer-bg: $body-bg !default;
 
 // Typography
-$font-family-sans-serif: "Open Sans",
-"Helvetica Neue",
-Arial,
-sans-serif !default;
+$font-family-sans-serif: "Open Sans","Helvetica Neue",Arial,sans-serif !default;
 $font-size-root: 14px !default;
 $headericon: "" !default;
 $sectionicon: "" !default;
@@ -149,7 +146,7 @@ $breadcrumb-divider-rtl: "/" !default;
     }
 
     .navbar-nav {
-        .nav-item+.nav-item {
+        .nav-item + .nav-item {
             margin-left: $spacer * 2;
         }
         .nav-link {
@@ -434,6 +431,14 @@ body#page-login-index {
 .bg-inverse {
     color: $body-color !important;
     background-color: $footer-bg !important;
+}
+
+#page-footer a {
+    color: $footer-link-color !important;
+    text-decoration: initial;
+    .icon {
+        color: $footer-link-color !important;
+    }
 }
 
 //fixes for phone with main content area

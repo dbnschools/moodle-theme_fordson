@@ -64,10 +64,7 @@ $body-bg: #dae6e5 !default;
 $footer-bg: $body-bg !default;
 
 // Typography
-$font-family-sans-serif: "Open Sans",
-"Helvetica Neue",
-Arial,
-sans-serif !default;
+$font-family-sans-serif: "Open Sans","Helvetica Neue",Arial,sans-serif !default;
 $font-size-root: 14px !default;
 $headericon: "" !default;
 $sectionicon: "" !default;
@@ -151,7 +148,7 @@ $breadcrumb-divider-rtl: "/" !default;
     }
 
     .navbar-nav {
-        .nav-item+.nav-item {
+        .nav-item + .nav-item {
             margin-left: $spacer * 2;
         }
         .nav-link {
@@ -234,7 +231,6 @@ $breadcrumb-divider-rtl: "/" !default;
     }
 }
 
-
 /**
  * Form styles.
  */
@@ -246,7 +242,6 @@ $breadcrumb-divider-rtl: "/" !default;
 .form-inline .form-group {
     margin-top: 0;
 }
-
 
 /* FORDSON Default Styling */
 
@@ -311,7 +306,6 @@ div#fordsoncarousel p {
     content: "";
 }
 
-
 h3.sectionname {
     text-align: center;
     border-top: 8px solid $body-bg;
@@ -336,12 +330,6 @@ h3.sectionname:before {
     padding: .5rem;
     border-radius: $border-radius;
 }
-
-
-
-/*h3.sectionname:hover {
-    background-color: $gray-lightest;
-}*/
 
 .path-mod-assign [data-region="grading-navigation"] {
     background-color: #fff;
@@ -385,7 +373,6 @@ div#learningcontent {
     border-bottom: 0;
     margin-top: 0;
 }
-
 
 /*Previously used Topic and Week Styling
 #page-course-view-topics .course-content ul.topics li.section {
@@ -453,7 +440,7 @@ li.activity.label {
 img.activityicon {
     height: $activityiconsize;
     width: $activityiconsize;
-    vertical-align: middle!important;
+    vertical-align: middle !important;
 }
 
 span.actions .icon {
@@ -503,6 +490,14 @@ body#page-login-index {
     background-color: $footer-bg !important;
 }
 
+#page-footer a {
+    color: $footer-link-color !important;
+    text-decoration: initial;
+    .icon {
+        color: $footer-link-color !important;
+    }
+}
+
 //fixes for phone with main content area
 @media screen and (max-width: 576px) {
     #page-course-view-topics .course-content ul.topics li.section {
@@ -525,7 +520,7 @@ body#page-login-index {
         margin-right: 0;
     }
     .p-a-1 {
-        padding: 0!important;
+        padding: 0 !important;
     }
 }
 
