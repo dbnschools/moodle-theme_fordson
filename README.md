@@ -27,7 +27,10 @@ Fordson is a child theme of Boost.
 This means when Moodle updates the core Boost theme those changes will be applied to Fordson as well in most cases.
 
 # Install from Github
-Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration.\
+Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration.
+
+## Fordson Moodle 34 1.6.3
+* New Favicon upload.  A much requested feature has been added to Fordson.  
 
 ## Fordson Moodle 33 1.6.2
 * New Customizable Login Page with 4 icons and 3 featured content areas.  This is designed to allow organizations to provide marketing to users as they visit the site's login page.  Many organizations force users to login before viewing the sites homepage.  This will allow those organizations to provide some information on the login page.  All settings are on the Site Admin > Appearance > Fordson > Custom Login page.

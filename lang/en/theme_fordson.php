@@ -45,6 +45,8 @@ $string['presetfiles_desc'] = 'Preset files can be used to dramatically alter th
     See https://docs.moodle.org/dev/Boost_Presets for information on creating and sharing your own preset files.';
 $string['preset'] = 'Theme preset';
 $string['preset_desc'] = 'Pick a preset to broadly change the look of the theme.';
+$string['favicon'] = 'Favicon';
+$string['favicon_desc'] = 'Change the favicon for Fordson. Images with a transparent background and 32px height will work best.  Allowed types: PNG, JPG, ICO';
 
 // Colours Settings.
 $string['colours_settings'] = 'Colours';

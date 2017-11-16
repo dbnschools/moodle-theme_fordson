@@ -46,41 +46,42 @@ function theme_fordson_pluginfile($course, $cm, $context, $filearea, $args, $for
     if ($context->contextlevel == CONTEXT_SYSTEM && ($filearea === '')) {
         $theme = theme_config::load('fordson');
         return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
-    } else if ($filearea === 'headerlogo') { // Default header image.
+    } else if ($filearea === 'headerlogo') {
         return $theme->setting_file_serve('headerlogo', $args, $forcedownload, $options);
-    } else if ($filearea === 'feature1image') { // Default header image.
+    } else if ($filearea === 'favicon') {
+        return $theme->setting_file_serve('favicon', $args, $forcedownload, $options);
+    } else if ($filearea === 'feature1image') {
         return $theme->setting_file_serve('feature1image', $args, $forcedownload, $options);
-    } else if ($filearea === 'feature2image') { // Default header image.
+    } else if ($filearea === 'feature2image') {
         return $theme->setting_file_serve('feature2image', $args, $forcedownload, $options);
-    } else if ($filearea === 'feature3image') { // Default header image.
+    } else if ($filearea === 'feature3image') {
         return $theme->setting_file_serve('feature3image', $args, $forcedownload, $options);
-    } else if ($filearea === 'headerdefaultimage') { // Default header image.
+    } else if ($filearea === 'headerdefaultimage') {
         return $theme->setting_file_serve('headerdefaultimage', $args, $forcedownload, $options);
-    } else if ($filearea === 'backgroundimage') { // Background image.
+    } else if ($filearea === 'backgroundimage') {
         return $theme->setting_file_serve('backgroundimage', $args, $forcedownload, $options);
-    } else if ($filearea === 'loginimage') { // Login page image.
+    } else if ($filearea === 'loginimage') {
         return $theme->setting_file_serve('loginimage', $args, $forcedownload, $options);
-    } else if ($filearea === 'logintopimage') { // Default header image.
+    } else if ($filearea === 'logintopimage') {
         return $theme->setting_file_serve('logintopimage', $args, $forcedownload, $options);
-    } else if ($filearea === 'marketing1image') { // Login page image.
+    } else if ($filearea === 'marketing1image') {
         return $theme->setting_file_serve('marketing1image', $args, $forcedownload, $options);
-    } else if ($filearea === 'marketing2image') { // Login page image.
+    } else if ($filearea === 'marketing2image') {
         return $theme->setting_file_serve('marketing2image', $args, $forcedownload, $options);
-    } else if ($filearea === 'marketing3image') { // Login page image.
+    } else if ($filearea === 'marketing3image') {
         return $theme->setting_file_serve('marketing3image', $args, $forcedownload, $options);
-    } else if ($filearea === 'marketing4image') { // Login page image.
+    } else if ($filearea === 'marketing4image') {
         return $theme->setting_file_serve('marketing4image', $args, $forcedownload, $options);
-    } else if ($filearea === 'marketing5image') { // Login page image.
+    } else if ($filearea === 'marketing5image') {
         return $theme->setting_file_serve('marketing5image', $args, $forcedownload, $options);
-    } else if ($filearea === 'marketing6image') { // Login page image.
+    } else if ($filearea === 'marketing6image') {
         return $theme->setting_file_serve('marketing6image', $args, $forcedownload, $options);
-    } else if ($filearea === 'slide1image') { // Login page image.
+    } else if ($filearea === 'slide1image') {
         return $theme->setting_file_serve('slide1image', $args, $forcedownload, $options);
-    } else if ($filearea === 'slide2image') { // Login page image.
+    } else if ($filearea === 'slide2image') {
         return $theme->setting_file_serve('slide2image', $args, $forcedownload, $options);
-    } else if ($filearea === 'slide3image') { // Login page image.
+    } else if ($filearea === 'slide3image') {
         return $theme->setting_file_serve('slide3image', $args, $forcedownload, $options);
-
 
     } else {
         send_file_not_found();

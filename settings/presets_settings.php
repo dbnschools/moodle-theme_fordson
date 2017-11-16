@@ -64,5 +64,13 @@ $setting = new admin_setting_configstoredfile($name, $title, $description, 'pres
 array('maxfiles' => 20, 'accepted_types' => array('.scss')));
 $page->add($setting);
 
+$name = 'theme_fordson/favicon';
+$title = get_string ( 'favicon', 'theme_fordson' );
+$description = get_string ( 'favicon_desc', 'theme_fordson' );
+$setting = new admin_setting_configstoredfile( $name, $title, $description, 'favicon', 0,
+    array('maxfiles' => 1, 'accepted_types' => array('png', 'jpg', 'ico')));
+$setting->set_updatedcallback ( 'theme_reset_all_caches' );
+$page->add($setting);
+
 // Must add the page after definiting all the settings!
 $settings->add($page);

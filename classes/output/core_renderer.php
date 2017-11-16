@@ -72,7 +72,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         if (!$PAGE->theme->settings->coursemanagementtoggle) {
             $html .= html_writer::div($this->context_header_settings_menu() , 'pull-xs-right context-header-settings-menu');
         }
-        elseif (isset($COURSE->id) && $COURSE->id == 1) {
+        else if (isset($COURSE->id) && $COURSE->id == 1) {
             $html .= html_writer::div($this->context_header_settings_menu() , 'pull-xs-right context-header-settings-menu');
         }
         $html .= html_writer::start_div('pull-xs-left');
@@ -86,7 +86,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
             $html .= html_writer::tag('div', $this->navbar() , array(
                 'class' => 'breadcrumb-nav'
             ));
-            //$html .= html_writer::tag('div', $this->thiscourse_menu(), array('class' => 'thiscourse'));
             $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button pull-xs-right');
             $html .= html_writer::end_div();
         }
@@ -99,7 +98,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $html .= html_writer::end_div();
         $html .= html_writer::end_div();
         $html .= html_writer::end_div();
-        $html .= html_writer::end_div(); //headerfade
+        $html .= html_writer::end_div();
         $html .= html_writer::end_tag('header');
         return $html;
     }
@@ -164,32 +163,28 @@ class core_renderer extends \theme_boost\output\core_renderer {
             ));
             $html .= html_writer::end_div(); // End withimage inline style div.
             
-        }
-        elseif (theme_fordson_get_setting('showcourseheaderimage') && !$courseimage && isset($headerbg)) {
+        } else if (theme_fordson_get_setting('showcourseheaderimage') && !$courseimage && isset($headerbg)) {
             $html .= html_writer::start_div('customimage', array(
                 'style' => 'background-image: url("' . $headerbgimgurl . '"); background-size: cover; background-position:center;
                 width: 100%; height: 100%;'
             ));
             $html .= html_writer::end_div(); // End withoutimage inline style div.
             
-        }
-        elseif ($courseimage && isset($headerbg) && !theme_fordson_get_setting('showcourseheaderimage')) {
+        } else if ($courseimage && isset($headerbg) && !theme_fordson_get_setting('showcourseheaderimage')) {
             $html .= html_writer::start_div('customimage', array(
                 'style' => 'background-image: url("' . $headerbgimgurl . '"); background-size: cover; background-position:center;
                 width: 100%; height: 100%;'
             ));
             $html .= html_writer::end_div(); // End withoutimage inline style div.
             
-        }
-        elseif (!$courseimage && isset($headerbg) && !theme_fordson_get_setting('showcourseheaderimage')) {
+        } else if (!$courseimage && isset($headerbg) && !theme_fordson_get_setting('showcourseheaderimage')) {
             $html .= html_writer::start_div('customimage', array(
                 'style' => 'background-image: url("' . $headerbgimgurl . '"); background-size: cover; background-position:center;
                 width: 100%; height: 100%;'
             ));
             $html .= html_writer::end_div(); // End withoutimage inline style div.
             
-        }
-        else {
+        } else {
             $html .= html_writer::start_div('default', array(
                 'style' => 'background-image: url("' . $defaultimgurl . '"); background-size: cover; background-position:center;
                 width: 100%; height: 100%;'
@@ -216,8 +211,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
             $btn = 'btn-danger';
             $title = get_string('editoff', 'theme_fordson');
             $icon = 'fa-power-off';
-        }
-        else {
+        } else {
             $url->param('edit', 'on');
             $btn = 'btn-success';
             $title = get_string('editon', 'theme_fordson');
@@ -248,14 +242,11 @@ class core_renderer extends \theme_boost\output\core_renderer {
             $mycoursetitle = $this->page->theme->settings->mycoursetitle;
             if ($mycoursetitle == 'module') {
                 $branchtitle = get_string('mymodules', 'theme_fordson');
-            }
-            else if ($mycoursetitle == 'unit') {
+            } else if ($mycoursetitle == 'unit') {
                 $branchtitle = get_string('myunits', 'theme_fordson');
-            }
-            else if ($mycoursetitle == 'class') {
+            } else if ($mycoursetitle == 'class') {
                 $branchtitle = get_string('myclasses', 'theme_fordson');
-            }
-            else {
+            } else {
                 $branchtitle = get_string('mycourses', 'theme_fordson');
             }
             $branchlabel = $branchtitle;
@@ -270,8 +261,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
                         $branch->add(format_string($course->fullname) , new moodle_url('/course/view.php?id=' . $course->id) , format_string($course->shortname));
                     }
                 }
-            }
-            else {
+            } else {
                 $noenrolments = get_string('noenrolments', 'theme_fordson');
                 $branch->add('<em>' . $noenrolments . '</em>', new moodle_url('/') , $noenrolments);
             }
@@ -293,8 +283,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
             $currentlang = current_language();
             if (isset($langs[$currentlang])) {
                 $currentlang = $langs[$currentlang];
-            }
-            else {
+            } else {
                 $currentlang = $strlang;
             }
             $this->language = $menu->add($currentlang, new moodle_url('#') , $strlang, 10000);
@@ -344,8 +333,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
                     $branch->add($modfullname, new moodle_url('/course/resources.php', array(
                         'id' => $PAGE->course->id
                     )));
-                }
-                else {
+                } else {
 
                     $branch->add($modfullname, new moodle_url('/mod/' . $modname . '/index.php', array(
                         'id' => $PAGE->course->id
@@ -905,8 +893,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
             $hasstudentdash = !has_capability('moodle/course:viewhiddenactivities', $context);
             if (has_capability('moodle/course:viewhiddenactivities', $context)) {
                 $togglebutton = get_string('coursemanagementbutton', 'theme_fordson');
-            }
-            else {
+            } else {
                 $togglebuttonstudent = get_string('studentdashbutton', 'theme_fordson');
             }
         }
@@ -930,7 +917,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
             ));
         }
 
-        //link catagories
+        // Link catagories.
         $haspermission = has_capability('enrol/category:config', $context) && $PAGE->theme->settings->coursemanagementtoggle && isset($COURSE->id) && $COURSE->id > 1;
         $userlinks = get_string('userlinks', 'theme_fordson');
         $userlinksdesc = get_string('userlinks_desc', 'theme_fordson');
@@ -943,7 +930,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $coursemanagementmessage = (empty($PAGE->theme->settings->coursemanagementtextbox)) ? false : format_text($PAGE->theme->settings->coursemanagementtextbox);
         $studentdashboardtextbox = (empty($PAGE->theme->settings->studentdashboardtextbox)) ? false : format_text($PAGE->theme->settings->studentdashboardtextbox);
 
-        //user links
+        // User links.
         if ($coursehaseasyenrollment && isset($COURSE->id) && $COURSE->id > 1) {
             $easycodetitle = get_string('header_coursecodes', 'enrol_easy');
             $easycodelink = new moodle_url('/enrol/editinstance.php', array(
@@ -977,7 +964,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
             'id' => $PAGE->course->id
         ));
 
-        //user reports
+        // User reports.
         $logstitle = get_string('logs', 'moodle');
         $logslink = new moodle_url('/report/log/index.php', array(
             'id' => $PAGE->course->id
@@ -995,7 +982,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
             'id' => $PAGE->course->id
         ));
 
-        //questionbank
+        // Questionbank.
         $qbanktitle = get_string('questionbank', 'question');
         $qbanklink = new moodle_url('/question/edit.php', array(
             'courseid' => $PAGE->course->id
@@ -1013,7 +1000,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
             'courseid' => $PAGE->course->id
         ));
 
-        //manage course
+        // Manage course.
         $courseadmintitle = get_string('courseadministration', 'moodle');
         $courseadminlink = new moodle_url('/course/admin.php', array(
             'courseid' => $PAGE->course->id
@@ -1043,7 +1030,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
             'id' => $PAGE->course->id
         ));
 
-        //badges
         $badgemanagetitle = get_string('managebadges', 'badges');
         $badgemanagelink = new moodle_url('/badges/index.php?type=2', array(
             'id' => $PAGE->course->id
@@ -1053,7 +1039,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
             'id' => $PAGE->course->id
         ));
 
-        //misc
         $recyclebintitle = get_string('pluginname', 'tool_recyclebin');
         $recyclebinlink = new moodle_url('/admin/tool/recyclebin/index.php', array(
             'contextid' => $PAGE->context->id
@@ -1063,13 +1048,12 @@ class core_renderer extends \theme_boost\output\core_renderer {
             'contextid' => $PAGE->context->id
         ));
 
-        //Student Dash
+        // Student Dash.
         if (\core_completion\progress::get_course_progress_percentage($PAGE->course)) {
             $comppc = \core_completion\progress::get_course_progress_percentage($PAGE->course);
             $comppercent = number_format($comppc, 0);
             $hasprogress = true;
-        }
-        else {
+        } else {
             $comppercent = 0;
             $hasprogress = false;
         }
@@ -1096,7 +1080,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         );
         $courseteachers = array();
         $courseother = array();
-        //If you created custom roles, please change the shortname value to match the name of your role.  This is teacher.
+        // If you created custom roles, please change the shortname value to match the name of your role.  This is teacher.
         $role = $DB->get_record('role', array(
             'shortname' => 'editingteacher'
         ));
@@ -1123,7 +1107,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 );
             }
         }
-        //If you created custom roles, please change the shortname value to match the name of your role.  This is non-editing teacher.
+        // If you created custom roles, please change the shortname value to match the name of your role.  This is non-editing teacher.
         $role = $DB->get_record('role', array(
             'shortname' => 'teacher'
         ));
@@ -1155,7 +1139,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $myprogresstext = get_string('myprogresstext', 'theme_fordson');
         $studentcoursemanage = get_string('courseadministration', 'moodle');
 
-        //permissionchecks for teacher access
+        // Permissionchecks for teacher access.
         $hasquestionpermission = has_capability('moodle/question:add', $context);
         $hasbadgepermission = has_capability('moodle/badges:awardbadge', $context);
         $hascoursepermission = has_capability('moodle/backup:backupcourse', $context);
@@ -1163,43 +1147,43 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $hasgradebookshow = $PAGE->course->showgrades == 1 && $PAGE->theme->settings->showstudentgrades == 1;
         $hascompletionshow = $PAGE->course->enablecompletion == 1 && $PAGE->theme->settings->showstudentgrades == 1;
 
-        //send to template
+        // Send to template.
         $dashlinks = [
-            'showincourseonly' => $showincourseonly, 
-            'haspermission' => $haspermission, 
-            'thiscourse' => $thiscourse, 
-            'haseditcog' => $haseditcog, 
-            'editcog' => $editcog, 
-            'togglebutton' => $togglebutton, 
-            'togglebuttonstudent' => $togglebuttonstudent, 
-            'userlinkstitle' => $userlinks, 
-            'userlinksdesc' => $userlinksdesc, 
-            'qbanktitle' => $qbank, 
-            'activitylinkstitle' => $activitylinkstitle, 
-            'activitylinkstitle_desc' => $activitylinkstitle_desc, 
-            'qbankdesc' => $qbankdesc, 
-            'badgestitle' => $badges, 
-            'badgesdesc' => $badgesdesc, 
-            'coursemanagetitle' => $coursemanage, 
-            'coursemanagedesc' => $coursemanagedesc, 
-            'coursemanagementmessage' => $coursemanagementmessage, 
-            'progresschart' => $progresschart, 
-            'gradeslink' => $gradeslink, 
-            'gradeslinkstudent' => $gradeslinkstudent, 
-            'hascourseinfogroup' => $hascourseinfogroup, 
-            'courseinfo' => $courseinfo, 
-            'hascoursestaffgroup' => $hascoursestaff, 
-            'courseteachers' => $courseteachers, 
-            'courseother' => $courseother, 
-            'myprogresstext' => $myprogresstext, 
-            'mygradestext' => $mygradestext, 
-            'studentdashboardtextbox' => $studentdashboardtextbox, 
-            'hasteacherdash' => $hasteacherdash, 
-            'teacherdash' => array('hasquestionpermission' => $hasquestionpermission, 'hasbadgepermission' => $hasbadgepermission, 'hascoursepermission' => $hascoursepermission, 'hasuserpermission' => $hasuserpermission), 
-            'hasstudentdash' => $hasstudentdash, 
-            'hasgradebookshow' => $hasgradebookshow, 
-            'hascompletionshow' => $hascompletionshow, 
-            'studentcourseadminlink' => $courseadminlink, 
+            'showincourseonly' => $showincourseonly,
+            'haspermission' => $haspermission,
+            'thiscourse' => $thiscourse,
+            'haseditcog' => $haseditcog,
+            'editcog' => $editcog,
+            'togglebutton' => $togglebutton,
+            'togglebuttonstudent' => $togglebuttonstudent,
+            'userlinkstitle' => $userlinks,
+            'userlinksdesc' => $userlinksdesc,
+            'qbanktitle' => $qbank,
+            'activitylinkstitle' => $activitylinkstitle,
+            'activitylinkstitle_desc' => $activitylinkstitle_desc,
+            'qbankdesc' => $qbankdesc,
+            'badgestitle' => $badges,
+            'badgesdesc' => $badgesdesc,
+            'coursemanagetitle' => $coursemanage,
+            'coursemanagedesc' => $coursemanagedesc,
+            'coursemanagementmessage' => $coursemanagementmessage,
+            'progresschart' => $progresschart,
+            'gradeslink' => $gradeslink,
+            'gradeslinkstudent' => $gradeslinkstudent,
+            'hascourseinfogroup' => $hascourseinfogroup,
+            'courseinfo' => $courseinfo,
+            'hascoursestaffgroup' => $hascoursestaff,
+            'courseteachers' => $courseteachers,
+            'courseother' => $courseother,
+            'myprogresstext' => $myprogresstext,
+            'mygradestext' => $mygradestext,
+            'studentdashboardtextbox' => $studentdashboardtextbox,
+            'hasteacherdash' => $hasteacherdash,
+            'teacherdash' => array('hasquestionpermission' => $hasquestionpermission, 'hasbadgepermission' => $hasbadgepermission, 'hascoursepermission' => $hascoursepermission, 'hasuserpermission' => $hasuserpermission),
+            'hasstudentdash' => $hasstudentdash,
+            'hasgradebookshow' => $hasgradebookshow,
+            'hascompletionshow' => $hascompletionshow,
+            'studentcourseadminlink' => $courseadminlink,
             'studentcoursemanage' => $studentcoursemanage,
 
         'dashlinks' => array(
@@ -1330,7 +1314,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
             ) ,
         ) , ];
 
-        //attach easy enrollment links if active
+        // Attach easy enrollment links if active.
         if ($globalhaseasyenrollment && $coursehaseasyenrollment) {
             $dashlinks['dashlinks'][] = array(
                 'haseasyenrollment' => $coursehaseasyenrollment,
@@ -1400,6 +1384,10 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $context->sitename = format_string($SITE->fullname, true, ['context' => context_course::instance(SITEID), "escape" => false]);
 
         return $this->render_from_template('core/login', $context);
+    }
+
+    public function favicon() {
+        return $this->page->theme->setting_file_url('favicon', 'favicon');
     }
 
 }

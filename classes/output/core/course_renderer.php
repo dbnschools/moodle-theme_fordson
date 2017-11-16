@@ -39,7 +39,7 @@ use pix_icon;
 use image_url;
 use single_select;
 
-require_once ($CFG->dirroot . '/course/renderer.php');
+require_once($CFG->dirroot . '/course/renderer.php');
 
 /**
  * Course renderer class.
@@ -117,7 +117,7 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
                             $course = new course_in_list($course);
                         }
 
-                        // Load from config if usea a img from course summary file if not exist a img then a default one ore use a fa-icon
+                        // Load from config if usea a img from course summary file if not exist a img then a default one ore use a fa-icon.
                         $imgurl = '';
                         $context = context_course::instance($course->id);
 
@@ -187,7 +187,7 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
                         </div>';
                         }
                         if ($PAGE->theme->settings->coursetilestyle == 2) {
-                            // display course contacts. See course_in_list::get_course_contacts()
+                            // Display course contacts. See course_in_list::get_course_contacts().
                             $enrollbutton = get_string('enrollcoursecard', 'theme_fordson');
                             $rowcontent .= '
                     <div class="col-md-4">
@@ -222,7 +222,7 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
                                     $name = $coursecontact['rolename'] . ': ' . $coursecontact['username'];
                                     $rowcontent .= html_writer::tag('li', $name);
                                 }
-                                $rowcontent .= html_writer::end_tag('ul'); // .teachers
+                                $rowcontent .= html_writer::end_tag('ul'); 
                                 
                             }
                             $rowcontent .= '  
@@ -334,7 +334,7 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
 
         }
 
-        public function view_available_courses($id = 0, $courses = NULL, $totalcount = NULL) {
+        public function view_available_courses($id = 0, $courses = null, $totalcount = null) {
 
             /* available courses */
             global $CFG, $OUTPUT, $PAGE;
@@ -346,7 +346,7 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
                 $newcourse = get_string('availablecourses');
             }
             else {
-                $newcourse = NULL;
+                $newcourse = null;
             }
 
             $header = '
@@ -390,7 +390,7 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
                             $course = new course_in_list($course);
                         }
 
-                        // Load from config if usea a img from course summary file if not exist a img then a default one ore use a fa-icon
+                        // Load from config if usea a img from course summary file if not exist a img then a default one ore use a fa-icon.
                         $imgurl = '';
                         $context = context_course::instance($course->id);
 
@@ -420,8 +420,7 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
 
                             if ($PAGE->theme->settings->titletooltip) {
                                 $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . $course->fullname . '"';
-                            }
-                            else {
+                            } else {
                                 $tooltiptext = '';
                             }
 
@@ -452,7 +451,7 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
                                     $name = $coursecontact['rolename'] . ': ' . $coursecontact['username'];
                                     $rowcontent .= html_writer::tag('li', $name);
                                 }
-                                $rowcontent .= html_writer::end_tag('ul'); // .teachers
+                                $rowcontent .= html_writer::end_tag('ul');
                                 
                             }
                             $rowcontent .= '
@@ -462,7 +461,7 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
                         </div>';
                         }
                         if ($PAGE->theme->settings->coursetilestyle == 2) {
-                            // display course contacts. See course_in_list::get_course_contacts()
+                            // display course contacts. See course_in_list::get_course_contacts().
                             $enrollbutton = get_string('enrollcoursecard', 'theme_fordson');
                             $rowcontent .= '
                     <div class="col-md-3">
@@ -474,8 +473,7 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
                                 ';
                             if ($PAGE->theme->settings->titletooltip) {
                                 $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . $course->fullname . '"';
-                            }
-                            else {
+                            } else {
                                 $tooltiptext = '';
                             }
                             $rowcontent .= html_writer::start_tag('div', array(
@@ -497,7 +495,7 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
                                     $name = $coursecontact['rolename'] . ': ' . $coursecontact['username'];
                                     $rowcontent .= html_writer::tag('li', $name);
                                 }
-                                $rowcontent .= html_writer::end_tag('ul'); // .teachers
+                                $rowcontent .= html_writer::end_tag('ul'); 
                                 
                             }
                             $rowcontent .= '  
@@ -514,8 +512,7 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
                         if ($PAGE->theme->settings->coursetilestyle == 3) {
                             if ($PAGE->theme->settings->titletooltip) {
                                 $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . $course->fullname . '"';
-                            }
-                            else {
+                            } else {
                                 $tooltiptext = '';
                             }
                             $rowcontent .= '
@@ -548,8 +545,7 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
 
                             if ($PAGE->theme->settings->titletooltip) {
                                 $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . $course->fullname . '"';
-                            }
-                            else {
+                            } else {
                                 $tooltiptext = '';
                             }
 
@@ -580,7 +576,7 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
                                     $name = $coursecontact['rolename'] . ': ' . $coursecontact['username'];
                                     $rowcontent .= html_writer::tag('li', $name);
                                 }
-                                $rowcontent .= html_writer::end_tag('ul'); // .teachers
+                                $rowcontent .= html_writer::end_tag('ul');
                                 
                             }
                             $rowcontent .= '
@@ -619,7 +615,6 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
 
             global $CFG, $OUTPUT;
 
-            // open category tag
             $classes = array(
                 'category'
             );
@@ -627,16 +622,13 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
                 $classes[] = 'dimmed_category';
             }
             if ($chelper->get_subcat_depth() > 0 && $depth >= $chelper->get_subcat_depth()) {
-                // do not load content
                 $categorycontent = '';
                 $classes[] = 'notloaded';
                 if ($coursecat->get_children_count() || ($chelper->get_show_courses() >= self::COURSECAT_SHOW_COURSES_COLLAPSED && $coursecat->get_courses_count())) {
                     $classes[] = 'with_children';
                     $classes[] = 'collapsed';
                 }
-            }
-            else {
-                // load category content
+            } else {
                 $categorycontent = $this->coursecat_category_content($chelper, $coursecat, $depth);
                 $classes[] = 'loaded';
                 if (!empty($categorycontent)) {
@@ -660,24 +652,22 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
                 }
             }
 
-            // ADD HERE GRID OPTIONS AND BOX CSS
             $classes[] = 'col-md-3 box-class';
             $content = '<div class="' . join(' ', $classes) . '" data-categoryid="' . $coursecat->id . '" data-depth="' . $depth . '" data-showcourses="' . $chelper->get_show_courses() . '" data-type="' . self::COURSECAT_TYPE_CATEGORY . '">';
             $content .= '<div class="cat-icon">';
 
-            // LOAD ICON
             $val = theme_fordson_get_setting('catsicon');
             $url = new moodle_url('/course/index.php', array(
                 'categoryid' => $coursecat->id
             ));
             $content .= '<a href="' . $url . '">';
             $content .= '<i class="fa fa-5x fa-' . $val . '"></i>';
-            //Cat title
+
             $categoryname = $coursecat->get_formatted_name();
             $content .= '<div>';
             $content .= '<div class="info-enhanced">';
             $content .= '<span class="class-category">' . $categoryname . '</span>';
-            // ADD HERE A CLASS TO SHOW COURSES COUNT IN A CORNER OR WHERE YOU THINK IS BETTER.
+
             if ($chelper->get_show_courses() == self::COURSECAT_SHOW_COURSES_COUNT) {
                 $coursescount = $coursecat->get_courses_count();
                 $content .= '  <span class="numberofcourses" title="' . get_string('numberofcourses') . '">(' . $coursescount . ')</span>';
@@ -686,8 +676,8 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
             $content .= '</div>';
             $content .= '</a>';
 
-            $content .= '</div>'; // BORDER DIV END.
-            $content .= '</div>'; // COL-MD-4 DIV END
+            $content .= '</div>'; 
+            $content .= '</div>';
             if ($totalcount == $this->countcategories) {
             }
             ++$this->countcategories;
@@ -708,22 +698,19 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
             }
 
             if ($chelper->get_show_courses() == self::COURSECAT_SHOW_COURSES_AUTO) {
-                // In 'auto' course display mode we analyse if number of courses is more or less than $CFG->courseswithsummarieslimit
+
                 if ($totalcount <= $CFG->courseswithsummarieslimit) {
                     $chelper->set_show_courses(self::COURSECAT_SHOW_COURSES_EXPANDED);
-                }
-                else {
+                } else {
                     $chelper->set_show_courses(self::COURSECAT_SHOW_COURSES_COLLAPSED);
                 }
             }
 
-            // prepare content of paging bar if it is needed
             $paginationurl = $chelper->get_courses_display_option('paginationurl');
             $paginationallowall = $chelper->get_courses_display_option('paginationallowall');
             if ($totalcount > count($courses)) {
-                // there are more results that can fit on one page
+
                 if ($paginationurl) {
-                    // the option paginationurl was specified, display pagingbar
                     $perpage = $chelper->get_courses_display_option('limit', $CFG->coursesperpage);
                     $page = $chelper->get_courses_display_option('offset') / $perpage;
                     $pagingbar = $this->paging_bar($totalcount, $page, $perpage, $paginationurl->out(false, array(
@@ -736,9 +723,8 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
                             'class' => 'paging paging-showall'
                         ));
                     }
-                }
-                else if ($viewmoreurl = $chelper->get_courses_display_option('viewmoreurl')) {
-                    // the option for 'View more' link was specified, display more link
+                } else if ($viewmoreurl = $chelper->get_courses_display_option('viewmoreurl')) {
+
                     $viewmoretext = $chelper->get_courses_display_option('viewmoretext', new lang_string('viewmore'));
                     $morelink = html_writer::tag('div', html_writer::tag('a', html_writer::start_tag('i', array(
                         'class' => 'fa-graduation-cap' . ' fa fa-fw'
@@ -750,9 +736,8 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
                     ));
 
                 }
-            }
-            else if (($totalcount > $CFG->coursesperpage) && $paginationurl && $paginationallowall) {
-                // there are more than one page of results and we are in 'view all' mode, suggest to go back to paginated view mode
+            } else if (($totalcount > $CFG->coursesperpage) && $paginationurl && $paginationallowall) {
+
                 $pagingbar = html_writer::tag('div', html_writer::link($paginationurl->out(false, array(
                     'perpage' => $CFG->coursesperpage
                 )) , get_string('showperpage', '', $CFG->coursesperpage)) , array(
@@ -760,7 +745,6 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
                 ));
             }
 
-            // display list of courses
             $attributes = $chelper->get_and_erase_attributes('courses');
             $content = html_writer::start_tag('div', $attributes);
 
@@ -779,7 +763,7 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
                 $content .= $morelink;
             }
 
-            $content .= html_writer::end_tag('div'); // .courses
+            $content .= html_writer::end_tag('div');
             
 
             $content .= '<div class="clearfix"></div>';
@@ -789,8 +773,8 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
 
         public function course_modchooser($modules, $course) {
 
-            // This HILLBROOK function is overridden here to refer to the local theme's copy of modchooser to render a modified
-            // activity chooser for Hillbrook
+            // This HILLBROOK function is overridden here to refer to the local theme's copy of modchooser to render a modified.
+            // Activity chooser for Hillbrook.
             if (!$this->page->requires->should_create_one_time_item_now('core_course_modchooser')) {
                 return '';
             }

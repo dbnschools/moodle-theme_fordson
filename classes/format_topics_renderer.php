@@ -22,7 +22,7 @@
  */
 defined('MOODLE_INTERNAL') || die();
 
-require_once ($CFG->dirroot . '/course/format/topics/renderer.php');
+require_once($CFG->dirroot . '/course/format/topics/renderer.php');
 
 class theme_fordson_format_topics_renderer extends format_topics_renderer {
 
@@ -72,7 +72,7 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
                 'class' => $linkclasses
             ));
         }
-        //add .sectionname so that fontawesome icon can be applied to this page too
+        // Add .sectionname so that fontawesome icon can be applied to this page too.
         $o .= $this->output->heading($title, 3, 'section-title sectionname');
         $o .= html_writer::start_tag('div', array(
             'class' => 'summarytext'
@@ -151,7 +151,7 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
             'class' => 'section-summary-activities'
         ));
 
-        //Special thanks to Willian Mono for the topic progress bar code
+        // Special thanks to Willian Mono for the topic progress bar code.
         if ($total > 0) {
             $completion = new stdClass;
             $completion->complete = $complete;
@@ -168,7 +168,7 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
             $output .= "</div>";
             $output .= "</div>";
         }
-        //End Willian Mono
+        // End Willian Mono.
         $output .= html_writer::tag('span', get_string('section_mods', 'theme_fordson') , array(
             'class' => 'activity-count'
         ));
@@ -180,7 +180,7 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
             $output .= html_writer::end_tag('span');
         }
 
-        // Output section completion data
+        // Output section completion data.
         if ($total > 0) {
             $a = new stdClass;
             $a->complete = $complete;
