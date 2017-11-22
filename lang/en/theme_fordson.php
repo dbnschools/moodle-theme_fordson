@@ -75,10 +75,12 @@ $string['navbarurl'] = 'Top Navigation bar Link Colour';
 $string['navbarurl_desc'] = 'Top sticky navigation bar link and menu colour.';
 $string['fpstartwrap'] = 'Homepage Icon Navigation Background';
 $string['fpstartwrap_desc'] = 'Background colour of the icon navigation bar.';
-$string['fpicon-colour'] = 'Homepage Icon Link Colour';
-$string['fpicon-colour_desc'] = 'Colour of the icon navigation links.';
-$string['fpiconnavhover'] = 'Homepage Icon Hover Background';
-$string['fpiconnavhover_desc'] = 'Homepage icon navigation bar background colour when hovering over button.';
+$string['fpicon-colour'] = 'Homepage Icon Button Link Colour';
+$string['fpicon-colour_desc'] = 'Colour of the icon inside the button.';
+$string['fpiconnavbg'] = 'Homepage Icon Button Background Colour';
+$string['fpiconnavbg_desc'] = 'Colour of the icon button background.';
+$string['fpiconnavhover'] = 'Homepage Icon Button Hover Background';
+$string['fpiconnavhover_desc'] = 'Homepage icon navigation button background colour when hovering.';
 $string['cardbkg'] = 'Content Background Colour';
 $string['cardbkg_desc'] = 'Content background colour for course content and blocks.';
 $string['drawerbkg'] = 'Side Drawer Background Colour';
@@ -241,6 +243,8 @@ $string['coursetilestyle'] = 'Course Tile Display';
 $string['coursetilestyle_desc'] = 'When viewing course categories you can choose from the following styles to display courses.';
 $string['gutterwidth'] = 'Content Padding';
 $string['gutterwidth_desc'] = 'This setting controls how much spacing is used on the left and right of the main content.';
+$string['frontpagemycoursessorting'] = 'Frontpage My Courses Sort Order by Last Access';
+$string['frontpagemycoursessorting_desc'] = 'When checked this feature will sort the frontpage My Courses(enrolled courses) display by last access for the user.  This will override the "Sort my courses" setting under Navigation.  If unchecked then Frontpage My Courses will display as normal.';
 
 //teacher and student dashboard slider
 $string['userlinks'] = 'User Links';
@@ -283,6 +287,8 @@ $string['showstudentcompletion'] = 'Show Student Completion';
 $string['showstudentcompletion_desc'] = 'Show student completion radial in student dashboard panel.  Even with this checked the course must have completion turned on in order to display.';
 $string['showstudentgrades'] = 'Show Student Grades';
 $string['showstudentgrades_desc'] = 'Show student gradebook link in student dashboard panel.  Even with this checked the course must have Show Student Grades turned on in order to display.';
+$string['showcourseadminstudents'] = 'Show Student Course Admin Cog';
+$string['showcourseadminstudents_desc'] = 'This displays the course settings to students.  This is needed if you want to allow them to unenroll from courses.';
 
 $string['setting_removenodesheading'] = 'Customize the Nav Drawer';
 $string['setting_removenodesperformancehint'] = 'Technically, this is done by setting the Menu Item\'s showinflatnavigation attribute to false. Thus, the node will only be hidden from the nav drawer, but it will remain in the navigation tree and can still be accessed by other parts of Moodle.';

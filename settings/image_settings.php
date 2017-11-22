@@ -76,6 +76,15 @@ $setting = new admin_setting_configcheckbox($name, $title, $description, $defaul
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+// Favicon upload.
+$name = 'theme_fordson/favicon';
+$title = get_string ( 'favicon', 'theme_fordson' );
+$description = get_string ( 'favicon_desc', 'theme_fordson' );
+$setting = new admin_setting_configstoredfile( $name, $title, $description, 'favicon', 0,
+    array('maxfiles' => 1, 'accepted_types' => array('png', 'jpg', 'ico')));
+$setting->set_updatedcallback ( 'theme_reset_all_caches' );
+$page->add($setting);
+
 // logo image.
 $name = 'theme_fordson/headerlogo';
 $title = get_string('headerlogo', 'theme_fordson');

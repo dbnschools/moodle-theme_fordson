@@ -70,7 +70,7 @@ $setting = new admin_setting_configcheckbox($name, $title, $description, $defaul
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// Show/hide course editing cog.
+// Show/hide student grades.
 $name = 'theme_fordson/showstudentgrades';
 $title = get_string('showstudentgrades', 'theme_fordson');
 $description = get_string('showstudentgrades_desc', 'theme_fordson');
@@ -79,10 +79,19 @@ $setting = new admin_setting_configcheckbox($name, $title, $description, $defaul
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// Show/hide course editing cog.
+// Show/hide student completion.
 $name = 'theme_fordson/showstudentcompletion';
 $title = get_string('showstudentcompletion', 'theme_fordson');
 $description = get_string('showstudentcompletion_desc', 'theme_fordson');
+$default = 1;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+// Show/hide course settings for students.
+$name = 'theme_fordson/showcourseadminstudents';
+$title = get_string('showcourseadminstudents', 'theme_fordson');
+$description = get_string('showcourseadminstudents_desc', 'theme_fordson');
 $default = 1;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');

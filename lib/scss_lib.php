@@ -87,8 +87,41 @@ function theme_fordson_get_pre_scss($theme) {
     $prescss = '';
 
     $configurable = [
-    // Config key => variableName, ....
-    'brandprimary' => ['brand-primary'], 'brandsuccess' => ['brand-success'], 'brandinfo' => ['brand-info'], 'brandwarning' => ['brand-warning'], 'branddanger' => ['brand-danger'], 'brandgraybase' => ['gray-base'], 'bodybackground' => ['body-bg'], 'breadcrumbbkg' => ['breadcrumb-bg'], 'navbarbkg' => ['navbar-light-color'], 'cardbkg' => ['card-bg'], 'drawerbkg' => ['drawer-bg'], 'fpstartwrap' => ['fpstartwrap-bg'], 'fpiconnavhover' => ['fpicon-hover'], 'fpiconcolour' => ['fpicon-colour'], 'headerimagepadding' => ['headerimagepadding'], 'markettextbg' => ['markettextbg'], 'navbarurl' => ['navbarurl'], 'footerbg' => ['footer-bg'], 'headerscreen' => ['headerfade-bg'], 'iconwidth' => ['fpicon-width'], 'headingcolor' => ['headings-color'], 'headercolor' => ['header-color'], 'bodycolor' => ['body-color'], 'linkcolor' => ['link-color'], 'sectionicon' => ['sectionicon'], 'headericon' => ['headericon'], 'courseboxheight' => ['courseboxheight'], 'learningcontentpadding' => ['learningcontentpadding'], 'blockwidthfordson' => ['blockwidthfordson'], 'slideshowheight' => ['slideshowheight'], 'activityiconsize' => ['activityiconsize'], 'gutterwidth' => ['gutterwidth'], ];
+    // Config key => variableName.
+    'brandprimary' => ['brand-primary'],
+    'brandsuccess' => ['brand-success'],
+    'brandinfo' => ['brand-info'],
+    'brandwarning' => ['brand-warning'],
+    'branddanger' => ['brand-danger'],
+    'brandgraybase' => ['gray-base'],
+    'bodybackground' => ['body-bg'],
+    'breadcrumbbkg' => ['breadcrumb-bg'],
+    'navbarbkg' => ['navbar-light-color'],
+    'cardbkg' => ['card-bg'],
+    'drawerbkg' => ['drawer-bg'],
+    'fpstartwrap' => ['fpstartwrap-bg'],
+    'fpiconnavbg' => ['fpicon-bg'],
+    'fpiconnavhover' => ['fpicon-hover'],
+    'fpiconcolour' => ['fpicon-colour'],
+    'headerimagepadding' => ['headerimagepadding'],
+    'markettextbg' => ['markettextbg'],
+    'navbarurl' => ['navbarurl'],
+    'footerbg' => ['footer-bg'],
+    'headerscreen' => ['headerfade-bg'],
+    'iconwidth' => ['fpicon-width'],
+    'headingcolor' => ['headings-color'],
+    'headercolor' => ['header-color'],
+    'bodycolor' => ['body-color'],
+    'linkcolor' => ['link-color'],
+    'sectionicon' => ['sectionicon'],
+    'headericon' => ['headericon'],
+    'courseboxheight' => ['courseboxheight'],
+    'learningcontentpadding' => ['learningcontentpadding'],
+    'blockwidthfordson' => ['blockwidthfordson'],
+    'slideshowheight' => ['slideshowheight'],
+    'activityiconsize' => ['activityiconsize'],
+    'gutterwidth' => ['gutterwidth'],
+    ];
 
     // Add settings variables.
     foreach ($configurable as $configkey => $targets) {
@@ -139,11 +172,17 @@ function theme_fordson_get_pre_scss($theme) {
 
     // Set the background image for the login page.
     $loginbg = $theme->setting_file_url('loginimage', 'loginimage');
-    if (isset($loginbg)) {
-        $prescss .= 'body#page-login-signup {background-image: url("' . $loginbg . '") !important; background-size:cover; background-position:center;}';
-        $prescss .= 'body#page-login-index {background-image: url("' . $loginbg . '") !important; background-size:cover; background-position:center;}';
+    if ($PAGE->theme->settings->showcustomlogin == 1) {
+        if (isset($loginbg)) {
+            $prescss .= '#page-content.customloginimage {background-image: url("' . $loginbg . '") !important; background-size:cover; background-position:center;}';
+        } 
+    } else {
+        if (isset($loginbg)) {
+            $prescss .= 'body#page-login-signup {background-image: url("' . $loginbg . '") !important; background-size:cover; background-position:center;}';
+            $prescss .= 'body#page-login-index {background-image: url("' . $loginbg . '") !important; background-size:cover; background-position:center;}';
+        }
     }
-
+    
     // Set the image.
     $marketing1image = $theme->setting_file_url('marketing1image', 'marketing1image');
     if (isset($marketing1image)) {

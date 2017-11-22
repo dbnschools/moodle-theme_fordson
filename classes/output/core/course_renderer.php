@@ -782,6 +782,152 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
             return $this->render($modchooser);
         }
 
+        protected static function timeaccesscompare($a, $b) {
+            // timeaccess is lastaccess entry and timestart an enrol entry.
+            if ((!empty($a->timeaccess)) && (!empty($b->timeaccess))) {
+                // Both last access.
+                if ($a->timeaccess == $b->timeaccess) {
+                    return 0;
+                }
+                return ($a->timeaccess > $b->timeaccess) ? -1 : 1;
+            } else if ((!empty($a->timestart)) && (!empty($b->timestart))) {
+                // Both enrol.
+                if ($a->timestart == $b->timestart) {
+                    return 0;
+                }
+                return ($a->timestart > $b->timestart) ? -1 : 1;
+            }
+            // Must be comparing an enrol with a last access.
+            // -1 is to say that 'a' comes before 'b'.
+            if (!empty($a->timestart)) {
+                // 'a' is the enrol entry.
+                return -1;
+            }
+            // 'b' must be the enrol entry.
+            return 1;
+        }
+
+        public function frontpage_my_courses() {
+            global $USER, $CFG, $DB;
+
+            if (!isloggedin() or isguestuser()) {
+                return '';
+            }
+
+            $output = '';
+            if (theme_fordson_get_setting('frontpagemycoursessorting')) {
+                $courses = enrol_get_my_courses(null, 'sortorder ASC');
+                if ($courses) {
+                    // We have something to work with.  Get the last accessed information for the user and populate.
+                    global $DB, $USER;
+                    $lastaccess = $DB->get_records('user_lastaccess', array('userid' => $USER->id), '', 'courseid, timeaccess');
+                    if ($lastaccess) {
+                        foreach ($courses as $course) {
+                            if (!empty($lastaccess[$course->id])) {
+                                $course->timeaccess = $lastaccess[$course->id]->timeaccess;
+                            }
+                        }
+                    }
+                    // Determine if we need to query the enrolment and user enrolment tables.
+                    $enrolquery = false;
+                    foreach ($courses as $course) {
+                        if (empty($course->timeaccess)) {
+                            $enrolquery = true;
+                            break;
+                        }
+                    }
+                    if ($enrolquery) {
+                        // We do.
+                        $params = array('userid' => $USER->id);
+                        $sql = "SELECT ue.id, e.courseid, ue.timestart
+                            FROM {enrol} e
+                            JOIN {user_enrolments} ue ON (ue.enrolid = e.id AND ue.userid = :userid)";
+                        $enrolments = $DB->get_records_sql($sql, $params, 0, 0);
+                        if ($enrolments) {
+                            // Sort out any multiple enrolments on the same course.
+                            $userenrolments = array();
+                            foreach ($enrolments as $enrolment) {
+                                if (!empty($userenrolments[$enrolment->courseid])) {
+                                    if ($userenrolments[$enrolment->courseid] < $enrolment->timestart) {
+                                        // Replace.
+                                        $userenrolments[$enrolment->courseid] = $enrolment->timestart;
+                                    }
+                                } else {
+                                    $userenrolments[$enrolment->courseid] = $enrolment->timestart;
+                                }
+                            }
+                            // We don't need to worry about timeend etc. as our course list will be valid for the user from above.
+                            foreach ($courses as $course) {
+                                if (empty($course->timeaccess)) {
+                                    $course->timestart = $userenrolments[$course->id];
+                                }
+                            }
+                        }
+                    }
+                    uasort($courses, array($this, 'timeaccesscompare'));
+                }
+
+            $sortorder = $lastaccess;
+
+            } else if (!empty($CFG->navsortmycoursessort)) {
+            // sort courses the same as in navigation menu
+            $sortorder = 'visible DESC,'. $CFG->navsortmycoursessort.' ASC';
+            $courses  = enrol_get_my_courses('summary, summaryformat', $sortorder);
+            } else {
+                $sortorder = 'visible DESC,sortorder ASC';
+                $courses  = enrol_get_my_courses('summary, summaryformat', $sortorder);
+            }
+            
+            $rhosts   = array();
+            $rcourses = array();
+            if (!empty($CFG->mnet_dispatcher_mode) && $CFG->mnet_dispatcher_mode==='strict') {
+                $rcourses = get_my_remotecourses($USER->id);
+                $rhosts   = get_my_remotehosts();
+            }
+
+            if (!empty($courses) || !empty($rcourses) || !empty($rhosts)) {
+
+                $chelper = new coursecat_helper();
+                if (count($courses) > $CFG->frontpagecourselimit) {
+                    // There are more enrolled courses than we can display, display link to 'My courses'.
+                    $totalcount = count($courses);
+                    $courses = array_slice($courses, 0, $CFG->frontpagecourselimit, true);
+                    $chelper->set_courses_display_options(array(
+                            'viewmoreurl' => new moodle_url('/my/'),
+                            'viewmoretext' => new lang_string('mycourses')
+                        ));
+                } else {
+                    // All enrolled courses are displayed, display link to 'All courses' if there are more courses in system.
+                    $chelper->set_courses_display_options(array(
+                            'viewmoreurl' => new moodle_url('/course/index.php'),
+                            'viewmoretext' => new lang_string('fulllistofcourses')
+                        ));
+                    $totalcount = $DB->count_records('course') - 1;
+                }
+                $chelper->set_show_courses(self::COURSECAT_SHOW_COURSES_EXPANDED)->
+                        set_attributes(array('class' => 'frontpage-course-list-enrolled'));
+                $output .= $this->coursecat_courses($chelper, $courses, $totalcount);
+
+                // MNET
+                if (!empty($rcourses)) {
+                    // at the IDP, we know of all the remote courses
+                    $output .= html_writer::start_tag('div', array('class' => 'courses'));
+                    foreach ($rcourses as $course) {
+                        $output .= $this->frontpage_remote_course($course);
+                    }
+                    $output .= html_writer::end_tag('div'); // .courses
+                } elseif (!empty($rhosts)) {
+                    // non-IDP, we know of all the remote servers, but not courses
+                    $output .= html_writer::start_tag('div', array('class' => 'courses'));
+                    foreach ($rhosts as $host) {
+                        $output .= $this->frontpage_remote_host($host);
+                    }
+                    $output .= html_writer::end_tag('div'); // .courses
+                }
+            }
+            return $output;
+        }
+
     }
 }
 

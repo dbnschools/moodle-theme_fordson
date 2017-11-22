@@ -147,14 +147,12 @@
         </div>
         {{/hasgradebookshow}}
 
-        {{#studentcourseadminlink}}
+        {{#hascourseadminshow}} {{#studentcourseadminlink}}
         <div class="col-md-2 studentadministration">
             <p>{{{studentcoursemanage}}}</p><a href="{{{studentcourseadminlink}}}" alt="{{{studentcoursemanage}}}"><i class="fa fa-5x fa-cog"></i></a>
         </div>
-        {{/studentcourseadminlink}}
-
+        {{/studentcourseadminlink}} {{/hascourseadminshow}}
         
-
     </div>
 
     <div class="row">

@@ -1145,7 +1145,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $hascoursepermission = has_capability('moodle/backup:backupcourse', $context);
         $hasuserpermission = has_capability('moodle/course:viewhiddenactivities', $context);
         $hasgradebookshow = $PAGE->course->showgrades == 1 && $PAGE->theme->settings->showstudentgrades == 1;
-        $hascompletionshow = $PAGE->course->enablecompletion == 1 && $PAGE->theme->settings->showstudentgrades == 1;
+        $hascompletionshow = $PAGE->course->enablecompletion == 1 && $PAGE->theme->settings->showstudentcompletion == 1;
+        $hascourseadminshow = $PAGE->theme->settings->showcourseadminstudents == 1;
 
         // Send to template.
         $dashlinks = [
@@ -1185,6 +1186,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
             'hascompletionshow' => $hascompletionshow,
             'studentcourseadminlink' => $courseadminlink,
             'studentcoursemanage' => $studentcoursemanage,
+            'hascourseadminshow' => $hascourseadminshow,
 
         'dashlinks' => array(
             array(

@@ -37,8 +37,8 @@ $bootstrap-sass-asset-helper: false !default;
 
 // Colors #f2ff47
 $fpstartwrap-bg: #7892a2 !default;
-$fpicon-icon: #ececec !default;
-$fpicon-hover: darken($fpicon-icon, 25%) !default;
+$fpicon-bg: #ececec !default;
+$fpicon-hover: darken($fpicon-bg, 25%) !default;
 $fpicon-colour: #5a5a5a !default;
 $fpicon-width: 110px !default;
 $fpiconcreate-width: 150px !default;

@@ -196,7 +196,7 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-//Topic and Weekly Section Titles Icon
+// Topic and Weekly Section Titles Icon.
 $name = 'theme_fordson/sectionicon';
 $title = get_string('sectionicon','theme_fordson');
 $description = get_string('sectionicon_desc', 'theme_fordson');
@@ -237,17 +237,26 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for icon One
+// This is the descriptor for icon One.
 $name = 'theme_fordson/coursetileinfo';
 $heading = get_string('coursetileinfo', 'theme_fordson');
 $information = get_string('coursetileinfodesc', 'theme_fordson');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
 
-// Frontpage Available Courses enhancement
+// Frontpage Available Courses enhancement.
 $name = 'theme_fordson/enablefrontpageavailablecoursebox';
 $title = get_string('enablefrontpageavailablecoursebox', 'theme_fordson');
 $description = get_string('enablefrontpageavailablecoursebox_desc', 'theme_fordson');
+$default = 1;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+// Frontpage My Courses Sort by Lastaccess.
+$name = 'theme_fordson/frontpagemycoursessorting';
+$title = get_string('frontpagemycoursessorting', 'theme_fordson');
+$description = get_string('frontpagemycoursessorting_desc', 'theme_fordson');
 $default = 1;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
@@ -282,7 +291,7 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// Frontpage Available Courses enhancement
+// Frontpage Available Courses enhancement.
 $name = 'theme_fordson/titletooltip';
 $title = get_string('titletooltip', 'theme_fordson');
 $description = get_string('titletooltip_desc', 'theme_fordson');

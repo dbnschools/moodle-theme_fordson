@@ -5,7 +5,7 @@
 // FORDSON CustomSettings
 $fpstartwrap-bg: #FFF !default;
 $fpicon-hover: #bcd5db !default;
-$fpicon-icon: darken($fpicon-hover, 10%) !default;
+$fpicon-bg: darken($fpicon-hover, 10%) !default;
 $fpicon-colour: #026C87 !default;
 $fpicon-width: 100px !default;
 $fpiconcreate-width: 150px !default;
@@ -181,7 +181,7 @@ div#fordsonlogin {
 .loginnavicon {
     display: inline-block;
     padding: 1.5rem;
-    background-color: $fpicon-icon;
+    background-color: $fpicon-bg;
     border-radius: 50%;
     margin-bottom: $spacer;
     box-shadow: 0 1px 1px 1px rgba(0,0,0,.3);
@@ -265,6 +265,14 @@ div#coursecontrols {
 
 .studentdashboard {
     padding: 1rem;
+}
+
+.studentdashboard .col-md-2 {
+    float: right;
+    width: auto;
+    text-align: center;
+    padding: 0 2rem;
+    font-weight: bold;
 }
 
 .teacherdashbutton {
@@ -415,7 +423,7 @@ a.right.carousel-control .fa-chevron-right {
     width: $fpicon-width;
     text-align: center;
     vertical-align: top;
-    background-color: $fpicon-icon;
+    background-color: $fpicon-bg;
     border-radius: 5px;
 }
 
