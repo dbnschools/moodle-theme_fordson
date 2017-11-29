@@ -782,6 +782,7 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
             return $this->render($modchooser);
         }
 
+        // Last Access code from Essential Theme.
         protected static function timeaccesscompare($a, $b) {
             // timeaccess is lastaccess entry and timestart an enrol entry.
             if ((!empty($a->timeaccess)) && (!empty($b->timeaccess))) {
@@ -816,6 +817,7 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
 
             $output = '';
             if (theme_fordson_get_setting('frontpagemycoursessorting')) {
+                // Last Access Code from Essential Theme.
                 $courses = enrol_get_my_courses(null, 'sortorder ASC');
                 if ($courses) {
                     // We have something to work with.  Get the last accessed information for the user and populate.
@@ -866,7 +868,7 @@ if (theme_fordson_get_setting('enablefrontpageavailablecoursebox')) {
                     }
                     uasort($courses, array($this, 'timeaccesscompare'));
                 }
-
+                // End Last Access code from Essential Theme.
             $sortorder = $lastaccess;
 
             } else if (!empty($CFG->navsortmycoursessort)) {

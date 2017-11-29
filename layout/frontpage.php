@@ -50,7 +50,7 @@ $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))) , 
     'output' => $OUTPUT, 
-    'showbacktotop' => $PAGE->theme->settings->showbacktotop == 1, 
+    'showbacktotop' => isset($PAGE->theme->settings->showbacktotop) && $PAGE->theme->settings->showbacktotop == 1, 
     'sidepreblocks' => $blockshtml, 
     'hasblocks' => $hasblocks, 
     'bodyattributes' => $bodyattributes, 
@@ -61,16 +61,16 @@ $templatecontext = [
     'enrolform' => $enrolform, 
 ];
 
-if ($PAGE->theme->settings->toggledrawermenu == 1) {
+if (isset($PAGE->theme->settings->toggledrawermenu) && $PAGE->theme->settings->toggledrawermenu == 1) {
     fordson_boostnavigation_extend_navigation($PAGE->navigation);
     fordson_local_navigation_extend_navigation($PAGE->navigation);
 }
-else if ($PAGE->theme->settings->toggledrawermenu == 2) {
+else if (isset($PAGE->theme->settings->toggledrawermenu) && $PAGE->theme->settings->toggledrawermenu == 2) {
     fordson_boostnavigation_extend_navigation($PAGE->navigation);
     fordson_local_navigation_extend_navigation($PAGE->navigation);
 }
 
-if ($PAGE->theme->settings->showbacktotop == 1) {
+if (isset($PAGE->theme->settings->showbacktotop) && $PAGE->theme->settings->showbacktotop == 1) {
     $PAGE->requires->jquery();
     $PAGE->requires->js('/theme/fordson/javascript/scrolltotop.js');
 }

@@ -29,13 +29,16 @@ This means when Moodle updates the core Boost theme those changes will be applie
 # Install from Github
 Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration.
 
-## Fordson Moodle 33 1.6.4
+## Fordson Moodle 34 1.6.5
+* Fixed a few undefined variable notices fixed by hannaedelman on github.  https://github.com/dbnschools/moodle-theme_fordson/issues/12
+
+## Fordson Moodle 34 1.6.4
 * Fixed customlogin page header image size.  Previously it used the body tag and filled the whole page with an image.  The new method uses a special css selector on the custom login page and fills just the top area of the screen with an image.
 * Moved Favicon image upload to the Custom Image page.  This makes more sense since it is an image.
 * New color chooser for better control of the homepage icon navigation.  There are 4 main color choosers for this.  There is the navigation bar background color, icon color, button background color, and button hover background color.  
 * Fixed Course Completion show/hide toggle for student dashboard was not working properly.  Thanks Michelle Lomman for bringing this to my attention.
 * Added show/hide toggle for student dashboard to display the course admin cog link.  This is used if you allow students to unenroll but many didn't want it displayed so I added a toggle in the Menu Tab of Fordson. 
-* New Feature - Frontpage My Courses sort by lastaccess.  This will allow you to keep the most used courses for a user displayed first on the frontpage of the site.  If turned off then normal sorting is used.  
+* New Feature - Frontpage My Courses sort by lastaccess.  This will allow you to keep the most used courses for a user displayed first on the frontpage of the site.  If turned off then normal sorting is used. This code was originally found in the Essential theme by Gareth Barnard and adapted to provide a new functionality. 
 
 ## Fordson Moodle 33 1.6.3
 * New Favicon upload.  A much requested feature has been added to Fordson.  
