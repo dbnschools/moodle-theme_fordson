@@ -63,43 +63,49 @@
 
     {{{ output.standard_top_of_body_html }}}
 
-    {{>theme_boost/header}}
+    {{>theme_fordson/header}}
 
     <div id="page" class="container-fluid">
-    {{{ output.headerimage }}}
 
-    <div id="learningcontent">
-    {{{ output.teacherdash }}}
+        {{{ output.headerimage }}}
 
-        {{{ output.full_header }}}
+        <div id="learningcontent">
 
-        <div id="page-content" class="row">
-            <div id="region-main-box" class="col-xs-12">
-                {{#hasregionmainsettingsmenu}}
-                <div id="region-main-settings-menu" class="hidden-print {{#hasblocks}}has-blocks{{/hasblocks}}">
-                    <div> {{{ output.region_main_settings_menu }}} </div>
-                </div>
-                {{/hasregionmainsettingsmenu}}
-                <section id="region-main" {{#hasblocks}}class="has-blocks"{{/hasblocks}}>
-                    <div class="card card-block">
+        {{{ output.teacherdash }}}
+
+            {{{ output.full_header }}}
+
+            <div id="page-content" class="row">
+                <div id="region-main-box" class="col-xs-12">
                     {{#hasregionmainsettingsmenu}}
-                        <div class="region_main_settings_menu_proxy"></div>
-                    {{/hasregionmainsettingsmenu}}
-                    {{{ output.course_content_header }}}
-                    {{{ output.main_content }}}
-                    {{{ output.course_content_footer }}}
+                    <div id="region-main-settings-menu" class="hidden-print {{#hasblocks}}has-blocks{{/hasblocks}}">
+                        <div> {{{ output.region_main_settings_menu }}} </div>
                     </div>
-                </section>
-                {{#hasblocks}}
-                <section data-region="blocks-column" class="hidden-print">
-                    {{{ sidepreblocks }}}
-                </section>
-                {{/hasblocks}}
+                    {{/hasregionmainsettingsmenu}}
+                    <section id="region-main" {{#hasblocks}}class="has-blocks"{{/hasblocks}}>
+                        <div class="card card-block">
+                        {{#hasregionmainsettingsmenu}}
+                            <div class="region_main_settings_menu_proxy"></div>
+                        {{/hasregionmainsettingsmenu}}
+                        {{{ output.course_content_header }}}
+                        {{{ output.main_content }}}
+                        {{{ output.course_content_footer }}}
+                        </div>
+                        
+                    </section>
+                    {{#hasblocks}}
+                        <section data-region="blocks-column" class="hidden-print">
+                            {{{ sidepreblocks }}}
+                        </section>
+                    {{/hasblocks}}
+                </div>
             </div>
+            {{{ output.activity_navigation }}}
         </div>
     </div>
-</div>
+    {{#hasfhsdrawer}}
     {{> theme_boost/nav-drawer }}
+    {{/hasfhsdrawer}}
 </div>
 
 {{#showbacktotop}}
@@ -127,14 +133,17 @@
         {{{ output.standard_footer_html }}}
         {{{ output.standard_end_of_body_html }}}
     </div>
+    
 </footer>
 
 </body>
 </html>
 {{#js}}
 require(['theme_boost/loader']);
-require(['jquery','theme_boost/tooltip'], function($){$('[data-toggle="tooltip"]').tooltip()});
+require(['jquery','theme_boost/tooltip'], function($){$('[data-tooltip="tooltip"]').tooltip()});
+{{#hasfhsdrawer}}
 require(['theme_boost/drawer'], function(mod) {
     mod.init();
 });
+{{/hasfhsdrawer}}
 {{/js}}

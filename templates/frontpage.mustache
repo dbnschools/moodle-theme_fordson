@@ -63,9 +63,10 @@
 
     {{{ output.standard_top_of_body_html }}}
 
-    {{>theme_boost/header}}
+    {{>theme_fordson/header}}
 
     <div id="page" class="container-fluid">
+
         {{{ output.headerimage }}}
     
         <div id="learningcontent">
@@ -94,21 +95,46 @@
                     {{{ output.course_content_header }}}
                     {{{ enrolform }}}
                     {{{ output.fp_wonderbox }}}
+                    {{#hasfpblockregion}}
+                        <div class="fp-blocks">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                            <section data-region="blocks-fpa" class="hidden-print">
+                                                {{{ fpablocks }}}
+                                            </section>
+                                    </div>
+                                    <div class="col-md-4">
+                                            <section data-region="blocks-fpb" class="hidden-print">
+                                                {{{ fpbblocks }}}
+                                            </section>
+                                    </div>
+                                    <div class="col-md-4">
+                                            <section data-region="blocks-fpc" class="hidden-print">
+                                                {{{ fpcblocks }}}
+                                            </section>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/hasfpblockregion}}
                     {{{ output.main_content }}}
                     {{{ output.fp_marketingtiles }}}
                     {{{ output.course_content_footer }}}
                     </div>
                 </section>
                 {{#hasblocks}}
-                <section data-region="blocks-column" class="hidden-print">
-                    {{{ sidepreblocks }}}
-                </section>
+                    <section data-region="blocks-column" class="hidden-print">
+                        {{{ sidepreblocks }}}
+                    </section>
                 {{/hasblocks}}
             </div>
         </div>
     </div>
 </div>
-    {{> theme_boost/nav-drawer }}
+{{#hasfhsdrawer}}
+{{> theme_boost/nav-drawer }}
+{{/hasfhsdrawer}}
 </div>
 
 {{#showbacktotop}}
@@ -142,8 +168,6 @@
                     {{/ output.page_doc_link }}
                 </div>
                 </div>
-
-
             </div>
         </div>
 
@@ -164,7 +188,7 @@
 </html>
 {{#js}}
 require(['theme_boost/loader']);
-require(['jquery','theme_boost/tooltip'], function($){$('[data-toggle="tooltip"]').tooltip()});
+require(['jquery','theme_boost/tooltip'], function($){$('[data-tooltip="tooltip"]').tooltip()});
 require(['theme_boost/drawer'], function(mod) {
     mod.init();
 });

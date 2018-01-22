@@ -97,7 +97,7 @@ $setting = new admin_setting_configcheckbox($name, $title, $description, $defaul
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for nav drawer
+// This is the descriptor for course menu
 $name = 'theme_fordson/mycoursesmenuinfo';
 $heading = get_string('mycoursesinfo', 'theme_fordson');
 $information = get_string('mycoursesinfodesc', 'theme_fordson');
@@ -108,7 +108,16 @@ $page->add($setting);
 $name = 'theme_fordson/displaymycourses';
 $title = get_string('displaymycourses', 'theme_fordson');
 $description = get_string('displaymycoursesdesc', 'theme_fordson');
-$default = true;
+$default = false;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+// Toggle courses display in custommenu.
+$name = 'theme_fordson/displaythiscourse';
+$title = get_string('displaythiscourse', 'theme_fordson');
+$description = get_string('displaythiscoursedesc', 'theme_fordson');
+$default = false;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
@@ -120,9 +129,17 @@ $description = get_string('mycoursetitledesc', 'theme_fordson');
 $default = 'course';
 $choices = array(
 	'course' => get_string('mycourses', 'theme_fordson'),
+	'module' => get_string('mymodules', 'theme_fordson'),
 	'unit' => get_string('myunits', 'theme_fordson'),
 	'class' => get_string('myclasses', 'theme_fordson'),
-	'module' => get_string('mymodules', 'theme_fordson')
+	'training' => get_string('mytraining', 'theme_fordson'),
+	'pd' => get_string('mypd', 'theme_fordson'),
+	'cred' => get_string('mycred', 'theme_fordson'),
+	'plan' => get_string('myplans', 'theme_fordson'),
+	'comp' => get_string('mycomp', 'theme_fordson'),
+	'program' => get_string('myprograms', 'theme_fordson'),
+	'lecture' => get_string('mylectures', 'theme_fordson'),
+	'lesson' => get_string('mylessons', 'theme_fordson'),
 	);
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
@@ -131,70 +148,28 @@ $page->add($setting);
 //Drawer Menu
 // This is the descriptor for nav drawer
 $name = 'theme_fordson/drawermenuinfo';
-$heading = get_string('setting_removenodesheading', 'theme_fordson');
-$information = get_string('setting_removenodesperformancehint', 'theme_fordson');
+$heading = get_string('setting_navdrawersettings', 'theme_fordson');
+$information = get_string('setting_navdrawersettings_desc', 'theme_fordson');
 $setting = new admin_setting_heading($name, $heading, $information);
 $page->add($setting);
 
-// Toggle Marketing Spots.
-$name = 'theme_fordson/toggledrawermenu';
-$title = get_string('toggledrawermenu' , 'theme_fordson');
-$description = get_string('toggledrawermenu_desc', 'theme_fordson');
-$alwaysdisplay = get_string('activateonboth', 'theme_fordson');
-$displayhome = get_string('activateonhomepage', 'theme_fordson');
-$displaycourse = get_string('activateoncoursepage', 'theme_fordson');
-$default = '1';
-$choices = array('1'=>$alwaysdisplay, '2'=>$displayhome, '3'=>$displaycourse);
-$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+$name = 'theme_fordson/shownavdrawer';
+$title = get_string('shownavdrawer', 'theme_fordson');
+$description = get_string('shownavdrawer_desc', 'theme_fordson');
+$default = true;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 $name = 'theme_fordson/shownavclosed';
 $title = get_string('shownavclosed', 'theme_fordson');
 $description = get_string('shownavclosed_desc', 'theme_fordson');
-$default = 0;
-$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+$default = false;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-$name = 'theme_fordson/removehomenode';
-$title = get_string('setting_removehomenode', 'theme_fordson');
-$description = get_string('setting_removehomenode_desc', 'theme_fordson');
-$default = 0;
-$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
 
-$name = 'theme_fordson/removecalendarnode';
-$title = get_string('setting_removecalendarnode', 'theme_fordson');
-$description = get_string('setting_removecalendarnode_desc', 'theme_fordson');
-$default = 0;
-$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-$name = 'theme_fordson/removeprivatefilesnode';
-$title = get_string('setting_removeprivatefilesnode', 'theme_fordson');
-$description = get_string('setting_removeprivatefilesnode_desc', 'theme_fordson');
-$default = 0;
-$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-$name = 'theme_fordson/removemycoursesnode';
-$title = get_string('setting_removemycoursesnode', 'theme_fordson');
-$description = get_string('setting_removemycoursesnode_desc', 'theme_fordson');
-$default = 0;
-$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-$name = 'theme_fordson/adddrawermenu';
-$title = get_string('adddrawermenu', 'theme_fordson');
-$description = get_string('adddrawermenu_desc', 'theme_fordson');
-$setting = new admin_setting_configtextarea($name, $title, $description, '', PARAM_RAW, '50', '10');
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
 
 // Must add the page after definiting all the settings!
 $settings->add($page);

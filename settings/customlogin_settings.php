@@ -52,6 +52,14 @@ $setting = new admin_setting_configstoredfile($name, $title, $description, 'logi
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+// Login form color.
+$name = 'theme_fordson/fploginform';
+$title = get_string('fploginform', 'theme_fordson');
+$description = get_string('fploginform_desc', 'theme_fordson');
+$setting = new admin_setting_configcolourpicker($name, $title, $description, '');
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 // This is the descriptor for icon One
 $name = 'theme_fordson/loginnavicon1info';
 $heading = get_string('loginnavicon1', 'theme_fordson');

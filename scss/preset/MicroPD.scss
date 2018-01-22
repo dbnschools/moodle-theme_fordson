@@ -4,7 +4,7 @@
 // Copyright (c) 2013 Thomas Park
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to dea
+// of this software and associated documentation files (the "Software"), to deal
 // in the Software without restriction, including without limitation the rights
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
@@ -42,16 +42,25 @@ $gray-light : #818a91 !default;
 $gray-lighter : #e0e0e0 !default;
 $gray-lightest : #f7f7f9 !default;
 $gray-base : #ccc !default;
-$brand-primary : #2588a0 !default;
+$micropdaccentcolor: #44d4a6 !default;
+$gutterwidth: 2rem !default;
+
+$brand-primary : #407386 !default;
 $brand-success : #77b300 !default;
 $brand-warning : #ff8800 !default;
 $brand-danger : #ff4136 !default;
 $brand-inverse : $gray-dark !default;
-$navbar-height : 50px !default;
-$headerfade-bg : #fff !default;
-$header-color : #505050 !default;
-$bg-inverse-link-color: $brand-primary !default;
+$headerfade-bg : #a6bfbe !default;
+$header-color : #373a3c !default;
+$bg-inverse-link-color: #0e9474 !default;
 $footer-link-color: $bg-inverse-link-color !default;
+$custommenu-bg: #f5f5f5 !default;
+
+$fpstartwrap-bg : #fff !default;
+$fpicon-hover : #86b7b8 !default;
+$fpicon-bg : #ffc125 !default;
+$fpicon-colour : $gray-dark !default;
+$sectionnamehighlight : #43d0f3 !default;
 
 // Spacing
 $spacer : 1rem !default;
@@ -62,12 +71,11 @@ $border-radius: 3px !default;
 
 // Body
 $body-bg: #dae6e5 !default;
-$footer-bg: $body-bg !default;
-$custommenu-bg: $body-bg !default;
+$footer-bg: #cbdcdb !default;
 $drawer-bg: $body-bg !default;
 
 // Typography
-$font-family-sans-serif: "Open Sans","Helvetica Neue",Arial,sans-serif !default;
+$font-family-sans-serif: Open Sans,Helvetica Neue,Arial,sans-serif !default;
 $font-size-root: 14px !default;
 $headericon: "" !default;
 $sectionicon: "" !default;
@@ -85,9 +93,10 @@ $dropdown-link-color : rgba(0, 0, 0, .535) !default;
 
 // Navbar
 $navbar-light-color : #fff !default;
-$navbar-light-hover-color : $brand-primary !default;
-$navbar-light-active-color : $brand-primary !default;
-$navbarurl : #000 !default;
+$navbar-light-hover-color : darken($brand-primary, 15%) !default;
+$navbar-light-active-color : $gray !default;
+$navbarurl : $gray !default;
+$navbar-height : 50px !default;
 
 // Cards
 $card-border-radius : $border-radius !default;
@@ -95,15 +104,25 @@ $card-border-color : rgba(238, 238, 238, 1) !default;
 $card-border-width : 1px !default;
 
 // Breadcrumbs
-$breadcrumb-bg : $gray-lighter !default;
+$breadcrumb-bg : #fff !default;
 $breadcrumb-padding : 0px 10px 0px 10px !default;
-$breadcrumb-divider : "/" !default;
-$breadcrumb-divider-rtl : "/" !default;
+$breadcrumb-divider: "/" !default;
+$breadcrumb-divider-rtl: "/" !default;
+
+// Nav Tabs
+$nav-tabs-border-color:                       #ccc !default;
+$nav-tabs-border-width:                       2px !default;
+$nav-tabs-border-radius:                      $border-radius !default;
+$nav-tabs-link-hover-border-color:            $gray-lighter !default;
+$nav-tabs-active-link-hover-color:            $gray !default;
+$nav-tabs-active-link-hover-bg:               $micropdaccentcolor !default;
+$nav-tabs-active-link-hover-border-color:     #ccc !default;
+$nav-tabs-justified-link-border-color:        $micropdaccentcolor !default;
+$nav-tabs-justified-active-link-border-color: $body-bg !default;
 
 
 // Import everything.
 @import "moodle";
-
 
 /**
  * Navigation bar identity.
@@ -111,7 +130,7 @@ $breadcrumb-divider-rtl : "/" !default;
 
 .navbar-light {
     background-color: $navbar-light-color;
-    border-bottom: $border-width solid #e5e5e5;
+    border-bottom: $border-width solid $gray-lighter;
     .container {
         padding-left: 0;
         padding-right: 0;
@@ -126,9 +145,6 @@ $breadcrumb-divider-rtl : "/" !default;
     }
     .usermenu {
         color: $navbarurl;
-        padding: 0 .5rem;
-        background-color: #fff;
-        border-radius: $border-radius;
     }
 
     .navbar-brand {
@@ -162,8 +178,15 @@ $breadcrumb-divider-rtl : "/" !default;
     }
 }
 
-.custommenucontainer {
-    border-radius: 1rem;
+.teacherdash .btn, .enrollcodes .btn, .siteadminlink .btn {
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+    color: #fff;
+}
+
+.teacherdash .btn:hover, .enrollcodes .btn:hover, .siteadminlink .btn:hover {
+    background-color: $card-bg;
+    color: $gray-dark;
 }
 
 .tooltip.tooltip-bottom .tooltip-arrow, .tooltip.bs-tether-element-attached-top .tooltip-arrow {
@@ -177,121 +200,83 @@ $breadcrumb-divider-rtl : "/" !default;
     margin-top: 10px;
 }
 
+
+//
+// Tabs
+//
+
+.nav-tabs {
+  border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
+  @include clearfix();
+
+  .nav-item {
+    float: left;
+    // Make the list-items overlay the bottom border
+    margin-bottom: -$nav-tabs-border-width;
+
+    + .nav-item {
+      margin-left: $nav-item-margin;
+    }
+  }
+
+  .nav-link {
+    display: block;
+    padding: $nav-link-padding;
+    border: $nav-tabs-border-width solid transparent;
+    @include border-top-radius($nav-tabs-border-radius);
+
+    @include hover-focus {
+      background-color: $card-bg;
+      border-color: $nav-tabs-link-hover-border-color $nav-tabs-link-hover-border-color $nav-tabs-border-color;
+    }
+
+    &.disabled {
+      @include plain-hover-focus {
+        color: $nav-disabled-link-color;
+        background-color: transparent;
+        border-color: transparent;
+      }
+    }
+  }
+
+  .nav-link.active,
+  .nav-item.open .nav-link {
+    @include plain-hover-focus {
+      color: $nav-tabs-active-link-hover-color;
+      background-color: $nav-tabs-active-link-hover-bg;
+      border-color: $nav-tabs-active-link-hover-border-color $nav-tabs-active-link-hover-border-color transparent;
+    }
+  }
+
+  .dropdown-menu {
+    // Make dropdown border overlap tab border
+    margin-top: -$nav-tabs-border-width;
+    // Remove the top rounded corners here since there is a hard edge above the menu
+    @include border-top-radius(0);
+  }
+}
+
+.tab-content {
+    background-color: #fff;
+    padding: .25rem;
+}
+
 /**
  * User picture.
  */
 
 .userpicture {
-    border-radius: 50%;
+    border-radius: $border-radius;
 }
 
 
 /**
- * Full-width changes
+ * For background in content areas.
  */
-
-#page.container-fluid {
-    padding: 0 !important;
-}
-
-.row {
-    margin-left: 0px;
-    margin-right: 0px;
-}
-
-.p-a-1 {
-    padding: 0 !important;
-}
-
-.headerbkg {
-    margin-top: 0px !important;
-    height: 0;
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
-.pagelayout-course .headerbkg {
-    height: $headerimagepadding !important;
-}
-
-.pagelayout-course div#learningcontent {
-    margin-top: $headerimagepadding;
-}
-
-div#learningcontent {
-    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
-    border: 1px solid $card-bg;
-    margin-top: 50px;
-}
-
-.course-content ul.section {
-    margin: 1rem;
-    border-top: 7px solid lighten($brand-primary, 25%);
-    border-left: 1px solid $gray-lighter;
-    border-right: 1px solid $gray-lighter;
-    border-bottom: 1px solid $gray-lighter;
-    padding: 1rem;
-}
-
-.course-content ul.topics li.section,
-.course-content ul.weeks li.section {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-
-.course-content ul.section {
-    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-}
-
-.course-content ul.section:hover {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
-li.activity.label {
-    border: initial;
-}
-
-div#coursecontrols {
-    border-radius: 0;
-    background-color: $activityhover;
-    border-top: 5px solid lighten($brand-primary, 25%);
-}
-
-#page-header .headerfade .pull-xs-left {
-    float: none !important;
-}
-
-.pagelayout-course .page-context-header .page-header-headings {
-    width: 100%;
-}
-
-#page-header h1 {
-    text-align: center;
-}
-
-div#page-navbar {
-    border-top: 1px solid $gray-lighter;
-    border-bottom: 1px solid $gray-lighter;
-    padding-top: 1rem;
-    padding-bottom: .5rem;
-}
-
-.teacherdashbutton:hover,
-.thiscoursebutton:hover,
-.enrollcodebutton:hover,
-.editcogbutton:hover {
-    background-color: $card-bg;
-}
-
 
 #block-region-side-pre {
     padding-left: 0;
 }
-
 
 /**
  * Dashboard styling.
@@ -311,20 +296,42 @@ div#page-navbar {
     border: 0;
 }
 
-
 /**
  * Blocks.
  */
+ [data-region="blocks-column"] {
+    margin-top: 2rem;
+}
 
 .block-region .card-block {
+    padding: 0;
+    background-color: $body-bg;
     .card-title {
         padding-bottom: ($spacer/2);
         font-size: 1.143rem;
         font-weight: 600;
         text-transform: uppercase;
+        background-color: $micropdaccentcolor;
+        padding: 1rem;
+        border-radius: $border-radius $border-radius 0 0;
+        box-shadow: 0 1px 5px 0px rgba(0,0,0,.3);
+    }
+    .card-text.content {
+        padding: .5rem;
     }
 }
 
+.block-myoverview .card-block {
+    background-color: $card-bg;
+}
+
+aside#block-region-side-pre .block {
+    box-shadow: 0 1px 1px 1px rgba(0,0,0,.3);
+}
+
+.block_myoverview .content-centred {
+    max-width: 100%;
+}
 
 /**
  * Navigation.
@@ -336,7 +343,6 @@ div#page-navbar {
         margin: ($spacer/2) 0;
     }
 }
-
 
 /**
  * Form styles.
@@ -350,14 +356,188 @@ div#page-navbar {
     margin-top: 0;
 }
 
+/**
+ * MicroPD.
+ */
+#page-header .headerfade {
+    box-shadow: 0 2px 2px rgba(0,0,0,.3), 0 -1px 0px rgba(0,0,0,.3) inset;
+}
+
+#nav-drawer .list-group-item {
+    background-color: initial;
+    border: 0;
+    border-radius: 0;
+}
+
+#nav-drawer a.list-group-item.list-group-item-action.font-weight-bold {
+    border-left: 10px solid rgba(0,0,0,.2);
+    background-color: $micropdaccentcolor;
+    color:#fff;
+}
+
+[data-region="drawer"] {
+    padding: 20px 2px 20px 20px;
+}
+
+#nav-drawer .list-group-item-action:focus, .list-group-item-action:hover {
+    color: #fff;
+    text-decoration: none;
+    background-color: $micropdaccentcolor !important;
+}
+
+nav.list-group {
+    background-color: #fff;
+}
+
+div#learningcontent {
+    position: relative;
+    margin-top: 0;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-top: 1px solid $card-bg;
+}
+
+#region-main .card {
+    background-color: initial;
+}
+
+.headerbkg {
+    margin-top: 0px !important;
+    height: 0;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.pagelayout-course .headerbkg {
+    height: $headerimagepadding !important;
+}
+
+div#page-content {
+    background-color: $card-bg;
+    margin: 2rem $gutterwidth;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+body#page-login-index div#page-content {
+    background-color: transparent;
+    margin: 0;
+    box-shadow: none;
+}
+
+.pagelayout-course div#page-content {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.pagelayout-course div#learningcontent {
+    margin-top: $headerimagepadding;
+}
+
+.course-content ul.topics li.section .content, .course-content ul.weeks li.section .content {
+    margin: 0;
+    padding: 0 0 1rem 0;
+    background-color: $card-bg;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
+    border-radius: $border-radius;
+}
+
+.course-content ul.topics li.section .content {
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.single-section ul.topics li.section .content, .single-section ul.weeks li.section .content {
+    margin: 1rem 0;
+    padding: 0 0 1rem 0;
+    background-color: $card-bg;
+    box-shadow: none;
+}
+
+.course-content .section-summary .section-title {
+    margin: 0 0 10px 0;
+}
+
+.course-content .single-section {
+    background-color: $card-bg;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
+    border-radius: $border-radius;
+}
+
+.course-content .section-summary .summarytext {
+    padding: 1rem;
+}
+
+#page-wrapper {
+    padding-bottom: 0;
+}
+
+.course-content .single-section .section-navigation {
+    padding: 1rem;
+}
+
+
+.course-content .single-section .section-navigation .mdl-left a, .course-content .single-section .section-navigation .mdl-right a, a#prev-activity-link, a#next-activity-link {
+    background-color: $card-bg;
+    padding: .5rem 1rem;
+    border-radius: $border-radius;
+    margin-bottom: 1rem;
+}
+.course-content .single-section .section-navigation .mdl-left, .course-content .single-section .section-navigation .mdl-right {
+    margin-bottom: 1rem;
+}
+
+.course-content .single-section .section-navigation .mdl-left a:hover, .course-content .single-section .section-navigation .mdl-right a:hover, a#prev-activity-link:hover, a#next-activity-link:hover {
+    background-color: $body-bg;
+}
+
+.course-content ul li.section.main {
+    border-bottom: 0;
+    margin-top: 0;
+    padding: 1rem 0;
+}
+
+#region-main>.card, #page-enrol-users #region-main>#filterform, .que #region-main>.history, .userprofile .profile_tree #region-main>section, #region-main>.groupinfobox, #region-main>.forumpost, .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #region-main>.yui-layout-unit-right, .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #region-main>.yui-layout-unit-bottom, .yui-skin-sam .yui-layout.path-mod-chat-gui_ajax #chat-messages #region-main>.chat-message.course-theme, #region-main>.well {
+    min-height: 50rem;
+}
+
+/**
+ * Full-width changes
+ */
+
+#page.container-fluid {
+    padding: 0 !important;
+}
+
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.p-a-1 {
+    padding: 0 !important;
+}
+
+div#coursecontrols {
+    background-color: $breadcrumb-bg;
+    border-radius: 0;
+}
 
 /* FORDSON Default Styling */
 
-span.section-modchooser-link,
-a.add-sections {
+span.section-modchooser-link {
     background-color: $gray-lighter;
     padding: 10px;
     border-radius: $border-radius;
+}
+
+a.add-sections {
+    background-color: $micropdaccentcolor;
+    padding: 10px;
+    border-radius: 3px;
+    color:#000;
 }
 
 .teacherdashboard .list-group-item:first-child,
@@ -368,8 +548,8 @@ a.add-sections {
 
 .teacherdashboard .dashtitle,
 .studentdashboard .dashtitle {
-    padding: 5px;
-    background-color: $gray-lighter;
+    padding: .5rem;
+    background-color: $micropdaccentcolor;
 }
 
 .teacherdashboard .list-group-item:hover {
@@ -378,7 +558,8 @@ a.add-sections {
 
 .page-header-headings h1:before {
     color: $header-color;
-    display: inline-block;
+    display: block;
+    float: left;
     font-family: FontAwesome;
     margin-right: .5rem;
     text-align: center;
@@ -389,6 +570,10 @@ a.add-sections {
 div#fordsoncarousel h3,
 div#fordsoncarousel p {
     color: #fff;
+}
+
+div#fpslider {
+    background-color: $body-bg;
 }
 
 .card {
@@ -403,10 +588,38 @@ div#fordsoncarousel p {
     content: "";
 }
 
+.course-content .current::before {
+    content: initial;
+    border-left: initial;
+    position: initial;
+}
+
+.course-content li.current .content ul.section {
+    border-left: 3px solid $sectionnamehighlight;
+}
+
+.course-content ul.topics li.section .summary,
+.course-content ul.weeks li.section .summary,
+.course-content ul.topics li.section .content > .availabilityinfo,
+.course-content ul.weeks li.section .content > .availabilityinfo {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+div.availabilityinfo {
+    margin: 0 1rem;
+}
+
+h3.sectionname {
+    border-top: 7px solid $micropdaccentcolor;
+    padding: $spacer;
+    border-bottom: 1px dashed $gray-lighter;
+    background-color: $gray-lightest;
+}
+
 h3.sectionname:before {
     color: $brand-primary;
-    display: block;
-    float: left;
+    display: inline-block;
     font-family: FontAwesome;
     margin-right: .5rem;
     text-align: center;
@@ -414,21 +627,22 @@ h3.sectionname:before {
     content: $sectionicon;
 }
 
-h3.sectionname {
-    margin-bottom: 2rem;
+li.current h3.sectionname {
+    border-top: 12px solid $sectionnamehighlight;
+    background-color: rgba(216, 246, 255, 0.5);
 }
 
 .section_action_menu {
-    background-color: $gray-lighter;
+    background-color: $card-bg;
     padding: .5rem;
     border-radius: $border-radius;
 }
 
-.path-mod-assign [data-region="grading-navigation"] {
+.path-mod-assign [data-region="grading-navigation"], .path-mod-assign [data-region="grading-navigation-panel"] {
     background-color: #fff;
 }
 
-.forumpost {
+#region-main .forumpost {
     background-color: $gray-lightest;
     border-radius: 0;
     box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
@@ -436,25 +650,54 @@ h3.sectionname {
     margin-bottom: 2rem;
 }
 
-.forumpost .subject {
+#region-main .forumpost .subject {
     font-size: 1.5rem;
 }
 
-.forumpost .content .posting {
+#region-main .forumpost .content .posting {
     background-color: $card-bg;
     margin-bottom: 1rem;
     padding: 1rem;
     border: 1px solid $gray-lighter;
 }
 
+.que .formulation {
+    background-color: $card-bg;
+    border-color: $card-bg;
+    color: inherit;
+    box-shadow: 0 1px 7px 1px rgba(0, 0, 0, .3);
+}
+
+.que .qtext {
+    padding: 1rem;
+    background-color: $gray-lightest;
+    border-top: 2px solid #d2d2d2;
+    border-bottom: 2px solid #d2d2d2;
+}
+
+ul {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+li.activity.label {
+    border: initial;
+}
+
 .section li.activity {
+    padding: calc($spacer - 50%);
     border-bottom: 1px dashed $gray-lighter;
-    font-size: initial;
+    font-size: 16px;
 }
 
 .section li.activity:hover {
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     background-color: $activityhover;
+}
+
+.section li.activity.modtype_label.label:hover {
+    transition: none;
+    background-color: inherit;
 }
 
 .editing .section .activity:hover,
@@ -474,13 +717,23 @@ span.actions .icon {
 }
 
 span.instancename {
-    margin-left: 1rem;
+    margin-left: .5rem;
 }
 
-body#page-login-index {
-    background-image: url([[pix:theme|headerbg]]);
-    background-size: cover;
-    background-position: center;
+.m-t-2.m-b-1 {
+    background-color: $micropdaccentcolor;
+    padding: 1rem;
+    border-radius: 3px;
+    margin: 0!important;
+    border-top: 7px solid rgba(0,0,0,.2);
+    border-radius: 0;
+}
+
+.course-content .single-section .section-navigation.mdl-bottom {
+    padding: 1rem;
+    border-radius: 3px;
+    border-top: 7px solid rgba(0,0,0,.2);
+    border-radius: 0;
 }
 
 #nav-drawer::-webkit-scrollbar {
@@ -497,21 +750,12 @@ body#page-login-index {
     outline: 1px solid slategrey;
 }
 
-.block-region .card-block .card-title {
-    font-size: 1.143rem;
-    text-transform: uppercase;
-    font-weight: initial;
-    background-color: lighten($body-bg, 5%);
-    padding: 10px;
-    border-radius: $border-radius;
-}
-
 .course-content .current::before {
     border-left: $brand-primary 8px solid;
 }
 
 .bg-inverse {
-    color: $body-color !important;
+    color: $header-color !important;
     background-color: $footer-bg !important;
 }
 
@@ -521,6 +765,17 @@ body#page-login-index {
     .icon {
         color: $footer-link-color !important;
     }
+}
+
+#page-footer {
+    box-shadow: 0 0px 5px rgba(0,0,0,.3), 0 -10px 24px rgba(0,0,0,.1) inset;
+}
+
+.featuretext h4 {
+    border-top: 4px solid $sectionnamehighlight;
+    padding: $spacer;
+    border-bottom: 1px dashed $gray-lighter;
+    background-color: $gray-lightest;
 }
 
 //fixes for phone with main content area
@@ -537,6 +792,13 @@ body#page-login-index {
     .course-content ul.section {
         margin: 0;
     }
+    div#page-content {
+    margin: 0;
+    }
+    div#region-main-box {
+    margin: 0;
+    padding: 0;
+    }
     #page.container-fluid {
         padding: 0;
     }
@@ -550,25 +812,20 @@ body#page-login-index {
 }
 
 .path-course-view .completionprogress {
-    right: 1rem;
-    bottom: 1rem;
+    right: $spacer;
+    bottom: $spacer;
 }
 
-.m-t-2.m-b-1 {
-    background-color: darken($body-bg, 10%);
-    padding: 1rem;
-    border-radius: 3px;
-    margin: 0!important;
-    border-top: 7px solid rgba(0,0,0,.2);
-    border-radius: 0;
+li.section.hidden {
+    background-color: initial;
 }
 
-.course-content .single-section .section-navigation {
-    padding: 1rem;
-    border-radius: 3px;
-    margin: 0!important;
-    border-top: 7px solid rgba(0,0,0,.2);
-    border-radius: 0;
+li.section.hidden .content {
+    background-color: $gray-lighter !important;
+}
+
+li.section.hidden h3.sectionname {
+    border-top: 7px solid $gray-light !important;
 }
 
 /*Special thanks to Shaun Daubney (Theme Aardvark)
@@ -587,7 +844,7 @@ aside.block h3:before {
     padding-top: .3rem;
     text-align: center;
     width: 2rem;
-    border-radius: 2px;
+    border-radius: $border-radius;
 }
 
 .block_news_items h3:before {
@@ -657,6 +914,7 @@ aside.block h3:before {
     content: "\f02d";
 }
 
+
 .block_participants h3:before,
 .block_online_users h3:before {
     background-color: #92499e;
@@ -664,7 +922,7 @@ aside.block h3:before {
 }
 
 .block_html h3:before {
-    background-color: #eeeeee;
+    background-color: #eee;
 }
 
 .block_section_links h3:before {

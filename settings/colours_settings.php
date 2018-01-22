@@ -170,6 +170,14 @@ $page->add(new admin_setting_heading('theme_fordson_colours', get_string('colour
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    // icon background color
+    $name = 'theme_fordson/fpiconnavbg';
+    $title = get_string('fpiconnavbg', 'theme_fordson');
+    $description = get_string('fpiconnavbg_desc', 'theme_fordson');
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
     // icon rollover
     $name = 'theme_fordson/fpiconnavhover';
     $title = get_string('fpiconnavhover', 'theme_fordson');
@@ -185,7 +193,6 @@ $page->add(new admin_setting_heading('theme_fordson_colours', get_string('colour
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
-
 
     // layout card background
     $name = 'theme_fordson/cardbkg';

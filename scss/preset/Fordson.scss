@@ -35,46 +35,31 @@ $bootstrap-sass-asset-helper: false !default;
  * Use this space to customise variables, create mixins and override SCSS.
  */
 
-// Colors #f2ff47
-$fpstartwrap-bg: #7892a2 !default;
-$fpicon-bg: #ececec !default;
-$fpicon-hover: darken($fpicon-bg, 25%) !default;
-$fpicon-colour: #5a5a5a !default;
-$fpicon-width: 110px !default;
-$fpiconcreate-width: 150px !default;
-$headerimagepadding: 200px !default;
-$elearnerbkg: rgba(255, 255, 255, 0.9) !default;
-$marketing1image: #fff !default;
-$marketing2image: #fff !default;
-$marketing3image: #fff !default;
-$marketing4image: #fff !default;
-$marketing5image: #fff !default;
-$marketing6image: #fff !default;
-$markettextbg: rgba(255, 255, 255, 0.8) !default;
-$markettile-radius: 3px !default;
-
-$card-footer-bg: #ccc !default;
-
-$headerfade-bg: #272929 !default;
-$header-color: #fff !default;
-$headings-color: #3a3a3a !default;
-$body-color: #000 !default;
-
+// Colors
 $gray-dark : #373a3c !default;
 $gray : #55595c !default;
 $gray-light : #818a91 !default;
-$gray-lighter : #eceeef !default;
+$gray-lighter : #e0e0e0 !default;
 $gray-lightest : #f7f7f9 !default;
 $gray-base : #ccc !default;
-$brand-primary : #0a8e94 !default;
-$brand-success : #9ae674 !default;
+
+//$brand-primary : #407386 !default;
+$brand-primary : #499cbb !default;
+$brand-success : #77b300 !default;
 $brand-warning : #ff8800 !default;
-$brand-danger : #ff8b77 !default;
-$component-active-color: #fff !default;
-$component-active-bg : $brand-primary !default;
+$brand-danger : #ff4136 !default;
+$brand-inverse : $gray-dark !default;
+$headerfade-bg : #fff !default;
+$header-color : $brand-primary !default;
 $bg-inverse-link-color: $brand-primary !default;
 $footer-link-color: $bg-inverse-link-color !default;
-$drawer-bg: rgba(85, 118, 140, 0.7) !default;
+$sectionnamehighlight : #43d0f3 !default;
+$dpsaccentcolor: #44d4a6 !default;
+
+$fpstartwrap-bg : #fff !default;
+$fpicon-hover : #86b7b8 !default;
+$fpicon-bg : #ffc125 !default;
+$fpicon-colour : $gray-dark !default;
 
 // Spacing
 $spacer : 1rem !default;
@@ -82,80 +67,51 @@ $spacer-x: $spacer !default;
 $spacer-y: $spacer !default;
 $border-width: 1px !default;
 $border-radius: 3px !default;
+$gutterwidth: 2rem !default;
 
 // Body
-$body-bg : #cdd6d7 !default;
-$brand-inverse: $body-bg !default;
-$headericon: "\f02d" !default;
-$sectionicon: "\f07c" !default;
+$body-bg: #dae6e5 !default;
 $footer-bg: $body-bg !default;
+$drawer-bg: $body-bg !default;
 
 // Typography
-$font-family-sans-serif: "Open Sans","Helvetica Neue",Arial,sans-serif !default;
+$font-family-sans-serif: Open Sans,Helvetica Neue,Arial,sans-serif !default;
 $font-size-root: 14px !default;
+$headericon: "" !default;
+$sectionicon: "" !default;
 
 // Tables
 $table-bg : transparent !default;
-$table-bg-accent : transparent !default;
-$table-bg-hover : lighten($body-bg, 10%) !default;
+$table-bg-accent : #fafafa !default;
+$table-bg-hover : lighten($brand-primary, 55%) !default;
 $table-bg-active : $table-bg-hover !default;
-$table-border-width : $border-width !default;
-$table-border-color : $gray-lighter !default;
+$table-border-color : #f4f4f4 !default;
 
 // Dropdowns
 $dropdown-border-color : #e2e2e2 !default;
 $dropdown-link-color : rgba(0, 0, 0, .535) !default;
 
 // Navbar
-$navbar-light-color : #272929 !default;
-$navbar-light-hover-color : $brand-primary !default;
-$navbar-light-active-color : $brand-primary !default;
-$navbar-height : 50px !default;
+$navbar-light-color : #1e2527 !default;
 $navbarurl : #fff !default;
+$navbar-light-hover-color : darken($navbarurl, 15%) !default;
+$navbar-light-active-color : $navbarurl !default;
+
 $navbar-height : 50px !default;
 
 // Cards
-$card-border-color : rgba(238, 238, 238, 1) !default;
-$card-spacer-x : 1.25rem !default;
-$card-spacer-y : .75rem !default;
-$card-border-width : 0px !default;
 $card-border-radius : $border-radius !default;
-$card-border-radius-inner: $card-border-radius !default;
-$card-cap-bg : #f5f5f5 !default;
-$card-bg : #fff !default;
-$card-link-hover-color : #fff !default;
-$custommenu-bg: $card-bg !default;
+$card-border-color : rgba(238, 238, 238, 1) !default;
+$card-border-width : 1px !default;
 
 // Breadcrumbs
+$breadcrumb-bg : $headerfade-bg !default;
 $breadcrumb-padding : 0px 10px 0px 10px !default;
-$breadcrumb-divider : "/" !default;
-$breadcrumb-divider-rtl : "/" !default;
-$breadcrumb-padding-y : 10px !default;
-$breadcrumb-padding-x : 10px !default;
-$breadcrumb-bg : #fff !default;
-
-// Dropdown menu container and contents.
-$dropdown-min-width : 160px !default;
-$dropdown-padding-y : 5px !default;
-$dropdown-margin-top : 2px !default;
-$dropdown-bg : #fff !default;
-$dropdown-border-color : rgba(0, 0, 0, .15) !default;
-$dropdown-border-width : $border-width !default;
-$dropdown-divider-bg : #e5e5e5 !default;
-$dropdown-box-shadow : 0 6px 12px rgba(0, 0, 0, .175) !default;
-$dropdown-link-color : $gray-dark !default;
-$dropdown-link-hover-color : darken($gray-dark, 5%) !default;
-$dropdown-link-hover-bg : #f5f5f5 !default;
-$dropdown-link-active-color : $component-active-color !default;
-$dropdown-link-active-bg : $component-active-bg !default;
-$dropdown-link-disabled-color : $gray-light !default;
-$dropdown-item-padding-x : 20px !default;
-$dropdown-header-color : $gray-light !default;
-
+$breadcrumb-divider: "/" !default;
+$breadcrumb-divider-rtl: "/" !default;
 
 // Import everything.
 @import "moodle";
-
 
 /**
  * Navigation bar identity.
@@ -163,7 +119,7 @@ $dropdown-header-color : $gray-light !default;
 
 .navbar-light {
     background-color: $navbar-light-color;
-    border-bottom: $border-width solid #e5e5e5;
+    border-bottom: $border-width solid $gray-lighter;
     .container {
         padding-left: 0;
         padding-right: 0;
@@ -211,26 +167,30 @@ $dropdown-header-color : $gray-light !default;
     }
 }
 
-.teacherdash .btn, .enrollcodes .btn, .siteadminlink .btn {
+#nav-drawer .list-group-item {
+    background-color: initial;
+    border: 0;
+    border-radius: 0;
+}
+
+#nav-drawer a.list-group-item.list-group-item-action.font-weight-bold {
+    border-left: 10px solid rgba(0,0,0,.2);
     background-color: $brand-primary;
-    border-color: $brand-primary;
+    color:#fff;
+}
+
+[data-region="drawer"] {
+    padding: 20px 2px 20px 20px;
+}
+
+#nav-drawer .list-group-item-action:focus, .list-group-item-action:hover {
     color: #fff;
+    text-decoration: none;
+    background-color: $brand-primary !important;
 }
 
-.teacherdash .btn:hover, .enrollcodes .btn:hover, .siteadminlink .btn:hover {
-    background-color: $card-bg;
-    color: $gray-dark;
-}
-
-.tooltip.tooltip-bottom .tooltip-arrow, .tooltip.bs-tether-element-attached-top .tooltip-arrow {
-    border-bottom-color: $brand-primary;
-}
-
-.tooltip-inner {
-    background-color: $brand-primary;
-}
-.tooltip.tooltip-bottom, .tooltip.bs-tether-element-attached-top {
-    margin-top: 10px;
+nav.list-group {
+    background-color: #fff;
 }
 
 /**
@@ -238,7 +198,7 @@ $dropdown-header-color : $gray-light !default;
  */
 
 .userpicture {
-    border-radius: 10%;
+    border-radius: $border-radius;
 }
 
 
@@ -246,21 +206,9 @@ $dropdown-header-color : $gray-light !default;
  * For background in content areas.
  */
 
-#page.container-fluid {
-    padding: 0 (2 * $spacer);
-}
-
-#page-login-index #page.container-fluid {
-    padding: 0 !important;
-    .row {
-        margin: 0;
-    }
-}
-
 #block-region-side-pre {
     padding-left: 0;
 }
-
 
 /**
  * Dashboard styling.
@@ -277,15 +225,14 @@ $dropdown-header-color : $gray-light !default;
 [data-block="course_overview"] {
     -webkit-box-shadow: none;
     box-shadow: none;
-    border: 0px;
+    border: 0;
 }
-
 
 /**
  * Blocks.
  */
 
-.block-region .card {
+.block-region .card-block {
     .card-title {
         padding-bottom: ($spacer/2);
         font-size: 1.143rem;
@@ -293,7 +240,6 @@ $dropdown-header-color : $gray-light !default;
         text-transform: uppercase;
     }
 }
-
 
 /**
  * Navigation.
@@ -304,6 +250,17 @@ $dropdown-header-color : $gray-light !default;
     .block_tree .tree_item {
         margin: ($spacer/2) 0;
     }
+}
+
+.tooltip.tooltip-bottom .tooltip-arrow, .tooltip.bs-tether-element-attached-top .tooltip-arrow {
+    border-bottom-color: $brand-primary;
+}
+
+.tooltip-inner {
+    background-color: $brand-primary;
+}
+.tooltip.tooltip-bottom, .tooltip.bs-tether-element-attached-top {
+    margin-top: 10px;
 }
 
 /**
@@ -318,21 +275,77 @@ $dropdown-header-color : $gray-light !default;
     margin-top: 0;
 }
 
+/**
+ * Full-width changes
+ */
+
+#page.container-fluid {
+    padding: 0 !important;
+}
+#page .container-fluid {
+    padding: 0 !important;
+}
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.p-a-1 {
+    padding: 0 !important;
+}
+
+div#page-content {
+    padding: 0 $gutterwidth;
+}
+
+
+.headerbkg {
+    margin-top: 0px !important;
+    height: 0;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.pagelayout-course .headerbkg {
+    height: $headerimagepadding !important;
+}
+
+div#coursecontrols {
+    background-color: $breadcrumb-bg;
+    border-radius: 0;
+}
 
 /* FORDSON Default Styling */
 
-div#coursecontrols {
-    position: absolute;
-    top: -50px;
-    right: 40px;
-    padding: 7px 15px 4px 15px;
-    border-top: 5px solid $brand-primary;
-    background-color: $elearnerbkg;
-    border-radius: 10px 10px 0px 0px;
+#page-wrapper {
+    padding-bottom: 0;
 }
 
-.path-mod-assign [data-region="grading-navigation"] {
-    background-color: #fff;
+span.section-modchooser-link,
+a.add-sections {
+    background-color: $gray-base;
+    padding: 10px;
+    border-radius: $border-radius;
+}
+
+.teacherdashboard .list-group-item:first-child,
+.studentdashboard .list-group-item:first-child {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.teacherdashboard .dashtitle,
+.studentdashboard .dashtitle {
+    padding: .5rem;
+    background-color: $body-bg;
+}
+
+.teacherdashboard .list-group-item:hover {
+    background-color: $gray-lightest;
 }
 
 .page-header-headings h1:before {
@@ -351,14 +364,52 @@ div#fordsoncarousel p {
     color: #fff;
 }
 
-#page-header .headerfade {
-    border-radius: $border-radius;
+div#fpslider {
+    background-color: $body-bg;
+}
+
+.breadcrumb {
+    padding: .75rem 0rem;
+}
+
+.card {
+    border: 0;
+}
+
+#page-my-index .page-header-headings h1:before,
+#page-badges-mybadges .page-header-headings h1:before,
+#page-user-preferences .page-header-headings h1:before,
+#page-grade-report-overview-index .page-header-headings h1:before,
+#page-message-index .page-header-headings h1:before {
+    content: "";
+}
+
+.course-content .current::before {
+    content: initial;
+    border-left: initial;
+    position: initial;
+}
+
+.course-content li.current .content ul.section {
+    border-left: 3px solid $dpsaccentcolor;
+}
+
+.course-content ul.topics li.section .summary,
+.course-content ul.weeks li.section .summary,
+.course-content ul.topics li.section .content > .availabilityinfo,
+.course-content ul.weeks li.section .content > .availabilityinfo {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+h3.sectionname {
+    padding: $spacer;
+    border-bottom: 1px dashed $gray-lighter;
 }
 
 h3.sectionname:before {
     color: $brand-primary;
-    display: block;
-    float: left;
+    display: inline-block;
     font-family: FontAwesome;
     margin-right: .5rem;
     text-align: center;
@@ -366,27 +417,127 @@ h3.sectionname:before {
     content: $sectionicon;
 }
 
-@media screen and (min-width: 450px) {
-    div#learningcontent {
-        padding: 3rem;
-        background-color: $elearnerbkg;
-        border-radius: $spacer;
-    }
+li.current h3.sectionname {
+    border-top: 8px solid $dpsaccentcolor;
 }
 
-.headerbkg {
-    height: 100%;
-    width: 100%;
-    position: fixed !important;
+li.section.hidden {
+    background-color: initial;
 }
 
-#page-footer {
+li.section.hidden li.activity {
+    background-color: $gray-lighter !important;
+}
+
+li.section.hidden h3.sectionname {
+    border-top: 4px solid $gray !important;
+}
+
+.section_action_menu {
+    background-color: $card-bg;
+    padding: .5rem;
+    border-radius: $border-radius;
+}
+
+.path-mod-assign [data-region="grading-navigation"] {
+    background-color: #fff;
+}
+
+div#learningcontent {
     position: relative;
+    margin-top: 0;
+    background-color: $card-bg;
+    border: 1px solid $card-bg;
+    box-shadow: 0px -2px 8px 2px rgba(23, 32, 34, 0.6);
+}
+
+.pagelayout-course div#learningcontent {
+    margin-top: $headerimagepadding;
+}
+
+.forumpost {
+    border-radius: 0;
+    box-shadow: 0px 1px 2px 1px rgba(0,0,0,.1);
+    margin-bottom: 2rem;
+}
+
+.forumpost .header {
+    margin-bottom: 3px;
+    border-bottom: 1px solid $gray-lighter;
+    background-color: $gray-lightest;
+}
+
+.forumpost .options .commands {
+    margin-left: 0;
+    background-color: #f7f7f9;
+    border: 1px solid #e0e0e0;
+    padding: .25rem .5rem;
+    position: absolute;
+    bottom: -6px;
+    right: -6px;
+}
+
+.que .formulation {
+    background-color: $card-bg;
+    border: initial;
+    border-color: initial;
+    color: inherit;
+    border-radius: 0;
+    box-shadow: 0 1px 7px 1px rgba(115, 115, 115, 0.5);
+}
+
+.que {
+    margin: 0 auto 4rem auto;
+}
+
+.que .qtext {
+    padding: 1rem 1rem 0 1rem;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.que .ablock {
+    padding: 1rem;
+    margin: 0 0 .5rem 0;
+}
+
+.que .info {
+    background-color: $gray-lightest;
+    border: 1px solid $gray-lighter;
+    border-radius: 0;
+}
+
+div.match td {
+    padding: 1rem;
+    border-bottom: 1px solid $gray-lighter;
+}
+
+div.prompt {
+    font-weight: bold;
+}
+
+.course-content ul.topics li.section,
+.course-content ul.weeks li.section {
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+.course-content ul li.section.main {
+    border-bottom: 0;
+    margin-top: 0;
+}
+
+ul {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+li.activity.label {
+    border: initial;
 }
 
 .section li.activity {
-    padding: $spacer;
-    border-radius: 5px;
+    padding: calc($spacer - 50%);
     border-bottom: 1px dashed $gray-lighter;
     font-size: 16px;
 }
@@ -394,6 +545,11 @@ h3.sectionname:before {
 .section li.activity:hover {
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     background-color: $activityhover;
+}
+
+.section li.activity.modtype_label.label:hover {
+    transition: none;
+    background-color: inherit;
 }
 
 .editing .section .activity:hover,
@@ -416,15 +572,10 @@ span.instancename {
     margin-left: 1rem;
 }
 
-.forumpost {
-    background-color: darken($card-bg, 3%);
-}
-
-
-body#page-login-index {
-    background-image: url([[pix:theme|headerbg]]);
-    background-size: cover;
-    background-position: center;
+.m-t-2.m-b-1 {
+    background-color: $body-bg;
+    padding: 1rem;
+    border-radius: 3px;
 }
 
 #nav-drawer::-webkit-scrollbar {
@@ -437,25 +588,21 @@ body#page-login-index {
 }
 
 #nav-drawer::-webkit-scrollbar-thumb {
-    background-color: lighten($brand-primary, 10%);
+    background-color: darken($brand-primary, 15%);
     outline: 1px solid slategrey;
 }
 
-.btn-success {
-    color: initial;
-}
-
-div#fpslider {
-    background-color: lighten($fpstartwrap-bg, 15%);
+.block-region .card-block .card-title {
+    font-size: 1.143rem;
+    text-transform: uppercase;
+    font-weight: initial;
+    background-color: lighten($body-bg, 5%);
+    padding: 10px;
+    border-radius: $border-radius;
 }
 
 .course-content .current::before {
-    content: "";
     border-left: $brand-primary 8px solid;
-    position: absolute;
-    left: -15px;
-    top: 0;
-    bottom: 0;
 }
 
 .bg-inverse {
@@ -471,10 +618,20 @@ div#fpslider {
     }
 }
 
+.featuretext h4 {
+    border-top: 4px solid $sectionnamehighlight;
+    padding: $spacer;
+    border-bottom: 1px dashed $gray-lighter;
+    background-color: $gray-lightest;
+}
+
 //fixes for phone with main content area
 @media screen and (max-width: 576px) {
+    div#page-content {
+        padding: 0;
+    }
     #page-course-view-topics .course-content ul.topics li.section {
-        padding: 0px;
+        padding: 2rem 0;
     }
     .card-block {
         padding: .5rem;
@@ -519,6 +676,10 @@ div#fpslider {
     border-radius: 0;
 }
 
+.course-content .section-summary .section-title {
+    margin: 0 0 10px 0;
+}
+
 /*Special thanks to Shaun Daubney (Theme Aardvark)
 for the colored icons in the blocks.
  */
@@ -530,7 +691,6 @@ aside.block h3:before {
     font-family: FontAwesome;
     font-size: 1rem;
     height: 1.6rem;
-    margin-left: -.5rem;
     margin-right: .5rem;
     margin-top: -.2rem;
     padding-top: .3rem;
@@ -562,6 +722,11 @@ aside.block h3:before {
 
 .block_completionstatus h3:before,
 .block_selfcompletion h3:before {
+    background-color: #76b900;
+    content: "\f0e4";
+}
+
+.block_lp h3:before {
     background-color: #76b900;
     content: "\f0e4";
 }
@@ -601,6 +766,7 @@ aside.block h3:before {
     content: "\f02d";
 }
 
+
 .block_participants h3:before,
 .block_online_users h3:before {
     background-color: #92499e;
@@ -608,7 +774,7 @@ aside.block h3:before {
 }
 
 .block_html h3:before {
-    background-color: #eeeeee;
+    background-color: #eee;
 }
 
 .block_section_links h3:before {
@@ -700,6 +866,11 @@ aside.block_comments h3:before {
 
 .block_course_badges h3:before {
     background-color: #29a294;
+    content: "\f091";
+}
+
+.block_badges h3:before {
+    background-color: #69cc7a;
     content: "\f091";
 }
 

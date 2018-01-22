@@ -36,6 +36,15 @@ $string['iconnavheading'] = 'Icon Navigation';
 $string['customloginheading'] = 'Custom Login Page';
 $string['iconnavheadingsub'] = 'Create Buttons with Icons for use on the homepage.  Links can go anywhere.';
 $string['section_mods'] = 'Modules:';
+$string['nomycourses'] = 'You are not enrolled in any courses.';
+$string['coursehome'] = 'Home';
+$string['navdrawerbtn'] = 'Navigation';
+$string['region-fp-a'] = 'Column A';
+$string['region-fp-b'] = 'Column B';
+$string['region-fp-c'] = 'Column C';
+$string['showblockregions'] = 'Show Additional Frontpage Block Regions';
+$string['showblockregions_desc'] = 'Turn on three more block regions on the site frontpage.  These appear just below the icon navigation bar.';
+
 
 // Presets Settings.
 $string['presets_settings'] = 'Presets';
@@ -81,10 +90,10 @@ $string['fpiconnavbg'] = 'Homepage Icon Button Background Colour';
 $string['fpiconnavbg_desc'] = 'Colour of the icon button background.';
 $string['fpiconnavhover'] = 'Homepage Icon Button Hover Background';
 $string['fpiconnavhover_desc'] = 'Homepage icon navigation button background colour when hovering.';
-$string['cardbkg'] = 'Content Background Colour';
-$string['cardbkg_desc'] = 'Content background colour for course content and blocks.';
 $string['drawerbkg'] = 'Side Drawer Background Colour';
 $string['drawerbkg_desc'] = 'Side Drawer background colour for the menu on the left side of the page.';
+$string['cardbkg'] = 'Content Background Colour';
+$string['cardbkg_desc'] = 'Content background colour for course content and blocks.';
 $string['bodybackground'] = 'Body Background Colour';
 $string['bodybackground_desc'] = 'The main colour to use for the background.';
 $string['footerbg'] = 'Footer Background Colour';
@@ -228,9 +237,9 @@ $string['blockwidthfordson_desc'] = 'Adjust the width of the block column.';
 $string['fpsignup'] = 'Sign In';
 $string['showloginform'] = 'Show Login Form';
 $string['showloginform_desc'] = 'Uncheck this to hide the custom login form on the homepage for logged out users.';
-$string['backtotop'] = 'Back to Top';
-$string['showbacktotop'] = 'Show Back to Top Button';
-$string['showbacktotop_desc'] = 'Uncheck this to hide the Back to Top button in the lower right of the page.';
+$string['backtotop'] = 'Back to Top and Scrollspy';
+$string['showbacktotop'] = 'Show back-to-top button and activate scrollspy.';
+$string['showbacktotop_desc'] = 'Turn on back-to-top button on long pages.  Scrollspy will return a teacher to their position in the course page when turning editing on and off. These are usability improvements for users.';
 $string['activityiconsize'] = 'Activity Icon Size';
 $string['activityiconsize_desc'] = 'Adjust the size of the activity icons used in courses.';
 $string['enablecategoryicon'] = 'Category Display Icons';
@@ -256,7 +265,7 @@ $string['badges_desc'] = 'Award your students';
 $string['coursemanage'] = 'Course Settings';
 $string['coursemanage_desc'] = 'Manage your entire course';
 $string['coursemanagementbutton'] = 'Course Management';
-$string['studentdashbutton'] = 'Student Dashboard';
+$string['studentdashbutton'] = 'Course Dashboard';
 $string['courseinfo'] = 'Course Description';
 $string['coursestaff'] = 'Course Teachers';
 $string['activitylinkstitle'] = 'Activities';
@@ -268,6 +277,7 @@ $string['mygradestext'] = 'My Grades';
 // Menu Settings
 $string['menusettings'] = 'Menu settings';
 $string['thiscourse'] = 'This Course';
+$string['courseactivities'] = 'Course Activites';
 $string['headerimagepadding'] = 'Header Image Height';
 $string['headerimagepadding_desc'] = 'Control the padding and height of the header image for courses.';
 $string['activitymenu'] = 'Show Grouped Activities Menu';
@@ -290,47 +300,60 @@ $string['showstudentgrades_desc'] = 'Show student gradebook link in student dash
 $string['showcourseadminstudents'] = 'Show Student Course Admin Cog';
 $string['showcourseadminstudents_desc'] = 'This displays the course settings to students.  This is needed if you want to allow them to unenroll from courses.';
 
-$string['setting_removenodesheading'] = 'Customize the Nav Drawer';
-$string['setting_removenodesperformancehint'] = 'Technically, this is done by setting the Menu Item\'s showinflatnavigation attribute to false. Thus, the node will only be hidden from the nav drawer, but it will remain in the navigation tree and can still be accessed by other parts of Moodle.';
-$string['setting_removecalendarnode'] = 'Remove "Calendar" Menu Item';
-$string['setting_removecalendarnode_desc'] = 'Enabling this setting will remove the "Calendar" Menu Item from Boost\'s nav drawer.';
-$string['setting_removehomenode'] = 'Remove "Home" Menu Item';
-$string['setting_removehomenode_desc'] = 'Enabling this setting will remove the "Home" Menu Item from Boost\'s nav drawer.';
-$string['setting_removesecondhomenode'] = 'Remove second "Home" or "Dashboard" Menu Item';
-$string['setting_removesecondhomenode_desc'] = 'Enabling this setting will remove the "Home" or "Dashboard" Menu Item, depending on what the user chose not to be his home page, from Boost\'s nav drawer.';
-$string['setting_removedashboardnode'] = 'Remove "Dashboard" Menu Item';
-$string['setting_removedashboardnode_desc'] = 'Enabling this setting will remove the "Dashboard" Menu Item from Boost\'s nav drawer.';
-$string['setting_removemycoursesnode'] = 'Remove "My courses" Menu Item';
-$string['setting_removemycoursesnode_desc'] = 'Enabling this setting will remove the "My courses" Menu Item from Boost\'s nav drawer.';
-$string['setting_removemycoursesnodeperformancehint'] = 'Please note: If you enable this setting and have also enabled the setting <a href="/admin/search.php?query=navshowmycoursecategories">navshowmycoursecategories</a>, removing the "My courses" node takes more time and you should consider disabling the navshowmycoursecategories setting.';
-$string['setting_removeprivatefilesnode'] = 'Remove "Private files" Menu Item';
-$string['setting_removeprivatefilesnode_desc'] = 'Enabling this setting will remove the "Private files" Menu Item from Boost\'s nav drawer.';
-$string['adddrawermenu'] = 'Add Custom Items to the Navigation Drawer';
-$string['adddrawermenu_desc'] = 'You can add custom items to the Navigation Menu using the following syntax.
-Identical to that used in the custom menu at theme settings.
-<br>
-Example:
-<br>
-Moodle community|http://moodle.org/support
-<br>
-Moodle company|http://moodle.com';
-$string['toggledrawermenu'] = 'Activate Custom Navigation Drawer';
-$string['toggledrawermenu_desc'] = 'Determine where these settings will be applied.';
-$string['activateonhomepage'] = 'Activate on Homepage';
-$string['activateoncoursepage'] = 'Activate on Coursepage';
-$string['activateonboth'] = 'Activate on All Pages';
+$string['setting_navdrawersettings'] = 'Nav Drawer Settings';
+$string['setting_navdrawersettings_desc'] = 'Enable the Boost nav drawer feature.  Fordson does not require the nav drawer for navigation.  We have replaced it with a Jump-to-section dropdown. You may re-enable the nav drawer below.';
+$string['shownavdrawer'] = 'Show Navdrawer';
+$string['shownavdrawer_desc'] = 'Fordson has eliminated the need for the nav drawer by utilizing a drop-down menu for in-course navigation.  If you must use the nav drawer you can check this box to re-enable it.';
 
-$string['mycoursesinfo'] = 'Dynamic Enrolled Courses List';
-$string['mycoursesinfodesc'] = 'Displays a dynamic list of enrolled courses to the user in the top navigation bar.';
+$string['mycoursesinfo'] = 'Dynamic Enrolled Courses List & Course Navigation Menus';
+$string['mycoursesinfodesc'] = 'Displays a dynamic list of enrolled courses to the user in the top navigation bar.  This will also control the course navigation dropdown for each individual course.';
 $string['displaymycourses'] = 'Display enrolled courses';
 $string['displaymycoursesdesc'] = 'Display enrolled courses for users in the top navigation bar.';
+$string['displaythiscourse'] = 'Display This Course Menu';
+$string['displaythiscoursedesc'] = 'Display jump-to-section in course menu for users in the top navigation bar.  This contains menu items previously found in the nav drawer.';
 
 $string['mycoursetitle'] = 'Terminology';
 $string['mycoursetitledesc'] = 'Change the terminology for the "My Courses" link in the dropdown menu';
+
 $string['mycourses'] = 'My Courses';
 $string['myunits'] = 'My Units';
 $string['mymodules'] = 'My Modules';
 $string['myclasses'] = 'My Classes';
+$string['mytraining'] = 'My Training';
+$string['mypd'] = 'My PD';
+$string['mycred'] = 'My Credentials';
+$string['myplans'] = 'My Plans';
+$string['mycomp'] = 'My Competencies';
+$string['myprograms'] = 'My Programs';
+$string['mylectures'] = 'My Lectures';
+$string['mylessons'] = 'My Lessons';
+
+$string['homemycourses'] = 'Course Home';
+$string['homemyunits'] = 'Unit Home';
+$string['homemymodules'] = 'Module Home';
+$string['homemyclasses'] = 'Class Home';
+$string['homemytraining'] = 'Training Home';
+$string['homemypd'] = 'PD Home';
+$string['homemycred'] = 'Credential Home';
+$string['homemyplans'] = 'Plan Home';
+$string['homemycomp'] = 'Competency Home';
+$string['homemyprograms'] = 'Program Home';
+$string['homemylectures'] = 'Lecture Home';
+$string['homemylessons'] = 'Lesson Home';
+
+$string['thismycourses'] = 'This Course';
+$string['thismyunits'] = 'This Unit';
+$string['thismymodules'] = 'This Module';
+$string['thismyclasses'] = 'This Class';
+$string['thismytraining'] = 'This Training';
+$string['thismypd'] = 'This PD';
+$string['thismycred'] = 'This Credential';
+$string['thismyplans'] = 'This Plan';
+$string['thismycomp'] = 'This Competency';
+$string['thismyprograms'] = 'This Program';
+$string['thismylectures'] = 'This Lecture';
+$string['thismylessons'] = 'This Lesson';
+
 $string['noenrolments'] = 'You have no current enrolments';
 $string['siteadminquicklink'] = 'Site Administration';
 $string['shownavclosed'] = 'Nav Drawer Closed by Default';
@@ -345,6 +368,7 @@ $string['navicon5'] = 'Homepage Icon Five';
 $string['navicon6'] = 'Homepage Icon Six';
 $string['navicon7'] = 'Homepage Icon Seven';
 $string['navicon8'] = 'Homepage Icon Eight';
+
 // Custom Login Icon Nav
 $string['loginnavicon1'] = 'Icon One';
 $string['loginnavicon2'] = 'Icon Two';
@@ -372,6 +396,8 @@ $string['showcustomlogin'] = 'Turn on Custom Login';
 $string['showcustomlogin_desc'] = 'You must turn this on to activate the custom settings below.';
 $string['logintopimage'] = 'Login Page Banner Image';
 $string['logintopimage_desc'] = 'This image appears on the login page to the right of the login form.  This is ideal for a logo or banner with a transparent background.';
+$string['fploginform'] = 'Login Form Color';
+$string['fploginform_desc'] = 'Background color of the login form on the custom homepage.';
 
 
 //FP Icon Nav default text for buttons

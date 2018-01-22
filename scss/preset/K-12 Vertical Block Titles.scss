@@ -49,8 +49,9 @@ $brand-warning : #ff8800 !default;
 $brand-danger : #ff4136 !default;
 $brand-inverse : $gray-dark !default;
 $navbar-height : 50px !default;
-$drawer-bg : rgba(128, 143, 154, 0.9) !default;
 $headerfade-bg : #025169 !default;
+$bg-inverse-link-color: $brand-primary !default;
+$footer-link-color: $bg-inverse-link-color !default;
 
 // Spacing
 $spacer : 1rem !default;
@@ -62,6 +63,8 @@ $border-radius: 3px !default;
 // Body
 $body-bg: #dae6e5 !default;
 $footer-bg: $body-bg !default;
+$custommenu-bg: $body-bg !default;
+$drawer-bg: rgba(128, 143, 154, 0.9) !default;
 
 // Typography
 $font-family-sans-serif: "Open Sans","Helvetica Neue",Arial,sans-serif !default;
@@ -146,15 +149,8 @@ $breadcrumb-divider-rtl: "/" !default;
     }
 
     .navbar-nav {
-        .nav-item + .nav-item {
-            margin-left: $spacer * 2;
-        }
         .nav-link {
-            font-size: $font-size-sm;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             color: $navbarurl;
-            Font-weight: bold;
         }
         .nav-link:hover {
             color: darken($navbarurl, 20%);
@@ -162,6 +158,27 @@ $breadcrumb-divider-rtl: "/" !default;
     }
 }
 
+.teacherdash .btn, .enrollcodes .btn, .siteadminlink .btn {
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+    color: #fff;
+}
+
+.teacherdash .btn:hover, .enrollcodes .btn:hover, .siteadminlink .btn:hover {
+    background-color: $card-bg;
+    color: $gray-dark;
+}
+
+.tooltip.tooltip-bottom .tooltip-arrow, .tooltip.bs-tether-element-attached-top .tooltip-arrow {
+    border-bottom-color: $brand-primary;
+}
+
+.tooltip-inner {
+    background-color: $brand-primary;
+}
+.tooltip.tooltip-bottom, .tooltip.bs-tether-element-attached-top {
+    margin-top: 10px;
+}
 
 /**
  * User picture.
@@ -178,6 +195,13 @@ $breadcrumb-divider-rtl: "/" !default;
 
 #page.container-fluid {
     padding: 0 (2 * $spacer);
+}
+
+#page-login-index #page.container-fluid {
+    padding: 0 !important;
+    .row {
+        margin: 0;
+    }
 }
 
 #block-region-side-pre {
@@ -375,6 +399,11 @@ div#learningcontent {
     background-color: $activityhover;
 }
 
+.section li.activity.modtype_label.label:hover {
+    transition: none;
+    background-color: inherit;
+}
+
 .editing .section .activity:hover,
 .editing .section .activity.action-menu-shown {
     background-color: $activityhover;
@@ -458,11 +487,26 @@ body#page-login-index {
 }
 
 .path-course-view .completionprogress {
-    position: absolute;
-    right: $spacer;
+    right: 1rem;
+    bottom: 1rem;
 }
 
+.m-t-2.m-b-1 {
+    background-color: darken($body-bg, 10%);
+    padding: 1rem;
+    border-radius: 3px;
+    margin: 0!important;
+    border-top: 7px solid rgba(0,0,0,.2);
+    border-radius: 0;
+}
 
+.course-content .single-section .section-navigation {
+    padding: 1rem;
+    border-radius: 3px;
+    margin: 0!important;
+    border-top: 7px solid rgba(0,0,0,.2);
+    border-radius: 0;
+}
 
 /**
  * Blocks go Vertical thanks to Mary Evans and originally Morecandy

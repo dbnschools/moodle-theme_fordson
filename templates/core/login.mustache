@@ -96,6 +96,7 @@
 
 <div class="row signin">
     <div class="col-xl-3 push-xl-1 col-md-4">
+    <div class="fpsignup">
         <div class="card-title text-xs-center">
             {{#logourl}}
                 <h2><img src="{{logourl}}" title="{{sitename}}" alt="{{sitename}}"/></h2>
@@ -112,7 +113,6 @@
                 </div>
             {{/error}}
             <div class="signinform">
-            <div class="fpsignup">
                         <h3>{{#str}}fpsignup, theme_fordson{{/str}}</h3>
                         <form class="m-t-1" action="{{{ config.wwwroot }}}/login/index.php" method="POST" role="form">
                             <label for="username">
@@ -166,7 +166,7 @@
                             </div>
                         {{/canloginasguest}}
             </div>
-            </div>
+    </div>
     </div>
 
     <div class="col-xl-7 push-xl-1 col-md-8">

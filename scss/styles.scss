@@ -9,6 +9,7 @@ $fpicon-bg: darken($fpicon-hover, 10%) !default;
 $fpicon-colour: #026C87 !default;
 $fpicon-width: 100px !default;
 $fpiconcreate-width: 150px !default;
+$fploginform: rgba(255, 255, 255, 0.9) !default;
 $headerimagepadding: 275px !default;
 $courseboxheight: 250px !default;
 $marketing1image: #fff !default;
@@ -39,6 +40,8 @@ $activityhover: #fff6ae !default;
 $gutterwidth: 6rem !default;
 $bg-inverse-link-color: $brand-primary !default;
 $footer-link-color: $bg-inverse-link-color !default;
+$calendartoday: #fbffba !default;
+$custommenu-bg: #fff !default;
 
 /**
 * Layout Header
@@ -51,8 +54,6 @@ $footer-link-color: $bg-inverse-link-color !default;
 
 #page-header .headerfade {
     background: $headerfade-bg;
-    border-left: 1px solid $card-bg;
-    border-right: 1px solid $card-bg;
 }
 
 @media screen and (min-width: 992px) {
@@ -131,7 +132,7 @@ body#page-login-index, body#page-login-signup{
 
 .fpsignup {
     border-radius: $border-radius;
-    background-color: $gray-lightest;
+    background-color: $fploginform;
     padding: $spacer;
     box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
     border: 1px solid $card-bg;
@@ -245,9 +246,31 @@ div#fordsonlogin {
 }
 */
 
+/* Editing Block Columns */
+.editing aside#block-region-fp-a {
+    border: 2px dashed $gray-lighter;
+    min-height: 2rem;
+}
+.editing aside#block-region-fp-b {
+    border: 2px dashed $gray-lighter;
+    min-height: 2rem;
+}
+.editing aside#block-region-fp-c {
+    border: 2px dashed $gray-lighter;
+    min-height: 2rem;
+}
+.editing aside#block-region-side-pre {
+    border: 2px dashed $gray-lighter;
+    min-height: 2rem;
+}
 
 
 /* Teacher Dashboard */
+
+.modal-dialog {
+    max-width: 1200px;
+    margin: 30px auto;
+}
 
 div#coursecontrols {
     position: absolute;
@@ -307,6 +330,8 @@ div#coursecontrols {
 .editcogbutton {
     float: right;
     border-radius: $border-radius;
+    margin-left: .25rem;
+    padding: 0 .25rem;
 }
 
 .enrollcodebutton {
@@ -316,19 +341,12 @@ div#coursecontrols {
     border-radius: $border-radius;
 }
 
-.teacherdashbutton:hover,
-.thiscoursebutton:hover,
-.enrollcodebutton:hover,
-.editcogbutton:hover {
-    background-color: darken($card-bg, 5%);
-}
-
 @media screen and (max-width: 576px) {
-    div#coursecontrols {
-        border-radius: 0;
-    }
-    .enrollcodebutton {
+    .enrollcodes.nav-item.nav-link {
         display: none;
+    }
+    .navbar .container-fluid {
+        padding: 0;
     }
 }
 
@@ -518,7 +536,6 @@ div#fpslider {
 
 form#enrolform_easy {
     text-align: center;
-    padding: 20px 0px;
 }
 
 form#enrolform_easy .input-group-addon.qr-button {
@@ -810,6 +827,10 @@ ul.teacherscourseview {
 * TIDY UP 
 **/
 
+#page-mod-quiz-attempt .submitbtns, #page-mod-quiz-review .submitbtns {
+    padding-bottom: 2rem;
+}
+
 #page-badges-mybadges .fpwonderbox {
     display: none;
 }
@@ -861,7 +882,69 @@ ul.teacherscourseview {
     overflow: auto;
 }
 
-//lesson progressbar fix
+.coursecontrols {
+    float: left;
+    padding-right: $spacer;
+}
+
+.coursecontrols .nav-item.nav-link {
+    padding: 0;
+}
+
+.editingbutton {
+    float: left;
+    margin: 0 .25rem;
+}
+
+.navbar-nav .coursecontrols .nav-item + .nav-item {
+    margin-left: .25rem;
+}
+
+#nav-drawer.closed {
+    left: -($drawer-width + $drawer-offscreen-gutter);
+}
+button.drawer {
+    float: left;
+    margin-right: .25rem;
+}
+
+.teacherdash .btn, .enrollcodes .btn, .siteadminlink .btn {
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+    color: $navbarurl;
+}
+
+.teacherdash .btn:hover, .enrollcodes .btn:hover, .siteadminlink .btn:hover {
+    background-color: $card-bg;
+    color: $gray-dark;
+}
+
+#page-header .card {margin-bottom: 0;}
+
+.custommenu {
+    text-align: center;
+}
+
+.custommenucontainer {
+    display: inline-block;
+    background-color: $custommenu-bg;
+    border-radius: 0 0 .5rem .5rem;
+    padding: 0 1rem;
+}
+
+.custommenucontainer .dropdown-menu {
+    margin-top: 0;
+}
+
+// Calendar.
+.today {
+    background-color: $calendartoday;
+}
+.maincalendar .calendarmonth td, .maincalendar .calendarmonth th {
+    border: 1px solid #e6e6e6;
+}
+
+// Lesson progressbar fix
 .path-mod-lesson .progress_bar_completed {
     background-color: $brand-success;
     text-align: right;
@@ -869,20 +952,34 @@ ul.teacherscourseview {
     color: #fff;
 }
 
-//Fix for collapsed topic course format
+// Lesson multiple choice fixes.
+.path-mod-lesson label.form-check-label input[type="radio"] {
+    float: left;
+    margin-right: 1em;
+    margin-top: .25rem;
+}
+
+.path-mod-lesson label.form-check-label p {
+    display: block;
+    margin-left: 2rem;
+}
+
+// Course Completion Image fix.
+[data-region="coursecompetencyactivities"] .list-inline-item img {
+width: $activityiconsize;
+}
+
+// Fix for collapsed topic course format
 body.format-topcoll h3.sectionname:before {
     display: none;
 }
 
-
 /* H5P regression fix for editor https://moodle.org/mod/forum/discuss.php?d=347602#p1402801 */
-
 @media (min-width:544px) {
     .form-inline .form-control-static {
         display: block!important;
     }
 }
-
 /* End H5P */
 
 #back-to-top {
@@ -960,4 +1057,16 @@ li.section.hidden {
 
 .course-content .section-summary {
     border: 0;
+}
+
+// Lesson Module multiple choice fixes.
+.path-mod-lesson label.form-check-label input[type="radio"] {
+    float: left;
+    margin-right: 1em;
+    margin-top: .25rem;
+}
+
+.path-mod-lesson label.form-check-label p {
+    display: block;
+    margin-left: 2rem;
 }
