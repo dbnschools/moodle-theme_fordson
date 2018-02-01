@@ -23,14 +23,17 @@ Documentation can be found here: https://goo.gl/oUczeD
 # Install from Github
 Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration.
 
-## Fordson Moodle 34 1.7
+## Fordson Moodle 34 version 1.7
 * New navigation options in top navbar: Nav Drawer, Site Admin, Course Management, Student Dashboard, Course Editing Button, My Courses dropdown, This Course dropdown, Easy Enrollment Course Codes (When plugin is activated).
+* Removed! -> Navdrawer Customizations have been removed.  We provided the ability to disable the nav drawer if needed and utilize our new topnav bar menus.  To customize the navdrawer please use this plugin:  https://moodle.org/plugins/local_boostnavigation and this plugin to add new menu items:  https://github.com/cescobedo/moodle-local_navigation .  Moving forward for sustainability and less issues we thought it best to remove these.  
+A future version of Fordson may open up new possibilities to fully customize what appears in the nav drawer such as profile info, custom textbox, course nav, site nav, and other ideas we have to more fully utilize and provide valuable information to users.  The first step was removing added functionality not in core which is what we have done in this release.
 * Course Edit Button (Turn editing on) is now in top nav drawer.  It is also location aware and will return the teacher to the exact place the button was pressed.  This saves a lot of scrolling up and down a page when turning editing on.
 * Course Management and Student Dashboard will now be presented in modal boxes from anywhere in the course directly from the top nav bar.  
 * 3 new block regions on Site Frontpage.
-* New navigation option for My Courses and This Course.  This Course displays section names.
+* New navigation option for My Courses and This Course.  This Course displays section names and items found in the nav drawer.  
 * New color chooser for custom login form.
 * New default preset named Fordson.
+* Add a Block is now displayed when editing is turned on as it was prior to Boost.  It is located in the sidebar and makes adding blocks easier.
 * Theme enhancement discussion: https://moodle.org/mod/forum/discuss.php?d=363298 
 
 

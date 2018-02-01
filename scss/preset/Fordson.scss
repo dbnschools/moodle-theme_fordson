@@ -39,11 +39,10 @@ $bootstrap-sass-asset-helper: false !default;
 $gray-dark : #373a3c !default;
 $gray : #55595c !default;
 $gray-light : #818a91 !default;
-$gray-lighter : #e0e0e0 !default;
+$gray-lighter : #d0d0d0 !default;
 $gray-lightest : #f7f7f9 !default;
 $gray-base : #ccc !default;
 
-//$brand-primary : #407386 !default;
 $brand-primary : #499cbb !default;
 $brand-success : #77b300 !default;
 $brand-warning : #ff8800 !default;
@@ -55,6 +54,9 @@ $bg-inverse-link-color: $brand-primary !default;
 $footer-link-color: $bg-inverse-link-color !default;
 $sectionnamehighlight : #43d0f3 !default;
 $dpsaccentcolor: #44d4a6 !default;
+//$sectionbkg: #f5f9f7 !default;
+$sectionbkg: #dae6e5 !default;
+$sectionactivitybkg: #fdfdfd !default;
 
 $fpstartwrap-bg : #fff !default;
 $fpicon-hover : #86b7b8 !default;
@@ -325,9 +327,18 @@ div#coursecontrols {
     padding-bottom: 0;
 }
 
-span.section-modchooser-link,
+.section-modchooser {
+    padding: 1rem;
+}
+
+span.section-modchooser-link{
+    background-color: $sectionactivitybkg;
+    padding: 10px;
+    border-radius: $border-radius;
+}
+
 a.add-sections {
-    background-color: $gray-base;
+    background-color: $sectionbkg;
     padding: 10px;
     border-radius: $border-radius;
 }
@@ -391,7 +402,7 @@ div#fpslider {
 }
 
 .course-content li.current .content ul.section {
-    border-left: 3px solid $dpsaccentcolor;
+    border-left: 6px solid $dpsaccentcolor;
 }
 
 .course-content ul.topics li.section .summary,
@@ -400,15 +411,21 @@ div#fpslider {
 .course-content ul.weeks li.section .content > .availabilityinfo {
     margin-left: 25px;
     margin-right: 25px;
+    margin: 1rem;
 }
 
 h3.sectionname {
+    color: $card-bg;
     padding: $spacer;
-    border-bottom: 1px dashed $gray-lighter;
+    background-color: $brand-primary;
+}
+
+h3.sectionname a {
+    color: $card-bg;
 }
 
 h3.sectionname:before {
-    color: $brand-primary;
+    color: $card-bg;
     display: inline-block;
     font-family: FontAwesome;
     margin-right: .5rem;
@@ -417,30 +434,64 @@ h3.sectionname:before {
     content: $sectionicon;
 }
 
+.course-content ul.topics li.section .content,
+.course-content ul.weeks li.section .content {
+    background-color: $sectionbkg;
+    border: 1px solid $gray-lighter;
+    margin-top: 2rem;
+    padding-top: 0;
+}
+
+.course-content ul li.section.main {
+    border-bottom: 0;
+    margin-top: 0;
+}
+
 li.current h3.sectionname {
-    border-top: 8px solid $dpsaccentcolor;
+    //border-top: 8px solid $dpsaccentcolor;
+    background-color: $dpsaccentcolor;
 }
 
 li.section.hidden {
     background-color: initial;
 }
 
-li.section.hidden li.activity {
-    background-color: $gray-lighter !important;
+.course-content ul li.section.hidden .content {
+    background-color: $gray-lighter;
 }
 
 li.section.hidden h3.sectionname {
-    border-top: 4px solid $gray !important;
+    //border-top: 8px solid $gray !important;
+    background-color: $gray;
+}
+
+.course-content ul.section {
+    margin: 0;
+    padding: 1rem;
+    background-color: $sectionactivitybkg;
+}
+
+.course-content .hidden ul.section {
+    background-color: $gray-lighter;
 }
 
 .section_action_menu {
-    background-color: $card-bg;
-    padding: .5rem;
-    border-radius: $border-radius;
+    font-size: 1.25rem;
+    line-height: 1rem;
 }
 
 .path-mod-assign [data-region="grading-navigation"] {
     background-color: #fff;
+}
+
+.box.branchbuttoncontainer {
+    background-color: $brand-primary;
+    display: inline-block;
+    padding: 0 1rem;
+}
+
+div#changenumsections {
+    margin-top: 3rem;
 }
 
 div#learningcontent {
@@ -514,17 +565,6 @@ div.match td {
 
 div.prompt {
     font-weight: bold;
-}
-
-.course-content ul.topics li.section,
-.course-content ul.weeks li.section {
-    padding-top: 2rem;
-    padding-bottom: 3rem;
-}
-
-.course-content ul li.section.main {
-    border-bottom: 0;
-    margin-top: 0;
 }
 
 ul {
@@ -654,11 +694,6 @@ span.instancename {
     }
 }
 
-.path-course-view .completionprogress {
-    right: 1rem;
-    bottom: 1rem;
-}
-
 .m-t-2.m-b-1 {
     background-color: darken($body-bg, 10%);
     padding: 1rem;
@@ -668,12 +703,11 @@ span.instancename {
     border-radius: 0;
 }
 
-.course-content .single-section .section-navigation {
-    padding: 1rem;
-    border-radius: 3px;
+.course-content .single-section .mdl-bottom {
     margin: 0!important;
-    border-top: 7px solid rgba(0,0,0,.2);
-    border-radius: 0;
+    padding: 2rem 1rem 1rem 1rem;
+    background-color: $body-bg;
+    border: 1px solid $gray-lighter;
 }
 
 .course-content .section-summary .section-title {
