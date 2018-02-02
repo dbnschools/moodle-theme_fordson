@@ -54,11 +54,12 @@ $templatecontext = [
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu)
 ];
 
+$PAGE->requires->jquery();
 if (isset($PAGE->theme->settings->showbacktotop) && $PAGE->theme->settings->showbacktotop == 1) {
-    $PAGE->requires->jquery();
     $PAGE->requires->js('/theme/fordson/javascript/scrolltotop.js');
     $PAGE->requires->js('/theme/fordson/javascript/scrollspy.js');
 }
+$PAGE->requires->js('/theme/fordson/javascript/tooltipfix.js');
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;
 echo $OUTPUT->render_from_template('theme_fordson/columns2', $templatecontext);
