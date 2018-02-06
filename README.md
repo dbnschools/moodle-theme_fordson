@@ -24,7 +24,11 @@ Documentation can be found here: https://goo.gl/oUczeD
 Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration.
 
 ## Fordson Moodle 34 version 1.7 2018020300
-* Fixed tooltip displayed after click
+* Fixed tooltip displayed after click.
+* Fixed missing topnavbar button for Easy Enrollment code button.
+* Changed language string name for better translation support.
+* Added course completion report link in teacher dashboard.
+* Added Event Monitoring link in teacher dashboard.
 
 ## Fordson Moodle 34 version 1.7 2018020200
 * New navigation options in top navbar: Nav Drawer, Site Admin, Course Management, Student Dashboard, Course Editing Button, My Courses dropdown, This Course dropdown, Easy Enrollment Course Codes (When plugin is activated).

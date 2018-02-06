@@ -331,9 +331,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 $thisbranchtitle = get_string('thismytraining', 'theme_fordson');
                 $homebranchtitle = get_string('homemytraining', 'theme_fordson');
             } else if ($mycoursetitle == 'pd') {
-                $branchtitle = get_string('mypd', 'theme_fordson');
-                $thisbranchtitle = get_string('thismypd', 'theme_fordson');
-                $homebranchtitle = get_string('homemypd', 'theme_fordson');
+                $branchtitle = get_string('myprofessionaldevelopment', 'theme_fordson');
+                $thisbranchtitle = get_string('thismyprofessionaldevelopment', 'theme_fordson');
+                $homebranchtitle = get_string('homemyprofessionaldevelopment', 'theme_fordson');
             } else if ($mycoursetitle == 'cred') {
                 $branchtitle = get_string('mycred', 'theme_fordson');
                 $thisbranchtitle = get_string('thismycred', 'theme_fordson');
@@ -1205,6 +1205,11 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $activitylink = new moodle_url('/report/outline/index.php', array(
             'id' => $PAGE->course->id
         ));
+        $completionreporttitle = get_string('coursecompletion', 'completion');
+        $completionreportlink = new moodle_url('/report/completion/index.php', array(
+            'course' => $PAGE->course->id
+        ));
+
 
         // Questionbank.
         $qbanktitle = get_string('questionbank', 'question');
@@ -1274,6 +1279,10 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $filtertitle = get_string('filtersettings', 'filters');
         $filterlink = new moodle_url('/filter/manage.php', array(
             'contextid' => $PAGE->context->id
+        ));
+        $eventmonitoringtitle = get_string('managesubscriptions', 'tool_monitor');
+        $eventmonitoringlink = new moodle_url('/admin/tool/monitor/managerules.php', array(
+            'courseid' => $PAGE->course->id
         ));
 
         // Student Dash.
@@ -1430,11 +1439,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 'url' => $participantslink
             ) ,
             array(
-                'hasuserlinks' => $activitycompletiontitle,
-                'title' => $activitycompletiontitle,
-                'url' => $activitycompletionlink
-            ) ,
-            array(
                 'hasuserlinks' => $grouptitle,
                 'title' => $grouptitle,
                 'url' => $grouplink
@@ -1443,6 +1447,16 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 'hasuserlinks' => $enrolmethodtitle,
                 'title' => $enrolmethodtitle,
                 'url' => $enrolmethodlink
+            ) ,
+            array(
+                'hasuserlinks' => $activitycompletiontitle,
+                'title' => $activitycompletiontitle,
+                'url' => $activitycompletionlink
+            ) ,
+            array(
+                'hasuserlinks' => $completionreporttitle,
+                'title' => $completionreporttitle,
+                'url' => $completionreportlink
             ) ,
             array(
                 'hasuserlinks' => $logstitle,
@@ -1533,6 +1547,11 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 'hascoursemanagelinks' => $filtertitle,
                 'title' => $filtertitle,
                 'url' => $filterlink
+            ) ,
+            array(
+                'hascoursemanagelinks' => $eventmonitoringtitle,
+                'title' => $eventmonitoringtitle,
+                'url' => $eventmonitoringlink
             ) ,
             array(
                 'hasbadgelinks' => $badgemanagetitle,
