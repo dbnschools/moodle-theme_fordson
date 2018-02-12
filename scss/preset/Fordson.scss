@@ -506,10 +506,59 @@ div#learningcontent {
     margin-top: $headerimagepadding;
 }
 
+#page-blog-index .addbloglink a {
+    padding: 1rem;
+    margin: 1rem;
+    background-color: $gray-lightest;
+    border: 1px solid $gray-lighter;
+    border-radius: .5rem;
+    display: inline-block;
+    box-shadow: 0px 0px 10px 0px #499cbb;
+}
+
+#page-blog-index .addbloglink a:hover {
+    background-color: $activityhover;
+}
+
+.blog_entry {
+    margin-bottom: 4rem !important;
+}
+
+.blog_entry .commands {
+    padding: .5rem;
+    margin: 1rem 0;
+    background-color: $gray-lightest;
+    border: 1px solid $gray-lighter;
+    display: inline-block; 
+}
+
+.blog_entry .audience {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.blog_entry .comment-message .picture {
+    width: initial;
+}
+
+.blog_entry .comment-message {
+    padding: .5rem;
+    background-color: $gray-lightest;
+    border: 1px solid $gray-lighter;
+    border-radius: 3px;
+}
+.blog_entry .comment-list {
+    font-size: 1rem;
+}
+
 .forumpost {
     border-radius: 0;
     box-shadow: 0px 1px 2px 1px rgba(0,0,0,.1);
     margin-bottom: 2rem;
+}
+
+.forumpost .row .header {
+    border: 0;
 }
 
 .forumpost .header {

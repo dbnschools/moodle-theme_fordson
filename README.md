@@ -29,6 +29,8 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 * Changed language string name for better translation support.
 * Added course completion report link in teacher dashboard.
 * Added Event Monitoring link in teacher dashboard.
+* A few tweaks to styling for Moodle blogging pages and posts.
+* Fixed completion box issue where manual and auto had the same checkbox which leads to confusion. Auto Completion now has a dashed box while manual completion is a solid box.  
 
 ## Fordson Moodle 34 version 1.7 2018020200
 * New navigation options in top navbar: Nav Drawer, Site Admin, Course Management, Student Dashboard, Course Editing Button, My Courses dropdown, This Course dropdown, Easy Enrollment Course Codes (When plugin is activated).
