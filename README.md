@@ -23,6 +23,7 @@ Documentation can be found here: https://goo.gl/oUczeD
 # Install from Github
 Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration.
 
+
 ## Fordson Moodle 34 version 1.7 2018020300
 * Fixed tooltip displayed after click.
 * Fixed missing topnavbar button for Easy Enrollment code button.
@@ -30,7 +31,9 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 * Added course completion report link in teacher dashboard.
 * Added Event Monitoring link in teacher dashboard.
 * A few tweaks to styling for Moodle blogging pages and posts.
-* Fixed completion box issue where manual and auto had the same checkbox which leads to confusion. Auto Completion now has a dashed box while manual completion is a solid box.  
+* Fixed completion box issue where manual and auto had the same checkbox which leads to confusion. Auto Completion now has a dashed box while manual completion is a solid box.
+* Added better styling support for Collapsed Topic Course Format.  Topic Title styling will now match colors of the theme and override Collapsible Topic settings.
+
 
 ## Fordson Moodle 34 version 1.7 2018020200
 * New navigation options in top navbar: Nav Drawer, Site Admin, Course Management, Student Dashboard, Course Editing Button, My Courses dropdown, This Course dropdown, Easy Enrollment Course Codes (When plugin is activated).

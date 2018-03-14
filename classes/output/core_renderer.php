@@ -1645,4 +1645,17 @@ class core_renderer extends \theme_boost\output\core_renderer {
         return $this->page->theme->setting_file_url('favicon', 'favicon');
     }
 
+    public function headingfont() {
+        $theme = theme_config::load('fordson');
+        $setting = $theme->settings->headingfont;
+        return $setting != '' ? $setting : '';
+    }
+
+    public function pagefont() {
+        $theme = theme_config::load('fordson');
+        $setting = $theme->settings->pagefont;
+        return $setting != '' ? $setting : '';
+    }
+
+
 }

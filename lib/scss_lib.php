@@ -122,6 +122,8 @@ function theme_fordson_get_pre_scss($theme) {
     'slideshowheight' => ['slideshowheight'],
     'activityiconsize' => ['activityiconsize'],
     'gutterwidth' => ['gutterwidth'],
+    'headingfont' => ['headingfont'],
+    'pagefont' => ['pagefont']
     ];
 
     // Add settings variables.

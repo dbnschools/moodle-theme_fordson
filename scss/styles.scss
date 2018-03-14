@@ -42,14 +42,34 @@ $bg-inverse-link-color: $brand-primary !default;
 $footer-link-color: $bg-inverse-link-color !default;
 $calendartoday: #fbffba !default;
 $custommenu-bg: #fff !default;
+$headingfont: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
+$pagefont: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
+
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
 
 /**
 * Layout Header
 **/
 
+h1,h2,h3,h4,h5,h6 {
+    @if $headingfont == '"Open Sans", "Helvetica Neue", Arial, sans-serif' {
+        font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+    } @else {
+        font-family: "#{$headingfont}";
+    }
+}
+
+body {
+    @if $pagefont == '"Open Sans", "Helvetica Neue", Arial, sans-serif' {
+        font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+    } @else {
+        font-family: "#{$pagefont}";
+    }
+}
+
 #page-header h1 {
     font-weight: 600;
-    color: $header-color;
+    color: $header-color; 
 }
 
 #page-header .headerfade {
@@ -896,6 +916,15 @@ ul.teacherscourseview {
     margin: 0 .25rem;
 }
 
+.section-go-link {
+    padding: .5rem;
+    margin: 1rem;
+    background-color: $card-bg;
+    display: inline-block;
+    border-radius: $border-radius;
+    border: 1px solid $gray-light;
+}
+
 .navbar-nav .coursecontrols .nav-item + .nav-item {
     margin-left: .25rem;
 }
@@ -903,6 +932,7 @@ ul.teacherscourseview {
 #nav-drawer.closed {
     left: -($drawer-width + $drawer-offscreen-gutter);
 }
+
 button.drawer {
     float: left;
     margin-right: .25rem;
@@ -972,6 +1002,29 @@ width: $activityiconsize;
 // Fix for collapsed topic course format
 body.format-topcoll h3.sectionname:before {
     display: none;
+}
+
+.toggle h3.sectionname {
+    background-color: transparent;
+}
+
+.toggle h3.sectionname a {
+    color: initial; 
+}
+
+.course-content ul.ctopics li.section .content .toggle, .course-content ul.ctopics li.section .content.sectionhidden {
+    -moz-border-top-left-radius: 0 !important;
+    -webkit-border-top-left-radius: 0 !important;
+    border-top-left-radius: 0 !important;
+    -moz-border-top-right-radius: 0 !important;
+    -webkit-border-top-right-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+    -moz-border-bottom-right-radius: 0 !important;
+    -webkit-border-bottom-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    -moz-border-bottom-left-radius: 0 !important;
+    -webkit-border-bottom-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
 }
 
 /* H5P regression fix for editor https://moodle.org/mod/forum/discuss.php?d=347602#p1402801 */
@@ -1053,6 +1106,10 @@ li.section.hidden {
     padding: 1rem;
     border-top: 2px solid $gray-lighter;
     text-align: center;
+}
+
+.section .activity .activityinstance, .section .activity .activityinstance div {
+    font-size: 1.25rem;
 }
 
 .course-content .section-summary {

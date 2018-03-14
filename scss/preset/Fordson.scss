@@ -54,7 +54,6 @@ $bg-inverse-link-color: $brand-primary !default;
 $footer-link-color: $bg-inverse-link-color !default;
 $sectionnamehighlight : #43d0f3 !default;
 $dpsaccentcolor: #44d4a6 !default;
-//$sectionbkg: #f5f9f7 !default;
 $sectionbkg: #dae6e5 !default;
 $sectionactivitybkg: #fdfdfd !default;
 
@@ -77,7 +76,6 @@ $footer-bg: $body-bg !default;
 $drawer-bg: $body-bg !default;
 
 // Typography
-$font-family-sans-serif: Open Sans,Helvetica Neue,Arial,sans-serif !default;
 $font-size-root: 14px !default;
 $headericon: "" !default;
 $sectionicon: "" !default;
@@ -300,7 +298,6 @@ div#page-content {
     padding: 0 $gutterwidth;
 }
 
-
 .headerbkg {
     margin-top: 0px !important;
     height: 0;
@@ -448,7 +445,6 @@ h3.sectionname:before {
 }
 
 li.current h3.sectionname {
-    //border-top: 8px solid $dpsaccentcolor;
     background-color: $dpsaccentcolor;
 }
 
@@ -461,7 +457,6 @@ li.section.hidden {
 }
 
 li.section.hidden h3.sectionname {
-    //border-top: 8px solid $gray !important;
     background-color: $gray;
 }
 
@@ -506,6 +501,12 @@ div#learningcontent {
     margin-top: $headerimagepadding;
 }
 
+/**
+ * Module Styling
+ */
+
+// Blog Styling.
+
 #page-blog-index .addbloglink a {
     padding: 1rem;
     margin: 1rem;
@@ -513,7 +514,7 @@ div#learningcontent {
     border: 1px solid $gray-lighter;
     border-radius: .5rem;
     display: inline-block;
-    box-shadow: 0px 0px 10px 0px #499cbb;
+    box-shadow: 0px 0px 10px 0px $brand-primary;
 }
 
 #page-blog-index .addbloglink a:hover {
@@ -551,6 +552,8 @@ div#learningcontent {
     font-size: 1rem;
 }
 
+// Forum Styling.
+
 .forumpost {
     border-radius: 0;
     box-shadow: 0px 1px 2px 1px rgba(0,0,0,.1);
@@ -576,6 +579,8 @@ div#learningcontent {
     bottom: -6px;
     right: -6px;
 }
+
+// Quiz Styling.
 
 .que .formulation {
     background-color: $card-bg;
@@ -616,6 +621,20 @@ div.prompt {
     font-weight: bold;
 }
 
+// Lesson Styling.
+
+#page-mod-lesson-view div[role=main] {
+    padding: 1rem;
+    border: 1px solid $gray-lighter;
+    box-shadow: 0px 1px 2px 1px rgba(0,0,0,.1);
+}
+
+.box.contents.p-y-1 {
+    padding: 1rem;
+}
+
+// Activity Styling.
+
 ul {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -628,7 +647,6 @@ li.activity.label {
 .section li.activity {
     padding: calc($spacer - 50%);
     border-bottom: 1px dashed $gray-lighter;
-    font-size: 16px;
 }
 
 .section li.activity:hover {
@@ -667,6 +685,36 @@ span.instancename {
     border-radius: 3px;
 }
 
+.region_main_settings_menu_proxy {
+    float: initial;
+}
+
+//Collapsed Topic Course Format override colors for topic headings. This creates theme consistency despite what teachers might select in course settings.
+
+.course-content ul.ctopics li.section .content .toggle, .course-content ul.ctopics li.section .content.sectionhidden {
+    background-color: $sectionbkg !important;
+}
+
+.course-content ul.ctopics li.section .content div.toggle:hover {
+    background-color: darken($sectionbkg, 10%) !important;
+}
+
+body.format-topcoll .course-content ul.ctopics li.section .summary {
+    margin-left: 25px;
+}
+
+li.current .toggle h3.sectionname {
+    background-color: $dpsaccentcolor;
+    border-radius: $border-radius;
+}
+
+li.section.hidden .toggle h3.sectionname {
+    background-color: $gray-light;
+    border-radius: $border-radius;
+}
+
+// Scrollbars
+
 #nav-drawer::-webkit-scrollbar {
     width: 7px;
 }
@@ -693,6 +741,8 @@ span.instancename {
 .course-content .current::before {
     border-left: $brand-primary 8px solid;
 }
+
+// Footer
 
 .bg-inverse {
     color: $body-color !important;

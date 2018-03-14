@@ -248,6 +248,53 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+// Heading fonts.
+$name = 'theme_fordson/headingfont';
+$title = get_string('headingfont', 'theme_fordson');
+$description = get_string('headingfont_desc', 'theme_fordson');;
+$default = '';
+$choices = array(
+        '' => 'None',
+        'Oswald' => 'Oswald',
+        'Krona One' => 'Krona One',
+        'PT Mono' => 'PT Mono',
+        'Lato' => 'Lato',
+        'Lobster' => 'Lobster',
+        'Cabin' => 'Cabin',
+        'Sumana' => 'Sumana',
+        'Raleway' => 'Raleway',
+        'Crimson' => 'Crimson',
+        'Inconsolata' => 'Inconsolata',
+        'Berkshire Swash' => 'Berkshire Swash',
+        'Karma' => 'Karma',
+    );
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+// Page fonts.
+$name = 'theme_fordson/pagefont';
+$title = get_string('pagefont', 'theme_fordson');
+$description = get_string('pagefont_desc', 'theme_fordson');;
+$default = '';
+$choices = array(
+        '' => 'None',
+        'Oswald' => 'Oswald',
+        'Krona One' => 'Krona One',
+        'PT Mono' => 'PT Mono',
+        'Lobster' => 'Lobster',
+        'Cabin' => 'Cabin',
+        'Sumana' => 'Sumana',
+        'Raleway' => 'Raleway',
+        'Crimson' => 'Crimson',
+        'Inconsolata' => 'Inconsolata',
+        'Berkshire Swash' => 'Berkshire Swash',
+        'Karma' => 'Karma',
+    );
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 // This is the descriptor for icon One
 $name = 'theme_fordson/coursetileinfo';
 $heading = get_string('coursetileinfo', 'theme_fordson');

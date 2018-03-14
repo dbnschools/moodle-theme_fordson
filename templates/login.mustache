@@ -34,6 +34,8 @@
 <head>
     <title>{{{ output.page_title }}}</title>
     <link rel="shortcut icon" href="{{{ output.favicon }}}" />
+    {{#output.headingfont}} <link href="//fonts.googleapis.com/css?family={{output.headingfont}}" rel="stylesheet" type="text/css"> {{/output.headingfont}}
+    {{#output.pagefont}} <link href="//fonts.googleapis.com/css?family={{output.pagefont}}" rel="stylesheet" type="text/css"> {{/output.pagefont}}
     {{{ output.standard_head_html }}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>

@@ -64,6 +64,7 @@ $border-radius: 3px !default;
 $body-bg: #dae6e5 !default;
 $footer-bg: $body-bg !default;
 $custommenu-bg: $body-bg !default;
+$sectionbkg: $body-bg !default;
 
 // Typography
 $font-family-sans-serif: "Open Sans","Helvetica Neue",Arial,sans-serif !default;
@@ -559,6 +560,20 @@ body#page-login-index {
     margin: 0!important;
     border-top: 7px solid rgba(0,0,0,.2);
     border-radius: 0;
+}
+
+//Collapsed Topic Course Format override colors for topic headings. This creates theme consistency despite what teachers might select in course settings.
+
+.course-content ul.ctopics li.section .content .toggle, .course-content ul.ctopics li.section .content.sectionhidden {
+    background-color: $sectionbkg !important;
+}
+
+.course-content ul.ctopics li.section .content div.toggle:hover {
+    background-color: darken($sectionbkg, 10%) !important;
+}
+
+li.current .toggle h3.sectionname {
+    background-color: transparent;
 }
 
 /*Special thanks to Shaun Daubney (Theme Aardvark)

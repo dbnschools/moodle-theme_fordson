@@ -61,6 +61,7 @@ $fpicon-hover : #86b7b8 !default;
 $fpicon-bg : #ffc125 !default;
 $fpicon-colour : $gray-dark !default;
 $sectionnamehighlight : #43d0f3 !default;
+$sectionbkg: #fff !default;
 
 // Spacing
 $spacer : 1rem !default;
@@ -826,6 +827,24 @@ li.section.hidden .content {
 
 li.section.hidden h3.sectionname {
     border-top: 7px solid $gray-light !important;
+}
+
+//Collapsed Topic Course Format override colors for topic headings. This creates theme consistency despite what teachers might select in course settings.
+
+.course-content ul.ctopics li.section .content .toggle, .course-content ul.ctopics li.section .content.sectionhidden {
+    background-color: $sectionbkg !important;
+}
+
+.course-content ul.ctopics li.section .content div.toggle:hover {
+    background-color: darken($sectionbkg, 10%) !important;
+}
+
+body.format-topcoll .course-content ul.ctopics li.section .summary {
+    margin-left: 25px;
+}
+
+li.current .toggle h3.sectionname {
+    background-color: transparent;
 }
 
 /*Special thanks to Shaun Daubney (Theme Aardvark)
