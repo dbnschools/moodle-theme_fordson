@@ -68,9 +68,47 @@ function theme_fordson_get_main_scss_content($theme) {
         }
         else {
             // Safety fallback - maybe new installs etc.
-            $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/preset/Fordson.scss');
+            $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/preset/Modern Moodle.scss');
         }
     }
+
+    $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/fordson_variables.scss');
+
+    // Page Layout
+    if ($theme->settings->pagelayout == 1) {
+        $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/pagelayout/layout1.scss');
+    }
+    if ($theme->settings->pagelayout == 2) {
+        $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/pagelayout/layout2.scss');
+    }
+    if ($theme->settings->pagelayout == 3) {
+        $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/pagelayout/layout3.scss');
+    }
+    if ($theme->settings->pagelayout == 4) {
+        $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/pagelayout/layout4.scss');
+    }
+    if ($theme->settings->pagelayout == 5) {
+        $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/pagelayout/layout5.scss');
+    }
+
+    // Section Style
+    if ($theme->settings->sectionlayout == 2) {
+        $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/sectionlayout/sectionstyle2.scss');
+    }
+    if ($theme->settings->sectionlayout == 3) {
+        $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/sectionlayout/sectionstyle3.scss');
+    }
+    if ($theme->settings->sectionlayout == 4) {
+        $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/sectionlayout/sectionstyle4.scss');
+    }
+    if ($theme->settings->sectionlayout == 5) {
+        $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/sectionlayout/sectionstyle5.scss');
+    }
+    if ($theme->settings->sectionlayout == 6) {
+        $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/sectionlayout/sectionstyle6.scss');
+    }
+
+    $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/styles.scss');
 
     return $scss;
 }
@@ -88,42 +126,25 @@ function theme_fordson_get_pre_scss($theme) {
 
     $configurable = [
     // Config key => variableName,
-    'brandprimary' => ['brand-primary'],
-    'brandsuccess' => ['brand-success'],
-    'brandinfo' => ['brand-info'],
-    'brandwarning' => ['brand-warning'],
-    'branddanger' => ['brand-danger'],
-    'brandgraybase' => ['gray-base'],
+    'brandprimary' => ['primary'],
+    'brandsuccess' => ['success'],
+    'brandinfo' => ['info'],
+    'brandwarning' => ['warning'],
+    'branddanger' => ['danger'],
     'bodybackground' => ['body-bg'],
     'breadcrumbbkg' => ['breadcrumb-bg'],
-    'navbarbkg' => ['navbar-light-color'],
     'cardbkg' => ['card-bg'],
     'drawerbkg' => ['drawer-bg'],
-    'fpstartwrap' => ['fpstartwrap-bg'],
-    'fpiconnavbg' => ['fpicon-bg'],
-    'fpiconnavhover' => ['fpicon-hover'],
-    'fpiconcolour' => ['fpicon-colour'],
     'fploginform' => ['fploginform'],
     'headerimagepadding' => ['headerimagepadding'],
     'markettextbg' => ['markettextbg'],
-    'navbarurl' => ['navbarurl'],
-    'footerbg' => ['footer-bg'],
-    'headerscreen' => ['headerfade-bg'],
     'iconwidth' => ['fpicon-width'],
-    'headingcolor' => ['headings-color'],
-    'headercolor' => ['header-color'],
-    'bodycolor' => ['body-color'],
-    'linkcolor' => ['link-color'],
-    'sectionicon' => ['sectionicon'],
-    'headericon' => ['headericon'],
     'courseboxheight' => ['courseboxheight'],
     'learningcontentpadding' => ['learningcontentpadding'],
     'blockwidthfordson' => ['blockwidthfordson'],
     'slideshowheight' => ['slideshowheight'],
     'activityiconsize' => ['activityiconsize'],
     'gutterwidth' => ['gutterwidth'],
-    'headingfont' => ['headingfont'],
-    'pagefont' => ['pagefont']
     ];
 
     // Add settings variables.
@@ -152,7 +173,7 @@ function theme_fordson_get_pre_scss($theme) {
 
     // Set the default image for the header.
     $slide2image = $theme->setting_file_url('slide2image', 'slide2image');
-    if (isset($slide1image)) {
+    if (isset($slide2image)) {
         // Add a fade in transition to avoid the flicker on course headers ***.
         $prescss .= '.slide2image {background-image: url("' . $slide2image . '"); background-size:cover; background-repeat: no-repeat; background-position:center;}';
     }
@@ -163,6 +184,7 @@ function theme_fordson_get_pre_scss($theme) {
         // Add a fade in transition to avoid the flicker on course headers ***.
         $prescss .= '.slide3image {background-image: url("' . $slide3image . '"); background-size:cover; background-repeat: no-repeat; background-position:center;}';
     }
+
 
     // Set the default image for the header.
     $headerbg = $theme->setting_file_url('headerdefaultimage', 'headerdefaultimage');
@@ -177,7 +199,7 @@ function theme_fordson_get_pre_scss($theme) {
     $loginbg = $theme->setting_file_url('loginimage', 'loginimage');
     if ($PAGE->theme->settings->showcustomlogin == 1) {
         if (isset($loginbg)) {
-            $prescss .= '#page-content.customloginimage {background-image: url("' . $loginbg . '") !important; background-size:cover; background-position:center;}';
+            $prescss .= '#page.customloginimage {background-image: url("' . $loginbg . '") !important; background-size:cover; background-position:center;}';
         } 
     } else {
         if (isset($loginbg)) {

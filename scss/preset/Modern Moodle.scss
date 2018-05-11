@@ -1,8 +1,3 @@
-
-
-//Fordson eLearning variables
-$elearningcontentbkg: rgba(255,255,255,0.9) !default;
-
 // Bootstrap variables
 
 $white:    #fff !default;
@@ -41,13 +36,13 @@ $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
 
 // Options
-//$enable-rounded: false !default;
-$border-radius: 4px !default;
+$enable-rounded: false !default;
 
 // Body
 $body-color:    $gray-800 !default;
 $body-bg:       #dae6e5 !default;
-$drawer-bg:     $elearningcontentbkg !default;
+$drawer-bg:     $gray-800 !default;
+$card-bg:       $white !default;
 
 // Fonts
 $font-size-base: 0.9375rem !default;
@@ -109,68 +104,35 @@ body {
 
 // Rounded user pictures
 .userpicture {
-    border-radius: 5%;
+    border-radius: 50%;
 }
 
+// Navdrawer pull right
 [data-region="drawer"] {
-    background-color: $elearningcontentbkg;
+    padding: 0 10px 20px 0;
 }
 
-#region-main .card-body {
-    border: 0;
+// Content area bkg
+div#learningcontent {
+    position: relative;
+    background-color: $white;
+    padding: 1rem !important;
 }
 
 .course-content .current::before {
     border-left: 0;
 }
 
-.card-body {
-    border: 1px solid $gray-200;
+// Remove extra padding at top of page
+#page-header .pb-3 {
+    padding-bottom: 0 !important;
 }
-
-a#blocksliderbutton {
-    background-color: $card-bg;
+#page-header .card-body {
+    padding-bottom: 0;
 }
-
-div#learningcontent {
-    position: relative;
+.course-content li#section-0 .content {
     margin-top: 0;
-    background-color: $elearningcontentbkg !important;
-    padding: 2rem !important;
 }
-
-.headerbkg {
-    margin-top: 0px!important;
-    position: fixed!important;
-    left: 0!important;
-    top: 0!important;
-    width: 100%!important;
-    height: 100%!important;
+.editing .course-content li#section-0 .content {
+    margin-top: 2rem; 
 }
-
-#page-header .card .headerbkg {
-    position:absolute !important;
-}
-
-.pagelayout-course .headerbkg {
-    height: 100% !important;
-}
-
-div#page-content {
-    padding: initial;
-}
-
-.coursecontrols .nav-item.nav-link {
-    margin-right: 1px;
-}
-
-.m-t-2.m-b-1 {
-    position:relative;
-    background-color: darken($card-bg, 10%);
-    padding: 1rem;
-    border-radius: 3px;
-    margin: 0!important;
-    border-top: 7px solid rgba(0,0,0,.2);
-    border-radius: 0;
-}
-

@@ -1,0 +1,35 @@
+{{#hascourseblocks}}
+<div class="collapse" id="blockslider" class="slidingblockpanel">
+
+    {{#hasfpblockregion}}
+        <div class="fp-blocks">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4">
+                            <section data-region="blocks-fpa" class="hidden-print">
+                                {{{ fpablocks }}}
+                            </section>
+                    </div>
+                    <div class="col-md-4">
+                            <section data-region="blocks-fpb" class="hidden-print">
+                                {{{ fpbblocks }}}
+                            </section>
+                    </div>
+                    <div class="col-md-4">
+                            <section data-region="blocks-fpc" class="hidden-print">
+                                {{{ fpcblocks }}}
+                            </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/hasfpblockregion}}
+
+</div>
+
+<div style="clear:both;"></div>
+<div class="d-block mx-auto text-center">
+<a role="button" class="btn btn-secondary blockpanelbutton" data-toggle="collapse" href="#blockslider" aria-expanded="false" aria-controls="blockslider" id="blocksliderbutton"><i class="fa fa-arrows-v" aria-hidden="true"> {{# str }} courseblockpanelbtn, theme_fordson {{/ str }} </i></a>
+</div>
+<div style="clear:both;"></div>
+{{/hascourseblocks}}

@@ -40,13 +40,32 @@ if ($navdraweropen) {
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
+
+$blockshtmla = $OUTPUT->blocks('fp-a');
+$blockshtmlb = $OUTPUT->blocks('fp-b');
+$blockshtmlc = $OUTPUT->blocks('fp-c');
+$checkblocka = strpos($blockshtmla, 'data-block=') !== false;
+$checkblockb = strpos($blockshtmlb, 'data-block=') !== false;
+$checkblockc = strpos($blockshtmlc, 'data-block=') !== false;
+$hasfpblockregion = isset($PAGE->theme->settings->showblockregions) !== false;
+
+$hascourseblocks = false;
+if ($checkblocka || $checkblockb || $checkblockc) {
+    $hascourseblocks = true;
+}
+
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
+
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID) , "escape" => false]) , 
     'output' => $OUTPUT,
-    'showbacktotop' => isset($PAGE->theme->settings->showbacktotop) && $PAGE->theme->settings->showbacktotop == 1,
     'sidepreblocks' => $blockshtml,
+    'fpablocks' => $blockshtmla,
+    'fpbblocks' => $blockshtmlb,
+    'fpcblocks' => $blockshtmlc,
     'hasblocks' => $hasblocks,
+    'hascourseblocks' => $hascourseblocks,
+    'hasfpblockregion' => $hasfpblockregion,
     'bodyattributes' => $bodyattributes,
     'navdraweropen' => $navdraweropen,
     'hasfhsdrawer' => $hasfhsdrawer,
@@ -60,6 +79,7 @@ if (isset($PAGE->theme->settings->showbacktotop) && $PAGE->theme->settings->show
     $PAGE->requires->js('/theme/fordson/javascript/scrollspy.js');
 }
 $PAGE->requires->js('/theme/fordson/javascript/tooltipfix.js');
+$PAGE->requires->js('/theme/fordson/javascript/blockslider.js');
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;
 echo $OUTPUT->render_from_template('theme_fordson/columns2', $templatecontext);

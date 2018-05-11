@@ -40,12 +40,21 @@ if ($navdraweropen) {
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
+
+$blockshtmla = $OUTPUT->blocks('fp-a');
+$blockshtmlb = $OUTPUT->blocks('fp-b');
+$blockshtmlc = $OUTPUT->blocks('fp-c');
+$hasfpblockregion = isset($PAGE->theme->settings->showblockregions) !== false;
+
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [
 	'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID) , "escape" => false]) , 
     'output' => $OUTPUT,
-    'showbacktotop' => isset($PAGE->theme->settings->showbacktotop) && $PAGE->theme->settings->showbacktotop == 1,
     'sidepreblocks' => $blockshtml,
+    'fpablocks' => $blockshtmla,
+    'fpbblocks' => $blockshtmlb,
+    'fpcblocks' => $blockshtmlc,
+    'hasfpblockregion' => $hasfpblockregion,
     'hasblocks' => $hasblocks,
     'bodyattributes' => $bodyattributes,
     'navdraweropen' => $navdraweropen,

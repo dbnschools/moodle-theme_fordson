@@ -41,12 +41,13 @@ if ($ADMIN->fulltree) {
     $settings = new theme_boost_admin_settingspage_tabs('themesettingfordson', get_string('configtitle', 'theme_fordson'));
 
     require('settings/presets_settings.php');
-    require('settings/colours_settings.php');
+    require('settings/presets_adjustments_settings.php');
     require('settings/menu_settings.php');
     require('settings/content_settings.php');
-    require('settings/image_settings.php');
-    require('settings/footer_settings.php');
     require('settings/fpicons_settings.php');
+    require('settings/footer_settings.php');
+    require('settings/image_settings.php');
+    require('settings/colours_settings.php');
     require('settings/markettiles_settings.php');
     require('settings/slideshow_settings.php');
     // OCJ HILLBROOK MOD

@@ -58,7 +58,6 @@ $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))),
     'output' => $OUTPUT,
-    'showbacktotop' => isset($PAGE->theme->settings->showbacktotop) && $PAGE->theme->settings->showbacktotop == 1,
     'sidepreblocks' => $blockshtml,
     'fpablocks' => $blockshtmla,
     'fpbblocks' => $blockshtmlb,

@@ -1,131 +1,24 @@
 /**
-* FORDSON CUSTOMIZATIONS FOR NEW ELEMENTS AND DEFAULT STYLING
+* FORDSON CUSTOMIZATIONS FOR NEW ELEMENTS
 **/
-
-// FORDSON CustomSettings
-$fpstartwrap-bg: #FFF !default;
-$fpicon-hover: #bcd5db !default;
-$fpicon-bg: darken($fpicon-hover, 10%) !default;
-$fpicon-colour: #026C87 !default;
-$fpicon-width: 100px !default;
-$fpiconcreate-width: 150px !default;
-$fploginform: rgba(255, 255, 255, 0.9) !default;
-$headerimagepadding: 275px !default;
-$courseboxheight: 250px !default;
-$marketing1image: #fff !default;
-$marketing2image: #fff !default;
-$marketing3image: #fff !default;
-$marketing4image: #fff !default;
-$marketing5image: #fff !default;
-$marketing6image: #fff !default;
-$markettextbg: rgba(255, 255, 255, 0.8) !default;
-$markettile-radius: 5px !default;
-$navbarurl: #FFF !default;
-$card-footer-bg: #ccc !default;
-$headerfade-bg: #d4d4d4 !default;
-$header-color: #FFF !default;
-$headings-color: #3a3a3a !default;
-$body-color: #3a3a3a !default;
-$link-color: $brand-primary !default;
-$breadcrumb-padding-y: 10px !default;
-$breadcrumb-padding-x: 10px !default;
-$border-radius: 4px !default;
-$breadcrumb-bg: #fff !default;
-$footer-bg: $body-bg !default;
-$learningcontentpadding: 400px !default;
-$blockwidthfordson: 280px !default;
-$slideshowheight: 250px !default;
-$activityiconsize: 36px !default;
-$activityhover: #fff6ae !default;
-$gutterwidth: 6rem !default;
-$bg-inverse-link-color: $brand-primary !default;
-$footer-link-color: $bg-inverse-link-color !default;
-$calendartoday: #fbffba !default;
-$custommenu-bg: #fff !default;
-$headingfont: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
-$pagefont: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
-
-$font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
 
 /**
 * Layout Header
 **/
 
-h1,h2,h3,h4,h5,h6 {
-    @if $headingfont == '"Open Sans", "Helvetica Neue", Arial, sans-serif' {
-        font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
-    } @else {
-        font-family: "#{$headingfont}";
-    }
-}
-
-body {
-    @if $pagefont == '"Open Sans", "Helvetica Neue", Arial, sans-serif' {
-        font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
-    } @else {
-        font-family: "#{$pagefont}";
-    }
-}
-
-#page-header h1 {
-    font-weight: 600;
-    color: $header-color; 
-}
-
-#page-header .headerfade {
-    background: $headerfade-bg;
-}
-
-@media screen and (min-width: 992px) {
-    #page.container-fluid {
-        padding: 0 $gutterwidth !important;
-    }
-}
-
-.headerbkg {
-    margin-top: 48px;
-    height: $headerimagepadding;
-    background-position: center;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    box-shadow: 0px 3px 5px 1px rgba(0, 0, 0, 0.7);
-}
-
-div#learningcontent {
-    position: relative;
-    margin-top: $learningcontentpadding;
-    background-color: $card-bg;
-}
-
-#page-navbar .dropdown-toggle {
-    padding: $breadcrumb-padding-y $breadcrumb-padding-x;
-    margin-left: 10px;
-    background-color: $breadcrumb-bg;
-    border-radius: $border-radius;
-}
-
-.breadcrumb-nav .breadcrumb {
-    margin-bottom: .5rem;
-}
-
-#page-navbar .open>.dropdown-menu {
-    border-radius: $border-radius;
-    margin-left: 5px;
-}
-
-.headerlogo {
-    background-color: $headerfade-bg;
-}
-
 .headerlogo img {
     padding: $spacer;
 }
 
+/**
+* Block Width
+**/
+
 @media screen and (min-width: 991px) {
     #region-main.has-blocks {
+        width: calc(100% - #{$blockwidthfordson});
+    }
+    #region-main-settings-menu.has-blocks {
         width: calc(100% - #{$blockwidthfordson});
     }
 }
@@ -136,22 +29,23 @@ div#learningcontent {
     }
 }
 
+// Alerts
+
 .moodle-dialogue-bd div[role="alert"] {
     background-color: $brand-danger;
     padding: 1rem;
 }
 
-
-/* login on frontpage */
+/**
+* login on frontpage 
+**/
 
 body#page-login-index, body#page-login-signup{
-    background-image: url([[pix:theme|headerbg]]);
     background-size: cover;
     background-position: center;
 }
 
 .fpsignup {
-    border-radius: $border-radius;
     background-color: $fploginform;
     padding: $spacer;
     box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
@@ -163,6 +57,7 @@ body#page-login-index, body#page-login-signup{
     padding-left: 0;
     padding-right: 20px;
     margin-right: 15px;
+    float:left;
 }
 
 .fpsignup label {
@@ -174,10 +69,6 @@ body#page-login-index, body#page-login-signup{
 }
 .fpsignup .m-t-2 {
     margin-top: .5rem !important;
-}
-
-.fpsignup .input-group-addon {
-    width: 40px;
 }
 
 .row.signin {
@@ -202,8 +93,6 @@ div#fordsonlogin {
 .loginnavicon {
     display: inline-block;
     padding: 1.5rem;
-    background-color: $fpicon-bg;
-    border-radius: 50%;
     margin-bottom: $spacer;
     box-shadow: 0 1px 1px 1px rgba(0,0,0,.3);
     border: 1px solid #fff;
@@ -235,7 +124,7 @@ div#fordsonlogin {
 }
 
 .featuretext h4 {
-    border-top: 4px solid $gray-base;
+    border-top: 4px solid $dark;
     padding: $spacer;
     border-bottom: 1px dashed $gray-lighter;
     background-color: $gray-lightest;
@@ -252,21 +141,8 @@ div#fordsonlogin {
     padding-bottom: 0;
 }
 
-/*
-.fpsignup .input-group {
-    margin: 1rem 0;
-}
-
-.fpsignup .form-control {
-    font-size: 1rem;
-}
-
-.sign-up-btn button {
-    font-size: 1rem;
-}
-*/
-
 /* Editing Block Columns */
+
 .editing aside#block-region-fp-a {
     border: 2px dashed $gray-lighter;
     min-height: 2rem;
@@ -292,16 +168,6 @@ div#fordsonlogin {
     margin: 30px auto;
 }
 
-div#coursecontrols {
-    position: absolute;
-    top: -51px;
-    right: -1px;
-    padding: 7px 15px 4px 15px;
-    border-top: 5px solid $brand-primary;
-    background-color: $card-bg;
-    border-radius: 10px 10px 0px 0px;
-}
-
 .teacherdashboard {
     padding: 1rem;
 }
@@ -322,7 +188,6 @@ div#coursecontrols {
     font-size: 16px;
     float: right;
     padding: 5px 10px;
-    border-radius: $border-radius;
 }
 
 .teacherdashboard i.dashicon {
@@ -339,7 +204,6 @@ div#coursecontrols {
     font-size: 16px;
     float: right;
     padding: 5px 10px;
-    border-radius: $border-radius;
 }
 
 .thiscoursebutton .dropdown-menu {
@@ -349,7 +213,6 @@ div#coursecontrols {
 
 .editcogbutton {
     float: right;
-    border-radius: $border-radius;
     margin-left: .25rem;
     padding: 0 .25rem;
 }
@@ -358,7 +221,6 @@ div#coursecontrols {
     font-size: 16px;
     float: right;
     padding: 5px 10px;
-    border-radius: $border-radius;
 }
 
 @media screen and (max-width: 576px) {
@@ -370,6 +232,17 @@ div#coursecontrols {
     }
 }
 
+/* Block Sliding Panel */
+
+div#blockslider {
+    background-color: $gray-200;
+    border: 1px solid $gray-400;
+    padding: 1rem;
+}
+
+a#blocksliderbutton {
+    margin: .5rem 0;
+}
 
 /* Footer */
 
@@ -377,6 +250,15 @@ ul.footercontact {
     list-style: none;
 }
 
+#page-footer {
+    position: relative;
+    background-color: $footer-bg;
+}
+
+#page-footer .socials_wrapper .socials a{
+    text-decoration: none !important;
+    color: $primary;
+}
 
 /* Slideshow */
 
@@ -388,7 +270,6 @@ ul.footercontact {
 
 .carousel-caption.d-none.d-md-block {
     background: rgba(0, 0, 0, 0.7);
-    border-radius: 1rem 1rem 0 0;
 }
 
 .carousel-caption {
@@ -436,70 +317,24 @@ a.right.carousel-control .fa-chevron-right {
 }
 
 .fpstartwrap {
-    margin: 0px;
-    border-radius: 5px;
+    padding:1rem;
 }
 
 .fpstart {
-    display: inline-block;
-    border-radius: 2px;
-    padding: 15px;
-    text-align: left;
-    background-color: $fpstartwrap-bg;
-    width: 100%;
     text-align: center;
 }
 
-.fpstart .iconset {
-    display: block;
-}
-
-.fpicon {
-    display: inline-block;
-    margin: 5px;
-    padding: 5px;
+.iconset .btn.btn-secondary {
     width: $fpicon-width;
-    text-align: center;
-    vertical-align: top;
-    background-color: $fpicon-bg;
-    border-radius: 5px;
+    margin-bottom: .5rem;
 }
 
-.fpiconcreate {
-    display: inline-block;
-    margin: 5px;
-    padding: 5px;
+.iconset .btn.btn-secondary.createacourse {
     width: $fpiconcreate-width;
-    text-align: center;
-    vertical-align: top;
-    background-color: $brand-success;
-    border-radius: 5px;
-}
-
-.fpicon a {
-    color: $fpicon-colour;
-}
-
-.fpiconcreate a {
-    color: $fpicon-colour;
-}
-
-.fpicon:hover {
-    background-color: $fpicon-hover;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.fpiconcreate:hover {
-    background-color: $brand-danger;
-    padding: 5px;
-    border-radius: 5px;
 }
 
 div#fpslider {
-    background-color: $fpstartwrap-bg;
     padding: $spacer;
-    border-radius: $border-radius;
     border: 1px solid $gray-lighter;
 }
 
@@ -510,7 +345,7 @@ div#fpslider {
 .alertmessage {
     display: inline-block;
     background-color: $brand-warning;
-    border-radius: 5px;
+    border-radius: $border-radius;
     padding: 15px;
     margin: 20px;
 }
@@ -528,7 +363,7 @@ div#fpslider {
     margin: 1rem 0rem;
     background-color: $body-bg;
     padding: 1rem;
-    border: 1px solid $gray-base;
+    border: 1px solid $dark;
     border-top: 7px solid;
 }
 
@@ -546,7 +381,7 @@ div#fpslider {
 
 .marketcontent::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.3);
-    border-radius: 5%;
+    border-radius: $border-radius;
 }
 
 .marketcontent::-webkit-scrollbar-thumb {
@@ -554,8 +389,16 @@ div#fpslider {
     outline: 1px solid slategrey;
 }
 
+/**
+* Easy Enrollment Form
+**/
+.easyenrol {
+    text-align: center;
+}
+
 form#enrolform_easy {
     text-align: center;
+    display: inline-flex;
 }
 
 form#enrolform_easy .input-group-addon.qr-button {
@@ -580,7 +423,6 @@ form#enrolform_easy button.btn.btn-primary {
     background-color: $body-bg;
     padding: 1rem;
     border: 1px solid $body-bg;
-    border-radius: $card-border-radius;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -589,7 +431,7 @@ form#enrolform_easy button.btn.btn-primary {
 }
 
 .class-box-fp .course-title {
-    background-color: $card-bg;
+    background-color: darken($card-bg, 5%);
     padding: $spacer;
     padding-top: 2rem;
     margin-bottom: 0;
@@ -617,7 +459,6 @@ form#enrolform_easy button.btn.btn-primary {
 .class-box {
     margin-bottom: 2rem;
     border: 1px solid $card-bg;
-    border-radius: $card-border-radius;
     box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
     padding: 1rem;
     height: $courseboxheight;
@@ -684,13 +525,6 @@ form#enrolform_easy button.btn.btn-primary {
 
 .category.box-class:nth-child(5) {
     clear: both;
-}
-
-.info-enhanced {
-    background-color: $body-bg;
-    display: inline-block;
-    padding: $spacer;
-    border-radius: $border-radius;
 }
 
 .circle-count {
@@ -842,13 +676,28 @@ ul.teacherscourseview {
 }
 
 
-
 /** 
 * TIDY UP 
 **/
 
-#page-mod-quiz-attempt .submitbtns, #page-mod-quiz-review .submitbtns {
-    padding-bottom: 2rem;
+
+.course-content ul.topics li.section .left, .course-content ul.topics li.section .right {
+    width: auto;
+    padding: 0;
+}
+
+.editing .course-content ul.topics li.section .left, .editing .course-content ul.topics li.section .right {
+    width: auto;
+    padding: 0 6px;
+}
+
+#page-my-index .block_myoverview .card-body {
+    border: 0;
+}
+
+.path-course-view .actions img.icon {
+    width: 24px;
+    height: 24px;
 }
 
 #page-badges-mybadges .fpwonderbox {
@@ -863,16 +712,6 @@ ul.teacherscourseview {
     display: none;
 }
 
-.p-a-1 {
-    padding: 0 1rem !important;
-}
-
-.glossarycontrol span.helplink {
-    padding: 1rem;
-    background-color: $body-bg;
-    border-radius: $border-radius;
-}
-
 .socials_wrapper {
     margin: 0 auto;
     .socials {
@@ -884,29 +723,6 @@ ul.teacherscourseview {
     text-decoration: none;
 }
 
-.single-section h3.sectionname {
-    text-align: initial;
-}
-
-.pagelayout-incourse #page-navbar .dropdown-toggle {
-    display: none;
-}
-
-#region-main .block-region .card {
-    box-shadow: initial;
-    -webkit-box-shadow: initial;
-    border: 0;
-}
-
-.path-mod-assign .no-overflow {
-    overflow: auto;
-}
-
-.coursecontrols {
-    float: left;
-    padding-right: $spacer;
-}
-
 .coursecontrols .nav-item.nav-link {
     padding: 0;
 }
@@ -914,15 +730,6 @@ ul.teacherscourseview {
 .editingbutton {
     float: left;
     margin: 0 .25rem;
-}
-
-.section-go-link {
-    padding: .5rem;
-    margin: 1rem;
-    background-color: $card-bg;
-    display: inline-block;
-    border-radius: $border-radius;
-    border: 1px solid $gray-light;
 }
 
 .navbar-nav .coursecontrols .nav-item + .nav-item {
@@ -933,98 +740,25 @@ ul.teacherscourseview {
     left: -($drawer-width + $drawer-offscreen-gutter);
 }
 
-button.drawer {
-    float: left;
-    margin-right: .25rem;
+[data-region="drawer"] {
+    background-color: $drawer-bg;
 }
 
-.teacherdash .btn, .enrollcodes .btn, .siteadminlink .btn {
-    background-color: $brand-primary;
-    border-color: $brand-primary;
-    color: $navbarurl;
+.studentdash .btn, .teacherdash .btn, .enrollcodes .btn, .siteadminlink .btn {
+    background-color: $primary;
+    border-color: $primary;
+    color: $white;
 }
 
-.teacherdash .btn:hover, .enrollcodes .btn:hover, .siteadminlink .btn:hover {
+.studentdash .btn:hover, .teacherdash .btn:hover, .enrollcodes .btn:hover, .siteadminlink .btn:hover {
     background-color: $card-bg;
     color: $gray-dark;
 }
 
-#page-header .card {margin-bottom: 0;}
-
-.custommenu {
-    text-align: center;
-}
-
-.custommenucontainer {
-    display: inline-block;
-    background-color: $custommenu-bg;
-    border-radius: 0 0 .5rem .5rem;
-    padding: 0 1rem;
-}
-
-.custommenucontainer .dropdown-menu {
-    margin-top: 0;
-}
-
-// Calendar.
-.today {
-    background-color: $calendartoday;
-}
-.maincalendar .calendarmonth td, .maincalendar .calendarmonth th {
-    border: 1px solid #e6e6e6;
-}
-
-// Lesson progressbar fix
-.path-mod-lesson .progress_bar_completed {
-    background-color: $brand-success;
-    text-align: right;
-    vertical-align: middle;
-    color: #fff;
-}
-
-// Lesson multiple choice fixes.
-.path-mod-lesson label.form-check-label input[type="radio"] {
-    float: left;
-    margin-right: 1em;
-    margin-top: .25rem;
-}
-
-.path-mod-lesson label.form-check-label p {
-    display: block;
-    margin-left: 2rem;
-}
 
 // Course Completion Image fix.
 [data-region="coursecompetencyactivities"] .list-inline-item img {
 width: $activityiconsize;
-}
-
-// Fix for collapsed topic course format
-body.format-topcoll h3.sectionname:before {
-    display: none;
-}
-
-.toggle h3.sectionname {
-    background-color: transparent;
-}
-
-.toggle h3.sectionname a {
-    color: initial; 
-}
-
-.course-content ul.ctopics li.section .content .toggle, .course-content ul.ctopics li.section .content.sectionhidden {
-    -moz-border-top-left-radius: 0 !important;
-    -webkit-border-top-left-radius: 0 !important;
-    border-top-left-radius: 0 !important;
-    -moz-border-top-right-radius: 0 !important;
-    -webkit-border-top-right-radius: 0 !important;
-    border-top-right-radius: 0 !important;
-    -moz-border-bottom-right-radius: 0 !important;
-    -webkit-border-bottom-right-radius: 0 !important;
-    border-bottom-right-radius: 0 !important;
-    -moz-border-bottom-left-radius: 0 !important;
-    -webkit-border-bottom-left-radius: 0 !important;
-    border-bottom-left-radius: 0 !important;
 }
 
 /* H5P regression fix for editor https://moodle.org/mod/forum/discuss.php?d=347602#p1402801 */
@@ -1049,81 +783,63 @@ body.format-topcoll h3.sectionname:before {
     opacity: 1;
 }
 
-/* Fix print page for Assignments */
-@media print {
+// Progress bar fixes
 
-    .path-mod-assign [data-region="grade-panel"] {
-        position: relative !important;
-    }
-
-    .gradingform_rubric .criterion .levels .level.checked {
-        background-color: #ccc;
-        -webkit-print-color-adjust: exact;
-    }
-    .editor_atto_content {
-        position: relative !important;
-        -webkit-print-color-adjust: exact;
-        display: block !important;
-    }
-
-    .path-mod-assign [data-region="user-info"] .nowrap {
-        padding: 3rem;
-    }
+.progress_bar {
+    background-color: $gray-100;
+    text-align: center;
 }
 
-.progress {
-    height: 30px;
-    overflow: hidden;
-    background-color: $gray-lighter;
-    width: 40%;
-    border-radius: .5rem;
-    margin-right: auto;
-    margin-left: auto;
+.progress_bar_completed {
+    background-color: $primary;
+    text-align: right;
 }
 
+//Dashboard no progress icon centered fix
+
+.progress-chart-container .no-progress .icon {
+    top: 50%;
+    left: 40%;
+}
+
+/**
+* Responsive Fixes
+**/
+div#page.container-fluid {
+    padding: 0 $gutterwidth;
+}
 @media screen and (max-width: 576px) {
-    .progress {
-        width: 100%;
+    div#nav-message-popover-container {display: none;}
+    div#nav-notification-popover-container {display: none;}
+    div#page-content {
+        padding: 0;
+    }
+    #page-course-view-topics .course-content ul.topics li.section {
+        padding: 2rem 0;
+    }
+    .card-body {
+        padding: .5rem;
+    }
+    .section li.activity {
+        padding: .5rem;
+    }
+    .course-content ul.section {
+        margin: 0;
+    }
+    div#page.container-fluid {
+        padding: 0!important;
+    }
+    .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .p-a-1 {
+        padding: 0 !important;
     }
 }
 
-.progress-bar {
-    float: left;
-    width: 0;
-    height: 100%;
-    font-size: 16px;
-    line-height: 30px;
-    color: #fff;
-    text-align: center;
-    background-color: $brand-primary;
-}
-
-li.section.hidden {
-    background-color: $gray-lightest;
-}
-
-.section-summary-activities {
-    padding: 1rem;
-    border-top: 2px solid $gray-lighter;
-    text-align: center;
-}
-
-.section .activity .activityinstance, .section .activity .activityinstance div {
-    font-size: 1.25rem;
-}
-
-.course-content .section-summary {
-    border: 0;
-}
-
-// Lesson Module multiple choice fixes.
-.path-mod-lesson label.form-check-label input[type="radio"] {
-    float: left;
-    margin-right: 1em;
-    margin-top: .25rem;
-}
-
-.path-mod-lesson label.form-check-label p {
-    display: block;
-    margin-left: 2rem;
+.navbar-expand .navbar-nav .dropdown-menu {
+    position: absolute;
+    max-height: 500px;
+    overflow: auto;
 }

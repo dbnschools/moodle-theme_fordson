@@ -17,55 +17,38 @@
 {{!
     Page header.
 }}
-<header role="banner" class="pos-f-t navbar navbar-full navbar-light bg-faded navbar-static-top moodle-has-zindex">
-  
-    <div class="container-fluid navbar-nav">
 
-        <a href="{{{ config.wwwroot }}}" class="navbar-brand {{# output.should_display_navbar_logo }}has-logo{{/ output.should_display_navbar_logo }}
-            {{^ output.should_display_navbar_logo }}
-                hidden-sm-down
-            {{/ output.should_display_navbar_logo }}
-                ">
-            {{# output.should_display_navbar_logo }}
-                <span class="logo hidden-xs-down">
-                    <img src="{{output.get_compact_logo_url}}" alt="{{sitename}}">
-                </span>
-            {{/ output.should_display_navbar_logo }}
-            <span class="site-name hidden-sm-down">{{{ sitename }}}</span>
-        </a>
-
-        {{#hasfhsdrawer}}
-        <div data-region="drawer-toggle nav-item nav-link">
-            <button aria-expanded="{{#navdraweropen}}true{{/navdraweropen}}{{^navdraweropen}}false{{/navdraweropen}}" aria-controls="nav-drawer" type="button" class="btn btn-secondary drawer" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav" data-tooltip="tooltip" data-placement= "bottom" title="{{#str}}navdrawerbtn, theme_fordson{{/str}}"><i class="fa fa-bars" aria-hidden="true"></i><span class="sr-only">{{#str}}sidepanel, core{{/str}}</span></button>
+<header id="page-header" class="row">
+    <div class="col-12 pt-3 pb-3">
+        <div class="card">
+            {{#boostimage}}
+                {{{ headerimage }}}
+            {{/boostimage}}
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="mr-auto">
+                    {{{contextheader}}}
+                    </div>
+                    {{#settingsmenu}}
+                    <div class="context-header-settings-menu">
+                        {{{settingsmenu}}}
+                    </div>
+                    {{/settingsmenu}}
+                </div>
+                <div class="d-flex flex-wrap">
+                    {{#hasnavbar}}
+                    <div id="page-navbar">
+                        {{{navbar}}}
+                    </div>
+                    {{/hasnavbar}}
+                    <div class="ml-auto d-flex">
+                        {{{pageheadingbutton}}}
+                    </div>
+                    <div id="course-header">
+                        {{{courseheader}}}
+                    </div>
+                </div>
+            </div>
         </div>
-        {{/hasfhsdrawer}}
-
-        <!-- course_controls -->
-        <div class="coursecontrols">
-            {{{ output.teacherdashmenu }}}
-            {{{ output.edit_button_fhs }}}
-        </div>
-
-        <!-- user_menu -->
-        {{{ output.user_menu }}}
-
-        <!-- navbar_plugin_output -->
-        {{{ output.navbar_plugin_output }}}
-
-        <!-- search_box -->
-        <span class="hidden-md-down">
-        {{{ output.search_box }}}
-        </span>
-
-        <nav class="nav navbar-nav hidden-md-down">
-            <!-- fordson_custom_menu -->
-            {{{ output.fordson_custom_menu }}}
-            {{{ output.custom_menu }}}
-            
-            <!-- page_heading_menu -->
-            {{{ output.page_heading_menu }}}
-        </nav>
-
     </div>
-    
 </header>

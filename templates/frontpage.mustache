@@ -48,16 +48,7 @@
         "hasregionmainsettingsmenu": false
     }
 }}
-{{{ output.doctype }}}
-<html {{{ output.htmlattributes }}}>
-<head>
-    <title>{{{ output.page_title }}}</title>
-    <link rel="shortcut icon" href="{{{ output.favicon }}}" />
-    {{#output.headingfont}} <link href="//fonts.googleapis.com/css?family={{output.headingfont}}" rel="stylesheet" type="text/css"> {{/output.headingfont}}
-    {{#output.pagefont}} <link href="//fonts.googleapis.com/css?family={{output.pagefont}}" rel="stylesheet" type="text/css"> {{/output.pagefont}}
-    {{{ output.standard_head_html }}}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+{{> theme_boost/head }}
 
 <body {{{ bodyattributes }}}>
 
@@ -65,126 +56,96 @@
 
     {{{ output.standard_top_of_body_html }}}
 
-    {{>theme_fordson/header}}
+    {{>theme_fordson/navbar}}
 
     <div id="page" class="container-fluid">
-
+    {{#output.headerbkglocation}}
         {{{ output.headerimage }}}
+    {{/output.headerbkglocation}}
     
         <div id="learningcontent">
-        
+
         {{#headerlogo}}
-        <div class="headerlogo">
-            <img src="{{{ headerlogo }}}" class="img-fluid" alt="Responsive image">
-        </div>
+            <div class="headerlogo">
+                <img src="{{{ headerlogo }}}" class="img-fluid" alt="Responsive image">
+            </div>
         {{/headerlogo}}
 
         {{{ output.fp_slideshow }}}
         {{{ output.full_header }}}
 
         <div id="page-content" class="row">
-            <div id="region-main-box" class="col-xs-12">
+            <div id="region-main-box" class="col-12">
                 {{#hasregionmainsettingsmenu}}
-                <div id="region-main-settings-menu" class="hidden-print {{#hasblocks}}has-blocks{{/hasblocks}}">
+                <div id="region-main-settings-menu" class="hidden-print {{#hasblocks}}has-blocks mb-3{{/hasblocks}}">
                     <div> {{{ output.region_main_settings_menu }}} </div>
                 </div>
                 {{/hasregionmainsettingsmenu}}
                 <section id="region-main" {{#hasblocks}}class="has-blocks"{{/hasblocks}}>
-                    <div class="card card-block">
-                    {{#hasregionmainsettingsmenu}}
-                        <div class="region_main_settings_menu_proxy"></div>
-                    {{/hasregionmainsettingsmenu}}
-                    {{{ output.course_content_header }}}
-                    {{{ enrolform }}}
-                    {{{ output.fp_wonderbox }}}
-                    {{#hasfpblockregion}}
-                        <div class="fp-blocks">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                            <section data-region="blocks-fpa" class="hidden-print">
-                                                {{{ fpablocks }}}
-                                            </section>
-                                    </div>
-                                    <div class="col-md-4">
-                                            <section data-region="blocks-fpb" class="hidden-print">
-                                                {{{ fpbblocks }}}
-                                            </section>
-                                    </div>
-                                    <div class="col-md-4">
-                                            <section data-region="blocks-fpc" class="hidden-print">
-                                                {{{ fpcblocks }}}
-                                            </section>
+                    <div class="card">
+                        <div class="card-body">
+                            {{#hasregionmainsettingsmenu}}
+                                <div class="region_main_settings_menu_proxy"></div>
+                            {{/hasregionmainsettingsmenu}}
+
+                            {{{ output.course_content_header }}}
+                            
+                            {{{ enrolform }}}
+
+                            {{{ output.fp_wonderbox }}}
+
+                            {{#hasfpblockregion}}
+                                <div class="fp-blocks">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                    <section data-region="blocks-fpa" class="hidden-print">
+                                                        {{{ fpablocks }}}
+                                                    </section>
+                                            </div>
+                                            <div class="col-md-4">
+                                                    <section data-region="blocks-fpb" class="hidden-print">
+                                                        {{{ fpbblocks }}}
+                                                    </section>
+                                            </div>
+                                            <div class="col-md-4">
+                                                    <section data-region="blocks-fpc" class="hidden-print">
+                                                        {{{ fpcblocks }}}
+                                                    </section>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            {{/hasfpblockregion}}
+
+                            {{{ output.main_content }}}
+                            {{{ output.fp_marketingtiles }}}
+                            {{{ output.course_content_footer }}}
                         </div>
-                    {{/hasfpblockregion}}
-                    {{{ output.main_content }}}
-                    {{{ output.fp_marketingtiles }}}
-                    {{{ output.course_content_footer }}}
                     </div>
                 </section>
+
                 {{#hasblocks}}
                     <section data-region="blocks-column" class="hidden-print">
                         {{{ sidepreblocks }}}
                     </section>
                 {{/hasblocks}}
+
             </div>
         </div>
     </div>
 </div>
+
 {{#hasfhsdrawer}}
 {{> theme_boost/nav-drawer }}
 {{/hasfhsdrawer}}
 </div>
 
-{{#showbacktotop}}
+
 <a href="#" id="back-to-top" class="btn btn-primary btn-lg" role="button" title="{{#str}}backtotop, theme_fordson{{/str}}"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></a>
-{{/showbacktotop}}
 
-<footer id="page-footer" class="p-y-1 bg-inverse">
-    <div class="container">
-        <div id="course-footer">{{{ output.course_footer }}}</div>
-        <div class="row">
-            <div class="col-md-12">
-            
-                <div class="col-md-8">
-                    {{{ output.footnote }}}
 
-                    {{{ output.login_info }}}
-                    {{{ output.home_link }}}
-                    {{{ output.standard_footer_html }}}
-                </div>
-                <div class="col-md-4">
-                <div class="brandbox">
-                {{#output.brandorganization_footer}}<h3>{{output.brandorganization_footer}}</h3>{{/output.brandorganization_footer}}
-                <ul class="footercontact">
-                    {{#output.brandwebsite_footer}}<li><i class="fa fa-globe"></i>  {{output.brandwebsite_footer}}</li>{{/output.brandwebsite_footer}}
-                    {{#output.brandemail_footer}}<li><i class="fa fa-envelope"></i>  {{output.brandemail_footer}}</li>{{/output.brandemail_footer}}
-                    {{#output.brandphone_footer}}<li><i class="fa fa-mobile-phone"></i>  {{output.brandphone_footer}}</li>{{/output.brandphone_footer}}
-                </ul>
-                {{{ output.social_icons }}}
-                    {{# output.page_doc_link }}
-                        <p class="helplink">{{{ output.page_doc_link }}}</p>
-                    {{/ output.page_doc_link }}
-                </div>
-                </div>
-            </div>
-        </div>
-
-        <nav class="nav navbar-nav hidden-lg-up">
-            {{# output.custom_menu_flat }}
-                <ul class="list-unstyled p-t-1">
-                    {{> theme_boost/custom_menu_footer }}
-                </ul>
-            {{/ output.custom_menu_flat }}
-        </nav>
-        
-        {{{ output.standard_end_of_body_html }}}
-    </div>
-    
-</footer>
+{{> theme_boost/footer }}
 
 </body>
 </html>

@@ -47,14 +47,14 @@ $THEME->layouts = [
     'frontpage' => array(
         'file' => 'frontpage.php',
         'regions' => array('side-pre', 'fp-a', 'fp-b', 'fp-c'),
-        'defaultregion' => 'side-pre',
+        'defaultregion' => 'fp-c',
         'options' => array('nonavbar' => true, 'langmenu' => true),
     ),
     // Main course page.
     'course' => array(
         'file' => 'course.php',
-        'regions' => array('side-pre'),
-        'defaultregion' => 'side-pre',
+        'regions' => array('fp-a', 'fp-b', 'fp-c'),
+        'defaultregion' => 'fp-c',
     ),
     'incourse' => array(
         'file' => 'course.php',
@@ -89,6 +89,7 @@ $THEME->extrascsscallback = 'theme_fordson_get_extra_scss';
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 
 $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_DEFAULT;
+$THEME->iconsystem = \core\output\icon_system::FONTAWESOME;
 
 $THEME->enable_dock = false;
 $THEME->yuicssmodules = array();

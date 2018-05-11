@@ -57,51 +57,40 @@ class core_renderer extends \theme_boost\output\core_renderer {
      *
      * @return string HTML to display the main header.
      */
+
+    public function headerbkglocation() {
+        $theme = theme_config::load('fordson');
+        $setting = $theme->settings->pagelayout;
+        return $setting <= 4 ? true : false;
+    }
     public function full_header() {
 
         global $PAGE, $COURSE;
+        $theme = theme_config::load('fordson');
+        $pagelayout = $theme->settings->pagelayout;
 
-        $html = html_writer::start_tag('header', array(
-            'id' => 'page-header',
-            'class' => 'row'
-        ));
-        $html .= html_writer::start_div('col-xs-12 p-a-1');
-        $html .= html_writer::start_div('card');
-        $html .= html_writer::start_div('headerfade');
-        $html .= html_writer::start_div('card-block');
+        $header = new stdClass();
+
+        if ($pagelayout <= 4) {
+            $header->headerimagelocation = false; 
+        }
+
         if (!$PAGE->theme->settings->coursemanagementtoggle) {
-            $html .= html_writer::div($this->context_header_settings_menu() , 'pull-xs-right context-header-settings-menu');
+            $header->settingsmenu = $this->context_header_settings_menu();
         }
         else if (isset($COURSE->id) && $COURSE->id == 1) {
-            $html .= html_writer::div($this->context_header_settings_menu() , 'pull-xs-right context-header-settings-menu');
+            $header->settingsmenu = $this->context_header_settings_menu();
         }
-        $html .= html_writer::start_div('pull-xs-left');
-        $context_header = $this->context_header();
-        $html .= html_writer::link(new moodle_url('/course/view.php', array('id' => $PAGE->course->id)) , $context_header);
-        $html .= html_writer::end_div();
-        $pageheadingbutton = $this->page_heading_button();
-        if (empty($PAGE->layout_options['nonavbar'])) {
-            $html .= html_writer::start_div('clearfix w-100 pull-xs-left', array(
-                'id' => 'page-navbar'
-            ));
-            $html .= html_writer::tag('div', $this->navbar() , array(
-                'class' => 'breadcrumb-nav'
-            ));
-            $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button pull-xs-right');
-            $html .= html_writer::end_div();
-        }
-        else if ($pageheadingbutton) {
-            $html .= html_writer::div($pageheadingbutton, 'breadcrumb-button nonavbar pull-xs-right');
-        }
-        $html .= html_writer::tag('div', $this->course_header() , array(
-            'id' => 'course-header'
-        ));
-        $html .= html_writer::end_div();
-        $html .= html_writer::end_div();
-        $html .= html_writer::end_div();
-        $html .= html_writer::end_div();
-        $html .= html_writer::end_tag('header');
-        return $html;
+
+        $header->boostimage = $theme->settings->pagelayout == 5;
+        $header->contextheader = html_writer::link(new moodle_url('/course/view.php', array('id' => $PAGE->course->id)) , $this->context_header());
+        $header->hasnavbar = empty($PAGE->layout_options['nonavbar']);
+        $header->navbar = $this->navbar();
+        $header->pageheadingbutton = $this->page_heading_button();
+        $header->courseheader = $this->course_header();
+        $header->headerimage = $this->headerimage();
+
+        return $this->render_from_template('theme_fordson/header', $header);
     }
 
     public function image_url($imagename, $component = 'moodle') {
@@ -1007,10 +996,12 @@ class core_renderer extends \theme_boost\output\core_renderer {
         'slide1' => array(
             'slidetitle' => $slide1,
             'slidecontent' => $slide1content
-        ) , 'slide2' => array(
+        ) , 
+        'slide2' => array(
             'slidetitle' => $slide2,
             'slidecontent' => $slide2content
-        ) , 'slide3' => array(
+        ) , 
+        'slide3' => array(
             'slidetitle' => $slide3,
             'slidecontent' => $slide3content
         ) ,
@@ -1638,7 +1629,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $context->logourl = $url;
         $context->sitename = format_string($SITE->fullname, true, ['context' => context_course::instance(SITEID), "escape" => false]);
 
-        return $this->render_from_template('core/login', $context);
+        return $this->render_from_template('core/loginform', $context);
     }
 
     public function favicon() {
