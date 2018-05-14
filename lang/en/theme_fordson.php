@@ -47,6 +47,8 @@ $string['courseblockpanelbtn'] = 'Course Block Panel';
 $string['showblockregions'] = 'Show Additional Frontpage Block Regions';
 $string['showblockregions_desc'] = 'Turn on three more block regions on the site frontpage.  These appear just below the icon navigation bar.';
 $string['viewsectionmodules'] = 'View Section Modules';
+$string['privacy:metadata'] = 'The Fordson theme does not store any individual user data.';
+
 
 // Presets Settings.
 $string['presets_settings'] = 'Presets';
