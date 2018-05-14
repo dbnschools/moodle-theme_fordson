@@ -160,6 +160,9 @@ div#fordsonlogin {
     min-height: 2rem;
 }
 
+aside#block-region-side-pre {
+    margin-top: 2rem;
+}
 
 /* Teacher Dashboard */
 
@@ -463,6 +466,39 @@ form#enrolform_easy button.btn.btn-primary {
     padding: 1rem;
     height: $courseboxheight;
     overflow: hidden;
+}
+.class-fullbox {
+    margin-bottom: 2rem;
+    border: 1px solid $card-bg;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+}
+.class-fullbox .course-summary {
+    height: 100%;
+    overflow: auto;
+}
+
+.fullbox {
+    background-color: rgba(255,255,255,0.7);
+    background-blend-mode: overlay;
+}
+
+.fullbox7 {
+    background-color: rgba(255,255,255,0.9);
+    background-blend-mode: overlay;
+}
+
+.coursedata {
+    padding-top: .5rem;
+}
+
+.course-title-fullboxbkg {
+    background-color: $card-bg;
+    padding: 1rem;
+}
+
+.course-title-fullboxbkg7 {
+    padding: 1rem;
 }
 
 .course-title {

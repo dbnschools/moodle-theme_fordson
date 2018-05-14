@@ -153,3 +153,17 @@ ol.breadcrumb {
     border-top: 7px solid rgba(0,0,0,.2);
     border-radius: 0;
 }
+
+// Restore padding at top of page
+#page-header .pb-3 {
+    padding-bottom: 1rem!important;
+}
+#page-header .card-body {
+    padding-bottom: 1rem;
+}
+.course-content li#section-0 .content {
+    margin-top: 0;
+}
+.editing .course-content li#section-0 .content {
+    margin-top: 2rem; 
+}

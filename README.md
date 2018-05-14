@@ -23,6 +23,11 @@ Documentation can be found here: https://goo.gl/oUczeD
 # Install from Github
 Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration.
 
+## Moodle 3.5 Fordson v1 2018051400
+
+* Fixed styling issues.
+* Added 3 fullwidth horizontal course display options for listings and frontpage
+
 
 ## Moodle 3.5 Fordson v1BETA 2018051100
 This is a beta release.
