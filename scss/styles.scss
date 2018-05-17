@@ -467,12 +467,20 @@ form#enrolform_easy button.btn.btn-primary {
     height: $courseboxheight;
     overflow: hidden;
 }
+
 .class-fullbox {
     margin-bottom: 2rem;
     border: 1px solid $card-bg;
     box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
     padding: 1rem;
 }
+.class-fullbox7 {
+    margin-bottom: 2rem;
+    border: 1px solid $card-bg;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
+    padding: 4rem 2rem 0 2rem;
+}
+
 .class-fullbox .course-summary {
     height: 100%;
     overflow: auto;
@@ -484,8 +492,7 @@ form#enrolform_easy button.btn.btn-primary {
 }
 
 .fullbox7 {
-    background-color: rgba(255,255,255,0.9);
-    background-blend-mode: overlay;
+    background-color: $card-bg;
 }
 
 .coursedata {
@@ -716,6 +723,13 @@ ul.teacherscourseview {
 * TIDY UP 
 **/
 
+.section-go-link {
+    padding: .25rem;
+    margin: .5rem;
+    background-color: $gray-100;
+    display: inline-block;
+    border: 1px solid $gray-300;
+}
 
 .course-content ul.topics li.section .left, .course-content ul.topics li.section .right {
     width: auto;
@@ -871,6 +885,9 @@ div#page.container-fluid {
     }
     .p-a-1 {
         padding: 0 !important;
+    }
+    .class-fullbox7 {
+        padding: 3rem .25rem 0 .25rem;
     }
 }
 

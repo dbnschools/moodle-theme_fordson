@@ -174,3 +174,8 @@ div#page-content {
     border-radius: 0;
 }
 
+@media screen and (max-width: 576px) {
+    div#learningcontent {
+        padding: .25rem !important;
+    }
+}

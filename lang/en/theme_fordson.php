@@ -201,6 +201,8 @@ $string['sectionlayout3'] = 'Folder Tabs';
 $string['sectionlayout4'] = 'Clip Board';
 $string['sectionlayout5'] = 'Simple Box';
 $string['sectionlayout6'] = 'Fancy Section Title';
+$string['sectionlayout7'] = 'University Learner';
+$string['sectionlayout8'] = 'Corporate Learner';
 
 $string['contentsettings'] = 'Content areas';
 $string['footnote'] = 'Footnote';

@@ -51,7 +51,6 @@
     background-color: $gray-100;
 }
 
-
 h3.sectionname {
     color: $light;
     padding: .5rem 2rem;
@@ -62,20 +61,26 @@ h3.sectionname {
     top: -15px;
     border-top: 15px solid $primary;
     margin-bottom: 0!important;
+    text-align: center;
 }
 
 h3.sectionname a {
     color: $white;
 }
+
 .course-content ul.topics li.section .content,
 .course-content ul.weeks li.section .content {
     background-color: $card-bg;
     border: 3px solid $gray-300;
     margin-top: 2rem;
     padding-top: 0;
-    text-align: center;
     border-radius: $border-radius;
+    text-align: center;
 }
+.course-content .content .summary, .course-content .content .li.activity {
+    text-align: left;
+}
+
 
 .course-content ul.topics li.section, .course-content ul.weeks li.section {
     padding-top: 2rem;

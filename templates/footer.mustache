@@ -17,6 +17,7 @@
 {{!
     Page footer.
 }}
+
 <footer id="page-footer" class="py-3 bg-dark text-light">
     <div class="container">
 
@@ -26,37 +27,42 @@
 
                 <div class="col-md-8">
                     {{{ output.footnote }}}
+
                     {{{ output.login_info }}}
+
                     {{{ output.home_link }}}
-                    {{{ output.standard_footer_html }}}
+
                     {{# output.page_doc_link }}
                         <p class="helplink">{{{ output.page_doc_link }}}</p>
                     {{/ output.page_doc_link }}
+
                 </div>
 
                 <div class="col-md-4">
                     <div class="brandbox">
+
                         {{#output.brandorganization_footer}}<h3>{{output.brandorganization_footer}}</h3>{{/output.brandorganization_footer}}
                             <ul class="footercontact">
                                 {{#output.brandwebsite_footer}}<li><i class="fa fa-globe"></i>  {{output.brandwebsite_footer}}</li>{{/output.brandwebsite_footer}}
                                 {{#output.brandemail_footer}}<li><i class="fa fa-envelope"></i>  {{output.brandemail_footer}}</li>{{/output.brandemail_footer}}
                                 {{#output.brandphone_footer}}<li><i class="fa fa-mobile-phone"></i>  {{output.brandphone_footer}}</li>{{/output.brandphone_footer}}
                             </ul>
+
                         {{{ output.social_icons }}}
+
                     </div>
                 </div>
 
         </div>
-
-            <nav class="nav navbar-nav hidden-lg-up">
-                {{# output.custom_menu_flat }}
-                    <ul class="list-unstyled pt-3">
-                        {{> theme_boost/custom_menu_footer }}
-                    </ul>
-                {{/ output.custom_menu_flat }}
-            </nav>
-
-            {{{ output.standard_end_of_body_html }}}
+        <nav class="nav navbar-nav d-md-none">
+            {{# output.custom_menu_flat }}
+                <ul class="list-unstyled pt-3">
+                    {{> theme_boost/custom_menu_footer }}
+                </ul>
+            {{/ output.custom_menu_flat }}
+        </nav>
+        {{{ output.standard_footer_html }}}
+        {{{ output.standard_end_of_body_html }}}
 
     </div>
 

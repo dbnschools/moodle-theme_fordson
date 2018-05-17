@@ -423,7 +423,8 @@ if ($PAGE->theme->settings->coursetilestyle < 8) {
                             }
                             $rowcontent .= '
                         <div class="col-md-12">
-                            <div class="class-fullbox" style="background-image: url(' . $imgurl . ');background-repeat: no-repeat;background-size:cover; background-position:center;">
+                            <div class="class-fullbox7" style="background-image: url(' . $imgurl . ');background-repeat: no-repeat;background-size:cover; background-position:center; background-color: rgba(0,0,0,0.3);
+    background-blend-mode: overlay;">
                                 <div class="fullbox7">
                                 ';
                             
@@ -832,8 +833,9 @@ if ($PAGE->theme->settings->coursetilestyle < 8) {
                             }
                             $rowcontent .= '
                         <div class="col-md-12">
-                            <div class="class-fullbox" style="background-image: url(' . $imgurl . ');background-repeat: no-repeat;background-size:cover; background-position:center;">
-                                <div class="fullbox7">
+                            <div class="class-fullbox7" style="background-image: url(' . $imgurl . ');background-repeat: no-repeat;background-size:cover; background-position:center; background-color: rgba(0,0,0,0.3);
+    background-blend-mode: overlay;">
+                            <div class="fullbox7">
                                 ';
                             
                             $rowcontent .= '<div class="course-info-inner">';

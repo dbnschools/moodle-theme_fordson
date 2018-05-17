@@ -107,6 +107,12 @@ function theme_fordson_get_main_scss_content($theme) {
     if ($theme->settings->sectionlayout == 6) {
         $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/sectionlayout/sectionstyle6.scss');
     }
+    if ($theme->settings->sectionlayout == 7) {
+        $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/sectionlayout/sectionstyle7.scss');
+    }
+    if ($theme->settings->sectionlayout == 8) {
+        $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/sectionlayout/sectionstyle8.scss');
+    }
 
     $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/styles.scss');
 

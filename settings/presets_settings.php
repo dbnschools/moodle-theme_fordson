@@ -96,8 +96,11 @@ $sectionlayout3 = get_string('sectionlayout3', 'theme_fordson');
 $sectionlayout4 = get_string('sectionlayout4', 'theme_fordson');
 $sectionlayout5 = get_string('sectionlayout5', 'theme_fordson');
 $sectionlayout6 = get_string('sectionlayout6', 'theme_fordson');
+$sectionlayout7 = get_string('sectionlayout7', 'theme_fordson');
+$sectionlayout8 = get_string('sectionlayout8', 'theme_fordson');
+
 $default = '2';
-$choices = array('1'=>$sectionlayout1, '2'=>$sectionlayout2, '3'=>$sectionlayout3, '4'=>$sectionlayout4, '5'=>$sectionlayout5, '6'=>$sectionlayout6);
+$choices = array('1'=>$sectionlayout1, '2'=>$sectionlayout2, '3'=>$sectionlayout3, '4'=>$sectionlayout4, '5'=>$sectionlayout5, '6'=>$sectionlayout6, '7'=>$sectionlayout7, '8'=>$sectionlayout8);
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
