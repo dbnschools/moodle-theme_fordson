@@ -57,7 +57,7 @@ $string['presetfiles'] = 'Additional theme preset files';
 $string['presetfiles_desc'] = 'Preset files can be used to dramatically alter the appearance of the theme.
     See https://docs.moodle.org/dev/Boost_Presets for information on creating and sharing your own preset files.';
 $string['preset'] = 'Theme preset';
-$string['preset_desc'] = 'Pick a preset to broadly change the look of the theme.';
+$string['preset_desc'] = 'Pick a preset to broadly change the look of the theme. <a href="https://goo.gl/fMXzSo" target="_new">Instructions for Fordson 3.5 Theme</a>';
 $string['favicon'] = 'Favicon';
 $string['favicon_desc'] = 'Change the favicon for Fordson. Images with a transparent background and 32px height will work best.  Allowed types: PNG, JPG, ICO';
 
@@ -186,7 +186,7 @@ $string['layoutinfo'] = 'Layout Settings';
 $string['layoutinfodesc'] = 'Control page layout by chooseing a design.';
 
 $string['pagelayout'] = 'Layout Chooser';
-$string['pagelayout_desc'] = 'Choose from the following layouts.  <a href="#" target="_new">See this Google Doc</a> for a description of each layout.';
+$string['pagelayout_desc'] = 'Choose from the following layouts.  <a href="https://goo.gl/fMXzSo" target="_new">Instructions for Fordson 3.5 Theme</a>';
 $string['pagelayout1'] = 'Default Boost Layout';
 $string['pagelayout2'] = 'Full-Width / Top Header Image';
 $string['pagelayout3'] = 'Centered Content / Overlapping Top Header Image';
@@ -194,7 +194,7 @@ $string['pagelayout4'] = 'Centered Content / Full Screen Header Image';
 $string['pagelayout5'] = 'Default Boost Layout / Header Image in Course Title Box';
 
 $string['sectionlayout'] = 'Section Style Chooser';
-$string['sectionlayout_desc'] = 'Choose from the following topic/weekly section styles.  <a href="#" target="_new">See this Google Doc</a> for a description of each style.';
+$string['sectionlayout_desc'] = 'Choose from the following topic/weekly section styles.  <a href="https://goo.gl/fMXzSo" target="_new">Instructions for Fordson 3.5 Theme</a>';
 $string['sectionlayout1'] = 'Boost Default';
 $string['sectionlayout2'] = 'Bold Notecard';
 $string['sectionlayout3'] = 'Folder Tabs';
@@ -243,7 +243,7 @@ $string['coursestyle6'] = 'Horizontal Image Background Full Details';
 $string['coursestyle7'] = 'Horizontal Image Background Title & Teacher Only';
 $string['coursestyle8'] = 'Default Moodle Course Display';
 $string['coursetilestyle'] = 'Course Tile Display';
-$string['coursetilestyle_desc'] = 'When viewing course categories you can choose from the following styles to display courses.';
+$string['coursetilestyle_desc'] = 'When viewing course categories you can choose from the following styles to display courses. <a href="https://goo.gl/fMXzSo" target="_new">Instructions for Fordson 3.5 Theme</a>';
 $string['gutterwidth'] = 'Content Padding';
 $string['gutterwidth_desc'] = 'This setting controls how much spacing is used on the left and right of the main content.';
 $string['frontpagemycoursessorting'] = 'Frontpage My Courses Sort Order by Last Access';
