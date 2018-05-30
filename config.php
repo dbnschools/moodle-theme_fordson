@@ -42,37 +42,52 @@ $THEME->parents = ['boost'];
  */
 $THEME->sheets = [''];
 $THEME->editor_sheets = [''];
+
+// Toggle display of blocks
 $THEME->layouts = [
     // The site home page.
-    'frontpage' => array(
+    'frontpage' => [
         'file' => 'frontpage.php',
-        'regions' => array('side-pre', 'fp-a', 'fp-b', 'fp-c'),
+        'regions' => ['side-pre', 'fp-a', 'fp-b', 'fp-c'],
         'defaultregion' => 'fp-c',
-        'options' => array('nonavbar' => true, 'langmenu' => true),
-    ),
+        'options' => ['nonavbar' => true, 'langmenu' => true],
+    ],
     // Main course page.
-    'course' => array(
+    'course' => [
         'file' => 'course.php',
-        'regions' => array('fp-a', 'fp-b', 'fp-c'),
+        'regions' => ['side-pre', 'fp-a', 'fp-b', 'fp-c'],
         'defaultregion' => 'fp-c',
-    ),
-    'incourse' => array(
+    ],
+    'incourse' => [
         'file' => 'course.php',
-        'regions' => array('side-pre'),
+        'regions' => ['side-pre'],
         'defaultregion' => 'side-pre',
-    ),
-    'coursecategory' => array(
+    ],
+    'coursecategory' => [
         'file' => 'columns2.php',
-        'regions' => array('side-pre'),
+        'regions' => ['side-pre'],
         'defaultregion' => 'side-pre',
-    ),
+    ],
     // Server administration scripts.
-    'admin' => array(
+    'admin' => [
         'file' => 'columns2.php',
-        'regions' => array('side-pre'),
+        'regions' => ['side-pre'],
         'defaultregion' => 'side-pre',
-    ),
+    ],
 ];
+if ($THEME->settings->blockdisplay == 2) {
+    $THEME->layouts['course'] = [
+        'file' => 'course.php',
+        'regions' => ['side-pre'],
+        'defaultregion' => 'side-pre',
+    ];
+    $THEME->layouts['frontpage'] = [
+        'file' => 'frontpage.php',
+        'regions' => ['side-pre'],
+        'defaultregion' => 'side-pre',
+    ];
+}
+
 
 // Call main theme scss - including the selected preset.
 $THEME->scss = function($theme) {
@@ -88,7 +103,13 @@ $THEME->prescsscallback = 'theme_fordson_get_pre_scss';
 $THEME->extrascsscallback = 'theme_fordson_get_extra_scss';
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 
-$THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_DEFAULT;
+// Toggle display of blocks
+if ($THEME->settings->blockdisplay == 1) {
+    $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_DEFAULT;
+} else {
+    $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
+}
+
 $THEME->iconsystem = \core\output\icon_system::FONTAWESOME;
 
 $THEME->enable_dock = false;

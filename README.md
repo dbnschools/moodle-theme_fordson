@@ -32,3 +32,12 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 * Fixed buttons for Easy Enrollment Add-On styling
 * Fixed issue where turning editing on did not return you to the proper place on the page.
 * Fixed issue where scroll to top button wasn't working on course pages.
+* Fixed Icon Course Category displaying as a vertical list instead of horizontal.
+* Fixed custom login page styling for icons and page background color extending to the bottom of the page.
+* Added 2 column course listing display option based off tile 3 styling.
+* Fixed question icons being too big on quiz editing page.
+* Fixed some section styles not looking ideal when using one topic per page display option.
+* Added toggle for Block Display.  This allows you to choose between the Fordson 3 column block display and Boost default single column blocks.
+* Fixed homepage footer not displaying customizations.
+* New Modern Moodle Preset colors and background images.
+* New Footer Color chooser.

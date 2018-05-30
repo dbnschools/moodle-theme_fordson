@@ -26,7 +26,7 @@ $green:   #5cb85c !default;
 $teal:    #20c997 !default;
 $cyan:    #5bc0de !default;
 
-$primary:       $blue !default;
+$primary:       #447198 !default;
 $secondary:     $gray-800 !default;
 $success:       $green !default;
 $info:          $cyan !default;
@@ -41,8 +41,10 @@ $enable-rounded: false !default;
 // Body
 $body-color:    $gray-800 !default;
 $body-bg:       #dae6e5 !default;
-$drawer-bg:     $gray-800 !default;
+//$drawer-bg:     rgba(46, 88, 95, 0.6) !default;
+$drawer-bg:     rgba(86, 150, 165, 0.4) !default;
 $card-bg:       $white !default;
+$footer-bg:     rgba(14, 62, 70, 0.9) !default;
 
 // Fonts
 $font-size-base: 0.9375rem !default;
@@ -109,14 +111,15 @@ body {
 
 // Navdrawer pull right
 [data-region="drawer"] {
-    padding: 0 10px 20px 0;
+    padding: 20px 0 20px 20px;
 }
 
 // Content area bkg
 div#learningcontent {
     position: relative;
     background-color: $white;
-    padding: 1rem !important;
+    border: 0 !important;
+    border-top: 1rem solid $primary !important;
 }
 
 .course-content .current::before {

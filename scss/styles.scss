@@ -83,6 +83,7 @@ body#page-login-index, body#page-login-signup{
 
 div#fordsonlogin {
     background-color: $card-bg;
+    height: 100%;
 }
 
 .fpinstructions {
@@ -94,8 +95,6 @@ div#fordsonlogin {
     display: inline-block;
     padding: 1.5rem;
     margin-bottom: $spacer;
-    box-shadow: 0 1px 1px 1px rgba(0,0,0,.3);
-    border: 1px solid #fff;
 }
 
 .card.loginicon {
@@ -104,6 +103,7 @@ div#fordsonlogin {
 
 .row.loginicons {
     padding: 2rem 0;
+    color: $primary;
 }
 
 .featuretext {
@@ -436,12 +436,19 @@ form#enrolform_easy button.btn.btn-primary {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
+.class-box-fp-2col {
+    height: $courseboxheight;
+    background-color: $body-bg;
+    border: 2px solid $white;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.6);
+}
+
 .class-box-fp .course-title h4 a:hover {
     text-decoration: none;
 }
 
 .class-box-fp .course-title {
-    background-color: darken($card-bg, 5%);
+    background-color: $card-bg;
     padding: $spacer;
     padding-top: 2rem;
     margin-bottom: 0;
@@ -449,7 +456,22 @@ form#enrolform_easy button.btn.btn-primary {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
-.class-box-fp .course-title:after {
+.class-box-fp-2col .course-title-2col {
+    background-color: $card-bg;
+    padding-top: 1rem;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.course-summary-2col {
+    margin: 0 2rem;
+    padding: $spacer;
+    color: $white;
+    background-color:rgba($black, 0.8);
+    border-radius: 0 0 .25rem .25rem;
+}
+
+.class-box-fp .course-title:after, .class-box-fp-2col .course-title-2col:after {
     text-decoration: none;
     display: block;
     content: '';
@@ -458,7 +480,7 @@ form#enrolform_easy button.btn.btn-primary {
     transition: transform 250ms ease-in-out;
 }
 
-.class-box-fp .course-title:hover:after {
+.class-box-fp .course-title:hover:after, .class-box-fp-2col .course-title-2col:hover:after {
     transform: scaleX(1);
 }
 
@@ -623,7 +645,7 @@ form#enrolform_easy button.btn.btn-primary {
 }
 
 .coursedimmed3 {
-    background-color: rgba(150, 150, 150, .9);
+    background-color: $gray-600;
     padding: 1rem;
 }
 
@@ -736,6 +758,10 @@ ul.teacherscourseview {
     background-color: $gray-100;
     display: inline-block;
     border: 1px solid $gray-300;
+}
+
+.jumpmenu {
+    display: inline-block;
 }
 
 .course-content ul.topics li.section .left, .course-content ul.topics li.section .right {
@@ -895,6 +921,11 @@ div#page.container-fluid {
     }
     .class-fullbox7 {
         padding: 3rem .25rem 0 .25rem;
+    }
+    .course-summary-2col {
+        margin: 0;
+        padding: 0;
+        border-radius: 0;
     }
 }
 

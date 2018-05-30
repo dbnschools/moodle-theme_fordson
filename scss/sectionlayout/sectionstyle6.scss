@@ -45,8 +45,6 @@ h3.sectionname {
     background-color: $gray-100;
 }
 
-
-
 li.current h3.sectionname {
     border-top: 8px solid $dpsaccentcolor;
     background-color: rgba(216, 246, 255, 0.5);
@@ -68,13 +66,6 @@ li.section.hidden h3.sectionname {
     background-color: $card-bg;
     padding: .5rem;
     border-radius: $border-radius;
-}
-
-
-img.activityicon {
-    height: $activityiconsize;
-    width: $activityiconsize;
-    vertical-align: middle !important;
 }
 
 li.activity.label {
@@ -108,9 +99,10 @@ span.section-modchooser-link {
     border: 1px solid $gray-400;
 }
 
-span.actions .icon {
-    width: 30px;
-    height: 30px;
+.course-content img.activityicon {
+    height: $activityiconsize;
+    width: $activityiconsize;
+    vertical-align: middle !important;
 }
 
 .m-t-2.m-b-1 {
@@ -130,3 +122,10 @@ span.actions .icon {
     background-color: $gray-100;
     padding: .5rem;
 }
+
+// Single Activity fixes
+
+#page-course-view-topics .course-content .section-summary {
+    border: 0;
+}
+

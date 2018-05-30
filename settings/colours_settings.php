@@ -89,7 +89,7 @@ $page->add(new admin_setting_heading('theme_fordson_colours', get_string('colour
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
-    // marketing tile text background
+    // Marketing tile text background
     $name = 'theme_fordson/markettextbg';
     $title = get_string('markettextbg', 'theme_fordson');
     $description = get_string('markettextbg_desc', 'theme_fordson');
@@ -97,7 +97,7 @@ $page->add(new admin_setting_heading('theme_fordson_colours', get_string('colour
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
-    // layout card background
+    // Card background
     $name = 'theme_fordson/cardbkg';
     $title = get_string('cardbkg', 'theme_fordson');
     $description = get_string('cardbkg_desc', 'theme_fordson');
@@ -105,10 +105,18 @@ $page->add(new admin_setting_heading('theme_fordson_colours', get_string('colour
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
-    // layout drawer background
+    // Drawer background
     $name = 'theme_fordson/drawerbkg';
     $title = get_string('drawerbkg', 'theme_fordson');
     $description = get_string('drawerbkg_desc', 'theme_fordson');
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Footer drawer background
+    $name = 'theme_fordson/footerbkg';
+    $title = get_string('footerbkg', 'theme_fordson');
+    $description = get_string('footerbkg_desc', 'theme_fordson');
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);

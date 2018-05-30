@@ -143,6 +143,17 @@ a.add-sections {
     border-radius: $border-radius;
 }
 
+// Single Activity fixes
+
+#page-course-view-topics .course-content .section-summary {
+    border: 0;
+}
+
+.single-section h3.sectionname {
+    display: block;
+    margin-top: 3rem;
+}
+
 // Activity Styling.
 
 ul {
@@ -174,15 +185,10 @@ li.activity.label {
     background-color: $activityhover;
 }
 
-img.activityicon {
+.course-content img.activityicon {
     height: $activityiconsize;
     width: $activityiconsize;
     vertical-align: middle !important;
-}
-
-span.actions .icon {
-    width: 30px;
-    height: 30px;
 }
 
 span.instancename {
@@ -197,9 +203,4 @@ span.instancename {
 
 .region_main_settings_menu_proxy {
     float: initial;
-}
-
-.path-course-view .actions img.icon {
-    width: $activityiconsize;
-    height: $activityiconsize;
 }

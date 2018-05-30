@@ -43,15 +43,6 @@ $setting = new admin_setting_configcheckbox($name, $title, $description, $defaul
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// Frontpage show additional block regions
-$name = 'theme_fordson/showblockregions';
-$title = get_string('showblockregions', 'theme_fordson');
-$description = get_string('showblockregions_desc', 'theme_fordson');
-$default = 1;
-$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
 // Content spacing
 $name = 'theme_fordson/learningcontentpadding';
 $title = get_string('learningcontentpadding', 'theme_fordson');

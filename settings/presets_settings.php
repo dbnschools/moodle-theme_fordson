@@ -99,7 +99,7 @@ $sectionlayout6 = get_string('sectionlayout6', 'theme_fordson');
 $sectionlayout7 = get_string('sectionlayout7', 'theme_fordson');
 $sectionlayout8 = get_string('sectionlayout8', 'theme_fordson');
 
-$default = '2';
+$default = '3';
 $choices = array('1'=>$sectionlayout1, '2'=>$sectionlayout2, '3'=>$sectionlayout3, '4'=>$sectionlayout4, '5'=>$sectionlayout5, '6'=>$sectionlayout6, '7'=>$sectionlayout7, '8'=>$sectionlayout8);
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
@@ -117,8 +117,21 @@ $coursestyle5 = get_string('coursestyle5', 'theme_fordson');
 $coursestyle6 = get_string('coursestyle6', 'theme_fordson');
 $coursestyle7 = get_string('coursestyle7', 'theme_fordson');
 $coursestyle8 = get_string('coursestyle8', 'theme_fordson');
+$coursestyle9 = get_string('coursestyle9', 'theme_fordson');
 $default = '4';
-$choices = array('1'=>$coursestyle1, '2'=>$coursestyle2, '3'=>$coursestyle3, '4'=>$coursestyle4, '5'=>$coursestyle5, '6'=>$coursestyle6, '7'=>$coursestyle7, '8'=>$coursestyle8);
+$choices = array('1'=>$coursestyle1, '2'=>$coursestyle2, '3'=>$coursestyle3, '4'=>$coursestyle4, '5'=>$coursestyle5, '6'=>$coursestyle6, '7'=>$coursestyle7, '8'=>$coursestyle8, '9'=>$coursestyle9);
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+// Block Display Options
+$name = 'theme_fordson/blockdisplay';
+$title = get_string('blockdisplay' , 'theme_fordson');
+$description = get_string('blockdisplay_desc', 'theme_fordson');
+$blockdisplay_on = get_string('blockdisplay_on', 'theme_fordson');
+$blockdisplay_off = get_string('blockdisplay_off', 'theme_fordson');
+$default = '1';
+$choices = array('1'=>$blockdisplay_on, '2'=>$blockdisplay_off);
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);

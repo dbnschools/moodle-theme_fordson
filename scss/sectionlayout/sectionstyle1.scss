@@ -149,16 +149,16 @@ li.activity.label {
     background-color: $activityhover;
 }
 
-img.activityicon {
+.course-content img.activityicon {
     height: $activityiconsize;
     width: $activityiconsize;
     vertical-align: middle !important;
 }
 
-span.actions .icon {
-    width: 30px;
-    height: 30px;
+.course-content span.instancename {
+    margin-left: 1rem;
 }
+
 
 span.instancename {
     margin-left: 1rem;
@@ -174,7 +174,3 @@ span.instancename {
     float: initial;
 }
 
-.path-course-view .actions img.icon {
-    width: $activityiconsize;
-    height: $activityiconsize;
-}

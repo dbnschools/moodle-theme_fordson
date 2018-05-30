@@ -50,7 +50,7 @@ global $PAGE;
  */
 
 
-if ($PAGE->theme->settings->coursetilestyle < 8) {
+if ($PAGE->theme->settings->coursetilestyle < 9) {
     class course_renderer extends \theme_boost\output\core\course_renderer {
 
         protected $countcategories = 0;
@@ -76,6 +76,9 @@ if ($PAGE->theme->settings->coursetilestyle < 8) {
 
             $rcourseids = array_keys($courses);
             $acourseids = array_chunk($rcourseids, 3);
+            if ($PAGE->theme->settings->coursetilestyle == 8) {
+                $acourseids = array_chunk($rcourseids, 2);
+            }
             $newcourse = get_string('availablecourses');
 
             $header = '
@@ -139,7 +142,7 @@ if ($PAGE->theme->settings->coursetilestyle < 8) {
                             $rowcontent .= '
                         <div class="col-md-4">';
                             $rowcontent .= html_writer::start_tag('div', array(
-                                'class' => $course->visible ? '' : 'coursedimmed1'
+                                'class' => $course->visible ? 'coursevisible' : 'coursedimmed1'
                             ));
                             $rowcontent .= '
                             <div class="class-box">
@@ -205,7 +208,7 @@ if ($PAGE->theme->settings->coursetilestyle < 8) {
                                 $tooltiptext = '';
                             }
                             $rowcontent .= html_writer::start_tag('div', array(
-                                'class' => $course->visible ? '' : 'coursedimmed2'
+                                'class' => $course->visible ? 'coursevisible' : 'coursedimmed2'
                             ));
                             $rowcontent .= '
                                 <figcaption>
@@ -251,7 +254,7 @@ if ($PAGE->theme->settings->coursetilestyle < 8) {
                             <div class="class-box-fp" style="background-image: url(' . $imgurl . ');background-repeat: no-repeat;background-size:cover; background-position:center;">
                                 <a ' . $tooltiptext . ' href="' . $courseurl . '" class="coursestyle3url">';
                             $rowcontent .= html_writer::start_tag('div', array(
-                                'class' => $course->visible ? '' : 'coursedimmed3'
+                                'class' => $course->visible ? 'coursevisible' : 'coursedimmed3'
                             ));
                             $rowcontent .= '
                                     <div class="course-title">
@@ -267,7 +270,7 @@ if ($PAGE->theme->settings->coursetilestyle < 8) {
                             $rowcontent .= '
                         <div class="col-md-4">';
                             $rowcontent .= html_writer::start_tag('div', array(
-                                'class' => $course->visible ? '' : 'coursedimmed1'
+                                'class' => $course->visible ? 'coursevisible' : 'coursedimmed1'
                             ));
                             $rowcontent .= '
                             <div class="class-box">
@@ -455,6 +458,34 @@ if ($PAGE->theme->settings->coursetilestyle < 8) {
                                 </div>
                         </div>';
                         }
+                    if ($PAGE->theme->settings->coursetilestyle == 8) {
+                            if ($PAGE->theme->settings->titletooltip) {
+                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . $course->fullname . '"';
+                            } else {
+                                $tooltiptext = '';
+                            }
+                            $rowcontent .= '
+                                <div class="col-lg-6">
+                                <div class="tilecontainer">';
+                            $rowcontent .= html_writer::start_tag('div', array(
+                                'class' => $course->visible ? 'coursevisible' : 'coursedimmed3'
+                            ));
+                            $rowcontent .= '<div class="class-box-fp-2col" style="background-image: url(' . $imgurl . ');background-repeat: no-repeat;background-size:cover; background-position:center;">
+                                <a ' . $tooltiptext . ' href="' . $courseurl . '" class="coursestyle3url">';
+
+                            $rowcontent .= '
+                                    <div class="course-title-2col">
+                                    <h4><a href="' . $courseurl . '">' . $trimtitle . '</a></h4>
+                                    </div>
+                                    <div class="course-summary-2col">
+                                    ' . $summary . '
+                                    </div>
+                                    </div>
+                                    </a>
+                                </div>
+                               </div> 
+                        </div>';
+                    }
 
                     }
 
@@ -481,7 +512,11 @@ if ($PAGE->theme->settings->coursetilestyle < 8) {
             global $CFG, $OUTPUT, $PAGE;
 
             $rcourseids = array_keys($courses);
-            $acourseids = array_chunk($rcourseids, 4);
+            $acourseids = array_chunk($rcourseids, 3);
+
+            if ($PAGE->theme->settings->coursetilestyle == 8) {
+                $acourseids = array_chunk($rcourseids, 2);
+            }
 
             if ($id != 0) {
                 $newcourse = get_string('availablecourses');
@@ -551,9 +586,9 @@ if ($PAGE->theme->settings->coursetilestyle < 8) {
 
                         if ($PAGE->theme->settings->coursetilestyle == 1) {
                             $rowcontent .= '
-                        <div class="col-md-3">';
+                        <div class="col-md-4">';
                             $rowcontent .= html_writer::start_tag('div', array(
-                                'class' => $course->visible ? '' : 'coursedimmed1'
+                                'class' => $course->visible ? 'coursevisible' : 'coursedimmed1'
                             ));
                             $rowcontent .= '
                             <div class="class-box">
@@ -605,7 +640,7 @@ if ($PAGE->theme->settings->coursetilestyle < 8) {
                             // display course contacts. See course_in_list::get_course_contacts().
                             $enrollbutton = get_string('enrollcoursecard', 'theme_fordson');
                             $rowcontent .= '
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         ';
                             $rowcontent .= '
                     <div class="tilecontainer">
@@ -618,7 +653,7 @@ if ($PAGE->theme->settings->coursetilestyle < 8) {
                                 $tooltiptext = '';
                             }
                             $rowcontent .= html_writer::start_tag('div', array(
-                                'class' => $course->visible ? '' : 'coursedimmed2'
+                                'class' => $course->visible ? 'coursevisible' : 'coursedimmed2'
                             ));
                             $rowcontent .= '
                                 <figcaption>
@@ -657,12 +692,12 @@ if ($PAGE->theme->settings->coursetilestyle < 8) {
                                 $tooltiptext = '';
                             }
                             $rowcontent .= '
-                        <div class="col-md-3">
+                        <div class="col-md-4">
                         <div class="tilecontainer">
                             <div class="class-box-fp" style="background-image: url(' . $imgurl . ');background-repeat: no-repeat;background-size:cover; background-position:center;">
                                 <a ' . $tooltiptext . ' href="' . $courseurl . '" class="coursestyle3url">';
                             $rowcontent .= html_writer::start_tag('div', array(
-                                'class' => $course->visible ? '' : 'coursedimmed3'
+                                'class' => $course->visible ? 'coursevisible' : 'coursedimmed3'
                             ));
                             $rowcontent .= '
                                     <div class="course-title">
@@ -676,9 +711,9 @@ if ($PAGE->theme->settings->coursetilestyle < 8) {
                         }
                         if ($PAGE->theme->settings->coursetilestyle == 4) {
                             $rowcontent .= '
-                        <div class="col-md-3">';
+                        <div class="col-md-4">';
                             $rowcontent .= html_writer::start_tag('div', array(
-                                'class' => $course->visible ? '' : 'coursedimmed1'
+                                'class' => $course->visible ? 'coursevisible' : 'coursedimmed1'
                             ));
                             $rowcontent .= '
                             <div class="class-box">
@@ -865,7 +900,34 @@ if ($PAGE->theme->settings->coursetilestyle < 8) {
                                 </div>
                         </div>';
                         }
+                    if ($PAGE->theme->settings->coursetilestyle == 8) {
+                            if ($PAGE->theme->settings->titletooltip) {
+                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . $course->fullname . '"';
+                            } else {
+                                $tooltiptext = '';
+                            }
+                            $rowcontent .= '
+                                <div class="col-lg-6">
+                                <div class="tilecontainer">';
+                            $rowcontent .= html_writer::start_tag('div', array(
+                                'class' => $course->visible ? 'coursevisible' : 'coursedimmed3'
+                            ));
+                            $rowcontent .= '<div class="class-box-fp-2col" style="background-image: url(' . $imgurl . ');background-repeat: no-repeat;background-size:cover; background-position:center;">
+                                <a ' . $tooltiptext . ' href="' . $courseurl . '" class="coursestyle3url">';
 
+                            $rowcontent .= '
+                                    <div class="course-title-2col">
+                                    <h4><a href="' . $courseurl . '">' . $trimtitle . '</a></h4>
+                                    </div>
+                                    <div class="course-summary-2col">
+                                    ' . $summary . '
+                                    </div>
+                                    </div>
+                                    </a>
+                                </div>
+                               </div> 
+                        </div>';
+                    }
 
                     }
 
@@ -964,6 +1026,82 @@ if ($PAGE->theme->settings->coursetilestyle < 8) {
             ++$this->countcategories;
             return $content;
 
+        }
+
+        /**
+         * Renders the list of subcategories in a category
+         *
+         * @param coursecat_helper $chelper various display options
+         * @param coursecat $coursecat
+         * @param int $depth depth of the category in the current tree
+         * @return string
+         */
+        protected function coursecat_subcategories(coursecat_helper $chelper, $coursecat, $depth) {
+            if (!theme_fordson_get_setting('enablecategoryicon')) {
+                    return parent::coursecat_subcategories($chelper, $coursecat, $depth);
+                }
+
+            global $CFG;
+            $subcategories = array();
+            if (!$chelper->get_categories_display_option('nodisplay')) {
+                $subcategories = $coursecat->get_children($chelper->get_categories_display_options());
+            }
+            $totalcount = $coursecat->get_children_count();
+            if (!$totalcount) {
+                // Note that we call coursecat::get_children_count() AFTER coursecat::get_children() to avoid extra DB requests.
+                // Categories count is cached during children categories retrieval.
+                return '';
+            }
+
+            // prepare content of paging bar or more link if it is needed
+            $paginationurl = $chelper->get_categories_display_option('paginationurl');
+            $paginationallowall = $chelper->get_categories_display_option('paginationallowall');
+            if ($totalcount > count($subcategories)) {
+                if ($paginationurl) {
+                    // the option 'paginationurl was specified, display pagingbar
+                    $perpage = $chelper->get_categories_display_option('limit', $CFG->coursesperpage);
+                    $page = $chelper->get_categories_display_option('offset') / $perpage;
+                    $pagingbar = $this->paging_bar($totalcount, $page, $perpage,
+                            $paginationurl->out(false, array('perpage' => $perpage)));
+                    if ($paginationallowall) {
+                        $pagingbar .= html_writer::tag('div', html_writer::link($paginationurl->out(false, array('perpage' => 'all')),
+                                get_string('showall', '', $totalcount)), array('class' => 'paging paging-showall'));
+                    }
+                } else if ($viewmoreurl = $chelper->get_categories_display_option('viewmoreurl')) {
+                    // the option 'viewmoreurl' was specified, display more link (if it is link to category view page, add category id)
+                    if ($viewmoreurl->compare(new moodle_url('/course/index.php'), URL_MATCH_BASE)) {
+                        $viewmoreurl->param('categoryid', $coursecat->id);
+                    }
+                    $viewmoretext = $chelper->get_categories_display_option('viewmoretext', new lang_string('viewmore'));
+                    $morelink = html_writer::tag('div', html_writer::link($viewmoreurl, $viewmoretext),
+                            array('class' => 'paging paging-morelink'));
+                }
+            } else if (($totalcount > $CFG->coursesperpage) && $paginationurl && $paginationallowall) {
+                // there are more than one page of results and we are in 'view all' mode, suggest to go back to paginated view mode
+                $pagingbar = html_writer::tag('div', html_writer::link($paginationurl->out(false, array('perpage' => $CFG->coursesperpage)),
+                    get_string('showperpage', '', $CFG->coursesperpage)), array('class' => 'paging paging-showperpage'));
+            }
+
+            // display list of subcategories
+            $content = html_writer::start_tag('div', array('class' => 'subcategories d-flex flex-wrap'));
+
+            if (!empty($pagingbar)) {
+                $content .= $pagingbar;
+            }
+
+            foreach ($subcategories as $subcategory) {
+                $content .= $this->coursecat_category($chelper, $subcategory, $depth + 1);
+            }
+
+            if (!empty($pagingbar)) {
+                $content .= $pagingbar;
+            }
+            if (!empty($morelink)) {
+                $content .= $morelink;
+            }
+
+            $content .= html_writer::end_tag('div');
+            return $content;
         }
 
         protected function coursecat_courses(coursecat_helper $chelper, $courses, $totalcount = null) {

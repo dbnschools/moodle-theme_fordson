@@ -36,48 +36,19 @@
 
 h3.sectionname {
     text-align: center;
-    border-top: 8px solid $body-bg;
     padding: $spacer;
-    border-bottom: 8px solid $body-bg;
-    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    background-color: $gray-300; 
 }
 
-h3.sectionname:hover {
-    background-color: $body-bg;
-}
-
-#page-course-view-topics .course-content ul.topics li.section {
+#page-course-view-topics .course-content ul.topics li.section, #page-course-view-weeks .course-content ul.weeks li.section {
     margin-bottom: 3rem;
+    padding-top: 0;
 }
 
-#page-course-view-weeks .course-content ul.weeks li.section {
-    margin-bottom: 3rem;
-}
-
-.section li.activity {
-    border-bottom: 1px dashed $gray-lighter;
-    font-size: 16px;
-}
-
-.section li.activity:hover {
-    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
-    background-color: $activityhover;
-}
-
-.editing .section .activity:hover,
-.editing .section .activity.action-menu-shown {
-    background-color: $activityhover;
-}
-
-img.activityicon {
+.course-content img.activityicon {
     height: $activityiconsize;
     width: $activityiconsize;
-    vertical-align: middle!important;
-}
-
-span.actions .icon {
-    width: 30px;
-    height: 30px;
+    vertical-align: middle !important;
 }
 
 .course-content .current::before {

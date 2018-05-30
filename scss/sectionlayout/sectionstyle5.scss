@@ -136,24 +136,14 @@ a.add-sections {
     background-color: $activityhover;
 }
 
-img.activityicon {
+.course-content img.activityicon {
     height: $activityiconsize;
     width: $activityiconsize;
     vertical-align: middle !important;
-}
-
-span.actions .icon {
-    width: 30px;
-    height: 30px;
 }
 
 .m-t-2.m-b-1 {
     background-color: $body-bg;
     padding: 1rem;
     border-radius: 3px;
-}
-
-.path-course-view .actions img.icon {
-    width: $activityiconsize;
-    height: $activityiconsize;
 }

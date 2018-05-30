@@ -141,6 +141,7 @@ function theme_fordson_get_pre_scss($theme) {
     'breadcrumbbkg' => ['breadcrumb-bg'],
     'cardbkg' => ['card-bg'],
     'drawerbkg' => ['drawer-bg'],
+    'footerbkg' => ['footer-bg'],
     'fploginform' => ['fploginform'],
     'headerimagepadding' => ['headerimagepadding'],
     'markettextbg' => ['markettextbg'],

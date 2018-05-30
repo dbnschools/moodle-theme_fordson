@@ -48,7 +48,10 @@ $string['showblockregions'] = 'Show Additional Frontpage Block Regions';
 $string['showblockregions_desc'] = 'Turn on three more block regions on the site frontpage.  These appear just below the icon navigation bar.';
 $string['viewsectionmodules'] = 'View Section Modules';
 $string['privacy:metadata'] = 'The Fordson theme does not store any individual user data.';
-
+$string['blockdisplay'] = 'Block Display Location Options';
+$string['blockdisplay_desc'] = 'Choose how to display blocks on the homepage and course pages.  Fordson adds a 3 column collapsible block panel that can be hidden by the user.  Choose the Boost default option to use a single right side column for blocks.  The Boost default option also moves the Add a Block button back to the Nav Drawer on the left of the page.';
+$string['blockdisplay_off'] = 'Single Column Boost Default';
+$string['blockdisplay_on'] = 'Three Column Fordson Default';
 
 // Presets Settings.
 $string['presets_settings'] = 'Presets';
@@ -85,6 +88,8 @@ $string['cardbkg'] = 'Content Background Colour';
 $string['cardbkg_desc'] = 'Content background colour for course content and blocks.';
 $string['bodybackground'] = 'Body Background Colour';
 $string['bodybackground_desc'] = 'The main colour to use for the background.';
+$string['footerbkg'] = 'Footer Background Colour';
+$string['footerbkg_desc'] = 'Footer background colour for the bottom of the page.';
 
 $string['rawscss'] = 'Raw SCSS';
 $string['rawscss_desc'] = 'Use this field to provide SCSS code which will be injected at the end of the style sheet.';
@@ -200,7 +205,7 @@ $string['sectionlayout2'] = 'Bold Notecard';
 $string['sectionlayout3'] = 'Folder Tabs';
 $string['sectionlayout4'] = 'Clip Board';
 $string['sectionlayout5'] = 'Simple Box';
-$string['sectionlayout6'] = 'Fancy Section Title';
+$string['sectionlayout6'] = 'Highlighted Section Title';
 $string['sectionlayout7'] = 'University Learner';
 $string['sectionlayout8'] = 'Corporate Learner';
 
@@ -241,7 +246,8 @@ $string['coursestyle4'] = 'Tile Style Four w/course summary';
 $string['coursestyle5'] = 'Horizontal Style One';
 $string['coursestyle6'] = 'Horizontal Image Background Full Details';
 $string['coursestyle7'] = 'Horizontal Image Background Title & Teacher Only';
-$string['coursestyle8'] = 'Default Moodle Course Display';
+$string['coursestyle8'] = 'Horizontal Two Column';
+$string['coursestyle9'] = 'Default Moodle Course Display';
 $string['coursetilestyle'] = 'Course Tile Display';
 $string['coursetilestyle_desc'] = 'When viewing course categories you can choose from the following styles to display courses. <a href="https://goo.gl/fMXzSo" target="_new">Instructions for Fordson 3.5 Theme</a>';
 $string['gutterwidth'] = 'Content Padding';
@@ -277,10 +283,10 @@ $string['headerimagepadding_desc'] = 'Control the padding and height of the head
 $string['activitymenu'] = 'Show Grouped Activities Menu';
 $string['activitymenu_desc'] = 'Show the grouped activity listings in the student and teacher panels.  This menu displays a grouped list of all activities for the student and teacher.';
 
-$string['coursemanagementinfo'] = 'Course Management Panel Menu';
-$string['coursemanagementinfodesc'] = 'These settings allow you to display and easy to use course management menu for teachers.  The Course Management Menu now includes the This Course Drop-down, a sliding Course Admin panel, and the ability to include the default Moodle Course Editing Cog.';
-$string['coursemanagementtoggle'] = 'Show Student and Teacher Dashboard Panels';
-$string['coursemanagementtoggle_desc'] = 'This displays an easy to use sliding panel for teachers to manage their course. It will also display a course overview panel for students with grades, course completion, and other items from the course.';
+$string['coursemanagementinfo'] = 'Course Administration Panel Menu';
+$string['coursemanagementinfodesc'] = 'Fordson provides a unique and organized Course Administration Panel which can be accessed from anywhere within a course by teachers to access their course management links. Students also can access a Student Course Dashboard which includes information relevant to the course.  It is highly recommended you keep this turned on.  ';
+$string['coursemanagementtoggle'] = 'Show Student and Teacher Course Management Panels';
+$string['coursemanagementtoggle_desc'] = 'This displays the Course Administration links in an organized panel for teachers that provides a dashboard of all the links they need to manage their course and users. It will also display a course overview panel for students with grades, course completion, and other items from the course.';
 $string['coursemanagementtextbox'] = 'Course Management Message';
 $string['coursemanagementtextbox_desc'] = 'Add a message for teachers in the course management panel on every course page.';
 $string['studentdashboardtextbox'] = 'Student Dashboard Message';

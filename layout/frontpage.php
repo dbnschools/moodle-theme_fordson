@@ -52,7 +52,7 @@ $hasblocks = strpos($blockshtml, 'data-block=') !== false;
 $blockshtmla = $OUTPUT->blocks('fp-a');
 $blockshtmlb = $OUTPUT->blocks('fp-b');
 $blockshtmlc = $OUTPUT->blocks('fp-c');
-$hasfpblockregion = isset($PAGE->theme->settings->showblockregions) !== false;
+$hasfpblockregion = $PAGE->theme->settings->blockdisplay == 1;
 
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [
