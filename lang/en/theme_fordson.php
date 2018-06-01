@@ -43,13 +43,13 @@ $string['navdrawerbtn'] = 'Navigation';
 $string['region-fp-a'] = 'Column A';
 $string['region-fp-b'] = 'Column B';
 $string['region-fp-c'] = 'Column C';
-$string['courseblockpanelbtn'] = 'Course Block Panel';
+$string['courseblockpanelbtn'] = 'Course Blocks';
 $string['showblockregions'] = 'Show Additional Frontpage Block Regions';
 $string['showblockregions_desc'] = 'Turn on three more block regions on the site frontpage.  These appear just below the icon navigation bar.';
 $string['viewsectionmodules'] = 'View Section Modules';
 $string['privacy:metadata'] = 'The Fordson theme does not store any individual user data.';
 $string['blockdisplay'] = 'Block Display Location Options';
-$string['blockdisplay_desc'] = 'Choose how to display blocks on the homepage and course pages.  Fordson adds a 3 column collapsible block panel that can be hidden by the user.  Choose the Boost default option to use a single right side column for blocks.  The Boost default option also moves the Add a Block button back to the Nav Drawer on the left of the page.';
+$string['blockdisplay_desc'] = 'Choose how to display blocks on the homepage and course pages.  Fordson adds a 3 column collapsible block panel that can be hidden by the user.  Choose the Boost default option to use a single right side column for blocks.  The Boost default option also moves the Add a Block button back to the Nav Drawer on the left of the page.  We also recommend using "Single Column Boost Default" when using any of the Boost page layouts from the settings above.';
 $string['blockdisplay_off'] = 'Single Column Boost Default';
 $string['blockdisplay_on'] = 'Three Column Fordson Default';
 

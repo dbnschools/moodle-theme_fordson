@@ -242,9 +242,14 @@ div#blockslider {
     border: 1px solid $gray-400;
     padding: 1rem;
 }
-
-a#blocksliderbutton {
-    margin: .5rem 0;
+.blockpanelbtn {
+    position: absolute;
+    right: 0;
+    z-index: 2;
+}
+.blockpanelbtn .btn:focus, .blockpanelbtn .btn-primary:focus {
+    outline: 0;
+    box-shadow: none !important;
 }
 
 /* Footer */
@@ -839,9 +844,14 @@ ul.teacherscourseview {
 }
 
 
-// Course Completion Image fix.
+// Image fixes.
 [data-region="coursecompetencyactivities"] .list-inline-item img {
 width: $activityiconsize;
+}
+
+#page-course-editdefaultcompletion .modules img.m-r-1.m-b-1 {
+    height: $activityiconsize;
+    width: $activityiconsize;
 }
 
 /* H5P regression fix for editor https://moodle.org/mod/forum/discuss.php?d=347602#p1402801 */
@@ -927,6 +937,7 @@ div#page.container-fluid {
         padding: 0;
         border-radius: 0;
     }
+    .blockbtntext {display:none;}
 }
 
 .navbar-expand .navbar-nav .dropdown-menu {

@@ -90,15 +90,23 @@ h3.sectionname a {
 
 .course-content ul.topics li.section .content,
 .course-content ul.weeks li.section .content {
-    background-color: $gray-500;
     border: 0;
     margin-top: 2rem;
     padding-top: 0;
 }
 
+.editing .course-content ul.topics li.section .content,
+.editing .course-content ul.weeks li.section .content {
+    border: 1px dotted $gray-500;
+}
+
+/*.course-content ul.topics li.section, .course-content ul.weeks li.section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}*/
+
 .course-content ul li.section.main {
     border-bottom: 0;
-    margin-top: 0;
 }
 
 li.current h3.sectionname {
@@ -140,15 +148,13 @@ div#changenumsections {
 }
 
 span.section-modchooser-link{
-    background-color: $sectionactivitybkg;
+    background-color: $gray-200;
     padding: .5rem;
-
 }
 
 a.add-sections {
-    background-color: $sectionbkg;
+    background-color: $gray-200;
     padding: 10px;
-    border-radius: $border-radius;
 }
 
 // Activity Styling.
