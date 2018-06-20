@@ -71,8 +71,8 @@ $THEME->layouts = [
     // Server administration scripts.
     'admin' => [
         'file' => 'columns2.php',
-        'regions' => ['side-pre'],
-        'defaultregion' => 'side-pre',
+        'regions' => ['side-pre', 'fp-c'],
+        'defaultregion' => 'fp-c',
     ],
 ];
 if ($THEME->settings->blockdisplay == 2) {

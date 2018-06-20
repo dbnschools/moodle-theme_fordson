@@ -1,6 +1,6 @@
 {{#hasfpslideshow}}
 
-<div id="fordsoncarousel" class="carousel slide" data-ride="carousel">
+<div id="fordsoncarousel" class="carousel slide d-none d-sm-block" data-ride="carousel">
 
   <ol class="carousel-indicators">
     {{#hasslide1}}<li data-target="#fordsoncarousel" data-slide-to="0" class="active"></li>{{/hasslide1}}
@@ -15,7 +15,7 @@
       <div class="slide1image"></div>
       {{#showtext1}}
       {{#slide1}}
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption d-none d-sm-block">
         <h3>{{{slidetitle}}}</h3>
         <p>{{{slidecontent}}}</p>
       </div>
@@ -29,7 +29,7 @@
       <div class="slide2image"></div>
       {{#showtext2}}
       {{#slide2}}
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption d-none d-sm-block">
         <h3>{{{slidetitle}}}</h3>
         <p>{{{slidecontent}}}</p>
       </div>
@@ -43,7 +43,7 @@
       <div class="slide3image"></div>
       {{#showtext3}}
       {{#slide3}}
-      <div class="carousel-caption d-none d-md-block">
+      <div class="carousel-caption d-none d-sm-block">
         <h3>{{{slidetitle}}}</h3>
         <p>{{{slidecontent}}}</p>
       </div>

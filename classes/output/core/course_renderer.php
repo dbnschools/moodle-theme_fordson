@@ -251,7 +251,7 @@ if ($PAGE->theme->settings->coursetilestyle < 9) {
                             $rowcontent .= '
                         <div class="col-md-4">
                         <div class="tilecontainer">
-                            <div class="class-box-fp" style="background-image: url(' . $imgurl . ');background-repeat: no-repeat;background-size:cover; background-position:center;">
+                            <div class="class-box-fp-style3" style="background-image: url(' . $imgurl . ');background-repeat: no-repeat;background-size:cover; background-position:center;">
                                 <a ' . $tooltiptext . ' href="' . $courseurl . '" class="coursestyle3url">';
                             $rowcontent .= html_writer::start_tag('div', array(
                                 'class' => $course->visible ? 'coursevisible' : 'coursedimmed3'
@@ -694,7 +694,7 @@ if ($PAGE->theme->settings->coursetilestyle < 9) {
                             $rowcontent .= '
                         <div class="col-md-4">
                         <div class="tilecontainer">
-                            <div class="class-box-fp" style="background-image: url(' . $imgurl . ');background-repeat: no-repeat;background-size:cover; background-position:center;">
+                            <div class="class-box-fp-style3" style="background-image: url(' . $imgurl . ');background-repeat: no-repeat;background-size:cover; background-position:center;">
                                 <a ' . $tooltiptext . ' href="' . $courseurl . '" class="coursestyle3url">';
                             $rowcontent .= html_writer::start_tag('div', array(
                                 'class' => $course->visible ? 'coursevisible' : 'coursedimmed3'

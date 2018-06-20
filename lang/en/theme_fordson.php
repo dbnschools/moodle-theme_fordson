@@ -52,6 +52,7 @@ $string['blockdisplay'] = 'Block Display Location Options';
 $string['blockdisplay_desc'] = 'Choose how to display blocks on the homepage and course pages.  Fordson adds a 3 column collapsible block panel that can be hidden by the user.  Choose the Boost default option to use a single right side column for blocks.  The Boost default option also moves the Add a Block button back to the Nav Drawer on the left of the page.  We also recommend using "Single Column Boost Default" when using any of the Boost page layouts from the settings above.';
 $string['blockdisplay_off'] = 'Single Column Boost Default';
 $string['blockdisplay_on'] = 'Three Column Fordson Default';
+$string['ilearnsecurebrowser'] ='This Quiz is secured with iLearn Secure Browser (A Chromebook using the iLearn app must be used to attempt this quiz)';
 
 // Presets Settings.
 $string['presets_settings'] = 'Presets';
@@ -489,7 +490,8 @@ book,file,folder,imscp,label,page,resource,url';
 $string['modchoosercommonlyused'] = 'Commonly Used';
 $string['showonlycustomactivities'] = 'Show Only Custom Menu';
 $string['showonlycustomactivities_desc'] = 'If checked only the custom menu will be displayed.  This allows an organization to pick and choose which activities and resources will be used in courses. WARNING:  You must have a comma separated list of activities/resources set in the textbox above.  Otherwise you will not see any activities or resources when editing a course.';
-$string['modchoosercommonlyusedtitle'] = '{$a}';
+$string['modchoosercommonlyusedtitle'] = 'Common Modules';
+$string['modchoosercommonlyusedtitlecustom'] = '{$a}';
 $string['modchoosercustomlabel'] = 'Custom Chooser Label';
 $string['modchoosercustomlabel_desc'] = 'Add your own custom label for this new menu in the Chooser Module panel.';
 $string['showalltomanager'] = 'Show All Activities and Resources to Managers';

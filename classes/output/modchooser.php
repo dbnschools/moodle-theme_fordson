@@ -83,12 +83,20 @@ class modchooser extends chooser {
         }
 
         // Commonly Used
+        if (count($commonlyused)&& !empty($PAGE->theme->settings->modchoosercustomlabel)) {
+            $sections[] = new chooser_section('commonlyused', new lang_string('modchoosercommonlyusedtitlecustom', 'theme_fordson', format_text($PAGE->theme->settings->modchoosercustomlabel, FORMAT_HTML, array('noclean' => true))) , array_map(function ($module) use ($context) {
+                return new modchooser_item($module, $context);
+            }
+            , $commonlyused));
+        } 
+
         if (count($commonlyused)) {
-            $sections[] = new chooser_section('commonlyused', new lang_string('modchoosercommonlyusedtitle', 'theme_fordson', $PAGE->theme->settings->modchoosercustomlabel) , array_map(function ($module) use ($context) {
+            $sections[] = new chooser_section('commonlyused', new lang_string('modchoosercommonlyusedtitle', 'theme_fordson') , array_map(function ($module) use ($context) {
                 return new modchooser_item($module, $context);
             }
             , $commonlyused));
         }
+        
 
         if ($showonlycustom == 0) {
             // Activities.

@@ -276,7 +276,7 @@ ul.footercontact {
     height: $slideshowheight;
 }
 
-.carousel-caption.d-none.d-md-block {
+.carousel-caption.d-none.d-sm-block {
     background: rgba(0, 0, 0, 0.7);
 }
 
@@ -333,7 +333,7 @@ a.right.carousel-control .fa-chevron-right {
 }
 
 .iconset .btn.btn-secondary {
-    width: $fpicon-width;
+    min-width: $fpicon-width;
     margin-bottom: .5rem;
 }
 
@@ -361,6 +361,15 @@ div#fpslider {
 .alertmessage p {
     margin-top: initial;
     margin-bottom: initial;
+}
+
+.ilearnsecurealert {
+    padding: 1rem;
+    margin: 0;
+}
+
+.ilearnsecurealert p {
+    margin: 0;
 }
 
 .markettiles {
@@ -441,8 +450,18 @@ form#enrolform_easy button.btn.btn-primary {
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
+.class-box-fp-style3 {
+    min-height: $courseboxheight;
+    max-height: inherit;
+    background-color: $body-bg;
+    padding: 1rem;
+    border: 1px solid $body-bg;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
 .class-box-fp-2col {
-    height: $courseboxheight;
+    min-height: $courseboxheight;
+    max-height: inherit;
     background-color: $body-bg;
     border: 2px solid $white;
     box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.6);
@@ -452,7 +471,7 @@ form#enrolform_easy button.btn.btn-primary {
     text-decoration: none;
 }
 
-.class-box-fp .course-title {
+.class-box-fp .course-title, .class-box-fp-style3 .course-title {
     background-color: $card-bg;
     padding: $spacer;
     padding-top: 2rem;
@@ -475,8 +494,13 @@ form#enrolform_easy button.btn.btn-primary {
     background-color:rgba($black, 0.8);
     border-radius: 0 0 .25rem .25rem;
 }
+@media screen and (max-width: 576px) {
+    .course-summary-2col{
+        display:none;
+    }
+}
 
-.class-box-fp .course-title:after, .class-box-fp-2col .course-title-2col:after {
+.class-box-fp-style3 .course-title:after, .class-box-fp .course-title:after, .class-box-fp-2col .course-title-2col:after {
     text-decoration: none;
     display: block;
     content: '';
@@ -485,7 +509,7 @@ form#enrolform_easy button.btn.btn-primary {
     transition: transform 250ms ease-in-out;
 }
 
-.class-box-fp .course-title:hover:after, .class-box-fp-2col .course-title-2col:hover:after {
+.class-box-fp-style3 .course-title:hoover:after, .class-box-fp .course-title:hover:after, .class-box-fp-2col .course-title-2col:hover:after {
     transform: scaleX(1);
 }
 

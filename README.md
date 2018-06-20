@@ -22,6 +22,19 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 # Versions and Updates
 
+## Moodle 3.5 Fordson v3.5 release 3 June 20th, 2018
+* Fixed block display issue when on course pages where you could not add any new blocks to the page.
+* Integrated new features that are activated in the theme when using iLearn Secure Browser Chromebook App and Moodle iLearn Quiz Restriction plugin. (Not yet released.  Will be open source soon.  Creates a secure assessment tool easily deployed to every chromebook in a school. Will include configurator page and easy to use tool to totally customize the App before you deploy it to devices.)
+* Many bug fixes with CSS and other minor things.
+* Fixed a few language strings (Course Completion Settings link, Grades link, Course Completion User Report link) to better reflect what they do in the course management panel.
+* On small screen sizes the frontpage slideshow will be hidden.  Previously only the title and description were hidden but it would still show the images.  In our case this was useless and on a mobile device we feel it is best to just get into the course and focus on the learning.
+
+
+## Moodle 3.5 Fordson v3.5 release 2 update 1
+* Fixed Easy Enrollment Form showing to guest users.
+* Fixed styling for 2 column course listing and course description text not appearing properly on smaller screens.
+
+
 ## Moodle 3.5 Fordson v3.5 release 2
 * Fixed Icon Course Category displaying as a vertical list instead of horizontal.
 * Fixed custom login page styling for icons and page background color extending to the bottom of the page.

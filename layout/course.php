@@ -47,7 +47,7 @@ $blockshtmlc = $OUTPUT->blocks('fp-c');
 $checkblocka = strpos($blockshtmla, 'data-block=') !== false;
 $checkblockb = strpos($blockshtmlb, 'data-block=') !== false;
 $checkblockc = strpos($blockshtmlc, 'data-block=') !== false;
-$hasfpblockregion = isset($PAGE->theme->settings->showblockregions) !== false;
+$hasfpblockregion = ($PAGE->theme->settings->blockdisplay == 1) !== false;
 
 $hascourseblocks = false;
 if ($checkblocka || $checkblockb || $checkblockc) {
@@ -78,6 +78,7 @@ $PAGE->requires->js('/theme/fordson/javascript/scrolltotop.js');
 $PAGE->requires->js('/theme/fordson/javascript/scrollspy.js');
 $PAGE->requires->js('/theme/fordson/javascript/tooltipfix.js');
 $PAGE->requires->js('/theme/fordson/javascript/blockslider.js');
+$PAGE->requires->js('/theme/fordson/javascript/courseblock.js');
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;
 echo $OUTPUT->render_from_template('theme_fordson/columns2', $templatecontext);

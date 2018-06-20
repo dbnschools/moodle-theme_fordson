@@ -40,7 +40,7 @@ if ($navdraweropen) {
 
 $enrolform = '';
 $plugin = enrol_get_plugin('easy');
-if ($plugin) {
+if ($plugin && !isguestuser()) {
     $enrolform = $plugin->get_form();
 }
 
@@ -52,7 +52,7 @@ $hasblocks = strpos($blockshtml, 'data-block=') !== false;
 $blockshtmla = $OUTPUT->blocks('fp-a');
 $blockshtmlb = $OUTPUT->blocks('fp-b');
 $blockshtmlc = $OUTPUT->blocks('fp-c');
-$hasfpblockregion = $PAGE->theme->settings->blockdisplay == 1;
+$hasfpblockregion = ($PAGE->theme->settings->blockdisplay == 1) !== false;
 
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [

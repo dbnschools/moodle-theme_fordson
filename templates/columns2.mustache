@@ -64,14 +64,12 @@
 
     <div id="page" class="container-fluid">
         
-
         <div id="learningcontent">
         
             {{{ output.teacherdash }}}
             {{>theme_fordson/blockspanelslider}}
             {{{ output.full_header }}}
             
-
             <div id="page-content" class="row">
                 <div id="region-main-box" class="col-12">
                     {{#hasregionmainsettingsmenu}}
@@ -85,6 +83,13 @@
                                 {{#hasregionmainsettingsmenu}}
                                     <div class="region_main_settings_menu_proxy"></div>
                                 {{/hasregionmainsettingsmenu}}
+                                {{#output.display_ilearn_secure_alert}}
+                                    <div class="ilearnsecurebrowser text-center">
+                                        <div class="ilearnsecurealert bg-danger text-white text-center d-inline-block">
+                                            <p>{{#str}} ilearnsecurebrowser , theme_fordson{{/str}}</p>
+                                        </div>
+                                    </div>
+                                {{/output.display_ilearn_secure_alert}}
                                 {{{ output.course_content_header }}}
                                 {{{ output.main_content }}}
                                 {{{ output.course_content_footer }}}
