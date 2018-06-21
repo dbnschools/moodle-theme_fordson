@@ -90,7 +90,7 @@ class modchooser extends chooser {
             , $commonlyused));
         } 
 
-        if (count($commonlyused)) {
+        if (count($commonlyused)&& empty($PAGE->theme->settings->modchoosercustomlabel)) {
             $sections[] = new chooser_section('commonlyused', new lang_string('modchoosercommonlyusedtitle', 'theme_fordson') , array_map(function ($module) use ($context) {
                 return new modchooser_item($module, $context);
             }

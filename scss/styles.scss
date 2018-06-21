@@ -902,6 +902,11 @@ width: $activityiconsize;
 
 // Progress bar fixes
 
+.progress {
+    height: 2rem;
+    width: 50%;
+}
+
 .progress_bar {
     background-color: $gray-100;
     text-align: center;
@@ -962,6 +967,9 @@ div#page.container-fluid {
         border-radius: 0;
     }
     .blockbtntext {display:none;}
+    .progress {
+    width: 100%;
+    }
 }
 
 .navbar-expand .navbar-nav .dropdown-menu {

@@ -22,6 +22,12 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 # Versions and Updates
 
+## Moodle 3.5 Fordson v3.5 release 3 update 1
+* Fixed bug with customized activity menu where the labels were not appearing correctly.  This was also part of fixing language strings and filters for many of the text areas in Fordson: https://github.com/dbnschools/moodle-theme_fordson/issues/21
+* Added progress bar for weeks course format when using show one topic per page. Per this request: https://moodle.org/mod/forum/discuss.php?d=360689#p1501221
+
+
+
 ## Moodle 3.5 Fordson v3.5 release 3 June 20th, 2018
 * Fixed block display issue when on course pages where you could not add any new blocks to the page.
 * Integrated new features that are activated in the theme when using iLearn Secure Browser Chromebook App and Moodle iLearn Quiz Restriction plugin. (Not yet released.  Will be open source soon.  Creates a secure assessment tool easily deployed to every chromebook in a school. Will include configurator page and easy to use tool to totally customize the App before you deploy it to devices.)
