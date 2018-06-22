@@ -89,9 +89,9 @@ if ($PAGE->theme->settings->coursetilestyle < 9) {
                         $course = get_course($courseid);
                         $trimtitlevalue = $PAGE->theme->settings->trimtitle;
                         $trimsummaryvalue = $PAGE->theme->settings->trimsummary;
-                        $trimtitle = theme_fordson_course_trim_char($course->fullname, $trimtitlevalue);
+                        $trimtitle = format_text(theme_fordson_course_trim_char($course->fullname, $trimtitlevalue));
                         $summary = theme_fordson_strip_html_tags($course->summary);
-                        $summary = theme_fordson_course_trim_char($summary, $trimsummaryvalue);
+                        $summary = format_text(theme_fordson_course_trim_char($summary, $trimsummaryvalue));
                         $noimgurl = $OUTPUT->image_url('noimg', 'theme');
                         $courseurl = new moodle_url('/course/view.php', array(
                             'id' => $courseid
@@ -493,8 +493,8 @@ if ($PAGE->theme->settings->coursetilestyle < 9) {
                         $trimtitlevalue = $PAGE->theme->settings->trimtitle;
                         $trimsummaryvalue = $PAGE->theme->settings->trimsummary;
                         $summary = theme_fordson_strip_html_tags($course->summary);
-                        $summary = theme_fordson_course_trim_char($summary, $trimsummaryvalue);
-                        $trimtitle = theme_fordson_course_trim_char($course->fullname, $trimtitlevalue);
+                        $summary = format_text(theme_fordson_course_trim_char($summary, $trimsummaryvalue));
+                        $trimtitle = format_text(theme_fordson_course_trim_char($course->fullname, $trimtitlevalue));
                         $noimgurl = $OUTPUT->image_url('noimg', 'theme');
                         $courseurl = new moodle_url('/course/view.php', array(
                             'id' => $courseid

@@ -590,6 +590,7 @@ form#enrolform_easy button.btn.btn-primary {
     height: 4rem;
     overflow: auto;
     margin-bottom: 1rem;
+    padding-bottom: 1rem;
 }
 
 .class-box .course-summary::-webkit-scrollbar {
@@ -867,6 +868,10 @@ ul.teacherscourseview {
     color: $gray-dark;
 }
 
+// Quiz Question fill in blank fix to display inline.
+.path-mod-quiz .que .form-inline {
+    display: inline-block;
+}
 
 // Image fixes.
 [data-region="coursecompetencyactivities"] .list-inline-item img {
@@ -976,4 +981,80 @@ div#page.container-fluid {
     position: absolute;
     max-height: 500px;
     overflow: auto;
+}
+
+@media screen and (min-width: 576px) {
+    /* Breadcrumbs */
+    ul.breadcrumb {
+        display: inline-block;
+        overflow: hidden;
+        border-radius: 5px;
+        background-color:none;
+        margin:0px;
+        padding:0px;
+        background: none;
+    }
+    ul.breadcrumb a {
+        color:white;
+    }
+    ul.breadcrumb li {
+        text-decoration: none;
+        outline: none;
+        display: block;
+        float: left;
+        font-size: 14px;
+        line-height: 36px;
+        color: white;
+        padding: 0 15px 0 30px;
+        background-color: $breadcrumb-bg;
+        position: relative;
+        margin-bottom: 2px;
+    }
+    ul.breadcrumb li:first-child {
+        padding-left: 25px;
+        border-radius: 5px 0 0 5px;
+    }
+    ul.breadcrumb li:first-child:before {
+        left: 14px;
+    }
+    ul.breadcrumb li:last-child {
+        border-radius: 0 5px 5px 0;
+        padding-right: 20px;
+    }
+    /*hover/active styles*/
+    ul.breadcrumb li.active, .breadcrumb li:hover{
+        background-color: $breadcrumb-bg-hover;
+    }
+    ul.breadcrumb li.active:after, .breadcrumb li:hover:after {
+        background-color: $breadcrumb-bg-hover;
+    }
+    ul.breadcrumb li:after {
+        content: '';
+        position: absolute;
+        top: 0; 
+        right: -18px;
+        width: 36px; 
+        height: 36px;
+        transform: scale(0.707) rotate(45deg);
+        z-index: 1;
+        background-color: $breadcrumb-bg;
+        box-shadow:
+        2px -2px 0 2px $card-bg, 
+        2px -2px 0 2px $card-bg;
+        border-radius: 0 5px 0 50px;
+    }
+    ul.breadcrumb li:last-child:after {
+        content: none;
+    }
+    .breadcrumb-item + .breadcrumb-item::before {
+        display: inline-block;
+        padding: 0;
+        content: "";
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .breadcrumb {
+        background-color:transparent !important;
+    }
 }

@@ -21,6 +21,11 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 
 # Versions and Updates
+## Moodle 3.5 Fordson v3.5 release 3 update 2
+* New breadcrumb styling brought over from our previous "evolve-D" theme.  Looks great on large screens and reverts back to just text (Default Boost) on smaller screens.
+* Removed items from breadcrumbs which do not contain a link. This text just takes up space and does nothing for the end user.  Only breadcrumb items with links to pages will display.
+* New Fordson SCSS variable: $breadcrumb-bg-hover can be set to a color if you wanted to change the hover effect on breadcrumbs.  Otherwise it will just darken the breadcrumb background color 15% which you can use the color picker on the colors page.
+
 
 ## Moodle 3.5 Fordson v3.5 release 3 update 1
 * Fixed bug with customized activity menu where the labels were not appearing correctly.  This was also part of fixing language strings and filters for many of the text areas in Fordson: https://github.com/dbnschools/moodle-theme_fordson/issues/21
