@@ -91,6 +91,8 @@ $string['bodybackground'] = 'Body Background Colour';
 $string['bodybackground_desc'] = 'The main colour to use for the background.';
 $string['footerbkg'] = 'Footer Background Colour';
 $string['footerbkg_desc'] = 'Footer background colour for the bottom of the page.';
+$string['topnavbarbg'] = 'Top Navigation Navbar';
+$string['topnavbarbg_desc'] = 'Content background colour for the top navigation bar.';
 
 $string['rawscss'] = 'Raw SCSS';
 $string['rawscss_desc'] = 'Use this field to provide SCSS code which will be injected at the end of the style sheet.';

@@ -80,19 +80,19 @@ $page->add(new admin_setting_heading('theme_fordson_colours', get_string('colour
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
+    
+    // Top navbar background setting.
+    $name = 'theme_fordson/topnavbarbg';
+    $title = get_string('topnavbarbg', 'theme_fordson');
+    $description = get_string('topnavbarbg_desc', 'theme_fordson');
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
 
     // @breadcrumbBackground setting.
     $name = 'theme_fordson/breadcrumbbkg';
     $title = get_string('breadcrumbbkg', 'theme_fordson');
     $description = get_string('breadcrumbbkg_desc', 'theme_fordson');
-    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
-    $setting->set_updatedcallback('theme_reset_all_caches');
-    $page->add($setting);
-
-    // Marketing tile text background
-    $name = 'theme_fordson/markettextbg';
-    $title = get_string('markettextbg', 'theme_fordson');
-    $description = get_string('markettextbg_desc', 'theme_fordson');
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
@@ -117,6 +117,14 @@ $page->add(new admin_setting_heading('theme_fordson_colours', get_string('colour
     $name = 'theme_fordson/footerbkg';
     $title = get_string('footerbkg', 'theme_fordson');
     $description = get_string('footerbkg_desc', 'theme_fordson');
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    // Marketing tile text background
+    $name = 'theme_fordson/markettextbg';
+    $title = get_string('markettextbg', 'theme_fordson');
+    $description = get_string('markettextbg_desc', 'theme_fordson');
     $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);

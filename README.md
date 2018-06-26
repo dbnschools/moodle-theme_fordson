@@ -21,6 +21,12 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 
 # Versions and Updates
+## Moodle 3.5 Fordson v3.5 release 3 update 3
+* Breadcrumb css fix for arrow placement
+* New variables can be used to change the colors for breadcrumbs if needed:  $breadcrumb-bg-hover, $breadcrumb-text-color, & $breadcrumb-bg.  Only the background color can be changed on theme settings page.  By default the background color on hover is 15% darker than the initial color.  Default text color is white but can now be changed in Custom SCSS textbox by using the $breadcrumb-text-color variable.  
+example for black text: $breadcrumb-text-color: #000; and put that in the bottom Raw SCSS box on the colors page.
+* New!  Added color chooser for top nav bar background color.  Default is white.  SCSS variable is $topnavbarbg.
+
 ## Moodle 3.5 Fordson v3.5 release 3 update 2
 * New breadcrumb styling brought over from our previous "evolve-D" theme.  Looks great on large screens and reverts back to just text (Default Boost) on smaller screens.
 * Removed items from breadcrumbs which do not contain a link. This text just takes up space and does nothing for the end user.  Only breadcrumb items with links to pages will display.

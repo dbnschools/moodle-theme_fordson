@@ -849,6 +849,10 @@ ul.teacherscourseview {
     margin-left: .25rem;
 }
 
+.navbar {
+    background-color: $topnavbarbg;
+}
+
 #nav-drawer.closed {
     left: -($drawer-width + $drawer-offscreen-gutter);
 }
@@ -995,7 +999,7 @@ div#page.container-fluid {
         background: none;
     }
     ul.breadcrumb a {
-        color:white;
+        color: $breadcrumb-text-color;
     }
     ul.breadcrumb li {
         text-decoration: none;
@@ -1004,11 +1008,10 @@ div#page.container-fluid {
         float: left;
         font-size: 14px;
         line-height: 36px;
-        color: white;
+        color: $breadcrumb-text-color;
         padding: 0 15px 0 30px;
         background-color: $breadcrumb-bg;
         position: relative;
-        margin-bottom: 2px;
     }
     ul.breadcrumb li:first-child {
         padding-left: 25px;
@@ -1040,7 +1043,7 @@ div#page.container-fluid {
         background-color: $breadcrumb-bg;
         box-shadow:
         2px -2px 0 2px $card-bg, 
-        2px -2px 0 2px $card-bg;
+        3px -3px 0 2px $card-bg;
         border-radius: 0 5px 0 50px;
     }
     ul.breadcrumb li:last-child:after {

@@ -54,6 +54,7 @@ $bootstrap-sass-asset-helper: false !default;
 div#learningcontent {
     position: relative;
     margin-top: $learningcontentpadding;
+    background-color: $card-bg;
     box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
