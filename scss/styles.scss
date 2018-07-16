@@ -245,6 +245,7 @@ div#blockslider {
 .blockpanelbtn {
     position: absolute;
     right: 0;
+    top: 0;
     z-index: 2;
 }
 .blockpanelbtn .btn:focus, .blockpanelbtn .btn-primary:focus {
@@ -792,6 +793,10 @@ ul.teacherscourseview {
 
 .jumpmenu {
     display: inline-block;
+}
+
+.enrolmenticons {
+    float: right;
 }
 
 .course-content ul.topics li.section .left, .course-content ul.topics li.section .right {

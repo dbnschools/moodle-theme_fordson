@@ -127,3 +127,14 @@ function theme_fordson_course_trim_char($str, $n = 500, $endchar = '&#8230;') {
     $out = $small.$endchar;
     return $out;
 }
+
+function page_location_incourse_themeconfig() {
+    GLOBAL $PAGE;
+    $course = $PAGE->cm;
+    if ($course) {
+        return true;
+    } else {
+        return false;
+    }
+
+}

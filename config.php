@@ -106,7 +106,11 @@ $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 // Toggle display of blocks
 if ($THEME->settings->blockdisplay == 1) {
     $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_DEFAULT;
-} else {
+}
+if (page_location_incourse_themeconfig()) {
+    $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
+}
+if ($THEME->settings->blockdisplay == 2) {
     $THEME->addblockposition = BLOCK_ADDBLOCK_POSITION_FLATNAV;
 }
 

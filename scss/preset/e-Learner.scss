@@ -63,7 +63,7 @@ $breadcrumb-padding-y:              .25rem !default;
 $breadcrumb-padding-x:              0 !default;
 $breadcrumb-item-padding:           .5rem !default;
 $breadcrumb-margin-bottom:          0 !default;
-$breadcrumb-bg:                     transparent !default;
+$breadcrumb-bg:                     $primary !default;
 $breadcrumb-divider: "/" !default;
 $breadcrumb-divider-rtl: "/" !default;
 
@@ -129,7 +129,7 @@ body {
 }
 
 a#blocksliderbutton {
-    background-color: $card-bg;
+    background-color: $primary;
 }
 
 div#learningcontent {
@@ -178,4 +178,8 @@ div#page-content {
     div#learningcontent {
         padding: .25rem !important;
     }
+}
+
+div#blockslider {
+    margin-top: 1rem;
 }

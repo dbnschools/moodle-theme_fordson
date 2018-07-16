@@ -1437,9 +1437,15 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $context->sitename = format_string($SITE->fullname, true, ['context' => context_course::instance(SITEID) , "escape" => false]);
         return $this->render_from_template('core/loginform', $context);
     }
+
     public function favicon() {
-        return $this->page->theme->setting_file_url('favicon', 'favicon');
+        if (!empty($this->page->theme->setting_file_url('favicon', 'favicon'))) {
+            return $this->page->theme->setting_file_url('favicon', 'favicon');
+        } else {
+        return $this->image_url('favicon', 'theme');
+        }
     }
+
     public function display_ilearn_secure_alert() {
         global $DB, $PAGE;
         $cm = $PAGE->cm;
@@ -1463,5 +1469,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         }
         return false;
     }
+
 }
+
 
