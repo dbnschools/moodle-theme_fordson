@@ -179,7 +179,7 @@
                                         {{{picture}}}
                                         <div class="staffinfo">
                                             <h4>{{{name}}}</h4>
-                                            <p><a href="mailto:{{{email}}}"><i class="fa fa-envelope-o">&nbsp</i>{{#str}}email, moodle{{/str}}</a>{{#hasmessaging}} &nbsp | &nbsp <a href="{{{messaging}}}"><i class="fa fa-comment">&nbsp</i>{{#str}}sendmessage, message{{/str}}</a>{{/hasmessaging}}</p>
+                                            <p>{{#hasemail}}<a href="mailto:{{{email}}}"><i class="fa fa-envelope-o">&nbsp</i>{{#str}}email, moodle{{/str}}</a>{{/hasemail}} <br /> {{#hasmessaging}}<a href="{{{messaging}}}"><i class="fa fa-comment">&nbsp</i>{{#str}}sendmessage, message{{/str}}</a>{{/hasmessaging}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -192,7 +192,7 @@
                                 {{{picture}}}
                                 <div class="staffinfo">
                                     <h4>{{{name}}}</h4>
-                                    <p><a href="mailto:{{{email}}}"><i class="fa fa-envelope-o">&nbsp</i>{{#str}}email, moodle{{/str}}</a>{{#hasmessaging}} &nbsp | &nbsp <a href="{{{messaging}}}"><i class="fa fa-comment">&nbsp</i>{{#str}}sendmessage, message{{/str}}</a>{{/hasmessaging}}</p>
+                                    <p>{{#hasemail}}<a href="mailto:{{{email}}}"><i class="fa fa-envelope-o">&nbsp</i>{{#str}}email, moodle{{/str}}</a>{{/hasemail}} <br /> {{#hasmessaging}}<a href="{{{messaging}}}"><i class="fa fa-comment">&nbsp</i>{{#str}}sendmessage, message{{/str}}</a>{{/hasmessaging}}</p>
                                 </div>
                             </div>
                             </div>

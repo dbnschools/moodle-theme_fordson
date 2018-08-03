@@ -680,6 +680,10 @@ form#enrolform_easy button.btn.btn-primary {
     padding: 1rem;
 }
 
+.coursedimmed9 {
+    background-color: rgba($secondary, 0.2);
+}
+
 .class-box-courseview {
     background-color: #dae6e5;
     border: 1px solid #dae6e5;
@@ -778,6 +782,15 @@ ul.teacherscourseview {
     margin: 3rem 0 2rem 0;
 }
 
+.coursestyle9row {
+    padding: 1rem 0;
+    border-bottom: 1px dashed $gray-300;
+}
+
+.coursestyle9row:hover {
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    background-color: $activityhover;
+}
 
 /** 
 * TIDY UP 
@@ -917,8 +930,8 @@ width: $activityiconsize;
 // Progress bar fixes
 
 .progress {
-    height: 2rem;
-    width: 50%;
+    height: 1rem;
+    width: 100%;
 }
 
 .progress_bar {
@@ -929,6 +942,27 @@ width: $activityiconsize;
 .progress_bar_completed {
     background-color: $primary;
     text-align: right;
+}
+
+.mycoursecompletion {
+    float: left;
+    padding-right: 1rem;
+}
+
+.mycoursecompletiontile2 .progress-doughnut {
+    background-color: #fff;
+}
+.mycoursecompletiontile4 .progress-doughnut {
+    background-color: #fff;
+}
+.mycoursecompletiontile2 {
+    padding-left: .5rem;
+    padding-top: .5rem;
+}
+
+.mycoursecompletiontile4 {
+    padding-left: .5rem;
+    padding-top: .5rem;
 }
 
 //Dashboard no progress icon centered fix
@@ -1065,4 +1099,11 @@ div#page.container-fluid {
     .breadcrumb {
         background-color:transparent !important;
     }
+}
+
+/**
+* Collapsed Topic Format Fixes
+**/
+ul.ctopics {
+    width: 100%;
 }

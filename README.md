@@ -21,13 +21,19 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 
 # Versions and Updates
+## Moodle 3.5 Fordson v3.5 release 3 update 5
+* Fixed icon navbar tooltip showing link instead of text.
+* New Corporate Training My Courses Display.  Lists name of course, teacher, and percent complete in a bar graph.  Concise and compact.
+
 ## Moodle 3.5 Fordson v3.5 release 3 update 4
 * Added Enrollment Icons for course listing pages.  This shows you if the course requires a password or enrollment key.
 * Added category context display for courses on listing pages and search pages.  This shows you what category the course is located.
 * Fixed various styling issues with eLearning Preset for breadcrumbs and the course block button having white text on a white background.
 * Breadcrumbs will now show all links even if they are blank.
 * Made a change to help clean up "incourse" module pages where if editing was turned on the teacher had the Add a block box taking up space on the module pages.  Now when editing is turned on and a teacher is inside a module the add a block position is moved to the nav drawer like Boost default until the user returns to the course homepage where adding blocks is done in the collapsable drawer at the top of the page. This will help give the teacher more space on the screen while editing and still allow for adding blocks if needed. Discussion and code here: https://moodle.org/mod/forum/discuss.php?d=373317#p1505066  To sum this up... Once you leave the course homepage you will need to add blocks the traditional Boost way from the Nav Drawer. On the course homepage you can use the Block Administration block to add blocks to the 3 columns on the course homepage in a very obvious way. 
-
+* Fixed issue with language filters and processing text as strings and text on homepage icon navigation and other various areas such as marketing spots.
+* If course completion is enabled for a course the completion radial will appear on the Moodle Site Home and other areas where course listings occur. Only certain course listing layouts will have this feature.  Currently it is Tile Style 2, Tile Style 4, Horizontal Style 1, Horizontal Image Background Full Details, and Horizontal Image Background Title & Teacher Only.
+* Other various bug fixes as reported in the Moodle.org theme forum.
 
 ## Moodle 3.5 Fordson v3.5 release 3 update 3
 * Breadcrumb css fix for arrow placement
