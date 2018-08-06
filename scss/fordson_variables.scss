@@ -26,6 +26,7 @@ $blockwidthfordson: 280px !default;
 $drawer-bg: darken($body-bg, 5%) !default;
 $footer-bg: $gray-800 !default;
 $topnavbarbg: #fff !default;
+$breadcrumb-bg: $primary !default;
 $breadcrumb-bg-hover: darken($breadcrumb-bg, 15%) !default;
 $breadcrumb-text-color: #ffffff !default;
 
@@ -43,3 +44,5 @@ $sectionnamehighlight : #43d0f3 !default;
 $dpsaccentcolor: #44d4a6 !default;
 $sectionactivitybkg: #fdfdfd !default;
 $sectionbkg: $sectionactivitybkg !default;
+$layout5imgoverlay: rgba(0,0,0,0.3) !default;
+$spectrum-base: #3fcbda !default;

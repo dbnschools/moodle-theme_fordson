@@ -24,7 +24,9 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 ## Moodle 3.5 Fordson v3.5 release 3 update 5
 * Fixed icon navbar tooltip showing link instead of text.
 * New Corporate Training My Courses Display.  Lists name of course, teacher, and percent complete in a bar graph.  Concise and compact.
-* Student Dashboard listing for teacher email now respects the teacher profile settings if they choose not to display their email to students. 
+* Fixed breadcrumb issue with default Boost layout.  Also made some styling tweaks to make default Boost layout more appealing within the Fordson theme and all of its features.
+* Fixes and enhancements to the Pulse Preset to better work with Fordson.
+
 
 ## Moodle 3.5 Fordson v3.5 release 3 update 4
 * Added Enrollment Icons for course listing pages.  This shows you if the course requires a password or enrollment key.

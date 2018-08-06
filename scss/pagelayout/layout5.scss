@@ -23,38 +23,26 @@
 //
 $bootstrap-sass-asset-helper: false !default;
 
-
-// Variables
-$breadcrumb-bg: #fff;
-
-/**
- * For background in content areas.
- */
-
-ol.breadcrumb {
-    background-color: $breadcrumb-bg;
-}
-
-#page-wrapper {
-    padding-bottom: 0; 
+// Moves the course title and breadcrumb box to be flush with the top of the page.  This overrides the default padding because it looks nicer with Fordson this way.
+#page-header .pt-3, #page-header .py-3 {
+    padding-top: 0!important;
 }
 
 .page-context-header .page-header-headings {
-    background-color: $card-bg;
-    padding: 0 1rem;
-    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    padding: .25rem .5rem;
 }
 
 .page-context-header .page-header-headings h1 {
-    color: initial;
+    color: $white;
 }
 
  .default {
-    background-color: rgba(0,0,0,0.3);
+    background-color: $layout5imgoverlay;
     background-blend-mode: overlay;
 }
 .withimage {
-    background-color: rgba(0,0,0,0.3);
+    background-color: $layout5imgoverlay;
     background-blend-mode: overlay;
 }
 
@@ -82,11 +70,11 @@ div#learningcontent {
     z-index: 1;
 }
 
-.breadcrumb {
-    padding: .5rem 1rem;
-}
-ol.breadcrumb {
-    margin: 0;
+@media screen and (max-width: 576px) {
+    .breadcrumb {
+        background-color:rgba(255,255,255,0.8)!important;
+        padding: 1rem;
+    }
 }
 
 /* FORDSON Default Styling */

@@ -160,10 +160,6 @@ div#fordsonlogin {
     min-height: 2rem;
 }
 
-aside#block-region-side-pre {
-    margin-top: 2rem;
-}
-
 /* Teacher Dashboard */
 
 .modal-dialog {
@@ -475,7 +471,7 @@ form#enrolform_easy button.btn.btn-primary {
 .class-box-fp .course-title, .class-box-fp-style3 .course-title {
     background-color: $card-bg;
     padding: $spacer;
-    padding-top: 2rem;
+    padding-bottom: 0;
     margin-bottom: 0;
     text-align: center;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
@@ -501,7 +497,7 @@ form#enrolform_easy button.btn.btn-primary {
     }
 }
 
-.class-box-fp-style3 .course-title:after, .class-box-fp .course-title:after, .class-box-fp-2col .course-title-2col:after {
+/*.class-box-fp-style3 .course-title:after, .class-box-fp .course-title:after, .class-box-fp-2col .course-title-2col:after {
     text-decoration: none;
     display: block;
     content: '';
@@ -512,7 +508,7 @@ form#enrolform_easy button.btn.btn-primary {
 
 .class-box-fp-style3 .course-title:hoover:after, .class-box-fp .course-title:hover:after, .class-box-fp-2col .course-title-2col:hover:after {
     transform: scaleX(1);
-}
+}*/
 
 .courseimagecontainer {
     height: calc(45%);
@@ -791,6 +787,10 @@ ul.teacherscourseview {
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
     background-color: $activityhover;
 }
+.hoverhighlight:hover {
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    background-color: $activityhover;
+}
 
 /** 
 * TIDY UP 
@@ -932,6 +932,7 @@ width: $activityiconsize;
 .progress {
     height: 1rem;
     width: 100%;
+    position: relative;
 }
 
 .progress_bar {
@@ -964,6 +965,15 @@ width: $activityiconsize;
     padding-left: .5rem;
     padding-top: .5rem;
 }
+
+.completiontextposition {
+    color: initial;
+}
+
+.progress-bar.progress-bar-info.barfill {
+    z-index: 2;
+}
+
 
 //Dashboard no progress icon centered fix
 
@@ -1031,8 +1041,6 @@ div#page.container-fluid {
     ul.breadcrumb {
         display: inline-block;
         overflow: hidden;
-        border-radius: 5px;
-        background-color:none;
         margin:0px;
         padding:0px;
         background: none;
@@ -1097,7 +1105,7 @@ div#page.container-fluid {
 
 @media screen and (max-width: 576px) {
     .breadcrumb {
-        background-color:transparent !important;
+        background-color:transparent;
     }
 }
 
