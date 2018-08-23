@@ -11,6 +11,7 @@ $gray-700: #495057 !default;
 $gray-800: #373a3c !default;
 $gray-900: #212529 !default;
 
+
 $gray-base: #ccc !default;
 
 $black:    #000 !default;
@@ -87,6 +88,21 @@ $list-group-action-hover-color:     $list-group-action-color !default;
 $list-group-action-active-color:    $list-group-bg !default;
 $list-group-action-active-bg:       $list-group-hover-bg !default;
 
+// Dropdowns
+
+
+$dropdown-bg:                       $white !default;
+$dropdown-border-color:             rgba($black, .15) !default;
+$dropdown-divider-bg:               $gray-200 !default;
+$dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175) !default;
+
+$dropdown-link-color:               $gray-900 !default;
+$dropdown-link-hover-color:         darken($gray-900, 5%) !default;
+$dropdown-link-hover-bg:            $gray-200 !default;
+
+$dropdown-link-active-color:        $white !default;
+$dropdown-link-active-bg:           $gray-400 !default;
+
 // Alerts
 $alert-border-width:                0 !default;
 
@@ -111,6 +127,8 @@ $theme-colors: (
 // Import Core moodle CSS
 @import "../../boost/scss/moodle";
 
+// Let theme know we are using Spectrum
+$spectrumpreset: 1;
 
 // Preset CSS
 
@@ -120,6 +138,10 @@ body {
 
 .navbar {
     box-shadow: 0 4px 8px rgba(0, 0, 0, .08);
+}
+
+div#page-navbar {
+    z-index: 1;
 }
 
 .filemanager-container,
@@ -145,18 +167,42 @@ div#learningcontent {
     border: 0 !important;
     box-shadow: 2px 2px 16px 5px rgba(0,0,0,.3)!important;
 }
-.withimage , .default {
-    background-color: rgba($white, 0.9);
-    background-blend-mode: luminosity;
+
+.headerbkg {
+    overflow: hidden;
 }
-.course-content ul.topics li.section, .course-content ul.weeks li.section {
-    padding-top: 0;
-    padding-bottom: 1rem;
+
+.withimage , .default, .customimage {
+    background-color: rgba($white, 0.3);
+    background-blend-mode: luminosity;
+    -webkit-mask-image: linear-gradient(to top, transparent 5%, black 75%);
+    mask-image: linear-gradient(to top, transparent 5%, black 75%);
+    filter: blur(2px) opacity(70%);
+}
+
+#page-header .btn.btn-secondary:hover {
+    color: $white;
+}
+
+aside#block-region-side-pre {
+    padding-top: 2rem;
 }
 
 div#blockslider {
+    border: 0 !important;
+    border-bottom: 2px solid $gray-400 !important;
     background-color: $gray-200 !important;
     padding: 1rem;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.course-content ul.topics li.section, .course-content ul.weeks li.section {
+    padding-top: 0;
+    padding-bottom: 1rem;
 }
 
 .page-context-header .page-header-headings, .page-context-header .header-button-group {
@@ -178,6 +224,20 @@ div#myoverview_timeline_courses .list-group-item {
     border: 1px solid $gray-400;
 }
 
+.card {
+    border: 0;
+}
+
+.forumpost.clearfix.lastpost {
+    border-left: 15px solid $spectrum-base;
+}
+
+.path-mod-assign [data-region="grade-actions-panel"], .path-mod-assign [data-region="grading-navigation-panel"] {
+    background-color: $white;
+}
+.path-mod-assign [data-region="grade-actions-panel"] [data-region="grade-actions"] .collapse-buttons {
+    height: initial;
+}
 
 // Remove extra padding at top of page
 
@@ -185,7 +245,7 @@ div#myoverview_timeline_courses .list-group-item {
     padding-bottom: 0 !important;
 }
 #page-header .card-body {
-    padding-bottom: 0;
+    padding-bottom: 2rem;
 }
 .course-content li#section-0 .content {
     margin-top: 0;
@@ -196,4 +256,43 @@ div#myoverview_timeline_courses .list-group-item {
 
 .fp-blocks {
     padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+#page-site-index .fp-blocks {
+    padding: 0;
+}
+
+// Progress Bars
+
+.progress-bar {
+    background-color: $spectrum-base!important;;
+}
+.progress-chart-container .progress-doughnut .progress-indicator svg .circle {
+    stroke: $spectrum-base;
+}
+// Course Tile Special styling
+
+.class-box {
+    border: 0 !important;
+    border-bottom: 7px solid $spectrum-base!important;
+    background-color: $gray-100;
+}
+
+.coursedimmed1 {
+    filter: opacity(0.8) grayscale(1);
+}
+
+.path-course-view .completionprogress {
+    float: initial;
+}
+
+.form-autocomplete-suggestions li:hover {
+    background-color: $gray-200;
+    color: $dark;
+}
+
+.mediaplugin, .mediaplugin video {
+    width: 100%; 
+    max-width: 100%;
 }

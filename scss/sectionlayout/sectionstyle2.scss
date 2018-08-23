@@ -56,6 +56,12 @@ h3.sectionname {
 h3.sectionname a {
     color: $card-bg;
 }
+
+.section_action_menu {
+    background-color: $card-bg;
+    padding: .25rem .5rem;
+}
+
 .course-content ul.topics li.section .content,
 .course-content ul.weeks li.section .content {
     background-color: $card-bg;

@@ -44,6 +44,7 @@ $string['region-fp-a'] = 'Column A';
 $string['region-fp-b'] = 'Column B';
 $string['region-fp-c'] = 'Column C';
 $string['courseblockpanelbtn'] = 'Course Blocks';
+$string['courseblockpanelbtnclose'] = 'Close';
 $string['showblockregions'] = 'Show Additional Frontpage Block Regions';
 $string['showblockregions_desc'] = 'Turn on three more block regions on the site frontpage.  These appear just below the icon navigation bar.';
 $string['viewsectionmodules'] = 'View Section Modules';
@@ -64,6 +65,9 @@ $string['preset'] = 'Theme preset';
 $string['preset_desc'] = 'Pick a preset to broadly change the look of the theme. <a href="https://goo.gl/fMXzSo" target="_new">Instructions for Fordson 3.5 Theme</a>';
 $string['favicon'] = 'Favicon';
 $string['favicon_desc'] = 'Change the favicon for Fordson. Images with a transparent background and 32px height will work best.  Allowed types: PNG, JPG, ICO';
+$string['enhancedmydashboard'] = 'Enhanced MyDashboard';
+$string['enhancedmydashboard_desc'] = 'Turning this on will enhance the MyDashboard page to include all the fordson features such as the Easy Enrollment Form, block sliders, Icon Navigation bar, Custom Homepage Text, Slideshow, and more.';
+
 
 // Colours Settings.
 $string['colours_settings'] = 'Colours';
@@ -189,7 +193,7 @@ $string['textcontentinfo'] = 'Custom Content';
 $string['textcontentinfodesc'] = 'Use the textboxes below to add a customized information for users.';
 $string['generalcontentinfo'] = 'General Content Display Settings';
 $string['generalcontentinfodesc'] = 'The options below help you customize the way content is displayed and turn on additional features for Fordson.';
-$string['enrollcoursecard'] = 'Enroll';
+$string['enrollcoursecard'] = 'Access';
 $string['layoutinfo'] = 'Layout Settings';
 $string['layoutinfodesc'] = 'Control page layout by chooseing a design.';
 

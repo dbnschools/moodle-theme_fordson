@@ -43,6 +43,15 @@ $setting = new admin_setting_configcheckbox($name, $title, $description, $defaul
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+// Frontpage show enroll form and other site homepage options on MyDashboard.
+$name = 'theme_fordson/enhancedmydashboard';
+$title = get_string('enhancedmydashboard', 'theme_fordson');
+$description = get_string('enhancedmydashboard_desc', 'theme_fordson');
+$default = 0;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 // Content spacing
 $name = 'theme_fordson/learningcontentpadding';
 $title = get_string('learningcontentpadding', 'theme_fordson');
@@ -121,7 +130,7 @@ $page->add($setting);
 $name = 'theme_fordson/gutterwidth';
 $title = get_string('gutterwidth', 'theme_fordson');
 $description = get_string('gutterwidth_desc', 'theme_fordson');;
-$default = '4rem';
+$default = '0rem';
 $choices = array(
         '0rem' => '0rem',
         '1rem' => '1rem',

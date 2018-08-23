@@ -68,7 +68,7 @@ function theme_fordson_get_main_scss_content($theme) {
         }
         else {
             // Safety fallback - maybe new installs etc.
-            $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/preset/Modern Moodle.scss');
+            $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/preset/Spectrum-Achromatic.scss');
         }
     }
 

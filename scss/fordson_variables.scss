@@ -44,5 +44,10 @@ $sectionnamehighlight : #43d0f3 !default;
 $dpsaccentcolor: #44d4a6 !default;
 $sectionactivitybkg: #fdfdfd !default;
 $sectionbkg: $sectionactivitybkg !default;
-$layout5imgoverlay: rgba(0,0,0,0.3) !default;
+$layout5imgoverlay: rgba(0,0,0,0.5) !default;
 $spectrum-base: #3fcbda !default;
+$elearningcontentbkg: rgba(255,255,255,0.6) !default;
+
+//Preset Checks for unique styling
+$spectrumpreset: 0 !default;
+$modernmoodlepreset: 0 !default;

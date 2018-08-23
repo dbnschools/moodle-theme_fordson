@@ -21,11 +21,33 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 
 # Versions and Updates
+## Moodle 3.5 Fordson v3.5 release 3 update 7
+* Numerous CSS and styling fixes.  
+* New "Enhanced MyDashboard" feature can be used to make the MyDashboard page look like the Site homepage.  This is for people who prefer to use the My Dashboard as the homepage for users.  This brings all the features of the site home to the dashboard page such as the navigation icons, Easy Enrollment integration, custom homepage text, slideshow, and other Fordson enhancements.
+
+## Moodle 3.5 Fordson v3.5 release 3 update 6
+* Continued development and styling of the Spectrum-Achromatic preset
+* Layout 5 "Default Boost Layout / Header Image in Course Title Box" is now default.  We spent some time developing this as a means to keep true to the Boost layout but also incorporate a header image.  
+* Various CSS and other cosmetic fixes
+* New default header image to better match the new Spectrum default
+* Spectrum preset has new innovative "curtain" effect to show and hide blocks.
+* e-Learner Preset updates and better styling.
+
+
 ## Moodle 3.5 Fordson v3.5 release 3 update 5
+* Changed default settings during initial install so that you get a better experience out-of-the-box.  We are now using the Spectrum-Achromatic preset as the default.  
+* Enhanced Spectrum Preset to include more unique styling for the various course layout options in Fordson.  
+* Big enhancement to Spectrum and the Boost Layout with Header Image layout.
+* Footer language filter fixes for organization name.
+
+
+## Moodle 3.5 Fordson v3.5 release 3 update 5
+* NEW style preset: Spectrum-Achromatic.  A modern style with muted colors except where it matters.  Perfect for a clean, modern, and relevant look to your Moodle site. 
 * Fixed icon navbar tooltip showing link instead of text.
 * New Corporate Training My Courses Display.  Lists name of course, teacher, and percent complete in a bar graph.  Concise and compact.
 * Fixed breadcrumb issue with default Boost layout.  Also made some styling tweaks to make default Boost layout more appealing within the Fordson theme and all of its features.
 * Fixes and enhancements to the Pulse Preset to better work with Fordson.
+* Course Tile Style One has been updated to be distinct from Tile 4.  Previously they looked the same but tile 4 had course summary.  Course tile one is clean and modern looking.  A perfect compliment to the new Spectrum-Achromatic preset style.
 
 
 ## Moodle 3.5 Fordson v3.5 release 3 update 4

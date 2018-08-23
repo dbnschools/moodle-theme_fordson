@@ -169,17 +169,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                                     <div class="course-summary">
                                     ' . $catcontent . '
                                     ';
-                            if ($course->has_course_contacts()) {
-                                $rowcontent .= html_writer::start_tag('ul', array(
-                                    'class' => 'teacherscourseview'
-                                ));
-                                foreach ($course->get_course_contacts() as $userid => $coursecontact) {
-                                    $name = $coursecontact['rolename'] . ': ' . $coursecontact['username'];
-                                    $rowcontent .= html_writer::tag('li', $name);
-                                }
-                                $rowcontent .= html_writer::end_tag('ul'); // .teachers
-                                
-                            }
+                            
                             $rowcontent .= '
                                     </div>
                                 </div>
@@ -268,7 +258,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                                 'class' => $course->visible ? 'coursevisible' : 'coursedimmed1'
                             ));
                             $rowcontent .= '
-                            <div class="class-box">
+                            <div class="class-box4">
                                 ';
                             if ($PAGE->theme->settings->titletooltip) {
                                 $tooltiptext = 'data-tooltip="tooltip" data-placement= "top" title="' . $course->fullname . '"';
@@ -286,11 +276,11 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                                     </div>
                                     
                                     </div>
-                                    <div class="course-title">
+                                    <div class="course-title4">
                                     <h4>' . $trimtitle . '</h4>
                                     </div>
                                     </a>
-                                    <div class="course-summary">
+                                    <div class="course-summary4">
                                     ' . $catcontent . '
                                     ' . $summary . '
                                     ';
@@ -681,16 +671,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                                     <div class="course-summary">
                                     ' . $catcontent . '
                                     ';
-                            if ($course->has_course_contacts()) {
-                                $rowcontent .= html_writer::start_tag('ul', array(
-                                    'class' => 'teacherscourseview'
-                                ));
-                                foreach ($course->get_course_contacts() as $userid => $coursecontact) {
-                                    $name = $coursecontact['rolename'] . ': ' . $coursecontact['username'];
-                                    $rowcontent .= html_writer::tag('li', $name);
-                                }
-                                $rowcontent .= html_writer::end_tag('ul');
-                            }
+
                             $rowcontent .= '
                                     </div>
                                 </div>
@@ -780,10 +761,10 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                             $rowcontent .= '
                         <div class="col-md-4">';
                             $rowcontent .= html_writer::start_tag('div', array(
-                                'class' => $course->visible ? 'coursevisible' : 'coursedimmed1'
+                                'class' => $course->visible ? 'coursevisible' : 'coursedimmed4'
                             ));
                             $rowcontent .= '
-                            <div class="class-box">
+                            <div class="class-box4">
                                 ';
                             if ($PAGE->theme->settings->titletooltip) {
                                 $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . $course->fullname . '"';
@@ -802,11 +783,11 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                                     </div>
                                     
                                     </div>
-                                    <div class="course-title">
+                                    <div class="course-title4">
                                     <h4>' . $trimtitle . '</h4>
                                     </div>
                                     </a>
-                                    <div class="course-summary">
+                                    <div class="course-summary4">
                                     ' . $catcontent . '
                                     ' . $summary . '
                                     ';

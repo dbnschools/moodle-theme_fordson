@@ -80,6 +80,12 @@ h3.sectionname {
     border-right: 1rem solid $primary;
     margin-bottom: 0 !important;
 }
+@if $spectrumpreset == 1 {
+    h3.sectionname {
+        border-right: 1rem solid $spectrum-base;
+    }
+}
+
 h3.section-title.sectionname {
     margin: 0 !important;
 }
@@ -99,11 +105,6 @@ h3.sectionname a {
 .editing .course-content ul.weeks li.section .content {
     border: 1px dotted $gray-500;
 }
-
-/*.course-content ul.topics li.section, .course-content ul.weeks li.section {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-}*/
 
 .course-content ul li.section.main {
     border-bottom: 0;

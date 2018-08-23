@@ -1409,7 +1409,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
     }
     public function brandorganization_footer() {
         $theme = theme_config::load('fordson');
-        $setting = $theme->settings->brandorganization;
+        $setting = format_string($theme->settings->brandorganization);
         return $setting != '' ? $setting : '';
     }
     public function brandwebsite_footer() {

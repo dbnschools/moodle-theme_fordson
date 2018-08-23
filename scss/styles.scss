@@ -237,6 +237,7 @@ div#blockslider {
     background-color: $gray-200;
     border: 1px solid $gray-400;
     padding: 1rem;
+    position: relative;
 }
 .blockpanelbtn {
     position: absolute;
@@ -247,6 +248,12 @@ div#blockslider {
 .blockpanelbtn .btn:focus, .blockpanelbtn .btn-primary:focus {
     outline: 0;
     box-shadow: none !important;
+}
+
+button#blocksliderbuttonclose {
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 /* Footer */
@@ -514,11 +521,19 @@ form#enrolform_easy button.btn.btn-primary {
     height: calc(45%);
 }
 
-.class-box {
+.class-box4 {
     margin-bottom: 2rem;
     border: 1px solid $card-bg;
     box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
     padding: 1rem;
+    height: $courseboxheight;
+    overflow: hidden;
+}
+
+.class-box {
+    border: 1px solid $gray-300;
+    padding: 0;
+    margin-bottom: 2rem;
     height: $courseboxheight;
     overflow: hidden;
 }
@@ -563,8 +578,12 @@ form#enrolform_easy button.btn.btn-primary {
     padding: 1rem;
 }
 
-.course-title {
+.course-title4 {
     padding-top: 1rem;
+}
+
+.course-title {
+    padding: .5rem;
 }
 
 .class-list {
@@ -583,23 +602,31 @@ form#enrolform_easy button.btn.btn-primary {
     padding-top: 5rem;
 }
 
-.class-box .course-summary {
+.class-box4 .course-summary4 {
     height: 4rem;
     overflow: auto;
     margin-bottom: 1rem;
     padding-bottom: 1rem;
 }
 
-.class-box .course-summary::-webkit-scrollbar {
+.class-box .course-summary {
+    height: 4rem;
+    overflow: auto;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    margin:.5rem;
+}
+
+.class-box .course-summary::-webkit-scrollbar, .class-box4 .course-summary4::-webkit-scrollbar {
     width: 7px;
 }
 
-.class-box .course-summary::-webkit-scrollbar-track {
+.class-box .course-summary::-webkit-scrollbar-track, .class-box4 .course-summary4::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.3);
     border-radius: 5%;
 }
 
-.class-box .course-summary::-webkit-scrollbar-thumb {
+.class-box .course-summary::-webkit-scrollbar-thumb, .class-box4 .course-summary4::-webkit-scrollbar-thumb {
     background-color: darken($brand-primary, 15%);
     outline: 1px solid slategrey;
 }
@@ -663,7 +690,7 @@ form#enrolform_easy button.btn.btn-primary {
 }
 
 .coursedimmed1 {
-    background-color: rgba(150, 150, 150, 0.9);
+    background-color: rgba($gray-200, 0.9);
 }
 
 .coursedimmed2 {
@@ -674,6 +701,10 @@ form#enrolform_easy button.btn.btn-primary {
 .coursedimmed3 {
     background-color: $gray-600;
     padding: 1rem;
+}
+
+.coursedimmed4 {
+    background-color: rgba(150, 150, 150, 0.9);
 }
 
 .coursedimmed9 {
@@ -804,6 +835,14 @@ ul.teacherscourseview {
     border: 1px solid $gray-300;
 }
 
+#page-header .singlebutton {
+    z-index: 1;
+}
+
+.dashtitle {
+    padding-top: .5rem;
+}
+
 .jumpmenu {
     display: inline-block;
 }
@@ -927,24 +966,6 @@ width: $activityiconsize;
     opacity: 1;
 }
 
-// Progress bar fixes
-
-.progress {
-    height: 1rem;
-    width: 100%;
-    position: relative;
-}
-
-.progress_bar {
-    background-color: $gray-100;
-    text-align: center;
-}
-
-.progress_bar_completed {
-    background-color: $primary;
-    text-align: right;
-}
-
 .mycoursecompletion {
     float: left;
     padding-right: 1rem;
@@ -955,7 +976,9 @@ width: $activityiconsize;
 }
 .mycoursecompletiontile4 .progress-doughnut {
     background-color: #fff;
+    box-shadow: 0 0 0px 7px rgba(112, 2, 169, 0.5);
 }
+
 .mycoursecompletiontile2 {
     padding-left: .5rem;
     padding-top: .5rem;
@@ -970,10 +993,6 @@ width: $activityiconsize;
     color: initial;
 }
 
-.progress-bar.progress-bar-info.barfill {
-    z-index: 2;
-}
-
 
 //Dashboard no progress icon centered fix
 
@@ -985,9 +1004,26 @@ width: $activityiconsize;
 /**
 * Responsive Fixes
 **/
+
 div#page.container-fluid {
     padding: 0 $gutterwidth;
 }
+
+@if $gutterwidth == 0rem {
+    .row {
+        margin-right: $gutterwidth; 
+        margin-left: $gutterwidth;
+    }
+    .col-12 {
+        padding-right: $gutterwidth;
+        padding-left: $gutterwidth;
+    }
+    #page-wrapper {
+        padding-bottom: $gutterwidth;
+    }
+    
+}
+
 @media screen and (max-width: 576px) {
     div#nav-message-popover-container {display: none;}
     div#nav-notification-popover-container {display: none;}

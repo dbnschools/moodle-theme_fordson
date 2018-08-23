@@ -90,6 +90,9 @@ $theme-colors: (
 // Import Core moodle CSS
 @import "../../boost/scss/moodle";
 
+// Let theme know we are using Modern Moodle
+$modernmoodlepreset: 1;
+
 
 // Preset CSS
 

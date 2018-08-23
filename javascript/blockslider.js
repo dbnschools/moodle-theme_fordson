@@ -1,5 +1,5 @@
 
-$('#blocksliderbutton').click(function(){
+$('.blockpanelbutton').click(function(){
     var blockslideropen = localStorage.getItem('blockslideropen');
     
     if (blockslideropen == 1) {

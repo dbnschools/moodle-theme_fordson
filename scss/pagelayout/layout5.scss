@@ -23,27 +23,38 @@
 //
 $bootstrap-sass-asset-helper: false !default;
 
-// Moves the course title and breadcrumb box to be flush with the top of the page.  This overrides the default padding because it looks nicer with Fordson this way.
-#page-header .pt-3, #page-header .py-3 {
-    padding-top: 0!important;
+// Preset specific styling.
+
+@if $spectrumpreset == 1 {
+    #page-header .pt-3, #page-header .py-3 {
+        padding-top: 0!important;
+    }
+    div#page-content {
+        padding: 0 2rem;
+    }
+}
+
+@if $modernmoodlepreset == 1 {
+    #page-header .pb-3 {
+        padding-top: 0!important;
+    }
 }
 
 .page-context-header .page-header-headings {
-    margin-top: 1.5rem;
     padding: .25rem .5rem;
+    background-color: $primary;
+    border-radius: .5rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
 }
 
 .page-context-header .page-header-headings h1 {
     color: $white;
+    margin: 0;
 }
 
- .default {
-    background-color: $layout5imgoverlay;
-    background-blend-mode: overlay;
-}
-.withimage {
-    background-color: $layout5imgoverlay;
-    background-blend-mode: overlay;
+#page-site-index .page-context-header .page-header-headings {
+    background-color: transparent;
 }
 
 .headerbkg {
@@ -57,8 +68,12 @@ $bootstrap-sass-asset-helper: false !default;
     z-index: 0;
 }
 
-#page-header div#page-navbar {
-    z-index: 1;
+//Button fixes for display over images
+#page-header .btn.btn-secondary {
+    background-color: $white;
+}
+#page-header .btn.btn-secondary:hover {
+    background-color: darken($primary, 10%);
 }
 
 div#learningcontent {
@@ -66,9 +81,6 @@ div#learningcontent {
     background-color: transparent;
 }
 
-#page-header div#page-navbar {
-    z-index: 1;
-}
 
 @media screen and (max-width: 576px) {
     .breadcrumb {
@@ -77,7 +89,6 @@ div#learningcontent {
     }
 }
 
-/* FORDSON Default Styling */
 
 // Scrollbars
 
@@ -140,18 +151,4 @@ div#learningcontent {
     margin: 0!important;
     border-top: 7px solid rgba(0,0,0,.2);
     border-radius: 0;
-}
-
-// Restore padding at top of page
-#page-header .pb-3 {
-    padding-bottom: 1rem!important;
-}
-#page-header .card-body {
-    padding-bottom: 1rem;
-}
-.course-content li#section-0 .content {
-    margin-top: 0;
-}
-.editing .course-content li#section-0 .content {
-    margin-top: 2rem; 
 }

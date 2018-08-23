@@ -39,19 +39,19 @@
 }
 
 h3.sectionname {
-    border-top: 4px solid $sectionnamehighlight;
+    border-top: 10px solid $sectionnamehighlight;
     padding: $spacer;
     border-bottom: 1px dashed $gray-300;
-    background-color: $gray-100;
+    background-color: $gray-200;
 }
 
 li.current h3.sectionname {
-    border-top: 8px solid $dpsaccentcolor;
+    border-top: 10px solid $dpsaccentcolor;
     background-color: rgba(216, 246, 255, 0.5);
 }
 
-li.section.hidden {
-    background-color: initial;
+li.section.hidden .content {
+    background-color: $gray-100;
 }
 
 li.section.hidden li.activity {
@@ -59,13 +59,17 @@ li.section.hidden li.activity {
 }
 
 li.section.hidden h3.sectionname {
-    border-top: 4px solid $gray !important;
+    border-top: 10px solid $gray !important;
 }
 
 .section_action_menu {
     background-color: $card-bg;
     padding: .5rem;
     border-radius: $border-radius;
+}
+
+.editing .course-content ul.topics li.section .left, .editing .course-content ul.topics li.section .right {
+    padding: 4px 6px !important;
 }
 
 li.activity.label {
@@ -116,11 +120,9 @@ span.section-modchooser-link {
     height: $activityiconsize;
 }
 
-.block .card-title {
-    border-top: 4px solid $primary;
-    border-bottom: 1px solid $gray-300;
-    background-color: $gray-100;
-    padding: .5rem;
+.block {
+    border: 1px solid $gray-400;
+    border-top: 7px solid $spectrum-base;
 }
 
 // Single Activity fixes
@@ -129,3 +131,26 @@ span.section-modchooser-link {
     border: 0;
 }
 
+
+
+@if $spectrumpreset == 1 {
+    .course-content ul.topics li.section, .course-content ul.weeks li.section {
+        padding-bottom: 3rem;
+    }
+
+    .course-content ul.topics li.section .content, .course-content ul.weeks li.section .content {
+        background-color: $gray-100;
+        padding-bottom: 1rem;
+        border: 1px solid $gray-200;
+        box-shadow: 0 1px 2px 0px rgba(0,0,0,.1);
+    }
+
+    li#section-0 .content {
+        border-radius: 10px;
+        border-bottom: 7px solid $gray-200;
+    }
+
+    .course-content ul.topics li.section .summary, .course-content ul.weeks li.section .summary {
+        margin: 0 25px;
+    }
+}

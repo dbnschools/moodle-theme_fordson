@@ -60,7 +60,7 @@ $THEME->layouts = [
     ],
     'incourse' => [
         'file' => 'course.php',
-        'regions' => ['side-pre'],
+        'regions' => ['side-pre', 'fp-a', 'fp-b', 'fp-c'],
         'defaultregion' => 'side-pre',
     ],
     'coursecategory' => [
@@ -75,6 +75,15 @@ $THEME->layouts = [
         'defaultregion' => 'fp-c',
     ],
 ];
+
+if ($THEME->settings->enhancedmydashboard == 1 && $THEME->settings->blockdisplay == 1) {
+    $THEME->layouts['mydashboard'] = [
+        'file' => 'mydashboard.php',
+        'regions' => ['fp-a', 'fp-b', 'fp-c'],
+        'defaultregion' => 'fp-c',
+        'options' => ['nonavbar' => true, 'langmenu' => true],
+    ];
+}
 if ($THEME->settings->blockdisplay == 2) {
     $THEME->layouts['course'] = [
         'file' => 'course.php',
@@ -87,7 +96,14 @@ if ($THEME->settings->blockdisplay == 2) {
         'defaultregion' => 'side-pre',
     ];
 }
-
+if ($THEME->settings->blockdisplay == 2 && $THEME->settings->enhancedmydashboard == 1) {
+    $THEME->layouts['mydashboard'] = [
+        'file' => 'mydashboard.php',
+        'regions' => ['side-pre'],
+        'defaultregion' => 'side-pre',
+        'options' => ['nonavbar' => true, 'langmenu' => true],
+    ];
+}
 
 // Call main theme scss - including the selected preset.
 $THEME->scss = function($theme) {

@@ -37,7 +37,15 @@ $extraclasses = [];
 if ($navdraweropen) {
     $extraclasses[] = 'drawer-open-left';
 }
+
+$enrolform = '';
+$plugin = enrol_get_plugin('easy');
+if ($plugin && !isguestuser()) {
+    $enrolform = $plugin->get_form();
+}
+
 $bodyattributes = $OUTPUT->body_attributes($extraclasses);
+$headerlogo = $PAGE->theme->setting_file_url('headerlogo', 'headerlogo');
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
 
@@ -55,9 +63,8 @@ if ($checkblocka || $checkblockb || $checkblockc) {
 }
 
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
-
 $templatecontext = [
-    'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID) , "escape" => false]) , 
+    'sitename' => format_string($SITE->shortname, true, array('context' => context_course::instance(SITEID))),
     'output' => $OUTPUT,
     'sidepreblocks' => $blockshtml,
     'fpablocks' => $blockshtmla,
@@ -69,13 +76,14 @@ $templatecontext = [
     'bodyattributes' => $bodyattributes,
     'navdraweropen' => $navdraweropen,
     'hasfhsdrawer' => $hasfhsdrawer,
+    'headerlogo' => $headerlogo,
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
-    'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu)
+    'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
+    'enrolform' => $enrolform,
 ];
 
 $PAGE->requires->jquery();
 $PAGE->requires->js('/theme/fordson/javascript/scrolltotop.js');
-$PAGE->requires->js('/theme/fordson/javascript/scrollspy.js');
 $PAGE->requires->js('/theme/fordson/javascript/tooltipfix.js');
 $PAGE->requires->js('/theme/fordson/javascript/blockslider.js');
 if ($PAGE->theme->settings->preset != 'Spectrum-Achromatic') {
@@ -83,4 +91,5 @@ if ($PAGE->theme->settings->preset != 'Spectrum-Achromatic') {
 }
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;
-echo $OUTPUT->render_from_template('theme_fordson/columns2', $templatecontext);
+echo $OUTPUT->render_from_template('theme_fordson/mydashboard', $templatecontext);
+
