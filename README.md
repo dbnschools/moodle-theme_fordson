@@ -21,6 +21,11 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 
 # Versions and Updates
+## Moodle 3.5 Fordson v3.5 release 3 update 8
+* Additional styling fixes.
+* Fix progress bar issue
+* Fixed section highlight issue when using Boost default presets
+
 ## Moodle 3.5 Fordson v3.5 release 3 update 7
 * Numerous CSS and styling fixes.  
 * New "Enhanced MyDashboard" feature can be used to make the MyDashboard page look like the Site homepage.  This is for people who prefer to use the My Dashboard as the homepage for users.  This brings all the features of the site home to the dashboard page such as the navigation icons, Easy Enrollment integration, custom homepage text, slideshow, and other Fordson enhancements.

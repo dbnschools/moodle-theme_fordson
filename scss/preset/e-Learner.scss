@@ -183,3 +183,15 @@ div#page-content {
 div#blockslider {
     margin-top: 1rem;
 }
+
+// Progress Bars
+
+.progress_bar {
+    background-color: $gray-100;
+    text-align: center;
+}
+
+.progress_bar_completed {
+    background-color: $primary;
+    text-align: right;
+}

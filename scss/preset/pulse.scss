@@ -232,7 +232,12 @@ $list-group-disabled-color:         lighten($list-group-bg, 30%);
 // Progress bars ===============================================================
 
 .progress {
-  height: 8px;
+  height: 18px;
+}
+
+.progress_bar_completed {
+    background-color: $gray-400;
+    text-align: right;
 }
 
 // Containers ==================================================================

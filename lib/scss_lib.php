@@ -92,6 +92,9 @@ function theme_fordson_get_main_scss_content($theme) {
     }
 
     // Section Style
+    if ($theme->settings->sectionlayout == 1) {
+        $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/sectionlayout/sectionstyle1.scss');
+    }
     if ($theme->settings->sectionlayout == 2) {
         $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/sectionlayout/sectionstyle2.scss');
     }

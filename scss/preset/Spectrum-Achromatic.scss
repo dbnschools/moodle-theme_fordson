@@ -69,8 +69,11 @@ $breadcrumb-bg: $primary !default;
 $breadcrumb-bg-hover: darken($primary, 15%) !default;
 $breadcrumb-text-color: #ffffff !default;
 
-// List group
+// Progress bars
+$progress-bg:                       $gray-300 !default;
+$progress-bar-bg:                   $spectrum-base !default;
 
+// List group
 $list-group-bg:                     $gray-200;
 $list-group-border-color:           transparent;
 
@@ -89,8 +92,6 @@ $list-group-action-active-color:    $list-group-bg !default;
 $list-group-action-active-bg:       $list-group-hover-bg !default;
 
 // Dropdowns
-
-
 $dropdown-bg:                       $white !default;
 $dropdown-border-color:             rgba($black, .15) !default;
 $dropdown-divider-bg:               $gray-200 !default;
@@ -265,12 +266,27 @@ div#myoverview_timeline_courses .list-group-item {
 
 // Progress Bars
 
-.progress-bar {
+.progress {
+    height: 1.5rem;
+    font-weight: bold;
+    border-bottom: 3px solid $gray-400;
+}
+
+.progress-chart-container .progress-doughnut .progress-indicator svg .circle {
+    stroke: $spectrum-base;
+}
+
+/*.progress-bar {
     background-color: $spectrum-base!important;;
 }
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle {
     stroke: $spectrum-base;
 }
+.progress_bar_completed {
+    background-color: $spectrum-base;
+    text-align: right;
+}*/
+
 // Course Tile Special styling
 
 .class-box {
