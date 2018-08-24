@@ -22,6 +22,9 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 # Versions and Updates
 ## Moodle 3.5 Fordson v3.5 release 3 update 8
+* Fixed media player issue with not displaying properly when added to main course page
+
+## Moodle 3.5 Fordson v3.5 release 3 update 8
 * Additional styling fixes.
 * Fix progress bar issue
 * Fixed section highlight issue when using Boost default presets

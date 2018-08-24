@@ -1151,3 +1151,22 @@ div#page.container-fluid {
 ul.ctopics {
     width: 100%;
 }
+
+/**
+* Media Plugin Styling
+**/
+
+.path-course-view .mod-indent-outer .mediaplugin_videojs {
+    display: block;
+    position: absolute;
+}
+
+.path-course-view .mediaplugin_videojs>div {
+    margin: initial;
+}
+
+audio.mediaplugin_html5audio {
+    width: 300px;
+    height: 54px;
+    position: initial;
+}
