@@ -281,3 +281,11 @@ $list-group-disabled-color:         lighten($list-group-bg, 30%);
 div#blockslider {
     padding-top: 2rem!important;
 }
+
+.section-go-link {
+    padding: .25rem;
+    margin: .5rem;
+    background-color: $gray-100;
+    display: inline-block;
+    border: 1px solid $gray-300;
+}

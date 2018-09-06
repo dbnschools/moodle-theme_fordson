@@ -376,26 +376,6 @@ div#fpslider {
     margin: 0;
 }
 
-.markettiles {
-    margin: 1rem 0;
-}
-
-.market-tile {
-    margin: 1rem 0rem;
-    background-color: $body-bg;
-    padding: 1rem;
-    border: 1px solid $dark;
-    border-top: 7px solid;
-}
-
-.marketcontent {
-    padding: 1rem;
-    background-color: $markettextbg;
-    height: 10rem;
-    overflow: auto;
-    margin-bottom: 1rem;
-}
-
 .marketcontent::-webkit-scrollbar {
     width: 7px;
 }
@@ -827,14 +807,6 @@ ul.teacherscourseview {
 * TIDY UP 
 **/
 
-.section-go-link {
-    padding: .25rem;
-    margin: .5rem;
-    background-color: $gray-100;
-    display: inline-block;
-    border: 1px solid $gray-300;
-}
-
 #page-header .singlebutton {
     z-index: 1;
 }
@@ -1156,9 +1128,16 @@ ul.ctopics {
 * Media Plugin Styling
 **/
 
-.path-course-view .mod-indent-outer .mediaplugin_videojs {
-    display: block;
-    position: absolute;
+.path-course-view .mediaplugin, .path-course-view .mediaplugin video { 
+    max-width: 400px;
+}
+
+.path-course-view .video-js.vjs-audio {
+    width: 400px;
+}
+
+.path-course-view .mod-indent-outer .mediaplugin {
+    display: contents;
 }
 
 .path-course-view .mediaplugin_videojs>div {
@@ -1166,7 +1145,8 @@ ul.ctopics {
 }
 
 audio.mediaplugin_html5audio {
-    width: 300px;
+    width: 400px;
     height: 54px;
     position: initial;
 }
+

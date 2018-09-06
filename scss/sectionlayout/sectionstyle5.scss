@@ -33,10 +33,10 @@
  */
 
 //Styling
-
-.course-content li.current .content ul.section {
-    border-top: 25px solid $dpsaccentcolor;
+.course-content ul.topics li.section.current .content, .course-content ul.weeks li.section.current .content {
+        border-top: 25px solid $dpsaccentcolor;
 }
+
 .course-content .content ul.section {
     background-color: $gray-100;
 }
@@ -146,4 +146,24 @@ a.add-sections {
     background-color: $body-bg;
     padding: 1rem;
     border-radius: 3px;
+}
+
+
+@if $spectrumpreset == 1 {
+    .course-content .section-summary {
+        border: 0; 
+    }
+    .section-go-link.btn.btn-secondary {
+        display: block;
+        margin-top: 2rem;
+    }
+    .section-summary-activities {
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .course-content ul.topics li.section.current .content, .course-content ul.weeks li.section.current .content {
+        border-top: 25px solid $spectrum-base;
+    }
+
 }

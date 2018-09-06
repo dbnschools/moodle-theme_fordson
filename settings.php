@@ -42,15 +42,14 @@ if ($ADMIN->fulltree) {
 
     require('settings/presets_settings.php');
     require('settings/presets_adjustments_settings.php');
-    require('settings/menu_settings.php');
-    require('settings/content_settings.php');
-    require('settings/fpicons_settings.php');
-    require('settings/footer_settings.php');
     require('settings/image_settings.php');
     require('settings/colours_settings.php');
-    require('settings/markettiles_settings.php');
-    require('settings/slideshow_settings.php');
-    // OCJ HILLBROOK MOD
+    require('settings/content_settings.php');
+    require('settings/menu_settings.php');
+    require('settings/fpicons_settings.php');
     require('settings/modchooser_settings.php');
+    require('settings/slideshow_settings.php');
+    require('settings/markettiles_settings.php');
+    require('settings/footer_settings.php');
     require('settings/customlogin_settings.php');
 }

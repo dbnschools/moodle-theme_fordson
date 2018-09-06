@@ -44,6 +44,7 @@ $dark:          $gray-800 !default;
 //$enable-rounded: false !default;
 $border-radius: 4px !default;
 
+
 // Body
 $body-color:    $gray-800 !default;
 $body-bg:       #dae6e5 !default;
@@ -172,6 +173,14 @@ div#page-content {
     margin: 0!important;
     border-top: 7px solid rgba(0,0,0,.2);
     border-radius: 0;
+}
+
+.section-go-link {
+    padding: .25rem;
+    margin: .5rem;
+    background-color: $gray-100;
+    display: inline-block;
+    border: 1px solid $gray-300;
 }
 
 @media screen and (max-width: 576px) {

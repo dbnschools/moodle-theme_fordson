@@ -1,0 +1,24 @@
+.markettiles {
+  margin: 1rem 0;
+}
+
+.market-tile {
+  margin: 1rem 0rem;
+  padding: 1rem;
+  background-color: $gray-100;
+  border: 1px solid $gray-200;
+}
+
+.marketcontent {
+  height: 14rem;
+  overflow: auto;
+}
+
+.marketcontent .text_to_html {
+  padding: .5rem;
+  background-color: rgba($white,0.8);
+}
+
+.market-tile .btn-primary {
+  display: block;
+}

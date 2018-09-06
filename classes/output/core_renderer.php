@@ -632,6 +632,27 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $marketing6buttonurl = (empty($PAGE->theme->settings->marketing6buttonurl)) ? false : $PAGE->theme->settings->marketing6buttonurl;
         $marketing6target = (empty($PAGE->theme->settings->marketing6target)) ? false : $PAGE->theme->settings->marketing6target;
         $marketing6image = (empty($PAGE->theme->settings->marketing6image)) ? false : 'marketing6image';
+
+        $hasmarketing7 = (empty($PAGE->theme->settings->marketing7 && $PAGE->theme->settings->togglemarketing == 1)) ? false : format_string($PAGE->theme->settings->marketing7);
+        $marketing7content = (empty($PAGE->theme->settings->marketing7content)) ? false : format_text($PAGE->theme->settings->marketing7content);
+        $marketing7buttontext = (empty($PAGE->theme->settings->marketing7buttontext)) ? false : format_string($PAGE->theme->settings->marketing7buttontext);
+        $marketing7buttonurl = (empty($PAGE->theme->settings->marketing7buttonurl)) ? false : $PAGE->theme->settings->marketing7buttonurl;
+        $marketing7target = (empty($PAGE->theme->settings->marketing7target)) ? false : $PAGE->theme->settings->marketing7target;
+        $marketing7image = (empty($PAGE->theme->settings->marketing7image)) ? false : 'marketing7image';
+
+        $hasmarketing8 = (empty($PAGE->theme->settings->marketing8 && $PAGE->theme->settings->togglemarketing == 1)) ? false : format_string($PAGE->theme->settings->marketing8);
+        $marketing8content = (empty($PAGE->theme->settings->marketing8content)) ? false : format_text($PAGE->theme->settings->marketing8content);
+        $marketing8buttontext = (empty($PAGE->theme->settings->marketing8buttontext)) ? false : format_string($PAGE->theme->settings->marketing8buttontext);
+        $marketing8buttonurl = (empty($PAGE->theme->settings->marketing8buttonurl)) ? false : $PAGE->theme->settings->marketing8buttonurl;
+        $marketing8target = (empty($PAGE->theme->settings->marketing8target)) ? false : $PAGE->theme->settings->marketing8target;
+        $marketing8image = (empty($PAGE->theme->settings->marketing8image)) ? false : 'marketing8image';
+
+        $hasmarketing9 = (empty($PAGE->theme->settings->marketing9 && $PAGE->theme->settings->togglemarketing == 1)) ? false : format_string($PAGE->theme->settings->marketing9);
+        $marketing9content = (empty($PAGE->theme->settings->marketing9content)) ? false : format_text($PAGE->theme->settings->marketing9content);
+        $marketing9buttontext = (empty($PAGE->theme->settings->marketing9buttontext)) ? false : format_string($PAGE->theme->settings->marketing9buttontext);
+        $marketing9buttonurl = (empty($PAGE->theme->settings->marketing9buttonurl)) ? false : $PAGE->theme->settings->marketing9buttonurl;
+        $marketing9target = (empty($PAGE->theme->settings->marketing9target)) ? false : $PAGE->theme->settings->marketing9target;
+        $marketing9image = (empty($PAGE->theme->settings->marketing9image)) ? false : 'marketing9image';
         
         $fp_wonderboxcontext = ['hasfptextbox' => (!empty($PAGE->theme->settings->fptextbox && isloggedin())) , 'fptextbox' => $fptextbox, 'hasslidetextbox' => (!empty($PAGE->theme->settings->slidetextbox && isloggedin())) , 'slidetextbox' => $slidetextbox, 'hasfptextboxlogout' => !isloggedin() , 'fptextboxlogout' => $fptextboxlogout, 'hasshowloginform' => $PAGE->theme->settings->showloginform, 'hasalert' => (!empty($PAGE->theme->settings->alertbox && isloggedin())) , 'alertbox' => $alertbox, 'hasmarkettiles' => ($hasmarketing1 || $hasmarketing2 || $hasmarketing3 || $hasmarketing4 || $hasmarketing5 || $hasmarketing6) ? true : false, 'markettiles' => array(
             array(
@@ -675,6 +696,27 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 'content' => $marketing6content,
                 'title' => $hasmarketing6,
                 'button' => "<a href = '$marketing6buttonurl' title = '$marketing6buttontext' alt='$marketing6buttontext' class='btn btn-primary' target='$marketing6target'> $marketing6buttontext </a>"
+            ) ,
+            array(
+                'hastile' => $hasmarketing7,
+                'tileimage' => $marketing7image,
+                'content' => $marketing7content,
+                'title' => $hasmarketing7,
+                'button' => "<a href = '$marketing7buttonurl' title = '$marketing7buttontext' alt='$marketing7buttontext' class='btn btn-primary' target='$marketing7target'> $marketing7buttontext </a>"
+            ) ,
+            array(
+                'hastile' => $hasmarketing8,
+                'tileimage' => $marketing8image,
+                'content' => $marketing8content,
+                'title' => $hasmarketing8,
+                'button' => "<a href = '$marketing8buttonurl' title = '$marketing8buttontext' alt='$marketing8buttontext' class='btn btn-primary' target='$marketing8target'> $marketing8buttontext </a>"
+            ) ,
+            array(
+                'hastile' => $hasmarketing9,
+                'tileimage' => $marketing9image,
+                'content' => $marketing9content,
+                'title' => $hasmarketing9,
+                'button' => "<a href = '$marketing9buttonurl' title = '$marketing9buttontext' alt='$marketing9buttontext' class='btn btn-primary' target='$marketing9target'> $marketing9buttontext </a>"
             ) ,
         ) ,
         // If any of the above social networks are true, sets this to true.
@@ -840,6 +882,27 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $marketing6target = (empty($PAGE->theme->settings->marketing6target)) ? false : $PAGE->theme->settings->marketing6target;
         $marketing6image = (empty($PAGE->theme->settings->marketing6image)) ? false : 'marketing6image';
         
+        $hasmarketing7 = (empty($PAGE->theme->settings->marketing7 && $PAGE->theme->settings->togglemarketing == 2)) ? false : format_string($PAGE->theme->settings->marketing7);
+        $marketing7content = (empty($PAGE->theme->settings->marketing7content)) ? false : format_text($PAGE->theme->settings->marketing7content);
+        $marketing7buttontext = (empty($PAGE->theme->settings->marketing7buttontext)) ? false : format_string($PAGE->theme->settings->marketing7buttontext);
+        $marketing7buttonurl = (empty($PAGE->theme->settings->marketing7buttonurl)) ? false : $PAGE->theme->settings->marketing7buttonurl;
+        $marketing7target = (empty($PAGE->theme->settings->marketing7target)) ? false : $PAGE->theme->settings->marketing7target;
+        $marketing7image = (empty($PAGE->theme->settings->marketing7image)) ? false : 'marketing7image';
+
+        $hasmarketing8 = (empty($PAGE->theme->settings->marketing8 && $PAGE->theme->settings->togglemarketing == 2)) ? false : format_string($PAGE->theme->settings->marketing8);
+        $marketing8content = (empty($PAGE->theme->settings->marketing8content)) ? false : format_text($PAGE->theme->settings->marketing8content);
+        $marketing8buttontext = (empty($PAGE->theme->settings->marketing8buttontext)) ? false : format_string($PAGE->theme->settings->marketing8buttontext);
+        $marketing8buttonurl = (empty($PAGE->theme->settings->marketing8buttonurl)) ? false : $PAGE->theme->settings->marketing8buttonurl;
+        $marketing8target = (empty($PAGE->theme->settings->marketing8target)) ? false : $PAGE->theme->settings->marketing8target;
+        $marketing8image = (empty($PAGE->theme->settings->marketing8image)) ? false : 'marketing8image';
+
+        $hasmarketing9 = (empty($PAGE->theme->settings->marketing9 && $PAGE->theme->settings->togglemarketing == 2)) ? false : format_string($PAGE->theme->settings->marketing9);
+        $marketing9content = (empty($PAGE->theme->settings->marketing9content)) ? false : format_text($PAGE->theme->settings->marketing9content);
+        $marketing9buttontext = (empty($PAGE->theme->settings->marketing9buttontext)) ? false : format_string($PAGE->theme->settings->marketing9buttontext);
+        $marketing9buttonurl = (empty($PAGE->theme->settings->marketing9buttonurl)) ? false : $PAGE->theme->settings->marketing9buttonurl;
+        $marketing9target = (empty($PAGE->theme->settings->marketing9target)) ? false : $PAGE->theme->settings->marketing9target;
+        $marketing9image = (empty($PAGE->theme->settings->marketing9image)) ? false : 'marketing9image';
+
         $fp_marketingtiles = ['hasmarkettiles' => ($hasmarketing1 || $hasmarketing2 || $hasmarketing3 || $hasmarketing4 || $hasmarketing5 || $hasmarketing6) ? true : false, 'markettiles' => array(
             array(
                 'hastile' => $hasmarketing1,
@@ -882,6 +945,27 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 'content' => $marketing6content,
                 'title' => $hasmarketing6,
                 'button' => "<a href = '$marketing6buttonurl' title = '$marketing6buttontext' alt='$marketing6buttontext' class='btn btn-primary' target='$marketing6target'> $marketing6buttontext </a>"
+            ) ,
+            array(
+                'hastile' => $hasmarketing7,
+                'tileimage' => $marketing7image,
+                'content' => $marketing7content,
+                'title' => $hasmarketing7,
+                'button' => "<a href = '$marketing7buttonurl' title = '$marketing7buttontext' alt='$marketing7buttontext' class='btn btn-primary' target='$marketing7target'> $marketing7buttontext </a>"
+            ) ,
+            array(
+                'hastile' => $hasmarketing8,
+                'tileimage' => $marketing8image,
+                'content' => $marketing8content,
+                'title' => $hasmarketing8,
+                'button' => "<a href = '$marketing8buttonurl' title = '$marketing8buttontext' alt='$marketing8buttontext' class='btn btn-primary' target='$marketing8target'> $marketing8buttontext </a>"
+            ) ,
+            array(
+                'hastile' => $hasmarketing9,
+                'tileimage' => $marketing9image,
+                'content' => $marketing9content,
+                'title' => $hasmarketing9,
+                'button' => "<a href = '$marketing9buttonurl' title = '$marketing9buttontext' alt='$marketing9buttontext' class='btn btn-primary' target='$marketing9target'> $marketing9buttontext </a>"
             ) ,
         ) , ];
         return $this->render_from_template('theme_fordson/fpmarkettiles', $fp_marketingtiles);

@@ -80,11 +80,6 @@ h3.sectionname {
     border-right: 1rem solid $primary;
     margin-bottom: 0 !important;
 }
-@if $spectrumpreset == 1 {
-    h3.sectionname {
-        border-right: 1rem solid $spectrum-base;
-    }
-}
 
 h3.section-title.sectionname {
     margin: 0 !important;
@@ -207,4 +202,38 @@ span.instancename {
 
 .region_main_settings_menu_proxy {
     float: initial;
+}
+
+
+@if $spectrumpreset == 1 {
+    .course-content .section-summary {
+        border: 0; 
+    }
+    .section-go-link.btn.btn-secondary {
+        display: block;
+        margin-top: 2rem;
+    }
+    .course-content .section-summary .section-title {
+        margin: 0;
+    }
+    .course-content .section-summary .summarytext {
+        margin: 0;
+        padding: 1rem;
+        border: 1px solid $gray-200;
+    }
+    .course-content ul.topics li.section, .course-content ul.weeks li.section {
+        padding-top: 0;
+    }
+    h3.sectionname {
+        background-color: $spectrum-base;
+    }
+    h3.sectionname.dimmed_text {
+        background-color: $gray-400;
+    }
+    .section-summary-activities {
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
 }

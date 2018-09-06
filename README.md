@@ -21,8 +21,15 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 
 # Versions and Updates
-## Moodle 3.5 Fordson v3.5 release 3 update 8
+
+
+## Moodle 3.5 Fordson v3.5 release 3 update 9
 * Fixed media player issue with not displaying properly when added to main course page
+* Fixed z-index for block curtain effect and Spectrum Preset
+* Continued enhancements for the default presets and Spectrum.  Specifically focused on topics display and showing one topic per page.  Many styling enhancements.
+* Display one topic/week per page is now very attractive with the default preset and theme settings.
+* Added 3 additional marketing tiles for a total of 9
+* New Marketing Tile Style Chooser.  Allows you to instantly change up the styles of the marketing tiles by choosing from a list of styles. There are 4 initial styles to choose from for marketing tiles.
 
 ## Moodle 3.5 Fordson v3.5 release 3 update 8
 * Additional styling fixes.
@@ -41,22 +48,17 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 * Spectrum preset has new innovative "curtain" effect to show and hide blocks.
 * e-Learner Preset updates and better styling.
 
-
 ## Moodle 3.5 Fordson v3.5 release 3 update 5
 * Changed default settings during initial install so that you get a better experience out-of-the-box.  We are now using the Spectrum-Achromatic preset as the default.  
 * Enhanced Spectrum Preset to include more unique styling for the various course layout options in Fordson.  
 * Big enhancement to Spectrum and the Boost Layout with Header Image layout.
 * Footer language filter fixes for organization name.
-
-
-## Moodle 3.5 Fordson v3.5 release 3 update 5
 * NEW style preset: Spectrum-Achromatic.  A modern style with muted colors except where it matters.  Perfect for a clean, modern, and relevant look to your Moodle site. 
 * Fixed icon navbar tooltip showing link instead of text.
 * New Corporate Training My Courses Display.  Lists name of course, teacher, and percent complete in a bar graph.  Concise and compact.
 * Fixed breadcrumb issue with default Boost layout.  Also made some styling tweaks to make default Boost layout more appealing within the Fordson theme and all of its features.
 * Fixes and enhancements to the Pulse Preset to better work with Fordson.
 * Course Tile Style One has been updated to be distinct from Tile 4.  Previously they looked the same but tile 4 had course summary.  Course tile one is clean and modern looking.  A perfect compliment to the new Spectrum-Achromatic preset style.
-
 
 ## Moodle 3.5 Fordson v3.5 release 3 update 4
 * Added Enrollment Icons for course listing pages.  This shows you if the course requires a password or enrollment key.
@@ -79,12 +81,9 @@ example for black text: $breadcrumb-text-color: #000; and put that in the bottom
 * Removed items from breadcrumbs which do not contain a link. This text just takes up space and does nothing for the end user.  Only breadcrumb items with links to pages will display.
 * New Fordson SCSS variable: $breadcrumb-bg-hover can be set to a color if you wanted to change the hover effect on breadcrumbs.  Otherwise it will just darken the breadcrumb background color 15% which you can use the color picker on the colors page.
 
-
 ## Moodle 3.5 Fordson v3.5 release 3 update 1
 * Fixed bug with customized activity menu where the labels were not appearing correctly.  This was also part of fixing language strings and filters for many of the text areas in Fordson: https://github.com/dbnschools/moodle-theme_fordson/issues/21
 * Added progress bar for weeks course format when using show one topic per page. Per this request: https://moodle.org/mod/forum/discuss.php?d=360689#p1501221
-
-
 
 ## Moodle 3.5 Fordson v3.5 release 3 June 20th, 2018
 * Fixed block display issue when on course pages where you could not add any new blocks to the page.
@@ -93,11 +92,9 @@ example for black text: $breadcrumb-text-color: #000; and put that in the bottom
 * Fixed a few language strings (Course Completion Settings link, Grades link, Course Completion User Report link) to better reflect what they do in the course management panel.
 * On small screen sizes the frontpage slideshow will be hidden.  Previously only the title and description were hidden but it would still show the images.  In our case this was useless and on a mobile device we feel it is best to just get into the course and focus on the learning.
 
-
 ## Moodle 3.5 Fordson v3.5 release 2 update 1
 * Fixed Easy Enrollment Form showing to guest users.
 * Fixed styling for 2 column course listing and course description text not appearing properly on smaller screens.
-
 
 ## Moodle 3.5 Fordson v3.5 release 2
 * Fixed Icon Course Category displaying as a vertical list instead of horizontal.

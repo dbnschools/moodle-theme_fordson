@@ -117,6 +117,19 @@ function theme_fordson_get_main_scss_content($theme) {
         $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/sectionlayout/sectionstyle8.scss');
     }
 
+    if ($theme->settings->marketingstyle == 1) {
+        $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/marketingstyle/marketingstyle1.scss');
+    }
+    if ($theme->settings->marketingstyle == 2) {
+        $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/marketingstyle/marketingstyle2.scss');
+    }
+    if ($theme->settings->marketingstyle == 3) {
+        $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/marketingstyle/marketingstyle3.scss');
+    }
+    if ($theme->settings->marketingstyle == 4) {
+        $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/marketingstyle/marketingstyle4.scss');
+    }
+
     $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/styles.scss');
 
     return $scss;
@@ -259,6 +272,27 @@ function theme_fordson_get_pre_scss($theme) {
     if (isset($marketing6image)) {
         // Add a fade in transition to avoid the flicker on course headers ***.
         $prescss .= '.marketing6image {background-image: url("' . $marketing6image . '"); background-size:cover; background-position:center;}';
+    }
+
+    // Set the image.
+    $marketing7image = $theme->setting_file_url('marketing7image', 'marketing7image');
+    if (isset($marketing7image)) {
+        // Add a fade in transition to avoid the flicker on course headers ***.
+        $prescss .= '.marketing7image {background-image: url("' . $marketing7image . '"); background-size:cover; background-position:center;}';
+    }
+
+    // Set the image.
+    $marketing8image = $theme->setting_file_url('marketing8image', 'marketing8image');
+    if (isset($marketing8image)) {
+        // Add a fade in transition to avoid the flicker on course headers ***.
+        $prescss .= '.marketing8image {background-image: url("' . $marketing8image . '"); background-size:cover; background-position:center;}';
+    }
+
+    // Set the image.
+    $marketing9image = $theme->setting_file_url('marketing9image', 'marketing9image');
+    if (isset($marketing9image)) {
+        // Add a fade in transition to avoid the flicker on course headers ***.
+        $prescss .= '.marketing9image {background-image: url("' . $marketing9image . '"); background-size:cover; background-position:center;}';
     }
 
     return $prescss;

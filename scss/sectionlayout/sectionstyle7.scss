@@ -132,3 +132,42 @@ div#coursecontrols {
         margin: 0; 
     }
 }
+
+
+@if $spectrumpreset == 1 {
+    .course-content .section-summary {
+        border: 0; 
+    }
+    .section-go-link.btn.btn-secondary {
+        display: block;
+        margin-top: 2rem;
+    }
+    .course-content .section-summary .section-title {
+        margin: 0;
+    }
+    .course-content .section-summary .summarytext {
+        margin: 0;
+        padding: 1rem;
+        border: 1px solid $gray-200;
+    }
+    .course-content ul.topics li.section, .course-content ul.weeks li.section {
+        padding-top: 0;
+    }
+    .section-summary-activities {
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .course-content ul li.section.main {
+        border-bottom: 0;
+    }
+    .course-content .single-section .section-navigation {
+        padding: 1rem;
+        border-radius: 3px;
+        margin: 0!important;
+        border-top: 0;
+        border-radius: 0;
+    }
+
+
+}

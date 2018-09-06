@@ -125,6 +125,20 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+// Toggle Marketing Tile styles
+$name = 'theme_fordson/marketingstyle';
+$title = get_string('marketingstyle' , 'theme_fordson');
+$description = get_string('marketingstyle_desc', 'theme_fordson');
+$marketingstyle1 = get_string('marketingstyle1', 'theme_fordson');
+$marketingstyle2 = get_string('marketingstyle2', 'theme_fordson');
+$marketingstyle3 = get_string('marketingstyle3', 'theme_fordson');
+$marketingstyle4 = get_string('marketingstyle4', 'theme_fordson');
+$default = '1';
+$choices = array('1'=>$marketingstyle1, '2'=>$marketingstyle2, '3'=>$marketingstyle3, '4'=>$marketingstyle4);
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 // Block Display Options
 $name = 'theme_fordson/blockdisplay';
 $title = get_string('blockdisplay' , 'theme_fordson');

@@ -39,6 +39,7 @@ $dark:          $gray-800 !default;
 // Options
 $enable-rounded: false !default;
 
+
 // Body
 $body-color:    $gray-800 !default;
 $body-bg:       #EBF4F8 !default;
@@ -178,7 +179,7 @@ div#learningcontent {
     background-blend-mode: luminosity;
     -webkit-mask-image: linear-gradient(to top, transparent 5%, black 75%);
     mask-image: linear-gradient(to top, transparent 5%, black 75%);
-    filter: blur(2px) opacity(70%);
+    filter: blur(2px) opacity(90%);
 }
 
 #page-header .btn.btn-secondary:hover {
@@ -198,12 +199,11 @@ div#blockslider {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 2;
+    z-index: 101;
 }
 
-.course-content ul.topics li.section, .course-content ul.weeks li.section {
-    padding-top: 0;
-    padding-bottom: 1rem;
+.blockpanelbtn {
+    z-index: 102 !important;
 }
 
 .page-context-header .page-header-headings, .page-context-header .header-button-group {
@@ -212,6 +212,10 @@ div#blockslider {
 
 .course-content .current::before {
     border-left: 0;
+}
+
+.course-content ul.topics li.section, .course-content ul.weeks li.section {
+    margin-bottom: 1rem;
 }
 
 .teacherdashboard .list-group-item:hover, .teacherdashboard  .list-group-item:focus {
@@ -254,7 +258,6 @@ div#myoverview_timeline_courses .list-group-item {
 .editing .course-content li#section-0 .content {
     margin-top: 2rem; 
 }
-
 .fp-blocks {
     padding-top: 2rem;
     padding-bottom: 1rem;
@@ -262,6 +265,10 @@ div#myoverview_timeline_courses .list-group-item {
 
 #page-site-index .fp-blocks {
     padding: 0;
+}
+
+#page-wrapper {
+    min-height: 1rem;
 }
 
 // Progress Bars
@@ -306,9 +313,4 @@ div#myoverview_timeline_courses .list-group-item {
 .form-autocomplete-suggestions li:hover {
     background-color: $gray-200;
     color: $dark;
-}
-
-.mediaplugin, .mediaplugin video {
-    width: 100%; 
-    max-width: 100%;
 }

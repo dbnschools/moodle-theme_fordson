@@ -37,3 +37,17 @@
 .course-content .current::before {
     border-left: 7px solid !important;
 }
+
+@if $spectrumpreset == 1 {
+	.course-content ul.topics li.section, .course-content ul.weeks li.section {
+	    margin-bottom: 3rem;
+	}
+	.course-content .section-summary {
+    	border: 0; 
+	}
+	.section-go-link.btn.btn-secondary {
+        display: block;
+        margin-top: 2rem;
+    }
+
+}

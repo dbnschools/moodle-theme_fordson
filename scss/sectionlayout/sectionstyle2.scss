@@ -193,3 +193,47 @@ span.instancename {
 .region_main_settings_menu_proxy {
     float: initial;
 }
+
+@if $spectrumpreset == 1 {
+    .course-content .section-summary {
+        border: 0; 
+    }
+    .section-go-link.btn.btn-secondary {
+        display: block;
+        margin-top: 2rem;
+    }
+    #page-course-view-topics .course-content ul.topics li.section-summary .content, #page-course-view-topics .course-content ul.weeks li.section-summary .content {
+        background-color: $gray-100;
+        padding-bottom: 1rem;
+        border: 1px solid $gray-200;
+        box-shadow: 0 1px 2px 0px rgba(0,0,0,.1);
+    }
+    .course-content .single-section ul.topics li.section .content, .course-content .single-section ul.weeks li.section .content {
+        background-color: initial;
+        padding-bottom: 1rem;
+        border: 0;
+        box-shadow: none;
+    }
+    .course-content .section-summary .section-title {
+        margin: 0;
+    }
+    .course-content .section-summary .summarytext {
+        margin: 0;
+        padding: 1rem;
+    }
+    .course-content ul.topics li.section, .course-content ul.weeks li.section {
+        padding-top: 0;
+    }
+    h3.sectionname {
+        background-color: $spectrum-base;
+    }
+    h3.sectionname.dimmed_text {
+        background-color: $gray-400;
+    }
+    .section-summary-activities {
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
