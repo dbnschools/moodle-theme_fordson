@@ -965,6 +965,22 @@ width: $activityiconsize;
     color: initial;
 }
 
+// MISTAR SIS Grade Export Page
+.export-group {
+    background-color: $gray-100;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border: 1px solid $gray-200;
+    border-top: 7px solid $spectrum-base;
+}
+
+.export-group .col-md-3 label {
+    font-weight: bold;
+}
+
+.export-group .form-group.row.fitem:first-child {
+    border-bottom: 1px solid $gray-300;
+}
 
 //Dashboard no progress icon centered fix
 
@@ -1108,6 +1124,10 @@ div#page.container-fluid {
         display: inline-block;
         padding: 0;
         content: "";
+    }
+    .dir-rtl ul.breadcrumb li:after{
+        transform: scale(.707) rotate(315deg);
+        box-shadow: -3px -3px 0 1px $card-bg, -2px -3px 0 2px $card-bg;
     }
 }
 

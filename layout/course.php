@@ -49,6 +49,8 @@ $checkblockb = strpos($blockshtmlb, 'data-block=') !== false;
 $checkblockc = strpos($blockshtmlc, 'data-block=') !== false;
 $hasfpblockregion = ($PAGE->theme->settings->blockdisplay == 1) !== false;
 
+$hasactivitynav = ($PAGE->theme->settings->showactivitynav ==1) !== false;
+
 $hascourseblocks = false;
 if ($checkblocka || $checkblockb || $checkblockc) {
     $hascourseblocks = true;
@@ -70,7 +72,8 @@ $templatecontext = [
     'navdraweropen' => $navdraweropen,
     'hasfhsdrawer' => $hasfhsdrawer,
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
-    'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu)
+    'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
+    'hasactivitynav' => $hasactivitynav
 ];
 
 $PAGE->requires->jquery();

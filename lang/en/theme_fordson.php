@@ -269,6 +269,8 @@ $string['gutterwidth'] = 'Content Padding';
 $string['gutterwidth_desc'] = 'This setting controls how much spacing is used on the left and right of the main content.';
 $string['frontpagemycoursessorting'] = 'Frontpage My Courses Sort Order by Last Access';
 $string['frontpagemycoursessorting_desc'] = 'When checked this feature will sort the frontpage My Courses(enrolled courses) display by last access for the user.  This will override the "Sort my courses" setting under Navigation.  If unchecked then Frontpage My Courses will display as normal.';
+$string['showactivitynav'] = 'Show Activity Navigation';
+$string['showactivitynav_desc'] = 'Uncheck this to turn off activity navigation at the bottom of the activity pages.';
 
 //teacher and student dashboard slider
 $string['userlinks'] = 'User Links';

@@ -43,7 +43,7 @@ $setting = new admin_setting_configcheckbox($name, $title, $description, $defaul
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// Frontpage Textbox.
+// Dashboard Teacher Textbox.
 $name = 'theme_fordson/coursemanagementtextbox';
 $title = get_string('coursemanagementtextbox', 'theme_fordson');
 $description = get_string('coursemanagementtextbox_desc', 'theme_fordson');
@@ -52,12 +52,21 @@ $setting = new admin_setting_confightmleditor($name, $title, $description, $defa
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// Frontpage Textbox.
+// Dashboard Student Textbox.
 $name = 'theme_fordson/studentdashboardtextbox';
 $title = get_string('studentdashboardtextbox', 'theme_fordson');
 $description = get_string('studentdashboardtextbox_desc', 'theme_fordson');
 $default = '';
 $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+// Show/hide course editing cog.
+$name = 'theme_fordson/showactivitynav';
+$title = get_string('showactivitynav', 'theme_fordson');
+$description = get_string('showactivitynav_desc', 'theme_fordson');
+$default = 1;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 

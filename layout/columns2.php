@@ -46,6 +46,8 @@ $blockshtmlb = $OUTPUT->blocks('fp-b');
 $blockshtmlc = $OUTPUT->blocks('fp-c');
 $hasfpblockregion = ($PAGE->theme->settings->blockdisplay == 1) !== false;
 
+$hasactivitynav = ($PAGE->theme->settings->showactivitynav ==1) !== false;
+
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [
 	'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID) , "escape" => false]) , 
@@ -60,7 +62,8 @@ $templatecontext = [
     'navdraweropen' => $navdraweropen,
     'hasfhsdrawer' => $hasfhsdrawer,
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
-    'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu)
+    'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
+    'hasactivitynav' => $hasactivitynav
 ];
 
 $PAGE->requires->jquery();

@@ -304,13 +304,18 @@ function theme_fordson_get_pre_scss($theme) {
  * @param theme_config $theme The theme config object.
  * @return string
  */
+
+/* Removed to fix double import of extra SCSS at bottom of color page
+
 function theme_fordson_get_extra_scss($theme) {
     // Adapted from Boost to allow other changes or settings if required.
-    $extrascss = '';
+    
     if (!empty($theme->settings->scss)) {
         $extrascss .= $theme->settings->scss;
+    } else {
+        $extrascss = '';
     }
 
     return $extrascss;
-}
+}*/
 

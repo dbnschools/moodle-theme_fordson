@@ -147,7 +147,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                             <div class="class-box">
                                 ';
                             if ($PAGE->theme->settings->titletooltip) {
-                                $tooltiptext = 'data-tooltip="tooltip" data-placement= "top" title="' . $course->fullname . '"';
+                                $tooltiptext = 'data-tooltip="tooltip" data-placement= "top" title="' . format_string($course->fullname) . '"';
                             }
                             else {
                                 $tooltiptext = '';
@@ -188,7 +188,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                                 <div class="class-box-courseview" style="background-image: url(' . $imgurl . ');background-repeat: no-repeat;background-size:cover; background-position:center;">
                                 ';
                             if ($PAGE->theme->settings->titletooltip) {
-                                $tooltiptext = 'data-tooltip="tooltip" data-placement= "top" title="' . $course->fullname . '"';
+                                $tooltiptext = 'data-tooltip="tooltip" data-placement= "top" title="' . format_string($course->fullname) . '"';
                             }
                             else {
                                 $tooltiptext = '';
@@ -227,7 +227,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                         }
                         if ($PAGE->theme->settings->coursetilestyle == 3) {
                             if ($PAGE->theme->settings->titletooltip) {
-                                $tooltiptext = 'data-tooltip="tooltip" data-placement= "top" title="' . $course->fullname . '"';
+                                $tooltiptext = 'data-tooltip="tooltip" data-placement= "top" title="' . format_string($course->fullname) . '"';
                             }
                             else {
                                 $tooltiptext = '';
@@ -261,7 +261,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                             <div class="class-box4">
                                 ';
                             if ($PAGE->theme->settings->titletooltip) {
-                                $tooltiptext = 'data-tooltip="tooltip" data-placement= "top" title="' . $course->fullname . '"';
+                                $tooltiptext = 'data-tooltip="tooltip" data-placement= "top" title="' . format_string($course->fullname) . '"';
                             }
                             else {
                                 $tooltiptext = '';
@@ -647,7 +647,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                             <div class="class-box">
                                 ';
                             if ($PAGE->theme->settings->titletooltip) {
-                                $tooltiptext = 'data-tooltip="tooltip" data-placement= "top" title="' . $course->fullname . '"';
+                                $tooltiptext = 'data-tooltip="tooltip" data-placement= "top" title="' . format_string($course->fullname) . '"';
                             }
                             else {
                                 $tooltiptext = '';

@@ -22,6 +22,19 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 # Versions and Updates
 
+## Moodle 3.5 Fordson v3.5 release 3 update 11
+* Fixed LTI tool icon issue and custom favicon based on Gareth Barnards solution in Essentail theme. https://moodle.org/mod/forum/discuss.php?d=371252#p1516474
+* MISTAR Gradebook Export plugin styling
+* Fixed double import of custom SCSS and CSS from Fordson Color tab
+* Fixed block display issue with the block button appearing when it should not: https://github.com/dbnschools/moodle-theme_fordson/issues/39
+* Added check box to turn off activity navigation at the bottom of activity pages.  This is not possible in core Moodle so we added it to the theme on the Menu settings tab.
+
+## Moodle 3.5 Fordson v3.5 release 3 update 10
+* Fixed logo not appearing properly on homepage.
+* CSS changes to improve assignment grading.
+* Compressed theme image for a smaller file size
+* Enhanced tabs CSS for Spectrum Achromatic preset
+* Fixed CSS issue with Gradebook User Report where name was not visible
 
 ## Moodle 3.5 Fordson v3.5 release 3 update 9
 * Fixed media player issue with not displaying properly when added to main course page

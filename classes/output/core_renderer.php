@@ -1539,10 +1539,12 @@ class core_renderer extends \theme_boost\output\core_renderer {
     }
 
     public function favicon() {
-        if (!empty($this->page->theme->setting_file_url('favicon', 'favicon'))) {
-            return $this->page->theme->setting_file_url('favicon', 'favicon');
+        $favicon = $this->page->theme->setting_file_url('favicon', 'favicon');
+
+        if (empty($favicon)) {
+            return $this->page->theme->image_url('favicon', 'theme');
         } else {
-        return $this->image_url('favicon', 'theme');
+            return $favicon;
         }
     }
 

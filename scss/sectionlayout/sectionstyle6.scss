@@ -189,4 +189,18 @@ span.section-modchooser-link {
         margin-left: auto;
         margin-right: auto;
     }
+
+    //Spectrum Preset with Collapsed Topics Course Format fixes
+    .course-content ul.ctopics li.section .content, .course-content ul.cweeks li.section .content {
+        background-color: transparent;
+        border: 0;
+        box-shadow: initial;
+    }
+    .course-content ul.ctopics li.section .content div.toggle:hover {
+        background-color: transparent;
+    }
+    .course-content ul.ctopics li.section .content .toggle, .course-content ul.ctopics li.section .content.sectionhidden {
+        background-color: transparent!important;
+    }
+
 }

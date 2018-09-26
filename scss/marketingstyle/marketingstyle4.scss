@@ -5,9 +5,7 @@
 .market-tile {
   margin: 1rem 0rem;
   background-color: $gray-100;
-  border: 1px solid $gray-200;
-  border-top: 10px solid $dark;
-  box-shadow: 0px -1px 12px 1px rgba($gray-700, 0.6);
+  box-shadow: 0px -1px 12px 1px rgba($gray-700, 0.8);
 }
 
 .market-tile .btn-primary {

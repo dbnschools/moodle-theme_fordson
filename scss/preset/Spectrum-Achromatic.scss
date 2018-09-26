@@ -92,6 +92,15 @@ $list-group-action-hover-color:     $list-group-action-color !default;
 $list-group-action-active-color:    $list-group-bg !default;
 $list-group-action-active-bg:       $list-group-hover-bg !default;
 
+// Tabs
+$nav-tabs-border-color:             $gray-300 !default;
+//$nav-tabs-border-width:             $border-width !default;
+//$nav-tabs-border-radius:            $border-radius !default;
+$nav-tabs-link-hover-border-color:  $gray-200 $gray-200 $nav-tabs-border-color !default;
+$nav-tabs-link-active-color:        $gray-700 !default;
+$nav-tabs-link-active-bg:           lighten($spectrum-base, 15%) !default;
+$nav-tabs-link-active-border-color: $gray-300 $gray-300 $nav-tabs-link-active-bg !default;
+
 // Dropdowns
 $dropdown-bg:                       $white !default;
 $dropdown-border-color:             rgba($black, .15) !default;
@@ -129,6 +138,45 @@ $theme-colors: (
 // Import Core moodle CSS
 @import "../../boost/scss/moodle";
 
+//
+// Tabs
+//
+
+.nav-tabs {
+  border-bottom: 2px solid $nav-tabs-border-color;
+  background-color: $gray-100;
+
+  .nav-item {
+    border-bottom: $nav-tabs-border-width solid $nav-tabs-border-color;
+    margin-top: $nav-tabs-border-width;
+    border-right: 1px solid $gray-100;
+    background-color: $gray-200;
+  }
+
+  .nav-link {
+    border: $nav-tabs-border-width solid transparent;
+    @include border-top-radius($nav-tabs-border-radius);
+
+    @include hover-focus {
+      border-color: transparent;
+      background-color: $nav-tabs-link-active-bg;
+    }
+
+    &.disabled {
+      color: $nav-link-disabled-color;
+      background-color: transparent;
+      border-color: transparent;
+    }
+  }
+
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    color: $nav-tabs-link-active-color;
+    background-color: $nav-tabs-link-active-bg;
+    border-color: transparent;
+  }
+}
+
 // Let theme know we are using Spectrum
 $spectrumpreset: 1;
 
@@ -161,6 +209,17 @@ div#page-navbar {
     padding: 20px 0 20px 20px;
 }
 
+.path-course-view .singlebutton.forumaddnew {
+    margin-bottom: 1rem;
+    display: inline-block;
+}
+
+.path-course-view .subscribelink {
+    display: inline-block;
+    float: right;
+    margin-bottom: 1rem;
+}
+
 // Content area bkg and preset uniques
 
 div#learningcontent {
@@ -180,6 +239,10 @@ div#learningcontent {
     -webkit-mask-image: linear-gradient(to top, transparent 5%, black 75%);
     mask-image: linear-gradient(to top, transparent 5%, black 75%);
     filter: blur(2px) opacity(90%);
+}
+
+#page-header .card .card-body {
+	z-index: 1;
 }
 
 #page-header .btn.btn-secondary:hover {
@@ -313,4 +376,30 @@ div#myoverview_timeline_courses .list-group-item {
 .form-autocomplete-suggestions li:hover {
     background-color: $gray-200;
     color: $dark;
+}
+
+// Grading Enhancements
+
+.path-mod-assign [data-region="review-panel"].collapsed + [data-region="grade-panel"] [data-region="grade"], .path-mod-assign [data-region="grade-panel"].fullwidth [data-region="grade"] {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gradingform_rubric {
+    max-width: min-content;
+}
+
+#page-grade-grading-pick a.action.pick.template {
+    display: inline-block;
+}
+
+#page-grade-grading-pick a.action.remove {
+    display: inline-block;
+    padding-left: 3rem;
+}
+
+#page-grade-grading-pick .box.template-preview {
+    height: 400px;
+    overflow: scroll;
 }

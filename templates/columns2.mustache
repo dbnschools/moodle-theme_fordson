@@ -103,7 +103,9 @@
                     {{/hasblocks}}
                 </div>
             </div>
-            {{{ output.activity_navigation }}}
+            {{#hasactivitynav}}
+                {{{ output.activity_navigation }}}
+            {{/hasactivitynav}}
         </div>
     </div>
     {{#hasfhsdrawer}}

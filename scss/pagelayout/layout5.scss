@@ -48,6 +48,10 @@ $bootstrap-sass-asset-helper: false !default;
     margin-bottom: .25rem;
 }
 
+#page-content .page-context-header .page-header-headings {
+    background-color: initial;
+}
+
 .page-context-header .page-header-headings h1 {
     color: $white;
     margin: 0;
