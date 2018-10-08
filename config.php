@@ -94,6 +94,7 @@ if ($THEME->settings->blockdisplay == 2) {
         'file' => 'frontpage.php',
         'regions' => ['side-pre'],
         'defaultregion' => 'side-pre',
+        'options' => ['nonavbar' => true, 'langmenu' => true],
     ];
 }
 if ($THEME->settings->blockdisplay == 2 && $THEME->settings->enhancedmydashboard == 1) {

@@ -22,12 +22,17 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 # Versions and Updates
 
+## Moodle 3.5 Fordson v3.5 release 3 update 12
+* Fixed issue where navbar/breadcrumbs showed up on frontpage when using Boost default block setting.  This was an undesired behavior.  
+* Spectrum Preset Quiz Styling changes.  We changed the styling of the quiz to better reflect the styling of the preset.
+
 ## Moodle 3.5 Fordson v3.5 release 3 update 11
 * Fixed LTI tool icon issue and custom favicon based on Gareth Barnards solution in Essentail theme. https://moodle.org/mod/forum/discuss.php?d=371252#p1516474
 * MISTAR Gradebook Export plugin styling
 * Fixed double import of custom SCSS and CSS from Fordson Color tab
 * Fixed block display issue with the block button appearing when it should not: https://github.com/dbnschools/moodle-theme_fordson/issues/39
 * Added check box to turn off activity navigation at the bottom of activity pages.  This is not possible in core Moodle so we added it to the theme on the Menu settings tab.
+* Made small CSS adjustments with default Fordson presets when using Collapsed topic course format.
 
 ## Moodle 3.5 Fordson v3.5 release 3 update 10
 * Fixed logo not appearing properly on homepage.

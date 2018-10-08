@@ -403,3 +403,53 @@ div#myoverview_timeline_courses .list-group-item {
     height: 400px;
     overflow: scroll;
 }
+
+// Quiz Module Styling Enhancements
+#page-mod-quiz-attempt .que, #page-mod-quiz-review .que {
+    margin-bottom: 4rem;
+}
+#page-mod-quiz-attempt .que .formulation, #page-mod-quiz-review .que .formulation {
+    color: initial;
+    background-color: transparent;
+    border-color: initial;
+}
+#page-mod-quiz-attempt .que .content, #page-mod-quiz-review .que .content {
+    border: 1px solid $gray-300;
+    border-top: 1rem solid $spectrum-base;
+    //background: linear-gradient(to bottom,$white 78%,$gray-200 115%); 
+    background-color: $white;
+}
+#page-mod-quiz-attempt .que .qtext, #page-mod-quiz-review .que .qtext {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid $gray-200;
+}
+.que .outcome {margin-bottom: 0;}
+
+// Fix for when a user checks an answer and the question would jump positions
+#page-mod-quiz-attempt :target {
+    padding-top: 0!important;
+    margin-top: 0!important;
+}
+
+#page-mod-quiz-attempt .que .info, #page-mod-quiz-review .que .info {
+        background-color: $gray-200;
+        border: 1px solid $gray-300;
+        margin-bottom: 0;
+}
+@media screen and (min-width: 576px) {
+    #page-mod-quiz-attempt .que, #page-mod-quiz-review .que {
+        background-color: $gray-200;
+        border-right: 7px solid $gray-400;
+    }
+    #page-mod-quiz-attempt .que .info, #page-mod-quiz-review .que .info {
+        width: 8em;
+        float:right;
+        background-color: transparent;
+        border: 0;
+    }
+    #page-mod-quiz-attempt .que .content, #page-mod-quiz-review .que .content {
+        margin: 0 9.5em 0 0;
+    }
+
+}
