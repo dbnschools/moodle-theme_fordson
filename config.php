@@ -68,6 +68,7 @@ $THEME->layouts = [
         'regions' => ['side-pre'],
         'defaultregion' => 'side-pre',
     ],
+
     // Server administration scripts.
     'admin' => [
         'file' => 'columns2.php',

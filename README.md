@@ -6,8 +6,6 @@ THEME_Fordson
 Fordson is focused on students going from login to learning, with features that help teachers build better courses and students engage with content. Your school is unique and Fordson provides impressive customizations for a professional and modern learning platform. 
 It is built on Boostrap4 and Mustache templates.
 
-## Documentation can be found here: https://bookshare.dearbornschools.org/fordsontheme/
-
 ## Recommended Settings for Best Results
 These settings below are found in the Moodle Site Administration Pages.  These are not related to the theme but will help bring out the best of Fordson.
 
@@ -21,6 +19,9 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 
 # Versions and Updates
+
+## Moodle 3.5 Fordson v3.5 release 3 update 13
+* Fixed Media Player not displaying full screen
 
 ## Moodle 3.5 Fordson v3.5 release 3 update 12
 * Fixed issue where navbar/breadcrumbs showed up on frontpage when using Boost default block setting.  This was an undesired behavior.  
