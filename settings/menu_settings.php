@@ -61,6 +61,20 @@ $setting = new admin_setting_confightmleditor($name, $title, $description, $defa
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+// Navbar Color switch toggle based on role
+$name = 'theme_fordson/navbarcolorswitch';
+$title = get_string('navbarcolorswitch','theme_fordson');
+$description = get_string('navbarcolorswitch_desc', 'theme_fordson');
+$default = '1';
+$choices = array(
+	'1' => get_string('navbarcolorswitch_on', 'theme_fordson'),
+	'2' => get_string('navbarcolorswitch_off', 'theme_fordson'),
+	);
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+
 // Show/hide course editing cog.
 $name = 'theme_fordson/showactivitynav';
 $title = get_string('showactivitynav', 'theme_fordson');

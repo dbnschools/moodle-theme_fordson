@@ -89,6 +89,14 @@ $page->add(new admin_setting_heading('theme_fordson_colours', get_string('colour
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    // Top navbar background setting.
+    $name = 'theme_fordson/topnavbarteacherbg';
+    $title = get_string('topnavbarteacherbg', 'theme_fordson');
+    $description = get_string('topnavbarteacherbg_desc', 'theme_fordson');
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, '');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
     // @breadcrumbBackground setting.
     $name = 'theme_fordson/breadcrumbbkg';
     $title = get_string('breadcrumbbkg', 'theme_fordson');

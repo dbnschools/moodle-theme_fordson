@@ -20,6 +20,14 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 # Versions and Updates
 
+## Moodle 3.5 Fordson v3.5 release 3 update 15
+* Custom login form on site home was restored after learning more about the new token system and implementing it properly.
+
+## Moodle 3.5 Fordson v3.5 release 3 update 14
+* Fixed login issue in Moodle 3.5.3 where a login token was required and the theme was not passing a token.
+* Removed custom login form on site homepage which essentially replicated a login block.  Workaround is to use a login block or Force Users to login and utlize the Custom Login Page feature of Fordson.  We will now have one way to login and that is on the actual login page for Moodle.  It can be customized but this will help moving forward to make things more concise instead of 3 ways to login there will now be one page which can be customized or utilize the default moodle login form.
+* New Feature:  Top Navbar will change color if you can edit a page (Teacher Role).  When a teacher switches their role to student the top navbar will revert back to the default white color.  This can be customized on the color page.  
+
 ## Moodle 3.5 Fordson v3.5 release 3 update 13
 * Fixed Media Player not displaying full screen
 

@@ -139,25 +139,26 @@ div#fordsonlogin {
 
 #page-login-index #page-wrapper {
     padding-bottom: 0;
+    min-height: 100%;
 }
 
 /* Editing Block Columns */
 
 .editing aside#block-region-fp-a {
     border: 2px dashed $gray-lighter;
-    min-height: 2rem;
+    min-height: 10rem;
 }
 .editing aside#block-region-fp-b {
     border: 2px dashed $gray-lighter;
-    min-height: 2rem;
+    min-height: 10rem;
 }
 .editing aside#block-region-fp-c {
     border: 2px dashed $gray-lighter;
-    min-height: 2rem;
+    min-height: 10rem;
 }
 .editing aside#block-region-side-pre {
     border: 2px dashed $gray-lighter;
-    min-height: 2rem;
+    min-height: 10rem;
 }
 
 /* Teacher Dashboard */
@@ -1166,3 +1167,10 @@ audio.mediaplugin_html5audio {
     position: initial;
 }
 
+// Navbar Color switch
+nav.fixed-top.navbar.navbar-teacher.navbar-expand.moodle-has-zindex {
+    background-color: $teachernavbarcolor;
+}
+nav.fixed-top.navbar.navbar-student.navbar-expand.moodle-has-zindex {
+    background-color: $studentnavbarcolor;
+}

@@ -169,6 +169,7 @@ function theme_fordson_get_pre_scss($theme) {
     'activityiconsize' => ['activityiconsize'],
     'gutterwidth' => ['gutterwidth'],
     'topnavbarbg' => ['topnavbarbg'],
+    'topnavbarteacherbg' => ['teachernavbarcolor'],
     ];
 
     // Add settings variables.

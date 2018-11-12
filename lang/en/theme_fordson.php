@@ -95,8 +95,10 @@ $string['bodybackground'] = 'Body Background Colour';
 $string['bodybackground_desc'] = 'The main colour to use for the background.';
 $string['footerbkg'] = 'Footer Background Colour';
 $string['footerbkg_desc'] = 'Footer background colour for the bottom of the page.';
-$string['topnavbarbg'] = 'Top Navigation Navbar';
+$string['topnavbarbg'] = 'Top Navigation Navbar Default';
 $string['topnavbarbg_desc'] = 'Content background colour for the top navigation bar.';
+$string['topnavbarteacherbg'] = 'Top Navigation Navbar Teacher Role';
+$string['topnavbarteacherbg_desc'] = 'Content background colour for the top navigation bar when a user is a teacher.  This feature must be turned on in Menu Settings. Please see the navbarcolorswitch setting.';
 
 $string['rawscss'] = 'Raw SCSS';
 $string['rawscss_desc'] = 'Use this field to provide SCSS code which will be injected at the end of the style sheet.';
@@ -271,6 +273,11 @@ $string['frontpagemycoursessorting'] = 'Frontpage My Courses Sort Order by Last 
 $string['frontpagemycoursessorting_desc'] = 'When checked this feature will sort the frontpage My Courses(enrolled courses) display by last access for the user.  This will override the "Sort my courses" setting under Navigation.  If unchecked then Frontpage My Courses will display as normal.';
 $string['showactivitynav'] = 'Show Activity Navigation';
 $string['showactivitynav_desc'] = 'Uncheck this to turn off activity navigation at the bottom of the activity pages.';
+$string['navbarcolorswitch'] = 'Navbar Color Switch';
+$string['navbarcolorswitch_desc'] = 'This feature changes the color of the navbar based on user role.  A student will see one color and a teacher will see another color.  This is useful when a teacher changes roles and helps distinguish between a student view and a teacher view.';
+$string['navbarcolorswitch_on'] = 'Change navbar color based on role.';
+$string['navbarcolorswitch_off'] = 'Do not change navbar color based on role.';
+
 
 //teacher and student dashboard slider
 $string['userlinks'] = 'User Links';
