@@ -20,6 +20,10 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 # Versions and Updates
 
+## Moodle 3.5 Fordson v3.5 release 3 update 16
+* Implemented preferred way of handling login tokens which will allow for both a custom login form (as used on some site homepages in Fordson) as well as login tokens on the normal Moodle login page. Thanks to Gareth Barnard and others who helped flush this out over the past couple of days.  
+* This version will work with both Moodle 3.5.2 and Moodle 3.5.3 and fixes any incompatibility issues.
+
 ## Moodle 3.5 Fordson v3.5 release 3 update 15
 * Custom login form on site home was restored after learning more about the new token system and implementing it properly.
 

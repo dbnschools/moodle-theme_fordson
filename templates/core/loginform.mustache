@@ -115,7 +115,7 @@
             <div class="signinform">
                         <h3>{{#str}}fpsignup, theme_fordson{{/str}}</h3>
                         <form class="m-t-1" action="{{{ config.wwwroot }}}/login/index.php" method="POST" role="form">
-                        <input type="hidden" name="logintoken" value="{{logintoken}}">
+                        {{#logintoken}}<input type="hidden" name="logintoken" value="{{logintoken}}">{{/logintoken}}
                             <label for="username">
                               {{^canloginbyemail}}
                                   {{#str}}username{{/str}}
@@ -227,7 +227,7 @@
                     <form class="mt-3" action="{{loginurl}}" method="post" id="login">
                         <input id="anchor" type="hidden" name="anchor" value="">
                         <script>document.getElementById('anchor').value = location.hash;</script>
-                        <input type="hidden" name="logintoken" value="{{logintoken}}">
+                        {{#logintoken}}<input type="hidden" name="logintoken" value="{{logintoken}}">{{/logintoken}}
                         <div class="form-group">
                             <label for="username" class="sr-only">
                                 {{^canloginbyemail}}
