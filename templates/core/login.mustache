@@ -115,6 +115,7 @@
             <div class="signinform">
                         <h3>{{#str}}fpsignup, theme_fordson{{/str}}</h3>
                         <form class="m-t-1" action="{{{ config.wwwroot }}}/login/index.php" method="POST" role="form">
+                        {{#logintoken}}<input type="hidden" name="logintoken" value="{{logintoken}}">{{/logintoken}}
                             <label for="username">
                               {{^canloginbyemail}}
                                   {{#str}}username{{/str}}
@@ -159,6 +160,7 @@
                             <div class="m-t-2">
                                 {{#str}}someallowguest{{/str}}
                                 <form action="{{loginurl}}" method="post" id="guestlogin">
+                                    <input type="hidden" name="logintoken" value="{{logintoken}}">
                                     <input type="hidden" name="username" value="guest" />
                                     <input type="hidden" name="password" value="guest" />
                                     <button class="btn btn-secondary btn-block" type="submit">{{#str}}loginguest{{/str}}</button>
@@ -225,6 +227,7 @@
             <div class="col-md-4 push-md-1">
                 <form class="m-t-1" action="{{loginurl}}" method="post" id="login">
                     <input id="anchor" type="hidden" name="anchor" value="">
+                    {{#logintoken}}<input type="hidden" name="logintoken" value="{{logintoken}}">{{/logintoken}}
                     <script>document.getElementById('anchor').value = location.hash;</script>
 
                     <label for="username" class="sr-only">
@@ -268,6 +271,7 @@
                 <div class="m-t-2">
                     <p>{{#str}}someallowguest{{/str}}</p>
                     <form action="{{loginurl}}" method="post" id="guestlogin">
+                        <input type="hidden" name="logintoken" value="{{logintoken}}">
                         <input type="hidden" name="username" value="guest" />
                         <input type="hidden" name="password" value="guest" />
                         <button class="btn btn-secondary btn-block" type="submit">{{#str}}loginguest{{/str}}</button>
