@@ -77,7 +77,7 @@ $THEME->layouts = [
     ],
 ];
 
-if (isset($THEME->settings->enhancedmydashboard) && $THEME->settings->enhancedmydashboard == 1 && isset($THEME->settings->blockdisplay) && $THEME->settings->blockdisplay == 1) {
+if ($THEME->settings->enhancedmydashboard == 1 && $THEME->settings->blockdisplay == 1) {
     $THEME->layouts['mydashboard'] = [
         'file' => 'mydashboard.php',
         'regions' => ['fp-a', 'fp-b', 'fp-c'],
@@ -85,7 +85,7 @@ if (isset($THEME->settings->enhancedmydashboard) && $THEME->settings->enhancedmy
         'options' => ['nonavbar' => true, 'langmenu' => true],
     ];
 }
-if (isset($THEME->settings->blockdisplay) && $THEME->settings->blockdisplay == 2) {
+if ($THEME->settings->blockdisplay == 2) {
     $THEME->layouts['course'] = [
         'file' => 'course.php',
         'regions' => ['side-pre'],
@@ -98,7 +98,7 @@ if (isset($THEME->settings->blockdisplay) && $THEME->settings->blockdisplay == 2
         'options' => ['nonavbar' => true, 'langmenu' => true],
     ];
 }
-if (isset($THEME->settings->blockdisplay) && $THEME->settings->blockdisplay == 2 && isset($THEME->settings->enhancedmydashboard) && $THEME->settings->enhancedmydashboard == 1) {
+if ($THEME->settings->blockdisplay == 2 && $THEME->settings->enhancedmydashboard == 1) {
     $THEME->layouts['mydashboard'] = [
         'file' => 'mydashboard.php',
         'regions' => ['side-pre'],

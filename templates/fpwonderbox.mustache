@@ -88,7 +88,7 @@
             <div class="fpsignup">
             <h3>{{#str}}fpsignup, theme_fordson{{/str}}</h3>
                         <form class="m-t-1" action="{{{ config.wwwroot }}}/login/index.php" method="POST" role="form">
-                        <input type="hidden" name="logintoken" value="{{logintoken}}">
+                        {{#logintoken}}<input type="hidden" name="logintoken" value="{{logintoken}}">{{/logintoken}}
                             <label for="username">
                               {{^canloginbyemail}}
                                   {{#str}}username{{/str}}
