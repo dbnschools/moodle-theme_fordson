@@ -678,8 +678,16 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $marketing6buttonurl = (empty($PAGE->theme->settings->marketing6buttonurl)) ? false : $PAGE->theme->settings->marketing6buttonurl;
         $marketing6target = (empty($PAGE->theme->settings->marketing6target)) ? false : $PAGE->theme->settings->marketing6target;
         $marketing6image = (empty($PAGE->theme->settings->marketing6image)) ? false : 'marketing6image';
+        //$logintoken = \core\session\manager::get_login_token();
+        if(method_exists('\core\session\manager', 'get_login_token')) {
+            $logintoken = \core\session\manager::get_login_token();
+        } else {
+            $logintoken = '';
+        }
 
         $fp_wonderboxcontext = [
+        
+        'logintoken' => $logintoken,
 
         'hasfptextbox' => (!empty($PAGE->theme->settings->fptextbox && isloggedin())) , 'fptextbox' => $fptextbox,
 

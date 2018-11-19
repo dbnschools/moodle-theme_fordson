@@ -23,6 +23,8 @@ Documentation can be found here: https://goo.gl/oUczeD
 # Install from Github
 Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration.
 
+## Fordson Moodle 34 version 1.7.1 2018020300
+* Fixed login token issue implemented into Moodle core for Moodle 3.4.6.  This is the same fix that has been applied to Moodle 3.5 version of Fordson.
 
 ## Fordson Moodle 34 version 1.7 2018020300
 * Fixed tooltip displayed after click.
