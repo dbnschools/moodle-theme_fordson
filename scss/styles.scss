@@ -139,7 +139,10 @@ div#fordsonlogin {
 
 #page-login-index #page-wrapper {
     padding-bottom: 0;
-    min-height: 100%;
+}
+
+#page-my-index {
+    background-color: $body-bg;
 }
 
 /* Editing Block Columns */
@@ -1165,6 +1168,21 @@ audio.mediaplugin_html5audio {
     width: 400px;
     height: 54px;
     position: initial;
+}
+
+
+//Moodle 3.6 Fixes
+#page-login-index #page {
+    background-color: transparent;
+}
+#page-wrapper {}
+#region-main {
+    border: 0;
+    background-color: transparent;
+}
+
+.custom-select {
+    width: auto;
 }
 
 // Navbar Color switch

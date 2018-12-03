@@ -63,14 +63,14 @@
     {{/output.headerbkglocation}}
 
     <div id="page" class="container-fluid">
-
+        
         <div id="learningcontent">
         
             {{{ output.teacherdash }}}
             {{>theme_fordson/blockspanelslider}}
             {{{ output.full_header }}}
             
-            <div id="page-content" class="row">
+            <div id="page-content" class="row pb-3">
                 <div id="region-main-box" class="col-12">
                     {{#hasregionmainsettingsmenu}}
                     <div id="region-main-settings-menu" class="d-print-none {{#hasblocks}}has-blocks{{/hasblocks}}">
@@ -78,8 +78,7 @@
                     </div>
                     {{/hasregionmainsettingsmenu}}
                     <section id="region-main" {{#hasblocks}}class="has-blocks mb-3"{{/hasblocks}}>
-                        <div class="card">
-                            <div class="card-body">
+
                                 {{#hasregionmainsettingsmenu}}
                                     <div class="region_main_settings_menu_proxy"></div>
                                 {{/hasregionmainsettingsmenu}}
@@ -90,11 +89,11 @@
                                         </div>
                                     </div>
                                 {{/output.display_ilearn_secure_alert}}
+                                {{{ output.customcoursedashboardimage }}}
                                 {{{ output.course_content_header }}}
                                 {{{ output.main_content }}}
                                 {{{ output.course_content_footer }}}
-                            </div>
-                        </div>
+
                     </section>
                     {{#hasblocks}}
                     <section data-region="blocks-column" class="hidden-print">
@@ -103,19 +102,24 @@
                     {{/hasblocks}}
                 </div>
             </div>
-            {{#hasactivitynav}}
-                {{{ output.activity_navigation }}}
-            {{/hasactivitynav}}
         </div>
     </div>
+
+    {{{ output.standard_after_main_region_html }}}
+
     {{#hasfhsdrawer}}
-    {{> theme_boost/nav-drawer }}
+        {{> theme_boost/nav-drawer }}
     {{/hasfhsdrawer}}
+
+    {{#hasactivitynav}}
+        {{{ output.activity_navigation }}}
+    {{/hasactivitynav}}
+
+    {{> theme_fordson/footer }}
+
 </div>
 
 <a href="#" id="back-to-top" class="btn btn-primary btn-lg" role="button" title="{{#str}}backtotop, theme_fordson{{/str}}"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></a>
-
-{{> theme_fordson/footer }}
 
 </body>
 </html>

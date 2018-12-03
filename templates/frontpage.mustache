@@ -83,8 +83,7 @@
                 </div>
                 {{/hasregionmainsettingsmenu}}
                 <section id="region-main" {{#hasblocks}}class="has-blocks"{{/hasblocks}}>
-                    <div class="card">
-                        <div class="card-body">
+
                             {{#hasregionmainsettingsmenu}}
                                 <div class="region_main_settings_menu_proxy"></div>
                             {{/hasregionmainsettingsmenu}}
@@ -121,8 +120,7 @@
                             {{{ output.main_content }}}
                             {{{ output.fp_marketingtiles }}}
                             {{{ output.course_content_footer }}}
-                        </div>
-                    </div>
+
                 </section>
 
                 {{#hasblocks}}
@@ -135,17 +133,16 @@
         </div>
     </div>
 </div>
-
+{{{ output.standard_after_main_region_html }}}
 {{#hasfhsdrawer}}
 {{> theme_boost/nav-drawer }}
 {{/hasfhsdrawer}}
-</div>
-
-
-<a href="#" id="back-to-top" class="btn btn-primary btn-lg" role="button" title="{{#str}}backtotop, theme_fordson{{/str}}"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></a>
-
 
 {{> theme_fordson/footer }}
+
+</div>
+
+<a href="#" id="back-to-top" class="btn btn-primary btn-lg" role="button" title="{{#str}}backtotop, theme_fordson{{/str}}"><i class="fa fa-chevron-circle-up" aria-hidden="true"></i></a>
 
 </body>
 </html>

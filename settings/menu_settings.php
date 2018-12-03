@@ -74,7 +74,6 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-
 // Show/hide course editing cog.
 $name = 'theme_fordson/showactivitynav';
 $title = get_string('showactivitynav', 'theme_fordson');

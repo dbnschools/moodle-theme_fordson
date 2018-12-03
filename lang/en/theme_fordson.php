@@ -278,7 +278,6 @@ $string['navbarcolorswitch_desc'] = 'This feature changes the color of the navba
 $string['navbarcolorswitch_on'] = 'Change navbar color based on role.';
 $string['navbarcolorswitch_off'] = 'Do not change navbar color based on role.';
 
-
 //teacher and student dashboard slider
 $string['userlinks'] = 'User Links';
 $string['userlinks_desc'] = 'Manage your students';

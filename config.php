@@ -68,7 +68,6 @@ $THEME->layouts = [
         'regions' => ['side-pre'],
         'defaultregion' => 'side-pre',
     ],
-
     // Server administration scripts.
     'admin' => [
         'file' => 'columns2.php',
@@ -80,8 +79,8 @@ $THEME->layouts = [
 if ($THEME->settings->enhancedmydashboard == 1 && $THEME->settings->blockdisplay == 1) {
     $THEME->layouts['mydashboard'] = [
         'file' => 'mydashboard.php',
-        'regions' => ['fp-a', 'fp-b', 'fp-c'],
-        'defaultregion' => 'fp-c',
+        'regions' => ['fp-a', 'fp-b', 'fp-c', 'side-pre'],
+        'defaultregion' => 'side-pre',
         'options' => ['nonavbar' => true, 'langmenu' => true],
     ];
 }

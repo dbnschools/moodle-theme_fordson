@@ -86,6 +86,7 @@ $PAGE->requires->jquery();
 $PAGE->requires->js('/theme/fordson/javascript/scrolltotop.js');
 $PAGE->requires->js('/theme/fordson/javascript/tooltipfix.js');
 $PAGE->requires->js('/theme/fordson/javascript/blockslider.js');
+$PAGE->requires->js('/theme/fordson/javascript/cardimg.js');
 if ($PAGE->theme->settings->preset != 'Spectrum-Achromatic') {
     $PAGE->requires->js('/theme/fordson/javascript/courseblock.js');
 }

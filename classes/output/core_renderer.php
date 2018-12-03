@@ -37,7 +37,7 @@ use pix_icon;
 use theme_config;
 defined('MOODLE_INTERNAL') || die;
 require_once ($CFG->dirroot . "/course/renderer.php");
-require_once ($CFG->libdir . '/coursecatlib.php');
+
 /**
  * Renderers to align Moodle's HTML with that expected by Bootstrap
  *
@@ -45,6 +45,7 @@ require_once ($CFG->libdir . '/coursecatlib.php');
  * @copyright  2012 Bas Brands, www.basbrands.nl
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 class core_renderer extends \theme_boost\output\core_renderer {
     /**
      * Wrapper for header elements.
@@ -95,6 +96,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         }
         require_once ($CFG->libdir . '/filestorage/file_storage.php');
         require_once ($CFG->dirroot . '/course/lib.php');
+
         $fs = get_file_storage();
         $context = context_course::instance($COURSE->id);
         $files = $fs->get_area_files($context->id, 'course', 'overviewfiles', false, 'filename', false);
@@ -653,12 +655,19 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $marketing9buttonurl = (empty($PAGE->theme->settings->marketing9buttonurl)) ? false : $PAGE->theme->settings->marketing9buttonurl;
         $marketing9target = (empty($PAGE->theme->settings->marketing9target)) ? false : $PAGE->theme->settings->marketing9target;
         $marketing9image = (empty($PAGE->theme->settings->marketing9image)) ? false : 'marketing9image';
-        //$logintoken = \core\session\manager::get_login_token();
-        if(method_exists('\core\session\manager', 'get_login_token')) {
+        /*if (method_exists(new \core\session\manager, 'get_login_token')) {
             $logintoken = \core\session\manager::get_login_token();
         } else {
-            $logintoken = '';
-        }
+            $logintoken = false;
+        }*/
+        /*if( method_exists ( "\core\session\manager", "get_login_token" ) ){
+            $logintoken = s(\core\session\manager::get_login_token());
+            echo '<input type="hidden" name="logintoken" value="' . $logintoken . '" />';
+        } else {
+            $logintoken = false;
+        }*/
+
+        $logintoken = \core\session\manager::get_login_token();
 
         $fp_wonderboxcontext = ['logintoken' => $logintoken, 'hasfptextbox' => (!empty($PAGE->theme->settings->fptextbox && isloggedin())) , 'fptextbox' => $fptextbox, 'hasslidetextbox' => (!empty($PAGE->theme->settings->slidetextbox && isloggedin())) , 'slidetextbox' => $slidetextbox, 'hasfptextboxlogout' => !isloggedin() , 'fptextboxlogout' => $fptextboxlogout, 'hasshowloginform' => $PAGE->theme->settings->showloginform, 'hasalert' => (!empty($PAGE->theme->settings->alertbox && isloggedin())) , 'alertbox' => $alertbox, 'hasmarkettiles' => ($hasmarketing1 || $hasmarketing2 || $hasmarketing3 || $hasmarketing4 || $hasmarketing5 || $hasmarketing6) ? true : false, 'markettiles' => array(
             array(
@@ -1064,6 +1073,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         }
         return $this->render_from_template('theme_fordson/teacherdashmenu', $dashmenu);
     }
+
     public function teacherdash() {
         global $PAGE, $COURSE, $CFG, $DB, $OUTPUT, $USER;
         require_once ($CFG->dirroot . '/completion/classes/progress.php');
@@ -1237,18 +1247,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $eventmonitoringlink = new moodle_url('/admin/tool/monitor/managerules.php', array(
             'courseid' => $PAGE->course->id
         ));
-        // Student Dash.
-        if (\core_completion\progress::get_course_progress_percentage($PAGE->course)) {
-            $comppc = \core_completion\progress::get_course_progress_percentage($PAGE->course);
-            $comppercent = number_format($comppc, 0);
-            $hasprogress = true;
-        }
-        else {
-            $comppercent = 0;
-            $hasprogress = false;
-        }
-        $progresschartcontext = ['hasprogress' => $hasprogress, 'progress' => $comppercent];
-        $progresschart = $this->render_from_template('block_myoverview/progress-chart', $progresschartcontext);
         $gradeslinkstudent = new moodle_url('/grade/report/user/index.php', array(
             'id' => $PAGE->course->id
         ));
@@ -1327,7 +1325,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $activitylinkstitle = get_string('activitylinkstitle', 'theme_fordson');
         $activitylinkstitle_desc = get_string('activitylinkstitle_desc', 'theme_fordson');
         $mygradestext = get_string('mygradestext', 'theme_fordson');
-        $myprogresstext = get_string('myprogresstext', 'theme_fordson');
         $studentcoursemanage = get_string('courseadministration', 'moodle');
         // Permissionchecks for teacher access.
         $hasquestionpermission = has_capability('moodle/question:add', $context);
@@ -1339,7 +1336,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $hascourseadminshow = $PAGE->theme->settings->showcourseadminstudents == 1;
         $hascompetency = get_config('core_competency', 'enabled');
         // Send to template.
-        $dashlinks = ['showincourseonly' => $showincourseonly, 'haspermission' => $haspermission, 'courseactivities' => $courseactivities, 'togglebutton' => $togglebutton, 'togglebuttonstudent' => $togglebuttonstudent, 'userlinkstitle' => $userlinks, 'userlinksdesc' => $userlinksdesc, 'qbanktitle' => $qbank, 'activitylinkstitle' => $activitylinkstitle, 'activitylinkstitle_desc' => $activitylinkstitle_desc, 'qbankdesc' => $qbankdesc, 'badgestitle' => $badges, 'badgesdesc' => $badgesdesc, 'coursemanagetitle' => $coursemanage, 'coursemanagedesc' => $coursemanagedesc, 'coursemanagementmessage' => $coursemanagementmessage, 'progresschart' => $progresschart, 'gradeslink' => $gradeslink, 'gradeslinkstudent' => $gradeslinkstudent, 'hascourseinfogroup' => $hascourseinfogroup, 'courseinfo' => $courseinfo, 'hascoursestaffgroup' => $hascoursestaff, 'courseteachers' => $courseteachers, 'courseother' => $courseother, 'myprogresstext' => $myprogresstext, 'mygradestext' => $mygradestext, 'studentdashboardtextbox' => $studentdashboardtextbox, 'hasteacherdash' => $hasteacherdash, 'teacherdash' => array(
+        $dashlinks = ['showincourseonly' => $showincourseonly, 'haspermission' => $haspermission, 'courseactivities' => $courseactivities, 'togglebutton' => $togglebutton, 'togglebuttonstudent' => $togglebuttonstudent, 'userlinkstitle' => $userlinks, 'userlinksdesc' => $userlinksdesc, 'qbanktitle' => $qbank, 'activitylinkstitle' => $activitylinkstitle, 'activitylinkstitle_desc' => $activitylinkstitle_desc, 'qbankdesc' => $qbankdesc, 'badgestitle' => $badges, 'badgesdesc' => $badgesdesc, 'coursemanagetitle' => $coursemanage, 'coursemanagedesc' => $coursemanagedesc, 'coursemanagementmessage' => $coursemanagementmessage, 'gradeslink' => $gradeslink, 'gradeslinkstudent' => $gradeslinkstudent, 'hascourseinfogroup' => $hascourseinfogroup, 'courseinfo' => $courseinfo, 'hascoursestaffgroup' => $hascoursestaff, 'courseteachers' => $courseteachers, 'courseother' => $courseother, 'mygradestext' => $mygradestext, 'studentdashboardtextbox' => $studentdashboardtextbox, 'hasteacherdash' => $hasteacherdash, 'teacherdash' => array(
             'hasquestionpermission' => $hasquestionpermission,
             'hasbadgepermission' => $hasbadgepermission,
             'hascoursepermission' => $hascoursepermission,
@@ -1536,7 +1533,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $context->hascustomlogin = $PAGE->theme->settings->showcustomlogin == 1;
         $context->hasdefaultlogin = $PAGE->theme->settings->showcustomlogin == 0;
         $context->alertbox = $PAGE->theme->settings->alertbox;
-        
         if ($url) {
             $url = $url->out(false);
         }
@@ -1604,5 +1600,3 @@ class core_renderer extends \theme_boost\output\core_renderer {
     }
 
 }
-
-

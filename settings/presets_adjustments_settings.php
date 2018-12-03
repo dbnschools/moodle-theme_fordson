@@ -47,7 +47,7 @@ $page->add($setting);
 $name = 'theme_fordson/enhancedmydashboard';
 $title = get_string('enhancedmydashboard', 'theme_fordson');
 $description = get_string('enhancedmydashboard_desc', 'theme_fordson');
-$default = 0;
+$default = 1;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
