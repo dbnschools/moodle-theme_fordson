@@ -239,11 +239,11 @@ div#learningcontent {
 }
 
 .withimage , .default, .customimage {
-    background-color: rgba($white, 0.3);
-    background-blend-mode: luminosity;
+    //background-color: rgba($white, 0.3);
+    //background-blend-mode: luminosity;
     -webkit-mask-image: linear-gradient(to top, transparent 5%, black 75%);
     mask-image: linear-gradient(to top, transparent 5%, black 75%);
-    filter: blur(2px) opacity(90%);
+    //filter: blur(2px) opacity(90%);
 }
 
 #page-header .card .card-body {

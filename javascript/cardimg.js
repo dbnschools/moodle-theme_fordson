@@ -1,4 +1,4 @@
-/*var moodle_default_img = 'url(\"data:image/svg+xml;base64,'
+var moodle_default_img = 'url(\"data:image/svg+xml;base64,'
 
 var custom_img = document.querySelector('.headerbkg .default, .headerbkg .customimage').style.backgroundImage;
 
@@ -47,4 +47,3 @@ for (var i = 0; i < header_images.length; i++) {
 	}
 
 }
-*/

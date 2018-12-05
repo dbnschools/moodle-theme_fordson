@@ -19,3 +19,4 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 * Fixed Footer display issue
 * Requires Moodle 3.6 official release
 * Supports new messaging layout and display
+* On Dashboard Fordson uses Default Course Header Image set by Site Admin for Course Tiles.  This is instead of geometric shape image
