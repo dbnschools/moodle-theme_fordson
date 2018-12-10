@@ -13,6 +13,10 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 # Versions and Updates
 
+## Moodle 3.6 Fordson v3.6 release 1.1
+* Fixed icon display issue with Recently Accessed items block in dashboard.  Icons will be the same size as they appear in courses and this can be adjusted in Fordson settings to be larger or smaller based on preference.
+* Dashboard Sidebar will switch display modes for blocks.  A block such as Recently Accessed Items which normally displays as a single row will display as a column when moved from the main area to the sidebar.  This just makes sense due to space limitations and wanting to see all recently accessed items without scrolling sideways.
+
 ## Moodle 3.6 Fordson v3.6 release 1
 * Initial Release of Fordson for Moodle 3.6
 * Fixed coursecat.php classes

@@ -29,6 +29,21 @@
     }
 }
 
+// Dashboard display items in column on sidebar position - Recently Accessed items and other one-row blocks will display as a column instead of a swipe.
+#page-my-index #block-region-side-pre .dashboard-card-deck.one-row {
+    flex-flow: column;
+    overflow-x: auto;
+}
+#page-my-index #block-region-side-pre .block-recentlyaccesseditems .course-info-container {
+    padding: 0;
+}
+
+// Dashboard fix rounded course image to be consistent with card view
+.block-myoverview .summaryimage.rounded-circle {
+    border-radius: 0%!important;
+}
+
+
 // Alerts
 
 .moodle-dialogue-bd div[role="alert"] {
@@ -916,6 +931,11 @@ width: $activityiconsize;
 }
 
 #page-course-editdefaultcompletion .modules img.m-r-1.m-b-1 {
+    height: $activityiconsize;
+    width: $activityiconsize;
+}
+
+.block_recentlyaccesseditems img.icon {
     height: $activityiconsize;
     width: $activityiconsize;
 }
