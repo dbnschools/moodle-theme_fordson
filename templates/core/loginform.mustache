@@ -99,10 +99,10 @@
     <div class="fpsignup">
         <div class="card-title text-xs-center">
             {{#logourl}}
-                <h2><img src="{{logourl}}" title="{{sitename}}" alt="{{sitename}}"/></h2>
+                <h1><img src="{{logourl}}" class="img-fluid" title="{{sitename}}" alt="{{sitename}}"/></h1>
             {{/logourl}}
             {{^logourl}}
-                <h2>{{sitename}}</h2>
+                <h1>{{sitename}}</h1>
             {{/logourl}}
             <hr>
         </div>
@@ -159,15 +159,16 @@
                         {{/hasidentityproviders}}
                         
                         {{#canloginasguest}}
-                            <div class="m-t-2">
-                                {{#str}}someallowguest{{/str}}
-                                <form action="{{loginurl}}" method="post" id="guestlogin">
-                                    <input type="hidden" name="username" value="guest" />
-                                    <input type="hidden" name="password" value="guest" />
-                                    <button class="btn btn-secondary btn-block" type="submit">{{#str}}loginguest{{/str}}</button>
-                                </form>
-                            </div>
-                        {{/canloginasguest}}
+                        <div class="mt-2">
+                            <p>{{#str}}someallowguest{{/str}}</p>
+                            <form action="{{loginurl}}" method="post" id="guestlogin">
+                                <input type="hidden" name="logintoken" value="{{logintoken}}">
+                                <input type="hidden" name="username" value="guest" />
+                                <input type="hidden" name="password" value="guest" />
+                                <button class="btn btn-secondary btn-block" type="submit">{{#str}}loginguest{{/str}}</button>
+                            </form>
+                        </div>
+                    {{/canloginasguest}}
             </div>
     </div>
     </div>
@@ -202,10 +203,10 @@
 <div class="card">
     <div class="card-block">
         {{#logourl}}
-            <h2 class="card-header text-center" ><img src="{{logourl}}" title="{{sitename}}" alt="{{sitename}}"/></h2>
+            <h1 class="card-header text-center" ><img src="{{logourl}}" class="img-fluid" title="{{sitename}}" alt="{{sitename}}"/></h1>
         {{/logourl}}
         {{^logourl}}
-            <h2 class="card-header text-center">{{sitename}}</h2>
+            <h1 class="card-header text-center">{{sitename}}</h1>
         {{/logourl}}
         <div class="card-body">
             {{#cansignup}}

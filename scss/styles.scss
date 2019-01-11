@@ -43,6 +43,13 @@
     border-radius: 0%!important;
 }
 
+#page-my-index .btn-outline-secondary, #page-my-index .dropdown-item.active, .dropdown-item:active {
+    color: inherit;
+}
+
+#page-my-index [data-region="course-events-container"] {
+    padding: 1rem;
+}
 
 // Alerts
 

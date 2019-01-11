@@ -1514,12 +1514,14 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $setting = $theme->settings->brandemail;
         return $setting != '' ? $setting : '';
     }
+
     public function logintext_custom() {
         global $PAGE;
         $logintext_custom = '';
         $logintext_custom = (empty($PAGE->theme->settings->fptextboxlogout)) ? false : format_text($PAGE->theme->settings->fptextboxlogout);
         return $logintext_custom;
     }
+
     public function render_login(\core_auth\output\login $form) {
         global $SITE, $PAGE;
         $context = $form->export_for_template($this);
