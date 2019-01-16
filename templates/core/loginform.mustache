@@ -272,6 +272,7 @@
                         <div class="mt-2">
                             <p>{{#str}}someallowguest{{/str}}</p>
                             <form action="{{loginurl}}" method="post" id="guestlogin">
+                                <input type="hidden" name="logintoken" value="{{logintoken}}">
                                 <input type="hidden" name="username" value="guest" />
                                 <input type="hidden" name="password" value="guest" />
                                 <button class="btn btn-secondary btn-block" type="submit">{{#str}}loginguest{{/str}}</button>
