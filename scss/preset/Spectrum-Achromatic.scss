@@ -226,7 +226,6 @@ div#learningcontent {
     background-color: $white!important;
     position: relative;
     border: 0 !important;
-    //box-shadow: 2px 2px 16px 5px rgba(0,0,0,.3)!important;
 }
 #page {
     background-color: $white;
@@ -239,11 +238,8 @@ div#learningcontent {
 }
 
 .withimage , .default, .customimage {
-    //background-color: rgba($white, 0.3);
-    //background-blend-mode: luminosity;
     -webkit-mask-image: linear-gradient(to top, transparent 5%, black 75%);
     mask-image: linear-gradient(to top, transparent 5%, black 75%);
-    //filter: blur(2px) opacity(90%);
 }
 
 #page-header .card .card-body {
@@ -350,17 +346,6 @@ div#myoverview_timeline_courses .list-group-item {
 .progress-chart-container .progress-doughnut .progress-indicator svg .circle {
     stroke: $spectrum-base;
 }
-
-/*.progress-bar {
-    background-color: $spectrum-base!important;;
-}
-.progress-chart-container .progress-doughnut .progress-indicator svg .circle {
-    stroke: $spectrum-base;
-}
-.progress_bar_completed {
-    background-color: $spectrum-base;
-    text-align: right;
-}*/
 
 // Course Tile Special styling
 

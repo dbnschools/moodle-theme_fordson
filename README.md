@@ -18,6 +18,8 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 * Changed login page to include an H1 tag around the SiteName to be ADA compliant.  Previous tag was H2.  ADA requires Headings begin with H1 before H2 for proper page structure.
 * Fixed login as guest issue on custom login page.  Previously, this login form was missing logintoken when logging in as guest.
 * Fixed login as guest when using default Moodle login page.
+* Fixed scroll to top issue where the button would not appear.
+
 
 ## Moodle 3.6 Fordson v3.6 release 1.1
 * Fixed icon display issue with Recently Accessed items block in dashboard.  Icons will be the same size as they appear in courses and this can be adjusted in Fordson settings to be larger or smaller based on preference.

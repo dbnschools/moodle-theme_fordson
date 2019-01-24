@@ -69,7 +69,6 @@ $templatecontext = [
 $PAGE->requires->jquery();
 $PAGE->requires->js('/theme/fordson/javascript/scrolltotop.js');
 $PAGE->requires->js('/theme/fordson/javascript/scrollspy.js');
-$PAGE->requires->js('/theme/fordson/javascript/tooltipfix.js');
 $PAGE->requires->js('/theme/fordson/javascript/blockslider.js');
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;

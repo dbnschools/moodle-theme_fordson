@@ -75,7 +75,6 @@ $templatecontext = [
 
 $PAGE->requires->jquery();
 $PAGE->requires->js('/theme/fordson/javascript/scrolltotop.js');
-$PAGE->requires->js('/theme/fordson/javascript/tooltipfix.js');
 
 $templatecontext['flatnavigation'] = $PAGE->flatnav;
 echo $OUTPUT->render_from_template('theme_fordson/frontpage', $templatecontext);
