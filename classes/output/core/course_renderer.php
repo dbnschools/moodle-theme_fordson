@@ -306,7 +306,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                                 'class' => $course->visible ? 'col-12 d-flex flex-sm-row flex-column class-fullbox hoverhighlight coursevisible' : 'col-12 d-flex flex-sm-row flex-column class-fullbox hoverhighlight coursedimmed1'
                             ));
                             if ($PAGE->theme->settings->titletooltip) {
-                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . $course->fullname . '"';
+                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . format_string($course->fullname) . '"';
                             }
                             else {
                                 $tooltiptext = '';
@@ -346,7 +346,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                         }
                         if ($PAGE->theme->settings->coursetilestyle == 6) {
                             if ($PAGE->theme->settings->titletooltip) {
-                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . $course->fullname . '"';
+                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . format_string($course->fullname) . '"';
                             }
                             else {
                                 $tooltiptext = '';
@@ -397,7 +397,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                         }
                         if ($PAGE->theme->settings->coursetilestyle == 7) {
                             if ($PAGE->theme->settings->titletooltip) {
-                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . $course->fullname . '"';
+                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . format_string($course->fullname) . '"';
                             }
                             else {
                                 $tooltiptext = '';
@@ -437,7 +437,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                         }
                         if ($PAGE->theme->settings->coursetilestyle == 8) {
                             if ($PAGE->theme->settings->titletooltip) {
-                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . $course->fullname . '"';
+                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . format_string($course->fullname) . '"';
                             }
                             else {
                                 $tooltiptext = '';
@@ -466,7 +466,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                         }
                         if ($PAGE->theme->settings->coursetilestyle == 9) {
                             if ($PAGE->theme->settings->titletooltip) {
-                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . $course->fullname . '"';
+                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . format_string($course->fullname) . '"';
                             }
                             else {
                                 $tooltiptext = '';
@@ -691,7 +691,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                                 
                                 ';
                             if ($PAGE->theme->settings->titletooltip) {
-                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . $course->fullname . '"';
+                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . format_string($course->fullname) . '"';
                             }
                             else {
                                 $tooltiptext = '';
@@ -729,7 +729,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                         }
                         if ($PAGE->theme->settings->coursetilestyle == 3) {
                             if ($PAGE->theme->settings->titletooltip) {
-                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . $course->fullname . '"';
+                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . format_string($course->fullname) . '"';
                             }
                             else {
                                 $tooltiptext = '';
@@ -767,7 +767,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                             <div class="class-box4">
                                 ';
                             if ($PAGE->theme->settings->titletooltip) {
-                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . $course->fullname . '"';
+                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . format_string($course->fullname) . '"';
                             }
                             else {
                                 $tooltiptext = '';
@@ -812,7 +812,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                                 'class' => $course->visible ? 'col-12 d-flex flex-sm-row flex-column class-fullbox hoverhighlight coursevisible' : 'col-12 d-flex flex-sm-row flex-column class-fullbox hoverhighlight coursedimmed1'
                             ));
                             if ($PAGE->theme->settings->titletooltip) {
-                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . $course->fullname . '"';
+                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . format_string($course->fullname) . '"';
                             }
                             else {
                                 $tooltiptext = '';
@@ -854,7 +854,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                         }
                         if ($PAGE->theme->settings->coursetilestyle == 6) {
                             if ($PAGE->theme->settings->titletooltip) {
-                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . $course->fullname . '"';
+                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . format_string($course->fullname) . '"';
                             }
                             else {
                                 $tooltiptext = '';
@@ -902,7 +902,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                         }
                         if ($PAGE->theme->settings->coursetilestyle == 7) {
                             if ($PAGE->theme->settings->titletooltip) {
-                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . $course->fullname . '"';
+                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . format_string($course->fullname) . '"';
                             }
                             else {
                                 $tooltiptext = '';
@@ -944,7 +944,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                         if ($PAGE->theme->settings->coursetilestyle == 8) {
 
                             if ($PAGE->theme->settings->titletooltip) {
-                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . $course->fullname . '"';
+                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . format_string($course->fullname) . '"';
                             }
                             else {
                                 $tooltiptext = '';
@@ -974,7 +974,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                         }
                         if ($PAGE->theme->settings->coursetilestyle == 9) {
                             if ($PAGE->theme->settings->titletooltip) {
-                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . $course->fullname . '"';
+                                $tooltiptext = 'data-toggle="tooltip" data-placement= "top" title="' . format_string($course->fullname) . '"';
                             }
                             else {
                                 $tooltiptext = '';
