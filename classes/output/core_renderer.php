@@ -1534,7 +1534,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $context->logintopimage = $PAGE->theme->setting_file_url('logintopimage', 'logintopimage');
         $context->hascustomlogin = $PAGE->theme->settings->showcustomlogin == 1;
         $context->hasdefaultlogin = $PAGE->theme->settings->showcustomlogin == 0;
-        $context->alertbox = $PAGE->theme->settings->alertbox;
+        $context->alertbox = format_text($PAGE->theme->settings->alertbox, FORMAT_HTML, array(
+            'noclean' => true
+        ));
         if ($url) {
             $url = $url->out(false);
         }
