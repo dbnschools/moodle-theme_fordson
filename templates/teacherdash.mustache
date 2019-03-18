@@ -126,7 +126,7 @@
         
             <div class="row">
                     {{#studentdashboardtextbox}}
-                    <div class="col-md-6">
+                    <div class="col-md-8">
                         <div class="studentdashboardtextbox">{{{studentdashboardtextbox}}}</div>
                     </div>
                     {{/studentdashboardtextbox}}
@@ -201,7 +201,12 @@
                         </div>
                     </div>
                 </div>
-
+                {{#hascompletionshow}}
+                <div class=col-md-12 studentprogress">
+                    {{#str}}myprogresstext, theme_fordson{{/str}} 
+                    {{{progress}}}
+                </div>
+                {{/hascompletionshow}}
         </div>
         </div>
 

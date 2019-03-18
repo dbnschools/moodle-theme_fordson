@@ -142,13 +142,6 @@ a.add-sections {
     vertical-align: middle !important;
 }
 
-.m-t-2.m-b-1 {
-    background-color: $body-bg;
-    padding: 1rem;
-    border-radius: 3px;
-}
-
-
 @if $spectrumpreset == 1 {
     .course-content .section-summary {
         border: 0; 

@@ -55,14 +55,6 @@ h3.sectionname {
     border-left: $brand-primary 8px solid;
 }
 
-.m-t-2.m-b-1 {
-    background-color: darken($body-bg, 10%);
-    padding: 1rem;
-    margin: 0!important;
-    border-top: 7px solid rgba(0,0,0,.2);
-    border-radius: 0;
-}
-
 .course-content .single-section .section-navigation {
     padding: 1rem;
     margin: 0!important;
@@ -73,3 +65,29 @@ h3.sectionname {
     border: 0;
 }
 
+@if $perceptionpreset == 1 {
+    .course-content ul.topics li.section .content, .course-content ul.weeks li.section .content {
+        margin: 0;
+        padding: 0;
+    }
+    h3.sectionname {
+        text-align: left;
+        padding: $spacer;
+        background-color: $perception-base; 
+    }
+    .hidden h3.sectionname {
+        text-align: left;
+        padding: 1rem;
+        background-color: $gray-300;
+    }
+
+    .course-content .current::before {
+        border-left: 0;
+    }
+    .course-content ul.topics li.section.current h3.sectionname, .course-content ul.weeks li.section.current h3.sectionname {
+        background-color: $sectionnamehighlight;
+    }
+    .progress-bar {
+        background-color: $sectionnamehighlight;
+    }
+}

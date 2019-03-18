@@ -194,12 +194,6 @@ span.instancename {
     margin-left: 1rem;
 }
 
-.m-t-2.m-b-1 {
-    background-color: $body-bg;
-    padding: 1rem;
-    border-radius: 3px;
-}
-
 .region_main_settings_menu_proxy {
     float: initial;
 }
@@ -236,4 +230,32 @@ span.instancename {
         margin-right: auto;
     }
 
+}
+
+@if $perceptionpreset == 1 {
+    .editing .course-content ul.topics li.section .content, .editing .course-content ul.weeks li.section .content {
+        border:0;
+    }
+    .course-content ul li.section.hidden .content {
+        background-color: transparent;
+    }
+    h3.sectionname {
+        color: $dark;
+        padding: $spacer;
+        background-color: $perception-base;
+        display: inline-block;
+        border-right: 1rem solid $primary;
+        margin-bottom: 0 !important;
+    }
+
+    h3.section-title.sectionname {
+        margin: 0 !important;
+    }
+
+    h3.sectionname a {
+        color: $dark;
+    }
+    li.section.hidden h3.sectionname {
+        background-color: $perception-base;
+    }
 }

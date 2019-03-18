@@ -45,6 +45,12 @@ $THEME->editor_sheets = [''];
 
 // Toggle display of blocks
 $THEME->layouts = [
+    // Standard layout with blocks, this is recommended for most pages with general information.
+    'standard' => [
+        'file' => 'course.php',
+        'regions' => ['side-pre', 'fp-a', 'fp-b', 'fp-c'],
+        'defaultregion' => 'side-pre',
+    ],
     // The site home page.
     'frontpage' => [
         'file' => 'frontpage.php',

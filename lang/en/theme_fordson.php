@@ -269,8 +269,8 @@ $string['coursetilestyle'] = 'Course Tile Display';
 $string['coursetilestyle_desc'] = 'When viewing course categories you can choose from the following styles to display courses. <a href="https://goo.gl/fMXzSo" target="_new">Instructions for Fordson 3.5 Theme</a>';
 $string['gutterwidth'] = 'Content Padding';
 $string['gutterwidth_desc'] = 'This setting controls how much spacing is used on the left and right of the main content.';
-$string['frontpagemycoursessorting'] = 'Frontpage My Courses Sort Order by Last Access';
-$string['frontpagemycoursessorting_desc'] = 'When checked this feature will sort the frontpage My Courses(enrolled courses) display by last access for the user.  This will override the "Sort my courses" setting under Navigation.  If unchecked then Frontpage My Courses will display as normal.';
+$string['frontpagemycoursessorting'] = 'My Courses Sort Order by Last Access';
+$string['frontpagemycoursessorting_desc'] = 'When checked this feature will sort My Courses (enrolled courses) display by last access for the user.  This will override the "Sort my courses" setting under Navigation.  If unchecked then Frontpage My Courses will display as normal. This includes My Courses displayed in the drop down at the top of the page as well as My Enrolled Courses display on Site Homepage. This does not affect the Dashboard or Dashboard blocks.';
 $string['showactivitynav'] = 'Show Activity Navigation';
 $string['showactivitynav_desc'] = 'Uncheck this to turn off activity navigation at the bottom of the activity pages.';
 $string['navbarcolorswitch'] = 'Navbar Color Switch';
@@ -294,6 +294,7 @@ $string['coursestaff'] = 'Course Teachers';
 $string['activitylinkstitle'] = 'Activities';
 $string['activitylinkstitle_desc'] = 'View All Activities in Course';
 $string['myprogresstext'] = 'My Progress';
+$string['myprogresspercentage'] = '% Complete';
 $string['mygradestext'] = 'My Grades';
 
 
@@ -320,6 +321,8 @@ $string['showstudentcompletion'] = 'Show Student Completion';
 $string['showstudentcompletion_desc'] = 'Show student completion radial in student dashboard panel.  Even with this checked the course must have completion turned on in order to display.';
 $string['showstudentgrades'] = 'Show Student Grades';
 $string['showstudentgrades_desc'] = 'Show student gradebook link in student dashboard panel.  Even with this checked the course must have Show Student Grades turned on in order to display.';
+$string['showonlygroupteachers'] = 'Only Show Group Teachers';
+$string['showonlygroupteachers_desc'] = 'When enabled, only teachers in the same group as the student will be shown on the Student Course Management Panel.';
 $string['showcourseadminstudents'] = 'Show Student Course Admin Cog';
 $string['showcourseadminstudents_desc'] = 'This displays the course settings to students.  This is needed if you want to allow them to unenroll from courses.';
 
@@ -363,6 +366,7 @@ $string['homemycomp'] = 'Competency Home';
 $string['homemyprograms'] = 'Program Home';
 $string['homemylectures'] = 'Lecture Home';
 $string['homemylessons'] = 'Lesson Home';
+
 
 $string['thismycourses'] = 'This Course';
 $string['thismyunits'] = 'This Unit';

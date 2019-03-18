@@ -23,29 +23,30 @@
 //
 $bootstrap-sass-asset-helper: false !default;
 
-// Preset specific styling.
-
-@if $spectrumpreset == 1 {
-    #page-header .pt-3, #page-header .py-3 {
-        padding-top: 0!important;
-    }
-    div#page-content {
-        padding: 0 2rem;
-    }
-}
-
-@if $modernmoodlepreset == 1 {
-    #page-header .pb-3 {
-        padding-top: 0!important;
-    }
-}
-
 .page-context-header .page-header-headings {
     padding: .25rem .5rem;
     background-color: $primary;
     border-radius: .5rem;
     margin-top: 1.25rem;
     margin-bottom: .25rem;
+}
+div#page-navbar {
+    z-index: 1;
+}
+
+//Add space on top for Fordson block slider button
+.pt-3, .py-3 {
+    padding-top: 3rem!important;
+}
+
+#region-main {
+    border: 1px solid $border-color !important;
+    background-color: initial;
+}
+
+.pagelayout-mydashboard #region-main {
+    background-color: $card-bg;
+    padding: 1rem;
 }
 
 #page-content .page-context-header .page-header-headings {
@@ -85,6 +86,11 @@ div#learningcontent {
     background-color: transparent;
 }
 
+.breadcrumb {
+    padding: .25rem .5rem;
+    background-color: $card-bg;
+    border-radius: $border-radius;
+}
 
 @media screen and (max-width: 576px) {
     .breadcrumb {
@@ -140,8 +146,7 @@ div#learningcontent {
 
 // Activity navigation
 
-.m-t-2.m-b-1 {
-    background-color: darken($body-bg, 10%);
+.course-content .single-section .section-navigation {
     padding: 1rem;
     border-radius: 3px;
     margin: 0!important;
@@ -149,10 +154,19 @@ div#learningcontent {
     border-radius: 0;
 }
 
-.course-content .single-section .section-navigation {
-    padding: 1rem;
-    border-radius: 3px;
-    margin: 0!important;
-    border-top: 7px solid rgba(0,0,0,.2);
-    border-radius: 0;
+// Preset specific styling.
+
+@if $spectrumpreset == 1 {
+    #page-header .pt-3, #page-header .py-3 {
+        padding-top: 0!important;
+    }
+    div#page-content {
+        padding: 0 2rem;
+    }
+}
+
+@if $modernmoodlepreset == 1 {
+    #page-header .pb-3 {
+        padding-top: 0!important;
+    }
 }

@@ -843,9 +843,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                 if ($courses) {
                     // We have something to work with.  Get the last accessed information for the user and populate.
                     global $DB, $USER;
-                    $lastaccess = $DB->get_records('user_lastaccess', array(
-                        'userid' => $USER->id
-                    ) , '', 'courseid, timeaccess');
+                    $lastaccess = $DB->get_records('user_lastaccess', array('userid' => $USER->id) , '', 'courseid, timeaccess');
                     if ($lastaccess) {
                         foreach ($courses as $course) {
                             if (!empty($lastaccess[$course->id])) {
@@ -892,10 +890,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                             }
                         }
                     }
-                    uasort($courses, array(
-                        $this,
-                        'timeaccesscompare'
-                    ));
+                    uasort($courses, array($this,'timeaccesscompare'));
                 }
                 else {
                     return $nomycourses;

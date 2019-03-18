@@ -48,7 +48,6 @@ function theme_fordson_get_main_scss_content($theme) {
     $scss = '';
     $filename = !empty($theme->settings->preset) ? $theme->settings->preset : null;
     $fs = get_file_storage();
-
     $context = context_system::instance();
     $iterator = new DirectoryIterator($CFG->dirroot . '/theme/fordson/scss/preset/');
     $presetisset = '';
@@ -68,9 +67,10 @@ function theme_fordson_get_main_scss_content($theme) {
         }
         else {
             // Safety fallback - maybe new installs etc.
-            $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/preset/Spectrum-Achromatic.scss');
+            $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/preset/Perception.scss');
         }
     }
+
 
     $scss .= file_get_contents($CFG->dirroot . '/theme/fordson/scss/fordson_variables.scss');
 

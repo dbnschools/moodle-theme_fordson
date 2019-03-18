@@ -10,9 +10,6 @@ $gray-600: #868e96 !default;
 $gray-700: #495057 !default;
 $gray-800: #373a3c !default;
 $gray-900: #212529 !default;
-
-$gray-base: #ccc !default;
-
 $black:    #000 !default;
 
 $blue:    #1177d1 !default;
@@ -26,9 +23,9 @@ $green:   #5cb85c !default;
 $teal:    #20c997 !default;
 $cyan:    #5bc0de !default;
 
-$primary:       #447198 !default;
+$primary:       $blue !default;
 $secondary:     $gray-800 !default;
-$success:       $teal !default;
+$success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
@@ -40,10 +37,6 @@ $enable-rounded: false !default;
 
 // Body
 $body-color:    $gray-800 !default;
-$body-bg:       #dae6e5 !default;
-$drawer-bg:     rgba(235, 251, 255, 0.8) !default;
-$card-bg:       $white !default;
-$footer-bg:     rgba(14, 62, 70, 0.9) !default;
 
 // Fonts
 $font-size-base: 0.9375rem !default;
@@ -51,23 +44,21 @@ $headings-font-weight:   300 !default;
 
 // Navbar
 $navbar-dark-hover-color:           rgba($white, 1) !default;
-$navbar-light-hover-color:          rgba($black, 1) !default;
-$navbarurl : #fff !default;
+$navbar-light-hover-color:          rgba($black, .9) !default;
 
 // Breadcrumbs
 $breadcrumb-padding-y:              .25rem !default;
 $breadcrumb-padding-x:              0 !default;
 $breadcrumb-item-padding:           .5rem !default;
 $breadcrumb-margin-bottom:          0 !default;
+$breadcrumb-bg:                     transparent !default;
 $breadcrumb-divider: "/" !default;
 $breadcrumb-divider-rtl: "/" !default;
 
-$breadcrumb-bg: $primary !default;
-$breadcrumb-bg-hover: darken($primary, 15%) !default;
-$breadcrumb-text-color: #ffffff !default;
-
 // Alerts
 $alert-border-width:                0 !default;
+
+$card-group-margin: .25rem;
 
 $theme-colors: (
     primary: $primary,
@@ -80,7 +71,6 @@ $theme-colors: (
     dark: $gray-800
 );
 
-
 // Import FontAwesome.
 @import "../../boost/scss/fontawesome";
 
@@ -89,9 +79,6 @@ $theme-colors: (
 
 // Import Core moodle CSS
 @import "../../boost/scss/moodle";
-
-// Let theme know we are using Modern Moodle
-$modernmoodlepreset: 1;
 
 
 // Preset CSS
@@ -114,77 +101,10 @@ body {
     border-radius: 50%;
 }
 
-// Navdrawer pull right
-[data-region="drawer"] {
-    padding: 20px 0 20px 20px;
-}
-
-// Content area bkg
-div#learningcontent {
-    position: relative;
-    background-color: $white;
-    border: 0 !important;
-    border-top: 1rem solid $primary !important;
-}
-.course-content .current::before {
-    border-left: 0;
-}
-
-// Remove extra padding at top of page
-#page-header .pb-3 {
-    padding-bottom: 0 !important;
-}
-#page-header .card-body {
-    padding-bottom: 0;
-}
-.course-content li#section-0 .content {
-    margin-top: 0;
-}
-.editing .course-content li#section-0 .content {
-    margin-top: 2rem; 
-}
-
-.fp-blocks {
-    padding-top: 2rem;
-}
-.section-go-link {
-    padding: .25rem;
-    margin: .5rem;
-    background-color: $gray-100;
-    display: inline-block;
-    border: 1px solid $gray-300;
-}
-// Progress Bars
-
-.progress_bar {
-    background-color: $gray-100;
-    text-align: center;
-}
-
-.progress_bar_completed {
-    background-color: $primary;
-    text-align: right;
-}
-#region-main {
-    border: 0;
-    background-color: $card-bg;
-}
-
-.m-t-2.m-b-1 {
-    position: relative;
-    background-color: darken($body-bg, 10%);
-    padding: $spacer;
-    border-radius: $border-radius;
-    margin: 0!important;
-    border-top: 7px solid rgba(0,0,0,.2);
-    border-radius: 0;
-}
-
-.activity-navigation {
-    background-color: $card-bg;
-    padding: 1rem 0;
-    margin: 0 $gutterwidth;
-    border: 1px solid $gray-400;
-    border-radius: $border-radius;
-    z-index: 1;
+// Reset the default styling back to the bootstrap defaults for
+// the secondary outline button because gray-200 is much too light
+// for an outline button.
+.btn-outline-secondary {
+    @include button-outline-variant($gray-600);
+    border-color: $border-color;
 }

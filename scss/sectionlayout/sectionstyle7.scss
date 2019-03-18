@@ -102,15 +102,6 @@ div#coursecontrols {
     border-left: $brand-primary 8px solid;
 }
 
-.m-t-2.m-b-1 {
-    background-color: darken($body-bg, 10%);
-    padding: 1rem;
-    border-radius: 3px;
-    margin: 0!important;
-    border-top: 7px solid rgba(0,0,0,.2);
-    border-radius: 0;
-}
-
 .course-content .single-section .section-navigation {
     padding: 1rem;
     border-radius: 3px;
@@ -126,13 +117,6 @@ div#coursecontrols {
 .course-content ul li.section.main:last-child {
     border-bottom: 1px solid $gray-300;
 }
-
-@media screen and (max-width: 576px) {
-    .course-content ul.topics li.section .content, .course-content ul.weeks li.section .content {
-        margin: 0; 
-    }
-}
-
 
 @if $spectrumpreset == 1 {
     .course-content .section-summary {
@@ -168,6 +152,16 @@ div#coursecontrols {
         border-top: 0;
         border-radius: 0;
     }
+}
 
+@if $perceptionpreset == 1 {
+    .course-content ul.topics li.section .content, .course-content ul.weeks li.section .content {
+        margin: 0 3rem;
+    }
+}
 
+@media screen and (max-width: 576px) {
+    .course-content ul.topics li.section .content, .course-content ul.weeks li.section .content {
+        margin: 0; 
+    }
 }

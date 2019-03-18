@@ -58,6 +58,8 @@ $title = get_string('learningcontentpadding', 'theme_fordson');
 $description = get_string('learningcontentpadding_desc', 'theme_fordson');;
 $default = '125px';
 $choices = array(
+        '0px' => '0px',
+        '25px' => '25px',
         '50px' => '50px',
         '75px' => '75px',
         '100px' => '100px',
@@ -90,8 +92,12 @@ $page->add($setting);
 $name = 'theme_fordson/headerimagepadding';
 $title = get_string('headerimagepadding', 'theme_fordson');
 $description = get_string('headerimagepadding_desc', 'theme_fordson');;
-$default = '200px';
+$default = '400px';
 $choices = array(
+    '0px' => '0px',
+    '25px' => '25px',
+    '50px' => '50px',
+    '75px' => '75px',
     '100px' => '100px',
     '125px' => '125px',
     '150px' => '150px',
@@ -121,6 +127,10 @@ $choices = array(
     '750px' => '750px',
     '775px' => '775px',
     '800px' => '800px',
+    '10%' => '10%',
+    '50%' => '50%',
+    '75%' => '75%',
+    '100%' => '100%',
     );
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
@@ -130,7 +140,7 @@ $page->add($setting);
 $name = 'theme_fordson/gutterwidth';
 $title = get_string('gutterwidth', 'theme_fordson');
 $description = get_string('gutterwidth_desc', 'theme_fordson');;
-$default = '0rem';
+$default = '3rem';
 $choices = array(
         '0rem' => '0rem',
         '1rem' => '1rem',
@@ -202,15 +212,6 @@ $name = 'theme_fordson/coursetileinfo';
 $heading = get_string('coursetileinfo', 'theme_fordson');
 $information = get_string('coursetileinfodesc', 'theme_fordson');
 $setting = new admin_setting_heading($name, $heading, $information);
-$page->add($setting);
-
-// Frontpage My Courses Sort by Lastaccess.
-$name = 'theme_fordson/frontpagemycoursessorting';
-$title = get_string('frontpagemycoursessorting', 'theme_fordson');
-$description = get_string('frontpagemycoursessorting_desc', 'theme_fordson');
-$default = 1;
-$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
-$setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
 // trim title setting.

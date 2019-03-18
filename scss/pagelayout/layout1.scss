@@ -39,17 +39,284 @@ div#learningcontent {
     position: relative;
     background-color: transparent;
 }
+//Add space on top for Fordson block slider button
+.pt-3 {
+    padding-top: 3rem!important;
+}
+
+#region-main {
+    border: 1px solid $border-color;
+    background-color: initial;
+}
+
+.pagelayout-mydashboard #region-main {
+    border: 0 !important;
+    padding: 1rem;
+}
 
 // Remove extra padding at top of page
-#page-header .pb-3 {
+/*#page-header .pb-3 {
     padding-bottom: 1rem!important;
 }
 #page-header .card-body {
-    padding-bottom: 1rem;
+    padding: 1rem 1rem 0 1rem;
 }
 .course-content li#section-0 .content {
     margin-top: 0;
 }
 .editing .course-content li#section-0 .content {
     margin-top: 2rem; 
+}
+*/
+
+@if $perceptionpreset == 1 {
+	// Special breadcrumbs for this layout
+	$breadcrumb-bg: $white;
+	$breadcrumb-bg-hover: $body-bg;
+	$breadcrumb-text-color: $dark;
+
+	.headerbkg {
+	    height: $headerimagepadding;
+	    width: 100%;
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	    bottom: 0;
+	    z-index: 0;
+	}
+	.withimage , .default, .customimage {
+	    -webkit-mask-image: linear-gradient(to top,transparent 0%,rgba(0, 0, 0, 0.7) 100%);
+    	mask-image: linear-gradient(to top,transparent 0%,rgba(0, 0, 0, 0.7) 100%);
+	}
+	@if $showheadergradient == 1 {
+		.headerbkg {
+		    height: $headerimagepadding;
+		    width: 100%;
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    right: 0;
+		    bottom: 0;
+		    z-index: 0;
+		}
+		// No image with this layout.  Instead use a gradient.
+		.withimage , .default, .customimage {
+		    background: linear-gradient(to bottom, $perception-base 0%, $body-bg 100%)!important;
+		}
+	}
+
+	div#blockslider {
+	    left: $gutterwidth !important;
+	    right: $gutterwidth !important;
+	}
+	.btn.btn-primary.blockpanelbutton {
+		background-color: $perception-base;
+		border-color: $perception-base;
+	}
+	.btn.btn-primary.blockpanelbutton:active {
+		background-color: lighten($perception-base,5%);
+		border-color: darken($perception-base, 10%);
+	}
+
+	.blockpanelbtn {
+	    right: $gutterwidth !important;
+	}
+
+	div#page.container-fluid {
+	    padding: 0!important;
+	}
+
+	div#learningcontent {
+	    position: relative;
+	    padding: 0 $gutterwidth $gutterwidth $gutterwidth;
+	    margin-top: $gutterwidth;
+	}
+
+	/*header#page-header {
+		padding: 1rem 0;
+	    margin-bottom: $gutterwidth;
+	    border: 1px solid $gray-500;
+	    border-radius: 0 0 $border-radius $border-radius;
+	    background-color: $card-bg;
+	    //box-shadow: 0px 1px 6px 2px rgba(0,0,0,.09);
+	}*/
+
+	//experimental
+	header#page-header {
+		padding: 1rem 0 0 0;
+	    margin-bottom: 0;
+	    border: 0;
+	    border-bottom: 1px solid $gray-600;
+	    border-radius: 0;
+	    background-color: rgba($headerbackgroundcolor, 0.9);
+	}
+
+	[data-region="drawer-toggle"] .btn {
+		background-color: $perception-base;
+	}
+
+	.page-context-header .page-header-headings h1 {
+    	color: $card-bg;
+	}
+
+	header#page-header .card {
+		background-color: transparent;
+		//background: linear-gradient(to bottom, rgba($black, 0.9) 5%, rgba($black,0.0) 100%)!important;
+	}
+
+	header#page-header img.userpicture {
+	    //height: 50px;
+	    //width: 50px;
+	    filter: drop-shadow(0px 0px 2px $gray-800);
+    	border: 1px solid $white;
+	}
+
+	#region-main {
+	    border: 0;
+	}
+
+	#page-wrapper #page #page-content {
+	    border: 1px solid $gray-500;
+	    background-color: $card-bg;
+	    border-radius: $border-radius;
+	    box-shadow: 0px 1px 6px 2px rgba(0,0,0,.09);
+	    border: 0;
+	}
+
+	#page-login-index #page-wrapper #page #page-content {
+	    border: 0;
+	    border-radius: 0;
+	    background-color: transparent;
+	}
+	.row {
+        margin-right: 0; 
+        margin-left: 0;
+    }
+    .col-12 {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    #page-wrapper {
+        padding-bottom: 0;
+    }
+
+	#page-header .pb-3 {
+		padding: 0!important;
+	}
+
+	.progress {
+		margin-bottom: 1rem;
+	}
+
+	.pagelayout-incourse .m-b-1, .m-y-1 {
+    	margin-bottom: 0rem!important;
+	}
+
+	@media screen and (max-width: 576px) {
+	    div#learningcontent {
+	        padding: 0 1rem 1rem 1rem;
+	    }
+	    .blockpanelbtn {
+		    right: 1rem!important;
+		}
+	}
+
+//Special styling for select dashboard blocks
+	#page-my-index section#region-main section.block_myoverview {
+	    border: 1px solid $gray-300 !important;
+	    background-color: $gray-100;
+	}
+
+	@media screen and (min-width: 576px) {
+		.course-content .section-summary .summarytext {
+		    margin: 20px 5px 2px 5px;
+		}
+
+		.course-content ul.topics li.section .content, .course-content ul.weeks li.section .content {
+		    margin: 1rem;
+		    padding: 1.25rem;
+		}
+		.course-content ul.topics li.section, .course-content ul.weeks li.section {
+		    margin-top: 1rem;
+		    margin-bottom: 3rem;
+		    padding-bottom: 0;
+		}
+	}
+	@media screen and (min-width: 576px) {
+	    /* Breadcrumbs */
+	    ul.breadcrumb {
+	        display: inline-block;
+	        overflow: hidden;
+	        margin:0px;
+	        padding:0px;
+	        background: none;
+	    }
+	    ul.breadcrumb a {
+	        color: $breadcrumb-text-color;
+	    }
+	    ul.breadcrumb li {
+	        text-decoration: none;
+	        outline: none;
+	        display: block;
+	        float: left;
+	        font-size: 14px;
+	        line-height: 36px;
+	        color: $breadcrumb-text-color;
+	        padding: 0 15px 0 30px;
+	        background-color: $breadcrumb-bg;
+	        position: relative;
+	    }
+	    ul.breadcrumb li:first-child {
+	        padding-left: 25px;
+	        border-radius: 5px 0 0 5px;
+	    }
+	    ul.breadcrumb li:first-child:before {
+	        left: 14px;
+	    }
+	    ul.breadcrumb li:last-child {
+	        border-radius: 0 5px 5px 0;
+	        padding-right: 20px;
+	    }
+	    /*hover/active styles*/
+	    ul.breadcrumb li.active, .breadcrumb li:hover{
+	        background-color: $breadcrumb-bg-hover;
+	    }
+	    ul.breadcrumb li.active:after, .breadcrumb li:hover:after {
+	        background-color: $breadcrumb-bg-hover;
+	    }
+	    ul.breadcrumb li:after {
+	        content: '';
+	        position: absolute;
+	        top: 0; 
+	        right: -18px;
+	        width: 36px; 
+	        height: 36px;
+	        transform: scale(0.707) rotate(45deg);
+	        z-index: 1;
+	        background-color: $breadcrumb-bg;
+	        box-shadow:
+	        2px -2px 0 2px $gray-700, 
+	        3px -3px 0 2px $gray-700;
+	        border-radius: 0 5px 0 50px;
+	    }
+	    ul.breadcrumb li:last-child:after {
+	        content: none;
+	    }
+	    .breadcrumb-item + .breadcrumb-item::before {
+	        display: inline-block;
+	        padding: 0;
+	        content: "";
+	    }
+	    .dir-rtl ul.breadcrumb li:after{
+	        transform: scale(.707) rotate(315deg);
+	        box-shadow: -3px -3px 0 1px $card-bg, -2px -3px 0 2px $card-bg;
+	    }
+	}
+
+	@media screen and (max-width: 576px) {
+	    .breadcrumb {
+	        background-color:transparent;
+	    }
+	}
 }

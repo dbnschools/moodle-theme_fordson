@@ -5,13 +5,28 @@ THEME_Fordson
 
 Fordson is focused on students going from login to learning, with features that help teachers build better courses and students engage with content. Your school is unique and Fordson provides impressive customizations for a professional and modern learning platform. 
 
-## Documentation can be found here: https://bookshare.dearbornschools.org/fordsontheme/
-
 # Install from Github
 Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-theme_fordson . When downloaded to your computer, unzip it. It should create a folder named "moodle-theme_fordson-master". Rename the folder so that it is "fordson" (without quotes). You can FTP that folder to your moodle site in /moodle/theme/ directory. Or you can create a new ZIP file of the "fordson" folder and upload and install it via the Plugin Administration in Site Administration.
 
 
 # Versions and Updates
+
+## Moodle 3.6 Fordson v3.6 release 1.3
+* New default preset: Perception.
+* New default settings for presets when installing brand new.  Defaults now work best with Perception preset.  Please be sure to re-configure your Fordson Presets after updating!
+* Changed Topic/Weekly View Show One Topic Per Page layout so that view page button is above module listing and Progress bar is below module listings.
+* We can now style the top navbar using SCSS variables used within the Fordson theme.  Just remove the !default and replace with your own colors.  
+  * $topnavbarbg: 						$white !default;
+  * $teachernavbarcolor: 				#f3e420 !default;
+  * $studentnavbarcolor: 				$topnavbarbg !default;
+  * $navbar-fhs-color:                  $black !default;
+  * $navbar-fhs-active-color:           $black !default;              
+  * $navbar-fhs-hover-color:            $black !default;
+  * $navbar-fhs-disabled-color:         $black !default;
+* Added progress bar (previously progress radial) back into Student Dashboard modal window. This follows the change in core Boost to drop radial course completion in favor of progress bar.
+* New feature: In the student course dashboard only show the teacher that is in the same course group as the student.  Previously it would list all the teachers regardless of group affiliation.  This feature allows for multiple teachers using a single course and will only show the teacher grouped with their students. Thank you to Robynstar on github for sharing the code: https://github.com/dbnschools/moodle-theme_fordson/issues/40
+* New Feature: My Courses can now be sorted by last access.  This feature previously applied to only the courses displayed on Site Home.  We extended this to include the drop down menu.
+* Moved My Courses Sort by Last Access from the Fordson Preset Adjustment tab to the Menu Tab as it would be near the My Courses settings.
 
 ## Moodle 3.6 Fordson v3.6 release 1.2
 * Fixed logo image on login page where it was not fluid/reponsive within the box.
@@ -19,7 +34,6 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 * Fixed login as guest issue on custom login page.  Previously, this login form was missing logintoken when logging in as guest.
 * Fixed login as guest when using default Moodle login page.
 * Fixed scroll to top issue where the button would not appear.
-
 
 ## Moodle 3.6 Fordson v3.6 release 1.1
 * Fixed icon display issue with Recently Accessed items block in dashboard.  Icons will be the same size as they appear in courses and this can be adjusted in Fordson settings to be larger or smaller based on preference.

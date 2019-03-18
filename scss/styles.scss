@@ -7,7 +7,7 @@
 **/
 
 .headerlogo img {
-    padding: $spacer;
+    padding: $spacer 0;
 }
 
 /**
@@ -899,7 +899,7 @@ ul.teacherscourseview {
     float: left;
     margin: 0 .25rem;
 }
-
+// Navbar Styling
 .navbar-nav .coursecontrols .nav-item + .nav-item {
     margin-left: .25rem;
 }
@@ -907,6 +907,62 @@ ul.teacherscourseview {
 .navbar {
     background-color: $topnavbarbg;
 }
+
+// FHS Navbar
+.navbar-fhs {
+  .navbar-brand {
+    color: $navbar-fhs-active-color;
+
+    @include hover-focus {
+      color: $navbar-fhs-active-color;
+    }
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: $navbar-fhs-color;
+
+      @include hover-focus {
+        color: $navbar-fhs-hover-color;
+      }
+
+      &.disabled {
+        color: $navbar-fhs-disabled-color;
+      }
+    }
+
+    .show > .nav-link,
+    .active > .nav-link,
+    .nav-link.show,
+    .nav-link.active {
+      color: $navbar-fhs-active-color;
+    }
+  }
+
+  .navbar-toggler {
+    color: $navbar-fhs-color;
+    border-color: $navbar-fhs-toggler-border-color;
+  }
+
+  .navbar-toggler-icon {
+    background-image: $navbar-fhs-toggler-icon-bg;
+  }
+
+  .navbar-text {
+    color: $navbar-fhs-color;
+    a {
+      color: $navbar-fhs-active-color;
+
+      @include hover-focus {
+        color: $navbar-fhs-active-color;
+      }
+    }
+  }
+}
+span.userbutton {
+    color: $navbar-fhs-color;
+}
+
 
 #nav-drawer.closed {
     left: -($drawer-width + $drawer-offscreen-gutter);
@@ -974,14 +1030,6 @@ width: $activityiconsize;
     padding-right: 1rem;
 }
 
-.mycoursecompletiontile2 .progress-doughnut {
-    background-color: #fff;
-}
-.mycoursecompletiontile4 .progress-doughnut {
-    background-color: #fff;
-    box-shadow: 0 0 0px 7px rgba(112, 2, 169, 0.5);
-}
-
 .mycoursecompletiontile2 {
     padding-left: .5rem;
     padding-top: .5rem;
@@ -1019,7 +1067,10 @@ width: $activityiconsize;
     top: 50%;
     left: 40%;
 }
-
+.progress-bar .fhsprogresstest {
+    width: max-content;
+    margin-left: 1rem;
+}
 /**
 * Responsive Fixes
 **/
@@ -1091,83 +1142,6 @@ div#page.container-fluid {
     overflow: auto;
 }
 
-@media screen and (min-width: 576px) {
-    /* Breadcrumbs */
-    ul.breadcrumb {
-        display: inline-block;
-        overflow: hidden;
-        margin:0px;
-        padding:0px;
-        background: none;
-    }
-    ul.breadcrumb a {
-        color: $breadcrumb-text-color;
-    }
-    ul.breadcrumb li {
-        text-decoration: none;
-        outline: none;
-        display: block;
-        float: left;
-        font-size: 14px;
-        line-height: 36px;
-        color: $breadcrumb-text-color;
-        padding: 0 15px 0 30px;
-        background-color: $breadcrumb-bg;
-        position: relative;
-    }
-    ul.breadcrumb li:first-child {
-        padding-left: 25px;
-        border-radius: 5px 0 0 5px;
-    }
-    ul.breadcrumb li:first-child:before {
-        left: 14px;
-    }
-    ul.breadcrumb li:last-child {
-        border-radius: 0 5px 5px 0;
-        padding-right: 20px;
-    }
-    /*hover/active styles*/
-    ul.breadcrumb li.active, .breadcrumb li:hover{
-        background-color: $breadcrumb-bg-hover;
-    }
-    ul.breadcrumb li.active:after, .breadcrumb li:hover:after {
-        background-color: $breadcrumb-bg-hover;
-    }
-    ul.breadcrumb li:after {
-        content: '';
-        position: absolute;
-        top: 0; 
-        right: -18px;
-        width: 36px; 
-        height: 36px;
-        transform: scale(0.707) rotate(45deg);
-        z-index: 1;
-        background-color: $breadcrumb-bg;
-        box-shadow:
-        2px -2px 0 2px $card-bg, 
-        3px -3px 0 2px $card-bg;
-        border-radius: 0 5px 0 50px;
-    }
-    ul.breadcrumb li:last-child:after {
-        content: none;
-    }
-    .breadcrumb-item + .breadcrumb-item::before {
-        display: inline-block;
-        padding: 0;
-        content: "";
-    }
-    .dir-rtl ul.breadcrumb li:after{
-        transform: scale(.707) rotate(315deg);
-        box-shadow: -3px -3px 0 1px $card-bg, -2px -3px 0 2px $card-bg;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .breadcrumb {
-        background-color:transparent;
-    }
-}
-
 /**
 * Collapsed Topic Format Fixes
 **/
@@ -1200,11 +1174,6 @@ audio.mediaplugin_html5audio {
 
 //Moodle 3.6 Fixes
 #page-login-index #page {
-    background-color: transparent;
-}
-#page-wrapper {}
-#region-main {
-    border: 0;
     background-color: transparent;
 }
 

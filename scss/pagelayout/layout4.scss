@@ -39,12 +39,33 @@ $bootstrap-sass-asset-helper: false !default;
     }
 }
 
+#region-main {
+    background-color: $card-bg;
+}
+
 .headerbkg {
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
     position: fixed !important;
+}
+
+@if $showheadergradient == 1 {
+    .headerbkg {
+        height: $headerimagepadding;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 0;
+    }
+    // No image with this layout.  Instead use a gradient.
+    .withimage , .default, .customimage {
+        background: linear-gradient(to bottom, $perception-base 0%, rgba(0,0,0,0) 100%)!important;
+    }
 }
 
 div#learningcontent {
@@ -139,19 +160,86 @@ div#learningcontent {
 
 // Activity navigation
 
-.m-t-2.m-b-1 {
-    background-color: darken($body-bg, 10%);
-    padding: 1rem;
-    border-radius: 3px;
-    margin: 0!important;
-    border-top: 7px solid rgba(0,0,0,.2);
-    border-radius: 0;
-}
-
 .course-content .single-section .section-navigation {
     padding: 1rem;
     border-radius: 3px;
     margin: 0!important;
     border-top: 7px solid rgba(0,0,0,.2);
     border-radius: 0;
+}
+@media screen and (min-width: 576px) {
+    /* Breadcrumbs */
+    ul.breadcrumb {
+        display: inline-block;
+        overflow: hidden;
+        margin:0px;
+        padding:0px;
+        background: none;
+    }
+    ul.breadcrumb a {
+        color: $breadcrumb-text-color;
+    }
+    ul.breadcrumb li {
+        text-decoration: none;
+        outline: none;
+        display: block;
+        float: left;
+        font-size: 14px;
+        line-height: 36px;
+        color: $breadcrumb-text-color;
+        padding: 0 15px 0 30px;
+        background-color: $breadcrumb-bg;
+        position: relative;
+    }
+    ul.breadcrumb li:first-child {
+        padding-left: 25px;
+        border-radius: 5px 0 0 5px;
+    }
+    ul.breadcrumb li:first-child:before {
+        left: 14px;
+    }
+    ul.breadcrumb li:last-child {
+        border-radius: 0 5px 5px 0;
+        padding-right: 20px;
+    }
+    /*hover/active styles*/
+    ul.breadcrumb li.active, .breadcrumb li:hover{
+        background-color: $breadcrumb-bg-hover;
+    }
+    ul.breadcrumb li.active:after, .breadcrumb li:hover:after {
+        background-color: $breadcrumb-bg-hover;
+    }
+    ul.breadcrumb li:after {
+        content: '';
+        position: absolute;
+        top: 0; 
+        right: -18px;
+        width: 36px; 
+        height: 36px;
+        transform: scale(0.707) rotate(45deg);
+        z-index: 1;
+        background-color: $breadcrumb-bg;
+        box-shadow:
+        2px -2px 0 2px $card-bg, 
+        3px -3px 0 2px $card-bg;
+        border-radius: 0 5px 0 50px;
+    }
+    ul.breadcrumb li:last-child:after {
+        content: none;
+    }
+    .breadcrumb-item + .breadcrumb-item::before {
+        display: inline-block;
+        padding: 0;
+        content: "";
+    }
+    .dir-rtl ul.breadcrumb li:after{
+        transform: scale(.707) rotate(315deg);
+        box-shadow: -3px -3px 0 1px $card-bg, -2px -3px 0 2px $card-bg;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .breadcrumb {
+        background-color:transparent;
+    }
 }

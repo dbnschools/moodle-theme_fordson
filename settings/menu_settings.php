@@ -65,7 +65,7 @@ $page->add($setting);
 $name = 'theme_fordson/navbarcolorswitch';
 $title = get_string('navbarcolorswitch','theme_fordson');
 $description = get_string('navbarcolorswitch_desc', 'theme_fordson');
-$default = '1';
+$default = '2';
 $choices = array(
 	'1' => get_string('navbarcolorswitch_on', 'theme_fordson'),
 	'2' => get_string('navbarcolorswitch_off', 'theme_fordson'),
@@ -110,6 +110,15 @@ $setting = new admin_setting_configcheckbox($name, $title, $description, $defaul
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+// Toggle show only your Group teachers in student course management panel.
+$name = 'theme_fordson/showonlygroupteachers';
+$title = get_string('showonlygroupteachers', 'theme_fordson');
+$description = get_string('showonlygroupteachers_desc', 'theme_fordson');
+$default = 0;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 // Show/hide course settings for students.
 $name = 'theme_fordson/showcourseadminstudents';
 $title = get_string('showcourseadminstudents', 'theme_fordson');
@@ -132,6 +141,15 @@ $title = get_string('displaymycourses', 'theme_fordson');
 $description = get_string('displaymycoursesdesc', 'theme_fordson');
 $default = false;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default, true, false);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+// Frontpage My Courses Sort by Lastaccess.
+$name = 'theme_fordson/frontpagemycoursessorting';
+$title = get_string('frontpagemycoursessorting', 'theme_fordson');
+$description = get_string('frontpagemycoursessorting_desc', 'theme_fordson');
+$default = 1;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 

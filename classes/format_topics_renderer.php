@@ -145,35 +145,16 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
         }
 
         $output = '';
+                // Output Link to Topic modules.
+        // $title = get_section_name($course, $section);
+        $linktitle = get_string('viewsectionmodules', 'theme_fordson');
+        $output = html_writer::link(new moodle_url('/course/view.php', array('id' => $PAGE->course->id, 'section' => $section->section)) , $linktitle, array('class' => 'section-go-link btn btn-secondary'));
 
         // Output section activities summary
-        $output = html_writer::start_tag('div', array(
+        $output .= html_writer::start_tag('div', array(
             'class' => 'section-summary-activities'
         ));
 
-        // Output Link to Topic modules.
-        // $title = get_section_name($course, $section);
-        $linktitle = get_string('viewsectionmodules', 'theme_fordson');
-        $output .= html_writer::link(new moodle_url('/course/view.php', array('id' => $PAGE->course->id, 'section' => $section->section)) , $linktitle, array('class' => 'section-go-link btn btn-secondary'));
-
-        // Special thanks to Willian Mono for the topic progress bar code.
-        if ($total > 0) {
-            $completion = new stdClass;
-            $completion->complete = $complete;
-            $completion->total = $total;
-
-            $percent = 0;
-            if ($complete > 0) {
-                $percent = (int)(($complete / $total) * 100);
-            }
-            $output .= "<div class='progress'>";
-            $output .= "<div class='progress-bar progress-bar-info' role='progressbar' aria-valuenow='{$percent}' ";
-            $output .= " aria-valuemin='0' aria-valuemax='100' style='width: {$percent}%;'>";
-            $output .= "{$percent}%";
-            $output .= "</div>";
-            $output .= "</div>";
-        }
-        // End Willian Mono.
         $output .= html_writer::tag('span', get_string('section_mods', 'theme_fordson') , array(
             'class' => 'activity-count'
         ));
@@ -195,6 +176,29 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
                 'class' => 'activity-count'
             ));
         }
+        // Special thanks to Willian Mono for the topic progress bar code.
+        if ($total > 0) {
+            $completion = new stdClass;
+            $completion->complete = $complete;
+            $completion->total = $total;
+            $percenttext = get_string('myprogresspercentage', 'theme_fordson');
+
+            $percent = 0;
+            if ($complete > 0) {
+                $percent = (int)(($complete / $total) * 100);
+            }
+            $output .= "<div class='progress'>";
+            $output .= "<div class='progress-bar progress-bar-info' role='progressbar' aria-valuenow='{$percent}' ";
+            $output .= " aria-valuemin='0' aria-valuemax='100' style='width: {$percent}%;'>";
+            $output .= "<div class='fhsprogresstest'>";
+            $output .= "<span class='sr-only'>$percenttext</span>";
+            $output .= "<strong>{$percent}$percenttext</strong>";
+            $output .= "</div>";
+            $output .= "</div>";
+            $output .= "</div>";
+        }
+
+        // End Willian Mono.
 
         $output .= html_writer::end_tag('div');
 
