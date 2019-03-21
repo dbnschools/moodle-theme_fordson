@@ -52,6 +52,8 @@ div#learningcontent {
 .pagelayout-mydashboard #region-main {
     border: 0 !important;
     padding: 1rem;
+    background-color: $card-bg;
+    margin-top: 0;
 }
 
 // Remove extra padding at top of page
@@ -71,9 +73,9 @@ div#learningcontent {
 
 @if $perceptionpreset == 1 {
 	// Special breadcrumbs for this layout
-	$breadcrumb-bg: $white;
-	$breadcrumb-bg-hover: $body-bg;
-	$breadcrumb-text-color: $dark;
+	$breadcrumb-bg: $primary;
+	$breadcrumb-bg-hover: lighten($primary, 35%);
+	$breadcrumb-text-color: $white;
 
 	.headerbkg {
 	    height: $headerimagepadding;
@@ -86,8 +88,8 @@ div#learningcontent {
 	    z-index: 0;
 	}
 	.withimage , .default, .customimage {
-	    -webkit-mask-image: linear-gradient(to top,transparent 0%,rgba(0, 0, 0, 0.7) 100%);
-    	mask-image: linear-gradient(to top,transparent 0%,rgba(0, 0, 0, 0.7) 100%);
+	    -webkit-mask-image: linear-gradient(to top,transparent 0%,rgba(255, 255, 255, 0.9) 100%);
+    	mask-image: linear-gradient(to top,transparent 0%,rgba(255, 255, 255, 0.9) 100%);
 	}
 	@if $showheadergradient == 1 {
 		.headerbkg {
@@ -102,13 +104,12 @@ div#learningcontent {
 		}
 		// No image with this layout.  Instead use a gradient.
 		.withimage , .default, .customimage {
-		    background: linear-gradient(to bottom, $perception-base 0%, $body-bg 100%)!important;
+		    background: linear-gradient(to bottom, darken($body-bg, 25%) 0%, $body-bg 100%)!important;
 		}
 	}
 
 	div#blockslider {
-	    left: $gutterwidth !important;
-	    right: $gutterwidth !important;
+	    //top: 7px;
 	}
 	.btn.btn-primary.blockpanelbutton {
 		background-color: $perception-base;
@@ -120,17 +121,23 @@ div#learningcontent {
 	}
 
 	.blockpanelbtn {
-	    right: $gutterwidth !important;
+	    //top: 7px !important;
 	}
 
 	div#page.container-fluid {
 	    padding: 0!important;
 	}
 
+	/*div#learningcontent {
+	    position: relative;
+	    margin: 0 $gutterwidth $gutterwidth $gutterwidth;
+	    margin-top: $gutterwidth;
+	}*/
+
 	div#learningcontent {
 	    position: relative;
-	    padding: 0 $gutterwidth $gutterwidth $gutterwidth;
-	    margin-top: $gutterwidth;
+	    margin: $gutterwidth;
+	    box-shadow: 0px 0px 50px 1px rgba($black,.4);
 	}
 
 	/*header#page-header {
@@ -142,14 +149,14 @@ div#learningcontent {
 	    //box-shadow: 0px 1px 6px 2px rgba(0,0,0,.09);
 	}*/
 
-	//experimental
 	header#page-header {
 		padding: 1rem 0 0 0;
 	    margin-bottom: 0;
 	    border: 0;
-	    border-bottom: 1px solid $gray-600;
-	    border-radius: 0;
-	    background-color: rgba($headerbackgroundcolor, 0.9);
+	    border-bottom: 1px solid $gray-500;
+	    //border-top: 7px solid $white;
+	    //border-radius: $border-radius $border-radius 0 0;
+	    background-color: rgba($headerbackgroundcolor, 0.8);
 	}
 
 	[data-region="drawer-toggle"] .btn {
@@ -157,7 +164,7 @@ div#learningcontent {
 	}
 
 	.page-context-header .page-header-headings h1 {
-    	color: $card-bg;
+    	//color: $card-bg;
 	}
 
 	header#page-header .card {
@@ -166,10 +173,12 @@ div#learningcontent {
 	}
 
 	header#page-header img.userpicture {
-	    //height: 50px;
-	    //width: 50px;
-	    filter: drop-shadow(0px 0px 2px $gray-800);
-    	border: 1px solid $white;
+    	border: 1px solid $gray-300;
+	}
+	@media screen and (min-width: 576px) {
+	    #region-main-box {
+	        padding: 0 1rem 1rem 1rem;
+	    }
 	}
 
 	#region-main {
@@ -177,11 +186,14 @@ div#learningcontent {
 	}
 
 	#page-wrapper #page #page-content {
-	    border: 1px solid $gray-500;
+	    //border: 1px solid;
+	    border-color: $card-bg $gray-400 $gray-400 $gray-400;
 	    background-color: $card-bg;
-	    border-radius: $border-radius;
-	    box-shadow: 0px 1px 6px 2px rgba(0,0,0,.09);
-	    border: 0;
+
+	}
+
+	#page-content.pb-3 {
+    	padding-bottom: 0 !important;
 	}
 
 	#page-login-index #page-wrapper #page #page-content {
@@ -204,7 +216,7 @@ div#learningcontent {
 	#page-header .pb-3 {
 		padding: 0!important;
 	}
-
+	
 	.progress {
 		margin-bottom: 1rem;
 	}
@@ -296,8 +308,8 @@ div#learningcontent {
 	        z-index: 1;
 	        background-color: $breadcrumb-bg;
 	        box-shadow:
-	        2px -2px 0 2px $gray-700, 
-	        3px -3px 0 2px $gray-700;
+	        2px -2px 0 2px $white, 
+	        3px -3px 0 2px $white;
 	        border-radius: 0 5px 0 50px;
 	    }
 	    ul.breadcrumb li:last-child:after {
@@ -317,6 +329,9 @@ div#learningcontent {
 	@media screen and (max-width: 576px) {
 	    .breadcrumb {
 	        background-color:transparent;
+	    }
+	    li.breadcrumb-item a, li.breadcrumb-item {
+	    	color: $card-bg;
 	    }
 	}
 }

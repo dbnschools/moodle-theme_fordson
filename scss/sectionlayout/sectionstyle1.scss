@@ -53,20 +53,20 @@
 
 @if $perceptionpreset == 1 {
 	#page-course-view-topics .course-content ul.topics li.section.current, #page-course-view-topics .course-content ul.weeks li.section.current {
-	    border-top: 7px solid $perception-base;
+	    border-left: 7px solid $perception-base;
 	    background-color: $gray-100;
 	}
 	#page-course-view-topics .course-content ul.topics li.section.hidden, #page-course-view-topics .course-content ul.weeks li.section.hidden {
-	    border-top: 7px solid $gray-900;
+	    border-left: 7px solid $gray-900;
 	    background-color: $gray-100;
 	}
 	li.section.current {
-	    border-top: 7px solid $perception-base;
+	    border-left: 7px solid $perception-base;
 	    background-color: lighten($gray-200, 5%);
 	}
 
 	li.section.hidden {
-	    border-top: 7px solid $gray-900;
+	    border-left: 7px solid $gray-900;
 	    background-color: lighten($gray-200, 5%);
 	}
 
@@ -101,9 +101,6 @@
 	.section li.activity {
 	    padding: .2rem .5rem;
 	    clear: both;
-	}
-	.activityinstance a.dimmed {
-	    margin-left: 2rem;
 	}
 	.course-content ul li.section.main {
 		border-bottom: 1px dashed $gray-400;

@@ -53,15 +53,16 @@ $studentnavbarcolor:                $topnavbarbg !default;
 
 // Body 
 $body-color:            $gray-800 !default;
-$body-bg:               #deebf1 !default;
+$body-bg:               $gray-100 !default;
 $drawer-bg:             rgba($body-bg, .6) !default;
 $card-bg:               $white !default;
-$footer-bg:             #022a46 !default;
+$footer-bg:             #1e2429 !default;
 $perception-base:       #14a9fe !default;
 $sectionnamehighlight:  $teal;
-$border-radius:         0px !default;
-$activityhover:         $body-bg !default;
-$headerbackgroundcolor: #1b313e !default;
+$border-radius:         4px !default;
+$activityhover:         darken($card-bg, 7%) !default;
+// #35464a  #1b313e
+$headerbackgroundcolor: #ffffff !default;
 $dpsaccentcolor:        #44d4a6 !default;
 
 // Fonts
@@ -259,14 +260,20 @@ section#region-main .card, header#page-header .card {
 }
 
 .studentdash .btn, .teacherdash .btn, .enrollcodes .btn, .siteadminlink .btn {
-    background-color: $headerbackgroundcolor!important;
-    border-color: darken($headerbackgroundcolor, 5%)!important;
-    color: $white!important;
+    background-color: $gray-200!important;
+    border-color: $gray-300 !important;
+    border-bottom: 3px solid $perception-base !important;
+    color: $dark !important;
+    margin-right: 2px;
+    border-radius: $border-radius;
 }
 
 .studentdash .btn:hover, .teacherdash .btn:hover, .enrollcodes .btn:hover, .siteadminlink .btn:hover {
-    background-color: lighten($headerbackgroundcolor, 20%)!important;
+    background-color: $perception-base !important;
     color: $white!important;
+    transition: 
+    background-color .3s ease-in-out, 
+    color .3s ease-in-out;
 }
 
 
@@ -344,11 +351,8 @@ div#myoverview_timeline_courses .list-group-item {
 }
 
 .activity-navigation {
-    background-color: $card-bg;
+    background-color: $perception-base;
     padding: 1rem 0;
-    //margin: 0 $gutterwidth;
-    border-top: 7px solid $perception-base;
-    //border-radius: $border-radius $border-radius 0 0;
 }
 
 .marketcontent .text_to_html {
@@ -376,9 +380,7 @@ div#myoverview_timeline_courses .list-group-item {
 
 //Dashboard Styling
 .block-myoverview .dashboard-card-deck .dashboard-card {
-    border-width: 7px 1px 1px 1px !important;
-    border-style: solid !important;
-    border-color: $perception-base $gray-300 $gray-300 $gray-300 !important;
+    border: 1px solid $gray-300 !important;
 }
 
 .block-myoverview .list-group-item {
@@ -609,13 +611,11 @@ div#fordsonlogin {
 // Icon Navigation Styling
 
 .iconset .btn.btn-secondary {
-    background-color: $dpsaccentcolor;
-    border-color: $gray-200;
+   //background-color: $dpsaccentcolor;
+    border-bottom: 7px solid $perception-base;
+    border-radius: $border-radius;
 }
+
 .iconset .btn.btn-secondary:hover {
-    background-color: $perception-base;
-    border-color: darken($gray-200, 15%);
+    border-bottom: 7px solid $dpsaccentcolor;
 }
-/*.iconset .btn.btn-secondary a {
-    color: $white;
-}*/
