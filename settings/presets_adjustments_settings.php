@@ -52,6 +52,15 @@ $setting = new admin_setting_configcheckbox($name, $title, $description, $defaul
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+// Frontpage My Courses Sort by Lastaccess.
+$name = 'theme_fordson/frontpagemycoursessorting';
+$title = get_string('frontpagemycoursessorting', 'theme_fordson');
+$description = get_string('frontpagemycoursessorting_desc', 'theme_fordson');
+$default = 1;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 // Content spacing
 $name = 'theme_fordson/learningcontentpadding';
 $title = get_string('learningcontentpadding', 'theme_fordson');

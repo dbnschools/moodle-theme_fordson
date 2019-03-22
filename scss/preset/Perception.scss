@@ -48,12 +48,12 @@ $navbar-fhs-hover-color:            darken($navbar-fhs-color, 10%) !default;
 $navbar-fhs-disabled-color:         $dark !default;
 
 $topnavbarbg:                       $white !default;
-$teachernavbarcolor:                #f3f1a6 !default;
+$teachernavbarcolor:                #f7e671 !default;
 $studentnavbarcolor:                $topnavbarbg !default;
 
 // Body 
 $body-color:            $gray-800 !default;
-$body-bg:               $gray-100 !default;
+$body-bg:               $gray-200 !default;
 $drawer-bg:             rgba($body-bg, .6) !default;
 $card-bg:               $white !default;
 $footer-bg:             #1e2429 !default;
@@ -61,7 +61,6 @@ $perception-base:       #14a9fe !default;
 $sectionnamehighlight:  $teal;
 $border-radius:         4px !default;
 $activityhover:         darken($card-bg, 7%) !default;
-// #35464a  #1b313e
 $headerbackgroundcolor: #ffffff !default;
 $dpsaccentcolor:        #44d4a6 !default;
 
@@ -205,7 +204,7 @@ section#region-main p a {
 }
 
 .navbar {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, .09);
+    box-shadow: 0 4px 8px rgba($black, .2);
 }
 
 div#page-navbar {
@@ -480,7 +479,7 @@ div#fordsonlogin {
 }
 
 
-
+/*
 // Quiz Module Styling Enhancements
 @media screen and (min-width: 576px) {
     .que .info>div {
@@ -540,9 +539,9 @@ div#fordsonlogin {
     background-color: $gray-200;
     border: 1px solid $gray-300;
 }
-
+*/
 // Quiz Module Styling Enhancements
-/*
+
 #page-mod-quiz-attempt .que, #page-mod-quiz-review .que {
     margin-bottom: 4rem;
 }
@@ -591,7 +590,7 @@ div#fordsonlogin {
     }
 
 }
-*/
+
 
 // Forum Styling
 

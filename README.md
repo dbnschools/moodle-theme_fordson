@@ -25,8 +25,7 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
   * $navbar-fhs-disabled-color:         $black !default;
 * Added progress bar (previously progress radial) back into Student Dashboard modal window. This follows the change in core Boost to drop radial course completion in favor of progress bar.
 * New feature: In the student course dashboard only show the teacher that is in the same course group as the student.  Previously it would list all the teachers regardless of group affiliation.  This feature allows for multiple teachers using a single course and will only show the teacher grouped with their students. Thank you to Robynstar on github for sharing the code: https://github.com/dbnschools/moodle-theme_fordson/issues/40
-* New Feature: My Courses can now be sorted by last access.  This feature previously applied to only the courses displayed on Site Home.  We extended this to include the drop down menu.
-* Moved My Courses Sort by Last Access from the Fordson Preset Adjustment tab to the Menu Tab as it would be near the My Courses settings.
+* New Feature: My Courses can now be sorted by last access.  This feature previously applied to only the courses displayed on Site Home.  We extended this to include the drop down menu.  If you click the checkbox it will turn this sorting method on for both the Site Homepage and the My Courses drop down menu.
 
 ## Moodle 3.6 Fordson v3.6 release 1.2
 * Fixed logo image on login page where it was not fluid/reponsive within the box.
