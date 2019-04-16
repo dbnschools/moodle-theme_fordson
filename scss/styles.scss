@@ -14,7 +14,7 @@
 * Block Width
 **/
 
-@media screen and (min-width: 991px) {
+@media screen and (min-width: 1200px) {
     #region-main.has-blocks {
         width: calc(100% - #{$blockwidthfordson});
     }
@@ -23,7 +23,7 @@
     }
 }
 
-@media screen and (min-width: 991px) {
+@media screen and (min-width: 1200px) {
     [data-region="blocks-column"] {
         width: calc(#{$blockwidthfordson} - 30px);
     }
@@ -105,7 +105,6 @@ body#page-login-index, body#page-login-signup{
 
 div#fordsonlogin {
     background-color: $card-bg;
-    height: 100%;
 }
 
 .fpinstructions {

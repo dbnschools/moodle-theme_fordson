@@ -46,13 +46,14 @@ div#learningcontent {
 
 #region-main {
     border: 1px solid $border-color;
-    background-color: initial;
+    padding: 1rem;
+    background-color: $card-bg;
 }
 
 .pagelayout-mydashboard #region-main {
     border: 0 !important;
-    padding: 1rem;
     background-color: $card-bg;
+    padding: 1rem;
     margin-top: 0;
 }
 
@@ -88,8 +89,8 @@ div#learningcontent {
 	    z-index: 0;
 	}
 	.withimage , .default, .customimage {
-	    -webkit-mask-image: linear-gradient(to top,transparent 0%,rgba(255, 255, 255, 0.9) 100%);
-    	mask-image: linear-gradient(to top,transparent 0%,rgba(255, 255, 255, 0.9) 100%);
+	    -webkit-mask-image: linear-gradient(to top,transparent 0%,rgba(255, 255, 255, 0.9) 70%);
+    	mask-image: linear-gradient(to top,transparent 0%,rgba(255, 255, 255, 0.9) 70%);
 	}
 	@if $showheadergradient == 1 {
 		.headerbkg {
@@ -156,7 +157,8 @@ div#learningcontent {
 	    border-bottom: 1px solid $gray-500;
 	    //border-top: 7px solid $white;
 	    //border-radius: $border-radius $border-radius 0 0;
-	    background-color: rgba($headerbackgroundcolor, 0.8);
+	    background-color: rgba($headerbackgroundcolor, 0.95);
+	    box-shadow: inset 0px -8px 10px -5px rgba($primary, 0.3);
 	}
 
 	[data-region="drawer-toggle"] .btn {
@@ -221,7 +223,7 @@ div#learningcontent {
 		margin-bottom: 1rem;
 	}
 
-	.pagelayout-incourse .m-b-1, .m-y-1 {
+	.m-b-1.activity-navigation {
     	margin-bottom: 0rem!important;
 	}
 

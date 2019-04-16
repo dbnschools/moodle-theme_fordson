@@ -80,9 +80,9 @@ $PAGE->requires->jquery();
 $PAGE->requires->js('/theme/fordson/javascript/scrolltotop.js');
 $PAGE->requires->js('/theme/fordson/javascript/scrollspy.js');
 $PAGE->requires->js('/theme/fordson/javascript/blockslider.js');
-$PAGE->requires->js('/theme/fordson/javascript/cardimg.js');
+//$PAGE->requires->js('/theme/fordson/javascript/cardimg.js');
 
-if ($PAGE->theme->settings->preset != 'Spectrum-Achromatic') {
+if (isset($PAGE->theme->settings->preset) && $PAGE->theme->settings->preset != 'Spectrum-Achromatic') {
     $PAGE->requires->js('/theme/fordson/javascript/courseblock.js');
 }
 

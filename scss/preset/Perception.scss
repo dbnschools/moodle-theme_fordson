@@ -47,7 +47,7 @@ $navbar-fhs-active-color:           $dark !default;
 $navbar-fhs-hover-color:            darken($navbar-fhs-color, 10%) !default;
 $navbar-fhs-disabled-color:         $dark !default;
 
-$topnavbarbg:                       $white !default;
+$topnavbarbg:                       rgba($white, .95) !default;
 $teachernavbarcolor:                #f7e671 !default;
 $studentnavbarcolor:                $topnavbarbg !default;
 
@@ -61,7 +61,7 @@ $perception-base:       #14a9fe !default;
 $sectionnamehighlight:  $teal;
 $border-radius:         4px !default;
 $activityhover:         darken($card-bg, 7%) !default;
-$headerbackgroundcolor: #ffffff !default;
+$headerbackgroundcolor: #ecf3f7 !default;
 $dpsaccentcolor:        #44d4a6 !default;
 
 // Fonts
@@ -344,10 +344,10 @@ div#myoverview_timeline_courses .list-group-item {
 }
 
 
-.path-course-view .completionprogress {
+/*.path-course-view .completionprogress {
     float: initial;
     bottom: 20px;
-}
+}*/
 
 .activity-navigation {
     background-color: $perception-base;
@@ -598,6 +598,7 @@ div#fordsonlogin {
     border-width: 7px 1px 1px 1px;
     border-style: solid;
     border-color: $perception-base $gray-300 $gray-300 $gray-300;
+    margin-top: 1rem;
 }
 .forumpost {
     border-width: 1px 1px 7px 1px;
@@ -617,4 +618,13 @@ div#fordsonlogin {
 
 .iconset .btn.btn-secondary:hover {
     border-bottom: 7px solid $dpsaccentcolor;
+}
+
+
+// Style changes for REMUI Course Formats to fit with Perception Style
+#page-course-view-remuiformat .general-single-card.py-10 {
+    box-shadow: none;
+}
+#page-course-view-remuiformat.pagelayout-course .container-fluid #region-main {
+    background: transparent;
 }

@@ -14,14 +14,16 @@
 
         <div class="teacherdashboard">
         <div class="container-fluid">
-
+        {{#haseditcog}}
+            <div class="editcogbutton">{{{editcog}}}</div>
+        {{/haseditcog}}
                 <div class="coursemanagementmessage">{{{coursemanagementmessage}}}</div>
 
                 <div class="row">
                 <div class="col-md-3 activities">
                     <div class="dashtitle">
                         <h3 class="card-title"><i class="fa fa-check-square-o dashicon"></i>{{{activitylinkstitle}}}</h3>
-                        <p>{{{activitylinkstitle_desc}}}</p>   
+                        <p>{{{activitylinkstitle_desc}}}</p>
                     </div>
                     <div class="list-group">
                     {{{courseactivities}}}
@@ -123,7 +125,9 @@
 
         <div class="studentdashboard">
         <div class="container-fluid">
-        
+        {{#haseditcog}}
+            <div class="editcogbutton">{{{editcog}}}</div>
+        {{/haseditcog}}
             <div class="row">
                     {{#studentdashboardtextbox}}
                     <div class="col-md-8">

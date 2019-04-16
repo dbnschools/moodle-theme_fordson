@@ -121,7 +121,17 @@ body {
     border: 0;
 }
 #region-main {
+    background-color: $card-bg !important;
+}
+.pagelayout-login #region-main {
+    background-color: transparent!important;
+}
+
+.pagelayout-mydashboard #region-main {
+    border: inherit;
+    padding: 1rem;
     background-color: $card-bg;
+    margin-top: 0;
 }
 
 .course-content .current::before {
@@ -137,8 +147,6 @@ a#blocksliderbutton {
 }
 
 div#learningcontent {
-    position: relative;
-    margin-top: 0;
     background-color: $elearningcontentbkg !important;
     padding: 2rem !important;
 }

@@ -11,6 +11,13 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 # Versions and Updates
 
+## Moodle 3.6 Fordson v3.6 release 1.3.1
+* Many CSS Styling fixes when using the defaults for the new Perception Preset.
+* When using Fordson custom dashboards (teacher & student) we added the ability to include the full Moodle Course Menu - the edit cog.  When turned on it will appear in the upper right of the teacher course management panel as well as the student panel.  This is useful if you use a 3rd party plugin and it injects a link into the main course menu.  Fordson can now display the default Moodle Course Menu within the teacher and student dashboard panels.
+* Fixed break point for blocks on quiz and other modules/pages.  
+* Fixed issue with footer and eLearning Preset
+* Added multilanguage support for course tooltips on site home page
+
 ## Moodle 3.6 Fordson v3.6 release 1.3
 * New default preset: Perception.
 * New default settings for presets when installing brand new.  Defaults now work best with Perception preset.  Please be sure to re-configure your Fordson Presets after updating!
