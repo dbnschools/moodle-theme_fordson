@@ -54,7 +54,7 @@ $studentnavbarcolor:                $topnavbarbg !default;
 // Body 
 $body-color:            $gray-800 !default;
 $body-bg:               $gray-200 !default;
-$drawer-bg:             rgba($body-bg, .6) !default;
+$drawer-bg:             $gray-200 !default;
 $card-bg:               $white !default;
 $footer-bg:             #1e2429 !default;
 $perception-base:       #14a9fe !default;
@@ -89,7 +89,7 @@ $progress-bar-bg:                   $perception-base !default;
 // List group
 $list-group-bg:                     $white !default;
 $list-group-border-color:           $gray-200 !default;
-$list-group-hover-bg:               rgba($perception-base, .6) !default;
+$list-group-hover-bg:               $gray-300 !default;
 
 $list-group-active-color:           $white!default;
 $list-group-active-bg:              $perception-base !default;
@@ -228,7 +228,7 @@ li.nav-item .usermenu .login, li.nav-item .usermenu .login a {
 
 // Navdrawer pull right
 [data-region="drawer"] {
-    padding: 25px 0 25px 20px;
+    padding: 0 0 20px 0;
 }
 
 // Content area bkg and preset uniques
@@ -264,6 +264,12 @@ section#region-main .card, header#page-header .card {
     border-bottom: 3px solid $perception-base !important;
     color: $dark !important;
     margin-right: 2px;
+    border-radius: $border-radius;
+}
+
+.editingbutton {
+    border-color: $gray-300 !important;
+    border-bottom: 3px solid $perception-base !important;
     border-radius: $border-radius;
 }
 

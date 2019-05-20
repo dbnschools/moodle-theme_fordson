@@ -1176,6 +1176,11 @@ audio.mediaplugin_html5audio {
     background-color: transparent;
 }
 
+//Moodle 3.7 Fixes
+#page-message-index #region-main {
+    height: auto;
+}
+
 .custom-select {
     width: auto;
 }

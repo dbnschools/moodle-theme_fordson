@@ -175,6 +175,18 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $html .= html_writer::end_div();
         return $html;
     }
+
+    public function get_generated_image_for_id($id) {
+        // See if user uploaded a custom header background to the theme.
+        $headerbg = $this->page->theme->setting_file_url('headerdefaultimage', 'headerdefaultimage');
+        if (isset($headerbg)) {
+            return $headerbg;
+        } else {
+            // Use the default theme image when no course image is detected.
+            return $this->image_url('noimg', 'theme')->out();
+        }
+    }
+
     public function edit_button_fhs() {
         global $SITE, $PAGE, $USER, $CFG, $COURSE;
         if (!$PAGE->user_allowed_editing() || $COURSE->id <= 1) {
@@ -1691,7 +1703,13 @@ class core_renderer extends \theme_boost\output\core_renderer {
 
     public function display_ilearn_secure_alert() {
         global $DB, $PAGE;
+
+        if (strpos($PAGE->url, '/mod/quiz/view.php') === false) {
+            return false;
+        }
+
         $cm = $PAGE->cm;
+
         if ($cm) {
             $quiz = $DB->get_record('quiz', array(
                 'id' => $cm->instance

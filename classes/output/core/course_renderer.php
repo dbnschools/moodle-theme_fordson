@@ -47,7 +47,7 @@ global $PAGE;
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 if ($PAGE->theme->settings->coursetilestyle < 10) {
-    class course_renderer extends \theme_boost\output\core\course_renderer {
+    class course_renderer extends \core_course_renderer  {
         protected $countcategories = 0;
 
         public function view_available_courses($id = 0, $courses = null, $totalcount = null) {
@@ -980,7 +980,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
     }
 }
 else {
-    class course_renderer extends \theme_boost\output\core\course_renderer {
+    class course_renderer extends \core_course_renderer {
         public function course_modchooser($modules, $course) {
             // This HILLBROOK function is overridden here to refer to the local theme's copy of modchooser to render a modified.
             // Activity chooser for Hillbrook.
