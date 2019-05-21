@@ -1446,6 +1446,19 @@ class core_renderer extends \theme_boost\output\core_renderer {
                     u.firstnamephonetic, u.lastnamephonetic, u.email, u.picture, u.maildisplay,
                     u.imagealt');
             foreach ($teachers as $staff) {
+                if ($showonlygroupteachers) {
+                    $staffgroups = groups_get_all_groups($course->id, $staff->id);
+                    $found = false;
+                    foreach ($staffgroups as $grp) {
+                        if (in_array($grp->id, $groupids)) {
+                            $found = true;
+                            break;
+                        }
+                    }
+                    if (!$found) {
+                        continue;
+                    }
+                }
                 $picture = $OUTPUT->user_picture($staff, array(
                     'size' => 50
                 ));
