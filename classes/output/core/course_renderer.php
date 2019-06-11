@@ -95,7 +95,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                         
                         $systemcontext = $PAGE->bodyid;
                         // Course completion Progress bar
-                        if (\core_completion\progress::get_course_progress_percentage($course) && $systemcontext == 'page-site-index') {
+                        if (\core_completion\progress::get_course_progress_percentage($course) && isloggedin() && $systemcontext == 'page-site-index') {
                             $comppc = \core_completion\progress::get_course_progress_percentage($course);
                             $comppercent = number_format($comppc, 0);
                             $hasprogress = true;
@@ -105,7 +105,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                         }
 
 				        // Course completion Progress bar
-				        if ($course->enablecompletion == 1 && $systemcontext == 'page-site-index') {
+				        if ($course->enablecompletion == 1 && isloggedin() && $systemcontext == 'page-site-index') {
 				        	$completiontext = get_string('coursecompletion', 'completion');
 				        	$compbar = "<div class='progress'>";
 				            $compbar .= "<div class='progress-bar progress-bar-info barfill' role='progressbar' aria-valuenow='{$comppercent}' ";

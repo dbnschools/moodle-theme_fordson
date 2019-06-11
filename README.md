@@ -11,5 +11,9 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 # Versions and Updates
 
+## Moodle 3.7 Fordson v3.7 release 1.1
+* Fixed missing quote https://github.com/dbnschools/moodle-theme_fordson/issues/74
+* Fixed course completion bar showing when not logged in https://github.com/dbnschools/moodle-theme_fordson/issues/73
+
 ## Moodle 3.7 Fordson v3.7 release 1
 * Initial release for Moodle 3.7
