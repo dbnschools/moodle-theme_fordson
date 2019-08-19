@@ -1070,6 +1070,14 @@ width: $activityiconsize;
     width: max-content;
     margin-left: 1rem;
 }
+
+.progress.fordsonsinglepage {
+    float: right;
+    height: 7px;
+    border: 0;
+    width: 25%;
+}
+
 /**
 * Responsive Fixes
 **/

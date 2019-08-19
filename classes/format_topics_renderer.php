@@ -35,8 +35,47 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
      * @return string HTML to output.
      */
     protected function section_summary($section, $course, $mods) {
+    	global $PAGE;
         $classattr = 'section main section-summary clearfix';
         $linkclasses = '';
+
+        $total = 0;
+        $complete = 0;
+        $completioninfo = new completion_info($course);
+        $cancomplete = isloggedin() && !isguestuser();
+        $modinfo = get_fast_modinfo($course);
+        
+        $sectionmods = array();
+        $completioninfo = new completion_info($course);
+        if (!empty($modinfo->sections[$section->section])) {
+            foreach ($modinfo->sections[$section->section] as $cmid) {
+                
+                $thismod = $modinfo->cms[$cmid];
+
+                if ($thismod->modname == 'label') {
+                    // Labels are special (not interesting for students)!
+                    continue;
+                }
+
+                if ($thismod->uservisible) {
+                    if (isset($sectionmods[$thismod->modname])) {
+                        $sectionmods[$thismod->modname]['name'] = $thismod->modplural;
+                        $sectionmods[$thismod->modname]['count']++;
+                    }
+                    else {
+                        $sectionmods[$thismod->modname]['name'] = $thismod->modfullname;
+                        $sectionmods[$thismod->modname]['count'] = 1;
+                    }
+                    if ($cancomplete && $completioninfo->is_enabled($thismod) != COMPLETION_TRACKING_NONE) {
+                        $total++;
+                        $completiondata = $completioninfo->get_data($thismod, true);
+                        if ($completiondata->completionstate == COMPLETION_COMPLETE || $completiondata->completionstate == COMPLETION_COMPLETE_PASS) {
+                            $complete++;
+                        }
+                    }
+                }
+            }
+        }
 
         // If section is hidden then display grey section link.
         if (!$section->visible) {
@@ -65,7 +104,26 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
         $o .= html_writer::start_tag('div', array(
             'class' => 'content'
         ));
+        if ($total > 0) {
+            $completion = new stdClass;
+            $completion->complete = $complete;
+            $completion->total = $total;
+            $percenttext = get_string('coursecompletion', 'completion');
+            $percent = 0;
 
+            if ($complete > 0) {
+                $percent = (int)(($complete / $total) * 100);
+            }
+
+            $o .= "<div class='progress fordsonsinglepage'>";
+            $o .= "<div class='progress-bar progress-bar-info' role='progressbar' aria-valuenow='{$percent}' ";
+            $o .= " aria-valuemin='0' aria-valuemax='100' style='width: {$percent}%;'>";
+            $o .= "<div class='fhsprogresstest'>";
+            $o .= "<span class='sr-only'>$percenttext</span>";
+            $o .= "</div>";
+            $o .= "</div>";
+            $o .= "</div>";
+        }
         if ($section->uservisible) {
             $title = html_writer::tag('a', $title, array(
                 'href' => course_get_url($course, $section->section) ,
@@ -77,6 +135,7 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
         $o .= html_writer::start_tag('div', array(
             'class' => 'summarytext'
         ));
+
         $o .= $this->format_summary_text($section);
         $o .= $this->section_activity_summary($section, $course, null);
         $o .= html_writer::end_tag('div');
@@ -97,7 +156,7 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
      * @param stdClass $course the course record from DB
      * @param array    $mods (argument not used)
      * @return string HTML to output.
-     */
+    */ 
     protected function section_activity_summary($section, $course, $mods) {
         global $PAGE;
 
@@ -176,27 +235,7 @@ class theme_fordson_format_topics_renderer extends format_topics_renderer {
                 'class' => 'activity-count'
             ));
         }
-        // Special thanks to Willian Mono for the topic progress bar code.
-        if ($total > 0) {
-            $completion = new stdClass;
-            $completion->complete = $complete;
-            $completion->total = $total;
-            $percenttext = get_string('myprogresspercentage', 'theme_fordson');
-
-            $percent = 0;
-            if ($complete > 0) {
-                $percent = (int)(($complete / $total) * 100);
-            }
-            $output .= "<div class='progress'>";
-            $output .= "<div class='progress-bar progress-bar-info' role='progressbar' aria-valuenow='{$percent}' ";
-            $output .= " aria-valuemin='0' aria-valuemax='100' style='width: {$percent}%;'>";
-            $output .= "<div class='fhsprogresstest'>";
-            $output .= "<span class='sr-only'>$percenttext</span>";
-            $output .= "<strong>{$percent}$percenttext</strong>";
-            $output .= "</div>";
-            $output .= "</div>";
-            $output .= "</div>";
-        }
+        
 
         // End Willian Mono.
 

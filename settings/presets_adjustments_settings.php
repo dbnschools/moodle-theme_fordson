@@ -180,6 +180,8 @@ $title = get_string('blockwidthfordson', 'theme_fordson');
 $description = get_string('blockwidthfordson_desc', 'theme_fordson');;
 $default = '280px';
 $choices = array(
+        '180px' => '150px',
+        '230px' => '200px',
         '280px' => '250px',
         '305px' => '275px',
         '330px' => '300px',
@@ -189,6 +191,9 @@ $choices = array(
         '430px' => '400px',
         '455px' => '425px',
         '480px' => '450px',
+        '20%' => '20%',
+        '25%' => '25%',
+        '30%' => '30%',
     );
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
