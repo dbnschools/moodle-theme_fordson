@@ -26,7 +26,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 // Theme strings.
-$string['choosereadme'] = 'Fordson provides a unique visual experience to the default Boost theme with customization features such as color choosers and enhanced homepage experience.';
+$string['choosereadme'] = 'Fordson provides a unique visual experience to the default Boost theme with customization features such as color choosers, improved navigation, and enhanced homepage experience.';
 $string['configtitle'] = 'Fordson';
 $string['pluginname'] = 'Fordson';
 $string['region-side-pre'] = 'Right';
@@ -525,3 +525,16 @@ $string['modchoosercustomlabel'] = 'Custom Chooser Label';
 $string['modchoosercustomlabel_desc'] = 'Add your own custom label for this new menu in the Chooser Module panel.';
 $string['showalltomanager'] = 'Show All Activities and Resources to Managers';
 $string['showalltomanager_desc'] = 'This setting will allow users who have the role of Manager see and access ALL activities and resources even if it is set to only show the custom menu.  Generally, a manager role is given to a user at the site or category level.  Teachers will still only see the custom menu.  This feature is determined by the user permission: View the Site Administration Tree - moodle/site:configview . Site Administrators will always see all activities and resources.';
+
+// Fordson Plugin Integration Enhancements.
+$string['integrationinfo'] = 'Plugin Integrations';
+$string['integrationinfo_desc'] = 'Fordson can activate enhanced features and better integrate with certain plugins. The settings below will allow you to use the default plugin behavior or turn on advanced features that the developers of Fordson have implemented.';
+$string['integrationon'] = 'Turn Integration On';
+$string['integrationoff'] = 'Turn Integration Off';
+
+$string['collapsibletopics'] = 'Collapsible Topics Course Format';
+$string['collapsibletopics_desc'] = 'If you install the Collapsible Topics Format ( <a href="https://moodle.org/plugins/format_collapsibletopics">format_collapsibletopics</a> ) the Fordson theme can provide an enhanced course format view and special styling that better integrates with the overall look and feel of Fordson. Special care and attention has been developed to provide a smoother user experience for users of all ages and skills.';
+$string['viewfcfmodules'] = 'View Activities and Resources';
+
+$string['easyenrollmentintegration'] = 'Easy Enrollment Plugin';
+$string['easyenrollmentintegration_desc'] = 'The Easy Enrollment plugin (<a href="https://moodle.org/plugins/enrol_easy"> Easy Enrollment Plugin</a>) allows students to enroll in courses directly from the Moodle homepage.  The enrollment plugin uses a 6 digit code or a auto-generated QR code with webcam support to enroll students.  The student enters the code or scans the QR code and is instantly enrolled into the intended course or group within the course.  This plugin auto-activates once you install Easy Enrollment and activate it in Site Administration.  It is only activated if the plugin is installed and properly configured.';

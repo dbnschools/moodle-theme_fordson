@@ -1200,3 +1200,46 @@ nav.fixed-top.navbar.navbar-teacher.navbar-expand.moodle-has-zindex {
 nav.fixed-top.navbar.navbar-student.navbar-expand.moodle-has-zindex {
     background-color: $studentnavbarcolor;
 }
+
+// Fordson CourseFormat Enhancements.  Please download and install https://moodle.org/plugins/format_collapsibletopics and turn on the special features for the Fordson Course Format in theme settings.
+
+.fordsoncourseformat h3.sectionname {
+    background-color: $gray-200;
+    padding: 1rem;
+}
+li#section-0.fordsoncourseformat h3.sectionname {
+    background-color: initial;
+    padding: 0;
+}
+
+.course-content ul li.section.main.fordsoncourseformat {
+    border-bottom: 0;
+}
+
+.course-content ul.collapsibletopics .fordsoncourseformat .content .summarytext {
+    padding: 1rem;
+    margin: 0;
+}
+
+body.editing ul.collapsibletopics .fordsoncourseformat .content .summarytext {
+    margin: 0;
+    padding: 1rem;
+}
+
+.fordsoncourseformat .progress {
+    background-color: $gray-500;
+}
+
+.fordsoncourseformat .fhscoursebutton {
+    display: block;
+    text-align: right;
+}
+
+.course-content ul.collapsibletopics li.section.fordsoncourseformat .content {
+    padding: 0;
+}
+
+.fordsoncourseformat ul.section {
+    margin: 0;
+    padding: 1rem;
+}

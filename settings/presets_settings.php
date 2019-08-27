@@ -126,7 +126,7 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// Toggle Marketing Tile styles
+// Toggle Marketing Tile styles.
 $name = 'theme_fordson/marketingstyle';
 $title = get_string('marketingstyle' , 'theme_fordson');
 $description = get_string('marketingstyle_desc', 'theme_fordson');
@@ -140,7 +140,7 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// Block Display Options
+// Block Display Options.
 $name = 'theme_fordson/blockdisplay';
 $title = get_string('blockdisplay' , 'theme_fordson');
 $description = get_string('blockdisplay_desc', 'theme_fordson');
@@ -151,6 +151,38 @@ $choices = array('1'=>$blockdisplay_on, '2'=>$blockdisplay_off);
 $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
+
+// Integration Info.
+$name = 'theme_fordson/integrationinfo';
+$heading = get_string('integrationinfo', 'theme_fordson');
+$information = get_string('integrationinfo_desc', 'theme_fordson');
+$setting = new admin_setting_heading($name, $heading, $information);
+$page->add($setting);
+
+// Collapsible Topic Course Format https://moodle.org/plugins/format_collapsibletopics.
+$name = 'theme_fordson/integrationcollapsibletopics';
+$title = get_string('collapsibletopics' , 'theme_fordson');
+$description = get_string('collapsibletopics_desc', 'theme_fordson');
+$integration_on = get_string('integrationon', 'theme_fordson');
+$integration_off = get_string('integrationoff', 'theme_fordson');
+$default = '2';
+$choices = array('1'=>$integration_on, '2'=>$integration_off);
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+// Collapsible Topic Course Format https://moodle.org/plugins/format_collapsibletopics.
+$name = 'theme_fordson/easyenrollmentintegration';
+$title = get_string('easyenrollmentintegration' , 'theme_fordson');
+$description = get_string('easyenrollmentintegration_desc', 'theme_fordson');
+$integration_on = get_string('integrationon', 'theme_fordson');
+$default = '1';
+$choices = array('1'=>$integration_on);
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+
 
 // Must add the page after definiting all the settings!
 $settings->add($page);

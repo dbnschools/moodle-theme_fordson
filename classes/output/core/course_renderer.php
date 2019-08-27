@@ -142,6 +142,8 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                             $catcontent .= html_writer::end_tag('div'); // .coursecat
                             
                         }
+
+
                         
                         // Load from config if usea a img from course summary file if not exist a img then a default one ore use a fa-icon.
                         $imgurl = '';
@@ -159,6 +161,15 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                                 $imgurl = $noimgurl;
                             }
                         }
+
+                        // Display custom fields.
+				        if ($course->has_custom_fields()) {
+				            $handler = \core_course\customfield\course_handler::create();
+				            $customfields = $handler->display_custom_fields_data($course->get_custom_fields());
+				            $customfieldcontent = \html_writer::tag('div', $customfields, ['class' => 'customfields-container']);
+				        }
+                        
+
                         if ($PAGE->theme->settings->coursetilestyle == 1) {
                             $rowcontent .= '
                         <div class="col-md-4">';
@@ -191,6 +202,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                                     </a>
                                     <div class="course-summary">
                                     ' . $catcontent . '
+                                    ' . $customfieldcontent . '
                                     ';
                             if ($course->has_course_contacts()) {
                                 $rowcontent .= html_writer::start_tag('ul', array(
@@ -235,6 +247,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                                     <h3>' . $trimtitle . '</h3>
                                     <div class="course-card">
                                     ' . $catcontent . '
+                                    ' . $customfieldcontent . '
                                     <button type="button" class="btn btn-primary btn-sm coursestyle2btn">' . $enrollbutton . '   <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></button>
                                     ';
                             if ($course->has_course_contacts()) {
@@ -277,6 +290,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                                     <div class="course-title">
                                     <a ' . $tooltiptext . ' href="' . $courseurl . '"><h4>' . $trimtitle . '</h4></a>
                                     ' . $catcontent . '
+                                    ' . $customfieldcontent . '
                                     <div class="completiontextposition">' . $completiontext . '</div>
                                     </div>
                                     '. $progressbar . '
@@ -319,6 +333,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                                     </a>
                                     <div class="course-summary4">
                                     ' . $catcontent . '
+                                    ' . $customfieldcontent . '
                                     ' . $summary . '
                                     ';
                             if ($course->has_course_contacts()) {
@@ -376,6 +391,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                             $rowcontent .= '<div class="col-md-6">
                                     <div class="course-summary">
                                     ' . $catcontent . '
+                                    ' . $customfieldcontent . '
                                     ' . $summary . '
                                     </div> 
                                     </div> ';
@@ -401,6 +417,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                                     <div class="course-title-fullboxbkg">
                                         <h4><a href="' . $courseurl . '">' . $trimtitle . '</a></h4>
                                         ' . $catcontent . '
+                                        ' . $customfieldcontent . '
                                     </div>
                                 </div>
                                 ';
@@ -448,6 +465,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                             $rowcontent .= '<div class="col-md-6">
                                     <h4><a href="' . $courseurl . '">' . $trimtitle . '</a></h4>
                                     ' . $catcontent . '
+                                    ' . $customfieldcontent . '
                                     </div>';
                             if ($course->has_course_contacts()) {
                                 $rowcontent .= '<div class="col-md-6">';
@@ -489,6 +507,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                                     
                                     <h4><a href="' . $courseurl . '">' . $trimtitle . '</a></h4>
                                     ' . $catcontent . '
+                                    ' . $customfieldcontent . '
                                     </div>
                                     <div class="course-summary-2col">
                                     ' . $summary . '
@@ -524,6 +543,7 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
 		                            	<div class="col-md-6 row">
 			                            	<div class="col-md-6">
 			                                  ' . $catcontent . '
+			                                  ' . $customfieldcontent . '
 			                                </div>
 			                                <div class="col-md-6">';
 			                        if ($course->has_course_contacts()) {
