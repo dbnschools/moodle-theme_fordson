@@ -11,6 +11,9 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 # Versions and Updates
 
+## Moodle 3.7 Fordson v3.7 release 1.2.1
+* Quick fix for new customfield support in Fordson.  This fixes an error that appears if you do not utilize custom fields.
+
 ## Moodle 3.7 Fordson v3.7 release 1.2
 * Introducing "Integrated Plugins" concept for preferred plugins to be used with Fordson.  You can now activate enhanced features for the Collapsible Topics Course Format https://moodle.org/plugins/format_collapsibletopics designed to provide a seamless and powerful integration of theme and course format.  Fordson provides an enhanced user experience based on this course format.  Install the course format and then turn on the integration in Fordson Admin to get a tightly integrated and seamless user experience that builds upon the base plugin.
 * Added new Custom Field support to be displayed in course directories.

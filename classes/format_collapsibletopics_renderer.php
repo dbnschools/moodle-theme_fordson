@@ -290,7 +290,7 @@ if (file_exists($CFG->dirroot . '/course/format/collapsibletopics/renderer.php')
             $o .= html_writer::start_tag('div', array('class' => 'summarytext'));
             $o .= $this->format_summary_text($section);
             if ($section->section != 0) {
-	            $o .= '<div class="fhscoursebutton"><a class="sectiontoggle-button btn btn-secondary' .
+	            $o .= '<div class="fhscoursebutton"><a class="sectiontoggle-button btn btn-primary' .
 	                        '" data-toggle="collapse" data-parent="accordion" href="#collapse-' .
 	                        $section->section .
 	                        '" aria-expanded="true" aria-controls="collapse-' .

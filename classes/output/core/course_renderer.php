@@ -161,6 +161,8 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                                 $imgurl = $noimgurl;
                             }
                         }
+                        
+                        $customfieldcontent = '';
 
                         // Display custom fields.
 				        if ($course->has_custom_fields()) {
