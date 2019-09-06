@@ -11,6 +11,12 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 # Versions and Updates
 
+## Moodle 3.7 Fordson v3.7 release 1.2.2
+* Further enhancements to styling for the Collapsible Topics Course Format https://moodle.org/plugins/format_collapsibletopics to be better integrated with Fordson Section/Topic styling.
+* New full width slideshow on custom login page.  Appears behind the login box.  Can also toggle display pages to appear on just the login page, just sitehome/dashboard, or everywhere.
+* Fullwidth slideshow only works on custom login page.  Standard Moodle login doesn't get the fullwidth slideshow.
+* Changed slideshow transition from a slide to a fade.
+
 ## Moodle 3.7 Fordson v3.7 release 1.2.1
 * Quick fix for new customfield support in Fordson.  This fixes an error that appears if you do not utilize custom fields.
 

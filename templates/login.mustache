@@ -40,15 +40,23 @@
     <div id="page" class="container-fluid mt-0 {{#hascustomlogin}}customloginimage{{/hascustomlogin}}">
         <div id="page-content" class="row">
                 <section id="region-main" class="col-12">
+                    {{#hasslideshowpages}}
+                        <div class="loginslideshow">
+                            {{{ output.fp_slideshow }}}
+                        </div>
+                    {{/hasslideshowpages}}
                     {{{ output.course_content_header }}}
                     {{{ output.main_content }}}
+                    {{#hasslideshowpages}}
+                        <div class="customloginspacer"></div>
+                    {{/hasslideshowpages}}
                     {{{ output.course_content_footer }}}
                 </section>
         </div>
     </div>
     {{#hascustomlogin}}
     <div id="fordsonlogin" class="fordsonlogin">
-        <div class="container">
+        <div class="container col-12">
         {{{ output.customlogin }}}
         </div>
     </div>

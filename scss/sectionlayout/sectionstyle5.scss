@@ -119,6 +119,19 @@ a.add-sections {
     border-radius: $border-radius;
 }
 
+.course-content ul.collapsibletopics li#section-0.fordsoncourseformat ul.section {
+    background-color: initial;
+}
+.course-content ul.collapsibletopics li#section-0.fordsoncourseformat .content {
+    border:0;
+}
+.course-content ul.collapsibletopics li.section.fordsoncourseformat .content {
+    padding: 0;
+    border: 1px solid $gray-300;
+    border-bottom: 20px solid $gray-600;
+    margin: 4rem 0;
+}
+
 // Activity Styling.
 
 .section li.activity:hover {

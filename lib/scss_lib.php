@@ -170,6 +170,7 @@ function theme_fordson_get_pre_scss($theme) {
     'gutterwidth' => ['gutterwidth'],
     'topnavbarbg' => ['topnavbarbg'],
     'topnavbarteacherbg' => ['teachernavbarcolor'],
+    'slideshowspacer' => ['slideshowspacer'],
     ];
 
     // Add settings variables.

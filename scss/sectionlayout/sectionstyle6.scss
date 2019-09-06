@@ -123,6 +123,15 @@ span.section-modchooser-link {
     border-top: 7px solid $spectrum-base;
 }
 
+.progress.fordsonsinglepage {
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+li#section-0.fordsoncourseformat h3.sectionname {
+    border: 0;
+}
+
 // Single Activity fixes
 
 #page-course-view-topics .course-content .section-summary, #page-course-view-weeks .course-content .section-summary {

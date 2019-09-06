@@ -72,7 +72,9 @@
             </div>
         {{/headerlogo}}
         {{>theme_fordson/blockspanelslider}}
-        {{{ output.fp_slideshow }}}
+        {{#hasslideshowpages}}
+            {{{ output.fp_slideshow }}}
+        {{/hasslideshowpages}}
         {{{ output.full_header }}}
 
         <div id="page-content" class="row pb-3">

@@ -52,7 +52,9 @@ $hasblocks = strpos($blockshtml, 'data-block=') !== false;
 $blockshtmla = $OUTPUT->blocks('fp-a');
 $blockshtmlb = $OUTPUT->blocks('fp-b');
 $blockshtmlc = $OUTPUT->blocks('fp-c');
-$hasfpblockregion = ($PAGE->theme->settings->blockdisplay == 1) !== false;
+$hasfpblockregion = (isset($PAGE->theme->settings->blockdisplay) && ($PAGE->theme->settings->blockdisplay == 1)) !== false;
+
+$hasslideshowpages = (isset($PAGE->theme->settings->slideshowpages) && ($PAGE->theme->settings->slideshowpages == 1 || $PAGE->theme->settings->slideshowpages == 2)) !== false;
 
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [
@@ -71,6 +73,7 @@ $templatecontext = [
     'regionmainsettingsmenu' => $regionmainsettingsmenu,
     'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu),
     'enrolform' => $enrolform,
+    'hasslideshowpages' => $hasslideshowpages,
 ];
 
 $PAGE->requires->jquery();

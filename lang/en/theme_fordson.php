@@ -62,7 +62,7 @@ $string['presetfiles'] = 'Additional theme preset files';
 $string['presetfiles_desc'] = 'Preset files can be used to dramatically alter the appearance of the theme.
     See https://docs.moodle.org/dev/Boost_Presets for information on creating and sharing your own preset files.';
 $string['preset'] = 'Theme preset';
-$string['preset_desc'] = 'Pick a preset to broadly change the look of the theme. <a href="https://goo.gl/fMXzSo" target="_new">Instructions for Fordson 3.5 Theme</a>';
+$string['preset_desc'] = 'Pick a preset to broadly change the look of the theme. <a href="https://goo.gl/fMXzSo" target="_new">Instructions for Fordson </a>';
 $string['favicon'] = 'Favicon';
 $string['favicon_desc'] = 'Change the favicon for Fordson. Images with a transparent background and 32px height will work best.  Allowed types: PNG, JPG, ICO';
 $string['enhancedmydashboard'] = 'Enhanced MyDashboard';
@@ -124,7 +124,9 @@ $string['headerlogo_desc'] = 'This logo will be displayed at the top of the page
 //Slideshow
 $string['slideshowsettings'] = 'Slideshow';
 $string['slideshowheight'] = 'Slideshow Height';
-$string['slideshowheight_desc'] = 'Adjust the height of the slideshow.';
+$string['slideshowheight_desc'] = 'Adjust the height of the slideshow on the Site Home/Dashboard pages. This setting is ignored on the Custom Login Page.  On the Custom Login Page the slide height is determined by page size and width.';
+$string['slideshowspacer'] = 'Slideshow Spacer on Custom Login Page';
+$string['slideshowspacer_desc'] = 'On the custom login page this setting is used to add separation below the login form in case you put text into the slides.';
 $string['showslideshow'] = 'Activate Slideshow';
 $string['showslideshow_desc'] = 'Check this option to turn on the slideshow feature.';
 $string['slide1info'] = 'Slide 1';
@@ -139,7 +141,11 @@ $string['slidecontent'] = 'Slide Description';
 $string['slidecontent_desc'] = 'Add a description for this slide.';
 $string['slideimage'] = 'Slide Image';
 $string['slideimage_desc'] = 'Add a background image for this slide.';
-
+$string['slideshowpages'] = 'Slideshow Pages';
+$string['slideshowpages_desc'] = 'Determine what main pages the slideshow should appear on.  If using the slideshow on custom login page, it is recommended to only upload images and do not use the slide text options below. NOTE: The slideshow will not appear on mobile devices.';
+$string['slideshowpages0'] = 'Show on custom login page only';
+$string['slideshowpages1'] = 'Show on Site Home and Dashboard only';
+$string['slideshowpages2'] = 'Show everywhere';
 
 // Footer
 $string['footerheading'] = 'Footer';
@@ -200,7 +206,7 @@ $string['layoutinfo'] = 'Layout Settings';
 $string['layoutinfodesc'] = 'Control page layout by chooseing a design.';
 
 $string['pagelayout'] = 'Layout Chooser';
-$string['pagelayout_desc'] = 'Choose from the following layouts. Certain page layouts require additional adjustments on the Preset Adjustments Page.  Be sure to pay attention to: Learning Content Spacing, Header Image Height, and Content Padding as these will help adjust header image placement and padding to the left and right of the main learning content. <a href="https://goo.gl/fMXzSo" target="_new">Instructions for Fordson 3.5 Theme</a>';
+$string['pagelayout_desc'] = 'Choose from the following layouts. Certain page layouts require additional adjustments on the Preset Adjustments Page.  Be sure to pay attention to: Learning Content Spacing, Header Image Height, and Content Padding as these will help adjust header image placement and padding to the left and right of the main learning content. <a href="https://goo.gl/fMXzSo" target="_new">Instructions for Fordson</a>';
 $string['pagelayout1'] = 'Default Boost Layout';
 $string['pagelayout2'] = 'Full-Width / Top Header Image';
 $string['pagelayout3'] = 'Centered Content / Overlapping Top Header Image';
@@ -208,7 +214,7 @@ $string['pagelayout4'] = 'Centered Content / Full Screen Header Image';
 $string['pagelayout5'] = 'Default Boost Layout / Header Image in Course Title Box';
 
 $string['sectionlayout'] = 'Section Style Chooser';
-$string['sectionlayout_desc'] = 'Choose from the following topic/weekly section styles.  <a href="https://goo.gl/fMXzSo" target="_new">Instructions for Fordson 3.5 Theme</a>';
+$string['sectionlayout_desc'] = 'Choose from the following topic/weekly section styles.  <a href="https://goo.gl/fMXzSo" target="_new">Instructions for Fordson</a>';
 $string['sectionlayout1'] = 'Boost Default';
 $string['sectionlayout2'] = 'Bold Notecard';
 $string['sectionlayout3'] = 'Folder Tabs';
@@ -266,7 +272,7 @@ $string['coursestyle8'] = 'Horizontal Two Column';
 $string['coursestyle9'] = 'Corporate Training - minimal with completion progressbar';
 $string['coursestyle10'] = 'Default Moodle Course Display';
 $string['coursetilestyle'] = 'Course Tile Display';
-$string['coursetilestyle_desc'] = 'When viewing course categories you can choose from the following styles to display courses. <a href="https://goo.gl/fMXzSo" target="_new">Instructions for Fordson 3.5 Theme</a>';
+$string['coursetilestyle_desc'] = 'When viewing course categories you can choose from the following styles to display courses. <a href="https://goo.gl/fMXzSo" target="_new">Instructions for Fordson </a>';
 $string['gutterwidth'] = 'Content Padding';
 $string['gutterwidth_desc'] = 'This setting controls how much spacing is used on the left and right of the main content.';
 $string['frontpagemycoursessorting'] = 'My Courses Sort Order by Last Access';

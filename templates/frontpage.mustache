@@ -71,8 +71,11 @@
                 <img src="{{{ headerlogo }}}" class="img-fluid" alt="Responsive image">
             </div>
         {{/headerlogo}}
-
-        {{{ output.fp_slideshow }}}
+        
+        {{#hasslideshowpages}}
+            {{{ output.fp_slideshow }}}
+        {{/hasslideshowpages}}
+        
         {{{ output.full_header }}}
 
         <div id="page-content" class="row">

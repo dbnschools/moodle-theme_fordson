@@ -125,6 +125,15 @@ a.add-sections {
     border-radius: $border-radius;
 }
 
+.progress.fordsonsinglepage .progress-bar.progress-bar-info {
+    background-color: $dpsaccentcolor;
+}
+.progress.fordsonsinglepage {
+    margin-top: 1rem;
+    margin-right: 1rem;
+    height: 12px!important;
+    border: 1px solid $white !important;
+}
 
 // Single Topic Fixes
 #page-course-view-topics .course-content .section-summary {

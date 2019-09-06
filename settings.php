@@ -48,8 +48,8 @@ if ($ADMIN->fulltree) {
     require('settings/menu_settings.php');
     require('settings/fpicons_settings.php');
     require('settings/modchooser_settings.php');
-    require('settings/slideshow_settings.php');
     require('settings/markettiles_settings.php');
     require('settings/footer_settings.php');
+    require('settings/slideshow_settings.php');
     require('settings/customlogin_settings.php');
 }

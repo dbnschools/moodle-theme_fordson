@@ -346,6 +346,65 @@ a.right.carousel-control .fa-chevron-right {
     bottom: 40%;
 }
 
+/* Login Page Slideshow */
+.loginslideshow .slide1image,
+.loginslideshow .slide2image,
+.loginslideshow .slide3image {
+    height: 100%;
+}
+
+.loginslideshow div#fordsoncarousel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.loginslideshow .carousel-inner {
+    height: 100%;
+}
+
+.loginslideshow .carousel-item {
+    height: 100%;
+}
+
+ .carousel-control {
+    display: none;
+}
+
+.customloginspacer {
+    height: $slideshowspacer;
+}
+
+/* FIX for carousel fade. */
+.carousel.slide.carousel-fade .carousel-item {
+ opacity: 0;
+ transition-duration: .6s;
+ transition-property: opacity;
+}
+
+.carousel.slide.carousel-fade  .carousel-item.active,
+.carousel.slide.carousel-fade  .carousel-item-next.carousel-item-left,
+.carousel.slide.carousel-fade  .carousel-item-prev.carousel-item-right {
+  opacity: 1;
+}
+
+.carousel.slide.carousel-fade .active.carousel-item-left,
+.carousel.slide.carousel-fade  .active.carousel-item-right {
+ opacity: 0;
+}
+
+.carousel.slide.carousel-fade  .carousel-item-next,
+.carousel.slide.carousel-fade .carousel-item-prev,
+.carousel.slide.carousel-fade .carousel-item.active,
+.carousel.slide.carousel-fade .active.carousel-item-left,
+.carousel.slide.carousel-fade  .active.carousel-item-prev {
+ transform: translateX(0);
+ transform: translate3d(0, 0, 0);
+}
+
+
 
 /* Enhanced Homepage */
 

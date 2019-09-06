@@ -153,6 +153,31 @@ a.add-sections {
     padding: 10px;
 }
 
+li#section-0.fordsoncourseformat .content, li#section-0.fordsoncourseformat h3.sectionname {
+    border: 0;
+}
+
+.course-content ul.collapsibletopics .fordsoncourseformat .content {
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 1px solid $gray-300;
+}
+
+.course-content ul li.section.main.fordsoncourseformat {
+    margin: 4rem 0;
+}
+
+.course-content ul.collapsibletopics li.section ul.section {
+    background-color: $gray-100;
+}
+.course-content ul.collapsibletopics li#section-0.fordsoncourseformat ul.section {
+    background-color: initial;
+}
+
+.section_availability {
+    background-color: initial;
+}
+
 // Activity Styling.
 
 ul {
