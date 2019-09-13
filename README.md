@@ -16,6 +16,7 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 * New full width slideshow on custom login page.  Appears behind the login box.  Can also toggle display pages to appear on just the login page, just sitehome/dashboard, or everywhere.
 * Fullwidth slideshow only works on custom login page.  Standard Moodle login doesn't get the fullwidth slideshow.
 * Changed slideshow transition from a slide to a fade.
+* FIX Breadcrumb dimmed if activity is hidden. https://moodle.org/mod/forum/discuss.php?d=380976#p1575721
 
 ## Moodle 3.7 Fordson v3.7 release 1.2.1
 * Quick fix for new customfield support in Fordson.  This fixes an error that appears if you do not utilize custom fields.

@@ -71,6 +71,20 @@ $breadcrumb-divider-rtl: "/" !default;
 // Alerts
 $alert-border-width:                0 !default;
 
+// Dropdowns
+$dropdown-bg:                       $white !default;
+$dropdown-border-color:             rgba($black, .15) !default;
+$dropdown-divider-bg:               $gray-200 !default;
+$dropdown-box-shadow:               0 .5rem 1rem rgba($black, .175) !default;
+
+$dropdown-link-color:               $gray-900 !default;
+$dropdown-link-hover-color:         darken($gray-900, 5%) !default;
+$dropdown-link-hover-bg:            $gray-200 !default;
+
+$dropdown-link-active-color:        $white !default;
+$dropdown-link-active-bg:           $gray-400 !default;
+
+
 $theme-colors: (
     primary: $primary,
     secondary: $gray-200,

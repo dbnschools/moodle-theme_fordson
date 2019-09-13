@@ -124,9 +124,6 @@ if (file_exists($CFG->dirroot . '/course/format/collapsibletopics/renderer.php')
         }
     }
 
-
-
-
         /**
          * Overrides format_section_renderer_base
          * Generate the display of the header part of a section before

@@ -254,6 +254,13 @@ section#region-main {
     margin-top: 0;
 }
 
+li.breadcrumb-item.dimmed_text {
+    background-color: $white;
+}
+li.breadcrumb-item.dimmed_text:hover {
+    background-color: darken($white, 4%);
+}
+
 section#region-main .card, header#page-header .card {
     border: 0;
 }
@@ -632,6 +639,10 @@ div#fordsonlogin {
     background-color: lighten($gray-100, 1%);
     padding: 1.25rem;
 }
+[data-content="inpage-reply-form"] {
+    background-color: lighten($gray-200, 4%);
+    padding: 1rem;
+}
 
 // Icon Navigation Styling
 
@@ -653,7 +664,6 @@ div#fordsonlogin {
 #page-course-view-remuiformat.pagelayout-course .container-fluid #region-main {
     background: transparent;
 }
-
 
 .page-context-header .header-button-group {
     display: block;
