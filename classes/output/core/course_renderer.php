@@ -111,7 +111,8 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                             $pixcontent .= html_writer::end_tag('div'); // .enrolmenticons
                         }
                         // display course category if necessary (for example in search results)
-                        require_once($CFG->libdir. '/coursecatlib.php');
+			require_once($CFG->libdir. '/coursecatlib.php');
+			$catcontent = '';
                         if ($cat = coursecat::get($course->category, IGNORE_MISSING)) {
                             $catcontent = html_writer::start_tag('div', array('class' => 'coursecat'));
                             $catcontent .= get_string('category').': '.
@@ -610,7 +611,8 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                             $pixcontent .= html_writer::end_tag('div'); // .enrolmenticons
                         }
                         // display course category if necessary (for example in search results)
-                        require_once($CFG->libdir. '/coursecatlib.php');
+			require_once($CFG->libdir. '/coursecatlib.php');
+			$catcontent = '';
                         if ($cat = coursecat::get($course->category, IGNORE_MISSING)) {
                             $catcontent = html_writer::start_tag('div', array('class' => 'coursecat'));
                             $catcontent .= get_string('category').': '.
