@@ -296,7 +296,7 @@ if (file_exists($CFG->dirroot . '/course/format/collapsibletopics/renderer.php')
 
 	        }
             $o .= '<div>' . $activities . '</div> ';
-            $o .= $courserenderer->course_section_add_cm_control($course, 0, 0);
+            $o .= $courserenderer->course_section_add_cm_control($course, $section->section, 0);
             $o .= html_writer::end_tag('div');
             
 
