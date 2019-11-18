@@ -55,6 +55,12 @@ $breadcrumb-bg:                     transparent !default;
 $breadcrumb-divider: "/" !default;
 $breadcrumb-divider-rtl: "/" !default;
 
+$breadcrumb-bg: $primary !default;
+$breadcrumb-bg-hover: darken($primary, 15%) !default;
+$breadcrumb-text-color: $white !default;
+$breadcrumbdash: $gray-200 !default;
+$breadcrumbdimmed: $gray-600 !default;
+
 // Alerts
 $alert-border-width:                0 !default;
 

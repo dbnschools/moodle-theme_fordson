@@ -119,7 +119,6 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
 				        	$completiontext = '';
 				        }
 	                    if ($course instanceof stdClass) {
-	                        //require_once ($CFG->libdir . '/coursecatlib.php');
 	                        $course = new core_course_list_element($course);
 	                    }
                         // print enrolmenticons
@@ -129,17 +128,16 @@ if ($PAGE->theme->settings->coursetilestyle < 10) {
                             foreach ($icons as $pix_icon) {
                                 $pixcontent .= $this->render($pix_icon);
                             }
-                            $pixcontent .= html_writer::end_tag('div'); // .enrolmenticons
+                            $pixcontent .= html_writer::end_tag('div'); 
                         }
                         // display course category if necessary (for example in search results)
-                        //require_once($CFG->libdir. '/coursecatlib.php');
                         if ($cat = core_course_category::get($course->category, IGNORE_MISSING)) {
                             $catcontent = html_writer::start_tag('div', array('class' => 'coursecat'));
                             $catcontent .= get_string('category').': '.
                                     html_writer::link(new moodle_url('/course/index.php', array('categoryid' => $cat->id)),
                                             $cat->get_formatted_name(), array('class' => $cat->visible ? '' : 'dimmed'));
                             $catcontent .= $pixcontent;
-                            $catcontent .= html_writer::end_tag('div'); // .coursecat
+                            $catcontent .= html_writer::end_tag('div');
                             
                         }
 

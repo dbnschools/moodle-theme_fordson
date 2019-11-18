@@ -68,7 +68,9 @@ $breadcrumb-divider-rtl: "/" !default;
 
 $breadcrumb-bg: $primary !default;
 $breadcrumb-bg-hover: darken($primary, 15%) !default;
-$breadcrumb-text-color: #ffffff !default;
+$breadcrumb-text-color: $white !default;
+$breadcrumbdash: $gray-200 !default;
+$breadcrumbdimmed: $gray-600 !default;
 
 // Progress bars
 $progress-bg:                       $gray-300 !default;
@@ -337,10 +339,6 @@ div#myoverview_timeline_courses .list-group-item {
     padding: 0;
 }
 
-/*#page-wrapper {
-    min-height: 1rem;
-}*/
-
 // Progress Bars
 
 .progress {
@@ -450,7 +448,7 @@ div#myoverview_timeline_courses .list-group-item {
 
 }
 
-.m-t-2.m-b-1 {
+.mt-2.mb-1 {
     position: relative;
     background-color: darken($body-bg, 10%);
     padding: $spacer;

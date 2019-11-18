@@ -94,7 +94,8 @@ body#page-login-index, body#page-login-signup{
 }
 
 .row.signin {
-    margin: 2rem 0;
+    position: relative;
+    z-index: 1;
 }
 
 .fpcustomtext {

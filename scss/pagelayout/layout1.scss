@@ -73,11 +73,6 @@ div#learningcontent {
 */
 
 @if $perceptionpreset == 1 {
-	// Special breadcrumbs for this layout
-	$breadcrumb-bg: $primary;
-	$breadcrumb-bg-hover: $perception-base;
-	$breadcrumb-text-color: $white;
-
 	.headerbkg {
 	    height: $headerimagepadding;
 	    width: 100%;
@@ -129,35 +124,18 @@ div#learningcontent {
 	    padding: 0!important;
 	}
 
-	/*div#learningcontent {
-	    position: relative;
-	    margin: 0 $gutterwidth $gutterwidth $gutterwidth;
-	    margin-top: $gutterwidth;
-	}*/
-
 	div#learningcontent {
 	    position: relative;
 	    margin: $gutterwidth;
-	    box-shadow: 0px 0px 50px -5px rgba($black,.6);
+	    box-shadow: 0px 0px 25px -5px rgba($black,.6);
 	}
-
-	/*header#page-header {
-		padding: 1rem 0;
-	    margin-bottom: $gutterwidth;
-	    border: 1px solid $gray-500;
-	    border-radius: 0 0 $border-radius $border-radius;
-	    background-color: $card-bg;
-	    //box-shadow: 0px 1px 6px 2px rgba(0,0,0,.09);
-	}*/
 
 	header#page-header {
 		padding: 1rem 0 0 0;
 	    margin-bottom: 0;
 	    border: 0;
 	    border-bottom: 1px solid $gray-500;
-	    //border-top: 7px solid $white;
-	    //border-radius: $border-radius $border-radius 0 0;
-	    background-color: rgba($headerbackgroundcolor, 0.95);
+	    background-color: $headerbackgroundcolor;
 	    box-shadow: inset 0px -8px 10px -5px rgba($primary, 0.3);
 	}
 
@@ -188,7 +166,6 @@ div#learningcontent {
 	}
 
 	#page-wrapper #page #page-content {
-	    //border: 1px solid;
 	    border-color: $card-bg $gray-400 $gray-400 $gray-400;
 	    background-color: $card-bg;
 
@@ -203,14 +180,17 @@ div#learningcontent {
 	    border-radius: 0;
 	    background-color: transparent;
 	}
+
 	.row {
         margin-right: 0; 
         margin-left: 0;
     }
+
     .col-12 {
         padding-right: 0;
         padding-left: 0;
     }
+
     #page-wrapper {
         padding-bottom: 0;
     }
@@ -254,76 +234,104 @@ div#learningcontent {
 		    padding-bottom: 0;
 		}
 	}
-	@media screen and (min-width: 576px) {
-	    /* Breadcrumbs */
-	    ul.breadcrumb {
-	        display: inline-block;
-	        overflow: hidden;
-	        margin:0px;
-	        padding:0px;
-	        background: none;
-	    }
-	    ul.breadcrumb a {
-	        color: $breadcrumb-text-color;
-	    }
-	    ul.breadcrumb li {
-	        text-decoration: none;
-	        outline: none;
-	        display: block;
-	        float: left;
-	        font-size: 14px;
-	        line-height: 36px;
-	        color: $breadcrumb-text-color;
-	        padding: 0 15px 0 30px;
-	        background-color: $breadcrumb-bg;
-	        position: relative;
-	    }
-	    ul.breadcrumb li:first-child {
-	        padding-left: 25px;
-	        border-radius: 5px 0 0 5px;
-	    }
-	    ul.breadcrumb li:first-child:before {
-	        left: 14px;
-	    }
-	    ul.breadcrumb li:last-child {
-	        border-radius: 0 5px 5px 0;
-	        padding-right: 20px;
-	    }
-	    /*hover/active styles*/
-	    ul.breadcrumb li.active, .breadcrumb li:hover{
-	        background-color: $breadcrumb-bg-hover;
-	    }
-	    ul.breadcrumb li.active:after, .breadcrumb li:hover:after {
-	        background-color: $breadcrumb-bg-hover;
-	    }
-	    ul.breadcrumb li:after {
-	        content: '';
-	        position: absolute;
-	        top: 0; 
-	        right: -18px;
-	        width: 36px; 
-	        height: 36px;
-	        transform: scale(0.707) rotate(45deg);
-	        z-index: 1;
-	        background-color: $breadcrumb-bg;
-	        box-shadow:
-	        2px -2px 0 2px $white, 
-	        3px -3px 0 2px $white;
-	        border-radius: 0 5px 0 50px;
-	    }
-	    ul.breadcrumb li:last-child:after {
-	        content: none;
-	    }
-	    .breadcrumb-item + .breadcrumb-item::before {
-	        display: inline-block;
-	        padding: 0;
-	        content: "";
-	    }
-	    .dir-rtl ul.breadcrumb li:after{
-	        transform: scale(.707) rotate(315deg);
-	        box-shadow: -3px -3px 0 1px $card-bg, -2px -3px 0 2px $card-bg;
-	    }
-	}
+
+@media screen and (min-width: 576px) {
+            /* Breadcrumbs */
+        ul.breadcrumb {
+            display: inline-block;
+            overflow: hidden;
+            margin:0px;
+            padding:0px;
+            background: none;
+        }
+        ul.breadcrumb a {
+            color: $breadcrumb-text-color;
+        }
+        ul.breadcrumb li {
+            text-decoration: none;
+            outline: none;
+            display: block;
+            float: left;
+            font-size: 14px;
+            line-height: 36px;
+            color: $breadcrumb-text-color;
+            padding: 0 15px 0 30px;
+            background-color: $breadcrumb-bg;
+            position: relative;
+        }
+        ul.breadcrumb li:first-child {
+            padding-left: 25px;
+            border-radius: 5px 0 0 5px;
+        }
+        ul.breadcrumb li:first-child:before {
+            left: 14px;
+        }
+        ul.breadcrumb li:last-child {
+            border-radius: 0 5px 5px 0;
+            padding-right: 20px;
+        }
+        /*hover/active styles*/
+        ul.breadcrumb li.active, .breadcrumb li:hover {
+            background-color: $breadcrumb-bg-hover;
+        }
+        ul.breadcrumb li.active:after, .breadcrumb li:hover:after {
+            background-color: $breadcrumb-bg-hover;
+        }
+        ul.breadcrumb li:after {
+            content: '';
+            position: absolute;
+            top: 0; 
+            right: -18px;
+            width: 36px; 
+            height: 36px;
+            transform: scale(0.707) rotate(45deg);
+            z-index: 1;
+            background-color: $breadcrumb-bg;
+            box-shadow:
+            2px -2px 0 2px $breadcrumbdash, 
+            3px -3px 0 2px $breadcrumbdash;
+            border-radius: 0 5px 0 50px;
+        }
+        li.breadcrumb-item.dimmed_text_fhs {
+            background-color: $breadcrumbdimmed;
+        }
+        li.breadcrumb-item.dimmed_text_fhs:hover {
+            background-color: $breadcrumb-bg-hover;
+        }
+        li.breadcrumb-item.dimmed_text_fhs:after {
+            content: '';
+            position: absolute;
+            top: 0; 
+            right: -18px;
+            width: 36px; 
+            height: 36px;
+            transform: scale(0.707) rotate(45deg);
+            z-index: 1;
+            background-color: $breadcrumbdimmed;
+            box-shadow:
+            2px -2px 0 2px $breadcrumbdash, 
+            3px -3px 0 2px $breadcrumbdash;
+            border-radius: 0 5px 0 50px;
+        }
+        li.breadcrumb-item.dimmed_text_fhs:hover:after {
+            background-color: $breadcrumb-bg-hover;
+        }
+        ul.breadcrumb li:last-child:after {
+            content: none;
+        }
+        .breadcrumb-item + .breadcrumb-item::before {
+            display: inline-block;
+            padding: 0;
+            content: "";
+        }
+        .dir-rtl ul.breadcrumb li:after{
+            transform: scale(.707) rotate(315deg);
+            box-shadow: -3px -3px 0 1px $card-bg, -2px -3px 0 2px $card-bg;
+        }
+        .breadcrumb-item+.breadcrumb-item::before {
+		    padding: 0 .75rem;
+		}
+    }
 
 	@media screen and (max-width: 576px) {
 	    .breadcrumb {

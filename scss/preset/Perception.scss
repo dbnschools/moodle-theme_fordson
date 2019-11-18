@@ -61,7 +61,7 @@ $perception-base:       #14a9fe !default;
 $sectionnamehighlight:  $teal;
 $border-radius:         4px !default;
 $activityhover:         darken($card-bg, 7%) !default;
-$headerbackgroundcolor: #ecf3f7 !default;
+$headerbackgroundcolor: rgba(255, 255, 255, 0.9) !default;
 $dpsaccentcolor:        #44d4a6 !default;
 
 // Fonts
@@ -78,9 +78,11 @@ $breadcrumb-margin-bottom:          0 !default;
 $breadcrumb-divider: "/" !default;
 $breadcrumb-divider-rtl: "/" !default;
 
-$breadcrumb-bg: $primary !default;
-$breadcrumb-bg-hover: darken($primary, 15%) !default;
-$breadcrumb-text-color: #ffffff !default;
+$breadcrumb-bg: $dark !default;
+$breadcrumb-bg-hover: $perception-base !default;
+$breadcrumb-text-color: $white !default;
+$breadcrumbdash: $gray-200 !default;
+$breadcrumbdimmed: $gray-600 !default;
 
 // Progress bars
 $progress-bg:                       $gray-300 !default;
@@ -252,13 +254,6 @@ section#region-main {
 
 #page-question-preview #page-wrapper #page {
     margin-top: 0;
-}
-
-li.breadcrumb-item.dimmed_text {
-    background-color: $white;
-}
-li.breadcrumb-item.dimmed_text:hover {
-    background-color: darken($white, 4%);
 }
 
 section#region-main .card, header#page-header .card {
