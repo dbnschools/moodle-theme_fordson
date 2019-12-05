@@ -169,6 +169,8 @@ div#learningcontent {
     border-top: 7px solid rgba(0,0,0,.2);
     border-radius: 0;
 }
+
+
 @media screen and (min-width: 576px) {
             /* Breadcrumbs */
         ul.breadcrumb {
@@ -262,10 +264,16 @@ div#learningcontent {
             transform: scale(.707) rotate(315deg);
             box-shadow: -3px -3px 0 1px $card-bg, -2px -3px 0 2px $card-bg;
         }
+        .breadcrumb-item+.breadcrumb-item::before {
+            padding: 0 .75rem;
+        }
     }
 
-@media screen and (max-width: 576px) {
-    .breadcrumb {
-        background-color:transparent;
+    @media screen and (max-width: 576px) {
+        .breadcrumb {
+            background-color:transparent;
+        }
+        li.breadcrumb-item a, li.breadcrumb-item {
+            color: $primary;
+        }
     }
-}

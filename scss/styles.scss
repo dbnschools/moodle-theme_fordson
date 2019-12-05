@@ -1052,7 +1052,7 @@ span.userbutton {
 width: $activityiconsize;
 }
 
-#page-course-editdefaultcompletion .modules img.m-r-1.m-b-1 {
+#page-course-editdefaultcompletion .modules.mb-1 img {
     height: $activityiconsize;
     width: $activityiconsize;
 }
@@ -1262,6 +1262,20 @@ nav.fixed-top.navbar.navbar-student.navbar-expand.moodle-has-zindex {
 }
 
 // Fordson CourseFormat Enhancements.  Please download and install https://moodle.org/plugins/format_collapsibletopics and turn on the special features for the Fordson Course Format in theme settings.
+body.editing .course-content ul.collapsibletopics a.sectiontoggle {
+    float: unset;
+}
+body.editing .course-content ul.collapsibletopics a.sectiontoggle[aria-expanded="true"] {
+    background-position: left 55%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+body.editing .course-content ul.collapsibletopics a.sectiontoggle[aria-expanded="false"] {
+    background-position: left 55%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
 
 .fordsoncourseformat h3.sectionname {
     background-color: $gray-200;
@@ -1297,6 +1311,10 @@ body.editing ul.collapsibletopics .fordsoncourseformat .content .summarytext {
 
 .course-content ul.collapsibletopics li.section.fordsoncourseformat .content {
     padding: 0;
+}
+
+.course-content ul.collapsibletopics a.sectiontoggle {
+    font-size: 1.2rem;
 }
 
 .fordsoncourseformat ul.section {

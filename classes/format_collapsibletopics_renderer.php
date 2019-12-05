@@ -71,13 +71,19 @@ if (file_exists($CFG->dirroot . '/course/format/collapsibletopics/renderer.php')
 
         foreach ($modinfo->get_section_info_all() as $section => $thissection) {
             if ($section == 0) {
+                echo '<div class="collapsible-actions" >
+    <a href="#" class="expandall" role="button">' . get_string('expandall') . '
+    </a>
+</div>';
                 // 0-section is displayed a little different then the others.
                 if ($thissection->summary or !empty($modinfo->sections[0]) or $PAGE->user_is_editing()) {
+                    $this->page->requires->strings_for_js(array('collapseall', 'expandall'), 'moodle');
                     $modules = $this->courserenderer->course_section_cm_list($course, $thissection, 0);
                     echo $this->section_header($thissection, $course, false, 0);
                     echo $modules;
+                    
                     echo $this->section_footer();
-                }
+                   } 
                 continue;
             }
             if ($section > $numsections) {
@@ -287,7 +293,7 @@ if (file_exists($CFG->dirroot . '/course/format/collapsibletopics/renderer.php')
             $o .= html_writer::start_tag('div', array('class' => 'summarytext'));
             $o .= $this->format_summary_text($section);
             if ($section->section != 0) {
-	            $o .= '<div class="fhscoursebutton"><a class="sectiontoggle-button btn btn-primary' .
+	            $o .= '<div class="fhscoursebutton"><a class="sectiontoggle btn btn-primary' .
 	                        '" data-toggle="collapse" data-parent="accordion" href="#collapse-' .
 	                        $section->section .
 	                        '" aria-expanded="true" aria-controls="collapse-' .

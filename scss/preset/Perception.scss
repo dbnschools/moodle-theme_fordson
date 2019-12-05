@@ -376,7 +376,14 @@ div#myoverview_timeline_courses .list-group-item {
     background-color: initial !important;
 }
 
+#page-course-index-category #coursesearch {
+    margin-top: 1em;
+    text-align: center;
+    display: block;
+}
+
 // List items hover effect.
+
 .teacherdashboard .list-group-item:hover, .teacherdashboard  .list-group-item:focus, .studentdashboard .list-group-item:hover, .studentdashboard  .list-group-item:focus {
     z-index: 1;
     text-decoration: underline;
@@ -505,68 +512,6 @@ div#fordsonlogin {
     background-color: $gray-600;
 }
 
-
-/*
-// Quiz Module Styling Enhancements
-@media screen and (min-width: 576px) {
-    .que .info>div {
-        padding: .75rem;
-    }
-    .que .info {
-        float: initial;
-        width: initial;
-        padding: .75em;
-        margin-bottom: 0;
-        display: flex;
-    }
-    .que .content {
-        margin: 0;
-    }
-    .que h3.no {
-        margin: 1rem;
-        font-size: $perceptionfontsize;
-    }
-}
-
-#page-mod-quiz-attempt .que, #page-mod-quiz-review .que {
-    margin-bottom: 4rem;
-}
-
-#page-mod-quiz-attempt .que .formulation, #page-mod-quiz-review .que .formulation {
-    color: initial;
-    background-color: transparent;
-    border-color: initial;
-}
-
-#page-mod-quiz-attempt .que .content, #page-mod-quiz-review .que .content {
-    //border-top: 7px solid darken($perception-base, 15%);
-    border: 1px solid $gray-300;
-    //background: linear-gradient(to bottom,$card-bg 78%,$gray-200 115%); 
-    background-color: $card-bg;
-    font-size: $perceptionfontsize;
-}
-
-#page-mod-quiz-attempt .que .qtext, #page-mod-quiz-review .que .qtext {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    border-bottom: 2px solid $gray-200;
-}
-
-.que .outcome {margin-bottom: 0;}
-
-// Fix for when a user checks an answer and the question would jump positions
-
-#page-mod-quiz-attempt :target {
-    padding-top: 0!important;
-    margin-top: 0!important;
-}
-
-#page-mod-quiz-attempt .que .info, #page-mod-quiz-review .que .info {
-    margin-bottom: 0;
-    background-color: $gray-200;
-    border: 1px solid $gray-300;
-}
-*/
 // Quiz Module Styling Enhancements
 
 #page-mod-quiz-attempt .que, #page-mod-quiz-review .que {
@@ -663,4 +608,19 @@ div#fordsonlogin {
 .page-context-header .header-button-group {
     display: block;
     float: none; 
+}
+
+// Course Archive Display Enhancements
+
+.class-fullbox .col-md-2 {
+    padding: 0;
+}
+.class-fullbox .col-md-4, .class-fullbox .col-md-6 {
+    padding: .5rem;
+}
+.class-fullbox {
+    margin-bottom: 1.5rem !important;
+    border: 1px solid $gray-300 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
 }

@@ -681,6 +681,14 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $nav6buttontext = (empty($PAGE->theme->settings->nav6buttontext)) ? false : format_string($PAGE->theme->settings->nav6buttontext);
         $nav7buttontext = (empty($PAGE->theme->settings->nav7buttontext)) ? false : format_string($PAGE->theme->settings->nav7buttontext);
         $nav8buttontext = (empty($PAGE->theme->settings->nav8buttontext)) ? false : format_string($PAGE->theme->settings->nav8buttontext);
+        $nav1target = (empty($PAGE->theme->settings->nav1target)) ? false : $PAGE->theme->settings->nav1target;
+        $nav2target = (empty($PAGE->theme->settings->nav2target)) ? false : $PAGE->theme->settings->nav2target;
+        $nav3target = (empty($PAGE->theme->settings->nav3target)) ? false : $PAGE->theme->settings->nav3target;
+        $nav4target = (empty($PAGE->theme->settings->nav4target)) ? false : $PAGE->theme->settings->nav4target;
+        $nav5target = (empty($PAGE->theme->settings->nav5target)) ? false : $PAGE->theme->settings->nav5target;
+        $nav6target = (empty($PAGE->theme->settings->nav6target)) ? false : $PAGE->theme->settings->nav6target;
+        $nav7target = (empty($PAGE->theme->settings->nav7target)) ? false : $PAGE->theme->settings->nav7target;
+        $nav8target = (empty($PAGE->theme->settings->nav8target)) ? false : $PAGE->theme->settings->nav8target;
         $fptextbox = (empty($PAGE->theme->settings->fptextbox && isloggedin())) ? false : format_text($PAGE->theme->settings->fptextbox, FORMAT_HTML, array(
             'noclean' => true
         ));
@@ -841,49 +849,57 @@ class core_renderer extends \theme_boost\output\core_renderer {
                 'hasicon' => $hasnav1icon,
                 'linkicon' => $hasnav1icon,
                 'link' => $nav1buttonurl,
-                'linktext' => $nav1buttontext
+                'linktext' => $nav1buttontext,
+                'linktarget' => $nav1target
             ) ,
             array(
                 'hasicon' => $hasnav2icon,
                 'linkicon' => $hasnav2icon,
                 'link' => $nav2buttonurl,
-                'linktext' => $nav2buttontext
+                'linktext' => $nav2buttontext,
+                'linktarget' => $nav2target
             ) ,
             array(
                 'hasicon' => $hasnav3icon,
                 'linkicon' => $hasnav3icon,
                 'link' => $nav3buttonurl,
-                'linktext' => $nav3buttontext
+                'linktext' => $nav3buttontext,
+                'linktarget' => $nav3target
             ) ,
             array(
                 'hasicon' => $hasnav4icon,
                 'linkicon' => $hasnav4icon,
                 'link' => $nav4buttonurl,
-                'linktext' => $nav4buttontext
+                'linktext' => $nav4buttontext,
+                'linktarget' => $nav4target
             ) ,
             array(
                 'hasicon' => $hasnav5icon,
                 'linkicon' => $hasnav5icon,
                 'link' => $nav5buttonurl,
-                'linktext' => $nav5buttontext
+                'linktext' => $nav5buttontext,
+                'linktarget' => $nav5target
             ) ,
             array(
                 'hasicon' => $hasnav6icon,
                 'linkicon' => $hasnav6icon,
                 'link' => $nav6buttonurl,
-                'linktext' => $nav6buttontext
+                'linktext' => $nav6buttontext,
+                'linktarget' => $nav6target
             ) ,
             array(
                 'hasicon' => $hasnav7icon,
                 'linkicon' => $hasnav7icon,
                 'link' => $nav7buttonurl,
-                'linktext' => $nav7buttontext
+                'linktext' => $nav7buttontext,
+                'linktarget' => $nav7target
             ) ,
             array(
                 'hasicon' => $hasnav8icon,
                 'linkicon' => $hasnav8icon,
                 'link' => $nav8buttonurl,
-                'linktext' => $nav8buttontext
+                'linktext' => $nav8buttontext,
+                'linktarget' => $nav8target
             ) ,
         ) , 'fpcreateicon' => array(
             array(

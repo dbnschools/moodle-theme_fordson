@@ -157,6 +157,18 @@ $setting = new admin_setting_configtext($name, $title, $description, $default, P
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+$name = 'theme_fordson/nav1target';
+$title = get_string('marketingurltarget' , 'theme_fordson');
+$description = get_string('marketingurltargetdesc', 'theme_fordson');
+$target1 = get_string('marketingurltargetself', 'theme_fordson');
+$target2 = get_string('marketingurltargetnew', 'theme_fordson');
+$target3 = get_string('marketingurltargetparent', 'theme_fordson');
+$default = 'target1';
+$choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 // This is the descriptor for icon One
 $name = 'theme_fordson/navicon2info';
 $heading = get_string('navicon2', 'theme_fordson');
@@ -185,6 +197,18 @@ $title = get_string('naviconbuttonurl', 'theme_fordson');
 $description = get_string('naviconbuttonurldesc', 'theme_fordson');
 $default =  $CFG->wwwroot.'/calendar/view.php?view=month';
 $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+$name = 'theme_fordson/nav2target';
+$title = get_string('marketingurltarget' , 'theme_fordson');
+$description = get_string('marketingurltargetdesc', 'theme_fordson');
+$target1 = get_string('marketingurltargetself', 'theme_fordson');
+$target2 = get_string('marketingurltargetnew', 'theme_fordson');
+$target3 = get_string('marketingurltargetparent', 'theme_fordson');
+$default = 'target1';
+$choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
@@ -219,6 +243,18 @@ $setting = new admin_setting_configtext($name, $title, $description, $default, P
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+$name = 'theme_fordson/nav3target';
+$title = get_string('marketingurltarget' , 'theme_fordson');
+$description = get_string('marketingurltargetdesc', 'theme_fordson');
+$target1 = get_string('marketingurltargetself', 'theme_fordson');
+$target2 = get_string('marketingurltargetnew', 'theme_fordson');
+$target3 = get_string('marketingurltargetparent', 'theme_fordson');
+$default = 'target1';
+$choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 // This is the descriptor for icon four
 $name = 'theme_fordson/navicon4info';
 $heading = get_string('navicon4', 'theme_fordson');
@@ -247,6 +283,18 @@ $title = get_string('naviconbuttonurl', 'theme_fordson');
 $description = get_string('naviconbuttonurldesc', 'theme_fordson');
 $default =  $CFG->wwwroot.'/course/';
 $setting = new admin_setting_configtext($name, $title, $description, $default, PARAM_URL);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+$name = 'theme_fordson/nav4target';
+$title = get_string('marketingurltarget' , 'theme_fordson');
+$description = get_string('marketingurltargetdesc', 'theme_fordson');
+$target1 = get_string('marketingurltargetself', 'theme_fordson');
+$target2 = get_string('marketingurltargetnew', 'theme_fordson');
+$target3 = get_string('marketingurltargetparent', 'theme_fordson');
+$default = 'target1';
+$choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
@@ -281,6 +329,18 @@ $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_U
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+$name = 'theme_fordson/nav5target';
+$title = get_string('marketingurltarget' , 'theme_fordson');
+$description = get_string('marketingurltargetdesc', 'theme_fordson');
+$target1 = get_string('marketingurltargetself', 'theme_fordson');
+$target2 = get_string('marketingurltargetnew', 'theme_fordson');
+$target3 = get_string('marketingurltargetparent', 'theme_fordson');
+$default = 'target1';
+$choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 // This is the descriptor for icon six
 $name = 'theme_fordson/navicon6info';
 $heading = get_string('navicon6', 'theme_fordson');
@@ -309,6 +369,18 @@ $title = get_string('naviconbuttonurl', 'theme_fordson');
 $description = get_string('naviconbuttonurldesc', 'theme_fordson');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+$name = 'theme_fordson/nav6target';
+$title = get_string('marketingurltarget' , 'theme_fordson');
+$description = get_string('marketingurltargetdesc', 'theme_fordson');
+$target1 = get_string('marketingurltargetself', 'theme_fordson');
+$target2 = get_string('marketingurltargetnew', 'theme_fordson');
+$target3 = get_string('marketingurltargetparent', 'theme_fordson');
+$default = 'target1';
+$choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
@@ -343,6 +415,18 @@ $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_U
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+$name = 'theme_fordson/nav7target';
+$title = get_string('marketingurltarget' , 'theme_fordson');
+$description = get_string('marketingurltargetdesc', 'theme_fordson');
+$target1 = get_string('marketingurltargetself', 'theme_fordson');
+$target2 = get_string('marketingurltargetnew', 'theme_fordson');
+$target3 = get_string('marketingurltargetparent', 'theme_fordson');
+$default = 'target1';
+$choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 // This is the descriptor for icon eight
 $name = 'theme_fordson/navicon8info';
 $heading = get_string('navicon8', 'theme_fordson');
@@ -371,6 +455,18 @@ $title = get_string('naviconbuttonurl', 'theme_fordson');
 $description = get_string('naviconbuttonurldesc', 'theme_fordson');
 $default = '';
 $setting = new admin_setting_configtext($name, $title, $description, '', PARAM_URL);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+$name = 'theme_fordson/nav8target';
+$title = get_string('marketingurltarget' , 'theme_fordson');
+$description = get_string('marketingurltargetdesc', 'theme_fordson');
+$target1 = get_string('marketingurltargetself', 'theme_fordson');
+$target2 = get_string('marketingurltargetnew', 'theme_fordson');
+$target3 = get_string('marketingurltargetparent', 'theme_fordson');
+$default = 'target1';
+$choices = array('_self'=>$target1, '_blank'=>$target2, '_parent'=>$target3);
+$setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 

@@ -11,6 +11,14 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 # Versions and Updates
 
+## Moodle 3.8 Fordson v3.8 release 1.2
+* Fix Breadcrumbs on all page layouts.
+
+## Moodle 3.8 Fordson v3.8 release 1.1
+* Fix compatibility issue with CollapsibleTopics Course format and Fordson integration and customizations.
+* New Feature:  Link Targets for the icon navigation bar. Open links in new windows if desired.
+* Fix icon size in Bulk Course Completion pages
+
 ## Moodle 3.8 Fordson v3.8 release 1
 * Initial release for Moodle 3.8
 * Fixed breadcrumb styling
