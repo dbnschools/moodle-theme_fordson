@@ -1,6 +1,6 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $('.edit-btn').click(function() {
+    $('.edit-btn').click(function () {
 
         window.sessionStorage.setItem('edit_toggled', true);
 
@@ -8,7 +8,7 @@ $(document).ready(function() {
         var closest = null;
         var closest_offset = null;
 
-        $('.section.main').each(function(e, f) {
+        $('.section.main').each(function (e, f) {
             var this_offset = $(f).offset().top;
 
             if ($(closest).offset()) {
@@ -17,7 +17,7 @@ $(document).ready(function() {
             if (closest == null || Math.abs(this_offset - viewport_top) < Math.abs(closest_offset - viewport_top)) {
                 closest = f;
             }
-        }); 
+        });
 
         window.sessionStorage.setItem('closest_id', closest.id);
         window.sessionStorage.setItem('closest_delta', viewport_top - $(closest).offset().top);

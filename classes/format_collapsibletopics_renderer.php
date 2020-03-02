@@ -71,6 +71,7 @@ if (file_exists($CFG->dirroot . '/course/format/collapsibletopics/renderer.php')
 
         foreach ($modinfo->get_section_info_all() as $section => $thissection) {
             if ($section == 0) {
+                $this->page->requires->strings_for_js(array('collapseall', 'expandall'), 'moodle');
                 echo '<div class="collapsible-actions" >
     <a href="#" class="expandall" role="button">' . get_string('expandall') . '
     </a>

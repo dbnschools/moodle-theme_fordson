@@ -11,6 +11,9 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 # Versions and Updates
 
+## Moodle 3.8 Fordson v3.8 release 1.3
+* Fix https://moodle.org/mod/forum/discuss.php?d=397690
+
 ## Moodle 3.8 Fordson v3.8 release 1.2
 * Fix Breadcrumbs on all page layouts.
 
