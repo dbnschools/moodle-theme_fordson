@@ -58,6 +58,17 @@
     padding: 1rem;
 }
 
+
+// AALinks
+.aalink.focus, #page-footer a:not([class]).focus, .arrow_link.focus, a:not([class]).focus, .activityinstance>a.focus, .aalink:focus, #page-footer a:not([class]):focus, .arrow_link:focus, a:not([class]):focus, .activityinstance>a:focus, :focus {
+    outline: .2rem solid transparent;
+    color: #212529;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
 /**
 * login on frontpage 
 **/
@@ -161,6 +172,9 @@ div#fordsonlogin {
 
 #page-login-index #page-wrapper {
     padding-bottom: 0;
+}
+#page-login-signup .loginslideshow div#fordsoncarousel {
+    z-index: 0;
 }
 
 #page-my-index {
@@ -1311,7 +1325,6 @@ body.editing ul.collapsibletopics .fordsoncourseformat .content .summarytext {
 
 .fordsoncourseformat .fhscoursebutton {
     display: block;
-    text-align: right;
 }
 
 .course-content ul.collapsibletopics li.section.fordsoncourseformat .content {

@@ -295,7 +295,7 @@ if (file_exists($CFG->dirroot . '/course/format/collapsibletopics/renderer.php')
             $o .= $this->format_summary_text($section);
             if ($section->section != 0) {
 	            $o .= '<div class="fhscoursebutton"><a class="sectiontoggle btn btn-primary' .
-	                        '" data-toggle="collapse" data-parent="accordion" href="#collapse-' .
+	                        '" data-toggle="collapse" data-parent=".accordion" href="#collapse-' .
 	                        $section->section .
 	                        '" aria-expanded="true" aria-controls="collapse-' .
 	                        $section->section .

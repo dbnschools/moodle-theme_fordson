@@ -186,6 +186,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
             return $this->image_url('noimg', 'theme')->out();
         }
     }
+    public function edit_button(moodle_url $url) {
+        return '';
+    }
 
     public function edit_button_fhs() {
         global $SITE, $PAGE, $USER, $CFG, $COURSE;
@@ -1368,6 +1371,10 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $eventmonitoringlink = new moodle_url('/admin/tool/monitor/managerules.php', array(
             'courseid' => $PAGE->course->id
         ));
+        $copycoursetitle = get_string('copycourse', 'moodle');
+        $copycourselink = new moodle_url('/backup/copy.php', array(
+            'id' => $PAGE->course->id
+        ));
 
         // Student Dash
         if (\core_completion\progress::get_course_progress_percentage($PAGE->course)) {
@@ -1648,6 +1655,11 @@ class core_renderer extends \theme_boost\output\core_renderer {
                     'hascoursemanagelinks' => $courseadmintitle,
                     'title' => $courseadmintitle,
                     'url' => $courseadminlink
+                ) ,
+                array(
+                    'hascoursemanagelinks' => $copycoursetitle,
+                    'title' => $copycoursetitle,
+                    'url' => $copycourselink
                 ) ,
                 array(
                     'hascoursemanagelinks' => $courseresettitle,

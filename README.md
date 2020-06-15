@@ -11,21 +11,8 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 # Versions and Updates
 
-## Moodle 3.8 Fordson v3.8 release 1.4
-* Added Alerts to all pages whether logged in or not.  https://github.com/dbnschools/moodle-theme_fordson/issues/104
-
-## Moodle 3.8 Fordson v3.8 release 1.3
-* Fix https://moodle.org/mod/forum/discuss.php?d=397690
-
-## Moodle 3.8 Fordson v3.8 release 1.2
-* Fix Breadcrumbs on all page layouts.
-
-## Moodle 3.8 Fordson v3.8 release 1.1
-* Fix compatibility issue with CollapsibleTopics Course format and Fordson integration and customizations.
-* New Feature:  Link Targets for the icon navigation bar. Open links in new windows if desired.
-* Fix icon size in Bulk Course Completion pages
-
-## Moodle 3.8 Fordson v3.8 release 1
-* Initial release for Moodle 3.8
-* Fixed breadcrumb styling
-* Fixed custom login z-index
+## Moodle 3.9 Fordson v3.9 release 1
+* Initial release for Moodle 3.9
+* Fixed Turn editing on button now appearing on course page for core.
+* Added Copy Course to Teacher Course Dashboard.
+* Removed Fordson Custom Activity Chooser feature in support of the Moodle 3.9 Activity chooser.
