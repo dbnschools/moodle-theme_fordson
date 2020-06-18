@@ -24,7 +24,7 @@ $green: #7fd80a !default;
 $teal: #60e8b5 !default;
 $cyan: #5bc0de !default;
 
-$primary: #1e2429 !default;
+$primary: #000 !default;
 $secondary: $gray-300 !default;
 $success: $green !default;
 $info: $cyan !default;
@@ -55,13 +55,22 @@ $body-color: $gray-800 !default;
 $body-bg: $gray-200 !default;
 $drawer-bg: $gray-200 !default;
 $card-bg: $white !default;
-$footer-bg: #1e2429 !default;
-$perception-base: #14a9fe !default;
+$footer-bg: $gray-100 !default;
+$footer-link-color: $gray-800;
+
+//$perception-base: #14a9fe !default;
+//$perception-base: #a0bbd4 !default;
+// ***$perception-base: #90a3a9 !default;
+//$perception-base: #9FB3D1 !default;
+$perception-base: #82b8de !default;
+
+
+
 $sectionnamehighlight: $teal;
 $border-radius: 4px !default;
 $activityhover: darken($card-bg, 7%) !default;
-$headerbackgroundcolor: rgba(255, 255, 255, 0.9) !default;
-$dpsaccentcolor: #44d4a6 !default;
+$headerbackgroundcolor: rgba($gray-900, 0.3) !default;
+$dpsaccentcolor: #ff5f3a !default;
 
 // Fonts
 $font-size-base: 1rem !default;
@@ -76,9 +85,9 @@ $breadcrumb-margin-bottom: 0 !default;
 $breadcrumb-divider: "/" !default;
 $breadcrumb-divider-rtl: "/" !default;
 
-$breadcrumb-bg: $dark !default;
-$breadcrumb-bg-hover: $perception-base !default;
-$breadcrumb-text-color: $white !default;
+$breadcrumb-bg: $white !default;
+$breadcrumb-bg-hover: $gray-200 !default;
+$breadcrumb-text-color: $dark !default;
 $breadcrumbdash: $gray-200 !default;
 $breadcrumbdimmed: $gray-600 !default;
 
@@ -91,7 +100,7 @@ $list-group-bg: $white !default;
 $list-group-border-color: $gray-200 !default;
 $list-group-hover-bg: $gray-300 !default;
 
-$list-group-active-color: $white !default;
+$list-group-active-color: $black !default;
 $list-group-active-bg: $perception-base !default;
 
 $list-group-action-color: $black !default;
@@ -244,6 +253,10 @@ section#region-main {
     color: $perception-base !important;
 }
 
+#page-footer {
+    border-top: 2px solid $gray-base;
+}
+
 #page-question-preview #page-wrapper #page {
     margin-top: 0;
 }
@@ -251,6 +264,13 @@ section#region-main {
 section#region-main .card,
 header#page-header .card {
     border: 0;
+}
+
+.page-header-headings {
+    color: $white;
+}
+.page-header-headings h1 {
+    font-weight: bold;
 }
 
 .studentdash .btn,
@@ -327,6 +347,7 @@ button#blocksliderbuttonclose {
 #back-to-top {
     background-color: $perception-base;
     border-color: $perception-base;
+    color: $black;
 }
 
 .form-autocomplete-suggestions li:hover {
@@ -366,6 +387,10 @@ div#myoverview_timeline_courses .list-group-item {
 .activity-navigation {
     background-color: $perception-base;
     padding: 1rem 0;
+}
+
+.mt-5.mb-1.activity-navigation.container-fluid {
+    margin-top: 0!important;
 }
 
 .marketcontent .text_to_html {
@@ -640,4 +665,29 @@ div#fordsonlogin {
     border: 1px solid $gray-300 !important;
     box-shadow: none !important;
     padding: 0 !important;
+}
+
+// Remove Page Footer on Modules
+.path-mod #page-footer {
+    display: none;
+}
+
+// Create new course hide everything.  Let user fine tune after creating course.
+#page-course-edit.format-site fieldset#id_courseformathdr, #page-course-edit.format-site fieldset#id_appearancehdr, #page-course-edit.format-site fieldset#id_filehdr, #page-course-edit.format-site fieldset#id_completionhdr, #page-course-edit.format-site fieldset#id_groups, #page-course-edit.format-site fieldset#id_tagshdr, #page-course-edit.format-site fieldset#id_rolerenaming {display: none;}
+
+// Remove boxshadow
+.aabtn.focus, .btn-link.focus, .nav-link.focus, .atto_link_button.focus, [role="button"].focus, .list-group-item-action.focus, input[type="checkbox"].focus, input[type="radio"].focus, input[type="file"].focus, input[type="image"].focus, .sr-only-focusable.focus, a.dropdown-item.focus, a.dropdown-toggle.focus, .modal-dialog[tabindex="0"].focus, .moodle-dialogue-base .closebutton.focus, button.close.focus, .aabtn:focus, .btn-link:focus, .nav-link:focus, .atto_link_button:focus, [role="button"]:focus, .list-group-item-action:focus, input[type="checkbox"]:focus, input[type="radio"]:focus, input[type="file"]:focus, input[type="image"]:focus, .sr-only-focusable:focus, a.dropdown-item:focus, a.dropdown-toggle:focus, .modal-dialog[tabindex="0"]:focus, .moodle-dialogue-base .closebutton:focus, button.close:focus {
+    outline: 0; 
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+// Jitsi Web Conferencing
+i.fa.fa-video-camera.jitsivideoicon {
+    font-size: 36px;
+    vertical-align: middle;
+}
+span.jistibuttontext {
+    vertical-align: middle;
+    font-size: 22px;
 }

@@ -525,3 +525,7 @@ $string['viewfcfmodules'] = 'View Activities and Resources';
 
 $string['easyenrollmentintegration'] = 'Easy Enrollment Plugin';
 $string['easyenrollmentintegration_desc'] = 'The Easy Enrollment plugin (<a href="https://moodle.org/plugins/enrol_easy"> Easy Enrollment Plugin</a>) allows students to enroll in courses directly from the Moodle homepage.  The enrollment plugin uses a 6 digit code or a auto-generated QR code with webcam support to enroll students.  The student enters the code or scans the QR code and is instantly enrolled into the intended course or group within the course.  This plugin auto-activates once you install Easy Enrollment and activate it in Site Administration.  It is only activated if the plugin is installed and properly configured.';
+$string['jitsibuttontext'] = 'Automatic Jitsi Meeting Header Button';
+$string['jitsibuttontextdesc'] = 'Add text for a button that will be added to the top of every Moodle Course.  This button will take the users to a Jitsi Meeting room which forms the URL from the Course Name and Course ID number.  You must have a Jitsi Web Conferencing Server.';
+$string['jitsibuttonurl'] = 'Jitsi Server URL';
+$string['jitsibuttonurldesc'] = 'Example public server: https://meet.jit.si <br> DO NOT ADD A TRAILING BACKSLASH <br> This url will be used for the button that will automatically be added to each Moodle Course in the Header area. We strongly recommend you setup your own Jitsi server and force login to the Jitsi Meeting Room.';

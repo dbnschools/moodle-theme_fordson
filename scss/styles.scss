@@ -62,7 +62,6 @@
 // AALinks
 .aalink.focus, #page-footer a:not([class]).focus, .arrow_link.focus, a:not([class]).focus, .activityinstance>a.focus, .aalink:focus, #page-footer a:not([class]):focus, .arrow_link:focus, a:not([class]):focus, .activityinstance>a:focus, :focus {
     outline: .2rem solid transparent;
-    color: #212529;
     background-color: transparent;
     -webkit-box-shadow: none;
     box-shadow: none;
@@ -1091,7 +1090,7 @@ width: $activityiconsize;
 
 #back-to-top {
     position: fixed;
-    bottom: 20px;
+    bottom: 75px;
     right: 20px;
     z-index: 2;
     cursor: pointer;

@@ -182,6 +182,21 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+$name = 'theme_fordson/jitsibuttontext';
+$title = get_string('jitsibuttontext', 'theme_fordson');
+$description = get_string('jitsibuttontextdesc', 'theme_fordson');
+$default = '';
+$setting = new admin_setting_configtext($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
+$name = 'theme_fordson/jitsibuttonurl';
+$title = get_string('jitsibuttonurl', 'theme_fordson');
+$description = get_string('jitsibuttonurldesc', 'theme_fordson');
+$default = '';
+$setting = new admin_setting_configtext($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
 
 
 // Must add the page after definiting all the settings!

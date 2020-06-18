@@ -107,18 +107,6 @@ div#learningcontent {
 	div#blockslider {
 	    //top: 7px;
 	}
-	.btn.btn-primary.blockpanelbutton {
-		background-color: $perception-base;
-		border-color: $perception-base;
-	}
-	.btn.btn-primary.blockpanelbutton:active {
-		background-color: lighten($perception-base,5%);
-		border-color: darken($perception-base, 10%);
-	}
-
-	.blockpanelbtn {
-	    //top: 7px !important;
-	}
 
 	div#page.container-fluid {
 	    padding: 0!important;
@@ -214,10 +202,13 @@ div#learningcontent {
 	}
 
 //Special styling for select dashboard blocks
-	#page-my-index section#region-main section.block_myoverview {
+	/*#page-my-index section#region-main section.block_myoverview {
 	    border: 1px solid $gray-300 !important;
 	    background-color: $gray-100;
-	}
+	}*/
+    .block_myoverview h5, .block_timeline h5 {
+        border-bottom: 3px solid;
+    }
 
 	@media screen and (min-width: 576px) {
 		.course-content .section-summary .summarytext {

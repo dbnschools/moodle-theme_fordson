@@ -38,7 +38,7 @@ $page->add($setting);
 $name = 'theme_fordson/showloginform';
 $title = get_string('showloginform', 'theme_fordson');
 $description = get_string('showloginform_desc', 'theme_fordson');
-$default = 1;
+$default = 0;
 $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
@@ -149,7 +149,7 @@ $page->add($setting);
 $name = 'theme_fordson/gutterwidth';
 $title = get_string('gutterwidth', 'theme_fordson');
 $description = get_string('gutterwidth_desc', 'theme_fordson');;
-$default = '3rem';
+$default = '0rem';
 $choices = array(
         '0rem' => '0rem',
         '1rem' => '1rem',

@@ -58,7 +58,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         return $setting <= 4 ? true : false;
     }
     public function full_header() {
-        global $PAGE, $COURSE;
+        global $PAGE, $COURSE, $course;
         $theme = theme_config::load('fordson');
         $pagelayout = $theme->settings->pagelayout;
         $header = new stdClass();
@@ -80,6 +80,13 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $header->pageheadingbutton = $this->page_heading_button();
         $header->courseheader = $this->course_header();
         $header->headerimage = $this->headerimage();
+
+        if (theme_fordson_get_setting('jitsibuttontext') && $PAGE->pagelayout == 'course') {
+            $jitsibuttonurl = $theme->settings->jitsibuttonurl;
+            $jitsibuttontext = $theme->settings->jitsibuttontext;
+            $header->jitsi = '<a class="btn btn-primary" href=" ' . $jitsibuttonurl . '/' . $course->id .' ' . $course->fullname . '" target="_blank"> <i class="fa fa-video-camera jitsivideoicon" aria-hidden="true"></i><span class="jistibuttontext">
+' . $jitsibuttontext . ' </span></a>';
+        }
         return $this->render_from_template('theme_fordson/header', $header);
     }
     public function image_url($imagename, $component = 'moodle') {
