@@ -80,6 +80,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $header->pageheadingbutton = $this->page_heading_button();
         $header->courseheader = $this->course_header();
         $header->headerimage = $this->headerimage();
+        $header->headeractions = $this->page->get_header_actions();
 
         if (theme_fordson_get_setting('jitsibuttontext') && $PAGE->pagelayout == 'course') {
             $jitsibuttonurl = $theme->settings->jitsibuttonurl;
@@ -87,14 +88,17 @@ class core_renderer extends \theme_boost\output\core_renderer {
             $header->jitsi = '<a class="btn btn-primary" href=" ' . $jitsibuttonurl . '/' . $course->id .' ' . $course->fullname . '" target="_blank"> <i class="fa fa-video-camera jitsivideoicon" aria-hidden="true"></i><span class="jistibuttontext">
 ' . $jitsibuttontext . ' </span></a>';
         }
+        
         return $this->render_from_template('theme_fordson/header', $header);
     }
+    
     public function image_url($imagename, $component = 'moodle') {
         // Strip -24, -64, -256  etc from the end of filetype icons so we
         // only need to provide one SVG, see MDL-47082.
         $imagename = \preg_replace('/-\d\d\d?$/', '', $imagename);
         return $this->page->theme->image_url($imagename, $component);
     }
+
     public function headerimage() {
         global $CFG, $COURSE, $PAGE, $OUTPUT;
         // Get course overview files.

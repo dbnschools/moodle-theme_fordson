@@ -11,6 +11,9 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 # Versions and Updates
 
+## Moodle 3.9 Fordson v3.9 release 1.1
+* Fixed missing edit cog on new H5P Content pages to delete and rename H5P items.
+
 ## Moodle 3.9 Fordson v3.9 release 1
 * Initial release for Moodle 3.9
 * Fixed Turn editing on button now appearing on course page for core.
