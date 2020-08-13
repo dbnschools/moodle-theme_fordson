@@ -44,6 +44,19 @@
                         {{/dashlinks}}
                     </div>
                     {{/hasquestionpermission}}
+                    {{#hascontentbankpermission}}
+                    <div class="dashtitle">
+                        <h3><i class="fa fa-paint-brush dashicon"></i>{{{cbanktitle}}}</h3>
+                        <p>{{{cbankdesc}}}</p>
+                    </div>
+                    <div class="list-group">
+                        {{#dashlinks}}
+                        {{#hascbanklinks}}
+                            <a href="{{{url}}}" class="list-group-item">{{{title}}}</a>
+                        {{/hascbanklinks}}
+                        {{/dashlinks}}
+                    </div>
+                    {{/hascontentbankpermission}} 
                     {{#hasbadgepermission}}
                     <div class="dashtitle">
                         <h3><i class="fa fa-trophy dashicon"></i>{{{badgestitle}}}</h3>
