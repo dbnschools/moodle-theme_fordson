@@ -1516,7 +1516,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $studentcoursemanage = get_string('courseadministration', 'moodle');
         // Permissionchecks for teacher access.
         $hasquestionpermission = has_capability('moodle/question:add', $context);
-        $hasbadgepermission = has_capability('moodle/badges:awardbadge', $context);
+        $hasbadgepermission = $CFG->enablebadges == 1 && has_capability('moodle/badges:awardbadge', $context);
         $hascoursepermission = has_capability('moodle/backup:backupcourse', $context);
         $hasuserpermission = has_capability('moodle/course:viewhiddenactivities', $context);
         $hasgradebookshow = $PAGE->course->showgrades == 1 && $PAGE->theme->settings->showstudentgrades == 1;
