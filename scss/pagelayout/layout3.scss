@@ -92,7 +92,7 @@ div#learningcontent {
 
 // Forums
 .forumpost {
-    background-color: $gray-lightest;
+    background-color: $gray-100;
     border-radius: 0;
     box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.3);
     border: 1px solid $card-bg;
@@ -107,7 +107,7 @@ div#learningcontent {
     background-color: $card-bg;
     margin-bottom: 1rem;
     padding: 1rem;
-    border: 1px solid $gray-lighter;
+    border: 1px solid $gray-200;
 }
 
 // Scrollbars
@@ -122,7 +122,7 @@ div#learningcontent {
 }
 
 #nav-drawer::-webkit-scrollbar-thumb {
-    background-color: darken($brand-primary, 15%);
+    background-color: darken($primary, 15%);
     outline: 1px solid slategrey;
 }
 

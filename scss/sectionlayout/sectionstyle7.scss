@@ -36,10 +36,10 @@
 
 .course-content ul.section {
     margin: 1rem;
-    border-top: 7px solid lighten($brand-primary, 25%);
-    border-left: 1px solid $gray-lighter;
-    border-right: 1px solid $gray-lighter;
-    border-bottom: 1px solid $gray-lighter;
+    border-top: 7px solid lighten($primary, 25%);
+    border-left: 1px solid $gray-200;
+    border-right: 1px solid $gray-200;
+    border-bottom: 1px solid $gray-200;
     padding: 1rem;
 }
 
@@ -74,11 +74,11 @@ li.activity.label {
 div#coursecontrols {
     border-radius: 0;
     background-color: $activityhover;
-    border-top: 5px solid lighten($brand-primary, 25%);
+    border-top: 5px solid lighten($primary, 25%);
 }
 
 .section li.activity {
-    border-bottom: 1px dashed $gray-lighter;
+    border-bottom: 1px dashed $gray-200;
     font-size: initial;
 }
 
@@ -99,7 +99,7 @@ div#coursecontrols {
 }
 
 .course-content .current::before {
-    border-left: $brand-primary 8px solid;
+    border-left: $primary 8px solid;
 }
 
 .course-content .single-section .section-navigation {

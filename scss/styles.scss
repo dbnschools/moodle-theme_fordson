@@ -54,7 +54,7 @@
 // Alerts
 
 .moodle-dialogue-bd div[role="alert"] {
-    background-color: $brand-danger;
+    background-color: $danger;
     padding: 1rem;
 }
 
@@ -158,8 +158,8 @@ div#fordsonlogin {
 .featuretext h4 {
     border-top: 4px solid $dark;
     padding: $spacer;
-    border-bottom: 1px dashed $gray-lighter;
-    background-color: $gray-lightest;
+    border-bottom: 1px dashed $gray-200;
+    background-color: $gray-100;
 }
 
 #page-login-index #page, #page-login-signup #page {
@@ -183,19 +183,19 @@ div#fordsonlogin {
 /* Editing Block Columns */
 
 .editing aside#block-region-fp-a {
-    border: 2px dashed $gray-lighter;
+    border: 2px dashed $gray-200;
     min-height: 10rem;
 }
 .editing aside#block-region-fp-b {
-    border: 2px dashed $gray-lighter;
+    border: 2px dashed $gray-200;
     min-height: 10rem;
 }
 .editing aside#block-region-fp-c {
-    border: 2px dashed $gray-lighter;
+    border: 2px dashed $gray-200;
     min-height: 10rem;
 }
 .editing aside#block-region-side-pre {
-    border: 2px dashed $gray-lighter;
+    border: 2px dashed $gray-200;
     min-height: 10rem;
 }
 
@@ -445,7 +445,7 @@ a.right.carousel-control .fa-chevron-right {
 
 div#fpslider {
     padding: $spacer;
-    border: 1px solid $gray-lighter;
+    border: 1px solid $gray-200;
 }
 
 .alertbox {
@@ -454,7 +454,7 @@ div#fpslider {
 
 .alertmessage {
     display: inline-block;
-    background-color: $brand-warning;
+    background-color: $warning;
     border-radius: $border-radius;
     padding: 15px;
     margin: 20px;
@@ -586,7 +586,7 @@ form#enrolform_easy button.btn.btn-primary {
     text-decoration: none;
     display: block;
     content: '';
-    border-bottom: solid 1rem $brand-primary;
+    border-bottom: solid 1rem $primary;
     transform: scaleX(0);
     transition: transform 250ms ease-in-out;
 }
@@ -705,7 +705,7 @@ form#enrolform_easy button.btn.btn-primary {
 }
 
 .class-box .course-summary::-webkit-scrollbar-thumb, .class-box4 .course-summary4::-webkit-scrollbar-thumb {
-    background-color: darken($brand-primary, 15%);
+    background-color: darken($primary, 15%);
     outline: 1px solid slategrey;
 }
 
@@ -753,7 +753,7 @@ form#enrolform_easy button.btn.btn-primary {
     left: 40%;
     font-size: 5rem;
     margin-top: -7rem;
-    color: $gray-dark;
+    color: $gray-800;
 }
 
 .coursestyle2 {
@@ -984,7 +984,9 @@ ul.teacherscourseview {
 .navbar {
     background-color: $topnavbarbg;
 }
-
+li.nav-item {
+    display: inline-flex;
+}
 // FHS Navbar
 .navbar-fhs {
   .navbar-brand {
@@ -1057,7 +1059,7 @@ span.userbutton {
 
 .studentdash .btn:hover, .teacherdash .btn:hover, .enrollcodes .btn:hover, .siteadminlink .btn:hover {
     background-color: $card-bg;
-    color: $gray-dark;
+    color: $gray-800;
 }
 
 // Quiz Question fill in blank fix to display inline.
