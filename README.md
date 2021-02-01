@@ -11,5 +11,8 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 # Versions and Updates
 
+## Moodle 3.10 Fordson v3.10 release 2
+* Identified and fixed additional SCSS variables that were causing and issue on some installations.  This should resolve all issues related to the theme not loading proper styling.  
+
 ## Moodle 3.10 Fordson v3.10 release 1
 * Fixed compatibility for Moodle 3.10 SCSS.
