@@ -11,6 +11,9 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 # Versions and Updates
 
+## Moodle 3.10 Fordson v3.10 release 2.2
+* Fixed SCSS error due to a typo when using section style #6 Highlighted Section Title.
+
 ## Moodle 3.10 Fordson v3.10 release 2.1
 * Fixed tooltip js missing error.
 
