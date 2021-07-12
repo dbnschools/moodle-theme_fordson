@@ -85,7 +85,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         if (theme_fordson_get_setting('jitsibuttontext') && $PAGE->pagelayout == 'course') {
             $jitsibuttonurl = $theme->settings->jitsibuttonurl;
             $jitsibuttontext = $theme->settings->jitsibuttontext;
-            $header->jitsi = '<a class="btn btn-primary" href=" ' . $jitsibuttonurl . '/' . $course->id .' ' . $course->fullname . '" target="_blank"> <i class="fa fa-video-camera jitsivideoicon" aria-hidden="true"></i><span class="jistibuttontext">
+            $header->jitsi = '<a class="btn btn-primary" href=" ' . $jitsibuttonurl . '/' . $course->id .' ' . str_replace("&", "", $course->fullname) . '" target="_blank"> <i class="fa fa-video-camera jitsivideoicon" aria-hidden="true"></i><span class="jistibuttontext">
 ' . $jitsibuttontext . ' </span></a>';
         }
         
