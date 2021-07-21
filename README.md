@@ -11,14 +11,5 @@ Click on the button to "Clone or Download" https://github.com/dbnschools/moodle-
 
 # Versions and Updates
 
-## Moodle 3.10 Fordson v3.10 release 2.2
-* Fixed SCSS error due to a typo when using section style #6 Highlighted Section Title.
-
-## Moodle 3.10 Fordson v3.10 release 2.1
-* Fixed tooltip js missing error.
-
-## Moodle 3.10 Fordson v3.10 release 2
-* Identified and fixed additional SCSS variables that were causing and issue on some installations.  This should resolve all issues related to the theme not loading proper styling.  
-
-## Moodle 3.10 Fordson v3.10 release 1
-* Fixed compatibility for Moodle 3.10 SCSS.
+## Moodle 3.11 Fordson v3.11 release 1
+* Fixed breadcrumb spacing issue.
