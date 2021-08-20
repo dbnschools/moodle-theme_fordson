@@ -287,6 +287,8 @@ $string['navbarcolorswitch_off'] = 'Do not change navbar color based on role.';
 //teacher and student dashboard slider
 $string['userlinks'] = 'User Links';
 $string['userlinks_desc'] = 'Manage your students';
+$string['cbank'] = 'Content Bank';
+$string['cbank_desc'] = 'Manage interactive content';
 $string['qbank'] = 'Question Bank';
 $string['qbank_desc'] = 'Create and organize quiz questions';
 $string['badges'] = 'Badges';

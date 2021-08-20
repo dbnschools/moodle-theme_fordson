@@ -1247,6 +1247,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $userlinksdesc = get_string('userlinks_desc', 'theme_fordson');
         $qbank = get_string('qbank', 'theme_fordson');
         $qbankdesc = get_string('qbank_desc', 'theme_fordson');
+        $cbank = get_string('cbank', 'theme_fordson');
+        $cbankdesc = get_string('cbank_desc', 'theme_fordson');
         $badges = get_string('badges', 'theme_fordson');
         $badgesdesc = get_string('badges_desc', 'theme_fordson');
         $coursemanage = get_string('coursemanage', 'theme_fordson');
@@ -1328,6 +1330,11 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $qexporttitle = get_string('export', 'question');
         $qexportlink = new moodle_url('/question/export.php', array(
             'courseid' => $PAGE->course->id
+        ));
+        // Content Bank.
+        $cbankaddtitle = get_string('contentbank', 'moodle');
+        $cbankaddlink = new moodle_url('/contentbank/index.php', array(
+            'contextid' => $context->id
         ));
         // Manage course.
         $courseadmintitle = get_string('courseadministration', 'moodle');
@@ -1516,6 +1523,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $studentcoursemanage = get_string('courseadministration', 'moodle');
         // Permissionchecks for teacher access.
         $hasquestionpermission = has_capability('moodle/question:add', $context);
+        $hascontentbankpermission = has_capability('contenttype/h5p:access', $context);
         $hasbadgepermission = has_capability('moodle/badges:awardbadge', $context);
         $hascoursepermission = has_capability('moodle/backup:backupcourse', $context);
         $hasuserpermission = has_capability('moodle/course:viewhiddenactivities', $context);
@@ -1537,7 +1545,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
             'qbanktitle' => $qbank, 
             'activitylinkstitle' => $activitylinkstitle, 
             'activitylinkstitle_desc' => $activitylinkstitle_desc, 
-            'qbankdesc' => $qbankdesc, 
+            'qbankdesc' => $qbankdesc,
+            'cbanktitle' => $cbank,
+            'cbankdesc' => $cbankdesc, 
             'badgestitle' => $badges, 
             'badgesdesc' => $badgesdesc, 
             'coursemanagetitle' => $coursemanage, 
@@ -1558,6 +1568,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
             'editcog'=> $editcog, 
             'teacherdash' => array(
                 'hasquestionpermission' => $hasquestionpermission,
+                'hascontentbankpermission' => $hascontentbankpermission,
                 'hasbadgepermission' => $hasbadgepermission,
                 'hascoursepermission' => $hascoursepermission,
                 'hasuserpermission' => $hasuserpermission
@@ -1716,6 +1727,11 @@ class core_renderer extends \theme_boost\output\core_renderer {
                     'hasbadgelinks' => $badgeaddtitle,
                     'title' => $badgeaddtitle,
                     'url' => $badgeaddlink
+                ) ,
+                array(
+                    'hascbanklinks' => $cbankaddtitle,
+                    'title' => $cbankaddtitle,
+                    'url' => $cbankaddlink
                 ) ,
             ) ,
             ];
