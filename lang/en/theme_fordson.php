@@ -146,6 +146,19 @@ $string['slideshowpages_desc'] = 'Determine what main pages the slideshow should
 $string['slideshowpages0'] = 'Show on custom login page only';
 $string['slideshowpages1'] = 'Show on Site Home and Dashboard only';
 $string['slideshowpages2'] = 'Show everywhere';
+$string['showtounauthorized'] = 'Slideshow is visible to unauthorized users';
+$string['showtounauthorized_desc'] = 'If this option is checked, slideshow will be visible to anyone, including unathorized users';
+
+// Slide manager
+$string['slideinfo'] = 'Slide ';
+$string['slideurl'] = 'URL';
+$string['slideurl_desc'] = 'You can specify an URL that will be opened upon clicking on this slide. <br><br><i>NOTICE: you can enter location of site sub-pages like "course/view.php?id=123". You must enter full page URL like "https://google.com/mail" otherwise.</i>';
+$string['slideurl_newtab'] = 'Open in new tab';
+$string['slideurl_newtab_desc'] = 'Set whether to open said URL in current or in new tab';
+$string['slideinfodesc'] = 'Slide details';
+$string['slideshowpages_page'] = 'Slideshow: Slide ';
+$string['slideshowpages_count'] = 'Slides count';
+$string['slideshowpages_count_desc'] = 'Set desired count of slides then save your changes. Upon next visit of this page you will see more or less tabs to fill';
 
 // Footer
 $string['footerheading'] = 'Footer';

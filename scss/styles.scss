@@ -176,6 +176,17 @@ div#fordsonlogin {
     z-index: 0;
 }
 
+/* 
+For some reason footer became stuck to viewport height.
+that property comes from Boost theme, possibly its updated property of #page-wrapper
+causes it to float around the bottom of the viewport. There's not a single declaration of #page-wrapper
+height through all of Fordson CSS. Adding this as a quick workaround.
+*/
+
+#page-wrapper {
+    height: auto;
+}
+
 #page-my-index {
     background-color: $body-bg;
 }
