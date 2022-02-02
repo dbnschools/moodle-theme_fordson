@@ -33,4 +33,6 @@ $plugin->requires  = 2021051100;
 $plugin->component = 'theme_fordson';
 $plugin->dependencies = array(
     'theme_boost'  => 2021051700,
+    'theme_foundation' => 2021051804
+    // theme_foundation required as we use admin_setting_configinteger in our slideshow_settings.php
 );

@@ -1120,28 +1120,48 @@ class core_renderer extends \theme_boost\output\core_renderer {
         global $PAGE;
         $theme = theme_config::load('fordson');
         $slideshowon = $PAGE->theme->settings->showslideshow == 1;
-        $hasslide1 = (empty($theme->setting_file_url('slide1image', 'slide1image'))) ? false : $theme->setting_file_url('slide1image', 'slide1image');
-        $slide1 = (empty($PAGE->theme->settings->slide1title)) ? false : $PAGE->theme->settings->slide1title;
-        $slide1content = (empty($PAGE->theme->settings->slide1content)) ? false : format_text($PAGE->theme->settings->slide1content);
-        $showtext1 = (empty($PAGE->theme->settings->slide1title)) ? false : format_text($PAGE->theme->settings->slide1title);
-        $hasslide2 = (empty($theme->setting_file_url('slide2image', 'slide2image'))) ? false : $theme->setting_file_url('slide2image', 'slide2image');
-        $slide2 = (empty($PAGE->theme->settings->slide2title)) ? false : $PAGE->theme->settings->slide2title;
-        $slide2content = (empty($PAGE->theme->settings->slide2content)) ? false : format_text($PAGE->theme->settings->slide2content);
-        $showtext2 = (empty($PAGE->theme->settings->slide2title)) ? false : format_text($PAGE->theme->settings->slide2title);
-        $hasslide3 = (empty($theme->setting_file_url('slide3image', 'slide3image'))) ? false : $theme->setting_file_url('slide3image', 'slide3image');
-        $slide3 = (empty($PAGE->theme->settings->slide3title)) ? false : $PAGE->theme->settings->slide3title;
-        $slide3content = (empty($PAGE->theme->settings->slide3content)) ? false : format_text($PAGE->theme->settings->slide3content);
-        $showtext3 = (empty($PAGE->theme->settings->slide3title)) ? false : format_text($PAGE->theme->settings->slide3title);
-        $fp_slideshow = ['hasfpslideshow' => $slideshowon, 'hasslide1' => $hasslide1 ? true : false, 'hasslide2' => $hasslide2 ? true : false, 'hasslide3' => $hasslide3 ? true : false, 'showtext1' => $showtext1 ? true : false, 'showtext2' => $showtext2 ? true : false, 'showtext3' => $showtext3 ? true : false, 'slide1' => array(
-            'slidetitle' => $slide1,
-            'slidecontent' => $slide1content
-        ) , 'slide2' => array(
-            'slidetitle' => $slide2,
-            'slidecontent' => $slide2content
-        ) , 'slide3' => array(
-            'slidetitle' => $slide3,
-            'slidecontent' => $slide3content
-        ) , ];
+        
+        // Multi-slide renderer for slideshow
+        // Loading current settings, if none previously set - then use 3 as standard value
+
+        $currentSlidesCount = (empty($PAGE->theme->settings->slideshowpages_count))?3:$PAGE->theme->settings->slideshowpages_count;
+
+        $fp_slideshow = ['hasfpslideshow' => $slideshowon]; // we shall only init this array
+        $slidesArray = []; // then we'll init an empty array which will be populated with slides
+
+        for ($slideIndex = 1; $slideIndex <= $currentSlidesCount; $slideIndex++) {
+
+            // grabbing current settings for this index
+            $title = $PAGE->theme->settings->{'slide'.$slideIndex.'title'};
+            $description = $PAGE->theme->settings->{'slide'.$slideIndex.'content'};
+            $imageUrl = $theme->setting_file_url('slide'.$slideIndex.'image', 'slide'.$slideIndex.'image');
+            $url = $PAGE->theme->settings->{'slide'.$slideIndex.'url'};
+            $boolNewTab = $PAGE->theme->settings->{'slide'.$slideIndex.'url_newtab'};
+            
+            // preparing properties
+            $slideTitle = (empty($title))?false:$title;
+            $slideImage = (empty($imageUrl))?false:$imageUrl;
+            $slideUrl = (empty($url))?false:$url;
+            $slideUrlNewTab = (empty($boolNewTab))?false:$boolNewTab; //probably an overkill but whatever
+            $slideContent = (empty($description))?false:$description;
+            $slideEnabled = empty($slideImage);
+            
+            $isFirst = ($slideIndex == 1)?true:false;
+
+            $slidesArray[] = array(
+                'idx' => $slideIndex - 1,
+                'first' => $isFirst,
+                'enabled' => $slideEnabled,
+                'slideurl' => $slideUrl,
+                'innewtab' => $slideUrlNewTab,
+                'slidetitle' => $slideTitle,
+                'slideimage' => $slideImage,
+                'slidecontent' => $slideContent
+            );
+        }
+
+        $fp_slideshow['slide'] = $slidesArray; // lastly we will add our slides array to the common structure
+
         return $this->render_from_template('theme_fordson/slideshow', $fp_slideshow);
     }
     public function teacherdashmenu() {

@@ -51,6 +51,15 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
+// Whether to show slideshow to unauthorized users
+$name = 'theme_fordson/showtounauthorized';
+$title = get_string('showtounauthorized', 'theme_fordson');
+$description = get_string('showtounauthorized_desc', 'theme_fordson');
+$default = 1;
+$setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+$setting->set_updatedcallback('theme_reset_all_caches');
+$page->add($setting);
+
 // Header size setting.
 $name = 'theme_fordson/slideshowheight';
 $title = get_string('slideshowheight', 'theme_fordson');
@@ -118,103 +127,82 @@ $setting = new admin_setting_configselect($name, $title, $description, $default,
 $setting->set_updatedcallback('theme_reset_all_caches');
 $page->add($setting);
 
-// This is the descriptor for slide
-$name = 'theme_fordson/slide1info';
-$heading = get_string('slide1info', 'theme_fordson');
-$information = get_string('slide1infodesc', 'theme_fordson');
-$setting = new admin_setting_heading($name, $heading, $information);
-$page->add($setting);
+// Multi-slide property pages for slideshow
+// Loading current settings
+global $PAGE;
+$currentSlidesCount = (empty($PAGE->theme->settings->slideshowpages_count))?3:$PAGE->theme->settings->slideshowpages_count;
 
-// Slide title
-$name = 'theme_fordson/slide1title';
-$title = get_string('slidetitle', 'theme_fordson');
-$description = get_string('slidetitle_desc', 'theme_fordson');
-$default = '';
-$setting = new admin_setting_configtext($name, $title, $description, $default);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
+// Count of slides
+// we'll better use this than simple textbox
+use theme_foundation\admin_setting_configinteger;
 
-//Slide Description
-$name = 'theme_fordson/slide1content';
-$title = get_string('slidecontent', 'theme_fordson');
-$description = get_string('slidecontent_desc', 'theme_fordson');
-$default = '';
-$setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-// logo image.
-$name = 'theme_fordson/slide1image';
-$title = get_string('slideimage', 'theme_fordson');
-$description = get_string('slideimage_desc', 'theme_fordson');
-$setting = new admin_setting_configstoredfile($name, $title, $description, 'slide1image');
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-// This is the descriptor for slide
-$name = 'theme_fordson/slide2info';
-$heading = get_string('slide2info', 'theme_fordson');
-$information = get_string('slide2infodesc', 'theme_fordson');
-$setting = new admin_setting_heading($name, $heading, $information);
-$page->add($setting);
-
-// Slide title
-$name = 'theme_fordson/slide2title';
-$title = get_string('slidetitle', 'theme_fordson');
-$description = get_string('slidetitle_desc', 'theme_fordson');
-$default = '';
-$setting = new admin_setting_configtext($name, $title, $description, $default);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-//Slide Description
-$name = 'theme_fordson/slide2content';
-$title = get_string('slidecontent', 'theme_fordson');
-$description = get_string('slidecontent_desc', 'theme_fordson');
-$default = '';
-$setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-// logo image.
-$name = 'theme_fordson/slide2image';
-$title = get_string('slideimage', 'theme_fordson');
-$description = get_string('slideimage_desc', 'theme_fordson');
-$setting = new admin_setting_configstoredfile($name, $title, $description, 'slide2image');
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-// This is the descriptor for slide
-$name = 'theme_fordson/slide3info';
-$heading = get_string('slide3info', 'theme_fordson');
-$information = get_string('slide3infodesc', 'theme_fordson');
-$setting = new admin_setting_heading($name, $heading, $information);
-$page->add($setting);
-// Slide title
-$name = 'theme_fordson/slide3title';
-$title = get_string('slidetitle', 'theme_fordson');
-$description = get_string('slidetitle_desc', 'theme_fordson');
-$default = '';
-$setting = new admin_setting_configtext($name, $title, $description, $default);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-//Slide Description
-$name = 'theme_fordson/slide3content';
-$title = get_string('slidecontent', 'theme_fordson');
-$description = get_string('slidecontent_desc', 'theme_fordson');
-$default = '';
-$setting = new admin_setting_confightmleditor($name, $title, $description, $default);
-$setting->set_updatedcallback('theme_reset_all_caches');
-$page->add($setting);
-
-// logo image.
-$name = 'theme_fordson/slide3image';
-$title = get_string('slideimage', 'theme_fordson');
-$description = get_string('slideimage_desc', 'theme_fordson');
-$setting = new admin_setting_configstoredfile($name, $title, $description, 'slide3image');
-$setting->set_updatedcallback('theme_reset_all_caches');
+$name = 'theme_fordson/slideshowpages_count';
+$title = get_string('slideshowpages_count', 'theme_fordson');
+$description = get_string('slideshowpages_count_desc', 'theme_fordson');
+$default = 3;
+$lower = 1;
+$upper = 30;
+$setting = new admin_setting_configinteger($name,$title,$description,$default, $lower, $upper);
 $page->add($setting);
 
 // Must add the page after definiting all the settings!
 $settings->add($page);
+
+// After that is done let's create tabs with per-slide options
+
+for ($slideIndex = 1; $slideIndex <= $currentSlidesCount; $slideIndex++) {
+    $slideSettingsPage = new admin_settingpage('theme_fordson_slide' . $slideIndex . 'settings_page', get_string('slideshowpages_page','theme_fordson') . $slideIndex);
+    
+    // This is the descriptor for slide
+    $name = 'theme_fordson/slide'.$slideIndex.'info';
+    $heading = get_string('slideinfo', 'theme_fordson') . $slideIndex;
+    $information = get_string('slideinfodesc', 'theme_fordson');
+    $slideSettingsPageElement = new admin_setting_heading($name, $heading, $information);
+    $slideSettingsPage->add($slideSettingsPageElement);
+
+    // Slide title
+    $name = 'theme_fordson/slide'.$slideIndex.'title';
+    $title = get_string('slidetitle', 'theme_fordson');
+    $description = get_string('slidetitle_desc', 'theme_fordson');
+    $default = '';
+    $slideSettingsPageElement = new admin_setting_configtext($name, $title, $description, $default);
+    $slideSettingsPageElement->set_updatedcallback('theme_reset_all_caches');
+    $slideSettingsPage->add($slideSettingsPageElement);
+
+    // Slide click-to-visit URL
+    $name = 'theme_fordson/slide'.$slideIndex.'url';
+    $title = get_string('slideurl', 'theme_fordson');
+    $description = get_string('slideurl_desc', 'theme_fordson');
+    $default = '';
+    $slideSettingsPageElement = new admin_setting_configtext($name, $title, $description, $default);
+    $slideSettingsPageElement->set_updatedcallback('theme_reset_all_caches');
+    $slideSettingsPage->add($slideSettingsPageElement);
+
+    // Slide URL option - open in new tab
+    $name = 'theme_fordson/slide'.$slideIndex.'url_newtab';
+    $title = get_string('slideurl_newtab', 'theme_fordson');
+    $description = get_string('slideurl_newtab_desc', 'theme_fordson');
+    $default = false;
+    $slideSettingsPageElement = new admin_setting_configcheckbox($name,$title,$description,$default);
+    $slideSettingsPageElement->set_updatedcallback('theme_reset_all_caches');
+    $slideSettingsPage->add($slideSettingsPageElement);
+
+    //Slide Description
+    $name = 'theme_fordson/slide'.$slideIndex.'content';
+    $title = get_string('slidecontent', 'theme_fordson');
+    $description = get_string('slidecontent_desc', 'theme_fordson');
+    $default = '';
+    $slideSettingsPageElement = new admin_setting_confightmleditor($name, $title, $description, $default);
+    $slideSettingsPageElement->set_updatedcallback('theme_reset_all_caches');
+    $slideSettingsPage->add($slideSettingsPageElement);
+
+    // logo image.
+    $name = 'theme_fordson/slide'.$slideIndex.'image';
+    $title = get_string('slideimage', 'theme_fordson');
+    $description = get_string('slideimage_desc', 'theme_fordson');
+    $slideSettingsPageElement = new admin_setting_configstoredfile($name, $title, $description, 'slide'.$slideIndex.'image');
+    $slideSettingsPageElement->set_updatedcallback('theme_reset_all_caches');
+    $slideSettingsPage->add($slideSettingsPageElement);
+
+    $settings->add($slideSettingsPage);
+}

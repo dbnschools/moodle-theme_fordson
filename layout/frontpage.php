@@ -54,7 +54,14 @@ $blockshtmlb = $OUTPUT->blocks('fp-b');
 $blockshtmlc = $OUTPUT->blocks('fp-c');
 $hasfpblockregion = (isset($PAGE->theme->settings->blockdisplay) && ($PAGE->theme->settings->blockdisplay == 1)) !== false;
 
-$hasslideshowpages = (isset($PAGE->theme->settings->slideshowpages) && ($PAGE->theme->settings->slideshowpages == 1 || $PAGE->theme->settings->slideshowpages == 2)) !== false;
+$slideshowpagesenabled = (isset($PAGE->theme->settings->slideshowpages) && ($PAGE->theme->settings->slideshowpages == 1 || $PAGE->theme->settings->slideshowpages == 2)) !== false;
+$showtounauthorized = (isset($PAGE->theme->settings->showtounauthorized) && ($PAGE->theme->settings->showtounauthorized == 1 )) !== false;
+
+if (isloggedin()) {
+    $hasslideshowpages = $slideshowpagesenabled;
+} else {
+    $hasslideshowpages = ($slideshowpagesenabled && $showtounauthorized) !== false;
+}
 
 $regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [
