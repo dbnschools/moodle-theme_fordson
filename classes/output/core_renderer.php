@@ -1149,7 +1149,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
         $course = $this->page->course;
         $context = context_course::instance($course->id);
         $showincourseonly = isset($COURSE->id) && $COURSE->id > 1 && $PAGE->theme->settings->coursemanagementtoggle && isloggedin() && !isguestuser();
-        $haspermission = has_capability('enrol/category:config', $context) && $PAGE->theme->settings->coursemanagementtoggle && isset($COURSE->id) && $COURSE->id > 1;
+        $haspermission = has_capability('enrol/easy:config', $context) && $PAGE->theme->settings->coursemanagementtoggle && isset($COURSE->id) && $COURSE->id > 1;
         $togglebutton = '';
         $togglebuttonstudent = '';
         $hasteacherdash = '';
